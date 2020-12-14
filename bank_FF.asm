@@ -579,6 +579,8 @@ sub_C2A8:
 C - - - - - 0x01C2B8 07:C2A8: A9 16     LDA #$16
 C - - - - - 0x01C2BA 07:C2AA: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C2AD:
+.export sub_0x01C2BD
+sub_0x01C2BD:
 C - - - - - 0x01C2BD 07:C2AD: A9 17     LDA #$17
 C - - - - - 0x01C2BF 07:C2AF: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C25D:

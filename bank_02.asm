@@ -10629,9 +10629,6 @@ off_A9D1_07:
 
 
 
-sub_AA20:
-C - - - - - 0x00AA30 02:AA20: A9 17     LDA #$17
-C - - - - - 0x00AA32 02:AA22: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 sub_AA25:
 C - - - - - 0x00AA35 02:AA25: A9 2B     LDA #$2B
 C - - - - - 0x00AA37 02:AA27: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
@@ -11027,7 +11024,7 @@ ofs_ACBD_07:
 ofs_ACBD_0A:
 C - - J - - 0x00ACCD 02:ACBD: 20 9B AE  JSR sub_AE9B
 C - - - - - 0x00ACD0 02:ACC0: 20 F8 AC  JSR sub_ACF8
-C - - - - - 0x00ACD3 02:ACC3: 20 20 AA  JSR sub_AA20
+C - - - - - 0x00ACD3 02:ACC3: 20 20 AA  JSR sub_0x01C2BD
 C - - - - - 0x00ACD6 02:ACC6: 20 2F AA  JSR sub_AA2F
 C - - - - - 0x00ACD9 02:ACC9: 20 1B AA  JSR sub_0x01C2AE
 C - - - - - 0x00ACDC 02:ACCC: 20 7C AE  JSR sub_AE7C
