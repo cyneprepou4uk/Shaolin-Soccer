@@ -49,12 +49,6 @@ C - - J - - 0x010034 04:8024: 4C EC BB  JMP loc_BBEC
 
 
 
-sub_802C:
-C - - - - - 0x01003C 04:802C: A9 25     LDA #$25
-C - - - - - 0x01003E 04:802E: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
-
-
-
 loc_8031:
 C D 0 - - - 0x010041 04:8031: A5 5C     LDA ram_режим_игры_на_поле
 C - - - - - 0x010043 04:8033: 10 01     BPL bra_8036
@@ -13828,7 +13822,7 @@ C - - - - - 0x013C0C 04:BBFC: F0 09     BEQ bra_BC07
 C - - - - - 0x013C0E 04:BBFE: 85 2D     STA ram_002D
 C - - - - - 0x013C10 04:BC00: A9 00     LDA #$00
 C - - - - - 0x013C12 04:BC02: 85 2C     STA ram_002C
-C - - - - - 0x013C14 04:BC04: 20 2C 80  JSR sub_802C
+C - - - - - 0x013C14 04:BC04: 20 2C 80  JSR sub_0x01C2DС
 bra_BC07:
 C - - - - - 0x013C17 04:BC07: AD 10 05  LDA ram_подтип_супера
 C - - - - - 0x013C1A 04:BC0A: 0A        ASL
