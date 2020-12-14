@@ -10257,7 +10257,7 @@ C - - - - - 0x01FB48 07:FB38: 3D 74 05  AND ram_0574_кнопки,X
 C - - - - - 0x01FB4B 07:FB3B: F0 15     BEQ bra_FB52
 C - - - - - 0x01FB4D 07:FB3D: FE 78 05  INC ram_0578_кнопки,X
 C - - - - - 0x01FB50 07:FB40: BD 78 05  LDA ram_0578_кнопки,X
-C - - - - - 0x01FB53 07:FB43: CD A9 FB  CMP tbl_FBA9
+C - - - - - 0x01FB53 07:FB43: CD A9 FB  CMP #$02
 C - - - - - 0x01FB56 07:FB46: 90 CD     BCC bra_FB15
 C - - - - - 0x01FB58 07:FB48: BD 74 05  LDA ram_0574_кнопки,X
 C - - - - - 0x01FB5B 07:FB4B: 25 1C     AND ram_001C
@@ -10283,7 +10283,7 @@ C - - - - - 0x01FB7D 07:FB6D: 3D 80 05  AND ram_0580_кнопки,X
 C - - - - - 0x01FB80 07:FB70: F0 17     BEQ bra_FB89
 C - - - - - 0x01FB82 07:FB72: 85 1C     STA ram_001C
 C - - - - - 0x01FB84 07:FB74: BD 84 05  LDA ram_0584_кнопки,X
-C - - - - - 0x01FB87 07:FB77: CD AA FB  CMP tbl_FBAA
+C - - - - - 0x01FB87 07:FB77: CD AA FB  CMP #$06
 C - - - - - 0x01FB8A 07:FB7A: B0 0D     BCS bra_FB89
 C - - - - - 0x01FB8C 07:FB7C: BD 7C 05  LDA ram_057C_кнопки,X
 C - - - - - 0x01FB8F 07:FB7F: 29 F0     AND #$F0
@@ -10309,11 +10309,7 @@ loc_FBA8_RTS:
 C D 3 - - - 0x01FBB8 07:FBA8: 60        RTS
 
 
-
-tbl_FBA9:
-- D 3 - - - 0x01FBB9 07:FBA9: 02        .byte $02   ; 
-tbl_FBAA:
-- D 3 - - - 0x01FBBA 07:FBAA: 06        .byte $06   ; 
+; bzk мусор
 - - - - - - 0x01FBBB 07:FBAB: FF        .byte $FF   ; 
 - - - - - - 0x01FBBC 07:FBAC: 40        .byte $40   ; 
 - - - - - - 0x01FBBD 07:FBAD: C0        .byte $C0   ; 
