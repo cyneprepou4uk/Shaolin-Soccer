@@ -10629,9 +10629,6 @@ off_A9D1_07:
 
 
 
-sub_AA3E:
-C - - - - - 0x00AA4E 02:AA3E: A9 08     LDA #$08
-C - - - - - 0x00AA50 02:AA40: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 sub_AA43:
 C - - - - - 0x00AA53 02:AA43: A9 09     LDA #$09
 C - - - - - 0x00AA55 02:AA45: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
@@ -12990,7 +12987,7 @@ ofs_B746_29:
 C - - J - - 0x00B756 02:B746: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x00B759 02:B749: 30 06     BMI bra_B751
 C - - - - - 0x00B75B 02:B74B: 20 82 B2  JSR sub_B282
-C - - - - - 0x00B75E 02:B74E: 20 3E AA  JSR sub_AA3E
+C - - - - - 0x00B75E 02:B74E: 20 3E AA  JSR sub_0x01C25E
 bra_B751:
 C - - - - - 0x00B761 02:B751: 20 E5 B8  JSR sub_B8E5
 C - - - - - 0x00B764 02:B754: 20 43 AA  JSR sub_AA43
@@ -13003,7 +13000,7 @@ ofs_B758_1D:
 - - - - - - 0x00B768 02:B758: BD 59 04  LDA ram_игрок_номер_движения,X
 - - - - - - 0x00B76B 02:B75B: 30 06     BMI bra_B763
 - - - - - - 0x00B76D 02:B75D: 20 82 B2  JSR sub_B282
-- - - - - - 0x00B770 02:B760: 20 3E AA  JSR sub_AA3E
+- - - - - - 0x00B770 02:B760: 20 3E AA  JSR sub_0x01C25E
 bra_B763:
 - - - - - - 0x00B773 02:B763: 8A        TXA
 - - - - - - 0x00B774 02:B764: 49 02     EOR #$02
@@ -13022,7 +13019,7 @@ ofs_B774_2A:
 - - - - - - 0x00B784 02:B774: BD 59 04  LDA ram_игрок_номер_движения,X
 - - - - - - 0x00B787 02:B777: 30 06     BMI bra_B77F
 - - - - - - 0x00B789 02:B779: 20 82 B2  JSR sub_B282
-- - - - - - 0x00B78C 02:B77C: 20 3E AA  JSR sub_AA3E
+- - - - - - 0x00B78C 02:B77C: 20 3E AA  JSR sub_0x01C25E
 bra_B77F:
 - - - - - - 0x00B78F 02:B77F: A0 01     LDY #$01
 - - - - - - 0x00B791 02:B781: 20 88 B7  JSR sub_B788
@@ -13047,7 +13044,7 @@ ofs_B79B_1E:
 - - - - - - 0x00B7AE 02:B79E: 30 0E     BMI bra_B7AE
 bra_B7A0:
 C - - - - - 0x00B7B0 02:B7A0: 20 82 B2  JSR sub_B282
-C - - - - - 0x00B7B3 02:B7A3: 20 3E AA  JSR sub_AA3E
+C - - - - - 0x00B7B3 02:B7A3: 20 3E AA  JSR sub_0x01C25E
 C - - - - - 0x00B7B6 02:B7A6: BD A3 04  LDA ram_направление_движения,X
 C - - - - - 0x00B7B9 02:B7A9: 09 40     ORA #$40
 C - - - - - 0x00B7BB 02:B7AB: 9D 96 04  STA ram_угол_движения,X
@@ -13065,7 +13062,7 @@ ofs_B7BD_18:
 C - - J - - 0x00B7CD 02:B7BD: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x00B7D0 02:B7C0: 30 16     BMI bra_B7D8
 C - - - - - 0x00B7D2 02:B7C2: 20 82 B2  JSR sub_B282
-C - - - - - 0x00B7D5 02:B7C5: 20 3E AA  JSR sub_AA3E
+C - - - - - 0x00B7D5 02:B7C5: 20 3E AA  JSR sub_0x01C25E
 C - - - - - 0x00B7D8 02:B7C8: BD A3 04  LDA ram_направление_движения,X
 C - - - - - 0x00B7DB 02:B7CB: 09 80     ORA #$80
 C - - - - - 0x00B7DD 02:B7CD: 9D 96 04  STA ram_угол_движения,X
