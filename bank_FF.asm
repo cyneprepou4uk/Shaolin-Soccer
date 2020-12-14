@@ -21,9 +21,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C02D
-sub_0x01C02D:
-C - - - - - 0x01C02D 07:C01D: 4C C1 EC  JMP loc_ECC1
 .export sub_0x01C030
 sub_0x01C030:
 C - - - - - 0x01C030 07:C020: 4C 69 F4  JMP loc_F469
@@ -8030,7 +8027,8 @@ C - - - - - 0x01ECCA 07:ECBA: A9 0F     LDA #$0F
 C - - - - - 0x01ECCC 07:ECBC: 8D 15 40  STA $4015
 bra_ECBF:
 C - - - - - 0x01ECCF 07:ECBF: D0 FE     BNE bra_ECBF
-loc_ECC1:
+.export sub_0x01ECD1
+sub_0x01ECD1:
 sub_ECC1:
 C D 3 - - - 0x01ECD1 07:ECC1: A5 4D     LDA ram_для_2001
 C - - - - - 0x01ECD3 07:ECC3: 29 E7     AND #$E7
