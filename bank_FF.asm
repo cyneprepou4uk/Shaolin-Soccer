@@ -48,9 +48,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C087
-sub_0x01C087:
-C - - - - - 0x01C087 07:C077: 4C 0A EF  JMP loc_EF0A
 .export sub_0x01C08A
 sub_0x01C08A:
 C - - - - - 0x01C08A 07:C07A: 4C EE FA  JMP loc_FAEE
@@ -8339,7 +8336,8 @@ bra_EF02:
 
 
 
-loc_EF0A:
+.export sub_0x01EF1A
+sub_0x01EF1A:
 sub_EF0A:
 C D 3 - - - 0x01EF1A 07:EF0A: A9 00     LDA #$00
 bra_EF0C:
