@@ -5715,9 +5715,9 @@ loc_E034:
 C D 3 - - - 0x01E044 07:E034: AD E5 05  LDA ram_покрытие_поля_лужами
 C - - - - - 0x01E047 07:E037: 0A        ASL
 C - - - - - 0x01E048 07:E038: A8        TAY
-C - - - - - 0x01E049 07:E039: B9 1C 80  LDA $801A,Y
+C - - - - - 0x01E049 07:E039: B9 1C 80  LDA $8008,Y
 C - - - - - 0x01E04C 07:E03C: 85 2C     STA ram_002C
-C - - - - - 0x01E04E 07:E03E: B9 1D 80  LDA $801B,Y
+C - - - - - 0x01E04E 07:E03E: B9 1D 80  LDA $8009,Y
 C - - - - - 0x01E051 07:E041: 85 2D     STA ram_002D
 C - - - - - 0x01E053 07:E043: A4 1F     LDY ram_001F
 C - - - - - 0x01E055 07:E045: 20 5B E1  JSR sub_E15B
@@ -6471,9 +6471,9 @@ C - - - - - 0x01E3F9 07:E3E9: 8D 00 20  STA $2000
 C - - - - - 0x01E3FC 07:E3EC: AD E5 05  LDA ram_покрытие_поля_лужами
 C - - - - - 0x01E3FF 07:E3EF: 0A        ASL
 C - - - - - 0x01E400 07:E3F0: A8        TAY
-C - - - - - 0x01E401 07:E3F1: B9 14 80  LDA $8012,Y
+C - - - - - 0x01E401 07:E3F1: B9 14 80  LDA $8000,Y
 C - - - - - 0x01E404 07:E3F4: 85 2C     STA ram_002C
-C - - - - - 0x01E406 07:E3F6: B9 15 80  LDA $8013,Y
+C - - - - - 0x01E406 07:E3F6: B9 15 80  LDA $8001,Y
 C - - - - - 0x01E409 07:E3F9: 85 2D     STA ram_002D
 C - - - - - 0x01E40B 07:E3FB: AD EC 00  LDA ram_камера_X_lo
 C - - - - - 0x01E40E 07:E3FE: 4A        LSR
@@ -6504,9 +6504,9 @@ C - - - - - 0x01E43F 07:E42F: 20 AF E4  JSR sub_E4AF
 C - - - - - 0x01E442 07:E432: AD E5 05  LDA ram_покрытие_поля_лужами
 C - - - - - 0x01E445 07:E435: 0A        ASL
 C - - - - - 0x01E446 07:E436: A8        TAY
-C - - - - - 0x01E447 07:E437: B9 1C 80  LDA $801A,Y
+C - - - - - 0x01E447 07:E437: B9 1C 80  LDA $8008,Y
 C - - - - - 0x01E44A 07:E43A: 85 2C     STA ram_002C
-C - - - - - 0x01E44C 07:E43C: B9 1D 80  LDA $801B,Y
+C - - - - - 0x01E44C 07:E43C: B9 1D 80  LDA $8009,Y
 C - - - - - 0x01E44F 07:E43F: 85 2D     STA ram_002D
 C - - - - - 0x01E451 07:E441: AD EC 00  LDA ram_камера_X_lo
 C - - - - - 0x01E454 07:E444: 4A        LSR
@@ -7159,9 +7159,9 @@ C - - - - - 0x01E7EF 07:E7DF: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01E7F2 07:E7E2: AD E5 05  LDA ram_покрытие_поля_лужами
 C - - - - - 0x01E7F5 07:E7E5: 0A        ASL
 C - - - - - 0x01E7F6 07:E7E6: A8        TAY
-C - - - - - 0x01E7F7 07:E7E7: B9 14 80  LDA $8012,Y
+C - - - - - 0x01E7F7 07:E7E7: B9 14 80  LDA $8000,Y
 C - - - - - 0x01E7FA 07:E7EA: 85 40     STA ram_0040
-C - - - - - 0x01E7FC 07:E7EC: B9 15 80  LDA $8013,Y
+C - - - - - 0x01E7FC 07:E7EC: B9 15 80  LDA $8001,Y
 C - - - - - 0x01E7FF 07:E7EF: 85 41     STA ram_0041
 C - - - - - 0x01E801 07:E7F1: 68        PLA
 C - - - - - 0x01E802 07:E7F2: 20 D3 EE  JSR sub_EED3_prg_bankswitch
