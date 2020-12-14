@@ -8160,15 +8160,6 @@ C - - - - - 0x01EE69 07:EE59: 60        RTS
 
 
 
-sub_EE5A:
-C - - - - - 0x01EE6A 07:EE5A: A9 00     LDA #$00
-C - - - - - 0x01EE6C 07:EE5C: 8D 03 20  STA $2003
-C - - - - - 0x01EE6F 07:EE5F: A9 02     LDA #$02
-C - - - - - 0x01EE71 07:EE61: 8D 14 40  STA $4014
-C - - - - - 0x01EE74 07:EE64: 60        RTS
-
-
-
 .export sub_0x01EE75
 sub_0x01EE75:
 sub_EE65:
@@ -8358,8 +8349,12 @@ C - - - - - 0x01EF74 07:EF64: 20 C1 EC  JSR sub_ECC1
 C - - - - - 0x01EF77 07:EF67: 20 27 EF  JSR sub_EF27
 C - - - - - 0x01EF7A 07:EF6A: 20 14 EF  JSR sub_EF14
 C - - - - - 0x01EF7D 07:EF6D: 20 A9 EC  JSR sub_ECA9
-C - - - - - 0x01EF80 07:EF70: 20 5A EE  JSR sub_EE5A
-C - - - - - 0x01EF83 07:EF73: 60        RTS
+sub_EE5A_запись_в_4014:
+C - - - - - 0x01EE6A 07:EE5A: A9 00     LDA #$00
+C - - - - - 0x01EE6C 07:EE5C: 8D 03 20  STA $2003
+C - - - - - 0x01EE6F 07:EE5F: A9 02     LDA #$02
+C - - - - - 0x01EE71 07:EE61: 8D 14 40  STA $4014
+C - - - - - 0x01EE74 07:EE64: 60        RTS
 
 
 ; bzk мусор
@@ -10380,7 +10375,7 @@ C - - - - - 0x01FBFB 07:FBEB: A5 0C     LDA ram_000C
 C - - - - - 0x01FBFD 07:FBED: 48        PHA
 C - - - - - 0x01FBFE 07:FBEE: A5 0D     LDA ram_000D
 C - - - - - 0x01FC00 07:FBF0: 48        PHA
-C - - - - - 0x01FC01 07:FBF1: 20 5A EE  JSR sub_EE5A
+C - - - - - 0x01FC01 07:FBF1: 20 5A EE  JSR sub_EE5A_запись_в_4014
 C - - - - - 0x01FC04 07:FBF4: 20 AD EF  JSR sub_EFAD_запись_буферов_в_ppu
 C - - - - - 0x01FC07 07:FBF7: A2 00     LDX #$00
 C - - - - - 0x01FC09 07:FBF9: 8E 00 80  STX $8000
