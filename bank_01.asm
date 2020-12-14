@@ -15229,7 +15229,7 @@ bra_BEB8:
 C - - - - - 0x007EC8 01:BEB8: E6 1C     INC ram_001C
 bra_BEBA:
 C - - - - - 0x007ECA 01:BEBA: AE D6 04  LDX ram_игрок_с_мячом
-C - - - - - 0x007ECD 01:BEBD: 20 B7 BF  JSR sub_BFB7
+C - - - - - 0x007ECD 01:BEBD: 20 B7 BF  JSR sub_0x01C271
 C - - - - - 0x007ED0 01:BEC0: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x007ED3 01:BEC3: 8D 8B 06  STA ram_068B
 C - - - - - 0x007ED6 01:BEC6: 29 01     AND #$01
@@ -15385,12 +15385,6 @@ tbl_BFAF:
 - - - - - - 0x007FBF 01:BFAF: 00        .byte $00   ; 
 - D 1 - - - 0x007FC0 01:BFB0: 58        .byte $58   ; 
 - D 1 - - - 0x007FC1 01:BFB1: 01        .byte $01   ; 
-
-
-
-sub_BFB7:
-C - - - - - 0x007FC7 01:BFB7: A9 2A     LDA #$2A
-C - - - - - 0x007FC9 01:BFB9: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 
 
 

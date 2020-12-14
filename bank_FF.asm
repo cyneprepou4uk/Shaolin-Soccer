@@ -618,6 +618,10 @@ C - - - - - 0x01C2DD 07:C2CD: 4C 44 C3  JMP loc_C344_свап_prg_банка_80x
 sub_C258:
 C - - - - - 0x01C268 07:C258: A9 29     LDA #$29
 C - - - - - 0x01C26A 07:C25A: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
+.export sub_0x01C271
+sub_0x01C271:
+                                        LDA #$2A
+                                        JMP loc_C344_свап_prg_банка_80xx
 sub_C262:
 C - - - - - 0x01C272 07:C262: A9 2D     LDA #$2D
 C - - - - - 0x01C274 07:C264: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
