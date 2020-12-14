@@ -44,9 +44,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C07B
-sub_0x01C07B:
-C - - - - - 0x01C07B 07:C06B: 4C AD EF  JMP loc_EFAD
 .export sub_0x01C07E
 sub_0x01C07E:
 C - - - - - 0x01C07E 07:C06E: 4C D5 D0  JMP loc_D0D5
@@ -8461,7 +8458,8 @@ bra_EF94:
 
 
 
-loc_EFAD:
+.export sub_0x01EFBD
+sub_0x01EFBD:
 sub_EFAD:
 C D 3 - - - 0x01EFBD 07:EFAD: A5 58     LDA ram_номер_экрана
 C - - - - - 0x01EFBF 07:EFAF: D0 34     BNE bra_EFE5
