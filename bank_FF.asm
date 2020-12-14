@@ -34,12 +34,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 - - - - - - 0x01C04B 07:C03B: 4C 6A F9  JMP loc_F96A
 
 
-
-.export sub_0x01C05A
-sub_0x01C05A:
-C - - - - - 0x01C05A 07:C04A: 4C 62 D0  JMP loc_D062
-
-
 ; bzk
 - - - - - - 0x01C05D 07:C04D: 4C 6D FA  JMP loc_FA6D
 
@@ -2671,7 +2665,8 @@ C - - - - - 0x01D071 07:D061: 60        RTS
 
 
 bra_D062:
-loc_D062:
+.export sub_0x01D072
+sub_0x01D072:
 sub_D062:
 C D 2 - - - 0x01D072 07:D062: 20 73 D0  JSR sub_D073
 C - - - - - 0x01D075 07:D065: AD 51 00  LDA ram_задержка_кадра
