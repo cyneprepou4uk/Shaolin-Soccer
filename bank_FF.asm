@@ -10864,57 +10864,6 @@ C - - - - - 0x01FE1B 07:FE0B: 90 E5     BCC bra_FDF2
 C - - - - - 0x01FE1D 07:FE0D: 4C D4 C3  JMP loc_C3D4
 
 
-; bzk мусор
-- - - - - - 0x01FE20 07:FE10: FF        .byte $FF   ; 
-- - - - - - 0x01FE21 07:FE11: FF        .byte $FF   ; 
-- - - - - - 0x01FE22 07:FE12: FF        .byte $FF   ; 
-- - - - - - 0x01FE23 07:FE13: FF        .byte $FF   ; 
-- - - - - - 0x01FE24 07:FE14: FF        .byte $FF   ; 
-- - - - - - 0x01FE25 07:FE15: FF        .byte $FF   ; 
-- - - - - - 0x01FE26 07:FE16: FF        .byte $FF   ; 
-- - - - - - 0x01FE27 07:FE17: FF        .byte $FF   ; 
-- - - - - - 0x01FE28 07:FE18: FF        .byte $FF   ; 
-- - - - - - 0x01FE29 07:FE19: FF        .byte $FF   ; 
-- - - - - - 0x01FE2A 07:FE1A: FF        .byte $FF   ; 
-- - - - - - 0x01FE2B 07:FE1B: FF        .byte $FF   ; 
-- - - - - - 0x01FE2C 07:FE1C: FF        .byte $FF   ; 
-- - - - - - 0x01FE2D 07:FE1D: FF        .byte $FF   ; 
-- - - - - - 0x01FE2E 07:FE1E: FF        .byte $FF   ; 
-- - - - - - 0x01FE2F 07:FE1F: FF        .byte $FF   ; 
-- - - - - - 0x01FE30 07:FE20: FF        .byte $FF   ; 
-- - - - - - 0x01FE31 07:FE21: FF        .byte $FF   ; 
-- - - - - - 0x01FE32 07:FE22: FF        .byte $FF   ; 
-- - - - - - 0x01FE33 07:FE23: FF        .byte $FF   ; 
-- - - - - - 0x01FE34 07:FE24: FF        .byte $FF   ; 
-- - - - - - 0x01FE35 07:FE25: FF        .byte $FF   ; 
-- - - - - - 0x01FE36 07:FE26: FF        .byte $FF   ; 
-- - - - - - 0x01FE37 07:FE27: FF        .byte $FF   ; 
-- - - - - - 0x01FE38 07:FE28: FF        .byte $FF   ; 
-- - - - - - 0x01FE39 07:FE29: FF        .byte $FF   ; 
-- - - - - - 0x01FE3A 07:FE2A: FF        .byte $FF   ; 
-- - - - - - 0x01FE3B 07:FE2B: FF        .byte $FF   ; 
-- - - - - - 0x01FE3C 07:FE2C: FF        .byte $FF   ; 
-- - - - - - 0x01FE3D 07:FE2D: FF        .byte $FF   ; 
-- - - - - - 0x01FE3E 07:FE2E: FF        .byte $FF   ; 
-- - - - - - 0x01FE3F 07:FE2F: FF        .byte $FF   ; 
-- - - - - - 0x01FE40 07:FE30: FF        .byte $FF   ; 
-- - - - - - 0x01FE41 07:FE31: FF        .byte $FF   ; 
-- - - - - - 0x01FE42 07:FE32: FF        .byte $FF   ; 
-- - - - - - 0x01FE43 07:FE33: FF        .byte $FF   ; 
-- - - - - - 0x01FE44 07:FE34: FF        .byte $FF   ; 
-- - - - - - 0x01FE45 07:FE35: FF        .byte $FF   ; 
-- - - - - - 0x01FE46 07:FE36: FF        .byte $FF   ; 
-- - - - - - 0x01FE47 07:FE37: FF        .byte $FF   ; 
-- - - - - - 0x01FE48 07:FE38: FF        .byte $FF   ; 
-- - - - - - 0x01FE49 07:FE39: FF        .byte $FF   ; 
-- - - - - - 0x01FE4A 07:FE3A: FF        .byte $FF   ; 
-- - - - - - 0x01FE4B 07:FE3B: FF        .byte $FF   ; 
-- - - - - - 0x01FE4C 07:FE3C: FF        .byte $FF   ; 
-- - - - - - 0x01FE4D 07:FE3D: FF        .byte $FF   ; 
-- - - - - - 0x01FE4E 07:FE3E: FF        .byte $FF   ; 
-- - - - - - 0x01FE4F 07:FE3F: FF        .byte $FF   ; 
-
-
 
 .segment "DMC_DATA"
 .incbin "DPCM.bin"
