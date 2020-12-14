@@ -13813,20 +13813,22 @@ C - - - - - 0x013C01 04:BBF1: B9 69 BD  LDA tbl_BD69,Y
 C - - - - - 0x013C04 04:BBF4: 8D 10 05  STA ram_подтип_супера
 C - - - - - 0x013C07 04:BBF7: 0A        ASL
 C - - - - - 0x013C08 04:BBF8: A8        TAY
-C - - - - - 0x013C09 04:BBF9: B9 4A BD  LDA tbl_BD4A,Y
+C - - - - - 0x013C09 04:BBF9: B9 4A BD  LDA tbl_BD4A_X_Y_скорость,Y
+                                        ORA tbl_BD4A_X_Y_скорость + 1,Y
 C - - - - - 0x013C0C 04:BBFC: F0 09     BEQ bra_BC07
-C - - - - - 0x013C0E 04:BBFE: 85 2D     STA ram_002D
-C - - - - - 0x013C10 04:BC00: A9 00     LDA #$00
-C - - - - - 0x013C12 04:BC02: 85 2C     STA ram_002C
+                                        LDA tbl_BD4A_X_Y_скорость,Y
+C - - - - - 0x013C0E 04:BBFE: 85 2D     STA ram_002C
+C - - - - - 0x013C10 04:BC00: A9 00     LDA tbl_BD4A_X_Y_скорость + 1,Y
+C - - - - - 0x013C12 04:BC02: 85 2C     STA ram_002D
 C - - - - - 0x013C14 04:BC04: 20 2C 80  JSR sub_0x01C2DС
 bra_BC07:
 C - - - - - 0x013C17 04:BC07: AD 10 05  LDA ram_подтип_супера
 C - - - - - 0x013C1A 04:BC0A: 0A        ASL
 C - - - - - 0x013C1B 04:BC0B: A8        TAY
-C - - - - - 0x013C1C 04:BC0C: B9 4B BD  LDA tbl_BD4B,Y
-C - - - - - 0x013C1F 04:BC0F: 9D 2E 04  STA ram_игрок_spd_Z_hi,X
-C - - - - - 0x013C22 04:BC12: A9 00     LDA #$00
+C - - - - - 0x013C22 04:BC12: A9 00     LDA tbl_BD4B_Z_скорость,Y
 C - - - - - 0x013C24 04:BC14: 9D 20 04  STA ram_игрок_spd_Z_lo,X
+C - - - - - 0x013C1C 04:BC0C: B9 4B BD  LDA tbl_BD4B_Z_скорость + 1,Y
+C - - - - - 0x013C1F 04:BC0F: 9D 2E 04  STA ram_игрок_spd_Z_hi,X
 C - - - - - 0x013C27 04:BC17: 20 62 BC  JSR sub_BC62
 C - - - - - 0x013C2A 04:BC1A: AD 12 05  LDA ram_флаг_красного_супера
 C - - - - - 0x013C2D 04:BC1D: 30 1E     BMI bra_BC3D
@@ -14046,28 +14048,31 @@ tbl_BD13:
 
 
 
-tbl_BD4A:
-- D 1 - - - 0x013D5A 04:BD4A: 08        .byte $08   ; 
-tbl_BD4B:
-- D 1 - - - 0x013D5B 04:BD4B: 00        .byte $00   ; 
-- D 1 - - - 0x013D5C 04:BD4C: 08        .byte $08   ; 
-- D 1 - - - 0x013D5D 04:BD4D: F8        .byte $F8   ; 
-- D 1 - - - 0x013D5E 04:BD4E: 08        .byte $08   ; 
-- D 1 - - - 0x013D5F 04:BD4F: 01        .byte $01   ; 
-- D 1 - - - 0x013D60 04:BD50: 10        .byte $10   ; 
-- D 1 - - - 0x013D61 04:BD51: 04        .byte $04   ; 
-- D 1 - - - 0x013D62 04:BD52: 08        .byte $08   ; 
-- D 1 - - - 0x013D63 04:BD53: 00        .byte $00   ; 
-- D 1 - - - 0x013D64 04:BD54: 00        .byte $00   ; 
-- D 1 - - - 0x013D65 04:BD55: 00        .byte $00   ; 
-- D 1 - - - 0x013D66 04:BD56: 00        .byte $00   ; 
-- D 1 - - - 0x013D67 04:BD57: 01        .byte $01   ; 
-- D 1 - - - 0x013D68 04:BD58: 08        .byte $08   ; 
-- D 1 - - - 0x013D69 04:BD59: 00        .byte $00   ; 
-- D 1 - - - 0x013D6A 04:BD5A: 04        .byte $04   ; 
-- D 1 - - - 0x013D6B 04:BD5B: 00        .byte $00   ; 
-- D 1 - - - 0x013D6C 04:BD5C: 04        .byte $04   ; 
-- D 1 - - - 0x013D6D 04:BD5D: 06        .byte $06   ; 
+tbl_BD4A_X_Y_скорость:
+- D 1 - - - 0x013D5A 04:BD4A: 08        .word $0800   ; $0800
+- D 1 - - - 0x013D5C 04:BD4C: 08        .word $0800   ; $0800
+- D 1 - - - 0x013D5E 04:BD4E: 08        .word $0800   ; $0800
+- D 1 - - - 0x013D60 04:BD50: 10        .word $1000   ; $1000
+- D 1 - - - 0x013D62 04:BD52: 08        .word $0800   ; $0800
+- D 1 - - - 0x013D64 04:BD54: 00        .word $0000   ; $0000
+- D 1 - - - 0x013D66 04:BD56: 00        .word $0000   ; $0000
+- D 1 - - - 0x013D68 04:BD58: 08        .word $0800   ; $0800
+- D 1 - - - 0x013D6A 04:BD5A: 04        .word $0400   ; $0400
+- D 1 - - - 0x013D6C 04:BD5C: 04        .word $0400   ; $0400
+
+
+
+tbl_BD4B_Z_скорость:
+- D 1 - - - 0x013D5B 04:BD4B: 00        .word $0000   ; $0000
+- D 1 - - - 0x013D5D 04:BD4D: F8        .word $F800   ; $F800
+- D 1 - - - 0x013D5F 04:BD4F: 01        .word $0100   ; $0100
+- D 1 - - - 0x013D61 04:BD51: 04        .word $0400   ; $0400
+- D 1 - - - 0x013D63 04:BD53: 00        .word $0000   ; $0000
+- D 1 - - - 0x013D65 04:BD55: 00        .word $0000   ; $0000
+- D 1 - - - 0x013D67 04:BD57: 01        .word $0100   ; $0100
+- D 1 - - - 0x013D69 04:BD59: 00        .word $0000   ; $0000
+- D 1 - - - 0x013D6B 04:BD5B: 00        .word $0000   ; $0000
+- D 1 - - - 0x013D6D 04:BD5D: 06        .word $0600   ; $0600
 
 
 
