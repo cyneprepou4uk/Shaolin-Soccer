@@ -16,12 +16,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 - - - - - - 0x01C018 07:C008: 4C D3 EE  JMP loc_EED3
 
 
-
-.export sub_0x01C01B
-sub_0x01C01B:
-C - - - - - 0x01C01B 07:C00B: 4C 9A EE  JMP loc_EE9A
-
-
 ; bzk
 - - - - - - 0x01C01E 07:C00E: 4C 7D EE  JMP loc_EE7D
 
@@ -8364,7 +8358,8 @@ C - - - - - 0x01EEA9 07:EE99: 60        RTS
 
 
 
-loc_EE9A:
+.export sub_0x01EEAA
+sub_0x01EEAA:
 sub_EE9A:
 C D 3 - - - 0x01EEAA 07:EE9A: A9 02     LDA #$02
 C - - - - - 0x01EEAC 07:EE9C: 8D 4E 00  STA ram_для_8000

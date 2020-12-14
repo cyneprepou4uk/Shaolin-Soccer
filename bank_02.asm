@@ -10730,7 +10730,7 @@ C - - - - - 0x00AAD2 02:AAC2: A2 70     LDX #$70
 C - - - - - 0x00AAD4 02:AAC4: 8E B8 05  STX ram_банк_спрайтов
 C - - - - - 0x00AAD7 02:AAC7: E8        INX
 C - - - - - 0x00AAD8 02:AAC8: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x00AADB 02:AACB: 20 0B C0  JSR sub_0x01C01B
+C - - - - - 0x00AADB 02:AACB: 20 0B C0  JSR sub_0x01EEAA
 C - - - - - 0x00AADE 02:AACE: 20 59 C0  JSR sub_0x01C069
 C - - - - - 0x00AAE1 02:AAD1: A9 04     LDA #$04
 C - - - - - 0x00AAE3 02:AAD3: 8D B3 05  STA ram_скорость_яркости
@@ -10866,7 +10866,7 @@ C - - - - - 0x00AB8E 02:AB7E: A9 0E     LDA #$0E
 C - - - - - 0x00AB90 02:AB80: 20 68 C0  JSR sub_0x01C078
 C - - - - - 0x00AB93 02:AB83: A9 59     LDA #$59
 C - - - - - 0x00AB95 02:AB85: 8D B8 05  STA ram_банк_спрайтов
-C - - - - - 0x00AB98 02:AB88: 20 0B C0  JSR sub_0x01C01B
+C - - - - - 0x00AB98 02:AB88: 20 0B C0  JSR sub_0x01EEAA
 C - - - - - 0x00AB9B 02:AB8B: A9 09     LDA #$09
 C - - - - - 0x00AB9D 02:AB8D: 8D 6D 00  STA ram_006D
 C - - - - - 0x00ABA0 02:AB90: E6 93     INC ram_таймер_кадра_анимации_мяча
@@ -10992,7 +10992,7 @@ C - - - - - 0x00AC7E 02:AC6E: A2 1F     LDX #$1F
 C - - - - - 0x00AC80 02:AC70: 8E B9 05  STX ram_банк_спрайтов + 1
 C - - - - - 0x00AC83 02:AC73: E8        INX
 C - - - - - 0x00AC84 02:AC74: 8E BA 05  STX ram_банк_спрайтов + 2
-C - - - - - 0x00AC87 02:AC77: 20 0B C0  JSR sub_0x01C01B
+C - - - - - 0x00AC87 02:AC77: 20 0B C0  JSR sub_0x01EEAA
 C - - - - - 0x00AC8A 02:AC7A: A9 01     LDA #$01
 C - - - - - 0x00AC8C 02:AC7C: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x00AC8F 02:AC7F: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
@@ -12534,7 +12534,7 @@ C - - - - - 0x00B504 02:B4F4: E0 04     CPX #$04
 C - - - - - 0x00B506 02:B4F6: B0 03     BCS bra_B4FB
 C - - - - - 0x00B508 02:B4F8: 4C 5E B4  JMP loc_B45E
 bra_B4FB:
-C - - - - - 0x00B50B 02:B4FB: 20 0B C0  JSR sub_0x01C01B
+C - - - - - 0x00B50B 02:B4FB: 20 0B C0  JSR sub_0x01EEAA
 C - - - - - 0x00B50E 02:B4FE: 60        RTS
 
 
@@ -13760,7 +13760,7 @@ sub_BA66:
 - - - - - - 0x00BA99 02:BA89: 8E BA 05  STX ram_банк_спрайтов + 2
 - - - - - - 0x00BA9C 02:BA8C: E8        INX
 - - - - - - 0x00BA9D 02:BA8D: 8E BB 05  STX ram_банк_спрайтов + 3
-- - - - - - 0x00BAA0 02:BA90: 20 0B C0  JSR sub_0x01C01B
+- - - - - - 0x00BAA0 02:BA90: 20 0B C0  JSR sub_0x01EEAA
 - - - - - - 0x00BAA3 02:BA93: A2 00     LDX #$00
 - - - - - - 0x00BAA5 02:BA95: 8E 68 05  STX ram_номер_управляемого
 - - - - - - 0x00BAA8 02:BA98: CA        DEX
@@ -14147,7 +14147,7 @@ bra_BD43:
 - - - - - - 0x00BD63 02:BD53: C8        INY
 - - - - - - 0x00BD64 02:BD54: B1 2C     LDA (ram_002C),Y
 - - - - - - 0x00BD66 02:BD56: 8D BB 05  STA ram_банк_спрайтов + 3
-- - - - - - 0x00BD69 02:BD59: 20 0B C0  JSR sub_0x01C01B
+- - - - - - 0x00BD69 02:BD59: 20 0B C0  JSR sub_0x01EEAA
 - - - - - - 0x00BD6C 02:BD5C: C8        INY
 - - - - - - 0x00BD6D 02:BD5D: B1 2C     LDA (ram_002C),Y
 - - - - - - 0x00BD6F 02:BD5F: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
