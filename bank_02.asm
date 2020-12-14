@@ -10710,7 +10710,7 @@ C - - - - - 0x00AAA2 02:AA92: 20 3D AE  JSR sub_AE3D
 ofs_AA95_08:
 C - - - - - 0x00AAA5 02:AA95: A9 00     LDA #$00
 C - - - - - 0x00AAA7 02:AA97: 20 68 C0  JSR sub_0x01C078
-C - - - - - 0x00AAAA 02:AA9A: 20 62 C0  JSR sub_0x01C072
+C - - - - - 0x00AAAA 02:AA9A: 20 62 C0  JSR sub_0x01EF64
 C - - - - - 0x00AAAD 02:AA9D: A9 08     LDA #$08
 C - - - - - 0x00AAAF 02:AA9F: 8D 6D 00  STA ram_006D
 C - - - - - 0x00AAB2 02:AAA2: E6 93     INC ram_таймер_кадра_анимации_мяча
@@ -11006,7 +11006,7 @@ C - - - - - 0x00ACA3 02:AC93: A2 00     LDX #$00
 C - - - - - 0x00ACA5 02:AC95: 20 A5 AD  JSR sub_ADA5
 C - - - - - 0x00ACA8 02:AC98: A2 0C     LDX #$0C
 C - - - - - 0x00ACAA 02:AC9A: 20 A5 AD  JSR sub_ADA5
-C - - - - - 0x00ACAD 02:AC9D: 20 62 C0  JSR sub_0x01C072
+C - - - - - 0x00ACAD 02:AC9D: 20 62 C0  JSR sub_0x01EF64
 C - - - - - 0x00ACB0 02:ACA0: 20 1B AA  JSR sub_AA1B
 C - - - - - 0x00ACB3 02:ACA3: 20 59 C0  JSR sub_0x01D05F
 C - - - - - 0x00ACB6 02:ACA6: E6 59     INC ram_подтип_экрана
@@ -13898,7 +13898,7 @@ loc_BB5D:
 
 
 ofs_BB78_00:
-- - - - - - 0x00BB88 02:BB78: 20 62 C0  JSR sub_0x01C072
+- - - - - - 0x00BB88 02:BB78: 20 62 C0  JSR sub_0x01EF64
 - - - - - - 0x00BB8B 02:BB7B: A9 F0     LDA #$F0
 - - - - - - 0x00BB8D 02:BB7D: 8D 56 00  STA ram_ограничитель_Y_спрайтов
 - - - - - - 0x00BB90 02:BB80: A9 80     LDA #$80

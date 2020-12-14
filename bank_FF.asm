@@ -44,9 +44,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C072
-sub_0x01C072:
-C - - - - - 0x01C072 07:C062: 4C 54 EF  JMP loc_EF54
 .export sub_0x01C075
 sub_0x01C075:
 C - - - - - 0x01C075 07:C065: 4C 8C EB  JMP loc_EB8C
@@ -8416,7 +8413,8 @@ C - - - - - 0x01EF63 07:EF53: 60        RTS
 
 
 
-loc_EF54:
+.export sub_0x01EF64
+sub_0x01EF64:
 sub_EF54:
 C D 3 - - - 0x01EF64 07:EF54: A5 4D     LDA ram_для_2001
 C - - - - - 0x01EF66 07:EF56: 09 02     ORA #$02
