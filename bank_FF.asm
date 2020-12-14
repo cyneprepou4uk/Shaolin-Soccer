@@ -10373,15 +10373,9 @@ tbl_FBAA:
 
 vec_FBBB_NMI:
 C D 3 - - - 0x01FBCB 07:FBBB: 24 4F     BIT ram_флаг_NMI
-C - - - - - 0x01FBCD 07:FBBD: 30 04     BMI bra_FBC3
-C - - - - - 0x01FBCF 07:FBBF: 50 0A     BVC bra_FBCB
-- - - - - - 0x01FBD1 07:FBC1: 70 1C     BVS bra_FBDF
-bra_FBC3:
-C - - - - - 0x01FBD3 07:FBC3: 70 03     BVS bra_FBC8
-C - - - - - 0x01FBD5 07:FBC5: 4C DF FB  JMP loc_FBDF
-bra_FBC8:
-C - - - - - 0x01FBD8 07:FBC8: 4C 3D FC  JMP loc_FC3D
-bra_FBCB:
+C - - - - - 0x01FBCD 07:FBBD: 30 04     BPL bra_FBCB_NMI_отключено
+C - - - - - 0x01FBD5 07:FBC5: 4C DF FB  JMP loc_FBDF_NMI_включено
+bra_FBCB_NMI_отключено:
 C - - - - - 0x01FBDB 07:FBCB: A5 4C     LDA ram_для_2000
 C - - - - - 0x01FBDD 07:FBCD: 29 7F     AND #$7F
 C - - - - - 0x01FBDF 07:FBCF: 85 4C     STA ram_для_2000
@@ -10397,8 +10391,7 @@ C - - - - - 0x01FBEE 07:FBDE: 60        RTS
 
 
 
-loc_FBDF:
-bra_FBDF:
+loc_FBDF_NMI_включено:
 C D 3 - - - 0x01FBEF 07:FBDF: 48        PHA
 C - - - - - 0x01FBF0 07:FBE0: 8A        TXA
 C - - - - - 0x01FBF1 07:FBE1: 48        PHA
@@ -10440,57 +10433,13 @@ C - - - - - 0x01FC3E 07:FC2E: 29 FC     AND #$FC
 C - - - - - 0x01FC40 07:FC30: 05 0C     ORA ram_000C
 C - - - - - 0x01FC42 07:FC32: 85 4C     STA ram_для_2000
 C - - - - - 0x01FC44 07:FC34: 8D 00 20  STA $2000
-C - - - - - 0x01FC47 07:FC37: 20 08 C3  JSR sub_C308
-C - - - - - 0x01FC4A 07:FC3A: 4C C1 FC  JMP loc_FCC1
-
-
-
-loc_FC3D:
-C D 3 - - - 0x01FC4D 07:FC3D: 48        PHA
-C - - - - - 0x01FC4E 07:FC3E: 8A        TXA
-C - - - - - 0x01FC4F 07:FC3F: 48        PHA
-C - - - - - 0x01FC50 07:FC40: 98        TYA
-C - - - - - 0x01FC51 07:FC41: 48        PHA
-C - - - - - 0x01FC52 07:FC42: A5 4E     LDA ram_для_8000
-C - - - - - 0x01FC54 07:FC44: 48        PHA
-C - - - - - 0x01FC55 07:FC45: AD FF BF  LDA con_bank_id
-C - - - - - 0x01FC58 07:FC48: 48        PHA
-C - - - - - 0x01FC59 07:FC49: A5 0C     LDA ram_000C
-C - - - - - 0x01FC5B 07:FC4B: 48        PHA
-C - - - - - 0x01FC5C 07:FC4C: A5 0D     LDA ram_000D
-C - - - - - 0x01FC5E 07:FC4E: 48        PHA
-C - - - - - 0x01FC5F 07:FC4F: 20 5A EE  JSR sub_EE5A
-C - - - - - 0x01FC62 07:FC52: 20 AD EF  JSR sub_EFAD
-C - - - - - 0x01FC65 07:FC55: A2 00     LDX #$00
-C - - - - - 0x01FC67 07:FC57: 8E 00 80  STX $8000
-C - - - - - 0x01FC6A 07:FC5A: AD BC 05  LDA ram_банк_фона
-C - - - - - 0x01FC6D 07:FC5D: 8D 01 80  STA $8001
-C - - - - - 0x01FC70 07:FC60: E8        INX
-C - - - - - 0x01FC71 07:FC61: 8E 00 80  STX $8000
-C - - - - - 0x01FC74 07:FC64: AD BD 05  LDA ram_банк_фона + 1
-C - - - - - 0x01FC77 07:FC67: 8D 01 80  STA $8001
+                                        BIT ram_флаг_NMI
+                                        BVC bra_FC37_IRQ_отключен
 C - - - - - 0x01FC7A 07:FC6A: A2 05     LDX #$05
 C - - - - - 0x01FC7C 07:FC6C: 8E 00 80  STX $8000
 C - - - - - 0x01FC7F 07:FC6F: AD BB 05  LDA ram_банк_спрайтов + 3
 C - - - - - 0x01FC82 07:FC72: 8D 01 80  STA $8001
-C - - - - - 0x01FC85 07:FC75: AD 02 20  LDA $2002
-C - - - - - 0x01FC88 07:FC78: AD EC 00  LDA ram_камера_X_lo
-C - - - - - 0x01FC8B 07:FC7B: 8D 05 20  STA $2005
-C - - - - - 0x01FC8E 07:FC7E: AD EE 00  LDA ram_камера_Y_lo
-C - - - - - 0x01FC91 07:FC81: 8D 05 20  STA $2005
-C - - - - - 0x01FC94 07:FC84: AD ED 00  LDA ram_камера_X_hi
-C - - - - - 0x01FC97 07:FC87: 29 01     AND #$01
-C - - - - - 0x01FC99 07:FC89: 85 0C     STA ram_000C
-C - - - - - 0x01FC9B 07:FC8B: AD EF 00  LDA ram_камера_Y_hi
-C - - - - - 0x01FC9E 07:FC8E: 29 01     AND #$01
-C - - - - - 0x01FCA0 07:FC90: 0A        ASL
-C - - - - - 0x01FCA1 07:FC91: 05 0C     ORA ram_000C
-C - - - - - 0x01FCA3 07:FC93: 85 0C     STA ram_000C
-C - - - - - 0x01FCA5 07:FC95: A5 4C     LDA ram_для_2000
-C - - - - - 0x01FCA7 07:FC97: 29 FC     AND #$FC
-C - - - - - 0x01FCA9 07:FC99: 05 0C     ORA ram_000C
-C - - - - - 0x01FCAB 07:FC9B: 85 4C     STA ram_для_2000
-C - - - - - 0x01FCAD 07:FC9D: 8D 00 20  STA $2000
+; bzk в прошлом исходнике 0055 удален
 C - - - - - 0x01FCB0 07:FCA0: A9 00     LDA #$00
 C - - - - - 0x01FCB2 07:FCA2: 85 55     STA ram_0055
 C - - - - - 0x01FCB4 07:FCA4: A9 B8     LDA #$B8
@@ -10502,10 +10451,10 @@ C - - - - - 0x01FCC2 07:FCB2: 20 91 D8  JSR sub_D891
 C - - - - - 0x01FCC5 07:FCB5: 20 78 DB  JSR sub_DB78
 C - - - - - 0x01FCC8 07:FCB8: 20 81 DA  JSR sub_DA81
 C - - - - - 0x01FCCB 07:FCBB: 20 B1 DC  JSR sub_DCB1
-C - - - - - 0x01FCCE 07:FCBE: 20 08 C3  JSR sub_C308
-loc_FCC1:
+bra_FC37_IRQ_отключен:
+C - - - - - 0x01FC47 07:FC37: 20 08 C3  JSR sub_C308
 C D 3 - - - 0x01FCD1 07:FCC1: E6 51     INC ram_задержка_кадра
-loc_FCC3:
+loc_FCC3_выход_из_NMI_и_IRQ:
 C D 3 - - - 0x01FCD3 07:FCC3: 68        PLA
 C - - - - - 0x01FCD4 07:FCC4: 85 0D     STA ram_000D
 C - - - - - 0x01FCD6 07:FCC6: 68        PLA
@@ -10553,7 +10502,7 @@ C - - - - - 0x01FD15 07:FD05: D0 08     BNE bra_FD0F
 C - - - - - 0x01FD17 07:FD07: 4C 4C FD  JMP loc_FD4C
 loc_FD0A:
 C D 3 - - - 0x01FD1A 07:FD0A: E6 55     INC ram_0055
-C - - - - - 0x01FD1C 07:FD0C: 4C C3 FC  JMP loc_FCC3
+C - - - - - 0x01FD1C 07:FD0C: 4C C3 FC  JMP loc_FCC3_выход_из_NMI_и_IRQ
 bra_FD0F:
 C - - - - - 0x01FD1F 07:FD0F: 8D 00 E0  STA $E000
 C - - - - - 0x01FD22 07:FD12: A2 00     LDX #$00
