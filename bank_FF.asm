@@ -555,6 +555,10 @@ sub_0x01C25F:
 sub_0x01C260:
                                         LDA #$0A
                                         JMP loc_C344_свап_prg_банка_80xx
+.export sub_0x01C261
+sub_0x01C261:
+                                        LDA #$0B
+                                        JMP loc_C344_свап_prg_банка_80xx
 .export sub_0x01C29F
 sub_0x01C29F:
 C - - - - - 0x01C29F 07:C28F: A9 0C     LDA #$0C

@@ -10629,9 +10629,6 @@ off_A9D1_07:
 
 
 
-sub_AA4D:
-C - - - - - 0x00AA5D 02:AA4D: A9 0B     LDA #$0B
-C - - - - - 0x00AA5F 02:AA4F: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 sub_AA52:
 C - - - - - 0x00AA62 02:AA52: A9 26     LDA #$26
 C - - - - - 0x00AA64 02:AA54: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
@@ -11764,7 +11761,7 @@ C - - - - - 0x00B10F 02:B0FF: 30 03     BMI bra_B104
 C - - - - - 0x00B111 02:B101: 20 82 B2  JSR sub_B282
 bra_B104:
 C - - - - - 0x00B114 02:B104: 20 48 AA  JSR sub_0x01C260
-C - - - - - 0x00B117 02:B107: 20 4D AA  JSR sub_AA4D
+C - - - - - 0x00B117 02:B107: 20 4D AA  JSR sub_0x01C261
 C - - - - - 0x00B11A 02:B10A: A9 03     LDA #$03
 C - - - - - 0x00B11C 02:B10C: 20 93 B2  JSR sub_B293
 loc_B10F:
