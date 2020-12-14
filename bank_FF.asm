@@ -10,40 +10,14 @@ tbl_0x01C015:
 .export sub_0x01C015
 sub_0x01C015:
 C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
-
-
-; bzk
 - - - - - - 0x01C018 07:C008: 4C D3 EE  JMP loc_EED3
-
-
-; bzk
 - - - - - - 0x01C01E 07:C00E: 4C 7D EE  JMP loc_EE7D
-
-
-; bzk
 - - - - - - 0x01C033 07:C023: 4C 39 F5  JMP loc_F539
-
-
-; bzk
 - - - - - - 0x01C03F 07:C02F: 4C E4 F5  JMP loc_F5E4
-
-
-
-; bzk
 - - - - - - 0x01C048 07:C038: 4C 66 F6  JMP loc_F666
 - - - - - - 0x01C04B 07:C03B: 4C 6A F9  JMP loc_F96A
-
-
-; bzk
 - - - - - - 0x01C05D 07:C04D: 4C 6D FA  JMP loc_FA6D
-
-
-
-; bzk
 - - - - - - 0x01C06F 07:C05F: 4C 73 D0  JMP loc_D073
-
-
-; bzk
 - - - - - - 0x01C084 07:C074: 4C DB C4  JMP loc_C4DB
 
 
