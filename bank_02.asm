@@ -10629,9 +10629,6 @@ off_A9D1_07:
 
 
 
-sub_AA61:
-- - - - - - 0x00AA71 02:AA61: A9 30     LDA #$30
-- - - - - - 0x00AA73 02:AA63: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 sub_AA66:
 - - - - - - 0x00AA76 02:AA66: A9 31     LDA #$31
 - - - - - - 0x00AA78 02:AA68: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
@@ -13822,7 +13819,7 @@ tbl_BB2B:
 sub_BB3C:
 - - - - - - 0x00BB4C 02:BB3C: A2 00     LDX #$00
 - - - - - - 0x00BB4E 02:BB3E: 20 16 AA  JSR sub_0x01C2C2
-- - - - - - 0x00BB51 02:BB41: 20 61 AA  JSR sub_AA61
+- - - - - - 0x00BB51 02:BB41: 20 61 AA  JSR sub_0x01C27F
 - - - - - - 0x00BB54 02:BB44: 20 8B B0  JSR sub_B08B
 - - - - - - 0x00BB57 02:BB47: 20 66 AA  JSR sub_AA66
 - - - - - - 0x00BB5A 02:BB4A: 20 65 C0  JSR sub_0x01EB9C

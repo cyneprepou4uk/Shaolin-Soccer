@@ -684,6 +684,10 @@ C - - - - - 0x01C279 07:C269: 4C 44 C3  JMP loc_C344_свап_prg_банка_80x
 sub_C26C:
 - - - - - - 0x01C27C 07:C26C: A9 2F     LDA #$2F
 - - - - - - 0x01C27E 07:C26E: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
+.export sub_0x01C27F
+sub_0x01C27F:
+                                        LDA #$30
+                                        JMP loc_C344_свап_prg_банка_80xx
 
 
 
