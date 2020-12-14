@@ -10756,7 +10756,7 @@ C - - - - - 0x00AB00 02:AAF0: E6 96     INC ram_номер_кадра_анима
 C - - - - - 0x00AB02 02:AAF2: A8        TAY
 C - - - - - 0x00AB03 02:AAF3: B9 40 AB  LDA tbl_AB40,Y
 C - - - - - 0x00AB06 02:AAF6: 8D AC 05  STA ram_номер_палитры_фона
-C - - - - - 0x00AB09 02:AAF9: 20 6E C0  JSR sub_0x01C07E
+C - - - - - 0x00AB09 02:AAF9: 20 6E C0  JSR sub_0x01D0E5
 C - - - - - 0x00AB0C 02:AAFC: A9 3F     LDA #$3F
 C - - - - - 0x00AB0E 02:AAFE: 8D D9 06  STA ram_байт_2006_hi_палитра
 bra_AB01:

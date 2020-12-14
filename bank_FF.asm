@@ -44,9 +44,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C07E
-sub_0x01C07E:
-C - - - - - 0x01C07E 07:C06E: 4C D5 D0  JMP loc_D0D5
 .export sub_0x01C081
 sub_0x01C081:
 C - - - - - 0x01C081 07:C071: 4C 17 C3  JMP loc_C317
@@ -2716,7 +2713,8 @@ tbl_D0D0:
 
 
 
-loc_D0D5:
+.export sub_0x01D0E5
+sub_0x01D0E5:
 sub_D0D5:
 C D 2 - - - 0x01D0E5 07:D0D5: A2 00     LDX #$00
 C - - - - - 0x01D0E7 07:D0D7: 8E DA 06  STX ram_байт_2006_lo_палитра

@@ -2141,7 +2141,7 @@ C - - - - - 0x014C70 05:8C60: 68        PLA
 C - - - - - 0x014C71 05:8C61: 8D B9 05  STA ram_банк_спрайтов + 1
 C - - - - - 0x014C74 05:8C64: 20 C6 8C  JSR sub_8CC6
 C - - - - - 0x014C77 05:8C67: 20 B0 BD  JSR sub_BDB0
-C - - - - - 0x014C7A 05:8C6A: 20 6E C0  JSR sub_0x01C07E
+C - - - - - 0x014C7A 05:8C6A: 20 6E C0  JSR sub_0x01D0E5
 C - - - - - 0x014C7D 05:8C6D: A9 3F     LDA #$3F
 C - - - - - 0x014C7F 05:8C6F: 8D D9 06  STA ram_байт_2006_hi_палитра
 C - - - - - 0x014C82 05:8C72: 60        RTS
