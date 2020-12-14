@@ -2,6 +2,7 @@
 .include "copy_bank_ram.inc"
 ; 0x010010-0x01400F
 
+; не перемещать начальные прыжки, они должны быть в пределах 8000-80FF
 .export loc_0x010010
 loc_0x010010:
 C D 0 J - - 0x010010 04:8000: 4C 31 80  JMP loc_8031
@@ -11,7 +12,13 @@ C - - J - - 0x010013 04:8003: 4C 94 AF  JMP loc_AF94
 .export loc_0x010016
 loc_0x010016:
 C - - J - - 0x010016 04:8006: 4C 8D AF  JMP loc_AF8D
+
+
+; bzk
 - - - - - - 0x010019 04:8009: 4C 04 B2  JMP loc_B204
+
+
+
 .export loc_0x01001C
 loc_0x01001C:
 C - - J - - 0x01001C 04:800C: 4C 04 B2  JMP loc_B204
