@@ -44,9 +44,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C075
-sub_0x01C075:
-C - - - - - 0x01C075 07:C065: 4C 8C EB  JMP loc_EB8C
 .export sub_0x01C078
 sub_0x01C078:
 C - - - - - 0x01C078 07:C068: 4C 28 E8  JMP loc_E828
@@ -7768,7 +7765,6 @@ tbl_EB43:
 
 
 
-loc_EB8C:
 .export sub_0x01EB9C
 sub_0x01EB9C:
 C D 3 - - - 0x01EB9C 07:EB8C: A9 00     LDA #$00

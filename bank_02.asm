@@ -11241,7 +11241,7 @@ C - - - - - 0x00AE2D 02:AE1D: B9 29 AE  LDA tbl_AE29,Y
 C - - - - - 0x00AE30 02:AE20: 85 93     STA ram_таймер_кадра_анимации_мяча
 bra_AE22:
 loc_AE22:
-C D 1 - - - 0x00AE32 02:AE22: 20 65 C0  JSR sub_0x01C075
+C D 1 - - - 0x00AE32 02:AE22: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x00AE35 02:AE25: 20 1B AA  JSR sub_AA1B
 C - - - - - 0x00AE38 02:AE28: 60        RTS
 
@@ -11674,7 +11674,7 @@ C - - - - - 0x00B071 02:B061: 95 74     STA ram_номер_анимации,X
 C - - - - - 0x00B073 02:B063: B9 70 B0  LDA tbl_B06F + 1,Y
 C - - - - - 0x00B076 02:B066: 95 87     STA ram_таймер_кадра_анимации,X
 bra_B068:
-C - - - - - 0x00B078 02:B068: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x00B078 02:B068: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x00B07B 02:B06B: 20 1B AA  JSR sub_AA1B
 C - - - - - 0x00B07E 02:B06E: 60        RTS
 
@@ -12912,7 +12912,7 @@ loc_B6CE:
 C D 1 - - - 0x00B6DE 02:B6CE: A2 01     LDX #$01
 bra_B6D0:
 C - - - - - 0x00B6E0 02:B6D0: 20 DD B6  JSR sub_B6DD
-C - - - - - 0x00B6E3 02:B6D3: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x00B6E3 02:B6D3: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x00B6E6 02:B6D6: E8        INX
 C - - - - - 0x00B6E7 02:B6D7: E8        INX
 C - - - - - 0x00B6E8 02:B6D8: E0 04     CPX #$04
@@ -13869,13 +13869,13 @@ sub_BB3C:
 - - - - - - 0x00BB51 02:BB41: 20 61 AA  JSR sub_AA61
 - - - - - - 0x00BB54 02:BB44: 20 8B B0  JSR sub_B08B
 - - - - - - 0x00BB57 02:BB47: 20 66 AA  JSR sub_AA66
-- - - - - - 0x00BB5A 02:BB4A: 20 65 C0  JSR sub_0x01C075
+- - - - - - 0x00BB5A 02:BB4A: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x00BB5D 02:BB4D: E8        INX
 - - - - - - 0x00BB5E 02:BB4E: 20 DD B6  JSR sub_B6DD
-- - - - - - 0x00BB61 02:BB51: 20 65 C0  JSR sub_0x01C075
+- - - - - - 0x00BB61 02:BB51: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x00BB64 02:BB54: A2 0C     LDX #$0C
 - - - - - - 0x00BB66 02:BB56: 20 DD B6  JSR sub_B6DD
-- - - - - - 0x00BB69 02:BB59: 20 65 C0  JSR sub_0x01C075
+- - - - - - 0x00BB69 02:BB59: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x00BB6C 02:BB5C: 60        RTS
 
 
@@ -14304,7 +14304,7 @@ bra_BE94_RTS:
 
 ofs_BE95_0A:
 - - - - - - 0x00BEA5 02:BE95: A2 0C     LDX #$0C
-- - - - - - 0x00BEA7 02:BE97: 20 65 C0  JSR sub_0x01C075
+- - - - - - 0x00BEA7 02:BE97: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x00BEAA 02:BE9A: 60        RTS
 
 
@@ -14354,7 +14354,7 @@ sub_BED4:
 bra_BEDB:
 - - - - - - 0x00BEEB 02:BEDB: BD 99 03  LDA ram_игрок_Z_hi,X
 - - - - - - 0x00BEEE 02:BEDE: D0 03     BNE bra_BEE3
-- - - - - - 0x00BEF0 02:BEE0: 20 65 C0  JSR sub_0x01C075
+- - - - - - 0x00BEF0 02:BEE0: 20 65 C0  JSR sub_0x01EB9C
 bra_BEE3:
 - - - - - - 0x00BEF3 02:BEE3: E8        INX
 - - - - - - 0x00BEF4 02:BEE4: E0 0D     CPX #$0D

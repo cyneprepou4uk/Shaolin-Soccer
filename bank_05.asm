@@ -716,7 +716,7 @@ C - - - - - 0x014474 05:8464: F0 02     BEQ bra_8468
 C - - - - - 0x014476 05:8466: A9 01     LDA #$01
 bra_8468:
 C - - - - - 0x014478 05:8468: 20 8D 82  JSR sub_828D
-C - - - - - 0x01447B 05:846B: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x01447B 05:846B: 20 65 C0  JSR sub_0x01EB9C
 bra_846E:
 C - - - - - 0x01447E 05:846E: 20 41 80  JSR sub_8041
 C - - - - - 0x014481 05:8471: 20 14 80  JSR sub_8014
@@ -1372,7 +1372,7 @@ C D 0 J - - 0x0147DB 05:87CB: A2 00     LDX #$00
 C - - - - - 0x0147DD 05:87CD: 20 2A 82  JSR sub_822A
 C - - - - - 0x0147E0 05:87D0: A9 00     LDA #$00
 C - - - - - 0x0147E2 05:87D2: 20 8D 82  JSR sub_828D
-C - - - - - 0x0147E5 05:87D5: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x0147E5 05:87D5: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x0147E8 05:87D8: 20 14 80  JSR sub_8014
 loc_87DB_RTS:
 C D 0 - - - 0x0147EB 05:87DB: 60        RTS
@@ -2109,7 +2109,7 @@ ofs_8C16_02:
 C D 0 J - - 0x014C26 05:8C16: 20 2A 82  JSR sub_822A
 C - - - - - 0x014C29 05:8C19: A9 0D     LDA #$0D
 C - - - - - 0x014C2B 05:8C1B: 20 8D 82  JSR sub_828D
-C - - - - - 0x014C2E 05:8C1E: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x014C2E 05:8C1E: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x014C31 05:8C21: E8        INX
 C - - - - - 0x014C32 05:8C22: AC CC 05  LDY ram_счетчик_смен
 C - - - - - 0x014C35 05:8C25: C8        INY
@@ -2673,7 +2673,7 @@ C - - - - - 0x014EF7 05:8EE7: 86 43     STX ram_0043
 C - - - - - 0x014EF9 05:8EE9: BD FB 8E  LDA tbl_8EFB,X
 C - - - - - 0x014EFC 05:8EEC: AA        TAX
 C - - - - - 0x014EFD 05:8EED: 20 FF 8E  JSR sub_8EFF
-C - - - - - 0x014F00 05:8EF0: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x014F00 05:8EF0: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x014F03 05:8EF3: A6 43     LDX ram_0043
 C - - - - - 0x014F05 05:8EF5: E8        INX
 C - - - - - 0x014F06 05:8EF6: E0 04     CPX #$04
@@ -2994,11 +2994,11 @@ C D 0 - - - 0x0150B9 05:90A9: A2 00     LDX #$00
 C - - - - - 0x0150BB 05:90AB: 20 2A 82  JSR sub_822A
 C - - - - - 0x0150BE 05:90AE: A9 00     LDA #$00
 C - - - - - 0x0150C0 05:90B0: 20 8D 82  JSR sub_828D
-C - - - - - 0x0150C3 05:90B3: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x0150C3 05:90B3: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x0150C6 05:90B6: E8        INX
 bra_90B7:
 C - - - - - 0x0150C7 05:90B7: 20 94 91  JSR sub_9194
-C - - - - - 0x0150CA 05:90BA: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x0150CA 05:90BA: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x0150CD 05:90BD: E8        INX
 C - - - - - 0x0150CE 05:90BE: E8        INX
 C - - - - - 0x0150CF 05:90BF: E0 04     CPX #$04
@@ -3758,7 +3758,7 @@ C - - - - - 0x0154AD 05:949D: A2 00     LDX #$00
 C - - - - - 0x0154AF 05:949F: 20 2A 82  JSR sub_822A
 C - - - - - 0x0154B2 05:94A2: A9 00     LDA #$00
 C - - - - - 0x0154B4 05:94A4: 20 8D 82  JSR sub_828D
-C - - - - - 0x0154B7 05:94A7: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x0154B7 05:94A7: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x0154BA 05:94AA: 20 14 80  JSR sub_8014
 loc_94AD_RTS:
 C D 0 - - - 0x0154BD 05:94AD: 60        RTS
@@ -5222,12 +5222,12 @@ C - - - - - 0x015BF7 05:9BE7: A2 0C     LDX #$0C
 C - - - - - 0x015BF9 05:9BE9: 20 2A 82  JSR sub_822A
 C - - - - - 0x015BFC 05:9BEC: A9 00     LDA #$00
 C - - - - - 0x015BFE 05:9BEE: 20 8D 82  JSR sub_828D
-C - - - - - 0x015C01 05:9BF1: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x015C01 05:9BF1: 20 65 C0  JSR sub_0x01EB9C
 bra_9BF4:
 C - - - - - 0x015C04 05:9BF4: A2 00     LDX #$00
 bra_9BF6:
 C - - - - - 0x015C06 05:9BF6: 20 C2 9D  JSR sub_9DC2
-C - - - - - 0x015C09 05:9BF9: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x015C09 05:9BF9: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x015C0C 05:9BFC: E8        INX
 C - - - - - 0x015C0D 05:9BFD: E0 0C     CPX #$0C
 C - - - - - 0x015C0F 05:9BFF: 90 F5     BCC bra_9BF6
@@ -6230,7 +6230,7 @@ bra_A153:
 loc_A153:
 C D 1 - - - 0x016163 05:A153: A2 00     LDX #$00
 C - - - - - 0x016165 05:A155: 20 94 91  JSR sub_9194
-C - - - - - 0x016168 05:A158: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x016168 05:A158: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x01616B 05:A15B: 20 14 80  JSR sub_8014
 C - - - - - 0x01616E 05:A15E: 60        RTS
 
@@ -6498,7 +6498,7 @@ bra_A2E8:
 loc_A2E8:
 C D 1 - - - 0x0162F8 05:A2E8: A2 00     LDX #$00
 C - - - - - 0x0162FA 05:A2EA: 20 94 91  JSR sub_9194
-C - - - - - 0x0162FD 05:A2ED: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x0162FD 05:A2ED: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x016300 05:A2F0: 20 14 80  JSR sub_8014
 C - - - - - 0x016303 05:A2F3: 20 5C C0  JSR sub_0x01D083
 loc_A2F6_RTS:
@@ -7130,10 +7130,10 @@ C D 1 - - - 0x016667 05:A657: A2 02     LDX #$02
 C - - - - - 0x016669 05:A659: 20 2A 82  JSR sub_822A
 C - - - - - 0x01666C 05:A65C: A9 00     LDA #$00
 C - - - - - 0x01666E 05:A65E: 20 8D 82  JSR sub_828D
-C - - - - - 0x016671 05:A661: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x016671 05:A661: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x016674 05:A664: A2 00     LDX #$00
 C - - - - - 0x016676 05:A666: 20 94 91  JSR sub_9194
-C - - - - - 0x016679 05:A669: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x016679 05:A669: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x01667C 05:A66C: 20 14 80  JSR sub_8014
 loc_A66F_RTS:
 C D 1 - - - 0x01667F 05:A66F: 60        RTS
@@ -7544,7 +7544,7 @@ C - - - - - 0x0168EC 05:A8DC: C9 06     CMP #$06
 C - - - - - 0x0168EE 05:A8DE: D0 01     BNE bra_A8E1
 C - - - - - 0x0168F0 05:A8E0: E8        INX
 bra_A8E1:
-C - - - - - 0x0168F1 05:A8E1: 20 65 C0  JSR sub_0x01C075
+C - - - - - 0x0168F1 05:A8E1: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x0168F4 05:A8E4: E8        INX
 C - - - - - 0x0168F5 05:A8E5: E0 03     CPX #$03
 C - - - - - 0x0168F7 05:A8E7: 90 F8     BCC bra_A8E1
@@ -9498,7 +9498,7 @@ ofs_B32F_00:
 bra_B337:
 - - - - - - 0x017347 05:B337: 20 5C C0  JSR sub_0x01D083
 - - - - - - 0x01734A 05:B33A: A2 0C     LDX #$0C
-- - - - - - 0x01734C 05:B33C: 20 65 C0  JSR sub_0x01C075
+- - - - - - 0x01734C 05:B33C: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x01734F 05:B33F: 20 14 80  JSR sub_8014
 - - - - - - 0x017352 05:B342: 4C A2 B3  JMP loc_B3A2_RTS
 
@@ -9555,9 +9555,9 @@ loc_B38D:
 - - - - - - 0x01739F 05:B38F: 20 2A 82  JSR sub_822A
 - - - - - - 0x0173A2 05:B392: A9 00     LDA #$00
 - - - - - - 0x0173A4 05:B394: 20 8D 82  JSR sub_828D
-- - - - - - 0x0173A7 05:B397: 20 65 C0  JSR sub_0x01C075
+- - - - - - 0x0173A7 05:B397: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x0173AA 05:B39A: A2 0C     LDX #$0C
-- - - - - - 0x0173AC 05:B39C: 20 65 C0  JSR sub_0x01C075
+- - - - - - 0x0173AC 05:B39C: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x0173AF 05:B39F: 20 14 80  JSR sub_8014
 loc_B3A2_RTS:
 - - - - - - 0x0173B2 05:B3A2: 60        RTS
@@ -9743,7 +9743,7 @@ ofs_B498_00:
 bra_B4A0:
 - - - - - - 0x0174B0 05:B4A0: 20 5C C0  JSR sub_0x01D083
 - - - - - - 0x0174B3 05:B4A3: A2 0C     LDX #$0C
-- - - - - - 0x0174B5 05:B4A5: 20 65 C0  JSR sub_0x01C075
+- - - - - - 0x0174B5 05:B4A5: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x0174B8 05:B4A8: 20 14 80  JSR sub_8014
 - - - - - - 0x0174BB 05:B4AB: 4C D5 B4  JMP loc_B4D5_RTS
 
@@ -9751,7 +9751,7 @@ bra_B4A0:
 
 ofs_B4AE_01:
 - - - - - - 0x0174BE 05:B4AE: A2 0C     LDX #$0C
-- - - - - - 0x0174C0 05:B4B0: 20 65 C0  JSR sub_0x01C075
+- - - - - - 0x0174C0 05:B4B0: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x0174C3 05:B4B3: 20 14 80  JSR sub_8014
 - - - - - - 0x0174C6 05:B4B6: A5 08     LDA ram_одноразовые_кнопки
 - - - - - - 0x0174C8 05:B4B8: 29 F0     AND #$F0
