@@ -4625,7 +4625,7 @@ C - - - - - 0x01DA0D 07:D9FD: D0 02     BNE bra_DA01
 C - - - - - 0x01DA0F 07:D9FF: A2 0C     LDX #$0C
 bra_DA01:
 ; думдей предупреждал об этом месте
-C - - - - - 0x01DA11 07:DA01: BD FF 00  LDA ram_00FF,X
+C - - - - - 0x01DA11 07:DA01: BD FF 00  LDA a: ram_00FF,X
 C - - - - - 0x01DA14 07:DA04: E0 0C     CPX #$0C
 C - - - - - 0x01DA16 07:DA06: D0 02     BNE bra_DA0A
 C - - - - - 0x01DA18 07:DA08: A2 00     LDX #$00
