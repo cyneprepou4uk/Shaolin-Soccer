@@ -15389,19 +15389,19 @@ tbl_BFAF:
 
 sub_BFB2:
 C - - - - - 0x007FC2 01:BFB2: A9 1A     LDA #$1A
-C - - - - - 0x007FC4 01:BFB4: 4C 50 C0  JMP loc_0x01C354
+C - - - - - 0x007FC4 01:BFB4: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 
 
 
 sub_BFB7:
 C - - - - - 0x007FC7 01:BFB7: A9 2A     LDA #$2A
-C - - - - - 0x007FC9 01:BFB9: 4C 50 C0  JMP loc_0x01C354
+C - - - - - 0x007FC9 01:BFB9: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 
 
 
 sub_BFBC:
 C - - - - - 0x007FCC 01:BFBC: A9 06     LDA #$06
-C - - - - - 0x007FCE 01:BFBE: 4C 50 C0  JMP loc_0x01C354
+C - - - - - 0x007FCE 01:BFBE: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 
 
 

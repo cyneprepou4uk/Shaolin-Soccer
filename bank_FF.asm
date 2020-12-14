@@ -9,7 +9,7 @@ tbl_0x01C010:
 
 
 ; bzk
-- - - - - - 0x01C018 07:C008: 4C D3 EE  JMP loc_EED3
+- - - - - - 0x01C018 07:C008: 4C D3 EE  JMP loc_EED3_переключить_банк_prg
 - - - - - - 0x01C01E 07:C00E: 4C 7D EE  JMP loc_EE7D
 - - - - - - 0x01C033 07:C023: 4C 39 F5  JMP loc_F539
 - - - - - - 0x01C03F 07:C02F: 4C E4 F5  JMP loc_F5E4
@@ -518,117 +518,117 @@ off_C226_0F:
 
 loc_C244:
 C D 2 - - - 0x01C254 07:C244: A9 04     LDA #$04
-C - - - - - 0x01C256 07:C246: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C256 07:C246: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C249:
 C - - - - - 0x01C259 07:C249: A9 05     LDA #$05
-C - - - - - 0x01C25B 07:C24B: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C25B 07:C24B: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C24E:
 C - - - - - 0x01C25E 07:C24E: A9 1E     LDA #$1E
-C - - - - - 0x01C260 07:C250: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C260 07:C250: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 
 
 ; bzk
 - - - - - - 0x01C263 07:C253: A9 1F     LDA #$1F
-- - - - - - 0x01C265 07:C255: 4C 44 C3  JMP loc_C344
+- - - - - - 0x01C265 07:C255: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 
 
 
 sub_C258:
 C - - - - - 0x01C268 07:C258: A9 29     LDA #$29
-C - - - - - 0x01C26A 07:C25A: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C26A 07:C25A: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C25D:
 C - - - - - 0x01C26D 07:C25D: A9 18     LDA #$18
-C - - - - - 0x01C26F 07:C25F: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C26F 07:C25F: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C262:
 C - - - - - 0x01C272 07:C262: A9 2D     LDA #$2D
-C - - - - - 0x01C274 07:C264: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C274 07:C264: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C267:
 C - - - - - 0x01C277 07:C267: A9 2E     LDA #$2E
-C - - - - - 0x01C279 07:C269: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C279 07:C269: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C26C:
 - - - - - - 0x01C27C 07:C26C: A9 2F     LDA #$2F
-- - - - - - 0x01C27E 07:C26E: 4C 44 C3  JMP loc_C344
+- - - - - - 0x01C27E 07:C26E: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C271:
 C - - - - - 0x01C281 07:C271: A9 00     LDA #$00
-C - - - - - 0x01C283 07:C273: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C283 07:C273: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 .export sub_0x01C286
 sub_0x01C286:
 C - - - - - 0x01C286 07:C276: A9 02     LDA #$02
-C - - - - - 0x01C288 07:C278: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C288 07:C278: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C27B:
 C - - - - - 0x01C28B 07:C27B: A9 03     LDA #$03
-C - - - - - 0x01C28D 07:C27D: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C28D 07:C27D: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C280:
 C - - - - - 0x01C290 07:C280: A9 13     LDA #$13
-C - - - - - 0x01C292 07:C282: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C292 07:C282: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C285:
 C - - - - - 0x01C295 07:C285: A9 1B     LDA #$1B
-C - - - - - 0x01C297 07:C287: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C297 07:C287: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C28A:
 C - - - - - 0x01C29A 07:C28A: A9 01     LDA #$01
-C - - - - - 0x01C29C 07:C28C: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C29C 07:C28C: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 .export sub_0x01C29F
 sub_0x01C29F:
 C - - - - - 0x01C29F 07:C28F: A9 0C     LDA #$0C
-C - - - - - 0x01C2A1 07:C291: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2A1 07:C291: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 .export sub_0x01C2A4
 sub_0x01C2A4:
 C - - - - - 0x01C2A4 07:C294: A9 0D     LDA #$0D
-C - - - - - 0x01C2A6 07:C296: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2A6 07:C296: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C299:
 C - - - - - 0x01C2A9 07:C299: A9 11     LDA #$11
-C - - - - - 0x01C2AB 07:C29B: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2AB 07:C29B: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C29E:
 C - - - - - 0x01C2AE 07:C29E: A9 14     LDA #$14
-C - - - - - 0x01C2B0 07:C2A0: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2B0 07:C2A0: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C2A3:
 C - - - - - 0x01C2B3 07:C2A3: A9 15     LDA #$15
-C - - - - - 0x01C2B5 07:C2A5: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2B5 07:C2A5: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C2A8:
 C - - - - - 0x01C2B8 07:C2A8: A9 16     LDA #$16
-C - - - - - 0x01C2BA 07:C2AA: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2BA 07:C2AA: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C2AD:
 C - - - - - 0x01C2BD 07:C2AD: A9 17     LDA #$17
-C - - - - - 0x01C2BF 07:C2AF: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2BF 07:C2AF: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 .export sub_0x01C2C2
 sub_0x01C2C2:
 C - - - - - 0x01C2C2 07:C2B2: A9 0F     LDA #$0F
-C - - - - - 0x01C2C4 07:C2B4: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2C4 07:C2B4: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 .export sub_0x01C2C7
 sub_0x01C2C7:
 C - - - - - 0x01C2C7 07:C2B7: A9 20     LDA #$20
-C - - - - - 0x01C2C9 07:C2B9: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2C9 07:C2B9: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 .export sub_0x01C2CC
 sub_0x01C2CC:
 C - - - - - 0x01C2CC 07:C2BC: A9 21     LDA #$21
-C - - - - - 0x01C2CE 07:C2BE: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2CE 07:C2BE: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 .export sub_0x01C2D1
 sub_0x01C2D1:
 C - - - - - 0x01C2D1 07:C2C1: A9 22     LDA #$22
-C - - - - - 0x01C2D3 07:C2C3: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2D3 07:C2C3: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 .export sub_0x01C2D6
 sub_0x01C2D6:
 C - - - - - 0x01C2D6 07:C2C6: A9 23     LDA #$23
-C - - - - - 0x01C2D8 07:C2C8: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2D8 07:C2C8: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 .export sub_0x01C2DB
 sub_0x01C2DB:
 C - - - - - 0x01C2DB 07:C2CB: A9 24     LDA #$24
-C - - - - - 0x01C2DD 07:C2CD: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2DD 07:C2CD: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 .export sub_0x01C2E0
 sub_0x01C2E0:
 C - - - - - 0x01C2E0 07:C2D0: A9 0E     LDA #$0E
-C - - - - - 0x01C2E2 07:C2D2: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2E2 07:C2D2: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C2D5:
 C - - - - - 0x01C2E5 07:C2D5: A9 10     LDA #$10
-C - - - - - 0x01C2E7 07:C2D7: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2E7 07:C2D7: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C2DA:
 C - - - - - 0x01C2EA 07:C2DA: A9 12     LDA #$12
-C - - - - - 0x01C2EC 07:C2DC: 4C 44 C3  JMP loc_C344
+C - - - - - 0x01C2EC 07:C2DC: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 
 
 ; bzk
 - - - - - - 0x01C2EF 07:C2DF: A9 1A     LDA #$1A
-- - - - - - 0x01C2F1 07:C2E1: 4C 44 C3  JMP loc_C344
+- - - - - - 0x01C2F1 07:C2E1: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 
 
 
@@ -647,11 +647,11 @@ C - - - - - 0x01C301 07:C2F1: 8D FF 07  STA ram_номер_звука
 C - - - - - 0x01C304 07:C2F4: AD FF BF  LDA con_bank_id
 C - - - - - 0x01C307 07:C2F7: 48        PHA
 C - - - - - 0x01C308 07:C2F8: A9 00     LDA #$00
-C - - - - - 0x01C30A 07:C2FA: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01C30A 07:C2FA: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01C30D 07:C2FD: AD FF 07  LDA ram_номер_звука
 C - - - - - 0x01C310 07:C300: 20 00 80  JSR sub_0x000016
 C - - - - - 0x01C313 07:C303: 68        PLA
-C - - - - - 0x01C314 07:C304: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01C314 07:C304: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 bra_C307_RTS:
 C - - - - - 0x01C317 07:C307: 60        RTS
 
@@ -661,9 +661,9 @@ sub_C308:
 C - - - - - 0x01C318 07:C308: AD FF BF  LDA con_bank_id
 C - - - - - 0x01C31B 07:C30B: 48        PHA
 C - - - - - 0x01C31C 07:C30C: A9 00     LDA #$00
-C - - - - - 0x01C31E 07:C30E: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01C31E 07:C30E: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01C321 07:C311: 20 03 80  JSR sub_0x000193
-C - - - - - 0x01C324 07:C314: 4C 68 C3  JMP loc_C368
+C - - - - - 0x01C324 07:C314: 4C 68 C3  JMP loc_C368_вернуть_банк_prg
 
 
 
@@ -672,16 +672,16 @@ sub_0x01C327:
 C D 2 - - - 0x01C327 07:C317: AD FF BF  LDA con_bank_id
 C - - - - - 0x01C32A 07:C31A: 48        PHA
 C - - - - - 0x01C32B 07:C31B: A9 00     LDA #$00
-C - - - - - 0x01C32D 07:C31D: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01C32D 07:C31D: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01C330 07:C320: 20 86 AE  JSR sub_0x002E96
-C - - - - - 0x01C333 07:C323: 4C 68 C3  JMP loc_C368
+C - - - - - 0x01C333 07:C323: 4C 68 C3  JMP loc_C368_вернуть_банк_prg
 sub_C326:
 C - - - - - 0x01C336 07:C326: AD FF BF  LDA con_bank_id
 C - - - - - 0x01C339 07:C329: 48        PHA
 C - - - - - 0x01C33A 07:C32A: A9 00     LDA #$00
-C - - - - - 0x01C33C 07:C32C: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01C33C 07:C32C: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01C33F 07:C32F: 20 80 AE  JSR sub_0x003B23
-C - - - - - 0x01C342 07:C332: 4C 68 C3  JMP loc_C368
+C - - - - - 0x01C342 07:C332: 4C 68 C3  JMP loc_C368_вернуть_банк_prg
 
 
 
@@ -690,15 +690,15 @@ sub_0x01C345:
 C D 2 - - - 0x01C345 07:C335: AD FF BF  LDA con_bank_id
 C - - - - - 0x01C348 07:C338: 48        PHA
 C - - - - - 0x01C349 07:C339: A9 00     LDA #$00
-C - - - - - 0x01C34B 07:C33B: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01C34B 07:C33B: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01C34E 07:C33E: 20 83 AE  JSR sub_0x003F16
-C - - - - - 0x01C351 07:C341: 4C 68 C3  JMP loc_C368
+C - - - - - 0x01C351 07:C341: 4C 68 C3  JMP loc_C368_вернуть_банк_prg
 
 
 
-.export loc_0x01C354
-loc_0x01C354:
-loc_C344:
+.export loc_0x01C354_свап_prg_банка_80xx
+loc_0x01C354_свап_prg_банка_80xx:
+loc_C344_свап_prg_банка_80xx:
 C D 2 - - - 0x01C354 07:C344: 0A        ASL
 C - - - - - 0x01C355 07:C345: A8        TAY
 C - - - - - 0x01C356 07:C346: AD FF BF  LDA con_bank_id
@@ -707,24 +707,27 @@ C - - - - - 0x01C35A 07:C34A: A5 F6     LDA ram_00F6
 C - - - - - 0x01C35C 07:C34C: 48        PHA
 C - - - - - 0x01C35D 07:C34D: A5 F7     LDA ram_00F7
 C - - - - - 0x01C35F 07:C34F: 48        PHA
-C - - - - - 0x01C360 07:C350: B9 70 C3  LDA tbl_C370,Y
-C - - - - - 0x01C363 07:C353: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01C366 07:C356: B9 71 C3  LDA tbl_C370 + 1,Y
+C - - - - - 0x01C360 07:C350: B9 70 C3  LDA tbl_C370_номер_банка,Y
+C - - - - - 0x01C363 07:C353: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
+C - - - - - 0x01C366 07:C356: B9 71 C3  LDA tbl_C370_младший_байт_непрямого_прыжка + 1,Y
 C - - - - - 0x01C369 07:C359: 85 F6     STA ram_00F6
 C - - - - - 0x01C36B 07:C35B: A9 80     LDA #$80
 C - - - - - 0x01C36D 07:C35D: 85 F7     STA ram_00F7
-C - - - - - 0x01C36F 07:C35F: 20 6D C3  JSR sub_C36D
+C - - - - - 0x01C36F 07:C35F: 20 6D C3  JSR sub_C36D_непрямой_прыжок
 C - - - - - 0x01C372 07:C362: 68        PLA
 C - - - - - 0x01C373 07:C363: 85 F7     STA ram_00F7
 C - - - - - 0x01C375 07:C365: 68        PLA
 C - - - - - 0x01C376 07:C366: A5 F6     LDA ram_00F6
-loc_C368:
+loc_C368_вернуть_банк_prg:
 C D 2 - - - 0x01C378 07:C368: 68        PLA
-C - - - - - 0x01C379 07:C369: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01C379 07:C369: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01C37C 07:C36C: 60        RTS
-sub_C36D:
+
+sub_C36D_непрямой_прыжок:
 C - - - - - 0x01C37D 07:C36D: 6C F6 00  JMP (ram_00F6)
-tbl_C370:
+
+tbl_C370_номер_банка:
+tbl_C370_младший_байт_непрямого_прыжка:
 - D 2 - - - 0x01C380 07:C370: 03        .byte $03, < loc_0x00C010       ; 00
 - D 2 - - - 0x01C382 07:C372: 04        .byte $04, < loc_0x010010       ; 01
 - D 2 - - - 0x01C384 07:C374: 03        .byte $03, < loc_0x00C013       ; 02
@@ -781,7 +784,7 @@ tbl_C370:
 loc_C3D4:
 C D 2 - - - 0x01C3E4 07:C3D4: 20 71 EE  JSR sub_EE71
 C - - - - - 0x01C3E7 07:C3D7: A9 06     LDA #$06
-C - - - - - 0x01C3E9 07:C3D9: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01C3E9 07:C3D9: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01C3EC 07:C3DC: 20 54 EF  JSR sub_EF54
 C - - - - - 0x01C3EF 07:C3DF: A2 57     LDX #$57
 C - - - - - 0x01C3F1 07:C3E1: 20 0A EF  JSR sub_EF0A
@@ -5320,7 +5323,7 @@ sub_DE47:
 C - - - - - 0x01DE57 07:DE47: AD FF BF  LDA con_bank_id
 C - - - - - 0x01DE5A 07:DE4A: 48        PHA
 C - - - - - 0x01DE5B 07:DE4B: AD F3 05  LDA ram_номер_prg_банка
-C - - - - - 0x01DE5E 07:DE4E: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01DE5E 07:DE4E: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01DE61 07:DE51: A5 59     LDA ram_подтип_экрана
 C - - - - - 0x01DE63 07:DE53: C9 02     CMP #$02
 C - - - - - 0x01DE65 07:DE55: F0 07     BEQ bra_DE5E
@@ -5733,7 +5736,7 @@ C - - - - - 0x01E159 07:E149: 09 40     ORA #$40
 C - - - - - 0x01E15B 07:E14B: 8D AB 05  STA ram_флаг_обновл_тайлов_экр
 loc_E14E:
 C D 3 - - - 0x01E15E 07:E14E: 68        PLA
-C - - - - - 0x01E15F 07:E14F: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01E15F 07:E14F: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01E162 07:E152: 60        RTS
 
 
@@ -6326,7 +6329,7 @@ sub_E3D9:
 C - - - - - 0x01E3E9 07:E3D9: AD FF BF  LDA con_bank_id
 C - - - - - 0x01E3EC 07:E3DC: 48        PHA
 C - - - - - 0x01E3ED 07:E3DD: AD F3 05  LDA ram_номер_prg_банка
-C - - - - - 0x01E3F0 07:E3E0: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01E3F0 07:E3E0: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01E3F3 07:E3E3: A5 4C     LDA ram_для_2000
 C - - - - - 0x01E3F5 07:E3E5: 29 FB     AND #$FB
 C - - - - - 0x01E3F7 07:E3E7: 85 4C     STA ram_для_2000
@@ -6401,7 +6404,7 @@ C - - - - - 0x01E484 07:E474: 85 1F     STA ram_001F
 C - - - - - 0x01E486 07:E476: 20 38 E5  JSR sub_E538
 C - - - - - 0x01E489 07:E479: 20 A1 E5  JSR sub_E5A1
 C - - - - - 0x01E48C 07:E47C: 68        PLA
-C - - - - - 0x01E48D 07:E47D: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01E48D 07:E47D: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01E490 07:E480: 60        RTS
 
 
@@ -6882,7 +6885,7 @@ sub_0x01E700:
 C - - - - - 0x01E700 07:E6F0: AD FF BF  LDA con_bank_id
 C - - - - - 0x01E703 07:E6F3: 48        PHA
 C - - - - - 0x01E704 07:E6F4: AD F3 05  LDA ram_номер_prg_банка
-C - - - - - 0x01E707 07:E6F7: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01E707 07:E6F7: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01E70A 07:E6FA: BD 14 03  LDA ram_игрок_X_lo,X
 C - - - - - 0x01E70D 07:E6FD: 4A        LSR
 C - - - - - 0x01E70E 07:E6FE: 4A        LSR
@@ -7009,7 +7012,7 @@ C - - - - - 0x01E7DF 07:E7CF: 69 01     ADC #$01
 loc_E7D1:
 C D 3 - - - 0x01E7E1 07:E7D1: 9D 30 01  STA ram_игрок_на_поверхности,X
 C - - - - - 0x01E7E4 07:E7D4: 68        PLA
-C - - - - - 0x01E7E5 07:E7D5: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01E7E5 07:E7D5: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01E7E8 07:E7D8: 60        RTS
 
 
@@ -7018,7 +7021,7 @@ sub_E7D9:
 C - - - - - 0x01E7E9 07:E7D9: AD FF BF  LDA con_bank_id
 C - - - - - 0x01E7EC 07:E7DC: 48        PHA
 C - - - - - 0x01E7ED 07:E7DD: A9 01     LDA #$01
-C - - - - - 0x01E7EF 07:E7DF: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01E7EF 07:E7DF: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01E7F2 07:E7E2: AD E5 05  LDA ram_покрытие_поля_лужами
 C - - - - - 0x01E7F5 07:E7E5: 0A        ASL
 C - - - - - 0x01E7F6 07:E7E6: A8        TAY
@@ -7027,7 +7030,7 @@ C - - - - - 0x01E7FA 07:E7EA: 85 40     STA ram_0040
 C - - - - - 0x01E7FC 07:E7EC: B9 15 80  LDA $8001,Y
 C - - - - - 0x01E7FF 07:E7EF: 85 41     STA ram_0041
 C - - - - - 0x01E801 07:E7F1: 68        PLA
-C - - - - - 0x01E802 07:E7F2: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01E802 07:E7F2: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01E805 07:E7F5: 60        RTS
 
 
@@ -7114,7 +7117,7 @@ sub_E8BA:
 - - - - - - 0x01E8CA 07:E8BA: AD FF BF  LDA con_bank_id
 - - - - - - 0x01E8CD 07:E8BD: 48        PHA
 - - - - - - 0x01E8CE 07:E8BE: A5 1F     LDA ram_001F
-- - - - - - 0x01E8D0 07:E8C0: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+- - - - - - 0x01E8D0 07:E8C0: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 - - - - - - 0x01E8D3 07:E8C3: AD 0F 80  LDA $800F
 - - - - - - 0x01E8D6 07:E8C6: 85 34     STA ram_0034
 - - - - - - 0x01E8D8 07:E8C8: AD 10 80  LDA $8010
@@ -7131,7 +7134,7 @@ sub_E8BA:
 - - - - - - 0x01E8EC 07:E8DC: 85 2A     STA ram_002A
 - - - - - - 0x01E8EE 07:E8DE: 20 41 E9  JSR sub_E941
 - - - - - - 0x01E8F1 07:E8E1: 68        PLA
-- - - - - - 0x01E8F2 07:E8E2: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+- - - - - - 0x01E8F2 07:E8E2: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 - - - - - - 0x01E8F5 07:E8E5: 60        RTS
 
 
@@ -8260,8 +8263,8 @@ C - - - - - 0x01EEE2 07:EED2: 60        RTS
 
 
 
-loc_EED3:
-sub_EED3_prg_bankswitch:
+loc_EED3_переключить_банк_prg:
+sub_EED3_переключить_банк_prg:
 C - - - - - 0x01EEE3 07:EED3: 08        PHP
 C - - - - - 0x01EEE4 07:EED4: 48        PHA
 C - - - - - 0x01EEE5 07:EED5: 8A        TXA
@@ -10508,7 +10511,7 @@ C - - - - - 0x01FCD4 07:FCC4: 85 0D     STA ram_000D
 C - - - - - 0x01FCD6 07:FCC6: 68        PLA
 C - - - - - 0x01FCD7 07:FCC7: 85 0C     STA ram_000C
 C - - - - - 0x01FCD9 07:FCC9: 68        PLA
-C - - - - - 0x01FCDA 07:FCCA: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01FCDA 07:FCCA: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01FCDD 07:FCCD: 68        PLA
 C - - - - - 0x01FCDE 07:FCCE: 85 4E     STA ram_для_8000
 C - - - - - 0x01FCE0 07:FCD0: 8D 00 80  STA $8000
@@ -10655,7 +10658,7 @@ C - - - - - 0x01FDE7 07:FDD7: CA        DEX
 C - - - - - 0x01FDE8 07:FDD8: D0 F5     BNE bra_FDCF
 C - - - - - 0x01FDEA 07:FDDA: 20 64 EF  JSR sub_EF64
 C - - - - - 0x01FDED 07:FDDD: A9 06     LDA #$06
-C - - - - - 0x01FDEF 07:FDDF: 20 D3 EE  JSR sub_EED3_prg_bankswitch
+C - - - - - 0x01FDEF 07:FDDF: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01FDF2 07:FDE2: A9 C0     LDA #$C0
 C - - - - - 0x01FDF4 07:FDE4: 85 4F     STA ram_флаг_NMI
 C - - - - - 0x01FDF6 07:FDE6: A9 00     LDA #$00

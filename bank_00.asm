@@ -15476,13 +15476,13 @@ C D 1 - - - 0x004002 00:BFF2: 60        RTS
 
 sub_BFF3:
 C - - - - - 0x004003 00:BFF3: A9 19     LDA #$19
-C - - - - - 0x004005 00:BFF5: 4C 50 C0  JMP loc_0x01C354
+C - - - - - 0x004005 00:BFF5: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 
 
 
 sub_BFF8:
 C D 1 - - - 0x004008 00:BFF8: A9 1A     LDA #$1A
-C - - - - - 0x00400A 00:BFFA: 4C 50 C0  JMP loc_0x01C354
+C - - - - - 0x00400A 00:BFFA: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 
 
 
