@@ -10731,7 +10731,7 @@ C - - - - - 0x00AAD4 02:AAC4: 8E B8 05  STX ram_банк_спрайтов
 C - - - - - 0x00AAD7 02:AAC7: E8        INX
 C - - - - - 0x00AAD8 02:AAC8: 8E B9 05  STX ram_банк_спрайтов + 1
 C - - - - - 0x00AADB 02:AACB: 20 0B C0  JSR sub_0x01EEAA
-C - - - - - 0x00AADE 02:AACE: 20 59 C0  JSR sub_0x01C069
+C - - - - - 0x00AADE 02:AACE: 20 59 C0  JSR sub_0x01D05F
 C - - - - - 0x00AAE1 02:AAD1: A9 04     LDA #$04
 C - - - - - 0x00AAE3 02:AAD3: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AAE6 02:AAD6: E6 59     INC ram_подтип_экрана
@@ -10886,7 +10886,7 @@ C - - - - - 0x00ABBC 02:ABAC: 8E B1 05  STX ram_номер_палитры_спр
 C - - - - - 0x00ABBF 02:ABAF: 20 33 B0  JSR sub_B033
 C - - - - - 0x00ABC2 02:ABB2: A9 01     LDA #$01
 C - - - - - 0x00ABC4 02:ABB4: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x00ABC7 02:ABB7: 20 59 C0  JSR sub_0x01C069
+C - - - - - 0x00ABC7 02:ABB7: 20 59 C0  JSR sub_0x01D05F
 C - - - - - 0x00ABCA 02:ABBA: A9 04     LDA #$04
 C - - - - - 0x00ABCC 02:ABBC: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00ABCF 02:ABBF: A9 90     LDA #$90
@@ -11008,7 +11008,7 @@ C - - - - - 0x00ACA8 02:AC98: A2 0C     LDX #$0C
 C - - - - - 0x00ACAA 02:AC9A: 20 A5 AD  JSR sub_ADA5
 C - - - - - 0x00ACAD 02:AC9D: 20 62 C0  JSR sub_0x01C072
 C - - - - - 0x00ACB0 02:ACA0: 20 1B AA  JSR sub_AA1B
-C - - - - - 0x00ACB3 02:ACA3: 20 59 C0  JSR sub_0x01C069
+C - - - - - 0x00ACB3 02:ACA3: 20 59 C0  JSR sub_0x01D05F
 C - - - - - 0x00ACB6 02:ACA6: E6 59     INC ram_подтип_экрана
 C - - - - - 0x00ACB8 02:ACA8: 60        RTS
 
@@ -13918,7 +13918,7 @@ ofs_BB78_00:
 - - - - - - 0x00BBAD 02:BB9D: 20 66 BA  JSR sub_BA66
 - - - - - - 0x00BBB0 02:BBA0: 20 3C BB  JSR sub_BB3C
 - - - - - - 0x00BBB3 02:BBA3: 20 1B AA  JSR sub_AA1B
-- - - - - - 0x00BBB6 02:BBA6: 20 59 C0  JSR sub_0x01C069
+- - - - - - 0x00BBB6 02:BBA6: 20 59 C0  JSR sub_0x01D05F
 - - - - - - 0x00BBB9 02:BBA9: A9 0B     LDA #$0B
 - - - - - - 0x00BBBB 02:BBAB: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 loc_BBAE:
@@ -14044,7 +14044,7 @@ bra_BC27:
 - - - - - - 0x00BCC7 02:BCB7: 20 BF BE  JSR sub_BEBF
 - - - - - - 0x00BCCA 02:BCBA: EE 8A 05  INC ram_таймер_демо_hi
 - - - - - - 0x00BCCD 02:BCBD: 20 D4 BE  JSR sub_BED4
-- - - - - - 0x00BCD0 02:BCC0: 20 59 C0  JSR sub_0x01C069
+- - - - - - 0x00BCD0 02:BCC0: 20 59 C0  JSR sub_0x01D05F
 - - - - - - 0x00BCD3 02:BCC3: A9 0E     LDA #$0E
 - - - - - - 0x00BCD5 02:BCC5: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 - - - - - - 0x00BCD8 02:BCC8: A9 80     LDA #$80
@@ -14197,7 +14197,7 @@ bra_BDA9:
 bra_BDB6:
 - - - - - - 0x00BDC6 02:BDB6: EE 6D 00  INC ram_006D
 - - - - - - 0x00BDC9 02:BDB9: 20 D4 BE  JSR sub_BED4
-- - - - - - 0x00BDCC 02:BDBC: 20 59 C0  JSR sub_0x01C069
+- - - - - - 0x00BDCC 02:BDBC: 20 59 C0  JSR sub_0x01D05F
 - - - - - - 0x00BDCF 02:BDBF: 60        RTS
 
 
@@ -14248,7 +14248,7 @@ ofs_BDC0_04:
 - - - - - - 0x00BE43 02:BE33: 20 BF BE  JSR sub_BEBF
 - - - - - - 0x00BE46 02:BE36: EE 8A 05  INC ram_таймер_демо_hi
 - - - - - - 0x00BE49 02:BE39: EE 8A 05  INC ram_таймер_демо_hi
-- - - - - - 0x00BE4C 02:BE3C: 20 59 C0  JSR sub_0x01C069
+- - - - - - 0x00BE4C 02:BE3C: 20 59 C0  JSR sub_0x01D05F
 bra_BE3F:
 - - - - - - 0x00BE4F 02:BE3F: E6 59     INC ram_подтип_экрана
 bra_BE41_RTS:

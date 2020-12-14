@@ -39,9 +39,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C069
-sub_0x01C069:
-C - - - - - 0x01C069 07:C059: 4C 4F D0  JMP loc_D04F
 .export sub_0x01C06C
 sub_0x01C06C:
 C - - - - - 0x01C06C 07:C05C: 4C 73 D0  JMP loc_D073
@@ -2642,7 +2639,8 @@ C - - - - - 0x01D05C 07:D04C: 4C 54 D0  JMP loc_D054
 
 
 
-loc_D04F:
+.export sub_0x01D05F
+sub_0x01D05F:
 sub_D04F:
 C D 2 - - - 0x01D05F 07:D04F: A9 00     LDA #$00
 C - - - - - 0x01D061 07:D051: 8D B2 05  STA ram_флаг_яркости
