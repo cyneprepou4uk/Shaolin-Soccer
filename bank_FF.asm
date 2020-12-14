@@ -799,13 +799,13 @@ C - - - - - 0x01C402 07:C3F2: 8D 88 05  STA ram_0588
 C - - - - - 0x01C405 07:C3F5: 20 64 EF  JSR sub_EF64
 C - - - - - 0x01C408 07:C3F8: A9 00     LDA #$00
 C - - - - - 0x01C40A 07:C3FA: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
+; bzk опт запись 00
 C - - - - - 0x01C40D 07:C3FD: A9 00     LDA #$00
 C - - - - - 0x01C40F 07:C3FF: 8D 52 00  STA ram_0052
 C - - - - - 0x01C412 07:C402: A9 C0     LDA #$C0
 C - - - - - 0x01C414 07:C404: 85 4F     STA ram_флаг_NMI
 C - - - - - 0x01C416 07:C406: A9 00     LDA #$00
 C - - - - - 0x01C418 07:C408: 85 53     STA ram_0053
-C - - - - - 0x01C41A 07:C40A: 85 55     STA ram_0055
 C - - - - - 0x01C41C 07:C40C: A9 8C     LDA #$8C
 C - - - - - 0x01C41E 07:C40E: 85 4C     STA ram_для_2000
 C - - - - - 0x01C420 07:C410: 8D 00 20  STA $2000
@@ -10439,9 +10439,6 @@ C - - - - - 0x01FC7A 07:FC6A: A2 05     LDX #$05
 C - - - - - 0x01FC7C 07:FC6C: 8E 00 80  STX $8000
 C - - - - - 0x01FC7F 07:FC6F: AD BB 05  LDA ram_банк_спрайтов + 3
 C - - - - - 0x01FC82 07:FC72: 8D 01 80  STA $8001
-; bzk в прошлом исходнике 0055 удален
-C - - - - - 0x01FCB0 07:FCA0: A9 00     LDA #$00
-C - - - - - 0x01FCB2 07:FCA2: 85 55     STA ram_0055
 C - - - - - 0x01FCB4 07:FCA4: A9 B8     LDA #$B8
 C - - - - - 0x01FCB6 07:FCA6: 8D 00 C0  STA $C000
 C - - - - - 0x01FCB9 07:FCA9: 8D 01 C0  STA $C001
@@ -10500,9 +10497,6 @@ C - - - - - 0x01FD0F 07:FCFF: 0D 59 05  ORA ram_0559
 C - - - - - 0x01FD12 07:FD02: 0D 5B 05  ORA ram_вариант_расстановки_игроков
 C - - - - - 0x01FD15 07:FD05: D0 08     BNE bra_FD0F
 C - - - - - 0x01FD17 07:FD07: 4C 4C FD  JMP loc_FD4C
-loc_FD0A:
-C D 3 - - - 0x01FD1A 07:FD0A: E6 55     INC ram_0055
-C - - - - - 0x01FD1C 07:FD0C: 4C C3 FC  JMP loc_FCC3_выход_из_NMI_и_IRQ
 bra_FD0F:
 C - - - - - 0x01FD1F 07:FD0F: 8D 00 E0  STA $E000
 C - - - - - 0x01FD22 07:FD12: A2 00     LDX #$00
@@ -10529,7 +10523,7 @@ C - - - - - 0x01FD50 07:FD40: E8        INX
 C - - - - - 0x01FD51 07:FD41: 8E 00 80  STX $8000
 C - - - - - 0x01FD54 07:FD44: A9 10     LDA #$10
 C - - - - - 0x01FD56 07:FD46: 8D 01 80  STA $8001
-C - - - - - 0x01FD59 07:FD49: 4C 0A FD  JMP loc_FD0A
+C - - - - - 0x01FD59 07:FD49: 4C 0A FD  JMP loc_FCC3_выход_из_NMI_и_IRQ
 bra_FD4C:
 loc_FD4C:
 C D 3 - - - 0x01FD5C 07:FD4C: 8D 00 E0  STA $E000
@@ -10561,7 +10555,7 @@ C - - - - - 0x01FD94 07:FD84: E8        INX
 C - - - - - 0x01FD95 07:FD85: 8E 00 80  STX $8000
 C - - - - - 0x01FD98 07:FD88: E8        INX
 C - - - - - 0x01FD99 07:FD89: 8E 01 80  STX $8001
-C - - - - - 0x01FD9C 07:FD8C: 4C 0A FD  JMP loc_FD0A
+C - - - - - 0x01FD9C 07:FD8C: 4C 0A FD  JMP loc_FCC3_выход_из_NMI_и_IRQ
 
 
 
