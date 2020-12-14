@@ -21,9 +21,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C021
-sub_0x01C021:
-C - - - - - 0x01C021 07:C011: 4C A9 EC  JMP loc_ECA9
 .export sub_0x01C024
 sub_0x01C024:
 C - - - - - 0x01C024 07:C014: 4C 65 EE  JMP loc_EE65
@@ -8026,7 +8023,8 @@ C - - - - - 0x01ECB6 07:ECA6: 6C 0C 00  JMP (ram_000C)
 
 
 
-loc_ECA9:
+.export sub_0x01ECB9
+sub_0x01ECB9:
 sub_ECA9:
 C D 3 - - - 0x01ECB9 07:ECA9: 48        PHA
 C - - - - - 0x01ECBA 07:ECAA: A5 4F     LDA ram_флаг_NMI
