@@ -39,9 +39,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export loc_0x01C060
-loc_0x01C060:
-C D 2 - - - 0x01C060 07:C050: 4C 44 C3  JMP loc_C344
 .export sub_0x01C063
 sub_0x01C063:
 C - - - - - 0x01C063 07:C053: 4C 8F EC  JMP loc_EC8F
@@ -771,6 +768,8 @@ C - - - - - 0x01C351 07:C341: 4C 68 C3  JMP loc_C368
 
 
 
+.export loc_0x01C354
+loc_0x01C354:
 loc_C344:
 C D 2 - - - 0x01C354 07:C344: 0A        ASL
 C - - - - - 0x01C355 07:C345: A8        TAY

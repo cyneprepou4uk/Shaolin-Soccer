@@ -10628,58 +10628,58 @@ off_A9D1_07:
 
 sub_AA11:
 C - - - - - 0x00AA21 02:AA11: A9 1F     LDA #$1F
-C - - - - - 0x00AA23 02:AA13: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA23 02:AA13: 4C 50 C0  JMP loc_0x01C354
 sub_AA16:
 - - - - - - 0x00AA26 02:AA16: A9 0F     LDA #$0F
-- - - - - - 0x00AA28 02:AA18: 4C 50 C0  JMP loc_0x01C060
+- - - - - - 0x00AA28 02:AA18: 4C 50 C0  JMP loc_0x01C354
 sub_AA1B:
 C - - - - - 0x00AA2B 02:AA1B: A9 14     LDA #$14
-C - - - - - 0x00AA2D 02:AA1D: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA2D 02:AA1D: 4C 50 C0  JMP loc_0x01C354
 sub_AA20:
 C - - - - - 0x00AA30 02:AA20: A9 17     LDA #$17
-C - - - - - 0x00AA32 02:AA22: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA32 02:AA22: 4C 50 C0  JMP loc_0x01C354
 sub_AA25:
 C - - - - - 0x00AA35 02:AA25: A9 2B     LDA #$2B
-C - - - - - 0x00AA37 02:AA27: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA37 02:AA27: 4C 50 C0  JMP loc_0x01C354
 sub_AA2A:
 C - - - - - 0x00AA3A 02:AA2A: A9 2C     LDA #$2C
-C - - - - - 0x00AA3C 02:AA2C: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA3C 02:AA2C: 4C 50 C0  JMP loc_0x01C354
 sub_AA2F:
 C - - - - - 0x00AA3F 02:AA2F: A9 1C     LDA #$1C
-C - - - - - 0x00AA41 02:AA31: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA41 02:AA31: 4C 50 C0  JMP loc_0x01C354
 sub_AA34:
 C - - - - - 0x00AA44 02:AA34: A9 06     LDA #$06
-C - - - - - 0x00AA46 02:AA36: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA46 02:AA36: 4C 50 C0  JMP loc_0x01C354
 sub_AA39:
 C - - - - - 0x00AA49 02:AA39: A9 07     LDA #$07
-C - - - - - 0x00AA4B 02:AA3B: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA4B 02:AA3B: 4C 50 C0  JMP loc_0x01C354
 sub_AA3E:
 C - - - - - 0x00AA4E 02:AA3E: A9 08     LDA #$08
-C - - - - - 0x00AA50 02:AA40: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA50 02:AA40: 4C 50 C0  JMP loc_0x01C354
 sub_AA43:
 C - - - - - 0x00AA53 02:AA43: A9 09     LDA #$09
-C - - - - - 0x00AA55 02:AA45: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA55 02:AA45: 4C 50 C0  JMP loc_0x01C354
 sub_AA48:
 C - - - - - 0x00AA58 02:AA48: A9 0A     LDA #$0A
-C - - - - - 0x00AA5A 02:AA4A: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA5A 02:AA4A: 4C 50 C0  JMP loc_0x01C354
 sub_AA4D:
 C - - - - - 0x00AA5D 02:AA4D: A9 0B     LDA #$0B
-C - - - - - 0x00AA5F 02:AA4F: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA5F 02:AA4F: 4C 50 C0  JMP loc_0x01C354
 sub_AA52:
 C - - - - - 0x00AA62 02:AA52: A9 26     LDA #$26
-C - - - - - 0x00AA64 02:AA54: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA64 02:AA54: 4C 50 C0  JMP loc_0x01C354
 sub_AA57:
 C - - - - - 0x00AA67 02:AA57: A9 27     LDA #$27
-C - - - - - 0x00AA69 02:AA59: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA69 02:AA59: 4C 50 C0  JMP loc_0x01C354
 sub_AA5C:
 C - - - - - 0x00AA6C 02:AA5C: A9 28     LDA #$28
-C - - - - - 0x00AA6E 02:AA5E: 4C 50 C0  JMP loc_0x01C060
+C - - - - - 0x00AA6E 02:AA5E: 4C 50 C0  JMP loc_0x01C354
 sub_AA61:
 - - - - - - 0x00AA71 02:AA61: A9 30     LDA #$30
-- - - - - - 0x00AA73 02:AA63: 4C 50 C0  JMP loc_0x01C060
+- - - - - - 0x00AA73 02:AA63: 4C 50 C0  JMP loc_0x01C354
 sub_AA66:
 - - - - - - 0x00AA76 02:AA66: A9 31     LDA #$31
-- - - - - - 0x00AA78 02:AA68: 4C 50 C0  JMP loc_0x01C060
+- - - - - - 0x00AA78 02:AA68: 4C 50 C0  JMP loc_0x01C354
 
 
 
