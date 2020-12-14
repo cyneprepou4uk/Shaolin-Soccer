@@ -1,18 +1,14 @@
 .segment "BANK_00"
 .include "copy_bank_ram.inc"
 ; 0x000010-0x00400F
-; абвгдеё
 
-.export sub_0x000010
-sub_0x000010:
-C D 0 - - - 0x000010 00:8000: 4C 06 80  JMP loc_8006
 .export sub_0x000013
 sub_0x000013:
 C - - - - - 0x000013 00:8003: 4C 83 81  JMP loc_8183
 
 
-
-loc_8006:
+.export sub_0x000016
+sub_0x000016:
 sub_8006:
 C D 0 - - - 0x000016 00:8006: 8D E6 07  STA ram_07E6
 C - - - - - 0x000019 00:8009: 8A        TXA
