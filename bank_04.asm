@@ -13840,7 +13840,7 @@ C - - - - - 0x013C3C 04:BC2C: C9 04     CMP #$04
 C - - - - - 0x013C3E 04:BC2E: 90 01     BCC bra_BC31
 C - - - - - 0x013C40 04:BC30: C8        INY
 bra_BC31:
-C - - - - - 0x013C41 04:BC31: B9 5F BC  LDA tbl_BC5F,Y
+C - - - - - 0x013C41 04:BC31: B9 5F BC  LDA tbl_BC5F_звук,Y
 C - - - - - 0x013C44 04:BC34: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 ; bzk 2 одинаковых прыжка
 C - - - - - 0x013C47 04:BC37: 20 27 80  JSR sub_0x01C25C
@@ -13865,7 +13865,7 @@ C - - - - - 0x013C6E 04:BC5E: 60        RTS
 
 
 
-tbl_BC5F:
+tbl_BC5F_звук:
 - D 1 - - - 0x013C6F 04:BC5F: 29        .byte $29   ; 
 - D 1 - - - 0x013C70 04:BC60: 28        .byte $28   ; 
 - D 1 - - - 0x013C71 04:BC61: 2A        .byte $2A   ; 
