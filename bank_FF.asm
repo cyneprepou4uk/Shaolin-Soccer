@@ -4114,7 +4114,7 @@ tbl_D617:
 
 
 
-loc_D61A:
+loc_D61A_нарисовать_информацию_статусбара:
 C D 2 - - - 0x01D62A 07:D61A: A5 59     LDA ram_подтип_экрана
 C - - - - - 0x01D62C 07:D61C: C5 5A     CMP ram_копия_подтипа_экрана
 C - - - - - 0x01D62E 07:D61E: D0 08     BNE bra_D628_RTS
@@ -5770,7 +5770,7 @@ C - - - - - 0x01E17F 07:E16F: 60        RTS
 
 
 
-loc_E170:
+loc_E170_нарисовать_надпись_в_статусбаре:
 C D 3 - - - 0x01E180 07:E170: AD F8 05  LDA ram_вид_статусбара
 C - - - - - 0x01E183 07:E173: 30 01     BMI bra_E176
 - - - - - - 0x01E185 07:E175: 60        RTS
@@ -8433,7 +8433,7 @@ C - - - - - 0x01EFD1 07:EFC1: C9 08     CMP #$08
 C - - - - - 0x01EFD3 07:EFC3: F0 07     BEQ bra_EFCC
 C - - - - - 0x01EFD5 07:EFC5: C9 0A     CMP #$0A
 C - - - - - 0x01EFD7 07:EFC7: F0 03     BEQ bra_EFCC
-C - - - - - 0x01EFD9 07:EFC9: 4C E5 EF  JMP loc_EFE5
+C - - - - - 0x01EFD9 07:EFC9: 4C E5 EF  JMP loc_EFE5_запись_в_ppu_трех_буферов
 bra_EFCC:
 C - - - - - 0x01EFDC 07:EFCC: AD E8 05  LDA ram_след_hi_2006
 C - - - - - 0x01EFDF 07:EFCF: F0 14     BEQ bra_EFE5
@@ -8441,15 +8441,15 @@ C - - - - - 0x01EFE1 07:EFD1: 4C 44 C2  JMP loc_C244
 bra_EFD4:
 C - - - - - 0x01EFE4 07:EFD4: A5 51     LDA ram_задержка_кадра
 C - - - - - 0x01EFE6 07:EFD6: D0 03     BNE bra_EFDB
-C - - - - - 0x01EFE8 07:EFD8: 4C B4 F0  JMP loc_F0B4
+C - - - - - 0x01EFE8 07:EFD8: 4C B4 F0  JMP loc_F0B4_нарисовать_поле_при_скроллинге
 bra_EFDB:
 C - - - - - 0x01EFEB 07:EFDB: C9 01     CMP #$01
 C - - - - - 0x01EFED 07:EFDD: D0 03     BNE bra_EFE2
-C - - - - - 0x01EFEF 07:EFDF: 4C 1A D6  JMP loc_D61A
+C - - - - - 0x01EFEF 07:EFDF: 4C 1A D6  JMP loc_D61A_нарисовать_информацию_статусбара
 bra_EFE2:
-C - - - - - 0x01EFF2 07:EFE2: 4C 40 F3  JMP loc_F340
+C - - - - - 0x01EFF2 07:EFE2: 4C 40 F3  JMP loc_F340_нарисовать_таймер_и_следы
 bra_EFE5:
-loc_EFE5:
+loc_EFE5_запись_в_ppu_трех_буферов:
 C D 3 - - - 0x01EFF5 07:EFE5: AD 93 06  LDA ram_байт_2006_hi_атрибуты
 C - - - - - 0x01EFF8 07:EFE8: 30 38     BMI bra_F022
 C - - - - - 0x01EFFA 07:EFEA: A5 4C     LDA ram_для_2000
@@ -8548,18 +8548,18 @@ C - - - - - 0x01F0C3 07:F0B3: 60        RTS
 
 
 
-loc_F0B4:
+loc_F0B4_нарисовать_поле_при_скроллинге:
 C D 3 - - - 0x01F0C4 07:F0B4: AD AB 05  LDA ram_флаг_обновл_тайлов_экр
 C - - - - - 0x01F0C7 07:F0B7: 29 80     AND #$80
 C - - - - - 0x01F0C9 07:F0B9: D0 13     BNE bra_F0CE
 C - - - - - 0x01F0CB 07:F0BB: AD F5 05  LDA ram_флаг_гола
 C - - - - - 0x01F0CE 07:F0BE: C9 FF     CMP #$FF
 C - - - - - 0x01F0D0 07:F0C0: F0 03     BEQ bra_F0C5
-C - - - - - 0x01F0D2 07:F0C2: 4C 66 F1  JMP loc_F166
+C - - - - - 0x01F0D2 07:F0C2: 4C 66 F1  JMP loc_F166_нарисовать_сетку_ворот_после_гола
 bra_F0C5:
 C - - - - - 0x01F0D5 07:F0C5: AD F8 05  LDA ram_вид_статусбара
 C - - - - - 0x01F0D8 07:F0C8: 10 03     BPL bra_F0CD_RTS
-C - - - - - 0x01F0DA 07:F0CA: 4C 70 E1  JMP loc_E170
+C - - - - - 0x01F0DA 07:F0CA: 4C 70 E1  JMP loc_E170_нарисовать_надпись_в_статусбаре
 bra_F0CD_RTS:
 C - - - - - 0x01F0DD 07:F0CD: 60        RTS
 bra_F0CE:
@@ -8638,7 +8638,7 @@ C - - - - - 0x01F175 07:F165: 60        RTS
 
 
 
-loc_F166:
+loc_F166_нарисовать_сетку_ворот_после_гола:
 C D 3 - - - 0x01F176 07:F166: AD F5 05  LDA ram_флаг_гола
 C - - - - - 0x01F179 07:F169: 29 7F     AND #$7F
 C - - - - - 0x01F17B 07:F16B: C9 02     CMP #$02
@@ -8970,13 +8970,13 @@ C - - - - - 0x01F34F 07:F33F: 60        RTS
 
 
 
-loc_F340:
+loc_F340_нарисовать_таймер_и_следы:
 C D 3 - - - 0x01F350 07:F340: AD 93 06  LDA ram_байт_2006_hi_атрибуты
 C - - - - - 0x01F353 07:F343: 2D B6 06  AND ram_байт_2006_hi_графика
 C - - - - - 0x01F356 07:F346: 2D D9 06  AND ram_байт_2006_hi_палитра
 C - - - - - 0x01F359 07:F349: C9 FF     CMP #$FF
 C - - - - - 0x01F35B 07:F34B: F0 03     BEQ bra_F350
-C - - - - - 0x01F35D 07:F34D: 4C E5 EF  JMP loc_EFE5
+C - - - - - 0x01F35D 07:F34D: 4C E5 EF  JMP loc_EFE5_запись_в_ppu_трех_буферов
 bra_F350:
 C - - - - - 0x01F360 07:F350: A5 59     LDA ram_подтип_экрана
 C - - - - - 0x01F362 07:F352: C5 5A     CMP ram_копия_подтипа_экрана
