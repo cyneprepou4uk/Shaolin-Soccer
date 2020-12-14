@@ -10708,8 +10708,8 @@ ofs_AA88_00:
 C - - J - - 0x00AA98 02:AA88: A9 80     LDA #$80
 C - - - - - 0x00AA9A 02:AA8A: 85 4F     STA ram_флаг_NMI
 C - - - - - 0x00AA9C 02:AA8C: 20 49 AE  JSR sub_AE49
-C - - - - - 0x00AA9F 02:AA8F: 20 3D AE  JSR sub_AE3D
-C - - - - - 0x00AAA2 02:AA92: 20 3D AE  JSR sub_AE3D
+C - - - - - 0x00AA9F 02:AA8F: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
+C - - - - - 0x00AAA2 02:AA92: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 ofs_AA95_08:
 C - - - - - 0x00AAA5 02:AA95: A9 00     LDA #$00
 C - - - - - 0x00AAA7 02:AA97: 20 68 C0  JSR sub_0x01E838
@@ -10863,7 +10863,7 @@ tbl_AB48:
 
 
 ofs_AB78_02:
-C - - J - - 0x00AB88 02:AB78: 20 3D AE  JSR sub_AE3D
+C - - J - - 0x00AB88 02:AB78: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 C - - - - - 0x00AB8B 02:AB7B: 20 49 AE  JSR sub_AE49
 C - - - - - 0x00AB8E 02:AB7E: A9 0E     LDA #$0E
 C - - - - - 0x00AB90 02:AB80: 20 68 C0  JSR sub_0x01E838
@@ -10972,7 +10972,7 @@ C - - - - - 0x00AC52 02:AC42: 60        RTS
 
 ofs_AC43_05:
 ofs_AC43_08:
-C - - J - - 0x00AC53 02:AC43: 20 3D AE  JSR sub_AE3D
+C - - J - - 0x00AC53 02:AC43: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 C - - - - - 0x00AC56 02:AC46: 20 49 AE  JSR sub_AE49
 C - - - - - 0x00AC59 02:AC49: A9 00     LDA #$00
 C - - - - - 0x00AC5B 02:AC4B: 8D 00 03  STA ram_счетчик_кадров
@@ -11057,7 +11057,7 @@ C - - - - - 0x00ACF9 02:ACE9: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x00ACFC 02:ACEC: A9 04     LDA #$04
 C - - - - - 0x00ACFE 02:ACEE: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AD01 02:ACF1: 20 4A C0  JSR sub_0x01D072
-C - - - - - 0x00AD04 02:ACF4: 20 3D AE  JSR sub_AE3D
+C - - - - - 0x00AD04 02:ACF4: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 bra_ACF7_RTS:
 C - - - - - 0x00AD07 02:ACF7: 60        RTS
 
@@ -11274,15 +11274,15 @@ tbl_AE29:
 
 
 
-sub_AE3D:
+sub_AE3D_задержка_8_игровых_кадров:
 C - - - - - 0x00AE4D 02:AE3D: A2 08     LDX #$08
-bra_AE3F:
+bra_AE3F_цикл:
 C - - - - - 0x00AE4F 02:AE3F: A5 51     LDA ram_задержка_кадра
-bra_AE41:
+bra_AE41_цикл:
 C - - - - - 0x00AE51 02:AE41: C5 51     CMP ram_задержка_кадра
-C - - - - - 0x00AE53 02:AE43: F0 FC     BEQ bra_AE41
+C - - - - - 0x00AE53 02:AE43: F0 FC     BEQ bra_AE41_цикл
 C - - - - - 0x00AE55 02:AE45: CA        DEX
-C - - - - - 0x00AE56 02:AE46: D0 F7     BNE bra_AE3F
+C - - - - - 0x00AE56 02:AE46: D0 F7     BNE bra_AE3F_цикл
 C - - - - - 0x00AE58 02:AE48: 60        RTS
 
 
@@ -11315,7 +11315,7 @@ C - - - - - 0x00AE7B 02:AE6B: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x00AE7E 02:AE6E: A9 04     LDA #$04
 C - - - - - 0x00AE80 02:AE70: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AE83 02:AE73: 20 4A C0  JSR sub_0x01D072
-C - - - - - 0x00AE86 02:AE76: 20 3D AE  JSR sub_AE3D
+C - - - - - 0x00AE86 02:AE76: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 bra_AE79:
 C - - - - - 0x00AE89 02:AE79: E6 59     INC ram_подтип_экрана
 C - - - - - 0x00AE8B 02:AE7B: 60        RTS
@@ -13952,7 +13952,7 @@ ofs_BBCE_02:
 - - - - - - 0x00BBE4 02:BBD4: 50 DA     BVC bra_BBB0_RTS
 - - - - - - 0x00BBE6 02:BBD6: 20 44 C0  JSR sub_0x01D057
 - - - - - - 0x00BBE9 02:BBD9: 20 4A C0  JSR sub_0x01D072
-- - - - - - 0x00BBEC 02:BBDC: 20 3D AE  JSR sub_AE3D
+- - - - - - 0x00BBEC 02:BBDC: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 - - - - - - 0x00BBEF 02:BBDF: A9 1C     LDA #$1C
 - - - - - - 0x00BBF1 02:BBE1: 20 68 C0  JSR sub_0x01E838
 - - - - - - 0x00BBF4 02:BBE4: AD 1F 06  LDA ram_061F
@@ -14118,7 +14118,7 @@ ofs_BD00_03:
 - - - - - - 0x00BD19 02:BD09: 50 C4     BVC bra_BCCF_RTS
 - - - - - - 0x00BD1B 02:BD0B: 20 44 C0  JSR sub_0x01D057
 - - - - - - 0x00BD1E 02:BD0E: 20 4A C0  JSR sub_0x01D072
-- - - - - - 0x00BD21 02:BD11: 20 3D AE  JSR sub_AE3D
+- - - - - - 0x00BD21 02:BD11: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 - - - - - - 0x00BD24 02:BD14: EE 8C 05  INC ram_058C
 - - - - - - 0x00BD27 02:BD17: AD 8C 05  LDA ram_058C
 - - - - - - 0x00BD2A 02:BD1A: C9 07     CMP #$07
@@ -14295,7 +14295,7 @@ ofs_BE76_07:
 - - - - - - 0x00BE8F 02:BE7F: 30 13     BMI bra_BE94_RTS
 - - - - - - 0x00BE91 02:BE81: 20 44 C0  JSR sub_0x01D057
 - - - - - - 0x00BE94 02:BE84: 20 4A C0  JSR sub_0x01D072
-- - - - - - 0x00BE97 02:BE87: 20 3D AE  JSR sub_AE3D
+- - - - - - 0x00BE97 02:BE87: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 - - - - - - 0x00BE9A 02:BE8A: A9 00     LDA #$00
 - - - - - - 0x00BE9C 02:BE8C: 8D E6 05  STA ram_скорость_игры
 - - - - - - 0x00BE9F 02:BE8F: 8D 92 03  STA ram_мяч_Z_lo
