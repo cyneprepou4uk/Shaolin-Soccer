@@ -2799,13 +2799,6 @@ C - - - - - 0x014FB7 05:8FA7: 20 14 C0  JSR sub_0x01C024
 C - - - - - 0x014FBA 05:8FAA: 60        RTS
 
 
-; bzk мусор
-- - - - - - 0x014FBB 05:8FAB: E6        .byte $E6   ; 
-- - - - - - 0x014FBC 05:8FAC: 20        .byte $20   ; 
-- - - - - - 0x014FBD 05:8FAD: F5        .byte $F5   ; 
-- - - - - - 0x014FBE 05:8FAE: 20        .byte $20   ; 
-
-
 
 tbl_8FAF:
 - D 0 - - - 0x014FBF 05:8FAF: 1C        .byte $1C   ; 
