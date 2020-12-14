@@ -39,9 +39,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C066
-sub_0x01C066:
-C - - - - - 0x01C066 07:C056: 4C BD CE  JMP loc_CEBD
 .export sub_0x01C069
 sub_0x01C069:
 C - - - - - 0x01C069 07:C059: 4C 4F D0  JMP loc_D04F
@@ -2427,7 +2424,6 @@ C - - - - - 0x01CECC 07:CEBC: 60        RTS
 
 
 
-loc_CEBD:
 .export sub_0x01CECD
 sub_0x01CECD:
 C D 2 - - - 0x01CECD 07:CEBD: 0A        ASL

@@ -14242,7 +14242,7 @@ C - - - - - 0x013E0F 04:BDFF: F0 03     BEQ bra_BE04
 bra_BE01:
 C - - - - - 0x013E11 04:BE01: AD 0F 05  LDA ram_номер_супера
 bra_BE04:
-C - - - - - 0x013E14 04:BE04: 20 56 C0  JSR sub_0x01C066
+C - - - - - 0x013E14 04:BE04: 20 56 C0  JSR sub_0x01CECD
 C - - - - - 0x013E17 04:BE07: 60        RTS
 
 

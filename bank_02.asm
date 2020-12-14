@@ -12173,7 +12173,7 @@ C - - - - - 0x00B36D 02:B35D: 85 32     STA ram_0032
 C - - - - - 0x00B36F 02:B35F: AD 70 B3  LDA tbl_B36F + 1
 C - - - - - 0x00B372 02:B362: 85 33     STA ram_0033
 C - - - - - 0x00B374 02:B364: BD 59 04  LDA ram_игрок_номер_движения,X
-C - - - - - 0x00B377 02:B367: 20 56 C0  JSR sub_0x01C066
+C - - - - - 0x00B377 02:B367: 20 56 C0  JSR sub_0x01CECD
 C - - - - - 0x00B37A 02:B36A: 60        RTS
 
 
@@ -13297,7 +13297,7 @@ C - - - - - 0x00B902 02:B8F2: 85 32     STA ram_0032
 C - - - - - 0x00B904 02:B8F4: AD 03 B9  LDA tbl_B902 + 1
 C - - - - - 0x00B907 02:B8F7: 85 33     STA ram_0033
 C - - - - - 0x00B909 02:B8F9: BD 59 04  LDA ram_игрок_номер_движения,X
-C - - - - - 0x00B90C 02:B8FC: 20 56 C0  JSR sub_0x01C066
+C - - - - - 0x00B90C 02:B8FC: 20 56 C0  JSR sub_0x01CECD
 C - - - - - 0x00B90F 02:B8FF: 60        RTS
 tbl_B900:
 - D 1 - - - 0x00B910 02:B900: 04 B9     .word off_B904
