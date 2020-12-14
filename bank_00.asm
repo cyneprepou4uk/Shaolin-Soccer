@@ -15612,12 +15612,6 @@ C D 1 - - - 0x004008 00:BFF8: A9 1A     LDA #$1A
 C - - - - - 0x00400A 00:BFFA: 4C 50 C0  JMP loc_0x01C060
 
 
-; bzk мусор
-- - - - - - 0x00400D 00:BFFD: FF        .byte $FF   ; 
-; !!!
-- D 1 - - - 0x00400E 00:BFFE: FF        .byte $FF   ; 
-
-
 
 .segment "BANK_00_ID"
 - D 1 - - - 0x00400F 00:BFFF: 00        .byte $00   ; 
