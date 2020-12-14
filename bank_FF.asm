@@ -800,7 +800,6 @@ C - - - - - 0x01C405 07:C3F5: 20 64 EF  JSR sub_EF64
 C - - - - - 0x01C408 07:C3F8: A9 00     LDA #$00
 C - - - - - 0x01C40A 07:C3FA: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
 C - - - - - 0x01C40D 07:C3FD: A9 00     LDA #$00
-C - - - - - 0x01C40F 07:C3FF: 8D 52 00  STA ram_0052
 C - - - - - 0x01C418 07:C408: 85 53     STA ram_0053
 C - - - - - 0x01C412 07:C402: A9 C0     LDA #$C0
 C - - - - - 0x01C414 07:C404: 85 4F     STA ram_флаг_NMI
@@ -901,10 +900,6 @@ C - - - - - 0x01C4D7 07:C4C7: F0 FC     BEQ bra_C4C5_бесконечный_ци
 C - - - - - 0x01C4D9 07:C4C9: A5 51     LDA ram_задержка_кадра
 C - - - - - 0x01C4DB 07:C4CB: CD E6 05  CMP ram_скорость_игры
 C - - - - - 0x01C4DE 07:C4CE: 90 F3     BCC bra_C4C3_бесконечный_цикл
-C - - - - - 0x01C4E0 07:C4D0: CD 52 00  CMP ram_0052
-C - - - - - 0x01C4E3 07:C4D3: 90 03     BCC bra_C4D8
-C - - - - - 0x01C4E5 07:C4D5: 8D 52 00  STA ram_0052
-bra_C4D8:
 C - - - - - 0x01C4E8 07:C4D8: 4C 78 C4  JMP loc_C478_главный_игровой_скрипт
 
 
