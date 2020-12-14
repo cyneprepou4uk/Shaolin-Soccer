@@ -11000,7 +11000,7 @@ C - - - - - 0x00AC8A 02:AC7A: A9 01     LDA #$01
 C - - - - - 0x00AC8C 02:AC7C: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x00AC8F 02:AC7F: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 C - - - - - 0x00AC92 02:AC82: A9 03     LDA #$03
-C - - - - - 0x00AC94 02:AC84: 8D E6 05  STA ram_05E6
+C - - - - - 0x00AC94 02:AC84: 8D E6 05  STA ram_скорость_игры
 C - - - - - 0x00AC97 02:AC87: CE 69 05  DEC ram_номер_управляемого + 1
 C - - - - - 0x00AC9A 02:AC8A: CE 6A 05  DEC ram_номер_управляемого + 2
 C - - - - - 0x00AC9D 02:AC8D: CE 6B 05  DEC ram_номер_управляемого + 3
@@ -13907,7 +13907,7 @@ ofs_BB78_00:
 - - - - - - 0x00BB90 02:BB80: A9 80     LDA #$80
 - - - - - - 0x00BB92 02:BB82: 85 4F     STA ram_флаг_NMI
 - - - - - - 0x00BB94 02:BB84: A9 03     LDA #$03
-- - - - - - 0x00BB96 02:BB86: 8D E6 05  STA ram_05E6
+- - - - - - 0x00BB96 02:BB86: 8D E6 05  STA ram_скорость_игры
 - - - - - - 0x00BB99 02:BB89: A9 00     LDA #$00
 - - - - - - 0x00BB9B 02:BB8B: 85 EC     STA ram_камера_X_lo
 - - - - - - 0x00BB9D 02:BB8D: 85 EE     STA ram_камера_Y_lo
@@ -14283,7 +14283,7 @@ ofs_BE59_06:
 - - - - - - 0x00BE7A 02:BE6A: A9 80     LDA #$80
 - - - - - - 0x00BE7C 02:BE6C: 8D 04 06  STA ram_0604
 - - - - - - 0x00BE7F 02:BE6F: A9 02     LDA #$02
-- - - - - - 0x00BE81 02:BE71: 8D E6 05  STA ram_05E6
+- - - - - - 0x00BE81 02:BE71: 8D E6 05  STA ram_скорость_игры
 - - - - - - 0x00BE84 02:BE74: D0 C9     BNE bra_BE3F
 
 
@@ -14297,7 +14297,7 @@ ofs_BE76_07:
 - - - - - - 0x00BE94 02:BE84: 20 4A C0  JSR sub_0x01D072
 - - - - - - 0x00BE97 02:BE87: 20 3D AE  JSR sub_AE3D
 - - - - - - 0x00BE9A 02:BE8A: A9 00     LDA #$00
-- - - - - - 0x00BE9C 02:BE8C: 8D E6 05  STA ram_05E6
+- - - - - - 0x00BE9C 02:BE8C: 8D E6 05  STA ram_скорость_игры
 - - - - - - 0x00BE9F 02:BE8F: 8D 92 03  STA ram_мяч_Z_lo
 - - - - - - 0x00BEA2 02:BE92: E6 59     INC ram_подтип_экрана
 bra_BE94_RTS:
