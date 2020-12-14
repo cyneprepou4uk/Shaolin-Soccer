@@ -12381,7 +12381,7 @@ C - - - - - 0x0133AF 04:B39F: 4C 4D B4  JMP loc_B44D_RTS
 bra_B3A2:
 loc_B3A2:
 C D 1 - - - 0x0133B2 04:B3A2: A0 0D     LDY #$0D
-C - - - - - 0x0133B4 04:B3A4: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x0133B4 04:B3A4: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x0133B7 04:B3A7: C9 80     CMP #$80
 C - - - - - 0x0133B9 04:B3A9: 90 03     BCC bra_B3AE
 C - - - - - 0x0133BB 04:B3AB: 4C 45 B4  JMP loc_B445

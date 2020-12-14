@@ -761,7 +761,7 @@ C - - - - - 0x00C4E6 03:84D6: D0 16     BNE bra_84EE
 - - - - - - 0x00C4FB 03:84EB: 4C B9 84  JMP loc_84B9
 bra_84EE:
 C - - - - - 0x00C4FE 03:84EE: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x00C501 03:84F1: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00C501 03:84F1: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00C504 03:84F4: 85 1C     STA ram_001C
 C - - - - - 0x00C506 03:84F6: 20 4C 9B  JSR sub_9B4C
 C - - - - - 0x00C509 03:84F9: A5 1C     LDA ram_001C
@@ -827,7 +827,7 @@ C - - - - - 0x00C567 03:8557: 4C CD 85  JMP loc_85CD
 bra_855A:
 loc_855A:
 C D 0 - - - 0x00C56A 03:855A: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x00C56D 03:855D: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00C56D 03:855D: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00C570 03:8560: 85 1C     STA ram_001C
 C - - - - - 0x00C572 03:8562: 20 4C 9B  JSR sub_9B4C
 C - - - - - 0x00C575 03:8565: A5 1C     LDA ram_001C
@@ -3193,7 +3193,7 @@ C - - - - - 0x00D306 03:92F6: C9 18     CMP #$18
 C - - - - - 0x00D308 03:92F8: 90 03     BCC bra_92FD
 C - - - - - 0x00D30A 03:92FA: 4C 0F 93  JMP loc_930F
 bra_92FD:
-C - - - - - 0x00D30D 03:92FD: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00D30D 03:92FD: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00D310 03:9300: 4A        LSR
 C - - - - - 0x00D311 03:9301: 4A        LSR
 C - - - - - 0x00D312 03:9302: 4A        LSR
@@ -3226,7 +3226,7 @@ bra_9337:
 C - - - - - 0x00D347 03:9337: 20 05 C0  JSR sub_0x01C015
 C - - - - - 0x00D34A 03:933A: 10 E0     BPL bra_931C
 C - - - - - 0x00D34C 03:933C: A0 0C     LDY #$0C
-C - - - - - 0x00D34E 03:933E: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00D34E 03:933E: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00D351 03:9341: C9 30     CMP #$30
 C - - - - - 0x00D353 03:9343: B0 D7     BCS bra_931C
 C - - - - - 0x00D355 03:9345: A9 0C     LDA #$0C
@@ -3276,7 +3276,7 @@ C - - - - - 0x00D390 03:9380: C9 18     CMP #$18
 C - - - - - 0x00D392 03:9382: 90 03     BCC bra_9387
 C - - - - - 0x00D394 03:9384: 4C F4 93  JMP loc_93F4
 bra_9387:
-C - - - - - 0x00D397 03:9387: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00D397 03:9387: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00D39A 03:938A: 4A        LSR
 C - - - - - 0x00D39B 03:938B: 4A        LSR
 C - - - - - 0x00D39C 03:938C: 4A        LSR
@@ -3357,7 +3357,7 @@ C - - - - - 0x00D428 03:9418: 20 5F 98  JSR sub_985F
 C - - - - - 0x00D42B 03:941B: 60        RTS
 bra_941C:
 C - - - - - 0x00D42C 03:941C: A0 0C     LDY #$0C
-C - - - - - 0x00D42E 03:941E: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00D42E 03:941E: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00D431 03:9421: C9 40     CMP #$40
 C - - - - - 0x00D433 03:9423: B0 DC     BCS bra_9401
 C - - - - - 0x00D435 03:9425: BD 86 04  LDA ram_игрок_состояние,X
@@ -3537,7 +3537,7 @@ C - - - - - 0x00D54F 03:953F: B9 86 04  LDA ram_игрок_состояние,Y
 C - - - - - 0x00D552 03:9542: 30 03     BMI bra_9547
 C - - - - - 0x00D554 03:9544: 4C FE 95  JMP loc_95FE
 bra_9547:
-C - - - - - 0x00D557 03:9547: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00D557 03:9547: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00D55A 03:954A: 4A        LSR
 C - - - - - 0x00D55B 03:954B: 4A        LSR
 C - - - - - 0x00D55C 03:954C: 4A        LSR
@@ -3750,7 +3750,7 @@ C - - - - - 0x00D6F5 03:96E5: B9 4D 03  LDA ram_игрок_Y_lo,Y
 C - - - - - 0x00D6F8 03:96E8: C9 20     CMP #$20
 C - - - - - 0x00D6FA 03:96EA: B0 F6     BCS bra_96E2
 loc_96EC:
-C D 0 - - - 0x00D6FC 03:96EC: 20 41 C0  JSR sub_0x01C051
+C D 0 - - - 0x00D6FC 03:96EC: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00D6FF 03:96EF: 85 1C     STA ram_001C
 C - - - - - 0x00D701 03:96F1: 20 4C 9B  JSR sub_9B4C
 C - - - - - 0x00D704 03:96F4: A5 1C     LDA ram_001C
@@ -4174,7 +4174,7 @@ C - - - - - 0x00D9D7 03:99C7: 19 20 04  ORA ram_игрок_spd_Z_lo,Y
 C - - - - - 0x00D9DA 03:99CA: F0 03     BEQ bra_99CF
 C - - - - - 0x00D9DC 03:99CC: 4C E2 99  JMP loc_99E2
 bra_99CF:
-C - - - - - 0x00D9DF 03:99CF: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00D9DF 03:99CF: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00D9E2 03:99D2: 4A        LSR
 C - - - - - 0x00D9E3 03:99D3: 4A        LSR
 C - - - - - 0x00D9E4 03:99D4: 4A        LSR
@@ -4797,7 +4797,7 @@ C - - - - - 0x00DDCA 03:9DBA: 48        PHA
 C - - - - - 0x00DDCB 03:9DBB: BD 68 05  LDA ram_номер_управляемого,X
 C - - - - - 0x00DDCE 03:9DBE: AA        TAX
 C - - - - - 0x00DDCF 03:9DBF: A0 0C     LDY #$0C
-C - - - - - 0x00DDD1 03:9DC1: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00DDD1 03:9DC1: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00DDD4 03:9DC4: 85 2C     STA ram_002C
 C - - - - - 0x00DDD6 03:9DC6: 68        PLA
 C - - - - - 0x00DDD7 03:9DC7: AA        TAX
@@ -4842,7 +4842,7 @@ C - - - - - 0x00DE14 03:9E04: 48        PHA
 C - - - - - 0x00DE15 03:9E05: BD 68 05  LDA ram_номер_управляемого,X
 C - - - - - 0x00DE18 03:9E08: AA        TAX
 C - - - - - 0x00DE19 03:9E09: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x00DE1C 03:9E0C: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00DE1C 03:9E0C: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00DE1F 03:9E0F: 85 2C     STA ram_002C
 C - - - - - 0x00DE21 03:9E11: 68        PLA
 C - - - - - 0x00DE22 03:9E12: AA        TAX
@@ -5915,7 +5915,7 @@ C - - - - - 0x00E468 03:A458: 29 01     AND #$01
 C - - - - - 0x00E46A 03:A45A: A8        TAY
 C - - - - - 0x00E46B 03:A45B: B9 74 06  LDA ram_номер_ближайшего,Y
 C - - - - - 0x00E46E 03:A45E: A8        TAY
-C - - - - - 0x00E46F 03:A45F: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00E46F 03:A45F: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00E472 03:A462: 85 1C     STA ram_001C
 C - - - - - 0x00E474 03:A464: 8A        TXA
 C - - - - - 0x00E475 03:A465: A8        TAY
@@ -8285,7 +8285,7 @@ C - - - - - 0x00F071 03:B061: F0 05     BEQ bra_B068
 C - - - - - 0x00F073 03:B063: 90 03     BCC bra_B068
 C - - - - - 0x00F075 03:B065: 4C A7 B0  JMP loc_B0A7
 bra_B068:
-C - - - - - 0x00F078 03:B068: 20 41 C0  JSR sub_0x01C051
+C - - - - - 0x00F078 03:B068: 20 41 C0  JSR sub_0x01FA7D
 C - - - - - 0x00F07B 03:B06B: 84 44     STY ram_0044
 C - - - - - 0x00F07D 03:B06D: A0 0F     LDY #$0F
 bra_B06F:
