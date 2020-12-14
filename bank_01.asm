@@ -14493,7 +14493,7 @@ C - - J - - 0x007B4D 01:BB3D: 60        RTS
 loc_BB3E:
 ofs_BB3E_03:
 C D 1 - - - 0x007B4E 01:BB3E: A2 0D     LDX #$0D
-C - - - - - 0x007B50 01:BB40: 20 BC BF  JSR sub_BFBC
+C - - - - - 0x007B50 01:BB40: 20 BC BF  JSR sub_0x01C25C
 C - - - - - 0x007B53 01:BB43: AD 6D 03  LDA ram_погода_Y_hi
 C - - - - - 0x007B56 01:BB46: C9 01     CMP #$01
 C - - - - - 0x007B58 01:BB48: F0 0A     BEQ bra_BB54
@@ -15385,12 +15385,6 @@ tbl_BFAF:
 - - - - - - 0x007FBF 01:BFAF: 00        .byte $00   ; 
 - D 1 - - - 0x007FC0 01:BFB0: 58        .byte $58   ; 
 - D 1 - - - 0x007FC1 01:BFB1: 01        .byte $01   ; 
-
-
-
-sub_BFBC:
-C - - - - - 0x007FCC 01:BFBC: A9 06     LDA #$06
-C - - - - - 0x007FCE 01:BFBE: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 
 
 
