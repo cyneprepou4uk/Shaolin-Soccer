@@ -49,12 +49,6 @@ C - - J - - 0x010034 04:8024: 4C EC BB  JMP loc_BBEC
 
 
 
-sub_8027:
-C - - - - - 0x010037 04:8027: A9 06     LDA #$06
-C - - - - - 0x010039 04:8029: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
-
-
-
 sub_802C:
 C - - - - - 0x01003C 04:802C: A9 25     LDA #$25
 C - - - - - 0x01003E 04:802E: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
@@ -13858,8 +13852,9 @@ C - - - - - 0x013C40 04:BC30: C8        INY
 bra_BC31:
 C - - - - - 0x013C41 04:BC31: B9 5F BC  LDA tbl_BC5F,Y
 C - - - - - 0x013C44 04:BC34: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x013C47 04:BC37: 20 27 80  JSR sub_8027
-C - - - - - 0x013C4A 04:BC3A: 20 27 80  JSR sub_8027
+; bzk 2 одинаковых прыжка
+C - - - - - 0x013C47 04:BC37: 20 27 80  JSR sub_0x01C25C
+C - - - - - 0x013C4A 04:BC3A: 20 27 80  JSR sub_0x01C25C
 bra_BC3D:
 C - - - - - 0x013C4D 04:BC3D: BD 99 03  LDA ram_игрок_Z_hi,X
 C - - - - - 0x013C50 04:BC40: 10 0B     BPL bra_BC4D
