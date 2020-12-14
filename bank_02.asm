@@ -14286,7 +14286,7 @@ ofs_BE59_06:
 
 
 ofs_BE76_07:
-- - - - - - 0x00BE86 02:BE76: 20 71 C0  JSR sub_0x01C081
+- - - - - - 0x00BE86 02:BE76: 20 71 C0  JSR sub_0x01C327
 - - - - - - 0x00BE89 02:BE79: 20 C8 BE  JSR sub_BEC8
 - - - - - - 0x00BE8C 02:BE7C: AD 05 06  LDA ram_0605
 - - - - - - 0x00BE8F 02:BE7F: 30 13     BMI bra_BE94_RTS

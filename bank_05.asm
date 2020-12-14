@@ -6490,7 +6490,7 @@ C - - - - - 0x0162E5 05:A2D5: 50 06     BVC bra_A2DD
 C - - - - - 0x0162E7 05:A2D7: 20 18 A3  JSR sub_A318
 C - - - - - 0x0162EA 05:A2DA: 4C F6 A2  JMP loc_A2F6_RTS
 bra_A2DD:
-C - - - - - 0x0162ED 05:A2DD: 20 71 C0  JSR sub_0x01C081
+C - - - - - 0x0162ED 05:A2DD: 20 71 C0  JSR sub_0x01C327
 C - - - - - 0x0162F0 05:A2E0: AD 05 06  LDA ram_0605
 C - - - - - 0x0162F3 05:A2E3: 30 03     BMI bra_A2E8
 C - - - - - 0x0162F5 05:A2E5: 20 44 C0  JSR sub_0x01D057
@@ -7895,7 +7895,7 @@ C - - - - - 0x016B3D 05:AB2D: A9 80     LDA #$80
 C - - - - - 0x016B3F 05:AB2F: 8D 04 06  STA ram_0604
 bra_AB32:
 loc_AB32:
-C D 1 - - - 0x016B42 05:AB32: 20 71 C0  JSR sub_0x01C081
+C D 1 - - - 0x016B42 05:AB32: 20 71 C0  JSR sub_0x01C327
 C - - - - - 0x016B45 05:AB35: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x016B48 05:AB38: C9 09     CMP #$09
 C - - - - - 0x016B4A 05:AB3A: 90 03     BCC bra_AB3F
