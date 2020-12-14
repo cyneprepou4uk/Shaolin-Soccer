@@ -11417,9 +11417,6 @@ loop_1_ADEE:
 
 
 
-.export sub_0x002E90
-sub_0x002E90:
-C - - - - - 0x002E90 00:AE80: 4C 13 BB  JMP loc_BB13
 .export sub_0x002E93
 sub_0x002E93:
 C - - - - - 0x002E93 00:AE83: 4C 06 BF  JMP loc_BF06
@@ -14541,7 +14538,8 @@ off_BA9C_38:
 
 
 
-loc_BB13:
+.export sub_0x003B23
+sub_0x003B23:
 C D 1 - - - 0x003B23 00:BB13: A9 FF     LDA #$FF
 C - - - - - 0x003B25 00:BB15: 8D 68 05  STA ram_номер_управляемого
 C - - - - - 0x003B28 00:BB18: 8D 69 05  STA ram_номер_управляемого + 1
