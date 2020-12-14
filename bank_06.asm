@@ -5804,6 +5804,12 @@ off_A5C6:
 
 
 
+con_FD      = $FD
+con_FE      = $FE
+con_FF      = $FF
+
+
+
 _animation_A680_00:
 _animation_A680_13:
 _animation_A680_17:
@@ -5811,12 +5817,12 @@ _animation_A680_18:
 _animation_A680_1E:
 _animation_A680_1F:
 _animation_A680_2C:
-- - - - - - 0x01A690 06:A680: FF        .byte $FF   ; 
+- - - - - - 0x01A690 06:A680: FF        .byte con_FF
 
 
 
 _animation_A681_01:
-- D 1 - I - 0x01A691 06:A681: FD        .byte $FD   ; 
+- D 1 - I - 0x01A691 06:A681: FD        .byte con_FD
 - D 1 - I - 0x01A692 06:A682: A6 A6     .word off_A6A6_00
 - D 1 - I - 0x01A694 06:A684: AD A6     .word off_A6AD_01
 - D 1 - I - 0x01A696 06:A686: F8 A9     .word off_A9F8_02
@@ -5830,25 +5836,25 @@ off_A692_05:
 - D 1 - I - 0x01A6A3 06:A693: 43        .byte $43   ; 
 - D 1 - I - 0x01A6A4 06:A694: 03        .byte $03   ; 
 - D 1 - I - 0x01A6A5 06:A695: 45        .byte $45   ; 
-- D 1 - I - 0x01A6A6 06:A696: FE        .byte $FE   ; 
+- D 1 - I - 0x01A6A6 06:A696: FE        .byte con_FE
 off_A697_06:
 - D 1 - I - 0x01A6A7 06:A697: 03        .byte $03   ; 
 - D 1 - I - 0x01A6A8 06:A698: 46        .byte $46   ; 
 - D 1 - I - 0x01A6A9 06:A699: 03        .byte $03   ; 
 - D 1 - I - 0x01A6AA 06:A69A: 47        .byte $47   ; 
-- D 1 - I - 0x01A6AB 06:A69B: FE        .byte $FE   ; 
+- D 1 - I - 0x01A6AB 06:A69B: FE        .byte con_FE 
 off_A69C_07:
 - D 1 - I - 0x01A6AC 06:A69C: 03        .byte $03   ; 
 - D 1 - I - 0x01A6AD 06:A69D: 49        .byte $49   ; 
 - D 1 - I - 0x01A6AE 06:A69E: 03        .byte $03   ; 
 - D 1 - I - 0x01A6AF 06:A69F: 4A        .byte $4A   ; 
-- D 1 - I - 0x01A6B0 06:A6A0: FE        .byte $FE   ; 
+- D 1 - I - 0x01A6B0 06:A6A0: FE        .byte con_FE 
 off_A6A1_04:
 - D 1 - I - 0x01A6B1 06:A6A1: 03        .byte $03   ; 
 - D 1 - I - 0x01A6B2 06:A6A2: 41        .byte $41   ; 
 - D 1 - I - 0x01A6B3 06:A6A3: 03        .byte $03   ; 
 - D 1 - I - 0x01A6B4 06:A6A4: 48        .byte $48   ; 
-- D 1 - I - 0x01A6B5 06:A6A5: FE        .byte $FE   ; 
+- D 1 - I - 0x01A6B5 06:A6A5: FE        .byte con_FE 
 
 
 
@@ -5861,7 +5867,7 @@ off_A6A6_03:
 - D 1 - I - 0x01A6B9 06:A6A9: 00        .byte $00   ; 
 - - - - - - 0x01A6BA 06:A6AA: 00        .byte $00   ; 
 - - - - - - 0x01A6BB 06:A6AB: 00        .byte $00   ; 
-- - - - - - 0x01A6BC 06:A6AC: FE        .byte $FE   ; 
+- - - - - - 0x01A6BC 06:A6AC: FE        .byte con_FE 
 off_A6AD_01:
 - D 1 - I - 0x01A6BD 06:A6AD: 00        .byte $00   ; 
 - D 1 - I - 0x01A6BE 06:A6AE: 10        .byte $10   ; 
@@ -5869,12 +5875,12 @@ off_A6AD_01:
 - - - - - - 0x01A6C0 06:A6B0: 10        .byte $10   ; 
 - - - - - - 0x01A6C1 06:A6B1: 00        .byte $00   ; 
 - - - - - - 0x01A6C2 06:A6B2: 10        .byte $10   ; 
-- - - - - - 0x01A6C3 06:A6B3: FE        .byte $FE   ; 
+- - - - - - 0x01A6C3 06:A6B3: FE        .byte con_FE 
 
 
 
 _animation_A6B4_16:
-- D 1 - I - 0x01A6C4 06:A6B4: FD        .byte $FD   ; 
+- D 1 - I - 0x01A6C4 06:A6B4: FD        .byte con_FD
 - - - - - - 0x01A6C5 06:A6B5: B9 A6     .word off_A6B9_00
 - D 1 - I - 0x01A6C7 06:A6B7: C8 A6     .word off_A6C8_01
 off_A6B9_00:
@@ -5892,7 +5898,7 @@ off_A6B9_00:
 - - - - - - 0x01A6D4 06:A6C4: 00        .byte $00   ; 
 - - - - - - 0x01A6D5 06:A6C5: 08        .byte $08   ; 
 - - - - - - 0x01A6D6 06:A6C6: 1D        .byte $1D   ; 
-- - - - - - 0x01A6D7 06:A6C7: FF        .byte $FF   ; 
+- - - - - - 0x01A6D7 06:A6C7: FF        .byte con_FF
 off_A6C8_01:
 - D 1 - I - 0x01A6D8 06:A6C8: 08        .byte $08   ; 
 - D 1 - I - 0x01A6D9 06:A6C9: 00        .byte $00   ; 
@@ -5908,7 +5914,7 @@ off_A6C8_01:
 - D 1 - I - 0x01A6E3 06:A6D3: 00        .byte $00   ; 
 - D 1 - I - 0x01A6E4 06:A6D4: 08        .byte $08   ; 
 - D 1 - I - 0x01A6E5 06:A6D5: 15        .byte $15   ; 
-- D 1 - I - 0x01A6E6 06:A6D6: FF        .byte $FF   ; 
+- D 1 - I - 0x01A6E6 06:A6D6: FF        .byte con_FF
 
 
 
@@ -5923,7 +5929,7 @@ _animation_A6D7_1A:
 - D 1 - I - 0x01A6EE 06:A6DE: 01        .byte $01   ; 
 - D 1 - I - 0x01A6EF 06:A6DF: 02        .byte $02   ; 
 - D 1 - I - 0x01A6F0 06:A6E0: 08        .byte $08   ; 
-- D 1 - I - 0x01A6F1 06:A6E1: FF        .byte $FF   ; 
+- D 1 - I - 0x01A6F1 06:A6E1: FF        .byte con_FF
 
 
 
@@ -5944,7 +5950,7 @@ _animation_A6E2_1B:
 - D 1 - I - 0x01A6FF 06:A6EF: 1F        .byte $1F   ; 
 - D 1 - I - 0x01A700 06:A6F0: 02        .byte $02   ; 
 - D 1 - I - 0x01A701 06:A6F1: 00        .byte $00   ; 
-- D 1 - I - 0x01A702 06:A6F2: FF        .byte $FF   ; 
+- D 1 - I - 0x01A702 06:A6F2: FF        .byte con_FF
 
 
 
@@ -5961,7 +5967,7 @@ _animation_A6F3_1D:
 - D 1 - I - 0x01A70C 06:A6FC: 50        .byte $50   ; 
 - D 1 - I - 0x01A70D 06:A6FD: 01        .byte $01   ; 
 - D 1 - I - 0x01A70E 06:A6FE: 51        .byte $51   ; 
-- D 1 - I - 0x01A70F 06:A6FF: FF        .byte $FF   ; 
+- D 1 - I - 0x01A70F 06:A6FF: FF        .byte con_FF
 
 
 
@@ -5976,12 +5982,12 @@ _animation_A700_1C:
 - D 1 - I - 0x01A717 06:A707: 00        .byte $00   ; 
 - D 1 - I - 0x01A718 06:A708: F2        .byte $F2   ; 
 - D 1 - I - 0x01A719 06:A709: 00        .byte $00   ; 
-- D 1 - I - 0x01A71A 06:A70A: FF        .byte $FF   ; 
+- D 1 - I - 0x01A71A 06:A70A: FF        .byte con_FF
 
 
 
 _animation_A70B_20:
-- D 1 - I - 0x01A71B 06:A70B: FD        .byte $FD   ; 
+- D 1 - I - 0x01A71B 06:A70B: FD        .byte con_FD
 - D 1 - I - 0x01A71C 06:A70C: 1C A7     .word off_A71C_02
 - D 1 - I - 0x01A71E 06:A70E: 25 A7     .word off_A725_03
 - D 1 - I - 0x01A720 06:A710: FA A9     .word off_A9FA_04
@@ -6000,7 +6006,7 @@ off_A71C_05:
 - D 1 - I - 0x01A731 06:A721: 1F        .byte $1F   ; 
 - D 1 - I - 0x01A732 06:A722: 02        .byte $02   ; 
 - D 1 - I - 0x01A733 06:A723: 00        .byte $00   ; 
-- D 1 - I - 0x01A734 06:A724: FE        .byte $FE   ; 
+- D 1 - I - 0x01A734 06:A724: FE        .byte con_FE 
 off_A725_03:
 - D 1 - I - 0x01A735 06:A725: 03        .byte $03   ; 
 - D 1 - I - 0x01A736 06:A726: 3E        .byte $3E   ; 
@@ -6010,12 +6016,12 @@ off_A725_03:
 - D 1 - I - 0x01A73A 06:A72A: 3F        .byte $3F   ; 
 - D 1 - I - 0x01A73B 06:A72B: 03        .byte $03   ; 
 - D 1 - I - 0x01A73C 06:A72C: 10        .byte $10   ; 
-- D 1 - I - 0x01A73D 06:A72D: FE        .byte $FE   ; 
+- D 1 - I - 0x01A73D 06:A72D: FE        .byte con_FE 
 
 
 
 _animation_A72E_21:
-- D 1 - I - 0x01A73E 06:A72E: FD        .byte $FD   ; 
+- D 1 - I - 0x01A73E 06:A72E: FD        .byte con_FD
 - D 1 - I - 0x01A73F 06:A72F: 51 A7     .word off_A751_00
 - D 1 - I - 0x01A741 06:A731: 51 A7     .word off_A751_01
 - D 1 - I - 0x01A743 06:A733: 03 AA     .word off_AA03_02
@@ -6034,7 +6040,7 @@ off_A73F_04:
 - D 1 - I - 0x01A754 06:A744: 42        .byte $42   ; 
 - D 1 - I - 0x01A755 06:A745: 02        .byte $02   ; 
 - D 1 - I - 0x01A756 06:A746: 41        .byte $41   ; 
-- D 1 - I - 0x01A757 06:A747: FE        .byte $FE   ; 
+- D 1 - I - 0x01A757 06:A747: FE        .byte con_FE 
 off_A748_07:
 off_A748_08:
 off_A748_09:
@@ -6048,14 +6054,14 @@ off_A748_06:
 - D 1 - I - 0x01A75D 06:A74D: 44        .byte $44   ; 
 - D 1 - I - 0x01A75E 06:A74E: 02        .byte $02   ; 
 - D 1 - I - 0x01A75F 06:A74F: 43        .byte $43   ; 
-- D 1 - I - 0x01A760 06:A750: FE        .byte $FE   ; 
+- D 1 - I - 0x01A760 06:A750: FE        .byte con_FE 
 off_A751_00:
 off_A751_01:
 - D 1 - I - 0x01A761 06:A751: 02        .byte $02   ; 
 - D 1 - I - 0x01A762 06:A752: 01        .byte $01   ; 
 - D 1 - I - 0x01A763 06:A753: 02        .byte $02   ; 
 - D 1 - I - 0x01A764 06:A754: 00        .byte $00   ; 
-- D 1 - I - 0x01A765 06:A755: FE        .byte $FE   ; 
+- D 1 - I - 0x01A765 06:A755: FE        .byte con_FE 
 off_A756_03:
 - D 1 - I - 0x01A766 06:A756: 01        .byte $01   ; 
 - D 1 - I - 0x01A767 06:A757: 1E        .byte $1E   ; 
@@ -6065,7 +6071,7 @@ off_A756_03:
 - D 1 - I - 0x01A76B 06:A75B: 1F        .byte $1F   ; 
 - D 1 - I - 0x01A76C 06:A75C: 01        .byte $01   ; 
 - D 1 - I - 0x01A76D 06:A75D: 00        .byte $00   ; 
-- D 1 - I - 0x01A76E 06:A75E: FE        .byte $FE   ; 
+- D 1 - I - 0x01A76E 06:A75E: FE        .byte con_FE 
 
 
 
@@ -6086,7 +6092,7 @@ _animation_A75F_25:
 - D 1 - I - 0x01A77C 06:A76C: 1F        .byte $1F   ; 
 - D 1 - I - 0x01A77D 06:A76D: 01        .byte $01   ; 
 - D 1 - I - 0x01A77E 06:A76E: 00        .byte $00   ; 
-- D 1 - I - 0x01A77F 06:A76F: FF        .byte $FF   ; 
+- D 1 - I - 0x01A77F 06:A76F: FF        .byte con_FF
 
 
 
@@ -6094,7 +6100,7 @@ _animation_A770_30:
 _animation_A770_45:
 _animation_A770_52:
 _animation_A770_56:
-- D 1 - I - 0x01A780 06:A770: FD        .byte $FD   ; 
+- D 1 - I - 0x01A780 06:A770: FD        .byte con_FD
 - D 1 - I - 0x01A781 06:A771: 81 A7     .word off_A781_00
 - D 1 - I - 0x01A783 06:A773: 81 A7     .word off_A781_01
 - D 1 - I - 0x01A785 06:A775: 81 A7     .word off_A781_02
@@ -6118,7 +6124,7 @@ off_A783_04:
 - D 1 - I - 0x01A794 06:A784: 4B        .byte $4B   ; 
 - D 1 - I - 0x01A795 06:A785: 03        .byte $03   ; 
 - D 1 - I - 0x01A796 06:A786: 4C        .byte $4C   ; 
-- D 1 - I - 0x01A797 06:A787: FE        .byte $FE   ; 
+- D 1 - I - 0x01A797 06:A787: FE        .byte con_FE 
 off_A788_05:
 off_A788_06:
 off_A788_07:
@@ -6126,42 +6132,42 @@ off_A788_07:
 - D 1 - I - 0x01A799 06:A789: 4D        .byte $4D   ; 
 - D 1 - I - 0x01A79A 06:A78A: 03        .byte $03   ; 
 - D 1 - I - 0x01A79B 06:A78B: 4E        .byte $4E   ; 
-- D 1 - I - 0x01A79C 06:A78C: FE        .byte $FE   ; 
+- D 1 - I - 0x01A79C 06:A78C: FE        .byte con_FE 
 
 
 
 _animation_A78D_02:
 - D 1 - I - 0x01A79D 06:A78D: 04        .byte $04   ; 
 - D 1 - I - 0x01A79E 06:A78E: 08        .byte $08   ; 
-- D 1 - I - 0x01A79F 06:A78F: FF        .byte $FF   ; 
+- D 1 - I - 0x01A79F 06:A78F: FF        .byte con_FF
 
 
 
 _animation_A790_03:
 - D 1 - I - 0x01A7A0 06:A790: 06        .byte $06   ; 
 - D 1 - I - 0x01A7A1 06:A791: 0C        .byte $0C   ; 
-- D 1 - I - 0x01A7A2 06:A792: FF        .byte $FF   ; 
+- D 1 - I - 0x01A7A2 06:A792: FF        .byte con_FF
 
 
 
 _animation_A793_06:
 - D 1 - I - 0x01A7A3 06:A793: 20        .byte $20   ; 
 - D 1 - I - 0x01A7A4 06:A794: 0F        .byte $0F   ; 
-- D 1 - I - 0x01A7A5 06:A795: FF        .byte $FF   ; 
+- D 1 - I - 0x01A7A5 06:A795: FF        .byte con_FF
 
 
 
 _animation_A796_2D:
 - D 1 - I - 0x01A7A6 06:A796: 20        .byte $20   ; 
 - D 1 - I - 0x01A7A7 06:A797: 32        .byte $32   ; 
-- D 1 - I - 0x01A7A8 06:A798: FF        .byte $FF   ; 
+- D 1 - I - 0x01A7A8 06:A798: FF        .byte con_FF
 
 
 
 _animation_A799_2E:
 - D 1 - I - 0x01A7A9 06:A799: 20        .byte $20   ; 
 - D 1 - I - 0x01A7AA 06:A79A: 26        .byte $26   ; 
-- D 1 - I - 0x01A7AB 06:A79B: FF        .byte $FF   ; 
+- D 1 - I - 0x01A7AB 06:A79B: FF        .byte con_FF
 
 
 
@@ -6182,14 +6188,14 @@ _animation_A79E_5A:
 _animation_A7A0_04:
 - D 1 - I - 0x01A7B0 06:A7A0: 18        .byte $18   ; 
 - D 1 - I - 0x01A7B1 06:A7A1: 07        .byte $07   ; 
-- D 1 - I - 0x01A7B2 06:A7A2: FF        .byte $FF   ; 
+- D 1 - I - 0x01A7B2 06:A7A2: FF        .byte con_FF
 
 
 
 _animation_A7A3_05:
 - D 1 - I - 0x01A7B3 06:A7A3: 18        .byte $18   ; 
 - D 1 - I - 0x01A7B4 06:A7A4: 23        .byte $23   ; 
-- D 1 - I - 0x01A7B5 06:A7A5: FF        .byte $FF   ; 
+- D 1 - I - 0x01A7B5 06:A7A5: FF        .byte con_FF
 
 
 
@@ -6202,7 +6208,7 @@ _animation_A7A6_5B:
 - D 1 - I - 0x01A7BB 06:A7AB: D2        .byte $D2   ; 
 - D 1 - I - 0x01A7BC 06:A7AC: 01        .byte $01   ; 
 - D 1 - I - 0x01A7BD 06:A7AD: 52        .byte $52   ; 
-- D 1 - I - 0x01A7BE 06:A7AE: FE        .byte $FE   ; 
+- D 1 - I - 0x01A7BE 06:A7AE: FE        .byte con_FE 
 
 
 
@@ -6241,7 +6247,7 @@ _animation_A7BF_32:
 - D 1 - I - 0x01A7DA 06:A7CA: 9C        .byte $9C   ; 
 - D 1 - I - 0x01A7DB 06:A7CB: 02        .byte $02   ; 
 - D 1 - I - 0x01A7DC 06:A7CC: 82        .byte $82   ; 
-- D 1 - I - 0x01A7DD 06:A7CD: FF        .byte $FF   ; 
+- D 1 - I - 0x01A7DD 06:A7CD: FF        .byte con_FF
 
 
 
@@ -6254,7 +6260,7 @@ _animation_A7CE_36:
 - D 1 - I - 0x01A7E1 06:A7D1: 03        .byte $03   ; 
 - D 1 - I - 0x01A7E2 06:A7D2: 03        .byte $03   ; 
 - D 1 - I - 0x01A7E3 06:A7D3: 0D        .byte $0D   ; 
-- D 1 - I - 0x01A7E4 06:A7D4: FF        .byte $FF   ; 
+- D 1 - I - 0x01A7E4 06:A7D4: FF        .byte con_FF
 
 
 
@@ -6285,7 +6291,7 @@ _animation_A7D9_46:
 - D 1 - I - 0x01A7F8 06:A7E8: 9C        .byte $9C   ; 
 - D 1 - I - 0x01A7F9 06:A7E9: 02        .byte $02   ; 
 - D 1 - I - 0x01A7FA 06:A7EA: 82        .byte $82   ; 
-- D 1 - I - 0x01A7FB 06:A7EB: FF        .byte $FF   ; 
+- D 1 - I - 0x01A7FB 06:A7EB: FF        .byte con_FF
 
 
 
@@ -6302,7 +6308,7 @@ _animation_A7EC_37:
 - D 1 - I - 0x01A805 06:A7F5: 05        .byte $05   ; 
 - D 1 - I - 0x01A806 06:A7F6: 06        .byte $06   ; 
 - D 1 - I - 0x01A807 06:A7F7: 0B        .byte $0B   ; 
-- D 1 - I - 0x01A808 06:A7F8: FF        .byte $FF   ; 
+- D 1 - I - 0x01A808 06:A7F8: FF        .byte con_FF
 
 
 
@@ -6317,7 +6323,7 @@ _animation_A7F9_38:
 - D 1 - I - 0x01A810 06:A800: 05        .byte $05   ; 
 - D 1 - I - 0x01A811 06:A801: 02        .byte $02   ; 
 - D 1 - I - 0x01A812 06:A802: 0D        .byte $0D   ; 
-- D 1 - I - 0x01A813 06:A803: FF        .byte $FF   ; 
+- D 1 - I - 0x01A813 06:A803: FF        .byte con_FF
 
 
 
@@ -6330,7 +6336,7 @@ _animation_A804_33:
 - D 1 - I - 0x01A819 06:A809: 21        .byte $21   ; 
 - D 1 - I - 0x01A81A 06:A80A: 06        .byte $06   ; 
 - D 1 - I - 0x01A81B 06:A80B: 16        .byte $16   ; 
-- D 1 - I - 0x01A81C 06:A80C: FF        .byte $FF   ; 
+- D 1 - I - 0x01A81C 06:A80C: FF        .byte con_FF
 
 
 
@@ -6345,7 +6351,7 @@ _animation_A80D_39:
 - D 1 - I - 0x01A824 06:A814: 20        .byte $20   ; 
 - D 1 - I - 0x01A825 06:A815: 07        .byte $07   ; 
 - D 1 - I - 0x01A826 06:A816: 06        .byte $06   ; 
-- D 1 - I - 0x01A827 06:A817: FF        .byte $FF   ; 
+- D 1 - I - 0x01A827 06:A817: FF        .byte con_FF
 
 
 
@@ -6360,13 +6366,13 @@ _animation_A818_3A:
 - D 1 - I - 0x01A82F 06:A81F: 22        .byte $22   ; 
 - D 1 - I - 0x01A830 06:A820: 06        .byte $06   ; 
 - D 1 - I - 0x01A831 06:A821: 0D        .byte $0D   ; 
-- D 1 - I - 0x01A832 06:A822: FF        .byte $FF   ; 
+- D 1 - I - 0x01A832 06:A822: FF        .byte con_FF
 off_A823_00:
 - D 1 - I - 0x01A833 06:A823: 03        .byte $03   ; 
 - D 1 - I - 0x01A834 06:A824: 03        .byte $03   ; 
 - D 1 - I - 0x01A835 06:A825: 05        .byte $05   ; 
 - D 1 - I - 0x01A836 06:A826: 0D        .byte $0D   ; 
-- D 1 - I - 0x01A837 06:A827: FF        .byte $FF   ; 
+- D 1 - I - 0x01A837 06:A827: FF        .byte con_FF
 off_A828_00:
 - D 1 - I - 0x01A838 06:A828: 01        .byte $01   ; 
 - D 1 - I - 0x01A839 06:A829: 03        .byte $03   ; 
@@ -6374,7 +6380,7 @@ off_A828_00:
 - D 1 - I - 0x01A83B 06:A82B: 05        .byte $05   ; 
 - D 1 - I - 0x01A83C 06:A82C: 05        .byte $05   ; 
 - D 1 - I - 0x01A83D 06:A82D: 0D        .byte $0D   ; 
-- D 1 - I - 0x01A83E 06:A82E: FF        .byte $FF   ; 
+- D 1 - I - 0x01A83E 06:A82E: FF        .byte con_FF
 off_A82F_00:
 - D 1 - I - 0x01A83F 06:A82F: 03        .byte $03   ; 
 - D 1 - I - 0x01A840 06:A830: 03        .byte $03   ; 
@@ -6384,12 +6390,12 @@ off_A82F_00:
 - D 1 - I - 0x01A844 06:A834: 22        .byte $22   ; 
 - D 1 - I - 0x01A845 06:A835: 05        .byte $05   ; 
 - D 1 - I - 0x01A846 06:A836: 0D        .byte $0D   ; 
-- D 1 - I - 0x01A847 06:A837: FF        .byte $FF   ; 
+- D 1 - I - 0x01A847 06:A837: FF        .byte con_FF
 
 
 
 _animation_A838_09:
-- D 1 - I - 0x01A848 06:A838: FD        .byte $FD   ; 
+- D 1 - I - 0x01A848 06:A838: FD        .byte con_FD
 - D 1 - I - 0x01A849 06:A839: 28 A8     .word off_A828_00
 - D 1 - I - 0x01A84B 06:A83B: 3F A8     .word off_A83F_01
 - D 1 - I - 0x01A84D 06:A83D: 3F A8     .word off_A83F_02
@@ -6403,12 +6409,12 @@ off_A83F_02:
 - D 1 - I - 0x01A854 06:A844: 05        .byte $05   ; 
 - D 1 - I - 0x01A855 06:A845: 04        .byte $04   ; 
 - D 1 - I - 0x01A856 06:A846: 0B        .byte $0B   ; 
-- D 1 - I - 0x01A857 06:A847: FF        .byte $FF   ; 
+- D 1 - I - 0x01A857 06:A847: FF        .byte con_FF
 
 
 
 _animation_A848_07:
-- D 1 - I - 0x01A858 06:A848: FD        .byte $FD   ; 
+- D 1 - I - 0x01A858 06:A848: FD        .byte con_FD
 - D 1 - I - 0x01A859 06:A849: 23 A8     .word off_A823_00
 - D 1 - I - 0x01A85B 06:A84B: 4F A8     .word off_A84F_01
 - D 1 - I - 0x01A85D 06:A84D: 4F A8     .word off_A84F_02
@@ -6420,12 +6426,12 @@ off_A84F_02:
 - D 1 - I - 0x01A862 06:A852: 21        .byte $21   ; 
 - D 1 - I - 0x01A863 06:A853: 06        .byte $06   ; 
 - D 1 - I - 0x01A864 06:A854: 16        .byte $16   ; 
-- D 1 - I - 0x01A865 06:A855: FF        .byte $FF   ; 
+- D 1 - I - 0x01A865 06:A855: FF        .byte con_FF
 
 
 
 _animation_A856_0A:
-- D 1 - I - 0x01A866 06:A856: FD        .byte $FD   ; 
+- D 1 - I - 0x01A866 06:A856: FD        .byte con_FD
 - D 1 - I - 0x01A867 06:A857: 2F A8     .word off_A82F_00
 - D 1 - I - 0x01A869 06:A859: 66 A8     .word off_A866_01
 - D 1 - I - 0x01A86B 06:A85B: 66 A8     .word off_A866_02
@@ -6441,7 +6447,7 @@ _animation_A85D_15:
 - - - - - - 0x01A872 06:A862: 20        .byte $20   ; 
 - - - - - - 0x01A873 06:A863: 04        .byte $04   ; 
 - - - - - - 0x01A874 06:A864: 06        .byte $06   ; 
-- - - - - - 0x01A875 06:A865: FF        .byte $FF   ; 
+- - - - - - 0x01A875 06:A865: FF        .byte con_FF
 off_A866_01:
 off_A866_02:
 - D 1 - I - 0x01A876 06:A866: 04        .byte $04   ; 
@@ -6452,12 +6458,12 @@ off_A866_02:
 - D 1 - I - 0x01A87B 06:A86B: 20        .byte $20   ; 
 - D 1 - I - 0x01A87C 06:A86C: 04        .byte $04   ; 
 - D 1 - I - 0x01A87D 06:A86D: 06        .byte $06   ; 
-- D 1 - I - 0x01A87E 06:A86E: FF        .byte $FF   ; 
+- D 1 - I - 0x01A87E 06:A86E: FF        .byte con_FF
 
 
 
 _animation_A86F_08:
-- D 1 - I - 0x01A87F 06:A86F: FD        .byte $FD   ; 
+- D 1 - I - 0x01A87F 06:A86F: FD        .byte con_FD
 - D 1 - I - 0x01A880 06:A870: 23 A8     .word off_A823_00
 - D 1 - I - 0x01A882 06:A872: 76 A8     .word off_A876_01
 - D 1 - I - 0x01A884 06:A874: 76 A8     .word off_A876_02
@@ -6467,12 +6473,12 @@ off_A876_02:
 - D 1 - I - 0x01A887 06:A877: 05        .byte $05   ; 
 - D 1 - I - 0x01A888 06:A878: 04        .byte $04   ; 
 - D 1 - I - 0x01A889 06:A879: 06        .byte $06   ; 
-- D 1 - I - 0x01A88A 06:A87A: FF        .byte $FF   ; 
+- D 1 - I - 0x01A88A 06:A87A: FF        .byte con_FF
 
 
 
 _animation_A87B_24:
-- D 1 - I - 0x01A88B 06:A87B: FD        .byte $FD   ; 
+- D 1 - I - 0x01A88B 06:A87B: FD        .byte con_FD
 - D 1 - I - 0x01A88C 06:A87C: 80 A8     .word off_A880_00
 - D 1 - I - 0x01A88E 06:A87E: 8B A8     .word off_A88B_01
 off_A880_00:
@@ -6486,7 +6492,7 @@ off_A880_00:
 - D 1 - I - 0x01A897 06:A887: 02        .byte $02   ; 
 - D 1 - I - 0x01A898 06:A888: 01        .byte $01   ; 
 - D 1 - I - 0x01A899 06:A889: 30        .byte $30   ; 
-- D 1 - I - 0x01A89A 06:A88A: FF        .byte $FF   ; 
+- D 1 - I - 0x01A89A 06:A88A: FF        .byte con_FF
 off_A88B_01:
 - D 1 - I - 0x01A89B 06:A88B: 01        .byte $01   ; 
 - D 1 - I - 0x01A89C 06:A88C: 00        .byte $00   ; 
@@ -6498,7 +6504,7 @@ off_A88B_01:
 - D 1 - I - 0x01A8A2 06:A892: 02        .byte $02   ; 
 - D 1 - I - 0x01A8A3 06:A893: 01        .byte $01   ; 
 - D 1 - I - 0x01A8A4 06:A894: 0E        .byte $0E   ; 
-- D 1 - I - 0x01A8A5 06:A895: FF        .byte $FF   ; 
+- D 1 - I - 0x01A8A5 06:A895: FF        .byte con_FF
 
 
 
@@ -6529,7 +6535,7 @@ _animation_A896_2F:
 - D 1 - I - 0x01A8BD 06:A8AD: 8E        .byte $8E   ; 
 - D 1 - I - 0x01A8BE 06:A8AE: 02        .byte $02   ; 
 - D 1 - I - 0x01A8BF 06:A8AF: 0E        .byte $0E   ; 
-- D 1 - I - 0x01A8C0 06:A8B0: FF        .byte $FF   ; 
+- D 1 - I - 0x01A8C0 06:A8B0: FF        .byte con_FF
 
 
 
@@ -6546,12 +6552,12 @@ _animation_A8B1_10:
 - D 1 - I - 0x01A8CA 06:A8BA: 0B        .byte $0B   ; 
 - D 1 - I - 0x01A8CB 06:A8BB: 02        .byte $02   ; 
 - D 1 - I - 0x01A8CC 06:A8BC: 0D        .byte $0D   ; 
-- D 1 - I - 0x01A8CD 06:A8BD: FF        .byte $FF   ; 
+- D 1 - I - 0x01A8CD 06:A8BD: FF        .byte con_FF
 
 
 
 _animation_A8BE_0B:
-- D 1 - I - 0x01A8CE 06:A8BE: FD        .byte $FD   ; 
+- D 1 - I - 0x01A8CE 06:A8BE: FD        .byte con_FD
 - D 1 - I - 0x01A8CF 06:A8BF: C7 A8     .word off_A8C7_00
 - D 1 - I - 0x01A8D1 06:A8C1: C5 A8     .word off_A8C5_01
 - D 1 - I - 0x01A8D3 06:A8C3: C5 A8     .word off_A8C5_02
@@ -6566,18 +6572,18 @@ off_A8C7_00:
 
 
 _animation_A8C9_0D:
-- D 1 - I - 0x01A8D9 06:A8C9: FD        .byte $FD   ; 
+- D 1 - I - 0x01A8D9 06:A8C9: FD        .byte con_FD
 - D 1 - I - 0x01A8DA 06:A8CA: D6 A8     .word off_A8D6_00
 - D 1 - I - 0x01A8DC 06:A8CC: D0 A8     .word off_A8D0_01
 - D 1 - I - 0x01A8DE 06:A8CE: D3 A8     .word off_A8D3_02
 off_A8D0_01:
 - D 1 - I - 0x01A8E0 06:A8D0: 04        .byte $04   ; 
 - D 1 - I - 0x01A8E1 06:A8D1: 18        .byte $18   ; 
-- D 1 - I - 0x01A8E2 06:A8D2: FF        .byte $FF   ; 
+- D 1 - I - 0x01A8E2 06:A8D2: FF        .byte con_FF
 off_A8D3_02:
 - D 1 - I - 0x01A8E3 06:A8D3: 04        .byte $04   ; 
 - D 1 - I - 0x01A8E4 06:A8D4: 0D        .byte $0D   ; 
-- D 1 - I - 0x01A8E5 06:A8D5: FF        .byte $FF   ; 
+- D 1 - I - 0x01A8E5 06:A8D5: FF        .byte con_FF
 off_A8D6_00:
 - D 1 - I - 0x01A8E6 06:A8D6: 02        .byte $02   ; 
 - D 1 - I - 0x01A8E7 06:A8D7: 03        .byte $03   ; 
@@ -6585,7 +6591,7 @@ off_A8D6_00:
 - D 1 - I - 0x01A8E9 06:A8D9: 19        .byte $19   ; 
 - D 1 - I - 0x01A8EA 06:A8DA: 02        .byte $02   ; 
 - D 1 - I - 0x01A8EB 06:A8DB: 28        .byte $28   ; 
-- D 1 - I - 0x01A8EC 06:A8DC: FF        .byte $FF   ; 
+- D 1 - I - 0x01A8EC 06:A8DC: FF        .byte con_FF
 
 
 
@@ -6596,12 +6602,12 @@ _animation_A8DD_0E:
 - D 1 - I - 0x01A8F0 06:A8E0: 0A        .byte $0A   ; 
 - D 1 - I - 0x01A8F1 06:A8E1: 03        .byte $03   ; 
 - D 1 - I - 0x01A8F2 06:A8E2: 18        .byte $18   ; 
-- D 1 - I - 0x01A8F3 06:A8E3: FF        .byte $FF   ; 
+- D 1 - I - 0x01A8F3 06:A8E3: FF        .byte con_FF
 
 
 
 _animation_A8E4_26:
-- D 1 - I - 0x01A8F4 06:A8E4: FD        .byte $FD   ; 
+- D 1 - I - 0x01A8F4 06:A8E4: FD        .byte con_FD
 - D 1 - I - 0x01A8F5 06:A8E5: EE A8     .word off_A8EE_00
 - D 1 - I - 0x01A8F7 06:A8E7: EB A8     .word off_A8EB_01
 - D 1 - I - 0x01A8F9 06:A8E9: EB A8     .word off_A8EB_02
@@ -6609,16 +6615,16 @@ off_A8EB_01:
 off_A8EB_02:
 - D 1 - I - 0x01A8FB 06:A8EB: 02        .byte $02   ; 
 - D 1 - I - 0x01A8FC 06:A8EC: 18        .byte $18   ; 
-- D 1 - I - 0x01A8FD 06:A8ED: FF        .byte $FF   ; 
+- D 1 - I - 0x01A8FD 06:A8ED: FF        .byte con_FF
 off_A8EE_00:
 - D 1 - I - 0x01A8FE 06:A8EE: 02        .byte $02   ; 
 - D 1 - I - 0x01A8FF 06:A8EF: 03        .byte $03   ; 
-- D 1 - I - 0x01A900 06:A8F0: FF        .byte $FF   ; 
+- D 1 - I - 0x01A900 06:A8F0: FF        .byte con_FF
 
 
 
 _animation_A8F1_0C:
-- D 1 - I - 0x01A901 06:A8F1: FD        .byte $FD   ; 
+- D 1 - I - 0x01A901 06:A8F1: FD        .byte con_FD
 - D 1 - I - 0x01A902 06:A8F2: FB A8     .word off_A8FB_00
 - D 1 - I - 0x01A904 06:A8F4: F8 A8     .word off_A8F8_01
 - D 1 - I - 0x01A906 06:A8F6: F8 A8     .word off_A8F8_02
@@ -6626,20 +6632,20 @@ off_A8F8_01:
 off_A8F8_02:
 - D 1 - I - 0x01A908 06:A8F8: 0C        .byte $0C   ; 
 - D 1 - I - 0x01A909 06:A8F9: 11        .byte $11   ; 
-- D 1 - I - 0x01A90A 06:A8FA: FF        .byte $FF   ; 
+- D 1 - I - 0x01A90A 06:A8FA: FF        .byte con_FF
 off_A8FB_00:
 - D 1 - I - 0x01A90B 06:A8FB: 06        .byte $06   ; 
 - D 1 - I - 0x01A90C 06:A8FC: 17        .byte $17   ; 
 - D 1 - I - 0x01A90D 06:A8FD: 0C        .byte $0C   ; 
 - D 1 - I - 0x01A90E 06:A8FE: 11        .byte $11   ; 
-- D 1 - I - 0x01A90F 06:A8FF: FF        .byte $FF   ; 
+- D 1 - I - 0x01A90F 06:A8FF: FF        .byte con_FF
 
 
 
 _animation_A900_12:
 - - - - - - 0x01A910 06:A900: 02        .byte $02   ; 
 - - - - - - 0x01A911 06:A901: 19        .byte $19   ; 
-- - - - - - 0x01A912 06:A902: FF        .byte $FF   ; 
+- - - - - - 0x01A912 06:A902: FF        .byte con_FF
 
 
 
@@ -6648,12 +6654,12 @@ _animation_A903_2B:
 - - - - - - 0x01A914 06:A904: 3B        .byte $3B   ; 
 - - - - - - 0x01A915 06:A905: 0C        .byte $0C   ; 
 - - - - - - 0x01A916 06:A906: 3B        .byte $3B   ; 
-- - - - - - 0x01A917 06:A907: FF        .byte $FF   ; 
+- - - - - - 0x01A917 06:A907: FF        .byte con_FF
 - - - - - - 0x01A918 06:A908: 06        .byte $06   ; 
 - - - - - - 0x01A919 06:A909: 19        .byte $19   ; 
 - - - - - - 0x01A91A 06:A90A: 06        .byte $06   ; 
 - - - - - - 0x01A91B 06:A90B: 25        .byte $25   ; 
-- - - - - - 0x01A91C 06:A90C: FF        .byte $FF   ; 
+- - - - - - 0x01A91C 06:A90C: FF        .byte con_FF
 
 
 
@@ -6661,7 +6667,7 @@ _animation_A90D_19:
 _animation_A90D_22:
 - D 1 - I - 0x01A91D 06:A90D: 06        .byte $06   ; 
 - D 1 - I - 0x01A91E 06:A90E: 0E        .byte $0E   ; 
-- D 1 - I - 0x01A91F 06:A90F: FF        .byte $FF   ; 
+- D 1 - I - 0x01A91F 06:A90F: FF        .byte con_FF
 
 
 
@@ -6670,15 +6676,15 @@ _animation_A910_23:
 - D 1 - I - 0x01A921 06:A911: 09        .byte $09   ; 
 - D 1 - I - 0x01A922 06:A912: 0C        .byte $0C   ; 
 - D 1 - I - 0x01A923 06:A913: 09        .byte $09   ; 
-- - - - - - 0x01A924 06:A914: FF        .byte $FF   ; 
+- - - - - - 0x01A924 06:A914: FF        .byte con_FF
 - - - - - - 0x01A925 06:A915: 20        .byte $20   ; 
 - - - - - - 0x01A926 06:A916: 09        .byte $09   ; 
-- - - - - - 0x01A927 06:A917: FF        .byte $FF   ; 
+- - - - - - 0x01A927 06:A917: FF        .byte con_FF
 
 
 
 _animation_A918_0F:
-- D 1 - I - 0x01A928 06:A918: FD        .byte $FD   ; 
+- D 1 - I - 0x01A928 06:A918: FD        .byte con_FD
 - D 1 - I - 0x01A929 06:A919: 29 A9     .word off_A929_00
 - D 1 - I - 0x01A92B 06:A91B: 29 A9     .word off_A929_01
 - D 1 - I - 0x01A92D 06:A91D: 08 AA     .word off_AA08_02
@@ -6696,7 +6702,7 @@ off_A929_06:
 off_A929_07:
 - D 1 - I - 0x01A939 06:A929: 10        .byte $10   ; 
 - D 1 - I - 0x01A93A 06:A92A: 20        .byte $20   ; 
-- - - - - - 0x01A93B 06:A92B: FF        .byte $FF   ; 
+- - - - - - 0x01A93B 06:A92B: FF        .byte con_FF
 
 
 
@@ -6709,7 +6715,7 @@ _animation_A92C_11:
 - D 1 - I - 0x01A941 06:A931: 27        .byte $27   ; 
 - D 1 - I - 0x01A942 06:A932: 02        .byte $02   ; 
 - D 1 - I - 0x01A943 06:A933: 00        .byte $00   ; 
-- D 1 - I - 0x01A944 06:A934: FF        .byte $FF   ; 
+- D 1 - I - 0x01A944 06:A934: FF        .byte con_FF
 
 
 
@@ -6718,7 +6724,7 @@ _animation_A935_58:
 - D 1 - I - 0x01A946 06:A936: 02        .byte $02   ; 
 - D 1 - I - 0x01A947 06:A937: 00        .byte $00   ; 
 - D 1 - I - 0x01A948 06:A938: 18        .byte $18   ; 
-- - - - - - 0x01A949 06:A939: FF        .byte $FF   ; 
+- - - - - - 0x01A949 06:A939: FF        .byte con_FF
 
 
 
@@ -6729,7 +6735,7 @@ _animation_A93A_3B:
 - D 1 - I - 0x01A94D 06:A93D: 03        .byte $03   ; 
 - D 1 - I - 0x01A94E 06:A93E: 00        .byte $00   ; 
 - D 1 - I - 0x01A94F 06:A93F: 0E        .byte $0E   ; 
-- - - - - - 0x01A950 06:A940: FF        .byte $FF   ; 
+- - - - - - 0x01A950 06:A940: FF        .byte con_FF
 
 
 
@@ -6750,23 +6756,23 @@ _animation_A949_2A:
 - D 1 - I - 0x01A95A 06:A94A: 22        .byte $22   ; 
 - D 1 - I - 0x01A95B 06:A94B: 03        .byte $03   ; 
 - D 1 - I - 0x01A95C 06:A94C: 0C        .byte $0C   ; 
-- D 1 - I - 0x01A95D 06:A94D: FF        .byte $FF   ; 
+- D 1 - I - 0x01A95D 06:A94D: FF        .byte con_FF
 
 
 
 _animation_A94E_3E:
 _animation_A94E_3F:
-- D 1 - I - 0x01A95E 06:A94E: FD        .byte $FD   ; 
+- D 1 - I - 0x01A95E 06:A94E: FD        .byte con_FD
 - D 1 - I - 0x01A95F 06:A94F: 53 A9     .word off_A953_00
 - D 1 - I - 0x01A961 06:A951: 56 A9     .word off_A956_01
 off_A953_00:
 - D 1 - I - 0x01A963 06:A953: 08        .byte $08   ; 
 - D 1 - I - 0x01A964 06:A954: 12        .byte $12   ; 
-- D 1 - I - 0x01A965 06:A955: FF        .byte $FF   ; 
+- D 1 - I - 0x01A965 06:A955: FF        .byte con_FF
 off_A956_01:
 - D 1 - I - 0x01A966 06:A956: 08        .byte $08   ; 
 - D 1 - I - 0x01A967 06:A957: 13        .byte $13   ; 
-- D 1 - I - 0x01A968 06:A958: FF        .byte $FF   ; 
+- D 1 - I - 0x01A968 06:A958: FF        .byte con_FF
 
 
 
@@ -6785,7 +6791,7 @@ _animation_A95B_41:
 - D 1 - I - 0x01A970 06:A960: 29        .byte $29   ; 
 - D 1 - I - 0x01A971 06:A961: 04        .byte $04   ; 
 - D 1 - I - 0x01A972 06:A962: 82        .byte $82   ; 
-- D 1 - I - 0x01A973 06:A963: FF        .byte $FF   ; 
+- D 1 - I - 0x01A973 06:A963: FF        .byte con_FF
 
 
 
@@ -6810,7 +6816,7 @@ _animation_A964_5C:
 - D 1 - I - 0x01A985 06:A975: 52        .byte $52   ; 
 - D 1 - I - 0x01A986 06:A976: F1        .byte $F1   ; 
 - D 1 - I - 0x01A987 06:A977: 38        .byte $38   ; 
-- D 1 - I - 0x01A988 06:A978: FF        .byte $FF   ; 
+- D 1 - I - 0x01A988 06:A978: FF        .byte con_FF
 
 
 
@@ -6825,7 +6831,7 @@ _animation_A979_54:
 - D 1 - I - 0x01A990 06:A980: 82        .byte $82   ; 
 - D 1 - I - 0x01A991 06:A981: 00        .byte $00   ; 
 - D 1 - I - 0x01A992 06:A982: 02        .byte $02   ; 
-- - - - - - 0x01A993 06:A983: FF        .byte $FF   ; 
+- - - - - - 0x01A993 06:A983: FF        .byte con_FF
 - - - - - - 0x01A994 06:A984: 02        .byte $02   ; 
 - - - - - - 0x01A995 06:A985: 2A        .byte $2A   ; 
 - - - - - - 0x01A996 06:A986: 02        .byte $02   ; 
@@ -6842,14 +6848,14 @@ _animation_A979_54:
 - - - - - - 0x01A9A1 06:A991: AB        .byte $AB   ; 
 - - - - - - 0x01A9A2 06:A992: 02        .byte $02   ; 
 - - - - - - 0x01A9A3 06:A993: AA        .byte $AA   ; 
-- - - - - - 0x01A9A4 06:A994: FF        .byte $FF   ; 
+- - - - - - 0x01A9A4 06:A994: FF        .byte con_FF
 
 
 
 _animation_A995_48:
 - D 1 - I - 0x01A9A5 06:A995: 04        .byte $04   ; 
 - D 1 - I - 0x01A9A6 06:A996: 0E        .byte $0E   ; 
-- D 1 - I - 0x01A9A7 06:A997: FF        .byte $FF   ; 
+- D 1 - I - 0x01A9A7 06:A997: FF        .byte con_FF
 
 
 
@@ -6862,14 +6868,14 @@ _animation_A998_49:
 - D 1 - I - 0x01A9AD 06:A99D: AB        .byte $AB   ; 
 - D 1 - I - 0x01A9AE 06:A99E: 01        .byte $01   ; 
 - D 1 - I - 0x01A9AF 06:A99F: AA        .byte $AA   ; 
-- D 1 - I - 0x01A9B0 06:A9A0: FE        .byte $FE   ; 
+- D 1 - I - 0x01A9B0 06:A9A0: FE        .byte con_FE 
 
 
 
 _animation_A9A1_4A:
 - D 1 - I - 0x01A9B1 06:A9A1: 02        .byte $02   ; 
 - D 1 - I - 0x01A9B2 06:A9A2: 0E        .byte $0E   ; 
-- D 1 - I - 0x01A9B3 06:A9A3: FF        .byte $FF   ; 
+- D 1 - I - 0x01A9B3 06:A9A3: FF        .byte con_FF
 
 
 
@@ -6880,14 +6886,14 @@ _animation_A9A4_4B:
 - D 1 - I - 0x01A9B7 06:A9A7: 2D        .byte $2D   ; 
 - D 1 - I - 0x01A9B8 06:A9A8: 02        .byte $02   ; 
 - D 1 - I - 0x01A9B9 06:A9A9: 2E        .byte $2E   ; 
-- D 1 - I - 0x01A9BA 06:A9AA: FE        .byte $FE   ; 
+- D 1 - I - 0x01A9BA 06:A9AA: FE        .byte con_FE 
 
 
 
 _animation_A9AB_4C:
 - D 1 - I - 0x01A9BB 06:A9AB: 04        .byte $04   ; 
 - D 1 - I - 0x01A9BC 06:A9AC: 83        .byte $83   ; 
-- D 1 - I - 0x01A9BD 06:A9AD: FF        .byte $FF   ; 
+- D 1 - I - 0x01A9BD 06:A9AD: FF        .byte con_FF
 
 
 
@@ -6902,7 +6908,7 @@ _animation_A9AE_4D:
 - D 1 - I - 0x01A9C3 06:A9B3: A2        .byte $A2   ; 
 - D 1 - I - 0x01A9C4 06:A9B4: 02        .byte $02   ; 
 - D 1 - I - 0x01A9C5 06:A9B5: BC        .byte $BC   ; 
-- D 1 - I - 0x01A9C6 06:A9B6: FE        .byte $FE   ; 
+- D 1 - I - 0x01A9C6 06:A9B6: FE        .byte con_FE 
 
 
 
@@ -6911,7 +6917,7 @@ _animation_A9B7_51:
 - D 1 - I - 0x01A9C8 06:A9B8: 08        .byte $08   ; 
 - D 1 - I - 0x01A9C9 06:A9B9: 01        .byte $01   ; 
 - D 1 - I - 0x01A9CA 06:A9BA: 2C        .byte $2C   ; 
-- D 1 - I - 0x01A9CB 06:A9BB: FF        .byte $FF   ; 
+- D 1 - I - 0x01A9CB 06:A9BB: FF        .byte con_FF
 
 
 
@@ -6920,7 +6926,7 @@ _animation_A9BC_4E:
 - D 1 - I - 0x01A9CD 06:A9BD: 08        .byte $08   ; 
 - D 1 - I - 0x01A9CE 06:A9BE: 01        .byte $01   ; 
 - D 1 - I - 0x01A9CF 06:A9BF: 2C        .byte $2C   ; 
-- D 1 - I - 0x01A9D0 06:A9C0: FF        .byte $FF   ; 
+- D 1 - I - 0x01A9D0 06:A9C0: FF        .byte con_FF
 
 
 
@@ -6929,7 +6935,7 @@ _animation_A9C1_50:
 - D 1 - I - 0x01A9D2 06:A9C2: 03        .byte $03   ; 
 - D 1 - I - 0x01A9D3 06:A9C3: 01        .byte $01   ; 
 - D 1 - I - 0x01A9D4 06:A9C4: 0E        .byte $0E   ; 
-- D 1 - I - 0x01A9D5 06:A9C5: FF        .byte $FF   ; 
+- D 1 - I - 0x01A9D5 06:A9C5: FF        .byte con_FF
 
 
 
@@ -6940,7 +6946,7 @@ _animation_A9C6_4F:
 - D 1 - I - 0x01A9D9 06:A9C9: AD        .byte $AD   ; 
 - D 1 - I - 0x01A9DA 06:A9CA: 02        .byte $02   ; 
 - D 1 - I - 0x01A9DB 06:A9CB: BD        .byte $BD   ; 
-- D 1 - I - 0x01A9DC 06:A9CC: FE        .byte $FE   ; 
+- D 1 - I - 0x01A9DC 06:A9CC: FE        .byte con_FE 
 - - - - - - 0x01A9DD 06:A9CD: 02        .byte $02   ; 
 - - - - - - 0x01A9DE 06:A9CE: 22        .byte $22   ; 
 - - - - - - 0x01A9DF 06:A9CF: 00        .byte $00   ; 
@@ -6957,28 +6963,28 @@ _animation_A9D1_44:
 - - - - - - 0x01A9E6 06:A9D6: 28        .byte $28   ; 
 - - - - - - 0x01A9E7 06:A9D7: 00        .byte $00   ; 
 - - - - - - 0x01A9E8 06:A9D8: 02        .byte $02   ; 
-- - - - - - 0x01A9E9 06:A9D9: FF        .byte $FF   ; 
+- - - - - - 0x01A9E9 06:A9D9: FF        .byte con_FF
 
 
 
 _animation_A9DA_28:
 _animation_A9DA_29:
-- D 1 - I - 0x01A9EA 06:A9DA: FD        .byte $FD   ; 
+- D 1 - I - 0x01A9EA 06:A9DA: FD        .byte con_FD
 - D 1 - I - 0x01A9EB 06:A9DB: DF A9     .word off_A9DF_00
 - D 1 - I - 0x01A9ED 06:A9DD: E2 A9     .word off_A9E2_01
 off_A9DF_00:
 - D 1 - I - 0x01A9EF 06:A9DF: 08        .byte $08   ; 
 - D 1 - I - 0x01A9F0 06:A9E0: 12        .byte $12   ; 
-- D 1 - I - 0x01A9F1 06:A9E1: FF        .byte $FF   ; 
+- D 1 - I - 0x01A9F1 06:A9E1: FF        .byte con_FF
 off_A9E2_01:
 - D 1 - I - 0x01A9F2 06:A9E2: 08        .byte $08   ; 
 - D 1 - I - 0x01A9F3 06:A9E3: 13        .byte $13   ; 
-- D 1 - I - 0x01A9F4 06:A9E4: FF        .byte $FF   ; 
+- D 1 - I - 0x01A9F4 06:A9E4: FF        .byte con_FF
 
 
 
 _animation_A9E5_27:
-- D 1 - I - 0x01A9F5 06:A9E5: FD        .byte $FD   ; 
+- D 1 - I - 0x01A9F5 06:A9E5: FD        .byte con_FD
 - D 1 - I - 0x01A9F6 06:A9E6: EA A9     .word off_A9EA_00
 - D 1 - I - 0x01A9F8 06:A9E8: F1 A9     .word off_A9F1_01
 off_A9EA_00:
@@ -6988,7 +6994,7 @@ off_A9EA_00:
 - D 1 - I - 0x01A9FD 06:A9ED: 2E        .byte $2E   ; 
 - D 1 - I - 0x01A9FE 06:A9EE: 02        .byte $02   ; 
 - D 1 - I - 0x01A9FF 06:A9EF: 2D        .byte $2D   ; 
-- D 1 - I - 0x01AA00 06:A9F0: FF        .byte $FF   ; 
+- D 1 - I - 0x01AA00 06:A9F0: FF        .byte con_FF
 off_A9F1_01:
 - D 1 - I - 0x01AA01 06:A9F1: 02        .byte $02   ; 
 - D 1 - I - 0x01AA02 06:A9F2: 0C        .byte $0C   ; 
@@ -6996,7 +7002,7 @@ off_A9F1_01:
 - D 1 - I - 0x01AA04 06:A9F4: 2D        .byte $2D   ; 
 - D 1 - I - 0x01AA05 06:A9F5: 02        .byte $02   ; 
 - D 1 - I - 0x01AA06 06:A9F6: 2E        .byte $2E   ; 
-- D 1 - I - 0x01AA07 06:A9F7: FF        .byte $FF   ; 
+- D 1 - I - 0x01AA07 06:A9F7: FF        .byte con_FF
 off_A9F8_02:
 - D 1 - I - 0x01AA08 06:A9F8: 00        .byte $00   ; 
 - D 1 - I - 0x01AA09 06:A9F9: 17        .byte $17   ; 
@@ -7009,17 +7015,17 @@ off_A9FA_04:
 - D 1 - I - 0x01AA0F 06:A9FF: 38        .byte $38   ; 
 - D 1 - I - 0x01AA10 06:AA00: 03        .byte $03   ; 
 - D 1 - I - 0x01AA11 06:AA01: 17        .byte $17   ; 
-- - - - - - 0x01AA12 06:AA02: FE        .byte $FE   ; 
+- - - - - - 0x01AA12 06:AA02: FE        .byte con_FE 
 off_AA03_02:
 - D 1 - I - 0x01AA13 06:AA03: 02        .byte $02   ; 
 - D 1 - I - 0x01AA14 06:AA04: 37        .byte $37   ; 
 - D 1 - I - 0x01AA15 06:AA05: 02        .byte $02   ; 
 - D 1 - I - 0x01AA16 06:AA06: 17        .byte $17   ; 
-- D 1 - I - 0x01AA17 06:AA07: FE        .byte $FE   ; 
+- D 1 - I - 0x01AA17 06:AA07: FE        .byte con_FE 
 off_AA08_02:
 - D 1 - I - 0x01AA18 06:AA08: 10        .byte $10   ; 
 - D 1 - I - 0x01AA19 06:AA09: 40        .byte $40   ; 
-- - - - - - 0x01AA1A 06:AA0A: FF        .byte $FF   ; 
+- - - - - - 0x01AA1A 06:AA0A: FF        .byte con_FF
 
 
 
@@ -7032,7 +7038,7 @@ _animation_AA0B_55:
 - - - - - - 0x01AA20 06:AA10: B1        .byte $B1   ; 
 - - - - - - 0x01AA21 06:AA11: 01        .byte $01   ; 
 - - - - - - 0x01AA22 06:AA12: 8F        .byte $8F   ; 
-- - - - - - 0x01AA23 06:AA13: FE        .byte $FE   ; 
+- - - - - - 0x01AA23 06:AA13: FE        .byte con_FE 
 
 
 
