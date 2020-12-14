@@ -11417,12 +11417,6 @@ loop_1_ADEE:
 
 
 
-.export sub_0x002E93
-sub_0x002E93:
-C - - - - - 0x002E93 00:AE83: 4C 06 BF  JMP loc_BF06
-
-
-
 .export sub_0x002E96
 sub_0x002E96:
 C - - - - - 0x002E96 00:AE86: AD 05 06  LDA ram_0605
@@ -15277,7 +15271,8 @@ tbl_BEF6:
 
 
 
-loc_BF06:
+.export sub_0x003F16
+sub_0x003F16:
 C D 1 - - - 0x003F16 00:BF06: A2 0B     LDX #$0B
 bra_BF08:
 C - - - - - 0x003F18 00:BF08: BD D5 05  LDA ram_05D5,X

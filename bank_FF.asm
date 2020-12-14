@@ -691,7 +691,7 @@ C D 2 - - - 0x01C345 07:C335: AD FF BF  LDA con_bank_id
 C - - - - - 0x01C348 07:C338: 48        PHA
 C - - - - - 0x01C349 07:C339: A9 00     LDA #$00
 C - - - - - 0x01C34B 07:C33B: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01C34E 07:C33E: 20 83 AE  JSR sub_0x002E93
+C - - - - - 0x01C34E 07:C33E: 20 83 AE  JSR sub_0x003F16
 C - - - - - 0x01C351 07:C341: 4C 68 C3  JMP loc_C368
 
 
