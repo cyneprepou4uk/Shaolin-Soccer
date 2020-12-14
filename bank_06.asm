@@ -5001,16 +5001,16 @@ C - - - - - 0x01A1A6 06:A196: 49 FF     EOR #$FF
 C - - - - - 0x01A1A8 06:A198: 18        CLC
 C - - - - - 0x01A1A9 06:A199: 69 01     ADC #$01
 bra_A19B:
-C - - - - - 0x01A1AB 06:A19B: D9 D9 A1  CMP tbl_A1D9,Y
+C - - - - - 0x01A1AB 06:A19B: D9 D9 A1  CMP tbl_A1D8_X_скорость + 1,Y
 C - - - - - 0x01A1AE 06:A19E: 90 13     BCC bra_A1B3
 C - - - - - 0x01A1B0 06:A1A0: BD F6 03  LDA ram_игрок_spd_X_hi,X
 C - - - - - 0x01A1B3 06:A1A3: 10 02     BPL bra_A1A7
 C - - - - - 0x01A1B5 06:A1A5: C8        INY
 C - - - - - 0x01A1B6 06:A1A6: C8        INY
 bra_A1A7:
-C - - - - - 0x01A1B7 06:A1A7: B9 D8 A1  LDA tbl_A1D8,Y
+C - - - - - 0x01A1B7 06:A1A7: B9 D8 A1  LDA tbl_A1D8_X_скорость,Y
 C - - - - - 0x01A1BA 06:A1AA: 9D E8 03  STA ram_игрок_spd_X_lo,X
-C - - - - - 0x01A1BD 06:A1AD: B9 D9 A1  LDA tbl_A1D9,Y
+C - - - - - 0x01A1BD 06:A1AD: B9 D9 A1  LDA tbl_A1D8_X_скорость + 1,Y
 C - - - - - 0x01A1C0 06:A1B0: 9D F6 03  STA ram_игрок_spd_X_hi,X
 bra_A1B3:
 C - - - - - 0x01A1C3 06:A1B3: A4 1D     LDY ram_001D
@@ -5020,45 +5020,31 @@ C - - - - - 0x01A1CA 06:A1BA: 49 FF     EOR #$FF
 C - - - - - 0x01A1CC 06:A1BC: 18        CLC
 C - - - - - 0x01A1CD 06:A1BD: 69 01     ADC #$01
 bra_A1BF:
-C - - - - - 0x01A1CF 06:A1BF: D9 E1 A1  CMP tbl_A1E1,Y
+C - - - - - 0x01A1CF 06:A1BF: D9 E1 A1  CMP tbl_A1E0_Y_скорость + 1,Y
 C - - - - - 0x01A1D2 06:A1C2: 90 13     BCC bra_A1D7_RTS
 C - - - - - 0x01A1D4 06:A1C4: BD 12 04  LDA ram_игрок_spd_Y_hi,X
 C - - - - - 0x01A1D7 06:A1C7: 10 02     BPL bra_A1CB
 C - - - - - 0x01A1D9 06:A1C9: C8        INY
 C - - - - - 0x01A1DA 06:A1CA: C8        INY
 bra_A1CB:
-C - - - - - 0x01A1DB 06:A1CB: B9 E0 A1  LDA tbl_A1E0,Y
+C - - - - - 0x01A1DB 06:A1CB: B9 E0 A1  LDA tbl_A1E0_Y_скорость,Y
 C - - - - - 0x01A1DE 06:A1CE: 9D 04 04  STA ram_игрок_spd_Y_lo,X
-C - - - - - 0x01A1E1 06:A1D1: B9 E1 A1  LDA tbl_A1E1,Y
+C - - - - - 0x01A1E1 06:A1D1: B9 E1 A1  LDA tbl_A1E0_Y_скорость + 1,Y
 C - - - - - 0x01A1E4 06:A1D4: 9D 12 04  STA ram_игрок_spd_Y_hi,X
 bra_A1D7_RTS:
 C - - - - - 0x01A1E7 06:A1D7: 60        RTS
 
+tbl_A1D8_X_скорость:
+- D 1 - - - 0x01A1E8 06:A1D8: 00 06     .word $0600     ; $0600
+- D 1 - - - 0x01A1EA 06:A1DA: 00 FA     .word $FA00     ; $FA00
+- D 1 - - - 0x01A1EC 06:A1DC: 00 08     .word $0800     ; $0800
+- D 1 - - - 0x01A1EE 06:A1DE: 00 F8     .word $F800     ; $F800
 
-
-tbl_A1D8:
-- D 1 - - - 0x01A1E8 06:A1D8: 00        .byte $00   ; 
-tbl_A1D9:
-- D 1 - - - 0x01A1E9 06:A1D9: 06        .byte $06   ; 
-- D 1 - - - 0x01A1EA 06:A1DA: 00        .byte $00   ; 
-- D 1 - - - 0x01A1EB 06:A1DB: FA        .byte $FA   ; 
-- D 1 - - - 0x01A1EC 06:A1DC: 00        .byte $00   ; 
-- D 1 - - - 0x01A1ED 06:A1DD: 08        .byte $08   ; 
-- D 1 - - - 0x01A1EE 06:A1DE: 00        .byte $00   ; 
-- D 1 - - - 0x01A1EF 06:A1DF: F8        .byte $F8   ; 
-
-
-
-tbl_A1E0:
-- D 1 - - - 0x01A1F0 06:A1E0: 00        .byte $00   ; 
-tbl_A1E1:
-- D 1 - - - 0x01A1F1 06:A1E1: 04        .byte $04   ; 
-- D 1 - - - 0x01A1F2 06:A1E2: 00        .byte $00   ; 
-- D 1 - - - 0x01A1F3 06:A1E3: FC        .byte $FC   ; 
-- D 1 - - - 0x01A1F4 06:A1E4: 00        .byte $00   ; 
-- D 1 - - - 0x01A1F5 06:A1E5: 08        .byte $08   ; 
-- D 1 - - - 0x01A1F6 06:A1E6: 00        .byte $00   ; 
-- D 1 - - - 0x01A1F7 06:A1E7: F8        .byte $F8   ; 
+tbl_A1E0_Y_скорость:
+- D 1 - - - 0x01A1F0 06:A1E0: 00 04     .word $0400     ; $0400
+- D 1 - - - 0x01A1F2 06:A1E2: 00 FC     .word $FC00     ; $FC00
+- D 1 - - - 0x01A1F4 06:A1E4: 00 08     .word $0800     ; $0800
+- D 1 - - - 0x01A1F6 06:A1E6: 00 F8     .word $F800     ; $F800
 
 
 
