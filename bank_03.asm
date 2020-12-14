@@ -64,7 +64,7 @@ C - - - - - 0x00C06B 03:805B: A9 0B     LDA #$0B
 C - - - - - 0x00C06D 03:805D: 85 28     STA ram_0028
 C - - - - - 0x00C06F 03:805F: A9 01     LDA #$01
 C - - - - - 0x00C071 03:8061: 85 29     STA ram_0029
-C - - - - - 0x00C073 03:8063: 20 3E C0  JSR sub_0x01C04E
+C - - - - - 0x00C073 03:8063: 20 3E C0  JSR sub_0x01F9EE
 C - - - - - 0x00C076 03:8066: AD 92 04  LDA ram_мяч_состояние
 C - - - - - 0x00C079 03:8069: 10 10     BPL bra_807B
 C - - - - - 0x00C07B 03:806B: 68        PLA
@@ -931,7 +931,7 @@ C - - - - - 0x00C614 03:8604: A9 0A     LDA #$0A
 C - - - - - 0x00C616 03:8606: 85 28     STA ram_0028
 C - - - - - 0x00C618 03:8608: A9 02     LDA #$02
 C - - - - - 0x00C61A 03:860A: 85 29     STA ram_0029
-C - - - - - 0x00C61C 03:860C: 20 3E C0  JSR sub_0x01C04E
+C - - - - - 0x00C61C 03:860C: 20 3E C0  JSR sub_0x01F9EE
 C - - - - - 0x00C61F 03:860F: A5 2D     LDA ram_002D
 C - - - - - 0x00C621 03:8611: C9 40     CMP #$40
 C - - - - - 0x00C623 03:8613: B0 1B     BCS bra_8630
@@ -4822,7 +4822,7 @@ C - - - - - 0x00DDF7 03:9DE7: A9 09     LDA #$09
 C - - - - - 0x00DDF9 03:9DE9: 85 28     STA ram_0028
 C - - - - - 0x00DDFB 03:9DEB: A9 02     LDA #$02
 C - - - - - 0x00DDFD 03:9DED: 85 29     STA ram_0029
-C - - - - - 0x00DDFF 03:9DEF: 20 3E C0  JSR sub_0x01C04E
+C - - - - - 0x00DDFF 03:9DEF: 20 3E C0  JSR sub_0x01F9EE
 loc_9DF2:
 C D 0 - - - 0x00DE02 03:9DF2: 68        PLA
 C - - - - - 0x00DE03 03:9DF3: 8D 6C 03  STA ram_мяч_Y_hi
@@ -4867,7 +4867,7 @@ C - - - - - 0x00DE41 03:9E31: A9 09     LDA #$09
 C - - - - - 0x00DE43 03:9E33: 85 28     STA ram_0028
 C - - - - - 0x00DE45 03:9E35: A9 02     LDA #$02
 C - - - - - 0x00DE47 03:9E37: 85 29     STA ram_0029
-C - - - - - 0x00DE49 03:9E39: 20 3E C0  JSR sub_0x01C04E
+C - - - - - 0x00DE49 03:9E39: 20 3E C0  JSR sub_0x01F9EE
 C - - - - - 0x00DE4C 03:9E3C: 60        RTS
 
 
@@ -5876,7 +5876,7 @@ C - - - - - 0x00E423 03:A413: A9 09     LDA #$09
 C - - - - - 0x00E425 03:A415: 85 28     STA ram_0028
 C - - - - - 0x00E427 03:A417: A9 02     LDA #$02
 C - - - - - 0x00E429 03:A419: 85 29     STA ram_0029
-C - - - - - 0x00E42B 03:A41B: 20 3E C0  JSR sub_0x01C04E
+C - - - - - 0x00E42B 03:A41B: 20 3E C0  JSR sub_0x01F9EE
 bra_A41E:
 C - - - - - 0x00E42E 03:A41E: 20 A8 A4  JSR sub_A4A8
 C - - - - - 0x00E431 03:A421: AD D6 04  LDA ram_игрок_с_мячом
@@ -6139,7 +6139,7 @@ C - - - - - 0x00E5E0 03:A5D0: A9 02     LDA #$02
 C - - - - - 0x00E5E2 03:A5D2: 85 29     STA ram_0029
 C - - - - - 0x00E5E4 03:A5D4: A9 05     LDA #$05
 C - - - - - 0x00E5E6 03:A5D6: 85 27     STA ram_0027
-C - - - - - 0x00E5E8 03:A5D8: 20 3E C0  JSR sub_0x01C04E
+C - - - - - 0x00E5E8 03:A5D8: 20 3E C0  JSR sub_0x01F9EE
 C - - - - - 0x00E5EB 03:A5DB: 20 1F 82  JSR sub_821F
 C - - - - - 0x00E5EE 03:A5DE: 84 1C     STY ram_001C
 C - - - - - 0x00E5F0 03:A5E0: 68        PLA
