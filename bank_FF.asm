@@ -688,6 +688,10 @@ sub_C26C:
 sub_0x01C27F:
                                         LDA #$30
                                         JMP loc_C344_свап_prg_банка_80xx
+.export sub_0x01C280
+sub_0x01C280:
+                                        LDA #$31
+                                        JMP loc_C344_свап_prg_банка_80xx
 
 
 

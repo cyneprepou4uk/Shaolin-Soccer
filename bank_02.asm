@@ -10629,12 +10629,6 @@ off_A9D1_07:
 
 
 
-sub_AA66:
-- - - - - - 0x00AA76 02:AA66: A9 31     LDA #$31
-- - - - - - 0x00AA78 02:AA68: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
-
-
-
 loc_AA6B:
 C D 1 - - - 0x00AA7B 02:AA6B: A5 59     LDA ram_подтип_экрана
 C - - - - - 0x00AA7D 02:AA6D: 20 53 C0  JSR sub_0x01EC9F
@@ -13821,7 +13815,7 @@ sub_BB3C:
 - - - - - - 0x00BB4E 02:BB3E: 20 16 AA  JSR sub_0x01C2C2
 - - - - - - 0x00BB51 02:BB41: 20 61 AA  JSR sub_0x01C27F
 - - - - - - 0x00BB54 02:BB44: 20 8B B0  JSR sub_B08B
-- - - - - - 0x00BB57 02:BB47: 20 66 AA  JSR sub_AA66
+- - - - - - 0x00BB57 02:BB47: 20 66 AA  JSR sub_0x01C280
 - - - - - - 0x00BB5A 02:BB4A: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x00BB5D 02:BB4D: E8        INX
 - - - - - - 0x00BB5E 02:BB4E: 20 DD B6  JSR sub_B6DD
