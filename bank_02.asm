@@ -10629,9 +10629,6 @@ off_A9D1_07:
 
 
 
-sub_AA5C:
-C - - - - - 0x00AA6C 02:AA5C: A9 28     LDA #$28
-C - - - - - 0x00AA6E 02:AA5E: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 sub_AA61:
 - - - - - - 0x00AA71 02:AA61: A9 30     LDA #$30
 - - - - - - 0x00AA73 02:AA63: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
@@ -12013,7 +12010,7 @@ C - - - - - 0x00B2B0 02:B2A0: 60        RTS
 
 sub_B2A1:
 C - - - - - 0x00B2B1 02:B2A1: 8D 93 04  STA ram_0493
-C - - - - - 0x00B2B4 02:B2A4: 20 5C AA  JSR sub_AA5C
+C - - - - - 0x00B2B4 02:B2A4: 20 5C AA  JSR sub_0x01C2DF
 C - - - - - 0x00B2B7 02:B2A7: 60        RTS
 
 
