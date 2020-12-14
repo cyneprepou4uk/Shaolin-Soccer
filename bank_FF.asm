@@ -29,11 +29,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C045
-sub_0x01C045:
-C - - - - - 0x01C045 07:C035: 4C 91 F6  JMP loc_F691
-
-
 ; bzk
 - - - - - - 0x01C048 07:C038: 4C 66 F6  JMP loc_F666
 - - - - - - 0x01C04B 07:C03B: 4C 6A F9  JMP loc_F96A
@@ -9608,7 +9603,6 @@ C - - - - - 0x01F697 07:F687: B9 4D 03  LDA ram_игрок_Y_lo,Y
 C - - - - - 0x01F69A 07:F68A: 85 30     STA ram_0030
 C - - - - - 0x01F69C 07:F68C: B9 60 03  LDA ram_игрок_Y_hi,Y
 C - - - - - 0x01F69F 07:F68F: 85 31     STA ram_0031
-loc_F691:
 .export sub_0x01F6A1
 sub_0x01F6A1:
 C D 3 - - - 0x01F6A1 07:F691: A9 00     LDA #$00

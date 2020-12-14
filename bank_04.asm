@@ -13737,7 +13737,7 @@ C - - - - - 0x013BBC 04:BBAC: A9 04     LDA #$04
 C - - - - - 0x013BBE 04:BBAE: 85 2F     STA ram_002F
 C - - - - - 0x013BC0 04:BBB0: 8D 1C 05  STA ram_051C
 bra_BBB3:
-C - - - - - 0x013BC3 04:BBB3: 20 35 C0  JSR sub_0x01C045
+C - - - - - 0x013BC3 04:BBB3: 20 35 C0  JSR sub_0x01F6A1
 C - - - - - 0x013BC6 04:BBB6: 9D B0 04  STA ram_смена_угла_движения,X
 C - - - - - 0x013BC9 04:BBB9: 60        RTS
 
