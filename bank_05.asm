@@ -8205,19 +8205,6 @@ C - - - - - 0x016CBF 05:ACAF: 8D 59 00  STA ram_подтип_экрана
 C - - - - - 0x016CC2 05:ACB2: 60        RTS
 
 
-; bzk мусор
-- - - - - - 0x016CC3 05:ACB3: 02        .byte $02   ; 
-- - - - - - 0x016CC4 05:ACB4: 0D        .byte $0D   ; 
-- - - - - - 0x016CC5 05:ACB5: 02        .byte $02   ; 
-- - - - - - 0x016CC6 05:ACB6: 0D        .byte $0D   ; 
-- - - - - - 0x016CC7 05:ACB7: 02        .byte $02   ; 
-- - - - - - 0x016CC8 05:ACB8: 0D        .byte $0D   ; 
-- - - - - - 0x016CC9 05:ACB9: 02        .byte $02   ; 
-- - - - - - 0x016CCA 05:ACBA: 0A        .byte $0A   ; 
-- - - - - - 0x016CCB 05:ACBB: 02        .byte $02   ; 
-- - - - - - 0x016CCC 05:ACBC: 04        .byte $04   ; 
-
-
 
 sub_ACBD:
 C - - - - - 0x016CCD 05:ACBD: AD CA 05  LDA ram_номер_опции
