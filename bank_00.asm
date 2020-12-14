@@ -15473,10 +15473,6 @@ C D 1 - - - 0x003FF1 00:BFE1: 10 80     BPL bra_BF63
 C - - - - - 0x003FF3 00:BFE3: 30 8C     BMI bra_BF71
 
 
-; bzk мусор
-- - - - - - 0x003FF5 00:BFE5: 60        RTS
-
-
 
 sub_BFE6:
 C - - - - - 0x003FF6 00:BFE6: A0 0A     LDY #$0A
