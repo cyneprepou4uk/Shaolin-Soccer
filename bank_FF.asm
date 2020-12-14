@@ -10367,6 +10367,8 @@ C - - - - - 0x01FBF0 07:FBE0: 8A        TXA
 C - - - - - 0x01FBF1 07:FBE1: 48        PHA
 C - - - - - 0x01FBF2 07:FBE2: 98        TYA
 C - - - - - 0x01FBF3 07:FBE3: 48        PHA
+                                        LDA #$01
+                                        STA $401C
 C - - - - - 0x01FBF4 07:FBE4: A5 4E     LDA ram_для_8000
 C - - - - - 0x01FBF6 07:FBE6: 48        PHA
 C - - - - - 0x01FBF7 07:FBE7: AD FF BF  LDA con_bank_id
@@ -10422,6 +10424,8 @@ bra_FC37_IRQ_отключен:
 C - - - - - 0x01FC47 07:FC37: 20 08 C3  JSR sub_C308
 C D 3 - - - 0x01FCD1 07:FCC1: E6 51     INC ram_задержка_кадра
 loc_FCC3_выход_из_NMI_и_IRQ:
+                                        LDA #$00
+                                        STA $401C
 C D 3 - - - 0x01FCD3 07:FCC3: 68        PLA
 C - - - - - 0x01FCD4 07:FCC4: 85 0D     STA ram_000D
 C - - - - - 0x01FCD6 07:FCC6: 68        PLA
@@ -10448,6 +10452,8 @@ C - - - - - 0x01FCEC 07:FCDC: 98        TYA
 C - - - - - 0x01FCED 07:FCDD: 48        PHA
 C - - - - - 0x01FCEE 07:FCDE: 8D 00 E0  STA $E000
 C - - - - - 0x01FCF1 07:FCE1: 8D 01 E0  STA $E001
+                                        LDA #$01
+                                        STA $401C
 C - - - - - 0x01FCF4 07:FCE4: A5 4E     LDA ram_для_8000
 C - - - - - 0x01FCF6 07:FCE6: 48        PHA
 C - - - - - 0x01FCF7 07:FCE7: AD FF BF  LDA con_bank_id
