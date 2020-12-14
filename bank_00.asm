@@ -11675,7 +11675,7 @@ C - - - - - 0x00306C 00:B05C: 20 53 C0  JSR sub_0x01EC9F
 - - - - - - 0x003075 00:B065: 92 B0     .word ofs_B092_F3
 - D 1 - I - 0x003077 00:B067: A4 B0     .word ofs_B0A4_F4
 - D 1 - I - 0x003079 00:B069: E9 B0     .word ofs_B0E9_F5
-- - - - - - 0x00307B 00:B06B: F6 B0     .word ofs_B0F6_F6_RTS
+- - - - - - 0x00307B 00:B06B: F6 B0     .word _общий_RTS    ; F6
 - D 1 - I - 0x00307D 00:B06D: F7 B0     .word ofs_B0F7_F7
 - D 1 - I - 0x00307F 00:B06F: 0F B1     .word ofs_B10F_F8
 - - - - - - 0x003081 00:B071: A0 B0     .word ofs_B0A0_F9
@@ -11766,11 +11766,6 @@ C - - - - - 0x003100 00:B0F0: F0 03     BEQ bra_B0F5_RTS
 - - - - - - 0x003102 00:B0F2: 4C 23 B0  JMP loc_B023
 bra_B0F5_RTS:
 C - - - - - 0x003105 00:B0F5: 60        RTS
-
-
-
-ofs_B0F6_F6_RTS:
-- - - - - - 0x003106 00:B0F6: 60        RTS
 
 
 

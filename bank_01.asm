@@ -14263,29 +14263,24 @@ C - - - - - 0x0079F7 01:B9E7: 60        RTS
 
 
 tbl_B9E8:
-- - - - - - 0x0079F8 01:B9E8: 8A BA     .word ofs_BA8A_00_RTS
+- - - - - - 0x0079F8 01:B9E8: 8A BA     .word _общий_RTS    ; 00
 - D 1 - - - 0x0079FA 01:B9EA: 8B BA     .word ofs_BA8B_01
-- D 1 - - - 0x0079FC 01:B9EC: 3D BB     .word ofs_BB3D_02_RTS
+- D 1 - - - 0x0079FC 01:B9EC: 3D BB     .word _общий_RTS    ; 02
 - D 1 - - - 0x0079FE 01:B9EE: 3E BB     .word ofs_BB3E_03
-- D 1 - - - 0x007A00 01:B9F0: CA BB     .word ofs_BBCA_04_RTS
-- D 1 - - - 0x007A02 01:B9F2: CA BB     .word ofs_BBCA_05_RTS
-- D 1 - - - 0x007A04 01:B9F4: CA BB     .word ofs_BBCA_06_RTS
+- D 1 - - - 0x007A00 01:B9F0: CA BB     .word _общий_RTS    ; 04
+- D 1 - - - 0x007A02 01:B9F2: CA BB     .word _общий_RTS    ; 05
+- D 1 - - - 0x007A04 01:B9F4: CA BB     .word _общий_RTS    ; 06
 
 
 
 tbl_B9F6:
-- - - - - - 0x007A06 01:B9F6: 04 BA     .word ofs_BA04_00_RTS
+- - - - - - 0x007A06 01:B9F6: 04 BA     .word _общий_RTS    ; 00
 - D 1 - - - 0x007A08 01:B9F8: 05 BA     .word ofs_BA05_01
-- D 1 - - - 0x007A0A 01:B9FA: 2D BA     .word ofs_BA2D_02_RTS
+- D 1 - - - 0x007A0A 01:B9FA: 2D BA     .word _общий_RTS    ; 02
 - D 1 - - - 0x007A0C 01:B9FC: 2E BA     .word ofs_BA2E_03
-- D 1 - - - 0x007A0E 01:B9FE: 8A BA     .word ofs_BA8A_04_RTS
-- - - - - - 0x007A10 01:BA00: 8A BA     .word ofs_BA8A_05_RTS
-- - - - - - 0x007A12 01:BA02: 8A BA     .word ofs_BA8A_06_RTS
-
-
-
-ofs_BA04_00_RTS:
-- - - - - - 0x007A14 01:BA04: 60        RTS
+- D 1 - - - 0x007A0E 01:B9FE: 8A BA     .word _общий_RTS    ; 04
+- - - - - - 0x007A10 01:BA00: 8A BA     .word _общий_RTS    ; 05
+- - - - - - 0x007A12 01:BA02: 8A BA     .word _общий_RTS    ; 06
 
 
 
@@ -14323,11 +14318,6 @@ tbl_BA25:
 - - - - - - 0x007A3A 01:BA2A: 38        .byte $38   ; 
 - D 1 - - - 0x007A3B 01:BA2B: 98        .byte $98   ; 
 - - - - - - 0x007A3C 01:BA2C: 98        .byte $98   ; 
-
-
-
-ofs_BA2D_02_RTS:
-C - - J - - 0x007A3D 01:BA2D: 60        RTS
 
 
 
@@ -14373,14 +14363,6 @@ bra_BA82:
 loc_BA84:
 C D 1 - - - 0x007A94 01:BA84: 8D 1F 04  STA ram_погода_spd_Y_hi
 C - - - - - 0x007A97 01:BA87: 4C 3E BB  JMP loc_BB3E
-
-
-
-ofs_BA8A_00_RTS:
-ofs_BA8A_04_RTS:
-ofs_BA8A_05_RTS:
-ofs_BA8A_06_RTS:
-C - - J - - 0x007A9A 01:BA8A: 60        RTS
 
 
 
@@ -14484,11 +14466,6 @@ tbl_BB35:
 
 
 
-ofs_BB3D_02_RTS:
-C - - J - - 0x007B4D 01:BB3D: 60        RTS
-
-
-
 loc_BB3E:
 ofs_BB3E_03:
 C D 1 - - - 0x007B4E 01:BB3E: A2 0D     LDX #$0D
@@ -14560,13 +14537,6 @@ bra_BBBA:
 - - - - - - 0x007BD4 01:BBC4: A9 00     LDA #$00
 - - - - - - 0x007BD6 01:BBC6: 8D E6 00  STA ram_00E6
 - - - - - - 0x007BD9 01:BBC9: 60        RTS
-
-
-
-ofs_BBCA_04_RTS:
-ofs_BBCA_05_RTS:
-ofs_BBCA_06_RTS:
-C - - J - - 0x007BDA 01:BBCA: 60        RTS
 
 
 

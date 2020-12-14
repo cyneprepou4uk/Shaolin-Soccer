@@ -1945,17 +1945,12 @@ C - - - - - 0x01CBF3 07:CBE3: 85 2D     STA ram_002D
 C - - - - - 0x01CBF5 07:CBE5: 6C 2C 00  JMP (ram_002C)
 
 tbl_CBE8:
-- D 2 - - - 0x01CBF8 07:CBE8: F4 CB     .word ofs_CBF4_00_RTS
+- D 2 - - - 0x01CBF8 07:CBE8: F4 CB     .word _общий_RTS
 - D 2 - - - 0x01CBFA 07:CBEA: F5 CB     .word ofs_CBF5_01
 - D 2 - - - 0x01CBFC 07:CBEC: 0B CC     .word ofs_CC0B_02
 - D 2 - - - 0x01CBFE 07:CBEE: 0B CC     .word ofs_CC0B_03
 - D 2 - - - 0x01CC00 07:CBF0: 0B CC     .word ofs_CC0B_04
 - D 2 - - - 0x01CC02 07:CBF2: 0B CC     .word ofs_CC0B_05
-
-
-
-ofs_CBF4_00_RTS:
-C - - J - - 0x01CC04 07:CBF4: 60        RTS
 
 
 
@@ -10649,6 +10644,11 @@ C - - - - - 0x01FE19 07:FE09: E0 02     CPX #$02
 C - - - - - 0x01FE1B 07:FE0B: 90 E5     BCC bra_FDF2
 C - - - - - 0x01FE1D 07:FE0D: 4C D4 C3  JMP loc_C3D4
 
+
+
+.export _общий_RTS
+_общий_RTS:
+    RTS
 
 
 .segment "DMC_DATA"

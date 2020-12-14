@@ -2623,16 +2623,11 @@ tbl_8EFB:
 sub_8EFF:
 C - - - - - 0x014F0F 05:8EFF: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x014F12 05:8F02: 20 53 C0  JSR sub_0x01EC9F
-- D 0 - I - 0x014F15 05:8F05: 0F 8F     .word ofs_8F0F_00_RTS
+- D 0 - I - 0x014F15 05:8F05: 0F 8F     .word _общий_RTS
 - D 0 - I - 0x014F17 05:8F07: 10 8F     .word ofs_8F10_01
 - D 0 - I - 0x014F19 05:8F09: 40 8F     .word ofs_8F40_02
 - D 0 - I - 0x014F1B 05:8F0B: 40 8F     .word ofs_8F40_03
 - D 0 - I - 0x014F1D 05:8F0D: 40 8F     .word ofs_8F40_04
-
-
-
-ofs_8F0F_00_RTS:
-C - - J - - 0x014F1F 05:8F0F: 60        RTS
 
 
 
@@ -3099,7 +3094,7 @@ tbl_9191:
 sub_9194:
 C - - - - - 0x0151A4 05:9194: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x0151A7 05:9197: 20 53 C0  JSR sub_0x01EC9F
-- - - - - - 0x0151AA 05:919A: AE 91     .word ofs_91AE_00_RTS
+- - - - - - 0x0151AA 05:919A: AE 91     .word _общий_RTS
 - D 0 - I - 0x0151AC 05:919C: AF 91     .word ofs_91AF_01
 - D 0 - I - 0x0151AE 05:919E: AF 91     .word ofs_91AF_02
 - D 0 - I - 0x0151B0 05:91A0: AF 91     .word ofs_91AF_03
@@ -3111,12 +3106,7 @@ C - - - - - 0x0151A7 05:9197: 20 53 C0  JSR sub_0x01EC9F
 - D 0 - I - 0x0151BC 05:91AC: AF 91     .word ofs_91AF_09
 
 
-
-ofs_91AE_00_RTS:
-- - - - - - 0x0151BE 05:91AE: 60        RTS
-
-
-
+; bzk
 ofs_91AF_01:
 ofs_91AF_02:
 ofs_91AF_03:
@@ -3914,8 +3904,8 @@ off_9555_12:
 sub_955D:
 C - - - - - 0x01556D 05:955D: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x015570 05:9560: 20 53 C0  JSR sub_0x01EC9F
-- D 0 - I - 0x015573 05:9563: 77 95     .word ofs_9577_00_RTS
-- - - - - - 0x015575 05:9565: 77 95     .word ofs_9577_01_RTS
+- D 0 - I - 0x015573 05:9563: 77 95     .word _общий_RTS
+- - - - - - 0x015575 05:9565: 77 95     .word _общий_RTS
 - D 0 - I - 0x015577 05:9567: 78 95     .word ofs_9578_02
 - D 0 - I - 0x015579 05:9569: 83 95     .word ofs_9583_03
 - D 0 - I - 0x01557B 05:956B: 8E 95     .word ofs_958E_04
@@ -3924,12 +3914,6 @@ C - - - - - 0x015570 05:9560: 20 53 C0  JSR sub_0x01EC9F
 - D 0 - I - 0x015581 05:9571: BF 95     .word ofs_95BF_07
 - D 0 - I - 0x015583 05:9573: CA 95     .word ofs_95CA_08
 - D 0 - I - 0x015585 05:9575: D7 95     .word ofs_95D7_09
-
-
-; bzk
-ofs_9577_00_RTS:
-ofs_9577_01_RTS:
-C D 0 - - - 0x015587 05:9577: 60        RTS
 
 
 
@@ -4019,8 +4003,8 @@ C - - - - - 0x0155F3 05:95E3: 4C 77 95  RTS
 sub_95E6:
 C - - - - - 0x0155F6 05:95E6: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x0155F9 05:95E9: 20 53 C0  JSR sub_0x01EC9F
-- - - - - - 0x0155FC 05:95EC: 00 96     .word ofs_9600_00_RTS
-- - - - - - 0x0155FE 05:95EE: 00 96     .word ofs_9600_01_RTS
+- - - - - - 0x0155FC 05:95EC: 00 96     .word _общий_RTS
+- - - - - - 0x0155FE 05:95EE: 00 96     .word _общий_RTS
 - D 0 - I - 0x015600 05:95F0: 01 96     .word ofs_9601_02
 - D 0 - I - 0x015602 05:95F2: 0C 96     .word ofs_960C_03
 - D 0 - I - 0x015604 05:95F4: 1A 96     .word ofs_961A_04
@@ -4029,12 +4013,6 @@ C - - - - - 0x0155F9 05:95E9: 20 53 C0  JSR sub_0x01EC9F
 - D 0 - I - 0x01560A 05:95FA: 62 96     .word ofs_9662_07
 - D 0 - I - 0x01560C 05:95FC: 78 96     .word ofs_9678_08
 - D 0 - I - 0x01560E 05:95FE: 90 96     .word ofs_9690_09
-
-
-; bzk
-ofs_9600_00_RTS:
-ofs_9600_01_RTS:
-C D 0 - - - 0x015610 05:9600: 60        RTS
 
 
 

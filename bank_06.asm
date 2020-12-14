@@ -62,7 +62,7 @@ C - - - - - 0x01804A 06:803A: 85 2D     STA ram_002D
 C - - - - - 0x01804C 06:803C: 6C 2C 00  JMP (ram_002C)
 
 tbl_803F:
-- D 0 - - - 0x01804F 06:803F: F9 80     .word ofs_80F9_00_RTS
+- D 0 - - - 0x01804F 06:803F: F9 80     .word _общий_RTS
 - D 0 - - - 0x018051 06:8041: FA 80     .word ofs_80FA_01
 - D 0 - - - 0x018053 06:8043: A7 81     .word ofs_81A7_02
 - D 0 - - - 0x018055 06:8045: 15 82     .word ofs_8215_03
@@ -81,19 +81,19 @@ tbl_803F:
 - D 0 - - - 0x01806F 06:805F: 63 83     .word ofs_8363_10
 - D 0 - - - 0x018071 06:8061: 7D 83     .word ofs_837D_11
 - - - - - - 0x018073 06:8063: CB 84     .word ofs_84CB_12
-- - - - - - 0x018075 06:8065: F9 80     .word ofs_80F9_13_RTS
+- - - - - - 0x018075 06:8065: F9 80     .word _общий_RTS    ; 13
 - D 0 - - - 0x018077 06:8067: 2E 81     .word ofs_812E_14
 - - - - - - 0x018079 06:8069: B0 82     .word ofs_82B0_15
 - D 0 - - - 0x01807B 06:806B: 8D 83     .word ofs_838D_16
-- - - - - - 0x01807D 06:806D: F9 80     .word ofs_80F9_17_RTS
-- - - - - - 0x01807F 06:806F: F9 80     .word ofs_80F9_18_RTS
+- - - - - - 0x01807D 06:806D: F9 80     .word _общий_RTS    ; 17
+- - - - - - 0x01807F 06:806F: F9 80     .word _общий_RTS    ; 18
 - D 0 - - - 0x018081 06:8071: E8 84     .word ofs_84E8_19
 - D 0 - - - 0x018083 06:8073: 7F 81     .word ofs_817F_1A
 - D 0 - - - 0x018085 06:8075: C1 83     .word ofs_83C1_1B
 - D 0 - - - 0x018087 06:8077: DB 83     .word ofs_83DB_1C
 - D 0 - - - 0x018089 06:8079: 37 84     .word ofs_8437_1D
-- - - - - - 0x01808B 06:807B: F9 80     .word ofs_80F9_1E_RTS
-- - - - - - 0x01808D 06:807D: F9 80     .word ofs_80F9_1F_RTS
+- - - - - - 0x01808B 06:807B: F9 80     .word _общий_RTS    ; 1E
+- - - - - - 0x01808D 06:807D: F9 80     .word _общий_RTS    ; 1F
 - D 0 - - - 0x01808F 06:807F: F3 83     .word ofs_83F3_20
 - D 0 - - - 0x018091 06:8081: 4D 84     .word ofs_844D_21
 - D 0 - - - 0x018093 06:8083: F5 84     .word ofs_84F5_22
@@ -106,7 +106,7 @@ tbl_803F:
 - D 0 - - - 0x0180A1 06:8091: A8 84     .word ofs_84A8_29
 - D 0 - - - 0x0180A3 06:8093: 51 86     .word ofs_8651_2A
 - - - - - - 0x0180A5 06:8095: 9A 86     .word ofs_869A_2B
-- - - - - - 0x0180A7 06:8097: F9 80     .word ofs_80F9_2C_RTS
+- - - - - - 0x0180A7 06:8097: F9 80     .word _общий_RTS    ; 2C
 - D 0 - - - 0x0180A9 06:8099: BA 81     .word ofs_81BA_2D
 - D 0 - - - 0x0180AB 06:809B: EA 81     .word ofs_81EA_2E
 - D 0 - - - 0x0180AD 06:809D: DE 85     .word ofs_85DE_2F
@@ -155,17 +155,6 @@ tbl_803F:
 - D 0 - - - 0x018103 06:80F3: 35 88     .word ofs_8835_5A
 - D 0 - - - 0x018105 06:80F5: 40 8A     .word ofs_8A40_5B
 - D 0 - - - 0x018107 06:80F7: DF 8A     .word ofs_8ADF_5C
-
-
-
-ofs_80F9_00_RTS:
-ofs_80F9_13_RTS:
-ofs_80F9_17_RTS:
-ofs_80F9_18_RTS:
-ofs_80F9_1E_RTS:
-ofs_80F9_1F_RTS:
-ofs_80F9_2C_RTS:
-C - - J - - 0x018109 06:80F9: 60        RTS
 
 
 
@@ -1903,7 +1892,7 @@ C - - - - - 0x018CBA 06:8CAA: 85 2D     STA ram_002D
 C - - - - - 0x018CBC 06:8CAC: 6C 2C 00  JMP (ram_002C)
 
 tbl_8CAF:
-- D 0 - - - 0x018CBF 06:8CAF: E1 8C     .word ofs_8CE1_00_RTS
+- D 0 - - - 0x018CBF 06:8CAF: E1 8C     .word _общий_RTS
 - D 0 - - - 0x018CC1 06:8CB1: C8 8F     .word ofs_8FC8_01
 - D 0 - - - 0x018CC3 06:8CB3: 43 8D     .word ofs_8D43_02
 - D 0 - - - 0x018CC5 06:8CB5: 6A 8D     .word ofs_8D6A_03
@@ -1928,11 +1917,6 @@ tbl_8CAF:
 - - - - - - 0x018CEB 06:8CDB: E2 8C     .word ofs_8CE2_16
 - D 0 - - - 0x018CED 06:8CDD: 6B 92     .word ofs_926B_17
 - - - - - - 0x018CEF 06:8CDF: 3B 90     .word ofs_903B_18
-
-
-
-ofs_8CE1_00_RTS:
-C - - J - - 0x018CF1 06:8CE1: 60        RTS
 
 
 

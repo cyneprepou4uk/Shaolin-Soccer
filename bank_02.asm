@@ -11371,7 +11371,7 @@ C - - - - - 0x00AF16 02:AF06: 20 53 C0  JSR sub_0x01EC9F
 - D 1 - I - 0x00AF1F 02:AF0F: 6A AF     .word ofs_AF6A_03
 - D 1 - I - 0x00AF21 02:AF11: 7B AF     .word ofs_AF7B_04
 - D 1 - I - 0x00AF23 02:AF13: 8A AF     .word ofs_AF8A_05
-- D 1 - I - 0x00AF25 02:AF15: 2A AF     .word ofs_AF2A_06_RTS
+- D 1 - I - 0x00AF25 02:AF15: 2A AF     .word _общий_RTS
 
 
 
@@ -11388,7 +11388,6 @@ bra_AF28:
 loc_AF28:
 C D 1 - - - 0x00AF38 02:AF28: E6 95     INC ram_номер_кадра_анимации + 1
 bra_AF2A_RTS:
-ofs_AF2A_06_RTS:
 C - - - - - 0x00AF3A 02:AF2A: 60        RTS
 
 
@@ -11481,7 +11480,7 @@ C - - - - - 0x00AFA8 02:AF98: 20 53 C0  JSR sub_0x01EC9F
 - D 1 - I - 0x00AFAD 02:AF9D: B9 AF     .word ofs_AFB9_01
 - D 1 - I - 0x00AFAF 02:AF9F: C7 AF     .word ofs_AFC7_02
 - D 1 - I - 0x00AFB1 02:AFA1: E2 AF     .word ofs_AFE2_03
-- D 1 - I - 0x00AFB3 02:AFA3: B8 AF     .word ofs_AFB8_04_RTS
+- D 1 - I - 0x00AFB3 02:AFA3: B8 AF     .word _общий_RTS
 
 
 
@@ -11497,7 +11496,6 @@ C - - - - - 0x00AFC3 02:AFB3: 20 9A AD  JSR sub_AD9A
 bra_AFB6:
 C - - - - - 0x00AFC6 02:AFB6: E6 95     INC ram_номер_кадра_анимации + 1
 bra_AFB8_RTS:
-ofs_AFB8_04_RTS:
 C - - - - - 0x00AFC8 02:AFB8: 60        RTS
 
 
@@ -11671,7 +11669,7 @@ C - - - - - 0x00B0A8 02:B098: 85 2D     STA ram_002D
 C - - - - - 0x00B0AA 02:B09A: 6C 2C 00  JMP (ram_002C)
 
 tbl_B09D:
-- - - - - - 0x00B0AD 02:B09D: BB B0     .word ofs_B0BB_00_RTS
+- - - - - - 0x00B0AD 02:B09D: BB B0     .word _общий_RTS
 - D 1 - - - 0x00B0AF 02:B09F: BC B0     .word ofs_B0BC_01
 - D 1 - - - 0x00B0B1 02:B0A1: D9 B0     .word ofs_B0D9_02
 - D 1 - - - 0x00B0B3 02:B0A3: 74 B1     .word ofs_B174_03
@@ -11686,11 +11684,6 @@ tbl_B09D:
 - D 1 - - - 0x00B0C5 02:B0B5: BC B0     .word ofs_B0BC_0C
 - D 1 - - - 0x00B0C7 02:B0B7: E9 B0     .word ofs_B0E9_0D
 - - - - - - 0x00B0C9 02:B0B9: FB B1     .word ofs_B1FB_0E
-
-
-
-ofs_B0BB_00_RTS:
-- - - - - - 0x00B0CB 02:B0BB: 60        RTS
 
 
 
@@ -12878,7 +12871,7 @@ C - - - - - 0x00B6FA 02:B6EA: 85 2D     STA ram_002D
 C - - - - - 0x00B6FC 02:B6EC: 6C 2C 00  JMP (ram_002C)
 
 tbl_B6EF:
-- - - - - - 0x00B6FF 02:B6EF: 45 B7     .word ofs_B745_00_RTS
+- - - - - - 0x00B6FF 02:B6EF: 45 B7     .word _общий_RTS
 - D 1 - - - 0x00B701 02:B6F1: 46 B7     .word ofs_B746_01
 - D 1 - - - 0x00B703 02:B6F3: 46 B7     .word ofs_B746_02
 - D 1 - - - 0x00B705 02:B6F5: 2C B8     .word ofs_B82C_03
@@ -12921,11 +12914,6 @@ tbl_B6EF:
 - - - - - - 0x00B74F 02:B73F: 74 B7     .word ofs_B774_28
 - - - - - - 0x00B751 02:B741: 46 B7     .word ofs_B746_29
 - - - - - - 0x00B753 02:B743: 74 B7     .word ofs_B774_2A
-
-
-
-ofs_B745_00_RTS:
-- - - - - - 0x00B755 02:B745: 60        RTS
 
 
 
