@@ -10685,7 +10685,7 @@ sub_AA66:
 
 loc_AA6B:
 C D 1 - - - 0x00AA7B 02:AA6B: A5 59     LDA ram_подтип_экрана
-C - - - - - 0x00AA7D 02:AA6D: 20 53 C0  JSR sub_0x01C063
+C - - - - - 0x00AA7D 02:AA6D: 20 53 C0  JSR sub_0x01EC9F
 - D 1 - I - 0x00AA80 02:AA70: 88 AA     .word ofs_AA88_00
 - D 1 - I - 0x00AA82 02:AA72: D9 AA     .word ofs_AAD9_01
 - D 1 - I - 0x00AA84 02:AA74: 78 AB     .word ofs_AB78_02
@@ -11072,7 +11072,7 @@ bra_AD07:
 C - - - - - 0x00AD17 02:AD07: A9 80     LDA #$80
 C - - - - - 0x00AD19 02:AD09: 8D 89 05  STA ram_таймер_демо_lo
 C - - - - - 0x00AD1C 02:AD0C: A5 95     LDA ram_номер_кадра_анимации + 1
-C - - - - - 0x00AD1E 02:AD0E: 20 53 C0  JSR sub_0x01C063
+C - - - - - 0x00AD1E 02:AD0E: 20 53 C0  JSR sub_0x01EC9F
 - D 1 - I - 0x00AD21 02:AD11: 17 AD     .word ofs_AD17_00
 - D 1 - I - 0x00AD23 02:AD13: 28 AD     .word ofs_AD28_01
 - D 1 - I - 0x00AD25 02:AD15: 3B AD     .word ofs_AD3B_02
@@ -11406,7 +11406,7 @@ tbl_AEE5:
 
 loc_AEF7_сценка_кунио:
 C D 1 - - - 0x00AF07 02:AEF7: A5 9E     LDA ram_сценка_кунио
-C - - - - - 0x00AF09 02:AEF9: 20 53 C0  JSR sub_0x01C063
+C - - - - - 0x00AF09 02:AEF9: 20 53 C0  JSR sub_0x01EC9F
 - D 1 - I - 0x00AF0C 02:AEFC: 04 AF     .word ofs_AF04_00
 - D 1 - I - 0x00AF0E 02:AEFE: 04 AF     .word ofs_AF04_01
 - D 1 - I - 0x00AF10 02:AF00: 96 AF     .word ofs_AF96_02
@@ -11417,7 +11417,7 @@ C - - - - - 0x00AF09 02:AEF9: 20 53 C0  JSR sub_0x01C063
 ofs_AF04_00:
 ofs_AF04_01:
 C - - J - - 0x00AF14 02:AF04: A5 95     LDA ram_номер_кадра_анимации + 1
-C - - - - - 0x00AF16 02:AF06: 20 53 C0  JSR sub_0x01C063
+C - - - - - 0x00AF16 02:AF06: 20 53 C0  JSR sub_0x01EC9F
 - D 1 - I - 0x00AF19 02:AF09: 17 AF     .word ofs_AF17_00
 - D 1 - I - 0x00AF1B 02:AF0B: 2B AF     .word ofs_AF2B_01
 - D 1 - I - 0x00AF1D 02:AF0D: 32 AF     .word ofs_AF32_02
@@ -11529,7 +11529,7 @@ C - - - - - 0x00AFA4 02:AF94: D0 92     BNE bra_AF28
 
 ofs_AF96_02:
 C - - J - - 0x00AFA6 02:AF96: A5 95     LDA ram_номер_кадра_анимации + 1
-C - - - - - 0x00AFA8 02:AF98: 20 53 C0  JSR sub_0x01C063
+C - - - - - 0x00AFA8 02:AF98: 20 53 C0  JSR sub_0x01EC9F
 - D 1 - I - 0x00AFAB 02:AF9B: A5 AF     .word ofs_AFA5_00
 - D 1 - I - 0x00AFAD 02:AF9D: B9 AF     .word ofs_AFB9_01
 - D 1 - I - 0x00AFAF 02:AF9F: C7 AF     .word ofs_AFC7_02
@@ -11597,7 +11597,7 @@ C - - - - - 0x00B002 02:AFF2: D0 C4     BNE bra_AFB8_RTS
 
 ofs_AFF4_03:
 C - - J - - 0x00B004 02:AFF4: A5 95     LDA ram_номер_кадра_анимации + 1
-C - - - - - 0x00B006 02:AFF6: 20 53 C0  JSR sub_0x01C063
+C - - - - - 0x00B006 02:AFF6: 20 53 C0  JSR sub_0x01EC9F
 - D 1 - I - 0x00B009 02:AFF9: FF AF     .word ofs_AFFF_00
 - D 1 - I - 0x00B00B 02:AFFB: 17 B0     .word ofs_B017_01
 - D 1 - I - 0x00B00D 02:AFFD: 2E B0     .word ofs_B02E_02
@@ -13882,7 +13882,7 @@ sub_BB3C:
 
 loc_BB5D:
 - - - - - - 0x00BB6D 02:BB5D: A5 59     LDA ram_подтип_экрана
-- - - - - - 0x00BB6F 02:BB5F: 20 53 C0  JSR sub_0x01C063
+- - - - - - 0x00BB6F 02:BB5F: 20 53 C0  JSR sub_0x01EC9F
 - - - - - - 0x00BB72 02:BB62: 78 BB     .word ofs_BB78_00
 - - - - - - 0x00BB74 02:BB64: B1 BB     .word ofs_BBB1_01
 - - - - - - 0x00BB76 02:BB66: CE BB     .word ofs_BBCE_02

@@ -11678,7 +11678,7 @@ C - - - - - 0x003068 00:B058: 60        RTS
 loc_B059:
 C D 1 - - - 0x003069 00:B059: 38        SEC
 C - - - - - 0x00306A 00:B05A: E9 F0     SBC #$F0
-C - - - - - 0x00306C 00:B05C: 20 53 C0  JSR sub_0x01C063
+C - - - - - 0x00306C 00:B05C: 20 53 C0  JSR sub_0x01EC9F
 - D 1 - I - 0x00306F 00:B05F: 73 B0     .word ofs_B073_F0
 - D 1 - I - 0x003071 00:B061: 7E B0     .word ofs_B07E_F1
 - D 1 - I - 0x003073 00:B063: 89 B0     .word ofs_B089_F2
@@ -15287,7 +15287,7 @@ C - - - - - 0x003F1B 00:BF0B: 29 0F     AND #$0F
 C - - - - - 0x003F1D 00:BF0D: 85 1C     STA ram_001C
 C - - - - - 0x003F1F 00:BF0F: BD 1F BF  LDA tbl_BF1F,X
 C - - - - - 0x003F22 00:BF12: 29 03     AND #$03
-C - - - - - 0x003F24 00:BF14: 20 53 C0  JSR sub_0x01C063
+C - - - - - 0x003F24 00:BF14: 20 53 C0  JSR sub_0x01EC9F
 - D 1 - I - 0x003F27 00:BF17: 39 BF     .word ofs_BF39_00
 - D 1 - I - 0x003F29 00:BF19: 45 BF     .word ofs_BF45_01
 - D 1 - I - 0x003F2B 00:BF1B: 54 BF     .word ofs_BF54_02
