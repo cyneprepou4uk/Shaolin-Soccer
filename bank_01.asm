@@ -15229,7 +15229,7 @@ bra_BEB8:
 C - - - - - 0x007EC8 01:BEB8: E6 1C     INC ram_001C
 bra_BEBA:
 C - - - - - 0x007ECA 01:BEBA: AE D6 04  LDX ram_игрок_с_мячом
-C - - - - - 0x007ECD 01:BEBD: 20 B7 BF  JSR sub_0x01C271
+C - - - - - 0x007ECD 01:BEBD: 20 B7 BF  JSR sub_0x01C269
 C - - - - - 0x007ED0 01:BEC0: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x007ED3 01:BEC3: 8D 8B 06  STA ram_068B
 C - - - - - 0x007ED6 01:BEC6: 29 01     AND #$01
