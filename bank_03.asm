@@ -4078,7 +4078,7 @@ C D 0 - - - 0x00D91A 03:990A: A9 00     LDA #$00
 C - - - - - 0x00D91C 03:990C: 85 2F     STA ram_002F
 C - - - - - 0x00D91E 03:990E: A5 1C     LDA ram_001C
 C - - - - - 0x00D920 03:9910: 85 2E     STA ram_002E
-C - - - - - 0x00D922 03:9912: 20 29 C0  JSR sub_0x01C039
+C - - - - - 0x00D922 03:9912: 20 29 C0  JSR sub_0x01F574
 C - - - - - 0x00D925 03:9915: B9 F6 03  LDA ram_игрок_spd_X_hi,Y
 C - - - - - 0x00D928 03:9918: 10 12     BPL bra_992C
 C - - - - - 0x00D92A 03:991A: B9 14 03  LDA ram_игрок_X_lo,Y
@@ -4137,7 +4137,7 @@ bra_9987:
 C - - - - - 0x00D997 03:9987: A5 1C     LDA ram_001C
 loc_9989:
 C D 0 - - - 0x00D999 03:9989: 85 2E     STA ram_002E
-C - - - - - 0x00D99B 03:998B: 20 29 C0  JSR sub_0x01C039
+C - - - - - 0x00D99B 03:998B: 20 29 C0  JSR sub_0x01F574
 C - - - - - 0x00D99E 03:998E: B9 12 04  LDA ram_игрок_spd_Y_hi,Y
 C - - - - - 0x00D9A1 03:9991: 10 12     BPL bra_99A5
 C - - - - - 0x00D9A3 03:9993: B9 4D 03  LDA ram_игрок_Y_lo,Y

@@ -25,9 +25,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C039
-sub_0x01C039:
-C - - - - - 0x01C039 07:C029: 4C 64 F5  JMP loc_F564
 .export sub_0x01C03C
 sub_0x01C03C:
 C - - - - - 0x01C03C 07:C02C: 4C 9B F5  JMP loc_F59B
@@ -9404,7 +9401,8 @@ bra_F556:
 
 
 
-loc_F564:
+.export sub_0x01F574
+sub_0x01F574:
 sub_F564:
 C D 3 - - - 0x01F574 07:F564: 8A        TXA
 C - - - - - 0x01F575 07:F565: 48        PHA
