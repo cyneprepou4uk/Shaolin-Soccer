@@ -697,7 +697,7 @@ C - - - - - 0x00C499 03:8489: A5 1D     LDA ram_001D
 C - - - - - 0x00C49B 03:848B: 69 00     ADC #$00
 C - - - - - 0x00C49D 03:848D: 85 1D     STA ram_001D
 loc_848F:
-C D 0 - - - 0x00C49F 03:848F: 20 2C C0  JSR sub_0x01C03C
+C D 0 - - - 0x00C49F 03:848F: 20 2C C0  JSR sub_0x01F5AB
 C - - - - - 0x00C4A2 03:8492: AD 1E 04  LDA ram_мяч_spd_Y_hi
 C - - - - - 0x00C4A5 03:8495: 30 12     BMI bra_84A9
 C - - - - - 0x00C4A7 03:8497: AD 59 03  LDA ram_мяч_Y_lo
