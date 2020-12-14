@@ -13877,7 +13877,8 @@ tbl_BC5F_звук:
 sub_BC62:
 C - - - - - 0x013C72 04:BC62: AC 10 05  LDY ram_подтип_супера
 C - - - - - 0x013C75 04:BC65: B9 5E BD  LDA tbl_BD5E_таймер,Y
-C - - - - - 0x013C78 04:BC68: 10 05     BPL bra_BC6F
+                                        CMP #$FF
+C - - - - - 0x013C78 04:BC68: 10 05     BNE bra_BC6F
 C - - - - - 0x013C7A 04:BC6A: 20 7F BC  JSR sub_BC7F
 C - - - - - 0x013C7D 04:BC6D: A5 2C     LDA ram_002C
 bra_BC6F:
@@ -13890,14 +13891,14 @@ C - - - - - 0x013C89 04:BC79: 9D 3C 04  STA ram_игрок_гравитация_
 C - - - - - 0x013C8C 04:BC7C: 60        RTS
 
 
-
-tbl_BC7D:
-- D 1 - - - 0x013C8D 04:BC7D: B0 00     .word $00B0
+; 30fps таймер полета мяча увеличен в 1.5 раза
+tbl_BC7D_таймер_полета_мяча:
+- D 1 - - - 0x013C8D 04:BC7D: B0 00     .word $0108     ; $00B0
 
 sub_BC7F:
-C - - - - - 0x013C8F 04:BC7F: AD 7D BC  LDA tbl_BC7D
+C - - - - - 0x013C8F 04:BC7F: AD 7D BC  LDA tbl_BC7D_таймер_полета_мяча
 C - - - - - 0x013C92 04:BC82: 85 2C     STA ram_002C
-C - - - - - 0x013C94 04:BC84: AD 7E BC  LDA tbl_BC7D + 1
+C - - - - - 0x013C94 04:BC84: AD 7E BC  LDA tbl_BC7D_таймер_полета_мяча + 1
 C - - - - - 0x013C97 04:BC87: 85 2D     STA ram_002D
 C - - - - - 0x013C99 04:BC89: A0 00     LDY #$00
 C - - - - - 0x013C9B 04:BC8B: BD A3 04  LDA ram_направление_движения,X
@@ -14075,18 +14076,18 @@ tbl_BD4B_Z_скорость:
 - D 1 - - - 0x013D6D 04:BD5D: 06        .word $0400   ; $0600
 
 
-
+; 30fps таймеры полета мяча увеличены в 1.5 раза
 tbl_BD5E_таймер:
-- D 1 - - - 0x013D6E 04:BD5E: 10        .byte $10   ; 
-- D 1 - - - 0x013D6F 04:BD5F: 18        .byte $18   ; 
-- D 1 - - - 0x013D70 04:BD60: FF        .byte $FF   ; 
-- D 1 - - - 0x013D71 04:BD61: 7F        .byte $7F   ; 
-- D 1 - - - 0x013D72 04:BD62: 7F        .byte $7F   ; 
-- D 1 - - - 0x013D73 04:BD63: 20        .byte $20   ; 
-- D 1 - - - 0x013D74 04:BD64: 20        .byte $20   ; 
-- D 1 - - - 0x013D75 04:BD65: FF        .byte $FF   ; 
-- D 1 - - - 0x013D76 04:BD66: 7F        .byte $7F   ; 
-- D 1 - - - 0x013D77 04:BD67: 00        .byte $00   ; 
+- D 1 - - - 0x013D6E 04:BD5E: 10        .byte $18   ; $10
+- D 1 - - - 0x013D6F 04:BD5F: 18        .byte $24   ; $18
+- D 1 - - - 0x013D70 04:BD60: FF        .byte $FF   ; $FF
+- D 1 - - - 0x013D71 04:BD61: 7F        .byte $C0   ; $7F
+- D 1 - - - 0x013D72 04:BD62: 7F        .byte $C0   ; $7F
+- D 1 - - - 0x013D73 04:BD63: 20        .byte $30   ; $20
+- D 1 - - - 0x013D74 04:BD64: 20        .byte $30   ; $20
+- D 1 - - - 0x013D75 04:BD65: FF        .byte $FF   ; $FF
+- D 1 - - - 0x013D76 04:BD66: 7F        .byte $C0   ; $7F
+- D 1 - - - 0x013D77 04:BD67: 00        .byte $00   ; $00
 
 
 
