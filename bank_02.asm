@@ -10629,9 +10629,6 @@ off_A9D1_07:
 
 
 
-sub_AA1B:
-C - - - - - 0x00AA2B 02:AA1B: A9 14     LDA #$14
-C - - - - - 0x00AA2D 02:AA1D: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 sub_AA20:
 C - - - - - 0x00AA30 02:AA20: A9 17     LDA #$17
 C - - - - - 0x00AA32 02:AA22: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
@@ -11005,7 +11002,7 @@ C - - - - - 0x00ACA5 02:AC95: 20 A5 AD  JSR sub_ADA5
 C - - - - - 0x00ACA8 02:AC98: A2 0C     LDX #$0C
 C - - - - - 0x00ACAA 02:AC9A: 20 A5 AD  JSR sub_ADA5
 C - - - - - 0x00ACAD 02:AC9D: 20 62 C0  JSR sub_0x01EF64
-C - - - - - 0x00ACB0 02:ACA0: 20 1B AA  JSR sub_AA1B
+C - - - - - 0x00ACB0 02:ACA0: 20 1B AA  JSR sub_0x01C2AE
 C - - - - - 0x00ACB3 02:ACA3: 20 59 C0  JSR sub_0x01D05F
 C - - - - - 0x00ACB6 02:ACA6: E6 59     INC ram_подтип_экрана
 C - - - - - 0x00ACB8 02:ACA8: 60        RTS
@@ -11016,7 +11013,7 @@ ofs_ACA9_06:
 ofs_ACA9_09:
 C - - J - - 0x00ACB9 02:ACA9: 20 91 AD  JSR sub_AD91
 C - - - - - 0x00ACBC 02:ACAC: 20 2F AA  JSR sub_AA2F
-C - - - - - 0x00ACBF 02:ACAF: 20 1B AA  JSR sub_AA1B
+C - - - - - 0x00ACBF 02:ACAF: 20 1B AA  JSR sub_0x01C2AE
 C - - - - - 0x00ACC2 02:ACB2: 20 5C C0  JSR sub_0x01D083
 C - - - - - 0x00ACC5 02:ACB5: 2C B2 05  BIT ram_флаг_яркости
 C - - - - - 0x00ACC8 02:ACB8: 10 02     BPL bra_ACBC_RTS
@@ -11032,7 +11029,7 @@ C - - J - - 0x00ACCD 02:ACBD: 20 9B AE  JSR sub_AE9B
 C - - - - - 0x00ACD0 02:ACC0: 20 F8 AC  JSR sub_ACF8
 C - - - - - 0x00ACD3 02:ACC3: 20 20 AA  JSR sub_AA20
 C - - - - - 0x00ACD6 02:ACC6: 20 2F AA  JSR sub_AA2F
-C - - - - - 0x00ACD9 02:ACC9: 20 1B AA  JSR sub_AA1B
+C - - - - - 0x00ACD9 02:ACC9: 20 1B AA  JSR sub_0x01C2AE
 C - - - - - 0x00ACDC 02:ACCC: 20 7C AE  JSR sub_AE7C
 C - - - - - 0x00ACDF 02:ACCF: 30 06     BMI bra_ACD7
 C - - - - - 0x00ACE1 02:ACD1: 50 24     BVC bra_ACF7_RTS
@@ -11240,7 +11237,7 @@ C - - - - - 0x00AE30 02:AE20: 85 93     STA ram_таймер_кадра_аним
 bra_AE22:
 loc_AE22:
 C D 1 - - - 0x00AE32 02:AE22: 20 65 C0  JSR sub_0x01EB9C
-C - - - - - 0x00AE35 02:AE25: 20 1B AA  JSR sub_AA1B
+C - - - - - 0x00AE35 02:AE25: 20 1B AA  JSR sub_0x01C2AE
 C - - - - - 0x00AE38 02:AE28: 60        RTS
 
 
@@ -11673,7 +11670,7 @@ C - - - - - 0x00B073 02:B063: B9 70 B0  LDA tbl_B06F + 1,Y
 C - - - - - 0x00B076 02:B066: 95 87     STA ram_таймер_кадра_анимации,X
 bra_B068:
 C - - - - - 0x00B078 02:B068: 20 65 C0  JSR sub_0x01EB9C
-C - - - - - 0x00B07B 02:B06B: 20 1B AA  JSR sub_AA1B
+C - - - - - 0x00B07B 02:B06B: 20 1B AA  JSR sub_0x01C2AE
 C - - - - - 0x00B07E 02:B06E: 60        RTS
 
 
@@ -13915,7 +13912,7 @@ ofs_BB78_00:
 - - - - - - 0x00BBAB 02:BB9B: 85 F1     STA ram_копия_камеры_X_hi
 - - - - - - 0x00BBAD 02:BB9D: 20 66 BA  JSR sub_BA66
 - - - - - - 0x00BBB0 02:BBA0: 20 3C BB  JSR sub_BB3C
-- - - - - - 0x00BBB3 02:BBA3: 20 1B AA  JSR sub_AA1B
+- - - - - - 0x00BBB3 02:BBA3: 20 1B AA  JSR sub_0x01C2AE
 - - - - - - 0x00BBB6 02:BBA6: 20 59 C0  JSR sub_0x01D05F
 - - - - - - 0x00BBB9 02:BBA9: A9 0B     LDA #$0B
 - - - - - - 0x00BBBB 02:BBAB: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
@@ -13929,7 +13926,7 @@ bra_BBB0_RTS:
 ofs_BBB1_01:
 - - - - - - 0x00BBC1 02:BBB1: 20 5C C0  JSR sub_0x01D083
 - - - - - - 0x00BBC4 02:BBB4: 20 3C BB  JSR sub_BB3C
-- - - - - - 0x00BBC7 02:BBB7: 20 1B AA  JSR sub_AA1B
+- - - - - - 0x00BBC7 02:BBB7: 20 1B AA  JSR sub_0x01C2AE
 - - - - - - 0x00BBCA 02:BBBA: AD E5 07  LDA ram_07E5
 - - - - - - 0x00BBCD 02:BBBD: 29 02     AND #$02
 - - - - - - 0x00BBCF 02:BBBF: D0 EF     BNE bra_BBB0_RTS
@@ -14357,7 +14354,7 @@ bra_BEE3:
 - - - - - - 0x00BEF3 02:BEE3: E8        INX
 - - - - - - 0x00BEF4 02:BEE4: E0 0D     CPX #$0D
 - - - - - - 0x00BEF6 02:BEE6: 90 F3     BCC bra_BEDB
-- - - - - - 0x00BEF8 02:BEE8: 20 1B AA  JSR sub_AA1B
+- - - - - - 0x00BEF8 02:BEE8: 20 1B AA  JSR sub_0x01C2AE
 - - - - - - 0x00BEFB 02:BEEB: 60        RTS
 
 

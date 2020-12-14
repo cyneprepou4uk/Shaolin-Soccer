@@ -568,6 +568,8 @@ sub_C280:
 C - - - - - 0x01C290 07:C280: A9 13     LDA #$13
 C - - - - - 0x01C292 07:C282: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C29E:
+.export sub_0x01C2AE
+sub_0x01C2AE:
 C - - - - - 0x01C2AE 07:C29E: A9 14     LDA #$14
 C - - - - - 0x01C2B0 07:C2A0: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C2A3:
