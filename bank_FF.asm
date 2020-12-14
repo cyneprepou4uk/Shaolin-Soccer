@@ -5,9 +5,6 @@
 .export tbl_0x01C010
 tbl_0x01C010:
 - D 2 - - - 0x01C010 07:C000: 80 C0     .word tbl_C080
-.export sub_0x01C012
-sub_0x01C012:
-C - - - - - 0x01C012 07:C002: 4C E4 C2  JMP loc_C2E4
 .export tbl_0x01C015
 tbl_0x01C015:
 .export sub_0x01C015
