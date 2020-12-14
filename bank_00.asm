@@ -2,11 +2,6 @@
 .include "copy_bank_ram.inc"
 ; 0x000010-0x00400F
 
-.export sub_0x000013
-sub_0x000013:
-C - - - - - 0x000013 00:8003: 4C 83 81  JMP loc_8183
-
-
 .export sub_0x000016
 sub_0x000016:
 sub_8006:
@@ -227,7 +222,8 @@ C - - - - - 0x000192 00:8182: 60        RTS
 
 
 
-loc_8183:
+.export sub_0x000193
+sub_0x000193:
 C D 0 - - - 0x000193 00:8183: 2C E5 07  BIT ram_07E5
 C - - - - - 0x000196 00:8186: 10 67     BPL bra_81EF_RTS
 C - - - - - 0x000198 00:8188: AD E5 07  LDA ram_07E5

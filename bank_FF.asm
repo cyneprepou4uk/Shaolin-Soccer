@@ -807,7 +807,7 @@ C - - - - - 0x01C318 07:C308: AD FF BF  LDA $BFFF
 C - - - - - 0x01C31B 07:C30B: 48        PHA
 C - - - - - 0x01C31C 07:C30C: A9 00     LDA #$00
 C - - - - - 0x01C31E 07:C30E: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01C321 07:C311: 20 03 80  JSR sub_0x000013
+C - - - - - 0x01C321 07:C311: 20 03 80  JSR sub_0x000193
 C - - - - - 0x01C324 07:C314: 4C 68 C3  JMP loc_C368
 
 
