@@ -48,12 +48,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C08D
-sub_0x01C08D:
-C - - - - - 0x01C08D 07:C07D: 4C 35 C3  JMP loc_C335
-
-
-
 tbl_C080:
 - D 2 - I - 0x01C090 07:C080: A0 C0     .word off_C0A0_00
 - D 2 - I - 0x01C092 07:C082: DC C0     .word off_C0DC_01
@@ -718,7 +712,8 @@ C - - - - - 0x01C342 07:C332: 4C 68 C3  JMP loc_C368
 
 
 
-loc_C335:
+.export sub_0x01C345
+sub_0x01C345:
 C D 2 - - - 0x01C345 07:C335: AD FF BF  LDA con_bank_id
 C - - - - - 0x01C348 07:C338: 48        PHA
 C - - - - - 0x01C349 07:C339: A9 00     LDA #$00
