@@ -7,9 +7,6 @@ tbl_0x01C010:
 - D 2 - - - 0x01C010 07:C000: 80 C0     .word tbl_C080
 .export tbl_0x01C015
 tbl_0x01C015:
-.export sub_0x01C015
-sub_0x01C015:
-C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 - - - - - - 0x01C018 07:C008: 4C D3 EE  JMP loc_EED3
 - - - - - - 0x01C01E 07:C00E: 4C 7D EE  JMP loc_EE7D
 - - - - - - 0x01C033 07:C023: 4C 39 F5  JMP loc_F539
@@ -8151,7 +8148,6 @@ sub_EE28:
 
 
 
-loc_EE35:
 sub_EE35:
 .export sub_0x01EE45
 sub_0x01EE45:
