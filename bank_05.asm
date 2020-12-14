@@ -1185,7 +1185,7 @@ C - - - - - 0x0146B9 05:86A9: 60        RTS
 
 
 sub_86AA:
-C - - - - - 0x0146BA 05:86AA: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x0146BA 05:86AA: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x0146BD 05:86AD: 20 4A C0  JSR sub_0x01C05A
 C - - - - - 0x0146C0 05:86B0: 20 13 B9  JSR sub_B913
 C - - - - - 0x0146C3 05:86B3: A0 00     LDY #$00
@@ -1530,7 +1530,7 @@ C - - - - - 0x014894 05:8884: 60        RTS
 
 
 sub_8885:
-C - - - - - 0x014895 05:8885: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x014895 05:8885: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x014898 05:8888: 20 4A C0  JSR sub_0x01C05A
 C - - - - - 0x01489B 05:888B: 20 47 BB  JSR sub_BB47
 C - - - - - 0x01489E 05:888E: A9 03     LDA #$03
@@ -1570,7 +1570,7 @@ C - - - - - 0x0148CC 05:88BC: 29 F0     AND #$F0
 C - - - - - 0x0148CE 05:88BE: F0 0F     BEQ bra_88CF_RTS
 C - - - - - 0x0148D0 05:88C0: A9 33     LDA #$33
 C - - - - - 0x0148D2 05:88C2: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x0148D5 05:88C5: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x0148D5 05:88C5: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x0148D8 05:88C8: 20 4A C0  JSR sub_0x01C05A
 C - - - - - 0x0148DB 05:88CB: A9 04     LDA #$04
 C - - - - - 0x0148DD 05:88CD: 85 59     STA ram_подтип_экрана
@@ -2263,7 +2263,7 @@ C - - - - - 0x014CFD 05:8CED: 60        RTS
 
 
 sub_8CEE:
-C - - - - - 0x014CFE 05:8CEE: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x014CFE 05:8CEE: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x014D01 05:8CF1: 20 4A C0  JSR sub_0x01C05A
 C - - - - - 0x014D04 05:8CF4: A9 00     LDA #$00
 C - - - - - 0x014D06 05:8CF6: 8D CC 05  STA ram_счетчик_смен
@@ -2512,7 +2512,7 @@ C - - - - - 0x014E29 05:8E19: F0 0B     BEQ bra_8E26
 C - - - - - 0x014E2B 05:8E1B: A9 33     LDA #$33
 C - - - - - 0x014E2D 05:8E1D: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 bra_8E20:
-C - - - - - 0x014E30 05:8E20: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x014E30 05:8E20: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x014E33 05:8E23: 4C 32 8E  JMP loc_8E32
 bra_8E26:
 C - - - - - 0x014E36 05:8E26: AD 00 03  LDA ram_счетчик_кадров
@@ -3387,7 +3387,7 @@ bra_9270:
 C - - - - - 0x015280 05:9270: 84 44     STY ram_0044
 C - - - - - 0x015282 05:9272: A9 33     LDA #$33
 C - - - - - 0x015284 05:9274: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x015287 05:9277: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x015287 05:9277: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x01528A 05:927A: 20 4A C0  JSR sub_0x01C05A
 C - - - - - 0x01528D 05:927D: A4 44     LDY ram_0044
 C - - - - - 0x01528F 05:927F: B9 BF 92  LDA tbl_92BF,Y
@@ -4499,7 +4499,7 @@ off_97A3_09:
 
 
 sub_97C3:
-C - - - - - 0x0157D3 05:97C3: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x0157D3 05:97C3: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x0157D6 05:97C6: 20 4A C0  JSR sub_0x01C05A
 C - - - - - 0x0157D9 05:97C9: AD F2 05  LDA ram_поле_банк_фона
 C - - - - - 0x0157DC 05:97CC: 29 0F     AND #$0F
@@ -5522,7 +5522,7 @@ C - - - - - 0x015D9F 05:9D8F: 60        RTS
 
 
 sub_9D90:
-C - - - - - 0x015DA0 05:9D90: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x015DA0 05:9D90: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x015DA3 05:9D93: 20 4A C0  JSR sub_0x01C05A
 C - - - - - 0x015DA6 05:9D96: A9 04     LDA #$04
 C - - - - - 0x015DA8 05:9D98: 85 59     STA ram_подтип_экрана
@@ -6237,7 +6237,7 @@ C - - - - - 0x01616E 05:A15E: 60        RTS
 
 
 sub_A15F:
-C - - - - - 0x01616F 05:A15F: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x01616F 05:A15F: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x016172 05:A162: 20 4A C0  JSR sub_0x01C05A
 C - - - - - 0x016175 05:A165: A9 04     LDA #$04
 C - - - - - 0x016177 05:A167: 85 59     STA ram_подтип_экрана
@@ -6493,7 +6493,7 @@ bra_A2DD:
 C - - - - - 0x0162ED 05:A2DD: 20 71 C0  JSR sub_0x01C081
 C - - - - - 0x0162F0 05:A2E0: AD 05 06  LDA ram_0605
 C - - - - - 0x0162F3 05:A2E3: 30 03     BMI bra_A2E8
-C - - - - - 0x0162F5 05:A2E5: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x0162F5 05:A2E5: 20 44 C0  JSR sub_0x01D057
 bra_A2E8:
 loc_A2E8:
 C D 1 - - - 0x0162F8 05:A2E8: A2 00     LDX #$00
@@ -7249,7 +7249,7 @@ tbl_A6D1:
 
 
 sub_A6D6:
-C - - - - - 0x0166E6 05:A6D6: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x0166E6 05:A6D6: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x0166E9 05:A6D9: 20 4A C0  JSR sub_0x01C05A
 C - - - - - 0x0166EC 05:A6DC: A9 04     LDA #$04
 C - - - - - 0x0166EE 05:A6DE: 85 59     STA ram_подтип_экрана
@@ -7787,7 +7787,7 @@ C - - - - - 0x016A7E 05:AA6E: 20 53 C0  JSR sub_0x01C063
 ofs_AA7D_03:
 C - - J - - 0x016A8D 05:AA7D: A9 33     LDA #$33
 C - - - - - 0x016A8F 05:AA7F: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x016A92 05:AA82: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x016A92 05:AA82: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x016A95 05:AA85: 20 4A C0  JSR sub_0x01C05A
 C - - - - - 0x016A98 05:AA88: A9 0A     LDA #$0A
 C - - - - - 0x016A9A 05:AA8A: 85 59     STA ram_подтип_экрана
@@ -8191,7 +8191,7 @@ C D 1 - - - 0x016CB6 05:ACA6: 60        RTS
 
 
 sub_ACA7:
-C - - - - - 0x016CB7 05:ACA7: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x016CB7 05:ACA7: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x016CBA 05:ACAA: 20 4A C0  JSR sub_0x01C05A
 C - - - - - 0x016CBD 05:ACAD: A9 04     LDA #$04
 C - - - - - 0x016CBF 05:ACAF: 8D 59 00  STA ram_подтип_экрана
@@ -9584,7 +9584,7 @@ off_B3AE_03:
 
 
 sub_B3B2:
-- - - - - - 0x0173C2 05:B3B2: 20 44 C0  JSR sub_0x01C054
+- - - - - - 0x0173C2 05:B3B2: 20 44 C0  JSR sub_0x01D057
 - - - - - - 0x0173C5 05:B3B5: 20 4A C0  JSR sub_0x01C05A
 - - - - - - 0x0173C8 05:B3B8: AC CA 05  LDY ram_номер_опции
 - - - - - - 0x0173CB 05:B3BB: D0 16     BNE bra_B3D3
@@ -9758,7 +9758,7 @@ ofs_B4AE_01:
 - - - - - - 0x0174CA 05:B4BA: F0 19     BEQ bra_B4D5_RTS
 - - - - - - 0x0174CC 05:B4BC: A9 33     LDA #$33
 - - - - - - 0x0174CE 05:B4BE: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-- - - - - - 0x0174D1 05:B4C1: 20 44 C0  JSR sub_0x01C054
+- - - - - - 0x0174D1 05:B4C1: 20 44 C0  JSR sub_0x01D057
 - - - - - - 0x0174D4 05:B4C4: 20 4A C0  JSR sub_0x01C05A
 - - - - - - 0x0174D7 05:B4C7: A5 5B     LDA ram_для_0059
 - - - - - - 0x0174D9 05:B4C9: 85 59     STA ram_подтип_экрана

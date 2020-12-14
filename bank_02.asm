@@ -10916,7 +10916,7 @@ C - - J - - 0x00ABEE 02:ABDE: 20 33 B0  JSR sub_B033
 C - - - - - 0x00ABF1 02:ABE1: 20 7C AE  JSR sub_AE7C
 C - - - - - 0x00ABF4 02:ABE4: 30 10     BMI bra_ABF6
 C - - - - - 0x00ABF6 02:ABE6: 50 15     BVC bra_ABFD_RTS
-C - - - - - 0x00ABF8 02:ABE8: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x00ABF8 02:ABE8: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x00ABFB 02:ABEB: A9 04     LDA #$04
 C - - - - - 0x00ABFD 02:ABED: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AC00 02:ABF0: 20 4A C0  JSR sub_0x01C05A
@@ -11050,7 +11050,7 @@ C - - - - - 0x00ACF3 02:ACE3: 85 58     STA ram_номер_экрана
 C - - - - - 0x00ACF5 02:ACE5: A9 00     LDA #$00
 bra_ACE7:
 C - - - - - 0x00ACF7 02:ACE7: 85 59     STA ram_подтип_экрана
-C - - - - - 0x00ACF9 02:ACE9: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x00ACF9 02:ACE9: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x00ACFC 02:ACEC: A9 04     LDA #$04
 C - - - - - 0x00ACFE 02:ACEE: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AD01 02:ACF1: 20 4A C0  JSR sub_0x01C05A
@@ -11308,7 +11308,7 @@ sub_AE65:
 C - - - - - 0x00AE75 02:AE65: A5 58     LDA ram_номер_экрана
 C - - - - - 0x00AE77 02:AE67: C9 03     CMP #$03
 C - - - - - 0x00AE79 02:AE69: F0 0E     BEQ bra_AE79
-C - - - - - 0x00AE7B 02:AE6B: 20 44 C0  JSR sub_0x01C054
+C - - - - - 0x00AE7B 02:AE6B: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x00AE7E 02:AE6E: A9 04     LDA #$04
 C - - - - - 0x00AE80 02:AE70: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AE83 02:AE73: 20 4A C0  JSR sub_0x01C05A
@@ -13947,7 +13947,7 @@ ofs_BBCE_02:
 - - - - - - 0x00BBDE 02:BBCE: 20 C8 BE  JSR sub_BEC8
 - - - - - - 0x00BBE1 02:BBD1: 20 7C AE  JSR sub_AE7C
 - - - - - - 0x00BBE4 02:BBD4: 50 DA     BVC bra_BBB0_RTS
-- - - - - - 0x00BBE6 02:BBD6: 20 44 C0  JSR sub_0x01C054
+- - - - - - 0x00BBE6 02:BBD6: 20 44 C0  JSR sub_0x01D057
 - - - - - - 0x00BBE9 02:BBD9: 20 4A C0  JSR sub_0x01C05A
 - - - - - - 0x00BBEC 02:BBDC: 20 3D AE  JSR sub_AE3D
 - - - - - - 0x00BBEF 02:BBDF: A9 1C     LDA #$1C
@@ -14113,7 +14113,7 @@ ofs_BD00_03:
 - - - - - - 0x00BD13 02:BD03: 20 5C C0  JSR sub_0x01C06C
 - - - - - - 0x00BD16 02:BD06: 20 7C AE  JSR sub_AE7C
 - - - - - - 0x00BD19 02:BD09: 50 C4     BVC bra_BCCF_RTS
-- - - - - - 0x00BD1B 02:BD0B: 20 44 C0  JSR sub_0x01C054
+- - - - - - 0x00BD1B 02:BD0B: 20 44 C0  JSR sub_0x01D057
 - - - - - - 0x00BD1E 02:BD0E: 20 4A C0  JSR sub_0x01C05A
 - - - - - - 0x00BD21 02:BD11: 20 3D AE  JSR sub_AE3D
 - - - - - - 0x00BD24 02:BD14: EE 8C 05  INC ram_058C
@@ -14290,7 +14290,7 @@ ofs_BE76_07:
 - - - - - - 0x00BE89 02:BE79: 20 C8 BE  JSR sub_BEC8
 - - - - - - 0x00BE8C 02:BE7C: AD 05 06  LDA ram_0605
 - - - - - - 0x00BE8F 02:BE7F: 30 13     BMI bra_BE94_RTS
-- - - - - - 0x00BE91 02:BE81: 20 44 C0  JSR sub_0x01C054
+- - - - - - 0x00BE91 02:BE81: 20 44 C0  JSR sub_0x01D057
 - - - - - - 0x00BE94 02:BE84: 20 4A C0  JSR sub_0x01C05A
 - - - - - - 0x00BE97 02:BE87: 20 3D AE  JSR sub_AE3D
 - - - - - - 0x00BE9A 02:BE8A: A9 00     LDA #$00
