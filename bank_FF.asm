@@ -25,9 +25,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C036
-sub_0x01C036:
-C - - - - - 0x01C036 07:C026: 4C C1 F4  JMP loc_F4C1
 .export sub_0x01C039
 sub_0x01C039:
 C - - - - - 0x01C039 07:C029: 4C 64 F5  JMP loc_F564
@@ -9295,7 +9292,6 @@ C - - - - - 0x01F4D0 07:F4C0: 60        RTS
 
 
 
-loc_F4C1:
 sub_F4C1:
 .export sub_0x01F4D1
 sub_0x01F4D1:

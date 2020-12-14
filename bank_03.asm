@@ -672,7 +672,7 @@ C - - - - - 0x00C465 03:8455: 85 2C     STA ram_002C
 loc_8457:
 C D 0 - - - 0x00C467 03:8457: A9 00     LDA #$00
 C - - - - - 0x00C469 03:8459: 85 1C     STA ram_001C
-C - - - - - 0x00C46B 03:845B: 20 26 C0  JSR sub_0x01C036
+C - - - - - 0x00C46B 03:845B: 20 26 C0  JSR sub_0x01F4D1
 C - - - - - 0x00C46E 03:845E: A5 1C     LDA ram_001C
 C - - - - - 0x00C470 03:8460: 85 1F     STA ram_001F
 C - - - - - 0x00C472 03:8462: AD 1E 04  LDA ram_мяч_spd_Y_hi
