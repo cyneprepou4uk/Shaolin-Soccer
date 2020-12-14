@@ -14744,7 +14744,7 @@ bra_BBBE:
 C - - - - - 0x003BCE 00:BBBE: B9 E3 BD  LDA tbl_BDE3,Y
 C - - - - - 0x003BD1 00:BBC1: 9D 59 04  STA ram_игрок_номер_движения,X
 C - - - - - 0x003BD4 00:BBC4: A9 03     LDA #$03
-C - - - - - 0x003BD6 00:BBC6: 9D 61 00  STA a: ram_0061,X
+C - - - - - 0x003BD6 00:BBC6: 9D 61 00  STA ram_0061,X
 C - - - - - 0x003BD9 00:BBC9: E8        INX
 C - - - - - 0x003BDA 00:BBCA: C8        INY
 C - - - - - 0x003BDB 00:BBCB: C4 5D     CPY ram_количество_игроков
@@ -14863,11 +14863,11 @@ C D 1 - - - 0x003CBC 00:BCAC: A9 FF     LDA #$FF
 C - - - - - 0x003CBE 00:BCAE: 9D B0 04  STA ram_смена_угла_движения,X
 C - - - - - 0x003CC1 00:BCB1: 9D 79 04  STA ram_игрок_номер_действия,X
 C - - - - - 0x003CC4 00:BCB4: BD C9 BD  LDA tbl_BDC9,X
-C - - - - - 0x003CC7 00:BCB7: 9D 61 00  STA a: ram_0061,X
+C - - - - - 0x003CC7 00:BCB7: 9D 61 00  STA ram_0061,X
 C - - - - - 0x003CCA 00:BCBA: BD D6 BD  LDA tbl_BDD6,X
 C - - - - - 0x003CCD 00:BCBD: 9D 59 04  STA ram_игрок_номер_движения,X
 C - - - - - 0x003CD0 00:BCC0: A9 7F     LDA #$7F
-C - - - - - 0x003CD2 00:BCC2: 9D 74 00  STA a: ram_номер_анимации,X
+C - - - - - 0x003CD2 00:BCC2: 9D 74 00  STA ram_номер_анимации,X
 C - - - - - 0x003CD5 00:BCC5: A9 00     LDA #$00
 C - - - - - 0x003CD7 00:BCC7: 9D 86 04  STA ram_игрок_состояние,X
 C - - - - - 0x003CDA 00:BCCA: 9D F6 03  STA ram_игрок_spd_X_hi,X
@@ -14965,18 +14965,18 @@ C - - - - - 0x003D88 00:BD78: 8D AD 03  STA ram_объект_камеры
 C - - - - - 0x003D8B 00:BD7B: A0 10     LDY #$10
 bra_BD7D:
 C - - - - - 0x003D8D 00:BD7D: B9 A7 BD  LDA tbl_BDA7,Y
-C - - - - - 0x003D90 00:BD80: 9D EC 00  STA a: ram_камера_X_lo,X
-C - - - - - 0x003D93 00:BD83: 9D F0 00  STA a: ram_копия_камеры_X_lo,X
+C - - - - - 0x003D90 00:BD80: 9D EC 00  STA ram_камера_X_lo,X
+C - - - - - 0x003D93 00:BD83: 9D F0 00  STA ram_копия_камеры_X_lo,X
 C - - - - - 0x003D96 00:BD86: C8        INY
 C - - - - - 0x003D97 00:BD87: E8        INX
 C - - - - - 0x003D98 00:BD88: E0 02     CPX #$02
 C - - - - - 0x003D9A 00:BD8A: 90 F1     BCC bra_BD7D
 C - - - - - 0x003D9C 00:BD8C: A9 48     LDA #$48
-C - - - - - 0x003D9E 00:BD8E: 8D EE 00  STA a: ram_камера_Y_lo
-C - - - - - 0x003DA1 00:BD91: 8D F2 00  STA a: ram_копия_камеры_Y_lo
+C - - - - - 0x003D9E 00:BD8E: 8D EE 00  STA ram_камера_Y_lo
+C - - - - - 0x003DA1 00:BD91: 8D F2 00  STA ram_копия_камеры_Y_lo
 C - - - - - 0x003DA4 00:BD94: A9 00     LDA #$00
-C - - - - - 0x003DA6 00:BD96: 8D EF 00  STA a: ram_камера_Y_hi
-C - - - - - 0x003DA9 00:BD99: 8D F3 00  STA a: ram_копия_камеры_Y_hi
+C - - - - - 0x003DA6 00:BD96: 8D EF 00  STA ram_камера_Y_hi
+C - - - - - 0x003DA9 00:BD99: 8D F3 00  STA ram_копия_камеры_Y_hi
 C - - - - - 0x003DAC 00:BD9C: A0 1B     LDY #$1B
 C - - - - - 0x003DAE 00:BD9E: A9 00     LDA #$00
 bra_BDA0:

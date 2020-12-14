@@ -186,7 +186,7 @@ bra_8146:
 C - - - - - 0x00C156 03:8146: A5 59     LDA ram_подтип_экрана
 C - - - - - 0x00C158 03:8148: C9 01     CMP #$01
 C - - - - - 0x00C15A 03:814A: D0 15     BNE bra_8161
-C - - - - - 0x00C15C 03:814C: AD 5C 00  LDA a: ram_режим_игры_на_поле
+C - - - - - 0x00C15C 03:814C: AD 5C 00  LDA ram_режим_игры_на_поле
 C - - - - - 0x00C15F 03:814F: 29 20     AND #$20
 C - - - - - 0x00C161 03:8151: F0 17     BEQ bra_816A
 C - - - - - 0x00C163 03:8153: AD 2A 05  LDA ram_флаг_владения_мячом_ком
@@ -245,7 +245,7 @@ C - - - - - 0x00C1B8 03:81A8: 60        RTS
 
 
 sub_81A9:
-C - - - - - 0x00C1B9 03:81A9: AD 59 00  LDA a: ram_подтип_экрана
+C - - - - - 0x00C1B9 03:81A9: AD 59 00  LDA ram_подтип_экрана
 C - - - - - 0x00C1BC 03:81AC: C9 03     CMP #$03
 C - - - - - 0x00C1BE 03:81AE: F0 07     BEQ bra_81B7_RTS
 C - - - - - 0x00C1C0 03:81B0: C9 06     CMP #$06
@@ -264,7 +264,7 @@ C - - - - - 0x00C1D2 03:81C2: E0 02     CPX #$02
 C - - - - - 0x00C1D4 03:81C4: 90 F8     BCC bra_81BE
 C - - - - - 0x00C1D6 03:81C6: 68        PLA
 C - - - - - 0x00C1D7 03:81C7: 8D D6 04  STA ram_игрок_с_мячом
-C - - - - - 0x00C1DA 03:81CA: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - - - - 0x00C1DA 03:81CA: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00C1DD 03:81CD: 29 20     AND #$20
 C - - - - - 0x00C1DF 03:81CF: F0 0B     BEQ bra_81DC_RTS
 C - - - - - 0x00C1E1 03:81D1: AD CC 05  LDA ram_счетчик_смен
@@ -746,10 +746,10 @@ tbl_84CD:
 
 
 ofs_84D1_08:
-C - - J - - 0x00C4E1 03:84D1: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - J - - 0x00C4E1 03:84D1: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00C4E4 03:84D4: 29 03     AND #$03
 C - - - - - 0x00C4E6 03:84D6: D0 16     BNE bra_84EE
-- - - - - - 0x00C4E8 03:84D8: AD 57 00  LDA a: ram_опция_режим_сложность
+- - - - - - 0x00C4E8 03:84D8: AD 57 00  LDA ram_опция_режим_сложность
 - - - - - - 0x00C4EB 03:84DB: 29 80     AND #$80
 - - - - - - 0x00C4ED 03:84DD: F0 0F     BEQ bra_84EE
 - - - - - - 0x00C4EF 03:84DF: 8A        TXA
@@ -800,10 +800,10 @@ tbl_8525:
 
 loc_8529:
 ofs_8529_09:
-C D 0 J - - 0x00C539 03:8529: AD 57 00  LDA a: ram_опция_режим_сложность
+C D 0 J - - 0x00C539 03:8529: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00C53C 03:852C: 29 03     AND #$03
 C - - - - - 0x00C53E 03:852E: D0 16     BNE bra_8546
-- - - - - - 0x00C540 03:8530: AD 57 00  LDA a: ram_опция_режим_сложность
+- - - - - - 0x00C540 03:8530: AD 57 00  LDA ram_опция_режим_сложность
 - - - - - - 0x00C543 03:8533: 29 80     AND #$80
 - - - - - - 0x00C545 03:8535: F0 0F     BEQ bra_8546
 - - - - - - 0x00C547 03:8537: 8A        TXA
@@ -1671,7 +1671,7 @@ tbl_89DB:
 ofs_89DD_0E:
 C - - J - - 0x00C9ED 03:89DD: 20 4C 9B  JSR sub_9B4C
 C - - - - - 0x00C9F0 03:89E0: B9 C4 8A  LDA tbl_8AC4,Y
-C - - - - - 0x00C9F3 03:89E3: CD 45 00  CMP a: ram_рандом
+C - - - - - 0x00C9F3 03:89E3: CD 45 00  CMP ram_рандом
 C - - - - - 0x00C9F6 03:89E6: B0 03     BCS bra_89EB
 C - - - - - 0x00C9F8 03:89E8: 4C CA 83  JMP loc_83CA
 bra_89EB:
@@ -1807,7 +1807,7 @@ tbl_8AC4:
 
 
 ofs_8AC8_0F:
-C - - J - - 0x00CAD8 03:8AC8: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - J - - 0x00CAD8 03:8AC8: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00CADB 03:8ACB: 29 03     AND #$03
 C - - - - - 0x00CADD 03:8ACD: D0 16     BNE bra_8AE5
 - - - - - - 0x00CADF 03:8ACF: 20 05 C0  JSR sub_0x01C015
@@ -2224,7 +2224,7 @@ C - - - - - 0x00CDB1 03:8DA1: 60        RTS
 
 
 loc_8DA2:
-C D 0 - - - 0x00CDB2 03:8DA2: AD 57 00  LDA a: ram_опция_режим_сложность
+C D 0 - - - 0x00CDB2 03:8DA2: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00CDB5 03:8DA5: 29 03     AND #$03
 C - - - - - 0x00CDB7 03:8DA7: D0 03     BNE bra_8DAC
 - - - - - - 0x00CDB9 03:8DA9: 4C CE 8B  JMP loc_8BCE
@@ -2680,14 +2680,14 @@ C - - - - - 0x00CFF8 03:8FE8: A9 80     LDA #$80
 C - - - - - 0x00CFFA 03:8FEA: 85 21     STA ram_0021
 C - - - - - 0x00CFFC 03:8FEC: 20 34 B0  JSR sub_B034
 C - - - - - 0x00CFFF 03:8FEF: A0 00     LDY #$00
-C - - - - - 0x00D001 03:8FF1: AD 45 00  LDA a: ram_рандом
+C - - - - - 0x00D001 03:8FF1: AD 45 00  LDA ram_рандом
 C - - - - - 0x00D004 03:8FF4: 10 03     BPL bra_8FF9
 C - - - - - 0x00D006 03:8FF6: C8        INY
 C - - - - - 0x00D007 03:8FF7: C8        INY
 C - - - - - 0x00D008 03:8FF8: C8        INY
 bra_8FF9:
 loc_8FF9:
-C D 0 - - - 0x00D009 03:8FF9: B9 2C 00  LDA a: ram_002C,Y
+C D 0 - - - 0x00D009 03:8FF9: B9 2C 00  LDA ram_002C,Y
 C - - - - - 0x00D00C 03:8FFC: 30 27     BMI bra_9025
 C - - - - - 0x00D00E 03:8FFE: 84 44     STY ram_0044
 C - - - - - 0x00D010 03:9000: A8        TAY
@@ -2713,7 +2713,7 @@ C - - - - - 0x00D032 03:9022: 4C F9 8F  JMP loc_8FF9
 bra_9025:
 C - - - - - 0x00D035 03:9025: 4C B1 83  JMP loc_83B1
 loc_9028:
-C D 0 - - - 0x00D038 03:9028: B9 2C 00  LDA a: ram_002C,Y
+C D 0 - - - 0x00D038 03:9028: B9 2C 00  LDA ram_002C,Y
 C - - - - - 0x00D03B 03:902B: 85 1C     STA ram_001C
 C - - - - - 0x00D03D 03:902D: 8A        TXA
 C - - - - - 0x00D03E 03:902E: 29 01     AND #$01
@@ -3151,7 +3151,7 @@ ofs_92AD_02:
 ofs_92AD_03:
 C D 0 - - - 0x00D2BD 03:92AD: BD 86 04  LDA ram_игрок_состояние,X
 C - - - - - 0x00D2C0 03:92B0: 10 28     BPL bra_92DA
-C - - - - - 0x00D2C2 03:92B2: AD 46 00  LDA a: ram_рандом + 1
+C - - - - - 0x00D2C2 03:92B2: AD 46 00  LDA ram_рандом + 1
 C - - - - - 0x00D2C5 03:92B5: 30 09     BMI bra_92C0
 C - - - - - 0x00D2C7 03:92B7: C9 40     CMP #$40
 C - - - - - 0x00D2C9 03:92B9: 90 0A     BCC bra_92C5
@@ -3295,7 +3295,7 @@ C - - - - - 0x00D3B4 03:93A4: C9 20     CMP #$20
 C - - - - - 0x00D3B6 03:93A6: 90 48     BCC bra_93F0
 C - - - - - 0x00D3B8 03:93A8: C9 38     CMP #$38
 C - - - - - 0x00D3BA 03:93AA: B0 44     BCS bra_93F0
-C - - - - - 0x00D3BC 03:93AC: BD 74 00  LDA a: ram_номер_анимации,X
+C - - - - - 0x00D3BC 03:93AC: BD 74 00  LDA ram_номер_анимации,X
 C - - - - - 0x00D3BF 03:93AF: 30 3F     BMI bra_93F0
 C - - - - - 0x00D3C1 03:93B1: BD 4D 03  LDA ram_игрок_Y_lo,X
 C - - - - - 0x00D3C4 03:93B4: C9 90     CMP #$90
@@ -3309,7 +3309,7 @@ C - - - - - 0x00D3D1 03:93C1: C9 E0     CMP #$E0
 C - - - - - 0x00D3D3 03:93C3: B0 2B     BCS bra_93F0
 C - - - - - 0x00D3D5 03:93C5: C9 C8     CMP #$C8
 C - - - - - 0x00D3D7 03:93C7: 90 27     BCC bra_93F0
-C - - - - - 0x00D3D9 03:93C9: BD 74 00  LDA a: ram_номер_анимации,X
+C - - - - - 0x00D3D9 03:93C9: BD 74 00  LDA ram_номер_анимации,X
 C - - - - - 0x00D3DC 03:93CC: 10 22     BPL bra_93F0
 C - - - - - 0x00D3DE 03:93CE: BD 4D 03  LDA ram_игрок_Y_lo,X
 C - - - - - 0x00D3E1 03:93D1: C9 90     CMP #$90
@@ -3365,7 +3365,7 @@ C - - - - - 0x00D438 03:9428: 10 3C     BPL bra_9466
 C - - - - - 0x00D43A 03:942A: A0 0C     LDY #$0C
 C - - - - - 0x00D43C 03:942C: 20 BF AE  JSR sub_AEBF
 C - - - - - 0x00D43F 03:942F: 90 D0     BCC bra_9401
-C - - - - - 0x00D441 03:9431: AD 45 00  LDA a: ram_рандом
+C - - - - - 0x00D441 03:9431: AD 45 00  LDA ram_рандом
 C - - - - - 0x00D444 03:9434: 10 CB     BPL bra_9401
 C - - - - - 0x00D446 03:9436: 20 05 C0  JSR sub_0x01C015
 C - - - - - 0x00D449 03:9439: C9 A0     CMP #$A0
@@ -3923,7 +3923,7 @@ C - - - - - 0x00D828 03:9818: 4A        LSR
 C - - - - - 0x00D829 03:9819: 4A        LSR
 C - - - - - 0x00D82A 03:981A: 4A        LSR
 C - - - - - 0x00D82B 03:981B: 85 1F     STA ram_001F
-C - - - - - 0x00D82D 03:981D: AD 45 00  LDA a: ram_рандом
+C - - - - - 0x00D82D 03:981D: AD 45 00  LDA ram_рандом
 C - - - - - 0x00D830 03:9820: 29 07     AND #$07
 C - - - - - 0x00D832 03:9822: 38        SEC
 C - - - - - 0x00D833 03:9823: E9 04     SBC #$04
@@ -4324,7 +4324,7 @@ tbl_9AB6:
 sub_9ABA:
 C - - - - - 0x00DACA 03:9ABA: A0 00     LDY #$00
 loc_9ABC:
-C D 0 - - - 0x00DACC 03:9ABC: B9 2D 00  LDA a: ram_002D,Y
+C D 0 - - - 0x00DACC 03:9ABC: B9 2D 00  LDA ram_002D,Y
 C - - - - - 0x00DACF 03:9ABF: 38        SEC
 C - - - - - 0x00DAD0 03:9AC0: FD B0 04  SBC ram_смена_угла_движения,X
 C - - - - - 0x00DAD3 03:9AC3: 85 1E     STA ram_001E
@@ -4353,7 +4353,7 @@ C - - - - - 0x00DAF3 03:9AE3: 60        RTS
 
 
 sub_9AE4:
-C - - - - - 0x00DAF4 03:9AE4: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - - - - 0x00DAF4 03:9AE4: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00DAF7 03:9AE7: 29 03     AND #$03
 C - - - - - 0x00DAF9 03:9AE9: D0 08     BNE bra_9AF3
 - - - - - - 0x00DAFB 03:9AEB: 8A        TXA
@@ -4451,10 +4451,10 @@ C - - - - - 0x00DB84 03:9B74: 60        RTS
 
 
 sub_9B75:
-C - - - - - 0x00DB85 03:9B75: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - - - - 0x00DB85 03:9B75: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00DB88 03:9B78: 29 03     AND #$03
 C - - - - - 0x00DB8A 03:9B7A: D0 45     BNE bra_9BC1_RTS
-- - - - - - 0x00DB8C 03:9B7C: AD 57 00  LDA a: ram_опция_режим_сложность
+- - - - - - 0x00DB8C 03:9B7C: AD 57 00  LDA ram_опция_режим_сложность
 - - - - - - 0x00DB8F 03:9B7F: 10 40     BPL bra_9BC1_RTS
 - - - - - - 0x00DB91 03:9B81: 8A        TXA
 - - - - - - 0x00DB92 03:9B82: 29 01     AND #$01
@@ -4567,7 +4567,7 @@ loc_9C22:
 C D 0 - - - 0x00DC32 03:9C22: A4 2C     LDY ram_002C
 C - - - - - 0x00DC34 03:9C24: B9 50 06  LDA ram_позиция_управление,Y
 C - - - - - 0x00DC37 03:9C27: 10 1A     BPL bra_9C43
-C - - - - - 0x00DC39 03:9C29: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - - - - 0x00DC39 03:9C29: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00DC3C 03:9C2C: 29 F0     AND #$F0
 C - - - - - 0x00DC3E 03:9C2E: D0 06     BNE bra_9C36
 C - - - - - 0x00DC40 03:9C30: A5 2C     LDA ram_002C
@@ -4873,7 +4873,7 @@ C - - - - - 0x00DE4C 03:9E3C: 60        RTS
 
 
 sub_9E3D:
-C - - - - - 0x00DE4D 03:9E3D: BD 04 00  LDA a: ram_удержанные_кнопки,X
+C - - - - - 0x00DE4D 03:9E3D: BD 04 00  LDA ram_удержанные_кнопки,X
 C - - - - - 0x00DE50 03:9E40: 29 0F     AND #$0F
 C - - - - - 0x00DE52 03:9E42: A8        TAY
 C - - - - - 0x00DE53 03:9E43: B9 07 A0  LDA tbl_A007,Y
@@ -4883,7 +4883,7 @@ C - - - - - 0x00DE59 03:9E49: 60        RTS
 
 
 sub_9E4A:
-C - - - - - 0x00DE5A 03:9E4A: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - - - - 0x00DE5A 03:9E4A: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00DE5D 03:9E4D: 29 03     AND #$03
 C - - - - - 0x00DE5F 03:9E4F: D0 05     BNE bra_9E56
 - - - - - - 0x00DE61 03:9E51: A9 00     LDA #$00
@@ -4948,7 +4948,7 @@ C - - - - - 0x00DEBC 03:9EAC: A8        TAY
 C - - - - - 0x00DEBD 03:9EAD: B9 03 A0  LDA tbl_A003,Y
 C - - - - - 0x00DEC0 03:9EB0: 4C FC 9E  JMP loc_9EFC
 bra_9EB3:
-C - - - - - 0x00DEC3 03:9EB3: AD 45 00  LDA a: ram_рандом
+C - - - - - 0x00DEC3 03:9EB3: AD 45 00  LDA ram_рандом
 C - - - - - 0x00DEC6 03:9EB6: 29 03     AND #$03
 C - - - - - 0x00DEC8 03:9EB8: 85 1E     STA ram_001E
 C - - - - - 0x00DECA 03:9EBA: A5 1C     LDA ram_001C
@@ -5018,7 +5018,7 @@ C - - - - - 0x00DF2A 03:9F1A: 4A        LSR
 C - - - - - 0x00DF2B 03:9F1B: 4A        LSR
 C - - - - - 0x00DF2C 03:9F1C: 05 1E     ORA ram_001E
 C - - - - - 0x00DF2E 03:9F1E: 85 1E     STA ram_001E
-C - - - - - 0x00DF30 03:9F20: AD 46 00  LDA a: ram_рандом + 1
+C - - - - - 0x00DF30 03:9F20: AD 46 00  LDA ram_рандом + 1
 C - - - - - 0x00DF33 03:9F23: 29 03     AND #$03
 C - - - - - 0x00DF35 03:9F25: 05 1E     ORA ram_001E
 C - - - - - 0x00DF37 03:9F27: A8        TAY
@@ -5461,7 +5461,7 @@ C - - - - - 0x00E14E 03:A13E: 85 2E     STA ram_002E
 C - - - - - 0x00E150 03:A140: B9 27 03  LDA ram_игрок_X_hi,Y
 C - - - - - 0x00E153 03:A143: 85 2D     STA ram_002D
 C - - - - - 0x00E155 03:A145: 85 2F     STA ram_002F
-C - - - - - 0x00E157 03:A147: B9 74 00  LDA a: ram_номер_анимации,Y
+C - - - - - 0x00E157 03:A147: B9 74 00  LDA ram_номер_анимации,Y
 C - - - - - 0x00E15A 03:A14A: 10 10     BPL bra_A15C
 C - - - - - 0x00E15C 03:A14C: A5 2E     LDA ram_002E
 C - - - - - 0x00E15E 03:A14E: 38        SEC
@@ -5773,13 +5773,13 @@ C - - - - - 0x00E376 03:A366: 69 01     ADC #$01
 C - - - - - 0x00E378 03:A368: 85 1C     STA ram_001C
 C - - - - - 0x00E37A 03:A36A: B9 86 04  LDA ram_игрок_состояние,Y
 C - - - - - 0x00E37D 03:A36D: 10 0A     BPL bra_A379
-C - - - - - 0x00E37F 03:A36F: AD 45 00  LDA a: ram_рандом
+C - - - - - 0x00E37F 03:A36F: AD 45 00  LDA ram_рандом
 C - - - - - 0x00E382 03:A372: 0A        ASL
 C - - - - - 0x00E383 03:A373: 18        CLC
 C - - - - - 0x00E384 03:A374: A9 FF     LDA #$FF
 C - - - - - 0x00E386 03:A376: 4C 7C A3  JMP loc_A37C
 bra_A379:
-C - - - - - 0x00E389 03:A379: AD 45 00  LDA a: ram_рандом
+C - - - - - 0x00E389 03:A379: AD 45 00  LDA ram_рандом
 loc_A37C:
 C D 1 - - - 0x00E38C 03:A37C: 85 1D     STA ram_001D
 C - - - - - 0x00E38E 03:A37E: B9 FD 04  LDA ram_защита_поведение,Y
@@ -6326,7 +6326,7 @@ C - - - - - 0x00E759 03:A749: 30 05     BMI bra_A750
 C - - - - - 0x00E75B 03:A74B: A0 01     LDY #$01
 C - - - - - 0x00E75D 03:A74D: 4C 56 A7  JMP loc_A756
 bra_A750:
-C - - - - - 0x00E760 03:A750: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - - - - 0x00E760 03:A750: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00E763 03:A753: 29 03     AND #$03
 C - - - - - 0x00E765 03:A755: A8        TAY
 loc_A756:
@@ -6345,7 +6345,7 @@ C - - - - - 0x00E77D 03:A76D: A9 0E     LDA #$0E
 C - - - - - 0x00E77F 03:A76F: 4C 90 A7  JMP loc_A790
 bra_A772:
 loc_A772:
-C D 1 - - - 0x00E782 03:A772: AD 57 00  LDA a: ram_опция_режим_сложность
+C D 1 - - - 0x00E782 03:A772: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00E785 03:A775: 29 03     AND #$03
 C - - - - - 0x00E787 03:A777: D0 10     BNE bra_A789
 - - - - - - 0x00E789 03:A779: E0 01     CPX #$01
@@ -6387,7 +6387,7 @@ C - - - - - 0x00E7B3 03:A7A3: C9 01     CMP #$01
 C - - - - - 0x00E7B5 03:A7A5: F0 0E     BEQ bra_A7B5_RTS
 C - - - - - 0x00E7B7 03:A7A7: C9 03     CMP #$03
 C - - - - - 0x00E7B9 03:A7A9: F0 0A     BEQ bra_A7B5_RTS
-C - - - - - 0x00E7BB 03:A7AB: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - - - - 0x00E7BB 03:A7AB: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00E7BE 03:A7AE: 29 20     AND #$20
 C - - - - - 0x00E7C0 03:A7B0: D0 03     BNE bra_A7B5_RTS
 C - - - - - 0x00E7C2 03:A7B2: 4C B6 A7  JMP loc_A7B6
@@ -6649,7 +6649,7 @@ C - - - - - 0x00E972 03:A962: 85 2F     STA ram_002F
 C - - - - - 0x00E974 03:A964: A0 00     LDY #$00
 bra_A966:
 C - - - - - 0x00E976 03:A966: B1 2E     LDA (ram_002E),Y
-C - - - - - 0x00E978 03:A968: 99 1C 00  STA a: ram_001C,Y
+C - - - - - 0x00E978 03:A968: 99 1C 00  STA ram_001C,Y
 C - - - - - 0x00E97B 03:A96B: C8        INY
 C - - - - - 0x00E97C 03:A96C: C0 05     CPY #$05
 C - - - - - 0x00E97E 03:A96E: 90 F6     BCC bra_A966
@@ -6699,7 +6699,7 @@ C - - - - - 0x00E9B8 03:A9A8: 60        RTS
 
 sub_A9A9:
 C - - - - - 0x00E9B9 03:A9A9: 20 DC AA  JSR sub_AADC
-C - - - - - 0x00E9BC 03:A9AC: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - - - - 0x00E9BC 03:A9AC: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00E9BF 03:A9AF: 29 20     AND #$20
 C - - - - - 0x00E9C1 03:A9B1: F0 17     BEQ bra_A9CA
 C - - - - - 0x00E9C3 03:A9B3: 8A        TXA
@@ -6743,7 +6743,7 @@ C - - - - - 0x00EA0B 03:A9FB: BD 57 AB  LDA tbl_AB57,X
 C - - - - - 0x00EA0E 03:A9FE: 8D 06 20  STA $2006
 C - - - - - 0x00EA11 03:AA01: A0 00     LDY #$00
 bra_AA03:
-C - - - - - 0x00EA13 03:AA03: B9 1C 00  LDA a: ram_001C,Y
+C - - - - - 0x00EA13 03:AA03: B9 1C 00  LDA ram_001C,Y
 C - - - - - 0x00EA16 03:AA06: 8D 07 20  STA $2007
 C - - - - - 0x00EA19 03:AA09: C8        INY
 C - - - - - 0x00EA1A 03:AA0A: C0 05     CPY #$05
@@ -6754,7 +6754,7 @@ C - - - - - 0x00EA23 03:AA13: 8D 06 20  STA $2006
 C - - - - - 0x00EA26 03:AA16: BD 59 AB  LDA tbl_AB59,X
 C - - - - - 0x00EA29 03:AA19: 8D 06 20  STA $2006
 bra_AA1C:
-C - - - - - 0x00EA2C 03:AA1C: B9 1C 00  LDA a: ram_001C,Y
+C - - - - - 0x00EA2C 03:AA1C: B9 1C 00  LDA ram_001C,Y
 C - - - - - 0x00EA2F 03:AA1F: 8D 07 20  STA $2007
 C - - - - - 0x00EA32 03:AA22: C8        INY
 C - - - - - 0x00EA33 03:AA23: C0 0A     CPY #$0A
@@ -6764,7 +6764,7 @@ C - - - - - 0x00EA3A 03:AA2A: A9 2A     LDA #$2A
 C - - - - - 0x00EA3C 03:AA2C: 8D 06 20  STA $2006
 C - - - - - 0x00EA3F 03:AA2F: BD 5B AB  LDA tbl_AB5B,X
 C - - - - - 0x00EA42 03:AA32: 8D 06 20  STA $2006
-C - - - - - 0x00EA45 03:AA35: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - - - - 0x00EA45 03:AA35: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00EA48 03:AA38: 29 20     AND #$20
 C - - - - - 0x00EA4A 03:AA3A: D0 0A     BNE bra_AA46
 C - - - - - 0x00EA4C 03:AA3C: BD 2C 05  LDA ram_номер_команды,X
@@ -6781,7 +6781,7 @@ C - - - - - 0x00EA5D 03:AA4D: 69 3E     ADC #$3E
 loc_AA4F:
 C D 1 - - - 0x00EA5F 03:AA4F: 8D 07 20  STA $2007
 bra_AA52:
-C - - - - - 0x00EA62 03:AA52: B9 1C 00  LDA a: ram_001C,Y
+C - - - - - 0x00EA62 03:AA52: B9 1C 00  LDA ram_001C,Y
 C - - - - - 0x00EA65 03:AA55: 8D 07 20  STA $2007
 C - - - - - 0x00EA68 03:AA58: C8        INY
 C - - - - - 0x00EA69 03:AA59: C0 0C     CPY #$0C
@@ -6791,14 +6791,14 @@ C - - - - - 0x00EA70 03:AA60: A9 2A     LDA #$2A
 C - - - - - 0x00EA72 03:AA62: 8D 06 20  STA $2006
 C - - - - - 0x00EA75 03:AA65: BD 5D AB  LDA tbl_AB5D,X
 C - - - - - 0x00EA78 03:AA68: 8D 06 20  STA $2006
-C - - - - - 0x00EA7B 03:AA6B: B9 1C 00  LDA a: ram_001C,Y
+C - - - - - 0x00EA7B 03:AA6B: B9 1C 00  LDA ram_001C,Y
 C - - - - - 0x00EA7E 03:AA6E: 8D 07 20  STA $2007
 C - - - - - 0x00EA81 03:AA71: AD 02 20  LDA $2002
 C - - - - - 0x00EA84 03:AA74: A9 2A     LDA #$2A
 C - - - - - 0x00EA86 03:AA76: 8D 06 20  STA $2006
 C - - - - - 0x00EA89 03:AA79: BD 5F AB  LDA tbl_AB5F,X
 C - - - - - 0x00EA8C 03:AA7C: 8D 06 20  STA $2006
-C - - - - - 0x00EA8F 03:AA7F: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - - - - 0x00EA8F 03:AA7F: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00EA92 03:AA82: 29 20     AND #$20
 C - - - - - 0x00EA94 03:AA84: F0 1B     BEQ bra_AAA1
 C - - - - - 0x00EA96 03:AA86: 8A        TXA
@@ -6829,7 +6829,7 @@ C - - - - - 0x00EABD 03:AAAD: 8D 07 20  STA $2007
 C - - - - - 0x00EAC0 03:AAB0: C8        INY
 C - - - - - 0x00EAC1 03:AAB1: B9 80 AB  LDA tbl_AB80,Y
 C - - - - - 0x00EAC4 03:AAB4: 8D 07 20  STA $2007
-C - - - - - 0x00EAC7 03:AAB7: AD 57 00  LDA a: ram_опция_режим_сложность
+C - - - - - 0x00EAC7 03:AAB7: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00EACA 03:AABA: 29 20     AND #$20
 C - - - - - 0x00EACC 03:AABC: D0 05     BNE bra_AAC3
 C - - - - - 0x00EACE 03:AABE: A9 DC     LDA #$DC
@@ -6874,7 +6874,7 @@ sub_AB01:
 C - - - - - 0x00EB11 03:AB01: A0 04     LDY #$04
 C - - - - - 0x00EB13 03:AB03: A9 FA     LDA #$FA
 bra_AB05:
-C - - - - - 0x00EB15 03:AB05: 99 1C 00  STA a: ram_001C,Y
+C - - - - - 0x00EB15 03:AB05: 99 1C 00  STA ram_001C,Y
 C - - - - - 0x00EB18 03:AB08: 88        DEY
 C - - - - - 0x00EB19 03:AB09: 10 FA     BPL bra_AB05
 C - - - - - 0x00EB1B 03:AB0B: A0 00     LDY #$00
@@ -6898,10 +6898,10 @@ C - - - - - 0x00EB37 03:AB27: 69 50     ADC #$50
 C - - - - - 0x00EB39 03:AB29: 85 2B     STA ram_002B
 C - - - - - 0x00EB3B 03:AB2B: A9 FC     LDA #$FC
 loc_AB2D:
-C D 1 - - - 0x00EB3D 03:AB2D: 99 1C 00  STA a: ram_001C,Y
+C D 1 - - - 0x00EB3D 03:AB2D: 99 1C 00  STA ram_001C,Y
 loc_AB30:
 C D 1 - - - 0x00EB40 03:AB30: A5 2B     LDA ram_002B
-C - - - - - 0x00EB42 03:AB32: 99 21 00  STA a: ram_0021,Y
+C - - - - - 0x00EB42 03:AB32: 99 21 00  STA ram_0021,Y
 C - - - - - 0x00EB45 03:AB35: C8        INY
 C - - - - - 0x00EB46 03:AB36: C0 05     CPY #$05
 C - - - - - 0x00EB48 03:AB38: 90 D3     BCC bra_AB0D
@@ -7982,7 +7982,7 @@ C - - - - - 0x00EE8E 03:AE7E: 69 01     ADC #$01
 bra_AE80:
 C - - - - - 0x00EE90 03:AE80: 85 2A     STA ram_002A
 C - - - - - 0x00EE92 03:AE82: A5 28     LDA ram_0028
-C - - - - - 0x00EE94 03:AE84: 5D 74 00  EOR a: ram_номер_анимации,X
+C - - - - - 0x00EE94 03:AE84: 5D 74 00  EOR ram_номер_анимации,X
 C - - - - - 0x00EE97 03:AE87: 85 29     STA ram_0029
 C - - - - - 0x00EE99 03:AE89: A5 34     LDA ram_0034
 C - - - - - 0x00EE9B 03:AE8B: 38        SEC
@@ -8264,7 +8264,7 @@ C - - - - - 0x00F04D 03:B03D: E0 12     CPX #$12
 C - - - - - 0x00F04F 03:B03F: 90 F9     BCC bra_B03A
 C - - - - - 0x00F051 03:B041: A6 43     LDX ram_0043
 bra_B043:
-C - - - - - 0x00F053 03:B043: B9 D9 00  LDA a: ram_флаг_видимости,Y
+C - - - - - 0x00F053 03:B043: B9 D9 00  LDA ram_флаг_видимости,Y
 C - - - - - 0x00F056 03:B046: D0 03     BNE bra_B04B
 C - - - - - 0x00F058 03:B048: 4C A7 B0  JMP loc_B0A7
 bra_B04B:
@@ -8290,26 +8290,26 @@ C - - - - - 0x00F07B 03:B06B: 84 44     STY ram_0044
 C - - - - - 0x00F07D 03:B06D: A0 0F     LDY #$0F
 bra_B06F:
 C - - - - - 0x00F07F 03:B06F: A5 24     LDA ram_0024
-C - - - - - 0x00F081 03:B071: D9 2E 00  CMP a: ram_002E,Y
+C - - - - - 0x00F081 03:B071: D9 2E 00  CMP ram_002E,Y
 C - - - - - 0x00F084 03:B074: F0 05     BEQ bra_B07B
 C - - - - - 0x00F086 03:B076: 90 03     BCC bra_B07B
 C - - - - - 0x00F088 03:B078: 4C A5 B0  JMP loc_B0A5
 bra_B07B:
 C - - - - - 0x00F08B 03:B07B: C0 0F     CPY #$0F
 C - - - - - 0x00F08D 03:B07D: F0 12     BEQ bra_B091
-C - - - - - 0x00F08F 03:B07F: B9 2C 00  LDA a: ram_002C,Y
-C - - - - - 0x00F092 03:B082: 99 2F 00  STA a: ram_002F,Y
-C - - - - - 0x00F095 03:B085: B9 2D 00  LDA a: ram_002D,Y
-C - - - - - 0x00F098 03:B088: 99 30 00  STA a: ram_0030,Y
-C - - - - - 0x00F09B 03:B08B: B9 2E 00  LDA a: ram_002E,Y
-C - - - - - 0x00F09E 03:B08E: 99 31 00  STA a: ram_0031,Y
+C - - - - - 0x00F08F 03:B07F: B9 2C 00  LDA ram_002C,Y
+C - - - - - 0x00F092 03:B082: 99 2F 00  STA ram_002F,Y
+C - - - - - 0x00F095 03:B085: B9 2D 00  LDA ram_002D,Y
+C - - - - - 0x00F098 03:B088: 99 30 00  STA ram_0030,Y
+C - - - - - 0x00F09B 03:B08B: B9 2E 00  LDA ram_002E,Y
+C - - - - - 0x00F09E 03:B08E: 99 31 00  STA ram_0031,Y
 bra_B091:
 C - - - - - 0x00F0A1 03:B091: A5 24     LDA ram_0024
-C - - - - - 0x00F0A3 03:B093: 99 2E 00  STA a: ram_002E,Y
+C - - - - - 0x00F0A3 03:B093: 99 2E 00  STA ram_002E,Y
 C - - - - - 0x00F0A6 03:B096: A5 1F     LDA ram_001F
-C - - - - - 0x00F0A8 03:B098: 99 2D 00  STA a: ram_002D,Y
+C - - - - - 0x00F0A8 03:B098: 99 2D 00  STA ram_002D,Y
 C - - - - - 0x00F0AB 03:B09B: A5 44     LDA ram_0044
-C - - - - - 0x00F0AD 03:B09D: 99 2C 00  STA a: ram_002C,Y
+C - - - - - 0x00F0AD 03:B09D: 99 2C 00  STA ram_002C,Y
 C - - - - - 0x00F0B0 03:B0A0: 88        DEY
 C - - - - - 0x00F0B1 03:B0A1: 88        DEY
 C - - - - - 0x00F0B2 03:B0A2: 88        DEY
@@ -10765,7 +10765,7 @@ off_B998_02:
 
 
 loc_B999:
-C D 1 - - - 0x00F9A9 03:B999: AD 57 00  LDA a: ram_опция_режим_сложность
+C D 1 - - - 0x00F9A9 03:B999: AD 57 00  LDA ram_опция_режим_сложность
 C - - - - - 0x00F9AC 03:B99C: 29 20     AND #$20
 C - - - - - 0x00F9AE 03:B99E: D0 05     BNE bra_B9A5
 C - - - - - 0x00F9B0 03:B9A0: BD 59 04  LDA ram_игрок_номер_движения,X
@@ -10902,7 +10902,7 @@ C - - - - - 0x00FA9A 03:BA8A: B9 A1 BA  LDA tbl_BAA1,Y
 C - - - - - 0x00FA9D 03:BA8D: 85 2C     STA ram_002C
 C - - - - - 0x00FA9F 03:BA8F: B9 A2 BA  LDA tbl_BAA1 + 1,Y
 C - - - - - 0x00FAA2 03:BA92: 85 2D     STA ram_002D
-C - - - - - 0x00FAA4 03:BA94: AD 45 00  LDA a: ram_рандом
+C - - - - - 0x00FAA4 03:BA94: AD 45 00  LDA ram_рандом
 C - - - - - 0x00FAA7 03:BA97: 29 03     AND #$03
 C - - - - - 0x00FAA9 03:BA99: 05 1C     ORA ram_001C
 C - - - - - 0x00FAAB 03:BA9B: A8        TAY
@@ -11115,7 +11115,7 @@ C - - - - - 0x00FBC5 03:BBB5: 29 03     AND #$03
 C - - - - - 0x00FBC7 03:BBB7: F0 14     BEQ bra_BBCD
 C - - - - - 0x00FBC9 03:BBB9: C9 02     CMP #$02
 C - - - - - 0x00FBCB 03:BBBB: F0 05     BEQ bra_BBC2
-C - - - - - 0x00FBCD 03:BBBD: AD 45 00  LDA a: ram_рандом
+C - - - - - 0x00FBCD 03:BBBD: AD 45 00  LDA ram_рандом
 C - - - - - 0x00FBD0 03:BBC0: 10 0B     BPL bra_BBCD
 bra_BBC2:
 C - - - - - 0x00FBD2 03:BBC2: A9 40     LDA #$40
@@ -11339,11 +11339,11 @@ bra_BD51:
 C - - - - - 0x00FD61 03:BD51: A9 00     LDA #$00
 C - - - - - 0x00FD63 03:BD53: 8D F6 05  STA ram_смещение_камеры
 loc_BD56:
-C D 1 - - - 0x00FD66 03:BD56: AD EC 00  LDA a: ram_камера_X_lo
+C D 1 - - - 0x00FD66 03:BD56: AD EC 00  LDA ram_камера_X_lo
 C - - - - - 0x00FD69 03:BD59: 38        SEC
 C - - - - - 0x00FD6A 03:BD5A: E5 1C     SBC ram_001C
 C - - - - - 0x00FD6C 03:BD5C: 85 1C     STA ram_001C
-C - - - - - 0x00FD6E 03:BD5E: AD ED 00  LDA a: ram_камера_X_hi
+C - - - - - 0x00FD6E 03:BD5E: AD ED 00  LDA ram_камера_X_hi
 C - - - - - 0x00FD71 03:BD61: E5 1D     SBC ram_001D
 C - - - - - 0x00FD73 03:BD63: 85 1D     STA ram_001D
 C - - - - - 0x00FD75 03:BD65: 10 28     BPL bra_BD8F
@@ -11393,13 +11393,13 @@ C - - - - - 0x00FDBD 03:BDAD: A9 08     LDA #$08
 bra_BDAF:
 C - - - - - 0x00FDBF 03:BDAF: 85 1C     STA ram_001C
 loc_BDB1:
-C D 1 - - - 0x00FDC1 03:BDB1: AD EC 00  LDA a: ram_камера_X_lo
+C D 1 - - - 0x00FDC1 03:BDB1: AD EC 00  LDA ram_камера_X_lo
 C - - - - - 0x00FDC4 03:BDB4: 38        SEC
 C - - - - - 0x00FDC5 03:BDB5: E5 1C     SBC ram_001C
-C - - - - - 0x00FDC7 03:BDB7: 8D F0 00  STA a: ram_копия_камеры_X_lo
-C - - - - - 0x00FDCA 03:BDBA: AD ED 00  LDA a: ram_камера_X_hi
+C - - - - - 0x00FDC7 03:BDB7: 8D F0 00  STA ram_копия_камеры_X_lo
+C - - - - - 0x00FDCA 03:BDBA: AD ED 00  LDA ram_камера_X_hi
 C - - - - - 0x00FDCD 03:BDBD: E5 1D     SBC ram_001D
-C - - - - - 0x00FDCF 03:BDBF: 8D F1 00  STA a: ram_копия_камеры_X_hi
+C - - - - - 0x00FDCF 03:BDBF: 8D F1 00  STA ram_копия_камеры_X_hi
 loc_BDC2:
 C D 1 - - - 0x00FDD2 03:BDC2: B9 4D 03  LDA ram_игрок_Y_lo,Y
 C - - - - - 0x00FDD5 03:BDC5: 38        SEC
@@ -11408,11 +11408,11 @@ C - - - - - 0x00FDD8 03:BDC8: 85 1C     STA ram_001C
 C - - - - - 0x00FDDA 03:BDCA: B9 60 03  LDA ram_игрок_Y_hi,Y
 C - - - - - 0x00FDDD 03:BDCD: E9 00     SBC #$00
 C - - - - - 0x00FDDF 03:BDCF: 85 1D     STA ram_001D
-C - - - - - 0x00FDE1 03:BDD1: AD EE 00  LDA a: ram_камера_Y_lo
+C - - - - - 0x00FDE1 03:BDD1: AD EE 00  LDA ram_камера_Y_lo
 C - - - - - 0x00FDE4 03:BDD4: 38        SEC
 C - - - - - 0x00FDE5 03:BDD5: E5 1C     SBC ram_001C
 C - - - - - 0x00FDE7 03:BDD7: 85 1C     STA ram_001C
-C - - - - - 0x00FDE9 03:BDD9: AD EF 00  LDA a: ram_камера_Y_hi
+C - - - - - 0x00FDE9 03:BDD9: AD EF 00  LDA ram_камера_Y_hi
 C - - - - - 0x00FDEC 03:BDDC: E5 1D     SBC ram_001D
 C - - - - - 0x00FDEE 03:BDDE: 85 1D     STA ram_001D
 C - - - - - 0x00FDF0 03:BDE0: 10 28     BPL bra_BE0A
@@ -11462,84 +11462,84 @@ C - - - - - 0x00FE38 03:BE28: A9 08     LDA #$08
 bra_BE2A:
 C - - - - - 0x00FE3A 03:BE2A: 85 1C     STA ram_001C
 loc_BE2C:
-C D 1 - - - 0x00FE3C 03:BE2C: AD EE 00  LDA a: ram_камера_Y_lo
+C D 1 - - - 0x00FE3C 03:BE2C: AD EE 00  LDA ram_камера_Y_lo
 C - - - - - 0x00FE3F 03:BE2F: 38        SEC
 C - - - - - 0x00FE40 03:BE30: E5 1C     SBC ram_001C
-C - - - - - 0x00FE42 03:BE32: 8D F2 00  STA a: ram_копия_камеры_Y_lo
-C - - - - - 0x00FE45 03:BE35: AD EF 00  LDA a: ram_камера_Y_hi
+C - - - - - 0x00FE42 03:BE32: 8D F2 00  STA ram_копия_камеры_Y_lo
+C - - - - - 0x00FE45 03:BE35: AD EF 00  LDA ram_камера_Y_hi
 C - - - - - 0x00FE48 03:BE38: E5 1D     SBC ram_001D
-C - - - - - 0x00FE4A 03:BE3A: 8D F3 00  STA a: ram_копия_камеры_Y_hi
+C - - - - - 0x00FE4A 03:BE3A: 8D F3 00  STA ram_копия_камеры_Y_hi
 C - - - - - 0x00FE4D 03:BE3D: A5 59     LDA ram_подтип_экрана
 C - - - - - 0x00FE4F 03:BE3F: C9 05     CMP #$05
 C - - - - - 0x00FE51 03:BE41: F0 04     BEQ bra_BE47
 C - - - - - 0x00FE53 03:BE43: C9 08     CMP #$08
 C - - - - - 0x00FE55 03:BE45: 90 37     BCC bra_BE7E
 bra_BE47:
-C - - - - - 0x00FE57 03:BE47: AD F1 00  LDA a: ram_копия_камеры_X_hi
+C - - - - - 0x00FE57 03:BE47: AD F1 00  LDA ram_копия_камеры_X_hi
 C - - - - - 0x00FE5A 03:BE4A: C9 00     CMP #$00
 C - - - - - 0x00FE5C 03:BE4C: D0 14     BNE bra_BE62
-C - - - - - 0x00FE5E 03:BE4E: AD F0 00  LDA a: ram_копия_камеры_X_lo
+C - - - - - 0x00FE5E 03:BE4E: AD F0 00  LDA ram_копия_камеры_X_lo
 C - - - - - 0x00FE61 03:BE51: C9 30     CMP #$30
 C - - - - - 0x00FE63 03:BE53: B0 1E     BCS bra_BE73
 C - - - - - 0x00FE65 03:BE55: A9 30     LDA #$30
-C - - - - - 0x00FE67 03:BE57: 8D F0 00  STA a: ram_копия_камеры_X_lo
+C - - - - - 0x00FE67 03:BE57: 8D F0 00  STA ram_копия_камеры_X_lo
 C - - - - - 0x00FE6A 03:BE5A: A9 00     LDA #$00
-C - - - - - 0x00FE6C 03:BE5C: 8D F1 00  STA a: ram_копия_камеры_X_hi
+C - - - - - 0x00FE6C 03:BE5C: 8D F1 00  STA ram_копия_камеры_X_hi
 C - - - - - 0x00FE6F 03:BE5F: 4C 73 BE  JMP loc_BE73
 bra_BE62:
-C - - - - - 0x00FE72 03:BE62: AD F0 00  LDA a: ram_копия_камеры_X_lo
+C - - - - - 0x00FE72 03:BE62: AD F0 00  LDA ram_копия_камеры_X_lo
 C - - - - - 0x00FE75 03:BE65: C9 D0     CMP #$D0
 C - - - - - 0x00FE77 03:BE67: 90 0A     BCC bra_BE73
 C - - - - - 0x00FE79 03:BE69: A9 01     LDA #$01
-C - - - - - 0x00FE7B 03:BE6B: 8D F1 00  STA a: ram_копия_камеры_X_hi
+C - - - - - 0x00FE7B 03:BE6B: 8D F1 00  STA ram_копия_камеры_X_hi
 C - - - - - 0x00FE7E 03:BE6E: A9 D0     LDA #$D0
-C - - - - - 0x00FE80 03:BE70: 8D F0 00  STA a: ram_копия_камеры_X_lo
+C - - - - - 0x00FE80 03:BE70: 8D F0 00  STA ram_копия_камеры_X_lo
 bra_BE73:
 loc_BE73:
 C D 1 - - - 0x00FE83 03:BE73: A9 00     LDA #$00
-C - - - - - 0x00FE85 03:BE75: 8D F2 00  STA a: ram_копия_камеры_Y_lo
-C - - - - - 0x00FE88 03:BE78: 8D F3 00  STA a: ram_копия_камеры_Y_hi
+C - - - - - 0x00FE85 03:BE75: 8D F2 00  STA ram_копия_камеры_Y_lo
+C - - - - - 0x00FE88 03:BE78: 8D F3 00  STA ram_копия_камеры_Y_hi
 C - - - - - 0x00FE8B 03:BE7B: 4C D3 BE  JMP loc_BED3_RTS
 bra_BE7E:
-C - - - - - 0x00FE8E 03:BE7E: AD F1 00  LDA a: ram_копия_камеры_X_hi
+C - - - - - 0x00FE8E 03:BE7E: AD F1 00  LDA ram_копия_камеры_X_hi
 C - - - - - 0x00FE91 03:BE81: C9 01     CMP #$01
 C - - - - - 0x00FE93 03:BE83: B0 11     BCS bra_BE96
-C - - - - - 0x00FE95 03:BE85: AD F0 00  LDA a: ram_копия_камеры_X_lo
+C - - - - - 0x00FE95 03:BE85: AD F0 00  LDA ram_копия_камеры_X_lo
 C - - - - - 0x00FE98 03:BE88: C9 40     CMP #$40
 C - - - - - 0x00FE9A 03:BE8A: B0 0A     BCS bra_BE96
 C - - - - - 0x00FE9C 03:BE8C: A9 40     LDA #$40
-C - - - - - 0x00FE9E 03:BE8E: 8D F0 00  STA a: ram_копия_камеры_X_lo
+C - - - - - 0x00FE9E 03:BE8E: 8D F0 00  STA ram_копия_камеры_X_lo
 C - - - - - 0x00FEA1 03:BE91: A9 00     LDA #$00
-C - - - - - 0x00FEA3 03:BE93: 8D F1 00  STA a: ram_копия_камеры_X_hi
+C - - - - - 0x00FEA3 03:BE93: 8D F1 00  STA ram_копия_камеры_X_hi
 bra_BE96:
-C - - - - - 0x00FEA6 03:BE96: AD F1 00  LDA a: ram_копия_камеры_X_hi
+C - - - - - 0x00FEA6 03:BE96: AD F1 00  LDA ram_копия_камеры_X_hi
 C - - - - - 0x00FEA9 03:BE99: C9 02     CMP #$02
 C - - - - - 0x00FEAB 03:BE9B: 90 11     BCC bra_BEAE
-C - - - - - 0x00FEAD 03:BE9D: AD F0 00  LDA a: ram_копия_камеры_X_lo
+C - - - - - 0x00FEAD 03:BE9D: AD F0 00  LDA ram_копия_камеры_X_lo
 C - - - - - 0x00FEB0 03:BEA0: C9 C0     CMP #$C0
 C - - - - - 0x00FEB2 03:BEA2: 90 0A     BCC bra_BEAE
 C - - - - - 0x00FEB4 03:BEA4: A9 02     LDA #$02
-C - - - - - 0x00FEB6 03:BEA6: 8D F1 00  STA a: ram_копия_камеры_X_hi
+C - - - - - 0x00FEB6 03:BEA6: 8D F1 00  STA ram_копия_камеры_X_hi
 C - - - - - 0x00FEB9 03:BEA9: A9 C0     LDA #$C0
-C - - - - - 0x00FEBB 03:BEAB: 8D F0 00  STA a: ram_копия_камеры_X_lo
+C - - - - - 0x00FEBB 03:BEAB: 8D F0 00  STA ram_копия_камеры_X_lo
 bra_BEAE:
-C - - - - - 0x00FEBE 03:BEAE: AD F3 00  LDA a: ram_копия_камеры_Y_hi
+C - - - - - 0x00FEBE 03:BEAE: AD F3 00  LDA ram_копия_камеры_Y_hi
 C - - - - - 0x00FEC1 03:BEB1: 10 08     BPL bra_BEBB
 C - - - - - 0x00FEC3 03:BEB3: A9 00     LDA #$00
-C - - - - - 0x00FEC5 03:BEB5: 8D F2 00  STA a: ram_копия_камеры_Y_lo
-C - - - - - 0x00FEC8 03:BEB8: 8D F3 00  STA a: ram_копия_камеры_Y_hi
+C - - - - - 0x00FEC5 03:BEB5: 8D F2 00  STA ram_копия_камеры_Y_lo
+C - - - - - 0x00FEC8 03:BEB8: 8D F3 00  STA ram_копия_камеры_Y_hi
 bra_BEBB:
-C - - - - - 0x00FECB 03:BEBB: AD F3 00  LDA a: ram_копия_камеры_Y_hi
+C - - - - - 0x00FECB 03:BEBB: AD F3 00  LDA ram_копия_камеры_Y_hi
 C - - - - - 0x00FECE 03:BEBE: C9 01     CMP #$01
 C - - - - - 0x00FED0 03:BEC0: B0 07     BCS bra_BEC9
-C - - - - - 0x00FED2 03:BEC2: AD F2 00  LDA a: ram_копия_камеры_Y_lo
+C - - - - - 0x00FED2 03:BEC2: AD F2 00  LDA ram_копия_камеры_Y_lo
 C - - - - - 0x00FED5 03:BEC5: C9 AF     CMP #$AF
 C - - - - - 0x00FED7 03:BEC7: 90 0A     BCC bra_BED3_RTS
 bra_BEC9:
 C - - - - - 0x00FED9 03:BEC9: A9 AF     LDA #$AF
-C - - - - - 0x00FEDB 03:BECB: 8D F2 00  STA a: ram_копия_камеры_Y_lo
+C - - - - - 0x00FEDB 03:BECB: 8D F2 00  STA ram_копия_камеры_Y_lo
 C - - - - - 0x00FEDE 03:BECE: A9 00     LDA #$00
-C - - - - - 0x00FEE0 03:BED0: 8D F3 00  STA a: ram_копия_камеры_Y_hi
+C - - - - - 0x00FEE0 03:BED0: 8D F3 00  STA ram_копия_камеры_Y_hi
 bra_BED3_RTS:
 loc_BED3_RTS:
 C D 1 - - - 0x00FEE3 03:BED3: 60        RTS
@@ -11569,7 +11569,7 @@ C - - - - - 0x00FF04 03:BEF4: AD 66 04  LDA ram_погода_номер_эффе
 C - - - - - 0x00FF07 03:BEF7: 29 7F     AND #$7F
 C - - - - - 0x00FF09 03:BEF9: C9 01     CMP #$01
 C - - - - - 0x00FF0B 03:BEFB: F0 0D     BEQ bra_BF0A
-C - - - - - 0x00FF0D 03:BEFD: AD 80 00  LDA a: ram_номер_анимации_мяча
+C - - - - - 0x00FF0D 03:BEFD: AD 80 00  LDA ram_номер_анимации_мяча
 C - - - - - 0x00FF10 03:BF00: 29 7F     AND #$7F
 bra_BF02:
 C - - - - - 0x00FF12 03:BF02: C8        INY
@@ -11635,7 +11635,7 @@ C - - - - - 0x00FF4F 03:BF3F: CA        DEX
 C - - - - - 0x00FF50 03:BF40: A0 00     LDY #$00
 bra_BF42:
 C - - - - - 0x00FF52 03:BF42: B5 A1     LDA ram_приоритет_анимации,X
-C - - - - - 0x00FF54 03:BF44: 99 1C 00  STA a: ram_001C,Y
+C - - - - - 0x00FF54 03:BF44: 99 1C 00  STA ram_001C,Y
 C - - - - - 0x00FF57 03:BF47: C8        INY
 C - - - - - 0x00FF58 03:BF48: CA        DEX
 C - - - - - 0x00FF59 03:BF49: 10 F7     BPL bra_BF42
@@ -11643,7 +11643,7 @@ C - - - - - 0x00FF5B 03:BF4B: A6 F4     LDX ram_00F4
 C - - - - - 0x00FF5D 03:BF4D: CA        DEX
 C - - - - - 0x00FF5E 03:BF4E: 88        DEY
 bra_BF4F:
-C - - - - - 0x00FF5F 03:BF4F: B9 1C 00  LDA a: ram_001C,Y
+C - - - - - 0x00FF5F 03:BF4F: B9 1C 00  LDA ram_001C,Y
 C - - - - - 0x00FF62 03:BF52: 95 A1     STA ram_приоритет_анимации,X
 C - - - - - 0x00FF64 03:BF54: 88        DEY
 C - - - - - 0x00FF65 03:BF55: CA        DEX
@@ -11660,7 +11660,7 @@ C - - - - - 0x00FF78 03:BF68: 85 20     STA ram_0020
 C - - - - - 0x00FF7A 03:BF6A: A2 0C     LDX #$0C
 C - - - - - 0x00FF7C 03:BF6C: A0 00     LDY #$00
 bra_BF6E:
-C - - - - - 0x00FF7E 03:BF6E: BD D9 00  LDA a: ram_флаг_видимости,X
+C - - - - - 0x00FF7E 03:BF6E: BD D9 00  LDA ram_флаг_видимости,X
 C - - - - - 0x00FF81 03:BF71: 4A        LSR
 C - - - - - 0x00FF82 03:BF72: 90 1E     BCC bra_BF92
 C - - - - - 0x00FF84 03:BF74: BD 4D 03  LDA ram_игрок_Y_lo,X
@@ -11674,7 +11674,7 @@ C - - - - - 0x00FF93 03:BF83: A5 1C     LDA ram_001C
 C - - - - - 0x00FF95 03:BF85: C9 18     CMP #$18
 C - - - - - 0x00FF97 03:BF87: B0 09     BCS bra_BF92
 C - - - - - 0x00FF99 03:BF89: 8A        TXA
-C - - - - - 0x00FF9A 03:BF8A: 99 2C 00  STA a: ram_002C,Y
+C - - - - - 0x00FF9A 03:BF8A: 99 2C 00  STA ram_002C,Y
 C - - - - - 0x00FF9D 03:BF8D: C8        INY
 C - - - - - 0x00FF9E 03:BF8E: C0 06     CPY #$06
 C - - - - - 0x00FFA0 03:BF90: F0 03     BEQ bra_BF95
@@ -11692,18 +11692,18 @@ C - - - - - 0x00FFB1 03:BFA1: CA        DEX
 bra_BFA2:
 C - - - - - 0x00FFB2 03:BFA2: A4 1C     LDY ram_001C
 C - - - - - 0x00FFB4 03:BFA4: 88        DEY
-C - - - - - 0x00FFB5 03:BFA5: BD A1 00  LDA a: ram_приоритет_анимации,X
+C - - - - - 0x00FFB5 03:BFA5: BD A1 00  LDA ram_приоритет_анимации,X
 bra_BFA8:
-C - - - - - 0x00FFB8 03:BFA8: D9 2C 00  CMP a: ram_002C,Y
+C - - - - - 0x00FFB8 03:BFA8: D9 2C 00  CMP ram_002C,Y
 C - - - - - 0x00FFBB 03:BFAB: D0 12     BNE bra_BFBF
 C - - - - - 0x00FFBD 03:BFAD: 84 44     STY ram_0044
 C - - - - - 0x00FFBF 03:BFAF: A4 1D     LDY ram_001D
-C - - - - - 0x00FFC1 03:BFB1: 99 32 00  STA a: ram_0032,Y
+C - - - - - 0x00FFC1 03:BFB1: 99 32 00  STA ram_0032,Y
 C - - - - - 0x00FFC4 03:BFB4: 8A        TXA
-C - - - - - 0x00FFC5 03:BFB5: 99 38 00  STA a: ram_0038,Y
+C - - - - - 0x00FFC5 03:BFB5: 99 38 00  STA ram_0038,Y
 C - - - - - 0x00FFC8 03:BFB8: E6 1D     INC ram_001D
 C - - - - - 0x00FFCA 03:BFBA: A4 44     LDY ram_0044
-C - - - - - 0x00FFCC 03:BFBC: BD A1 00  LDA a: ram_приоритет_анимации,X
+C - - - - - 0x00FFCC 03:BFBC: BD A1 00  LDA ram_приоритет_анимации,X
 bra_BFBF:
 C - - - - - 0x00FFCF 03:BFBF: 88        DEY
 C - - - - - 0x00FFD0 03:BFC0: 10 E6     BPL bra_BFA8
@@ -11715,9 +11715,9 @@ C - - - - - 0x00FFD9 03:BFC9: A6 1D     LDX ram_001D
 C - - - - - 0x00FFDB 03:BFCB: CA        DEX
 bra_BFCC:
 C - - - - - 0x00FFDC 03:BFCC: A4 1C     LDY ram_001C
-C - - - - - 0x00FFDE 03:BFCE: B9 32 00  LDA a: ram_0032,Y
+C - - - - - 0x00FFDE 03:BFCE: B9 32 00  LDA ram_0032,Y
 C - - - - - 0x00FFE1 03:BFD1: B4 38     LDY ram_0038,X
-C - - - - - 0x00FFE3 03:BFD3: 99 A1 00  STA a: ram_приоритет_анимации,Y
+C - - - - - 0x00FFE3 03:BFD3: 99 A1 00  STA ram_приоритет_анимации,Y
 C - - - - - 0x00FFE6 03:BFD6: E6 1C     INC ram_001C
 C - - - - - 0x00FFE8 03:BFD8: CA        DEX
 C - - - - - 0x00FFE9 03:BFD9: 10 F1     BPL bra_BFCC
