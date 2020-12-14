@@ -20,12 +20,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 - - - - - - 0x01C01E 07:C00E: 4C 7D EE  JMP loc_EE7D
 
 
-
-.export sub_0x01C030
-sub_0x01C030:
-C - - - - - 0x01C030 07:C020: 4C 69 F4  JMP loc_F469
-
-
 ; bzk
 - - - - - - 0x01C033 07:C023: 4C 39 F5  JMP loc_F539
 
@@ -9239,7 +9233,8 @@ C - - - - - 0x01F406 07:F3F6: 60        RTS
 
 
 
-loc_F469:
+.export sub_0x01F479
+sub_0x01F479:
 C D 3 - - - 0x01F479 07:F469: 8A        TXA
 C - - - - - 0x01F47A 07:F46A: 48        PHA
 C - - - - - 0x01F47B 07:F46B: 98        TYA

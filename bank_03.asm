@@ -5518,7 +5518,7 @@ C - - - - - 0x00E1B8 03:A1A8: A9 42     LDA #$42
 C - - - - - 0x00E1BA 03:A1AA: 85 2E     STA ram_002E
 C - - - - - 0x00E1BC 03:A1AC: A9 00     LDA #$00
 C - - - - - 0x00E1BE 03:A1AE: 85 2F     STA ram_002F
-C - - - - - 0x00E1C0 03:A1B0: 20 20 C0  JSR sub_0x01C030
+C - - - - - 0x00E1C0 03:A1B0: 20 20 C0  JSR sub_0x01F479
 C - - - - - 0x00E1C3 03:A1B3: A5 2C     LDA ram_002C
 C - - - - - 0x00E1C5 03:A1B5: 85 1D     STA ram_001D
 C - - - - - 0x00E1C7 03:A1B7: B9 4D 03  LDA ram_игрок_Y_lo,Y
@@ -5536,7 +5536,7 @@ C - - - - - 0x00E1DC 03:A1CC: A9 00     LDA #$00
 C - - - - - 0x00E1DE 03:A1CE: 85 2F     STA ram_002F
 C - - - - - 0x00E1E0 03:A1D0: A9 22     LDA #$22
 C - - - - - 0x00E1E2 03:A1D2: 85 2E     STA ram_002E
-C - - - - - 0x00E1E4 03:A1D4: 20 20 C0  JSR sub_0x01C030
+C - - - - - 0x00E1E4 03:A1D4: 20 20 C0  JSR sub_0x01F479
 C - - - - - 0x00E1E7 03:A1D7: A4 2C     LDY ram_002C
 C - - - - - 0x00E1E9 03:A1D9: B9 F2 A2  LDA tbl_A2F2,Y
 C - - - - - 0x00E1EC 03:A1DC: 18        CLC
