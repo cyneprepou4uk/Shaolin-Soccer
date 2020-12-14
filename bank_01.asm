@@ -12239,13 +12239,12 @@ C - - - - - 0x00717F 01:B16F: A9 20     LDA #$20
 C - - - - - 0x007181 01:B171: 4C 7C B1  JMP loc_B17C
 bra_B174:
 C - - - - - 0x007184 01:B174: 8D EA 05  STA ram_след_hi_2006 + 2
-C - - - - - 0x007187 01:B177: 4C 7F B1  JMP loc_B17F_RTS
+C - - - - - 0x007187 01:B177: 4C 7F B1  RTS
 bra_B17A:
 C - - - - - 0x00718A 01:B17A: A9 24     LDA #$24
 loc_B17C:
 C D 1 - - - 0x00718C 01:B17C: 8D EB 05  STA ram_след_hi_2006 + 3
 bra_B17F_RTS:
-loc_B17F_RTS:
 C D 1 - - - 0x00718F 01:B17F: 60        RTS
 
 
@@ -14546,13 +14545,12 @@ C - - - - - 0x007BB2 01:BBA2: D0 0B     BNE bra_BBAF
 C - - - - - 0x007BB4 01:BBA4: A9 00     LDA #$00
 C - - - - - 0x007BB6 01:BBA6: 8D AC 03  STA ram_объем_дождя
 C - - - - - 0x007BB9 01:BBA9: 8D E6 00  STA ram_00E6
-C - - - - - 0x007BBC 01:BBAC: 4C B9 BB  JMP loc_BBB9_RTS
+C - - - - - 0x007BBC 01:BBAC: 4C B9 BB  RTS
 bra_BBAF:
 - - - - - - 0x007BBF 01:BBAF: A9 0C     LDA #$0C
 - - - - - - 0x007BC1 01:BBB1: 8D AC 03  STA ram_объем_дождя
 - - - - - - 0x007BC4 01:BBB4: A9 01     LDA #$01
 - - - - - - 0x007BC6 01:BBB6: 8D E6 00  STA ram_00E6
-loc_BBB9_RTS:
 C D 1 - - - 0x007BC9 01:BBB9: 60        RTS
 bra_BBBA:
 - - - - - - 0x007BCA 01:BBBA: A9 00     LDA #$00

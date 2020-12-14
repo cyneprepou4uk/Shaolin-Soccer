@@ -128,12 +128,12 @@ bra_80D8:
 C - - - - - 0x0000E8 00:80D8: AA        TAX
 C - - - - - 0x0000E9 00:80D9: A5 02     LDA ram_0002
 C - - - - - 0x0000EB 00:80DB: DD 03 07  CMP ram_0703,X
-C - - - - - 0x0000EE 00:80DE: 90 04     BCC bra_80E4
+C - - - - - 0x0000EE 00:80DE: 90 04     BCC bra_80E4_RTS
 C - - - - - 0x0000F0 00:80E0: C8        INY
 C - - - - - 0x0000F1 00:80E1: C8        INY
 C - - - - - 0x0000F2 00:80E2: D0 EF     BNE bra_80D3
-bra_80E4:
-C - - - - - 0x0000F4 00:80E4: 4C 65 81  JMP loc_8165_RTS
+bra_80E4_RTS:
+C - - - - - 0x0000F4 00:80E4: 4C 65 81  RTS
 bra_80E7:
 C - - - - - 0x0000F7 00:80E7: AD E6 07  LDA ram_07E6
 C - - - - - 0x0000FA 00:80EA: 8D 00 07  STA ram_0700
@@ -199,7 +199,6 @@ C - - - - - 0x00016F 00:815F: 9D 27 07  STA ram_0727,X
 C - - - - - 0x000172 00:8162: C8        INY
 C - - - - - 0x000173 00:8163: D0 A2     BNE bra_8107
 bra_8165_RTS:
-loc_8165_RTS:
 C D 0 - - - 0x000175 00:8165: 60        RTS
 
 
