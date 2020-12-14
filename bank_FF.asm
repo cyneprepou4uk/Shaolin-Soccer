@@ -48,9 +48,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C08A
-sub_0x01C08A:
-C - - - - - 0x01C08A 07:C07A: 4C EE FA  JMP loc_FAEE
 .export sub_0x01C08D
 sub_0x01C08D:
 C - - - - - 0x01C08D 07:C07D: 4C 35 C3  JMP loc_C335
@@ -10281,7 +10278,11 @@ C D 3 - - - 0x01FAF9 07:FAE9: A9 FF     LDA #$FF
 bra_FAEB:
 C - - - - - 0x01FAFB 07:FAEB: 85 24     STA ram_0024
 C - - - - - 0x01FAFD 07:FAED: 60        RTS
-loc_FAEE:
+
+
+
+.export sub_0x01FAFE
+sub_0x01FAFE:
 C D 3 - - - 0x01FAFE 07:FAEE: BD 04 00  LDA ram_удержанные_кнопки,X
 C - - - - - 0x01FB01 07:FAF1: 4A        LSR
 C - - - - - 0x01FB02 07:FAF2: 85 1C     STA ram_001C

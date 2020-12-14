@@ -12626,7 +12626,7 @@ bra_B4DB:
 C - - - - - 0x0134EB 04:B4DB: 4C 24 B7  JMP loc_B724
 bra_B4DE:
 C - - - - - 0x0134EE 04:B4DE: A6 43     LDX ram_0043
-C - - - - - 0x0134F0 04:B4E0: 20 7A C0  JSR sub_0x01C08A
+C - - - - - 0x0134F0 04:B4E0: 20 7A C0  JSR sub_0x01FAFE
 C - - - - - 0x0134F3 04:B4E3: BD 04 00  LDA ram_удержанные_кнопки,X
 C - - - - - 0x0134F6 04:B4E6: 8D 1D 00  STA ram_001D
 C - - - - - 0x0134F9 04:B4E9: BD 08 00  LDA ram_одноразовые_кнопки,X
@@ -13291,7 +13291,7 @@ bra_B8BB:
 C - - - - - 0x0138CB 04:B8BB: 4C E2 B9  JMP loc_B9E2
 bra_B8BE:
 C - - - - - 0x0138CE 04:B8BE: A6 43     LDX ram_0043
-C - - - - - 0x0138D0 04:B8C0: 20 7A C0  JSR sub_0x01C08A
+C - - - - - 0x0138D0 04:B8C0: 20 7A C0  JSR sub_0x01FAFE
 C - - - - - 0x0138D3 04:B8C3: BD 04 00  LDA ram_удержанные_кнопки,X
 C - - - - - 0x0138D6 04:B8C6: 8D 1D 00  STA ram_001D
 C - - - - - 0x0138D9 04:B8C9: BD 08 00  LDA ram_одноразовые_кнопки,X
