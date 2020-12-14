@@ -1753,7 +1753,7 @@ C - - - - - 0x0149E2 05:89D2: A9 23     LDA #$23
 C - - - - - 0x0149E4 05:89D4: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x0149E7 05:89D7: 20 6B C0  JSR sub_0x01C07B
 C - - - - - 0x0149EA 05:89DA: 20 1A C0  JSR sub_0x01C02A
-C - - - - - 0x0149ED 05:89DD: 20 14 C0  JSR sub_0x01C024
+C - - - - - 0x0149ED 05:89DD: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x0149F0 05:89E0: 60        RTS
 
 
@@ -2330,7 +2330,7 @@ C - - - - - 0x014D5F 05:8D4F: 88        DEY
 C - - - - - 0x014D60 05:8D50: 10 F8     BPL bra_8D4A
 C - - - - - 0x014D62 05:8D52: 20 6B C0  JSR sub_0x01C07B
 C - - - - - 0x014D65 05:8D55: 20 1A C0  JSR sub_0x01C02A
-C - - - - - 0x014D68 05:8D58: 20 14 C0  JSR sub_0x01C024
+C - - - - - 0x014D68 05:8D58: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x014D6B 05:8D5B: A9 02     LDA #$02
 C - - - - - 0x014D6D 05:8D5D: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x014D70 05:8D60: 60        RTS
@@ -2795,7 +2795,7 @@ C - - - - - 0x014FAC 05:8F9C: 90 E8     BCC bra_8F86
 C - - - - - 0x014FAE 05:8F9E: 20 9F BE  JSR sub_BE9F
 C - - - - - 0x014FB1 05:8FA1: 20 FA BE  JSR sub_BEFA
 C - - - - - 0x014FB4 05:8FA4: 20 1A C0  JSR sub_0x01C02A
-C - - - - - 0x014FB7 05:8FA7: 20 14 C0  JSR sub_0x01C024
+C - - - - - 0x014FB7 05:8FA7: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x014FBA 05:8FAA: 60        RTS
 
 
@@ -3635,7 +3635,7 @@ C - - - - - 0x0153F9 05:93E9: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x0153FC 05:93EC: C9 0A     CMP #$0A
 C - - - - - 0x0153FE 05:93EE: 90 ED     BCC bra_93DD
 C - - - - - 0x015400 05:93F0: 20 1A C0  JSR sub_0x01C02A
-C - - - - - 0x015403 05:93F3: 20 14 C0  JSR sub_0x01C024
+C - - - - - 0x015403 05:93F3: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x015406 05:93F6: 68        PLA
 C - - - - - 0x015407 05:93F7: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x01540A 05:93FA: 20 5D 95  JSR sub_955D
@@ -6060,7 +6060,7 @@ C - - - - - 0x01604E 05:A03E: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x016051 05:A041: C9 04     CMP #$04
 C - - - - - 0x016053 05:A043: 90 E4     BCC bra_A029
 C - - - - - 0x016055 05:A045: 20 1A C0  JSR sub_0x01C02A
-C - - - - - 0x016058 05:A048: 20 14 C0  JSR sub_0x01C024
+C - - - - - 0x016058 05:A048: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x01605B 05:A04B: 68        PLA
 C - - - - - 0x01605C 05:A04C: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x01605F 05:A04F: 60        RTS
@@ -6201,7 +6201,7 @@ C - - - - - 0x01612F 05:A11F: 20 17 C0  JSR sub_0x01C027
 C - - - - - 0x016132 05:A122: 20 1D C0  JSR sub_0x01C02D
 C - - - - - 0x016135 05:A125: 20 6A A1  JSR sub_A16A
 C - - - - - 0x016138 05:A128: 20 1A C0  JSR sub_0x01C02A
-C - - - - - 0x01613B 05:A12B: 20 14 C0  JSR sub_0x01C024
+C - - - - - 0x01613B 05:A12B: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x01613E 05:A12E: A9 02     LDA #$02
 C - - - - - 0x016140 05:A130: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x016143 05:A133: 60        RTS
@@ -6641,7 +6641,7 @@ C - - - - - 0x016412 05:A402: C6 2A     DEC ram_002A
 C - - - - - 0x016414 05:A404: 10 CD     BPL bra_A3D3
 bra_A406:
 C - - - - - 0x016416 05:A406: 20 1A C0  JSR sub_0x01C02A
-C - - - - - 0x016419 05:A409: 20 14 C0  JSR sub_0x01C024
+C - - - - - 0x016419 05:A409: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x01641C 05:A40C: 60        RTS
 
 
@@ -7438,7 +7438,7 @@ C - - - - - 0x016842 05:A832: E9 0C     SBC #$0C
 C - - - - - 0x016844 05:A834: 8D B7 06  STA ram_байт_2006_lo_графика
 C - - - - - 0x016847 05:A837: 20 6B C0  JSR sub_0x01C07B
 C - - - - - 0x01684A 05:A83A: 20 1A C0  JSR sub_0x01C02A
-C - - - - - 0x01684D 05:A83D: 20 14 C0  JSR sub_0x01C024
+C - - - - - 0x01684D 05:A83D: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x016850 05:A840: 68        PLA
 C - - - - - 0x016851 05:A841: 8D D1 05  STA ram_05D1
 C - - - - - 0x016854 05:A844: A9 FF     LDA #$FF
@@ -10036,7 +10036,7 @@ bra_B695:
 - - - - - - 0x0176BB 05:B6AB: 4C 79 B6  JMP loc_B679
 bra_B6AE:
 - - - - - - 0x0176BE 05:B6AE: 20 1A C0  JSR sub_0x01C02A
-- - - - - - 0x0176C1 05:B6B1: 20 14 C0  JSR sub_0x01C024
+- - - - - - 0x0176C1 05:B6B1: 20 14 C0  JSR sub_0x01EE75
 - - - - - - 0x0176C4 05:B6B4: 60        RTS
 
 
