@@ -39,11 +39,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C06C
-sub_0x01C06C:
-C - - - - - 0x01C06C 07:C05C: 4C 73 D0  JMP loc_D073
-
-
 ; bzk
 - - - - - - 0x01C06F 07:C05F: 4C 73 D0  JMP loc_D073
 
@@ -2669,6 +2664,8 @@ C - - - - - 0x01D082 07:D072: 60        RTS
 
 
 
+.export sub_0x01D083
+sub_0x01D083:
 loc_D073:
 sub_D073:
 C D 2 - - - 0x01D083 07:D073: 2C B2 05  BIT ram_флаг_яркости
