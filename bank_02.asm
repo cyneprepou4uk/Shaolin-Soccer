@@ -10946,7 +10946,7 @@ C - - - - - 0x00AC1E 02:AC0E: 8D 8A 05  STA ram_таймер_демо_hi
 C - - - - - 0x00AC21 02:AC11: A9 80     LDA #$80
 C - - - - - 0x00AC23 02:AC13: 8D 8B 05  STA ram_флаг_демо
 C - - - - - 0x00AC26 02:AC16: 8D 2C 05  STA ram_номер_команды
-C - - - - - 0x00AC29 02:AC19: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x00AC29 02:AC19: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x00AC2C 02:AC1C: 29 0F     AND #$0F
 C - - - - - 0x00AC2E 02:AC1E: 09 81     ORA #$81
 C - - - - - 0x00AC30 02:AC20: 8D 2D 05  STA ram_номер_команды + 1
@@ -11195,7 +11195,7 @@ C - - - - - 0x00ADE2 02:ADD2: A0 00     LDY #$00
 C - - - - - 0x00ADE4 02:ADD4: A5 59     LDA ram_подтип_экрана
 C - - - - - 0x00ADE6 02:ADD6: C9 08     CMP #$08
 C - - - - - 0x00ADE8 02:ADD8: B0 08     BCS bra_ADE2
-C - - - - - 0x00ADEA 02:ADDA: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x00ADEA 02:ADDA: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x00ADED 02:ADDD: 29 03     AND #$03
 C - - - - - 0x00ADEF 02:ADDF: 85 9E     STA ram_сценка_кунио
 C - - - - - 0x00ADF1 02:ADE1: A8        TAY
@@ -11457,7 +11457,7 @@ C - - - - - 0x00AF40 02:AF30: D0 F6     BNE bra_AF28
 
 
 ofs_AF32_02:
-C - - J - - 0x00AF42 02:AF32: 20 05 C0  JSR sub_0x01EE45
+C - - J - - 0x00AF42 02:AF32: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x00AF45 02:AF35: AD 92 03  LDA ram_мяч_Z_lo
 C - - - - - 0x00AF48 02:AF38: C9 40     CMP #$40
 C - - - - - 0x00AF4A 02:AF3A: 90 EE     BCC bra_AF2A_RTS
@@ -11466,7 +11466,7 @@ C - - - - - 0x00AF4E 02:AF3E: C9 08     CMP #$08
 C - - - - - 0x00AF50 02:AF40: 90 02     BCC bra_AF44
 C - - - - - 0x00AF52 02:AF42: E6 95     INC ram_номер_кадра_анимации + 1
 bra_AF44:
-C - - - - - 0x00AF54 02:AF44: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x00AF54 02:AF44: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x00AF57 02:AF47: 29 03     AND #$03
 C - - - - - 0x00AF59 02:AF49: 0A        ASL
 C - - - - - 0x00AF5A 02:AF4A: A8        TAY

@@ -7670,7 +7670,7 @@ C - - - - - 0x01AEE0 06:AED0: A4 1D     LDY ram_001D
 C - - - - - 0x01AEE2 06:AED2: B9 FD 04  LDA ram_защита_поведение,Y
 C - - - - - 0x01AEE5 06:AED5: 29 03     AND #$03
 C - - - - - 0x01AEE7 06:AED7: A8        TAY
-C - - - - - 0x01AEE8 06:AED8: 20 35 EE  JSR sub_0x01EE45
+C - - - - - 0x01AEE8 06:AED8: 20 35 EE  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x01AEEB 06:AEDB: D9 40 B0  CMP tbl_B040,Y
 C - - - - - 0x01AEEE 06:AEDE: 90 45     BCC bra_AF25
 bra_AEE0:
@@ -10458,7 +10458,7 @@ bra_BEBA:
 C - - - - - 0x01BECA 06:BEBA: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x01BECD 06:BEBD: 29 07     AND #$07
 C - - - - - 0x01BECF 06:BEBF: D0 0A     BNE bra_BECB_RTS
-C - - - - - 0x01BED1 06:BEC1: 20 35 EE  JSR sub_0x01EE45
+C - - - - - 0x01BED1 06:BEC1: 20 35 EE  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x01BED4 06:BEC4: 10 05     BPL bra_BECB_RTS
 C - - - - - 0x01BED6 06:BEC6: A9 40     LDA #$40
 bra_BEC8:

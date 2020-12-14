@@ -14719,7 +14719,7 @@ C - - - - - 0x003C8F 00:BC7F: CA        DEX
 C - - - - - 0x003C90 00:BC80: 10 E8     BPL bra_BC6A
 C - - - - - 0x003C92 00:BC82: A9 00     LDA #$00
 C - - - - - 0x003C94 00:BC84: 8D 8E 06  STA ram_068E
-C - - - - - 0x003C97 00:BC87: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x003C97 00:BC87: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x003C9A 00:BC8A: 8D 8F 06  STA ram_068F
 C - - - - - 0x003C9D 00:BC8D: AD F8 BD  LDA tbl_BDF8
 C - - - - - 0x003CA0 00:BC90: 85 2E     STA ram_002E
@@ -15452,7 +15452,7 @@ C - - - - - 0x003FEC 00:BFDC: B0 85     BCS bra_BF63
 
 
 sub_BFDE:
-C - - - - - 0x003FEE 00:BFDE: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x003FEE 00:BFDE: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 ; !!!
 C D 1 - - - 0x003FF1 00:BFE1: 10 80     BPL bra_BF63
 C - - - - - 0x003FF3 00:BFE3: 30 8C     BMI bra_BF71

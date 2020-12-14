@@ -14356,7 +14356,7 @@ C - - - - - 0x007A6E 01:BA5E: A9 00     LDA #$00
 C - - - - - 0x007A70 01:BA60: 8D 3F 01  STA ram_длительность_погоды_ХЗ
 C - - - - - 0x007A73 01:BA63: 8D F5 03  STA ram_погода_spd_X_lo
 C - - - - - 0x007A76 01:BA66: 8D 11 04  STA ram_погода_spd_Y_lo
-C - - - - - 0x007A79 01:BA69: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x007A79 01:BA69: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x007A7C 01:BA6C: 10 05     BPL bra_BA73
 C - - - - - 0x007A7E 01:BA6E: A9 01     LDA #$01
 C - - - - - 0x007A80 01:BA70: 4C 75 BA  JMP loc_BA75
@@ -14364,7 +14364,7 @@ bra_BA73:
 - - - - - - 0x007A83 01:BA73: A9 FF     LDA #$FF
 loc_BA75:
 C D 1 - - - 0x007A85 01:BA75: 8D 03 04  STA ram_погода_spd_X_hi
-C - - - - - 0x007A88 01:BA78: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x007A88 01:BA78: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x007A8B 01:BA7B: 10 05     BPL bra_BA82
 C - - - - - 0x007A8D 01:BA7D: A9 02     LDA #$02
 ; bzk опт

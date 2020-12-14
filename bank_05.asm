@@ -8942,7 +8942,7 @@ C - - - - - 0x01704D 05:B03D: F0 33     BEQ bra_B072
 C - - - - - 0x01704F 05:B03F: C9 03     CMP #$03
 C - - - - - 0x017051 05:B041: D0 05     BNE bra_B048
 loc_B043:
-C D 1 - - - 0x017053 05:B043: 20 05 C0  JSR sub_0x01EE45
+C D 1 - - - 0x017053 05:B043: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x017056 05:B046: 29 07     AND #$07
 bra_B048:
 C - - - - - 0x017058 05:B048: A8        TAY
@@ -10579,7 +10579,7 @@ C - - - - - 0x017900 05:B8F0: 85 35     STA ram_0035
 C - - - - - 0x017902 05:B8F2: A5 1C     LDA ram_001C
 C - - - - - 0x017904 05:B8F4: 29 03     AND #$03
 C - - - - - 0x017906 05:B8F6: 85 34     STA ram_0034
-C - - - - - 0x017908 05:B8F8: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x017908 05:B8F8: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x01790B 05:B8FB: 29 0C     AND #$0C
 C - - - - - 0x01790D 05:B8FD: 85 1C     STA ram_001C
 C - - - - - 0x01790F 05:B8FF: 05 34     ORA ram_0034
@@ -10730,7 +10730,7 @@ C D 1 - - - 0x0179DA 05:B9CA: 4A        LSR
 C D 1 - - - 0x0179DB 05:B9CB: A8        TAY
 C - - - - - 0x0179DC 05:B9CC: B9 8E BA  LDA tbl_BA8E,Y
 C - - - - - 0x0179DF 05:B9CF: 8D 29 05  STA ram_опция_материк
-C - - - - - 0x0179E2 05:B9D2: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x0179E2 05:B9D2: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C D 1 - - - 0x0179E5 05:B9D5: 29 03     AND #$03
 C D 1 - - - 0x0179E7 05:B9D7: 85 1C     STA ram_001C
 C D 1 - - - 0x0179E9 05:B9D9: AD 4A 05  LDA ram_054A
@@ -10787,7 +10787,7 @@ C - - - - - 0x017A53 05:BA43: 29 0F     AND #$0F
 C - - - - - 0x017A55 05:BA45: 0A        ASL
 C - - - - - 0x017A56 05:BA46: 0A        ASL
 C - - - - - 0x017A57 05:BA47: 85 1C     STA ram_001C
-C - - - - - 0x017A59 05:BA49: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x017A59 05:BA49: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x017A5C 05:BA4C: 29 03     AND #$03
 C - - - - - 0x017A5E 05:BA4E: 05 1C     ORA ram_001C
 C - - - - - 0x017A60 05:BA50: A8        TAY
@@ -11089,7 +11089,7 @@ C - - - - - 0x017B76 05:BB66: AD 94 04  LDA ram_опция_дождь_ветер
 C - - - - - 0x017B79 05:BB69: 29 0F     AND #$0F
 C - - - - - 0x017B7B 05:BB6B: 0A        ASL
 C - - - - - 0x017B7C 05:BB6C: A8        TAY
-C - - - - - 0x017B7D 05:BB6D: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x017B7D 05:BB6D: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x017B80 05:BB70: 10 01     BPL bra_BB73
 C - - - - - 0x017B82 05:BB72: C8        INY
 bra_BB73:
@@ -11154,7 +11154,7 @@ C - - - - - 0x017BDF 05:BBCF: 29 F0     AND #$F0
 C - - - - - 0x017BE1 05:BBD1: F0 0A     BEQ bra_BBDD
 C - - - - - 0x017BE3 05:BBD3: C9 50     CMP #$50
 C - - - - - 0x017BE5 05:BBD5: F0 06     BEQ bra_BBDD
-C - - - - - 0x017BE7 05:BBD7: 20 05 C0  JSR sub_0x01EE45
+C - - - - - 0x017BE7 05:BBD7: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x017BEA 05:BBDA: 8D F1 05  STA ram_набор_луж
 bra_BBDD:
 C - - - - - 0x017BED 05:BBDD: AD FB 05  LDA ram_опция_поверхность_влажность

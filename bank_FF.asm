@@ -852,7 +852,7 @@ C - - - - - 0x01C492 07:C482: A5 59     LDA ram_подтип_экрана
 C - - - - - 0x01C494 07:C484: 85 5A     STA ram_копия_подтипа_экрана
 C - - - - - 0x01C496 07:C486: EE 00 03  INC ram_счетчик_кадров
 C - - - - - 0x01C499 07:C489: 20 8A C2  JSR sub_C28A
-C - - - - - 0x01C49C 07:C48C: 20 35 EE  JSR sub_EE35
+C - - - - - 0x01C49C 07:C48C: 20 35 EE  JSR sub_EE35_вращение_рандома
 C - - - - - 0x01C49F 07:C48F: 20 CD ED  JSR sub_EDCD
 C - - - - - 0x01C4A2 07:C492: A5 58     LDA ram_номер_экрана
 C - - - - - 0x01C4A4 07:C494: 0A        ASL
@@ -4225,7 +4225,7 @@ C - - - - - 0x01D720 07:D710: 0D BF 05  ORA ram_тайм_секунды_един
 C - - - - - 0x01D723 07:D713: F0 35     BEQ bra_D74A
 C - - - - - 0x01D725 07:D715: CE BE 05  DEC ram_тайм_терции
 C - - - - - 0x01D728 07:D718: 10 2F     BPL bra_D749_RTS
-C - - - - - 0x01D72A 07:D71A: 20 35 EE  JSR sub_EE35
+C - - - - - 0x01D72A 07:D71A: 20 35 EE  JSR sub_EE35_вращение_рандома
 C - - - - - 0x01D72D 07:D71D: 29 A0     AND #$A0
 C - - - - - 0x01D72F 07:D71F: C9 A0     CMP #$A0
 C - - - - - 0x01D731 07:D721: D0 03     BNE bra_D726
@@ -8140,9 +8140,9 @@ sub_EE28:
 
 
 
-sub_EE35:
-.export sub_0x01EE45
-sub_0x01EE45:
+sub_EE35_вращение_рандома:
+.export sub_0x01EE45_вращение_рандома
+sub_0x01EE45_вращение_рандома:
 C D 3 - - - 0x01EE45 07:EE35: 8A        TXA
 C - - - - - 0x01EE46 07:EE36: 48        PHA
 C - - - - - 0x01EE47 07:EE37: 98        TYA
