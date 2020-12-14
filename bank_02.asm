@@ -10709,7 +10709,7 @@ C - - - - - 0x00AA9F 02:AA8F: 20 3D AE  JSR sub_AE3D
 C - - - - - 0x00AAA2 02:AA92: 20 3D AE  JSR sub_AE3D
 ofs_AA95_08:
 C - - - - - 0x00AAA5 02:AA95: A9 00     LDA #$00
-C - - - - - 0x00AAA7 02:AA97: 20 68 C0  JSR sub_0x01C078
+C - - - - - 0x00AAA7 02:AA97: 20 68 C0  JSR sub_0x01E838
 C - - - - - 0x00AAAA 02:AA9A: 20 62 C0  JSR sub_0x01EF64
 C - - - - - 0x00AAAD 02:AA9D: A9 08     LDA #$08
 C - - - - - 0x00AAAF 02:AA9F: 8D 6D 00  STA ram_006D
@@ -10863,7 +10863,7 @@ ofs_AB78_02:
 C - - J - - 0x00AB88 02:AB78: 20 3D AE  JSR sub_AE3D
 C - - - - - 0x00AB8B 02:AB7B: 20 49 AE  JSR sub_AE49
 C - - - - - 0x00AB8E 02:AB7E: A9 0E     LDA #$0E
-C - - - - - 0x00AB90 02:AB80: 20 68 C0  JSR sub_0x01C078
+C - - - - - 0x00AB90 02:AB80: 20 68 C0  JSR sub_0x01E838
 C - - - - - 0x00AB93 02:AB83: A9 59     LDA #$59
 C - - - - - 0x00AB95 02:AB85: 8D B8 05  STA ram_банк_спрайтов
 C - - - - - 0x00AB98 02:AB88: 20 0B C0  JSR sub_0x01EEAA
@@ -10983,7 +10983,7 @@ C - - - - - 0x00AC6B 02:AC5B: A0 80     LDY #$80
 bra_AC5D:
 C - - - - - 0x00AC6D 02:AC5D: 8C 8B 05  STY ram_флаг_демо
 C - - - - - 0x00AC70 02:AC60: A9 01     LDA #$01
-C - - - - - 0x00AC72 02:AC62: 20 68 C0  JSR sub_0x01C078
+C - - - - - 0x00AC72 02:AC62: 20 68 C0  JSR sub_0x01E838
 C - - - - - 0x00AC75 02:AC65: A2 08     LDX #$08
 C - - - - - 0x00AC77 02:AC67: 8E B8 05  STX ram_банк_спрайтов
 C - - - - - 0x00AC7A 02:AC6A: E8        INX
@@ -13951,7 +13951,7 @@ ofs_BBCE_02:
 - - - - - - 0x00BBE9 02:BBD9: 20 4A C0  JSR sub_0x01D072
 - - - - - - 0x00BBEC 02:BBDC: 20 3D AE  JSR sub_AE3D
 - - - - - - 0x00BBEF 02:BBDF: A9 1C     LDA #$1C
-- - - - - - 0x00BBF1 02:BBE1: 20 68 C0  JSR sub_0x01C078
+- - - - - - 0x00BBF1 02:BBE1: 20 68 C0  JSR sub_0x01E838
 - - - - - - 0x00BBF4 02:BBE4: AD 1F 06  LDA ram_061F
 - - - - - - 0x00BBF7 02:BBE7: 0A        ASL
 - - - - - - 0x00BBF8 02:BBE8: 0A        ASL
@@ -14121,7 +14121,7 @@ ofs_BD00_03:
 - - - - - - 0x00BD2A 02:BD1A: C9 07     CMP #$07
 - - - - - - 0x00BD2C 02:BD1C: B0 AF     BCS bra_BCCD
 - - - - - - 0x00BD2E 02:BD1E: 69 1D     ADC #$1D
-- - - - - - 0x00BD30 02:BD20: 20 68 C0  JSR sub_0x01C078
+- - - - - - 0x00BD30 02:BD20: 20 68 C0  JSR sub_0x01E838
 - - - - - - 0x00BD33 02:BD23: AD 8C 05  LDA ram_058C
 - - - - - - 0x00BD36 02:BD26: 0A        ASL
 - - - - - - 0x00BD37 02:BD27: A8        TAY
@@ -14243,7 +14243,7 @@ ofs_BDC0_04:
 - - - - - - 0x00BE36 02:BE26: 8D B1 05  STA ram_номер_палитры_спрайтов + 3
 - - - - - - 0x00BE39 02:BE29: 20 C8 BE  JSR sub_BEC8
 - - - - - - 0x00BE3C 02:BE2C: A9 24     LDA #$24
-- - - - - - 0x00BE3E 02:BE2E: 20 68 C0  JSR sub_0x01C078
+- - - - - - 0x00BE3E 02:BE2E: 20 68 C0  JSR sub_0x01E838
 - - - - - - 0x00BE41 02:BE31: A9 00     LDA #$00
 - - - - - - 0x00BE43 02:BE33: 20 BF BE  JSR sub_BEBF
 - - - - - - 0x00BE46 02:BE36: EE 8A 05  INC ram_таймер_демо_hi

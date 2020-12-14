@@ -44,9 +44,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C078
-sub_0x01C078:
-C - - - - - 0x01C078 07:C068: 4C 28 E8  JMP loc_E828
 .export sub_0x01C07B
 sub_0x01C07B:
 C - - - - - 0x01C07B 07:C06B: 4C AD EF  JMP loc_EFAD
@@ -7083,7 +7080,8 @@ C - - - - - 0x01E805 07:E7F5: 60        RTS
 
 
 
-loc_E828:
+.export sub_0x01E838
+sub_0x01E838:
 C D 3 - - - 0x01E838 07:E828: 85 2C     STA ram_002C
 C - - - - - 0x01E83A 07:E82A: A9 00     LDA #$00
 C - - - - - 0x01E83C 07:E82C: 85 2D     STA ram_002D
