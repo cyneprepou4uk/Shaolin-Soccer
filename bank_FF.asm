@@ -799,8 +799,6 @@ C - - - - - 0x01C402 07:C3F2: 8D 88 05  STA ram_0588
 C - - - - - 0x01C405 07:C3F5: 20 64 EF  JSR sub_EF64
 C - - - - - 0x01C408 07:C3F8: A9 00     LDA #$00
 C - - - - - 0x01C40A 07:C3FA: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
-C - - - - - 0x01C40D 07:C3FD: A9 00     LDA #$00
-C - - - - - 0x01C418 07:C408: 85 53     STA ram_0053
 C - - - - - 0x01C412 07:C402: A9 C0     LDA #$C0
 C - - - - - 0x01C414 07:C404: 85 4F     STA ram_флаг_NMI
 C - - - - - 0x01C41C 07:C40C: A9 8C     LDA #$8C
