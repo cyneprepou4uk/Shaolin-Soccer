@@ -10921,57 +10921,6 @@ C - - - - - 0x01FE1D 07:FE0D: 4C D4 C3  JMP loc_C3D4
 ; - D 0 - - A 0x01FE50 07:FE40: FF        .byte $FF   ; 
 
 
-; bzk мусор
-- - - - - - 0x01FFD1 07:FFC1: 74        .byte $74   ; 
-- - - - - - 0x01FFD2 07:FFC2: B0        .byte $B0   ; 
-- - - - - - 0x01FFD3 07:FFC3: A2        .byte $A2   ; 
-- - - - - - 0x01FFD4 07:FFC4: B4        .byte $B4   ; 
-- - - - - - 0x01FFD5 07:FFC5: 89        .byte $89   ; 
-- - - - - - 0x01FFD6 07:FFC6: 67        .byte $67   ; 
-- - - - - - 0x01FFD7 07:FFC7: 35        .byte $35   ; 
-- - - - - - 0x01FFD8 07:FFC8: 6D        .byte $6D   ; 
-- - - - - - 0x01FFD9 07:FFC9: 2B        .byte $2B   ; 
-- - - - - - 0x01FFDA 07:FFCA: 37        .byte $37   ; 
-- - - - - - 0x01FFDB 07:FFCB: B6        .byte $B6   ; 
-- - - - - - 0x01FFDC 07:FFCC: 45        .byte $45   ; 
-- - - - - - 0x01FFDD 07:FFCD: A5        .byte $A5   ; 
-- - - - - - 0x01FFDE 07:FFCE: A9        .byte $A9   ; 
-- - - - - - 0x01FFDF 07:FFCF: C5        .byte $C5   ; 
-- - - - - - 0x01FFE0 07:FFD0: A4        .byte $A4   ; 
-- - - - - - 0x01FFE1 07:FFD1: 42        .byte $42   ; 
-- - - - - - 0x01FFE2 07:FFD2: 34        .byte $34   ; 
-- - - - - - 0x01FFE3 07:FFD3: 26        .byte $26   ; 
-- - - - - - 0x01FFE4 07:FFD4: 54        .byte $54   ; 
-- - - - - - 0x01FFE5 07:FFD5: 44        .byte $44   ; 
-- - - - - - 0x01FFE6 07:FFD6: 44        .byte $44   ; 
-- - - - - - 0x01FFE7 07:FFD7: 04        .byte $04   ; 
-- - - - - - 0x01FFE8 07:FFD8: 44        .byte $44   ; 
-- - - - - - 0x01FFE9 07:FFD9: 00        .byte $00   ; 
-- - - - - - 0x01FFEA 07:FFDA: 4A        .byte $4A   ; 
-- - - - - - 0x01FFEB 07:FFDB: 44        .byte $44   ; 
-- - - - - - 0x01FFEC 07:FFDC: 00        .byte $00   ; 
-- - - - - - 0x01FFED 07:FFDD: 00        .byte $00   ; 
-- - - - - - 0x01FFEE 07:FFDE: 00        .byte $00   ; 
-- - - - - - 0x01FFEF 07:FFDF: 00        .byte $00   ; 
-- - - - - - 0x01FFF0 07:FFE0: FF        .byte $FF   ; 
-- - - - - - 0x01FFF1 07:FFE1: FF        .byte $FF   ; 
-- - - - - - 0x01FFF2 07:FFE2: FF        .byte $FF   ; 
-- - - - - - 0x01FFF3 07:FFE3: FF        .byte $FF   ; 
-- - - - - - 0x01FFF4 07:FFE4: FF        .byte $FF   ; 
-- - - - - - 0x01FFF5 07:FFE5: FF        .byte $FF   ; 
-- - - - - - 0x01FFF6 07:FFE6: FF        .byte $FF   ; 
-- - - - - - 0x01FFF7 07:FFE7: FF        .byte $FF   ; 
-- - - - - - 0x01FFF8 07:FFE8: FF        .byte $FF   ; 
-- - - - - - 0x01FFF9 07:FFE9: FF        .byte $FF   ; 
-- - - - - - 0x01FFFA 07:FFEA: FF        .byte $FF   ; 
-- - - - - - 0x01FFFB 07:FFEB: FF        .byte $FF   ; 
-- - - - - - 0x01FFFC 07:FFEC: FF        .byte $FF   ; 
-- - - - - - 0x01FFFD 07:FFED: FF        .byte $FF   ; 
-- - - - - - 0x01FFFE 07:FFEE: FF        .byte $FF   ; 
-- - - - - - 0x01FFFF 07:FFEF: FF        .byte $FF   ; 
-- - - - - - 0x020000 07:FFF0: 00        .byte $00   ; 
-
-
 
 ofs_FFF1:
 C - - - - - 0x020001 07:FFF1: 4C BB FB  JMP loc_FBBB
