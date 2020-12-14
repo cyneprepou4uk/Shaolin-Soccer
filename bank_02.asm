@@ -10629,9 +10629,6 @@ off_A9D1_07:
 
 
 
-sub_AA48:
-C - - - - - 0x00AA58 02:AA48: A9 0A     LDA #$0A
-C - - - - - 0x00AA5A 02:AA4A: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 sub_AA4D:
 C - - - - - 0x00AA5D 02:AA4D: A9 0B     LDA #$0B
 C - - - - - 0x00AA5F 02:AA4F: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
@@ -11754,7 +11751,7 @@ C - - J - - 0x00B0F9 02:B0E9: BD 59 04  LDA ram_игрок_номер_движе
 C - - - - - 0x00B0FC 02:B0EC: 30 09     BMI bra_B0F7
 C - - - - - 0x00B0FE 02:B0EE: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B101 02:B0F1: 20 39 AA  JSR sub_0x01C25D
-C - - - - - 0x00B104 02:B0F4: 20 48 AA  JSR sub_AA48
+C - - - - - 0x00B104 02:B0F4: 20 48 AA  JSR sub_0x01C260
 bra_B0F7:
 C - - - - - 0x00B107 02:B0F7: A9 03     LDA #$03
 C - - - - - 0x00B109 02:B0F9: 4C C9 B0  JMP loc_B0C9
@@ -11766,7 +11763,7 @@ C - - J - - 0x00B10C 02:B0FC: BD 59 04  LDA ram_игрок_номер_движе
 C - - - - - 0x00B10F 02:B0FF: 30 03     BMI bra_B104
 C - - - - - 0x00B111 02:B101: 20 82 B2  JSR sub_B282
 bra_B104:
-C - - - - - 0x00B114 02:B104: 20 48 AA  JSR sub_AA48
+C - - - - - 0x00B114 02:B104: 20 48 AA  JSR sub_0x01C260
 C - - - - - 0x00B117 02:B107: 20 4D AA  JSR sub_AA4D
 C - - - - - 0x00B11A 02:B10A: A9 03     LDA #$03
 C - - - - - 0x00B11C 02:B10C: 20 93 B2  JSR sub_B293
@@ -11784,7 +11781,7 @@ ofs_B11C_07:
 C - - J - - 0x00B12C 02:B11C: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x00B12F 02:B11F: 30 06     BMI bra_B127
 C - - - - - 0x00B131 02:B121: 20 82 B2  JSR sub_B282
-C - - - - - 0x00B134 02:B124: 20 48 AA  JSR sub_AA48
+C - - - - - 0x00B134 02:B124: 20 48 AA  JSR sub_0x01C260
 bra_B127:
 C - - - - - 0x00B137 02:B127: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x00B13A 02:B12A: C9 FF     CMP #$FF
@@ -11814,7 +11811,7 @@ C - - - - - 0x00B166 02:B156: 4C 1B B1  JMP loc_B11B_RTS
 bra_B159:
 C - - - - - 0x00B169 02:B159: A9 04     LDA #$04
 C - - - - - 0x00B16B 02:B15B: 20 93 B2  JSR sub_B293
-C - - - - - 0x00B16E 02:B15E: 20 48 AA  JSR sub_AA48
+C - - - - - 0x00B16E 02:B15E: 20 48 AA  JSR sub_0x01C260
 C - - - - - 0x00B171 02:B161: 4C 0F B1  JMP loc_B10F
 
 
