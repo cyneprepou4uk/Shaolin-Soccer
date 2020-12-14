@@ -5482,32 +5482,22 @@ bra_A4B7:
 C - - - - - 0x01A4C7 06:A4B7: A0 10     LDY #$10
 bra_A4B9:
 C - - - - - 0x01A4C9 06:A4B9: 84 2B     STY ram_002B
-C - - - - - 0x01A4CB 06:A4BB: B9 C6 A4  LDA tbl_A4C6,Y
+C - - - - - 0x01A4CB 06:A4BB: B9 C6 A4  LDA tbl_A4C6_X_Y_скорость,Y
 C - - - - - 0x01A4CE 06:A4BE: 85 2C     STA ram_002C
-C - - - - - 0x01A4D0 06:A4C0: B9 C7 A4  LDA tbl_A4C7,Y
+C - - - - - 0x01A4D0 06:A4C0: B9 C7 A4  LDA tbl_A4C6_X_Y_скорость + 1,Y
 C - - - - - 0x01A4D3 06:A4C3: 85 2D     STA ram_002D
 C - - - - - 0x01A4D5 06:A4C5: 60        RTS
 
-tbl_A4C6:
-- - - - - - 0x01A4D6 06:A4C6: 00        .byte $00   ; 
-tbl_A4C7:
-- - - - - - 0x01A4D7 06:A4C7: 01        .byte $01   ; 
-- D 1 - - - 0x01A4D8 06:A4C8: 00        .byte $00   ; 
-- D 1 - - - 0x01A4D9 06:A4C9: 02        .byte $02   ; 
-- D 1 - - - 0x01A4DA 06:A4CA: 00        .byte $00   ; 
-- D 1 - - - 0x01A4DB 06:A4CB: 02        .byte $02   ; 
-- D 1 - - - 0x01A4DC 06:A4CC: 00        .byte $00   ; 
-- D 1 - - - 0x01A4DD 06:A4CD: 03        .byte $03   ; 
-- D 1 - - - 0x01A4DE 06:A4CE: 00        .byte $00   ; 
-- D 1 - - - 0x01A4DF 06:A4CF: 04        .byte $04   ; 
-- D 1 - - - 0x01A4E0 06:A4D0: 00        .byte $00   ; 
-- D 1 - - - 0x01A4E1 06:A4D1: 05        .byte $05   ; 
-- D 1 - - - 0x01A4E2 06:A4D2: 00        .byte $00   ; 
-- D 1 - - - 0x01A4E3 06:A4D3: 06        .byte $06   ; 
-- D 1 - - - 0x01A4E4 06:A4D4: 00        .byte $00   ; 
-- D 1 - - - 0x01A4E5 06:A4D5: 06        .byte $06   ; 
-- D 1 - - - 0x01A4E6 06:A4D6: 00        .byte $00   ; 
-- D 1 - - - 0x01A4E7 06:A4D7: 0A        .byte $0A   ; 
+tbl_A4C6_X_Y_скорость:
+- - - - - - 0x01A4D6 06:A4C6: 00 01     .word $0100     ; $0100
+- D 1 - - - 0x01A4D8 06:A4C8: 00 02     .word $0200     ; $0200
+- D 1 - - - 0x01A4DA 06:A4CA: 00 02     .word $0200     ; $0200
+- D 1 - - - 0x01A4DC 06:A4CC: 00 03     .word $0300     ; $0300
+- D 1 - - - 0x01A4DE 06:A4CE: 00 04     .word $0400     ; $0400
+- D 1 - - - 0x01A4E0 06:A4D0: 00 05     .word $0500     ; $0500
+- D 1 - - - 0x01A4E2 06:A4D2: 00 06     .word $0600     ; $0600
+- D 1 - - - 0x01A4E4 06:A4D4: 00 06     .word $0600     ; $0600
+- D 1 - - - 0x01A4E6 06:A4D6: 00 0A     .word $0A00     ; $0A00
 
 
 
