@@ -21,9 +21,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C02A
-sub_0x01C02A:
-C - - - - - 0x01C02A 07:C01A: 4C CB EC  JMP loc_ECCB
 .export sub_0x01C02D
 sub_0x01C02D:
 C - - - - - 0x01C02D 07:C01D: 4C C1 EC  JMP loc_ECC1
@@ -8045,7 +8042,8 @@ C - - - - - 0x01ECDA 07:ECCA: 60        RTS
 
 
 
-loc_ECCB:
+.export sub_0x01ECDB
+sub_0x01ECDB:
 sub_ECCB:
 C D 3 - - - 0x01ECDB 07:ECCB: A5 4D     LDA ram_для_2001
 C - - - - - 0x01ECDD 07:ECCD: 09 18     ORA #$18
