@@ -4681,12 +4681,12 @@ C - - - - - 0x00DCF4 03:9CE4: 20 4A 9E  JSR sub_9E4A
 C - - - - - 0x00DCF7 03:9CE7: 29 01     AND #$01
 C - - - - - 0x00DCF9 03:9CE9: F0 09     BEQ bra_9CF4
 C - - - - - 0x00DCFB 03:9CEB: A9 34     LDA #$34
-C - - - - - 0x00DCFD 03:9CED: 20 02 C0  JSR sub_0x01C2F4
+C - - - - - 0x00DCFD 03:9CED: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x00DD00 03:9CF0: 20 02 9F  JSR sub_9F02
 C - - - - - 0x00DD03 03:9CF3: 60        RTS
 bra_9CF4:
 C - - - - - 0x00DD04 03:9CF4: A9 33     LDA #$33
-C - - - - - 0x00DD06 03:9CF6: 20 02 C0  JSR sub_0x01C2F4
+C - - - - - 0x00DD06 03:9CF6: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x00DD09 03:9CF9: A5 1C     LDA ram_001C
 C - - - - - 0x00DD0B 03:9CFB: 9D 78 06  STA ram_приказ_боту,X
 C - - - - - 0x00DD0E 03:9CFE: 20 09 9F  JSR sub_9F09
@@ -4729,12 +4729,12 @@ C - - - - - 0x00DD4C 03:9D3C: 20 4A 9E  JSR sub_9E4A
 C - - - - - 0x00DD4F 03:9D3F: 29 02     AND #$02
 C - - - - - 0x00DD51 03:9D41: F0 09     BEQ bra_9D4C
 C - - - - - 0x00DD53 03:9D43: A9 34     LDA #$34
-C - - - - - 0x00DD55 03:9D45: 20 02 C0  JSR sub_0x01C2F4
+C - - - - - 0x00DD55 03:9D45: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x00DD58 03:9D48: 20 02 9F  JSR sub_9F02
 C - - - - - 0x00DD5B 03:9D4B: 60        RTS
 bra_9D4C:
 C - - - - - 0x00DD5C 03:9D4C: A9 33     LDA #$33
-C - - - - - 0x00DD5E 03:9D4E: 20 02 C0  JSR sub_0x01C2F4
+C - - - - - 0x00DD5E 03:9D4E: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x00DD61 03:9D51: A5 1C     LDA ram_001C
 C - - - - - 0x00DD63 03:9D53: 9D 78 06  STA ram_приказ_боту,X
 C - - - - - 0x00DD66 03:9D56: 20 09 9F  JSR sub_9F09
@@ -4750,7 +4750,7 @@ C - - - - - 0x00DD73 03:9D63: 20 4A 9E  JSR sub_9E4A
 C - - - - - 0x00DD76 03:9D66: 29 04     AND #$04
 C - - - - - 0x00DD78 03:9D68: F0 E2     BEQ bra_9D4C
 C - - - - - 0x00DD7A 03:9D6A: A9 34     LDA #$34
-C - - - - - 0x00DD7C 03:9D6C: 20 02 C0  JSR sub_0x01C2F4
+C - - - - - 0x00DD7C 03:9D6C: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x00DD7F 03:9D6F: 20 02 9F  JSR sub_9F02
 C - - - - - 0x00DD82 03:9D72: 60        RTS
 
@@ -4762,7 +4762,7 @@ C - - - - - 0x00DD86 03:9D76: 20 4A 9E  JSR sub_9E4A
 C - - - - - 0x00DD89 03:9D79: 29 08     AND #$08
 C - - - - - 0x00DD8B 03:9D7B: F0 CF     BEQ bra_9D4C
 - - - - - - 0x00DD8D 03:9D7D: A9 34     LDA #$34
-- - - - - - 0x00DD8F 03:9D7F: 20 02 C0  JSR sub_0x01C2F4
+- - - - - - 0x00DD8F 03:9D7F: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 - - - - - - 0x00DD92 03:9D82: 20 02 9F  JSR sub_9F02
 - - - - - - 0x00DD95 03:9D85: 60        RTS
 
@@ -11190,7 +11190,7 @@ C - - - - - 0x00FC53 03:BC43: AD 66 04  LDA ram_погода_номер_эффе
 C - - - - - 0x00FC56 03:BC46: C9 84     CMP #$84
 C - - - - - 0x00FC58 03:BC48: D0 05     BNE bra_BC4F
 C - - - - - 0x00FC5A 03:BC4A: A9 41     LDA #$41
-C - - - - - 0x00FC5C 03:BC4C: 20 02 C0  JSR sub_0x01C2F4
+C - - - - - 0x00FC5C 03:BC4C: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 bra_BC4F:
 C - - - - - 0x00FC5F 03:BC4F: AD 95 04  LDA ram_направление_молния_смерч
 C - - - - - 0x00FC62 03:BC52: 29 30     AND #$30
