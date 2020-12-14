@@ -14569,7 +14569,7 @@ C - - - - - 0x003B5F 00:BB4F: A8        TAY
 C - - - - - 0x003B60 00:BB50: B9 F6 BE  LDA tbl_BEF6,Y
 C - - - - - 0x003B63 00:BB53: 0D 2D 05  ORA ram_номер_команды + 1
 C - - - - - 0x003B66 00:BB56: 8D 2D 05  STA ram_номер_команды + 1
-C - - - - - 0x003B69 00:BB59: 20 F8 BF  JSR sub_BFF8
+C - - - - - 0x003B69 00:BB59: 20 F8 BF  JSR sub_0x01C2EF
 C - - - - - 0x003B6C 00:BB5C: 20 F3 BF  JSR sub_BFF3
 C - - - - - 0x003B6F 00:BB5F: AD 2A 05  LDA ram_флаг_владения_мячом_ком
 C - - - - - 0x003B72 00:BB62: 0D 2B 05  ORA ram_флаг_владения_мячом_ком + 1
@@ -15477,12 +15477,6 @@ C D 1 - - - 0x004002 00:BFF2: 60        RTS
 sub_BFF3:
 C - - - - - 0x004003 00:BFF3: A9 19     LDA #$19
 C - - - - - 0x004005 00:BFF5: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
-
-
-
-sub_BFF8:
-C D 1 - - - 0x004008 00:BFF8: A9 1A     LDA #$1A
-C - - - - - 0x00400A 00:BFFA: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 
 
 
