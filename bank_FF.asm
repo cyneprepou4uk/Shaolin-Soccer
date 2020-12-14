@@ -29,9 +29,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C042
-sub_0x01C042:
-C - - - - - 0x01C042 07:C032: 4C 7D F6  JMP loc_F67D
 .export sub_0x01C045
 sub_0x01C045:
 C - - - - - 0x01C045 07:C035: 4C 91 F6  JMP loc_F691
@@ -9600,7 +9597,8 @@ loc_F666:
 
 
 
-loc_F67D:
+.export sub_0x01F68D
+sub_0x01F68D:
 sub_F67D:
 C D 3 - - - 0x01F68D 07:F67D: B9 14 03  LDA ram_игрок_X_lo,Y
 C - - - - - 0x01F690 07:F680: 85 2E     STA ram_002E
