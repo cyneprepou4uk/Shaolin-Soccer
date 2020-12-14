@@ -876,31 +876,31 @@ tbl_C4A3:
 
 ofs_C4AB_00:
 C - - J - - 0x01C4BB 07:C4AB: 20 06 C5  JSR sub_C506
-C - - - - - 0x01C4BE 07:C4AE: 4C C3 C4  JMP loc_C4C3
+C - - - - - 0x01C4BE 07:C4AE: 4C C3 C4  JMP loc_C4C3_бесконечный_цикл
 
 ofs_C4B1_01:
 C - - J - - 0x01C4C1 07:C4B1: 20 5D C2  JSR sub_C25D
-C - - - - - 0x01C4C4 07:C4B4: 4C C3 C4  JMP loc_C4C3
+C - - - - - 0x01C4C4 07:C4B4: 4C C3 C4  JMP loc_C4C3_бесконечный_цикл
 
 ofs_C4B7_02:
 C - - J - - 0x01C4C7 07:C4B7: 20 DA C2  JSR sub_C2DA
-C - - - - - 0x01C4CA 07:C4BA: 4C C3 C4  JMP loc_C4C3
+C - - - - - 0x01C4CA 07:C4BA: 4C C3 C4  JMP loc_C4C3_бесконечный_цикл
 
 ofs_C4BD_03:
 - - - - - - 0x01C4CD 07:C4BD: 20 6C C2  JSR sub_C26C
-- - - - - - 0x01C4D0 07:C4C0: 4C C3 C4  JMP loc_C4C3
+- - - - - - 0x01C4D0 07:C4C0: 4C C3 C4  JMP loc_C4C3_бесконечный_цикл
 
 
 
-bra_C4C3:
-loc_C4C3:
+loc_C4C3_бесконечный_цикл:
+bra_C4C3_бесконечный_цикл:
 C D 2 - - - 0x01C4D3 07:C4C3: A5 51     LDA ram_задержка_кадра
-bra_C4C5:
+bra_C4C5_бесконечный_цикл:
 C - - - - - 0x01C4D5 07:C4C5: C5 51     CMP ram_задержка_кадра
-C - - - - - 0x01C4D7 07:C4C7: F0 FC     BEQ bra_C4C5
+C - - - - - 0x01C4D7 07:C4C7: F0 FC     BEQ bra_C4C5_бесконечный_цикл
 C - - - - - 0x01C4D9 07:C4C9: A5 51     LDA ram_задержка_кадра
 C - - - - - 0x01C4DB 07:C4CB: CD E6 05  CMP ram_скорость_игры
-C - - - - - 0x01C4DE 07:C4CE: 90 F3     BCC bra_C4C3
+C - - - - - 0x01C4DE 07:C4CE: 90 F3     BCC bra_C4C3_бесконечный_цикл
 C - - - - - 0x01C4E0 07:C4D0: CD 52 00  CMP ram_0052
 C - - - - - 0x01C4E3 07:C4D3: 90 03     BCC bra_C4D8
 C - - - - - 0x01C4E5 07:C4D5: 8D 52 00  STA ram_0052
