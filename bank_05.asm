@@ -2055,7 +2055,6 @@ C - - - - - 0x014C38 05:8C28: B0 03     BCS bra_8C2D
 C - - - - - 0x014C3A 05:8C2A: 4C 9D 8B  JMP loc_8B9D
 bra_8C2D:
 loc_8C2D:
-C D 0 - - - 0x014C3D 05:8C2D: 20 BB 8D  JSR sub_8DBB_RTS
 C - - - - - 0x014C40 05:8C30: 20 41 80  JSR sub_0x01C297
 C - - - - - 0x014C43 05:8C33: 20 14 80  JSR sub_0x01C2AE
 C - - - - - 0x014C46 05:8C36: 20 0B C0  JSR sub_0x01EEAA
@@ -2383,11 +2382,6 @@ off_8DA9_04:
 - D 0 - I - 0x014DC8 05:8DB8: 02        .byte $02   ; 
 - D 0 - I - 0x014DC9 05:8DB9: 84        .byte $84   ; 
 - D 0 - I - 0x014DCA 05:8DBA: 9D        .byte $9D   ; 
-
-
-; !!! I
-sub_8DBB_RTS:
-C D 0 - I - 0x014DCB 05:8DBB: 60        RTS
 
 
 
