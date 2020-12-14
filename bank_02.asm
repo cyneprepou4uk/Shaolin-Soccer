@@ -10629,9 +10629,6 @@ off_A9D1_07:
 
 
 
-sub_AA43:
-C - - - - - 0x00AA53 02:AA43: A9 09     LDA #$09
-C - - - - - 0x00AA55 02:AA45: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 sub_AA48:
 C - - - - - 0x00AA58 02:AA48: A9 0A     LDA #$0A
 C - - - - - 0x00AA5A 02:AA4A: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
@@ -11733,7 +11730,7 @@ loc_B0C9:
 C D 1 - - - 0x00B0D9 02:B0C9: 20 9A B2  JSR sub_B29A
 C - - - - - 0x00B0DC 02:B0CC: 20 34 AA  JSR sub_0x01C25C
 C - - - - - 0x00B0DF 02:B0CF: 20 3F B3  JSR sub_B33F
-C - - - - - 0x00B0E2 02:B0D2: 20 43 AA  JSR sub_AA43
+C - - - - - 0x00B0E2 02:B0D2: 20 43 AA  JSR sub_0x01C25F
 C - - - - - 0x00B0E5 02:B0D5: 20 BC B2  JSR sub_B2BC
 C - - - - - 0x00B0E8 02:B0D8: 60        RTS
 
@@ -11776,7 +11773,7 @@ C - - - - - 0x00B11C 02:B10C: 20 93 B2  JSR sub_B293
 loc_B10F:
 C D 1 - - - 0x00B11F 02:B10F: 20 34 AA  JSR sub_0x01C25C
 C - - - - - 0x00B122 02:B112: 20 3F B3  JSR sub_B33F
-C - - - - - 0x00B125 02:B115: 20 43 AA  JSR sub_AA43
+C - - - - - 0x00B125 02:B115: 20 43 AA  JSR sub_0x01C25F
 C - - - - - 0x00B128 02:B118: 20 BC B2  JSR sub_B2BC
 loc_B11B_RTS:
 C D 1 - - - 0x00B12B 02:B11B: 60        RTS
@@ -11871,7 +11868,7 @@ bra_B1A4:
 loc_B1A4:
 C D 1 - - - 0x00B1B4 02:B1A4: 20 34 AA  JSR sub_0x01C25C
 C - - - - - 0x00B1B7 02:B1A7: 20 3F B3  JSR sub_B33F
-C - - - - - 0x00B1BA 02:B1AA: 20 43 AA  JSR sub_AA43
+C - - - - - 0x00B1BA 02:B1AA: 20 43 AA  JSR sub_0x01C25F
 C - - - - - 0x00B1BD 02:B1AD: 20 BC B2  JSR sub_B2BC
 C - - - - - 0x00B1C0 02:B1B0: BD 99 03  LDA ram_игрок_Z_hi,X
 C - - - - - 0x00B1C3 02:B1B3: 30 05     BMI bra_B1BA
@@ -12990,7 +12987,7 @@ C - - - - - 0x00B75B 02:B74B: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B75E 02:B74E: 20 3E AA  JSR sub_0x01C25E
 bra_B751:
 C - - - - - 0x00B761 02:B751: 20 E5 B8  JSR sub_B8E5
-C - - - - - 0x00B764 02:B754: 20 43 AA  JSR sub_AA43
+C - - - - - 0x00B764 02:B754: 20 43 AA  JSR sub_0x01C25F
 C - - - - - 0x00B767 02:B757: 60        RTS
 
 
@@ -13053,7 +13050,7 @@ C - - - - - 0x00B7BE 02:B7AE: A9 03     LDA #$03
 C - - - - - 0x00B7C0 02:B7B0: 20 93 B2  JSR sub_B293
 C - - - - - 0x00B7C3 02:B7B3: 20 34 AA  JSR sub_0x01C25C
 C - - - - - 0x00B7C6 02:B7B6: 20 E5 B8  JSR sub_B8E5
-C - - - - - 0x00B7C9 02:B7B9: 20 43 AA  JSR sub_AA43
+C - - - - - 0x00B7C9 02:B7B9: 20 43 AA  JSR sub_0x01C25F
 C - - - - - 0x00B7CC 02:B7BC: 60        RTS
 
 
@@ -13136,7 +13133,7 @@ C - - - - - 0x00B84B 02:B83B: 20 A1 B2  JSR sub_B2A1
 bra_B83E:
 C - - - - - 0x00B84E 02:B83E: 20 34 AA  JSR sub_0x01C25C
 C - - - - - 0x00B851 02:B841: 20 E5 B8  JSR sub_B8E5
-C - - - - - 0x00B854 02:B844: 20 43 AA  JSR sub_AA43
+C - - - - - 0x00B854 02:B844: 20 43 AA  JSR sub_0x01C25F
 C - - - - - 0x00B857 02:B847: BD 99 03  LDA ram_игрок_Z_hi,X
 C - - - - - 0x00B85A 02:B84A: 30 05     BMI bra_B851
 C - - - - - 0x00B85C 02:B84C: 1D 86 03  ORA ram_игрок_Z_lo,X
