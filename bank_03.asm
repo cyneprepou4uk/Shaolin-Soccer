@@ -292,7 +292,7 @@ C - - - - - 0x00C201 03:81F1: C9 15     CMP #$15
 C - - - - - 0x00C203 03:81F3: F0 06     BEQ bra_81FB
 bra_81F5:
 C - - - - - 0x00C205 03:81F5: 20 9B A5  JSR sub_A59B
-C - - - - - 0x00C208 03:81F8: 4C 1E 82  JMP loc_821E_RTS
+C - - - - - 0x00C208 03:81F8: 4C 1E 82  RTS
 bra_81FB:
 C - - - - - 0x00C20B 03:81FB: 8A        TXA
 C - - - - - 0x00C20C 03:81FC: 4D D6 04  EOR ram_игрок_с_мячом
@@ -306,14 +306,13 @@ C - - - - - 0x00C21A 03:820A: 29 01     AND #$01
 C - - - - - 0x00C21C 03:820C: D0 06     BNE bra_8214
 loc_820E:
 C D 0 - - - 0x00C21E 03:820E: 20 06 A1  JSR sub_A106
-C - - - - - 0x00C221 03:8211: 4C 1E 82  JMP loc_821E_RTS
+C - - - - - 0x00C221 03:8211: 4C 1E 82  RTS
 bra_8214:
 C - - - - - 0x00C224 03:8214: AD 92 04  LDA ram_мяч_состояние
 C - - - - - 0x00C227 03:8217: 29 40     AND #$40
 C - - - - - 0x00C229 03:8219: F0 03     BEQ bra_821E_RTS
 C - - - - - 0x00C22B 03:821B: 20 9C A3  JSR sub_A39C
 bra_821E_RTS:
-loc_821E_RTS:
 C D 0 - - - 0x00C22E 03:821E: 60        RTS
 
 
@@ -708,7 +707,7 @@ C - - - - - 0x00C4AD 03:849D: 85 21     STA ram_0021
 C - - - - - 0x00C4AF 03:849F: AD 6C 03  LDA ram_мяч_Y_hi
 C - - - - - 0x00C4B2 03:84A2: 65 22     ADC ram_0022
 C - - - - - 0x00C4B4 03:84A4: 85 22     STA ram_0022
-C - - - - - 0x00C4B6 03:84A6: 4C B8 84  JMP loc_84B8_RTS
+C - - - - - 0x00C4B6 03:84A6: 4C B8 84  RTS
 bra_84A9:
 C - - - - - 0x00C4B9 03:84A9: AD 59 03  LDA ram_мяч_Y_lo
 C - - - - - 0x00C4BC 03:84AC: 38        SEC
@@ -717,7 +716,6 @@ C - - - - - 0x00C4BF 03:84AF: 85 21     STA ram_0021
 C - - - - - 0x00C4C1 03:84B1: AD 6C 03  LDA ram_мяч_Y_hi
 C - - - - - 0x00C4C4 03:84B4: E5 22     SBC ram_0022
 C - - - - - 0x00C4C6 03:84B6: 85 22     STA ram_0022
-loc_84B8_RTS:
 C D 0 - - - 0x00C4C8 03:84B8: 60        RTS
 
 
@@ -4106,7 +4104,7 @@ C - - - - - 0x00D953 03:9943: B9 4D 03  LDA ram_игрок_Y_lo,Y
 C - - - - - 0x00D956 03:9946: 85 34     STA ram_0034
 C - - - - - 0x00D958 03:9948: B9 60 03  LDA ram_игрок_Y_hi,Y
 C - - - - - 0x00D95B 03:994B: 85 35     STA ram_0035
-C - - - - - 0x00D95D 03:994D: 4C B4 99  JMP loc_99B4_RTS
+C - - - - - 0x00D95D 03:994D: 4C B4 99  RTS
 bra_9950:
 C - - - - - 0x00D960 03:9950: B9 12 04  LDA ram_игрок_spd_Y_hi,Y
 C - - - - - 0x00D963 03:9953: 10 16     BPL bra_996B
@@ -4148,7 +4146,7 @@ C - - - - - 0x00D9A9 03:9999: 85 34     STA ram_0034
 C - - - - - 0x00D9AB 03:999B: B9 60 03  LDA ram_игрок_Y_hi,Y
 C - - - - - 0x00D9AE 03:999E: E9 00     SBC #$00
 C - - - - - 0x00D9B0 03:99A0: 85 35     STA ram_0035
-C - - - - - 0x00D9B2 03:99A2: 4C B4 99  JMP loc_99B4_RTS
+C - - - - - 0x00D9B2 03:99A2: 4C B4 99  RTS
 bra_99A5:
 C - - - - - 0x00D9B5 03:99A5: B9 4D 03  LDA ram_игрок_Y_lo,Y
 C - - - - - 0x00D9B8 03:99A8: 18        CLC
@@ -4157,7 +4155,6 @@ C - - - - - 0x00D9BB 03:99AB: 85 34     STA ram_0034
 C - - - - - 0x00D9BD 03:99AD: B9 60 03  LDA ram_игрок_Y_hi,Y
 C - - - - - 0x00D9C0 03:99B0: 69 00     ADC #$00
 C - - - - - 0x00D9C2 03:99B2: 85 35     STA ram_0035
-loc_99B4_RTS:
 C D 0 - - - 0x00D9C4 03:99B4: 60        RTS
 
 
@@ -4277,27 +4274,26 @@ C D 0 - - - 0x00DA8A 03:9A7A: BD 27 03  LDA ram_игрок_X_hi,X
 C - - - - - 0x00DA8D 03:9A7D: F0 07     BEQ bra_9A86
 C - - - - - 0x00DA8F 03:9A7F: C9 03     CMP #$03
 C - - - - - 0x00DA91 03:9A81: F0 0D     BEQ bra_9A90
-C - - - - - 0x00DA93 03:9A83: 4C AD 9A  JMP loc_9AAD_RTS
+C - - - - - 0x00DA93 03:9A83: 4C AD 9A  RTS
 bra_9A86:
 C - - - - - 0x00DA96 03:9A86: BD 14 03  LDA ram_игрок_X_lo,X
 C - - - - - 0x00DA99 03:9A89: C9 C0     CMP #$C0
 C - - - - - 0x00DA9B 03:9A8B: 90 0D     BCC bra_9A9A
-C - - - - - 0x00DA9D 03:9A8D: 4C AD 9A  JMP loc_9AAD_RTS
+C - - - - - 0x00DA9D 03:9A8D: 4C AD 9A  RTS
 bra_9A90:
 C - - - - - 0x00DAA0 03:9A90: BD 14 03  LDA ram_игрок_X_lo,X
 C - - - - - 0x00DAA3 03:9A93: C9 40     CMP #$40
 C - - - - - 0x00DAA5 03:9A95: B0 0E     BCS bra_9AA5
-C - - - - - 0x00DAA7 03:9A97: 4C AD 9A  JMP loc_9AAD_RTS
+C - - - - - 0x00DAA7 03:9A97: 4C AD 9A  RTS
 bra_9A9A:
 C - - - - - 0x00DAAA 03:9A9A: AD 89 06  LDA ram_0689
 C - - - - - 0x00DAAD 03:9A9D: 09 E0     ORA #$E0
 C - - - - - 0x00DAAF 03:9A9F: 8D 89 06  STA ram_0689
-C - - - - - 0x00DAB2 03:9AA2: 4C AD 9A  JMP loc_9AAD_RTS
+C - - - - - 0x00DAB2 03:9AA2: 4C AD 9A  RTS
 bra_9AA5:
 C - - - - - 0x00DAB5 03:9AA5: AD 89 06  LDA ram_0689
 C - - - - - 0x00DAB8 03:9AA8: 09 0E     ORA #$0E
 C - - - - - 0x00DABA 03:9AAA: 8D 89 06  STA ram_0689
-loc_9AAD_RTS:
 C D 0 - - - 0x00DABD 03:9AAD: 60        RTS
 
 
@@ -4360,13 +4356,12 @@ C - - - - - 0x00DAF9 03:9AE9: D0 08     BNE bra_9AF3
 - - - - - - 0x00DAFB 03:9AEB: 8A        TXA
 - - - - - - 0x00DAFC 03:9AEC: 29 01     AND #$01
 - - - - - - 0x00DAFE 03:9AEE: F0 03     BEQ bra_9AF3
-- - - - - - 0x00DB00 03:9AF0: 4C F9 9A  JMP loc_9AF9_RTS
+- - - - - - 0x00DB00 03:9AF0: 4C F9 9A  RTS
 bra_9AF3:
 C - - - - - 0x00DB03 03:9AF3: A5 1C     LDA ram_001C
 C - - - - - 0x00DB05 03:9AF5: 29 44     AND #$44
 C - - - - - 0x00DB07 03:9AF7: D0 01     BNE bra_9AFA
 bra_9AF9_RTS:
-loc_9AF9_RTS:
 C D 0 - - - 0x00DB09 03:9AF9: 60        RTS
 bra_9AFA:
 C - - - - - 0x00DB0A 03:9AFA: A5 2C     LDA ram_002C
@@ -4406,15 +4401,14 @@ C - - - - - 0x00DB44 03:9B34: 2D 89 06  AND ram_0689
 C - - - - - 0x00DB47 03:9B37: F0 02     BEQ bra_9B3B_RTS
 C - - - - - 0x00DB49 03:9B39: 06 1C     ASL ram_001C
 bra_9B3B_RTS:
-loc_9B3B_RTS:
-C D 0 - - - 0x00DB4B 03:9B3B: 4C F9 9A  JMP loc_9AF9_RTS
+C D 0 - - - 0x00DB4B 03:9B3B: 4C F9 9A  RTS
 loc_9B3E:
 C D 0 - - - 0x00DB4E 03:9B3E: 06 1C     ASL ram_001C
 C - - - - - 0x00DB50 03:9B40: A5 1C     LDA ram_001C
 C - - - - - 0x00DB52 03:9B42: 2D 89 06  AND ram_0689
 C - - - - - 0x00DB55 03:9B45: F0 F4     BEQ bra_9B3B_RTS
 C - - - - - 0x00DB57 03:9B47: 46 1C     LSR ram_001C
-C - - - - - 0x00DB59 03:9B49: 4C 3B 9B  JMP loc_9B3B_RTS
+C - - - - - 0x00DB59 03:9B49: 4C 3B 9B  RTS
 
 
 
@@ -5325,14 +5319,13 @@ C - - - - - 0x00E077 03:A067: 29 0F     AND #$0F
 C - - - - - 0x00E079 03:A069: A8        TAY
 C - - - - - 0x00E07A 03:A06A: A9 02     LDA #$02
 C - - - - - 0x00E07C 03:A06C: 99 5C 06  STA ram_интеллект_бота,Y
-C - - - - - 0x00E07F 03:A06F: 4C 7D A0  JMP loc_A07D_RTS
+C - - - - - 0x00E07F 03:A06F: 4C 7D A0  RTS
 bra_A072:
 C - - - - - 0x00E082 03:A072: BD 7A 06  LDA ram_направление_паса_команды,X
 C - - - - - 0x00E085 03:A075: 29 0F     AND #$0F
 C - - - - - 0x00E087 03:A077: A8        TAY
 C - - - - - 0x00E088 03:A078: A9 06     LDA #$06
 C - - - - - 0x00E08A 03:A07A: 99 5C 06  STA ram_интеллект_бота,Y
-loc_A07D_RTS:
 C D 1 - - - 0x00E08D 03:A07D: 60        RTS
 
 
@@ -5944,7 +5937,7 @@ C - - - - - 0x00E49D 03:A48D: C9 0A     CMP #$0A
 C - - - - - 0x00E49F 03:A48F: F0 07     BEQ bra_A498
 C - - - - - 0x00E4A1 03:A491: C9 0B     CMP #$0B
 C - - - - - 0x00E4A3 03:A493: F0 03     BEQ bra_A498
-C - - - - - 0x00E4A5 03:A495: 4C A7 A4  JMP loc_A4A7_RTS
+C - - - - - 0x00E4A5 03:A495: 4C A7 A4  RTS
 bra_A498:
 C - - - - - 0x00E4A8 03:A498: BD 30 05  LDA ram_расстановка_команды,X
 C - - - - - 0x00E4AB 03:A49B: 29 FC     AND #$FC
@@ -5953,7 +5946,6 @@ C - - - - - 0x00E4AF 03:A49F: 9D 30 05  STA ram_расстановка_кома�
 C - - - - - 0x00E4B2 03:A4A2: 8A        TXA
 C - - - - - 0x00E4B3 03:A4A3: A8        TAY
 C - - - - - 0x00E4B4 03:A4A4: 20 2D B1  JSR sub_B12D
-loc_A4A7_RTS:
 C D 1 - - - 0x00E4B7 03:A4A7: 60        RTS
 
 
@@ -5979,7 +5971,7 @@ bra_A4C9:
 C - - - - - 0x00E4D9 03:A4C9: A9 09     LDA #$09
 loc_A4CB:
 C D 1 - - - 0x00E4DB 03:A4CB: 99 5C 06  STA ram_интеллект_бота,Y
-C - - - - - 0x00E4DE 03:A4CE: 4C 1F A5  JMP loc_A51F_RTS
+C - - - - - 0x00E4DE 03:A4CE: 4C 1F A5  RTS
 bra_A4D1:
 C - - - - - 0x00E4E1 03:A4D1: A4 2C     LDY ram_002C
 C - - - - - 0x00E4E3 03:A4D3: B9 FD 04  LDA ram_защита_поведение,Y
@@ -6020,7 +6012,6 @@ C - - - - - 0x00E526 03:A516: F0 D8     BEQ bra_A4F0
 loc_A51A:
 C D 1 - - - 0x00E52A 03:A51A: A4 2C     LDY ram_002C
 C - - - - - 0x00E52C 03:A51C: 99 5C 06  STA ram_интеллект_бота,Y
-loc_A51F_RTS:
 C D 1 - - - 0x00E52F 03:A51F: 60        RTS
 
 
@@ -10795,7 +10786,7 @@ C - - - - - 0x00F9D6 03:B9C6: A4 1D     LDY ram_001D
 C - - - - - 0x00F9D8 03:B9C8: 99 80 06  STA ram_0680,Y
 C - - - - - 0x00F9DB 03:B9CB: A9 20     LDA #$20
 C - - - - - 0x00F9DD 03:B9CD: 99 84 06  STA ram_0684,Y
-C - - - - - 0x00F9E0 03:B9D0: 4C ED B9  JMP loc_B9ED_RTS
+C - - - - - 0x00F9E0 03:B9D0: 4C ED B9  RTS
 bra_B9D3:
 C - - - - - 0x00F9E3 03:B9D3: B9 7A 06  LDA ram_направление_паса_команды,Y
 C - - - - - 0x00F9E6 03:B9D6: 29 0F     AND #$0F
@@ -10809,7 +10800,6 @@ C - - - - - 0x00F9F5 03:B9E5: 99 82 06  STA ram_0682,Y
 C - - - - - 0x00F9F8 03:B9E8: A9 20     LDA #$20
 C - - - - - 0x00F9FA 03:B9EA: 99 84 06  STA ram_0684,Y
 bra_B9ED_RTS:
-loc_B9ED_RTS:
 C D 1 - - - 0x00F9FD 03:B9ED: 60        RTS
 
 
@@ -11252,37 +11242,36 @@ C - - - - - 0x00FCB5 03:BCA5: F0 3F     BEQ bra_BCE6
 C - - - - - 0x00FCB7 03:BCA7: A5 1D     LDA ram_001D
 C - - - - - 0x00FCB9 03:BCA9: 8D 40 01  STA ram_0140
 C - - - - - 0x00FCBC 03:BCAC: 8D 41 01  STA ram_0141
-C - - - - - 0x00FCBF 03:BCAF: 4C F0 BC  JMP loc_BCF0_RTS
+C - - - - - 0x00FCBF 03:BCAF: 4C F0 BC  RTS
 bra_BCB2:
 C - - - - - 0x00FCC2 03:BCB2: A5 1C     LDA ram_001C
 C - - - - - 0x00FCC4 03:BCB4: 8D 40 01  STA ram_0140
 C - - - - - 0x00FCC7 03:BCB7: A5 1D     LDA ram_001D
 C - - - - - 0x00FCC9 03:BCB9: 8D 41 01  STA ram_0141
-C - - - - - 0x00FCCC 03:BCBC: 4C F0 BC  JMP loc_BCF0_RTS
+C - - - - - 0x00FCCC 03:BCBC: 4C F0 BC  RTS
 bra_BCBF:
 C - - - - - 0x00FCCF 03:BCBF: A5 1C     LDA ram_001C
 C - - - - - 0x00FCD1 03:BCC1: 8D 40 01  STA ram_0140
 C - - - - - 0x00FCD4 03:BCC4: A9 00     LDA #$00
 C - - - - - 0x00FCD6 03:BCC6: 8D 41 01  STA ram_0141
-C - - - - - 0x00FCD9 03:BCC9: 4C F0 BC  JMP loc_BCF0_RTS
+C - - - - - 0x00FCD9 03:BCC9: 4C F0 BC  RTS
 bra_BCCC:
 C - - - - - 0x00FCDC 03:BCCC: A5 1C     LDA ram_001C
 C - - - - - 0x00FCDE 03:BCCE: 8D 40 01  STA ram_0140
 C - - - - - 0x00FCE1 03:BCD1: A5 1C     LDA ram_001C
 C - - - - - 0x00FCE3 03:BCD3: 8D 41 01  STA ram_0141
-C - - - - - 0x00FCE6 03:BCD6: 4C F0 BC  JMP loc_BCF0_RTS
+C - - - - - 0x00FCE6 03:BCD6: 4C F0 BC  RTS
 bra_BCD9:
 - - - - - - 0x00FCE9 03:BCD9: A5 1D     LDA ram_001D
 - - - - - - 0x00FCEB 03:BCDB: 8D 40 01  STA ram_0140
 - - - - - - 0x00FCEE 03:BCDE: A5 1D     LDA ram_001D
 - - - - - - 0x00FCF0 03:BCE0: 8D 41 01  STA ram_0141
-- - - - - - 0x00FCF3 03:BCE3: 4C F0 BC  JMP loc_BCF0_RTS
+- - - - - - 0x00FCF3 03:BCE3: 4C F0 BC  RTS
 bra_BCE6:
 C - - - - - 0x00FCF6 03:BCE6: A5 1D     LDA ram_001D
 C - - - - - 0x00FCF8 03:BCE8: 8D 40 01  STA ram_0140
 C - - - - - 0x00FCFB 03:BCEB: A9 00     LDA #$00
 C - - - - - 0x00FCFD 03:BCED: 8D 41 01  STA ram_0141
-loc_BCF0_RTS:
 C D 1 - - - 0x00FD00 03:BCF0: 60        RTS
 
 
@@ -11500,7 +11489,7 @@ loc_BE73:
 C D 1 - - - 0x00FE83 03:BE73: A9 00     LDA #$00
 C - - - - - 0x00FE85 03:BE75: 8D F2 00  STA ram_копия_камеры_Y_lo
 C - - - - - 0x00FE88 03:BE78: 8D F3 00  STA ram_копия_камеры_Y_hi
-C - - - - - 0x00FE8B 03:BE7B: 4C D3 BE  JMP loc_BED3_RTS
+C - - - - - 0x00FE8B 03:BE7B: 4C D3 BE  RTS
 bra_BE7E:
 C - - - - - 0x00FE8E 03:BE7E: AD F1 00  LDA ram_копия_камеры_X_hi
 C - - - - - 0x00FE91 03:BE81: C9 01     CMP #$01
@@ -11542,7 +11531,6 @@ C - - - - - 0x00FEDB 03:BECB: 8D F2 00  STA ram_копия_камеры_Y_lo
 C - - - - - 0x00FEDE 03:BECE: A9 00     LDA #$00
 C - - - - - 0x00FEE0 03:BED0: 8D F3 00  STA ram_копия_камеры_Y_hi
 bra_BED3_RTS:
-loc_BED3_RTS:
 C D 1 - - - 0x00FEE3 03:BED3: 60        RTS
 
 
