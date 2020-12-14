@@ -8671,7 +8671,7 @@ C - - - - - 0x01F1EC 07:F1DC: 8D 07 20  STA $2007
 C - - - - - 0x01F1EF 07:F1DF: C8        INY
 C - - - - - 0x01F1F0 07:F1E0: CA        DEX
 C - - - - - 0x01F1F1 07:F1E1: 10 F7     BPL bra_F1DA
-C - - - - - 0x01F1F3 07:F1E3: 4C 3A F3  JMP loc_F33A
+C - - - - - 0x01F1F3 07:F1E3: 4C 3A F3  JMP loc_F33A_запись_флага_гола
 
 
 
@@ -8723,7 +8723,7 @@ C - - - - - 0x01F24E 07:F23E: 8D 07 20  STA $2007
 C - - - - - 0x01F251 07:F241: C8        INY
 C - - - - - 0x01F252 07:F242: CA        DEX
 C - - - - - 0x01F253 07:F243: 10 F7     BPL bra_F23C
-C - - - - - 0x01F255 07:F245: 4C 3A F3  JMP loc_F33A
+C - - - - - 0x01F255 07:F245: 4C 3A F3  JMP loc_F33A_запись_флага_гола
 
 
 
@@ -8871,7 +8871,7 @@ C - - - - - 0x01F2EF 07:F2DF: 8D 07 20  STA $2007
 C - - - - - 0x01F2F2 07:F2E2: E8        INX
 C - - - - - 0x01F2F3 07:F2E3: E0 09     CPX #$09
 C - - - - - 0x01F2F5 07:F2E5: D0 F5     BNE bra_F2DC
-C - - - - - 0x01F2F7 07:F2E7: 4C 3A F3  JMP loc_F33A
+C - - - - - 0x01F2F7 07:F2E7: 4C 3A F3  JMP loc_F33A_запись_флага_гола
 
 
 
@@ -8903,7 +8903,7 @@ C - - - - - 0x01F32D 07:F31D: 8D 07 20  STA $2007
 C - - - - - 0x01F330 07:F320: E8        INX
 C - - - - - 0x01F331 07:F321: E0 09     CPX #$09
 C - - - - - 0x01F333 07:F323: D0 F5     BNE bra_F31A
-C - - - - - 0x01F335 07:F325: 4C 3A F3  JMP loc_F33A
+C - - - - - 0x01F335 07:F325: 4C 3A F3  JMP loc_F33A_запись_флага_гола
 
 
 
@@ -8933,7 +8933,7 @@ tbl_F331:
 
 
 
-loc_F33A:
+loc_F33A_запись_флага_гола:
 C D 3 - - - 0x01F34A 07:F33A: A9 FF     LDA #$FF
 C - - - - - 0x01F34C 07:F33C: 8D F5 05  STA ram_флаг_гола
 C - - - - - 0x01F34F 07:F33F: 60        RTS
