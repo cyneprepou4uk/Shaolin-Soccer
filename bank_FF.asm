@@ -21,9 +21,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C027
-sub_0x01C027:
-C - - - - - 0x01C027 07:C017: 4C 71 EE  JMP loc_EE71
 .export sub_0x01C02A
 sub_0x01C02A:
 C - - - - - 0x01C02A 07:C01A: 4C CB EC  JMP loc_ECCB
@@ -8326,7 +8323,8 @@ C - - - - - 0x01EE80 07:EE70: 60        RTS
 
 
 
-loc_EE71:
+.export sub_0x01EE81
+sub_0x01EE81:
 sub_EE71:
 C D 3 - - - 0x01EE81 07:EE71: 48        PHA
 C - - - - - 0x01EE82 07:EE72: A5 4C     LDA ram_для_2000
