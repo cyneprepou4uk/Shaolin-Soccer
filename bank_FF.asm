@@ -597,6 +597,10 @@ sub_0x01C2EF:
 sub_C285:
 C - - - - - 0x01C295 07:C285: A9 1B     LDA #$1B
 C - - - - - 0x01C297 07:C287: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
+.export sub_0x01C296
+sub_0x01C296:
+                                        LDA #$1C
+                                        JMP loc_C344_свап_prg_банка_80xx
 sub_C24E:
 C - - - - - 0x01C25E 07:C24E: A9 1E     LDA #$1E
 C - - - - - 0x01C260 07:C250: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx

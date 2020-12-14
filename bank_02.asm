@@ -10629,9 +10629,6 @@ off_A9D1_07:
 
 
 
-sub_AA2F:
-C - - - - - 0x00AA3F 02:AA2F: A9 1C     LDA #$1C
-C - - - - - 0x00AA41 02:AA31: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 sub_AA34:
 C - - - - - 0x00AA44 02:AA34: A9 06     LDA #$06
 C - - - - - 0x00AA46 02:AA36: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
@@ -11003,7 +11000,7 @@ C - - - - - 0x00ACB8 02:ACA8: 60        RTS
 ofs_ACA9_06:
 ofs_ACA9_09:
 C - - J - - 0x00ACB9 02:ACA9: 20 91 AD  JSR sub_AD91
-C - - - - - 0x00ACBC 02:ACAC: 20 2F AA  JSR sub_AA2F
+C - - - - - 0x00ACBC 02:ACAC: 20 2F AA  JSR sub_0x01C296
 C - - - - - 0x00ACBF 02:ACAF: 20 1B AA  JSR sub_0x01C2AE
 C - - - - - 0x00ACC2 02:ACB2: 20 5C C0  JSR sub_0x01D083
 C - - - - - 0x00ACC5 02:ACB5: 2C B2 05  BIT ram_флаг_яркости
@@ -11019,7 +11016,7 @@ ofs_ACBD_0A:
 C - - J - - 0x00ACCD 02:ACBD: 20 9B AE  JSR sub_AE9B
 C - - - - - 0x00ACD0 02:ACC0: 20 F8 AC  JSR sub_ACF8
 C - - - - - 0x00ACD3 02:ACC3: 20 20 AA  JSR sub_0x01C2BD
-C - - - - - 0x00ACD6 02:ACC6: 20 2F AA  JSR sub_AA2F
+C - - - - - 0x00ACD6 02:ACC6: 20 2F AA  JSR sub_0x01C296
 C - - - - - 0x00ACD9 02:ACC9: 20 1B AA  JSR sub_0x01C2AE
 C - - - - - 0x00ACDC 02:ACCC: 20 7C AE  JSR sub_AE7C
 C - - - - - 0x00ACDF 02:ACCF: 30 06     BMI bra_ACD7
