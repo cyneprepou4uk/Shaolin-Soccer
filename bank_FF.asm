@@ -8143,30 +8143,18 @@ sub_EE28:
 sub_EE35_вращение_рандома:
 .export sub_0x01EE45_вращение_рандома
 sub_0x01EE45_вращение_рандома:
-C D 3 - - - 0x01EE45 07:EE35: 8A        TXA
-C - - - - - 0x01EE46 07:EE36: 48        PHA
-C - - - - - 0x01EE47 07:EE37: 98        TYA
-C - - - - - 0x01EE48 07:EE38: 48        PHA
-C - - - - - 0x01EE49 07:EE39: A2 45     LDX #$45
-C - - - - - 0x01EE4B 07:EE3B: A0 02     LDY #$02
-C - - - - - 0x01EE4D 07:EE3D: B5 00     LDA ram_рандом - $45,X
+C - - - - - 0x01EE4D 07:EE3D: B5 00     LDA ram_рандом
 C - - - - - 0x01EE4F 07:EE3F: 29 02     AND #$02
 C - - - - - 0x01EE51 07:EE41: 85 0C     STA ram_000C
-C - - - - - 0x01EE53 07:EE43: B5 01     LDA ram_рандом - $45 + 1,X
+C - - - - - 0x01EE53 07:EE43: B5 01     LDA ram_рандом + 1
 C - - - - - 0x01EE55 07:EE45: 29 02     AND #$02
 C - - - - - 0x01EE57 07:EE47: 45 0C     EOR ram_000C
 C - - - - - 0x01EE59 07:EE49: 18        CLC
 C - - - - - 0x01EE5A 07:EE4A: F0 01     BEQ bra_EE4D
 C - - - - - 0x01EE5C 07:EE4C: 38        SEC
 bra_EE4D:
-C - - - - - 0x01EE5D 07:EE4D: 76 00     ROR ram_рандом - $45,X
-C - - - - - 0x01EE5F 07:EE4F: E8        INX
-C - - - - - 0x01EE60 07:EE50: 88        DEY
-C - - - - - 0x01EE61 07:EE51: D0 FA     BNE bra_EE4D
-C - - - - - 0x01EE63 07:EE53: 68        PLA
-C - - - - - 0x01EE64 07:EE54: A8        TAY
-C - - - - - 0x01EE65 07:EE55: 68        PLA
-C - - - - - 0x01EE66 07:EE56: AA        TAX
+C - - - - - 0x01EE5D 07:EE4D: 76 00     ROR ram_рандом
+                                        ROR ram_рандом + 1
 C - - - - - 0x01EE67 07:EE57: A5 45     LDA ram_рандом
 C - - - - - 0x01EE69 07:EE59: 60        RTS
 
