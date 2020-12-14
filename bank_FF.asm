@@ -35,9 +35,6 @@ C D 2 - - - 0x01C015 07:C005: 4C 35 EE  JMP loc_EE35
 
 
 
-.export sub_0x01C057
-sub_0x01C057:
-C - - - - - 0x01C057 07:C047: 4C 36 D0  JMP loc_D036
 .export sub_0x01C05A
 sub_0x01C05A:
 C - - - - - 0x01C05A 07:C04A: 4C 62 D0  JMP loc_D062
@@ -2637,7 +2634,8 @@ C - - - - - 0x01D045 07:D035: 60        RTS
 
 
 
-loc_D036:
+.export sub_0x01D046
+sub_0x01D046:
 sub_D036:
 C D 2 - - - 0x01D046 07:D036: A9 40     LDA #$40
 C - - - - - 0x01D048 07:D038: 8D B4 05  STA ram_текущая_яркость

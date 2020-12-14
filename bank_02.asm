@@ -10789,7 +10789,7 @@ C - - - - - 0x00AB40 02:AB30: 8D AC 05  STA ram_номер_палитры_фон
 C - - - - - 0x00AB43 02:AB33: EE AE 05  INC ram_номер_палитры_спрайтов
 C - - - - - 0x00AB46 02:AB36: EE AF 05  INC ram_номер_палитры_спрайтов + 1
 C - - - - - 0x00AB49 02:AB39: EE B0 05  INC ram_номер_палитры_спрайтов + 2
-C - - - - - 0x00AB4C 02:AB3C: 20 47 C0  JSR sub_0x01C057
+C - - - - - 0x00AB4C 02:AB3C: 20 47 C0  JSR sub_0x01D046
 bra_AB3F_RTS:
 C - - - - - 0x00AB4F 02:AB3F: 60        RTS
 
