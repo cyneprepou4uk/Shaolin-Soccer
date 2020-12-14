@@ -886,15 +886,12 @@ tbl_C4A3:
 ofs_C4AB_00:
 C - - J - - 0x01C4BB 07:C4AB: 20 06 C5  JSR sub_C506
                                         RTS
-
 ofs_C4B1_01:
 C - - J - - 0x01C4C1 07:C4B1: 20 5D C2  JSR sub_C25D
                                         RTS
-
 ofs_C4B7_02:
 C - - J - - 0x01C4C7 07:C4B7: 20 DA C2  JSR sub_C2DA
                                         RTS
-
 ofs_C4BD_03:
 - - - - - - 0x01C4CD 07:C4BD: 20 6C C2  JSR sub_C26C
                                         RTS
