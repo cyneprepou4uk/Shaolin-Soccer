@@ -13876,7 +13876,7 @@ tbl_BC5F_звук:
 
 sub_BC62:
 C - - - - - 0x013C72 04:BC62: AC 10 05  LDY ram_подтип_супера
-C - - - - - 0x013C75 04:BC65: B9 5E BD  LDA tbl_BD5E,Y
+C - - - - - 0x013C75 04:BC65: B9 5E BD  LDA tbl_BD5E_таймер,Y
 C - - - - - 0x013C78 04:BC68: 10 05     BPL bra_BC6F
 C - - - - - 0x013C7A 04:BC6A: 20 7F BC  JSR sub_BC7F
 C - - - - - 0x013C7D 04:BC6D: A5 2C     LDA ram_002C
@@ -13889,11 +13889,10 @@ C - - - - - 0x013C87 04:BC77: A9 80     LDA #$39
 C - - - - - 0x013C89 04:BC79: 9D 3C 04  STA ram_игрок_гравитация_lo,X
 C - - - - - 0x013C8C 04:BC7C: 60        RTS
 
+
+
 tbl_BC7D:
-- D 1 - - - 0x013C8D 04:BC7D: B0        .byte $B0   ; 
-- D 1 - - - 0x013C8E 04:BC7E: 00        .byte $00   ; 
-
-
+- D 1 - - - 0x013C8D 04:BC7D: B0 00     .word $00B0
 
 sub_BC7F:
 C - - - - - 0x013C8F 04:BC7F: AD 7D BC  LDA tbl_BC7D
@@ -14077,7 +14076,7 @@ tbl_BD4B_Z_скорость:
 
 
 
-tbl_BD5E:
+tbl_BD5E_таймер:
 - D 1 - - - 0x013D6E 04:BD5E: 10        .byte $10   ; 
 - D 1 - - - 0x013D6F 04:BD5F: 18        .byte $18   ; 
 - D 1 - - - 0x013D70 04:BD60: FF        .byte $FF   ; 
