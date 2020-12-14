@@ -746,6 +746,9 @@ C - - - - - 0x01C32B 07:C31B: A9 00     LDA #$00
 C - - - - - 0x01C32D 07:C31D: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01C330 07:C320: 20 86 AE  JSR sub_0x002E96
 C - - - - - 0x01C333 07:C323: 4C 68 C3  JMP loc_C368_вернуть_банк_prg
+
+
+
 sub_C326:
 C - - - - - 0x01C336 07:C326: AD FF BF  LDA con_bank_id
 C - - - - - 0x01C339 07:C329: 48        PHA
