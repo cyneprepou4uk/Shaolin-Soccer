@@ -10368,7 +10368,7 @@ tbl_FBAA:
 
 
 
-loc_FBBB:
+vec_FBBB_NMI:
 C D 3 - - - 0x01FBCB 07:FBBB: 24 4F     BIT ram_флаг_NMI
 C - - - - - 0x01FBCD 07:FBBD: 30 04     BMI bra_FBC3
 C - - - - - 0x01FBCF 07:FBBF: 50 0A     BVC bra_FBCB
@@ -10521,7 +10521,7 @@ C - - - - - 0x01FCE8 07:FCD8: 40        RTI
 
 
 
-loc_FCD9:
+vec_FCD9_IRQ:
 C D 3 - - - 0x01FCE9 07:FCD9: 48        PHA
 C - - - - - 0x01FCEA 07:FCDA: 8A        TXA
 C - - - - - 0x01FCEB 07:FCDB: 48        PHA
@@ -10613,7 +10613,7 @@ C - - - - - 0x01FD9C 07:FD8C: 4C 0A FD  JMP loc_FD0A
 
 
 
-loc_FD8F:
+vec_FD8F_RESET:
 C D 3 - - - 0x01FD9F 07:FD8F: 78        SEI
 C - - - - - 0x01FDA0 07:FD90: D8        CLD
 C - - - - - 0x01FDA1 07:FD91: A9 08     LDA #$08
@@ -10688,16 +10688,10 @@ C - - - - - 0x01FE1D 07:FE0D: 4C D4 C3  JMP loc_C3D4
 
 
 
-ofs_FFF1:
-C - - - - - 0x020001 07:FFF1: 4C BB FB  JMP loc_FBBB
-ofs_FFF4:
-C - - - - - 0x020004 07:FFF4: 4C 8F FD  JMP loc_FD8F
-ofs_FFF7:
-C - - - - - 0x020007 07:FFF7: 4C D9 FC  JMP loc_FCD9
 .segment "VECTORS"
-- D 3 - - - 0x02000A 07:FFFA: F1 FF     .word ofs_FFF1
-- D 3 - - - 0x02000C 07:FFFC: F4 FF     .word ofs_FFF4
-- D 3 - - - 0x02000E 07:FFFE: F7 FF     .word ofs_FFF7
+- D 3 - - - 0x02000A 07:FFFA: F1 FF     .word vec_FBBB_NMI
+- D 3 - - - 0x02000C 07:FFFC: F4 FF     .word vec_FD8F_RESET
+- D 3 - - - 0x02000E 07:FFFE: F7 FF     .word vec_FCD9_IRQ
 
 
 
