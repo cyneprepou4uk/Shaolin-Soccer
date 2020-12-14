@@ -8416,9 +8416,9 @@ bra_EF94:
 
 
 
-.export sub_0x01EFBD
-sub_0x01EFBD:
-sub_EFAD:
+.export sub_0x01EFBD_запись_буферов_в_ppu
+sub_0x01EFBD_запись_буферов_в_ppu:
+sub_EFAD_запись_буферов_в_ppu:
 C D 3 - - - 0x01EFBD 07:EFAD: A5 58     LDA ram_номер_экрана
 C - - - - - 0x01EFBF 07:EFAF: D0 34     BNE bra_EFE5
 C - - - - - 0x01EFC1 07:EFB1: A5 59     LDA ram_подтип_экрана
@@ -10406,7 +10406,7 @@ C - - - - - 0x01FBFD 07:FBED: 48        PHA
 C - - - - - 0x01FBFE 07:FBEE: A5 0D     LDA ram_000D
 C - - - - - 0x01FC00 07:FBF0: 48        PHA
 C - - - - - 0x01FC01 07:FBF1: 20 5A EE  JSR sub_EE5A
-C - - - - - 0x01FC04 07:FBF4: 20 AD EF  JSR sub_EFAD
+C - - - - - 0x01FC04 07:FBF4: 20 AD EF  JSR sub_EFAD_запись_буферов_в_ppu
 C - - - - - 0x01FC07 07:FBF7: A2 00     LDX #$00
 C - - - - - 0x01FC09 07:FBF9: 8E 00 80  STX $8000
 C - - - - - 0x01FC0C 07:FBFC: AD BC 05  LDA ram_банк_фона
