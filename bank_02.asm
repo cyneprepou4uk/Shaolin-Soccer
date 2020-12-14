@@ -10629,9 +10629,6 @@ off_A9D1_07:
 
 
 
-sub_AA39:
-C - - - - - 0x00AA49 02:AA39: A9 07     LDA #$07
-C - - - - - 0x00AA4B 02:AA3B: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
 sub_AA3E:
 C - - - - - 0x00AA4E 02:AA3E: A9 08     LDA #$08
 C - - - - - 0x00AA50 02:AA40: 4C 50 C0  JMP loc_0x01C354_свап_prg_банка_80xx
@@ -11732,7 +11729,7 @@ ofs_B0BC_0C:
 C - - J - - 0x00B0CC 02:B0BC: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x00B0CF 02:B0BF: 30 06     BMI bra_B0C7
 C - - - - - 0x00B0D1 02:B0C1: 20 82 B2  JSR sub_B282
-C - - - - - 0x00B0D4 02:B0C4: 20 39 AA  JSR sub_AA39
+C - - - - - 0x00B0D4 02:B0C4: 20 39 AA  JSR sub_0x01C25D
 bra_B0C7:
 C - - - - - 0x00B0D7 02:B0C7: A9 04     LDA #$04
 loc_B0C9:
@@ -11749,7 +11746,7 @@ ofs_B0D9_02:
 C - - J - - 0x00B0E9 02:B0D9: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x00B0EC 02:B0DC: 30 06     BMI bra_B0E4
 C - - - - - 0x00B0EE 02:B0DE: 20 82 B2  JSR sub_B282
-C - - - - - 0x00B0F1 02:B0E1: 20 39 AA  JSR sub_AA39
+C - - - - - 0x00B0F1 02:B0E1: 20 39 AA  JSR sub_0x01C25D
 bra_B0E4:
 C - - - - - 0x00B0F4 02:B0E4: A9 03     LDA #$03
 C - - - - - 0x00B0F6 02:B0E6: 4C C9 B0  JMP loc_B0C9
@@ -11762,7 +11759,7 @@ ofs_B0E9_0D:
 C - - J - - 0x00B0F9 02:B0E9: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x00B0FC 02:B0EC: 30 09     BMI bra_B0F7
 C - - - - - 0x00B0FE 02:B0EE: 20 82 B2  JSR sub_B282
-C - - - - - 0x00B101 02:B0F1: 20 39 AA  JSR sub_AA39
+C - - - - - 0x00B101 02:B0F1: 20 39 AA  JSR sub_0x01C25D
 C - - - - - 0x00B104 02:B0F4: 20 48 AA  JSR sub_AA48
 bra_B0F7:
 C - - - - - 0x00B107 02:B0F7: A9 03     LDA #$03
@@ -11852,7 +11849,7 @@ ofs_B174_03:
 C - - J - - 0x00B184 02:B174: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x00B187 02:B177: 30 06     BMI bra_B17F
 C - - - - - 0x00B189 02:B179: 20 82 B2  JSR sub_B282
-C - - - - - 0x00B18C 02:B17C: 20 39 AA  JSR sub_AA39
+C - - - - - 0x00B18C 02:B17C: 20 39 AA  JSR sub_0x01C25D
 bra_B17F:
 C - - - - - 0x00B18F 02:B17F: A9 02     LDA #$02
 C - - - - - 0x00B191 02:B181: 20 9A B2  JSR sub_B29A
