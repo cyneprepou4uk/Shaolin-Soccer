@@ -5126,10 +5126,6 @@ tbl_A1E1:
 - D 1 - - - 0x01A1F7 06:A1E7: F8        .byte $F8   ; 
 
 
-; bzk мусор
-- - - - - - 0x01A1F8 06:A1E8: 60        RTS
-
-
 
 sub_A1E9:
 C - - - - - 0x01A1F9 06:A1E9: BD 2E 04  LDA ram_игрок_spd_Z_hi,X
