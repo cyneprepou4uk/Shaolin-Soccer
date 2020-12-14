@@ -2392,6 +2392,11 @@ C - - - - - 0x01CF0E 07:CEFE: C9 F1     CMP #$F1
 C - - - - - 0x01CF10 07:CF00: F0 53     BEQ bra_CF55
 C - - - - - 0x01CF12 07:CF02: C9 F2     CMP #$F2
 C - - - - - 0x01CF14 07:CF04: F0 69     BEQ bra_CF6F
+; 30fps утроение времени анимации (временное решение)
+                                        STA $0190
+                                        ASL
+                                        CLC
+                                        ADC $0190
 C - - - - - 0x01CF16 07:CF06: 85 1C     STA ram_001C
 C - - - - - 0x01CF18 07:CF08: FE 87 00  INC ram_таймер_кадра_анимации,X
 C - - - - - 0x01CF1B 07:CF0B: BD 87 00  LDA ram_таймер_кадра_анимации,X
