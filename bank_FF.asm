@@ -9225,7 +9225,7 @@ C - - - - - 0x01F4E1 07:F4D1: D0 08     BNE bra_F4DB
 C - - - - - 0x01F4E3 07:F4D3: 85 1C     STA ram_001C
 C - - - - - 0x01F4E5 07:F4D5: 85 1D     STA ram_001D
 C - - - - - 0x01F4E7 07:F4D7: 85 1E     STA ram_001E
-C - - - - - 0x01F4E9 07:F4D9: F0 59     BEQ bra_F534
+C - - - - - 0x01F4E9 07:F4D9: F0 59     BEQ bra_F534_закончить
 bra_F4DB:
 C - - - - - 0x01F4EB 07:F4DB: A2 18     LDX #$18
 C - - - - - 0x01F4ED 07:F4DD: 18        CLC
@@ -9234,7 +9234,7 @@ C - - - - - 0x01F4EE 07:F4DE: 26 1C     ROL ram_001C
 C - - - - - 0x01F4F0 07:F4E0: 26 1D     ROL ram_001D
 C - - - - - 0x01F4F2 07:F4E2: 26 1E     ROL ram_001E
 C - - - - - 0x01F4F4 07:F4E4: CA        DEX
-C - - - - - 0x01F4F5 07:F4E5: F0 4D     BEQ bra_F534
+C - - - - - 0x01F4F5 07:F4E5: F0 4D     BEQ bra_F534_закончить
 C - - - - - 0x01F4F7 07:F4E7: 90 F5     BCC bra_F4DE
 C - - - - - 0x01F4F9 07:F4E9: A5 1C     LDA ram_001C
 C - - - - - 0x01F4FB 07:F4EB: 09 01     ORA #$01
@@ -9242,7 +9242,7 @@ C - - - - - 0x01F4FD 07:F4ED: 85 1C     STA ram_001C
 C - - - - - 0x01F4FF 07:F4EF: E8        INX
 C - - - - - 0x01F500 07:F4F0: 86 2B     STX ram_002B
 C - - - - - 0x01F502 07:F4F2: B0 07     BCS bra_F4FB
-bra_F4F4:
+bra_F4F4_цикл:
 C - - - - - 0x01F504 07:F4F4: 38        SEC
 C - - - - - 0x01F505 07:F4F5: 26 1C     ROL ram_001C
 C - - - - - 0x01F507 07:F4F7: 26 1D     ROL ram_001D
@@ -9277,8 +9277,8 @@ C - - - - - 0x01F53C 07:F52C: 85 21     STA ram_0021
 C - - - - - 0x01F53E 07:F52E: C6 1C     DEC ram_001C
 bra_F530:
 C - - - - - 0x01F540 07:F530: C6 2B     DEC ram_002B
-C - - - - - 0x01F542 07:F532: D0 C0     BNE bra_F4F4
-bra_F534:
+C - - - - - 0x01F542 07:F532: D0 C0     BNE bra_F4F4_цикл
+bra_F534_закончить:
 C - - - - - 0x01F544 07:F534: 68        PLA
 C - - - - - 0x01F545 07:F535: A8        TAY
 C - - - - - 0x01F546 07:F536: 68        PLA
