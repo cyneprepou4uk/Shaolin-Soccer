@@ -11573,13 +11573,13 @@ C D 1 - - - 0x012FA4 04:AF94: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x012FA7 04:AF97: B9 59 04  LDA ram_игрок_номер_движения,Y
 C - - - - - 0x012FAA 04:AF9A: 29 7F     AND #$7F
 C - - - - - 0x012FAC 04:AF9C: A8        TAY
-C - - - - - 0x012FAD 04:AF9D: B9 7C B0  LDA tbl_B07C,Y
+C - - - - - 0x012FAD 04:AF9D: B9 7C B0  LDA tbl_B07C_индекс,Y
 C - - - - - 0x012FB0 04:AFA0: 10 15     BPL bra_AFB7
 C - - - - - 0x012FB2 04:AFA2: 0A        ASL
 C - - - - - 0x012FB3 04:AFA3: A8        TAY
-C - - - - - 0x012FB4 04:AFA4: B9 D8 B0  LDA tbl_B0D8,Y
+C - - - - - 0x012FB4 04:AFA4: B9 D8 B0  LDA tbl_B0D8_второй_индекс,Y
 C - - - - - 0x012FB7 04:AFA7: 85 2C     STA ram_002C
-C - - - - - 0x012FB9 04:AFA9: B9 D9 B0  LDA tbl_B0D8 + 1,Y
+C - - - - - 0x012FB9 04:AFA9: B9 D9 B0  LDA tbl_B0D8_второй_индекс + 1,Y
 C - - - - - 0x012FBC 04:AFAC: 85 2D     STA ram_002D
 C - - - - - 0x012FBE 04:AFAE: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x012FC1 04:AFB1: B9 6C 04  LDA ram_игрок_подтип_анимации,Y
@@ -11677,7 +11677,7 @@ C - - - - - 0x01308B 04:B07B: 60        RTS
 
 
 
-tbl_B07C:
+tbl_B07C_индекс:
 - - - - - - 0x01308C 04:B07C: 00        .byte $00   ; 
 - D 1 - - - 0x01308D 04:B07D: 00        .byte $00   ; 
 - D 1 - - - 0x01308E 04:B07E: 02        .byte $02   ; 
@@ -11773,7 +11773,7 @@ tbl_B07C:
 
 
 
-tbl_B0D8:
+tbl_B0D8_второй_индекс:
 - D 1 - - - 0x0130E8 04:B0D8: E0 B0     .word off_B0E0_00
 - D 1 - - - 0x0130EA 04:B0DA: E2 B0     .word off_B0E2_01
 - D 1 - - - 0x0130EC 04:B0DC: EA B0     .word off_B0EA_02
