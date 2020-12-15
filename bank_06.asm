@@ -1881,7 +1881,7 @@ C - - - - - 0x018CAC 06:8C9C: 60        RTS
 
 
 
-sub_8C9D:
+sub_8C9D_обработка_номера_движения_мяча:
 C - - - - - 0x018CAD 06:8C9D: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x018CB0 06:8CA0: 0A        ASL
 C - - - - - 0x018CB1 06:8CA1: A8        TAY
@@ -1912,7 +1912,7 @@ tbl_8CAF:
 - D 0 - - - 0x018CE1 06:8CD1: 21 8E     .word ofs_8E21_11
 - D 0 - - - 0x018CE3 06:8CD3: 50 8E     .word ofs_8E50_12
 - D 0 - - - 0x018CE5 06:8CD5: 55 8D     .word ofs_8D55_13
-- D 0 - - - 0x018CE7 06:8CD7: 47 91     .word ofs_9147_14
+- D 0 - - - 0x018CE7 06:8CD7: 47 91     .word ofs_9147_14_игрок_владеет_мячом_и_бьет_по_нему
 - D 0 - - - 0x018CE9 06:8CD9: 8D 93     .word ofs_938D_15
 - - - - - - 0x018CEB 06:8CDB: E2 8C     .word ofs_8CE2_16
 - D 0 - - - 0x018CED 06:8CDD: 6B 92     .word ofs_926B_17
@@ -2487,7 +2487,7 @@ C - - - - - 0x019156 06:9146: 60        RTS
 
 
 
-ofs_9147_14:
+ofs_9147_14_игрок_владеет_мячом_и_бьет_по_нему:
 C - - J - - 0x019157 06:9147: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x01915A 06:914A: 10 03     BPL bra_914F
 C - - - - - 0x01915C 06:914C: 4C 1D 92  JMP loc_921D
@@ -10319,7 +10319,7 @@ C - - - - - 0x01BD93 06:BD83: E0 0C     CPX #$0C
 C - - - - - 0x01BD95 06:BD85: 90 F8     BCC bra_BD7F
 C - - - - - 0x01BD97 06:BD87: A2 0C     LDX #$0C
 C - - - - - 0x01BD99 06:BD89: 20 0B AB  JSR sub_AB0B
-C - - - - - 0x01BD9C 06:BD8C: 20 9D 8C  JSR sub_8C9D
+C - - - - - 0x01BD9C 06:BD8C: 20 9D 8C  JSR sub_8C9D_обработка_номера_движения_мяча
 C - - - - - 0x01BD9F 06:BD8F: 20 09 96  JSR sub_9609
 C - - - - - 0x01BDA2 06:BD92: 20 C5 B8  JSR sub_B8C5
 C - - - - - 0x01BDA5 06:BD95: AD 92 04  LDA ram_мяч_состояние
@@ -10368,7 +10368,7 @@ C - - - - - 0x01BDF7 06:BDE7: 20 8C EB  JSR sub_0x01EB9C
 C - - - - - 0x01BDFA 06:BDEA: 20 C8 AA  JSR sub_AAC8
 C - - - - - 0x01BDFD 06:BDED: A2 0C     LDX #$0C
 C - - - - - 0x01BDFF 06:BDEF: 20 0B AB  JSR sub_AB0B
-C - - - - - 0x01BE02 06:BDF2: 20 9D 8C  JSR sub_8C9D
+C - - - - - 0x01BE02 06:BDF2: 20 9D 8C  JSR sub_8C9D_обработка_номера_движения_мяча
 C - - - - - 0x01BE05 06:BDF5: 20 52 AB  JSR sub_AB52
 C - - - - - 0x01BE08 06:BDF8: 20 8C EB  JSR sub_0x01EB9C
 C - - - - - 0x01BE0B 06:BDFB: 60        RTS
@@ -10396,7 +10396,7 @@ C - - - - - 0x01BE2E 06:BE1E: 90 0E     BCC bra_BE2E
 C - - - - - 0x01BE30 06:BE20: A9 00     LDA #$00
 C - - - - - 0x01BE32 06:BE22: 8D E2 05  STA ram_таймер_катсцены
 C - - - - - 0x01BE35 06:BE25: 20 0B AB  JSR sub_AB0B
-C - - - - - 0x01BE38 06:BE28: 20 9D 8C  JSR sub_8C9D
+C - - - - - 0x01BE38 06:BE28: 20 9D 8C  JSR sub_8C9D_обработка_номера_движения_мяча
 C - - - - - 0x01BE3B 06:BE2B: 20 52 AB  JSR sub_AB52
 bra_BE2E:
 C - - - - - 0x01BE3E 06:BE2E: 20 8C EB  JSR sub_0x01EB9C
