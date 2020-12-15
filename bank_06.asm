@@ -2561,7 +2561,8 @@ C - - - - - 0x019200 06:91F0: E5 1D     SBC ram_temp_hi
 C - - - - - 0x019202 06:91F2: 9D 2E 04  STA ram_игрок_spd_Z_hi,X
 C - - - - - 0x019205 06:91F5: A9 00     LDA #$00
 C - - - - - 0x019207 06:91F7: 9D 4A 04  STA ram_игрок_гравитация_hi,X
-C - - - - - 0x01920A 06:91FA: A9 80     LDA #$80
+; 30fps гравитация мяча уменьшена в 2.25 раза
+C - - - - - 0x01920A 06:91FA: A9 80     LDA #$39
 C - - - - - 0x01920C 06:91FC: 9D 3C 04  STA ram_игрок_гравитация_lo,X
 C - - - - - 0x01920F 06:91FF: A5 1E     LDA ram_copy_X_lo
 C - - - - - 0x019211 06:9201: 9D 14 03  STA ram_игрок_X_lo,X
@@ -2575,6 +2576,8 @@ C - - - - - 0x019223 06:9213: A5 22     LDA ram_copy_Z_lo
 C - - - - - 0x019225 06:9215: 9D 86 03  STA ram_игрок_Z_lo,X
 C - - - - - 0x019228 06:9218: A5 23     LDA ram_copy_Z_hi
 C - - - - - 0x01922A 06:921A: 9D 99 03  STA ram_игрок_Z_hi,X
+; 30fps скорости мяча уменьшены в 1.5 раза
+                                        JSR sub_9225_деление_X_Y_Z_скоростей_в_1_5_раза
 loc_921D:
 C D 0 - - - 0x01922D 06:921D: 20 42 96  JSR sub_9642
 C - - - - - 0x019230 06:9220: 20 95 9B  JSR sub_9B95
@@ -2590,6 +2593,134 @@ sub_9224_деление_скоростей_на_8:
     DEY
     BNE @цикл
     RTS
+    
+sub_9225_деление_X_Y_Z_скоростей_в_1_5_раза:
+; временные адреса 0190 (lo) и 0191 (hi)
+    LDA ram_игрок_spd_X_lo,X
+    STA $0190
+    LDA ram_игрок_spd_X_hi,X
+    STA $0191
+    JSR sub_деление
+    LDA $0190
+    STA ram_игрок_spd_X_lo,X
+    LDA $0191
+    STA ram_игрок_spd_X_hi,X
+    
+    LDA ram_игрок_spd_Y_lo,X
+    STA $0190
+    LDA ram_игрок_spd_Y_hi,X
+    STA $0191
+    JSR sub_деление
+    LDA $0190
+    STA ram_игрок_spd_Y_lo,X
+    LDA $0191
+    STA ram_игрок_spd_Y_hi,X
+    
+    LDA ram_игрок_spd_Z_lo,X
+    STA $0190
+    LDA ram_игрок_spd_Z_hi,X
+    STA $0191
+    JSR sub_деление
+    LDA $0190
+    STA ram_игрок_spd_Z_lo,X
+    LDA $0191
+    STA ram_игрок_spd_Z_hi,X
+    RTS
+    
+sub_деление:
+    LDA $0191
+    PHP     ; сохранение N, при необходимости инвертировать скорости до и после
+    BPL @пропуск_1
+    LDA $0190
+    EOR #$FF
+    CLC
+    ADC #$01
+    STA $0190
+    LDA $0191
+    EOR #$FF
+    ADC #$00
+    STA $0191
+@пропуск_1:
+    ASL $0190   ; умножение на 2, потом деление на 3
+    ROL $0191
+    LDA $0190
+    .byte $F3, $03  ; DVA #$03
+    STA $0190
+    LDA $0191
+    ASL
+    TAY
+    LDA tbl_скорости,Y
+    CLC
+    ADC $0190
+    STA $0190
+    LDA tbl_скорости + 1,Y
+    ADC #$00
+    STA $0191
+    PLP
+    BPL @пропуск_2
+    LDA $0190
+    EOR #$FF
+    CLC
+    ADC #$01
+    STA $0190
+    LDA $0191
+    EOR #$FF
+    ADC #$00
+    STA $0191
+@пропуск_2:
+    RTS
+    
+tbl_скорости:
+; с запасом до 3F на всякий случай
+    .word $0000   ; 00
+    .word $0055   ; 01
+    .word $00AA   ; 02
+    .word $0100   ; 03
+    .word $0155   ; 04
+    .word $01AA   ; 05
+    .word $0200   ; 06
+    .word $0255   ; 07
+    .word $02AA   ; 08
+    .word $0300   ; 09
+    .word $0355   ; 0A
+    .word $03AA   ; 0B
+    .word $0400   ; 0C
+    .word $0455   ; 0D
+    .word $04AA   ; 0E
+    .word $0500   ; 0F
+    .word $0555   ; 10
+    .word $05AA   ; 11
+    .word $0600   ; 12
+    .word $0655   ; 13
+    .word $06AA   ; 14
+    .word $0700   ; 15
+    .word $0755   ; 16
+    .word $07AA   ; 17
+    .word $0800   ; 18
+    .word $0855   ; 19
+    .word $08AA   ; 1A
+    .word $0900   ; 1B
+    .word $0955   ; 1C
+    .word $09AA   ; 1D
+    .word $0A00   ; 1E
+    .word $0A55   ; 1F
+    .word $0AAA   ; 20
+    .word $0B00   ; 21
+    .word $0B55   ; 22
+    .word $0BAA   ; 23
+    .word $0C00   ; 24
+    .word $0C55   ; 25
+    .word $0CAA   ; 26
+    .word $0D00   ; 27
+    .word $0D55   ; 28
+    .word $0DAA   ; 29
+    .word $0E00   ; 2A
+    .word $0E55   ; 2B
+    .word $0EAA   ; 2C
+    .word $0F00   ; 2D
+    .word $0F55   ; 2E
+    .word $0FAA   ; 2F
+    .word $1000   ; 3F
 .endscope
 
 
