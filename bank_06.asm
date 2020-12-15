@@ -5696,99 +5696,99 @@ tbl_A5C4:
 - D 1 - - - 0x01A5D4 06:A5C4: 6C 8B     .word ofs_8B6C
 
 off_A5C6:
-- - - - - - 0x01A5D6 06:A5C6: 80 A6     .word _animation_A680_00
-- D 1 - I - 0x01A5D8 06:A5C8: 81 A6     .word _animation_A681_01
-- D 1 - I - 0x01A5DA 06:A5CA: 8D A7     .word _animation_A78D_02
-- D 1 - I - 0x01A5DC 06:A5CC: 90 A7     .word _animation_A790_03
-- D 1 - I - 0x01A5DE 06:A5CE: A0 A7     .word _animation_A7A0_04
-- D 1 - I - 0x01A5E0 06:A5D0: A3 A7     .word _animation_A7A3_05
-- D 1 - I - 0x01A5E2 06:A5D2: 93 A7     .word _animation_A793_06
-- D 1 - I - 0x01A5E4 06:A5D4: 48 A8     .word _animation_A848_07
-- D 1 - I - 0x01A5E6 06:A5D6: 6F A8     .word _animation_A86F_08
-- D 1 - I - 0x01A5E8 06:A5D8: 38 A8     .word _animation_A838_09
-- D 1 - I - 0x01A5EA 06:A5DA: 56 A8     .word _animation_A856_0A
-- D 1 - I - 0x01A5EC 06:A5DC: BE A8     .word _animation_A8BE_0B
-- D 1 - I - 0x01A5EE 06:A5DE: F1 A8     .word _animation_A8F1_0C
-- D 1 - I - 0x01A5F0 06:A5E0: C9 A8     .word _animation_A8C9_0D
-- D 1 - I - 0x01A5F2 06:A5E2: DD A8     .word _animation_A8DD_0E
-- D 1 - I - 0x01A5F4 06:A5E4: 18 A9     .word _animation_A918_0F
-- D 1 - I - 0x01A5F6 06:A5E6: B1 A8     .word _animation_A8B1_10
-- D 1 - I - 0x01A5F8 06:A5E8: 2C A9     .word _animation_A92C_11
-- - - - - - 0x01A5FA 06:A5EA: 00 A9     .word _animation_A900_12
-- - - - - - 0x01A5FC 06:A5EC: 80 A6     .word _animation_A680_13
-- D 1 - I - 0x01A5FE 06:A5EE: A6 A6     .word _animation_A6A6_14
-- - - - - - 0x01A600 06:A5F0: 5D A8     .word _animation_A85D_15
-- D 1 - I - 0x01A602 06:A5F2: B4 A6     .word _animation_A6B4_16
-- - - - - - 0x01A604 06:A5F4: 80 A6     .word _animation_A680_17
-- - - - - - 0x01A606 06:A5F6: 80 A6     .word _animation_A680_18
-- D 1 - I - 0x01A608 06:A5F8: 0D A9     .word _animation_A90D_19
-- D 1 - I - 0x01A60A 06:A5FA: D7 A6     .word _animation_A6D7_1A
-- D 1 - I - 0x01A60C 06:A5FC: E2 A6     .word _animation_A6E2_1B
-- D 1 - I - 0x01A60E 06:A5FE: 00 A7     .word _animation_A700_1C
-- D 1 - I - 0x01A610 06:A600: F3 A6     .word _animation_A6F3_1D
-- - - - - - 0x01A612 06:A602: 80 A6     .word _animation_A680_1E
-- - - - - - 0x01A614 06:A604: 80 A6     .word _animation_A680_1F
-- D 1 - I - 0x01A616 06:A606: 0B A7     .word _animation_A70B_20
-- D 1 - I - 0x01A618 06:A608: 2E A7     .word _animation_A72E_21
-- D 1 - I - 0x01A61A 06:A60A: 0D A9     .word _animation_A90D_22
-- D 1 - I - 0x01A61C 06:A60C: 10 A9     .word _animation_A910_23
-- D 1 - I - 0x01A61E 06:A60E: 7B A8     .word _animation_A87B_24
-- D 1 - I - 0x01A620 06:A610: 5F A7     .word _animation_A75F_25
-- D 1 - I - 0x01A622 06:A612: E4 A8     .word _animation_A8E4_26
-- D 1 - I - 0x01A624 06:A614: E5 A9     .word _animation_A9E5_27
-- D 1 - I - 0x01A626 06:A616: DA A9     .word _animation_A9DA_28
-- D 1 - I - 0x01A628 06:A618: DA A9     .word _animation_A9DA_29
-- D 1 - I - 0x01A62A 06:A61A: 49 A9     .word _animation_A949_2A
-- - - - - - 0x01A62C 06:A61C: 03 A9     .word _animation_A903_2B
-- - - - - - 0x01A62E 06:A61E: 80 A6     .word _animation_A680_2C
-- D 1 - I - 0x01A630 06:A620: 96 A7     .word _animation_A796_2D
-- D 1 - I - 0x01A632 06:A622: 99 A7     .word _animation_A799_2E
-- D 1 - I - 0x01A634 06:A624: 96 A8     .word _animation_A896_2F
-- D 1 - I - 0x01A636 06:A626: 70 A7     .word _animation_A770_30
-- D 1 - I - 0x01A638 06:A628: D5 A7     .word _animation_A7D5_31
-- D 1 - I - 0x01A63A 06:A62A: BF A7     .word _animation_A7BF_32
-- D 1 - I - 0x01A63C 06:A62C: 04 A8     .word _animation_A804_33
-- D 1 - I - 0x01A63E 06:A62E: CE A7     .word _animation_A7CE_34
-- D 1 - I - 0x01A640 06:A630: CE A7     .word _animation_A7CE_35
-- - - - - - 0x01A642 06:A632: CE A7     .word _animation_A7CE_36
-- D 1 - I - 0x01A644 06:A634: EC A7     .word _animation_A7EC_37
-- D 1 - I - 0x01A646 06:A636: F9 A7     .word _animation_A7F9_38
-- D 1 - I - 0x01A648 06:A638: 0D A8     .word _animation_A80D_39
-- D 1 - I - 0x01A64A 06:A63A: 18 A8     .word _animation_A818_3A
-- D 1 - I - 0x01A64C 06:A63C: 3A A9     .word _animation_A93A_3B
-- D 1 - I - 0x01A64E 06:A63E: 9C A7     .word _animation_A79C_3C
-- D 1 - I - 0x01A650 06:A640: 9E A7     .word _animation_A79E_3D
-- D 1 - I - 0x01A652 06:A642: 4E A9     .word _animation_A94E_3E
-- D 1 - I - 0x01A654 06:A644: 4E A9     .word _animation_A94E_3F
-- D 1 - I - 0x01A656 06:A646: 59 A9     .word _animation_A959_40
-- D 1 - I - 0x01A658 06:A648: 5B A9     .word _animation_A95B_41
-- D 1 - I - 0x01A65A 06:A64A: 41 A9     .word _animation_A941_42
-- D 1 - I - 0x01A65C 06:A64C: AE A9     .word _animation_A9AE_43
-- - - - - - 0x01A65E 06:A64E: D1 A9     .word _animation_A9D1_44
-- D 1 - I - 0x01A660 06:A650: 70 A7     .word _animation_A770_45
-- D 1 - I - 0x01A662 06:A652: D9 A7     .word _animation_A7D9_46
-- D 1 - I - 0x01A664 06:A654: AE A9     .word _animation_A9AE_47
-- D 1 - I - 0x01A666 06:A656: 95 A9     .word _animation_A995_48
-- D 1 - I - 0x01A668 06:A658: 98 A9     .word _animation_A998_49
-- D 1 - I - 0x01A66A 06:A65A: A1 A9     .word _animation_A9A1_4A
-- D 1 - I - 0x01A66C 06:A65C: A4 A9     .word _animation_A9A4_4B
-- D 1 - I - 0x01A66E 06:A65E: AB A9     .word _animation_A9AB_4C
-- D 1 - I - 0x01A670 06:A660: AE A9     .word _animation_A9AE_4D
-- D 1 - I - 0x01A672 06:A662: BC A9     .word _animation_A9BC_4E
-- D 1 - I - 0x01A674 06:A664: C6 A9     .word _animation_A9C6_4F
-- D 1 - I - 0x01A676 06:A666: C1 A9     .word _animation_A9C1_50
-- D 1 - I - 0x01A678 06:A668: B7 A9     .word _animation_A9B7_51
-- D 1 - I - 0x01A67A 06:A66A: 70 A7     .word _animation_A770_52
-- D 1 - I - 0x01A67C 06:A66C: 81 A7     .word _animation_A781_53
-- D 1 - I - 0x01A67E 06:A66E: 79 A9     .word _animation_A979_54
-- - - - - - 0x01A680 06:A670: 0B AA     .word _animation_AA0B_55
-- D 1 - I - 0x01A682 06:A672: 70 A7     .word _animation_A770_56
-- D 1 - I - 0x01A684 06:A674: AF A7     .word _animation_A7AF_57
-- D 1 - I - 0x01A686 06:A676: 35 A9     .word _animation_A935_58
-- D 1 - I - 0x01A688 06:A678: 9C A7     .word _animation_A79C_59
-- D 1 - I - 0x01A68A 06:A67A: 9E A7     .word _animation_A79E_5A
-- D 1 - I - 0x01A68C 06:A67C: A6 A7     .word _animation_A7A6_5B
-- D 1 - I - 0x01A68E 06:A67E: 64 A9     .word _animation_A964_5C
+- - - - - - 0x01A5D6 06:A5C6: 80 A6     .word _animation_A680_00    ; 
+- D 1 - I - 0x01A5D8 06:A5C8: 81 A6     .word _animation_A681_01    ; 
+- D 1 - I - 0x01A5DA 06:A5CA: 8D A7     .word _animation_A78D_02    ; 
+- D 1 - I - 0x01A5DC 06:A5CC: 90 A7     .word _animation_A790_03    ; 
+- D 1 - I - 0x01A5DE 06:A5CE: A0 A7     .word _animation_A7A0_04    ; 
+- D 1 - I - 0x01A5E0 06:A5D0: A3 A7     .word _animation_A7A3_05    ; 
+- D 1 - I - 0x01A5E2 06:A5D2: 93 A7     .word _animation_A793_06    ; 
+- D 1 - I - 0x01A5E4 06:A5D4: 48 A8     .word _animation_A848_07    ; 
+- D 1 - I - 0x01A5E6 06:A5D6: 6F A8     .word _animation_A86F_08    ; 
+- D 1 - I - 0x01A5E8 06:A5D8: 38 A8     .word _animation_A838_09    ; 
+- D 1 - I - 0x01A5EA 06:A5DA: 56 A8     .word _animation_A856_0A    ; 
+- D 1 - I - 0x01A5EC 06:A5DC: BE A8     .word _animation_A8BE_0B    ; 
+- D 1 - I - 0x01A5EE 06:A5DE: F1 A8     .word _animation_A8F1_0C    ; 
+- D 1 - I - 0x01A5F0 06:A5E0: C9 A8     .word _animation_A8C9_0D    ; 
+- D 1 - I - 0x01A5F2 06:A5E2: DD A8     .word _animation_A8DD_0E    ; 
+- D 1 - I - 0x01A5F4 06:A5E4: 18 A9     .word _animation_A918_0F    ; 
+- D 1 - I - 0x01A5F6 06:A5E6: B1 A8     .word _animation_A8B1_10    ; 
+- D 1 - I - 0x01A5F8 06:A5E8: 2C A9     .word _animation_A92C_11    ; 
+- - - - - - 0x01A5FA 06:A5EA: 00 A9     .word _animation_A900_12    ; 
+- - - - - - 0x01A5FC 06:A5EC: 80 A6     .word _animation_A680_13    ; 
+- D 1 - I - 0x01A5FE 06:A5EE: A6 A6     .word _animation_A6A6_14    ; 
+- - - - - - 0x01A600 06:A5F0: 5D A8     .word _animation_A85D_15    ; 
+- D 1 - I - 0x01A602 06:A5F2: B4 A6     .word _animation_A6B4_16    ; 
+- - - - - - 0x01A604 06:A5F4: 80 A6     .word _animation_A680_17    ; 
+- - - - - - 0x01A606 06:A5F6: 80 A6     .word _animation_A680_18    ; 
+- D 1 - I - 0x01A608 06:A5F8: 0D A9     .word _animation_A90D_19    ; 
+- D 1 - I - 0x01A60A 06:A5FA: D7 A6     .word _animation_A6D7_1A    ; 
+- D 1 - I - 0x01A60C 06:A5FC: E2 A6     .word _animation_A6E2_1B    ; 
+- D 1 - I - 0x01A60E 06:A5FE: 00 A7     .word _animation_A700_1C    ; 
+- D 1 - I - 0x01A610 06:A600: F3 A6     .word _animation_A6F3_1D    ; 
+- - - - - - 0x01A612 06:A602: 80 A6     .word _animation_A680_1E    ; 
+- - - - - - 0x01A614 06:A604: 80 A6     .word _animation_A680_1F    ; 
+- D 1 - I - 0x01A616 06:A606: 0B A7     .word _animation_A70B_20    ; 
+- D 1 - I - 0x01A618 06:A608: 2E A7     .word _animation_A72E_21    ; 
+- D 1 - I - 0x01A61A 06:A60A: 0D A9     .word _animation_A90D_22    ; 
+- D 1 - I - 0x01A61C 06:A60C: 10 A9     .word _animation_A910_23    ; 
+- D 1 - I - 0x01A61E 06:A60E: 7B A8     .word _animation_A87B_24    ; 
+- D 1 - I - 0x01A620 06:A610: 5F A7     .word _animation_A75F_25    ; 
+- D 1 - I - 0x01A622 06:A612: E4 A8     .word _animation_A8E4_26    ; 
+- D 1 - I - 0x01A624 06:A614: E5 A9     .word _animation_A9E5_27    ; 
+- D 1 - I - 0x01A626 06:A616: DA A9     .word _animation_A9DA_28    ; 
+- D 1 - I - 0x01A628 06:A618: DA A9     .word _animation_A9DA_29    ; 
+- D 1 - I - 0x01A62A 06:A61A: 49 A9     .word _animation_A949_2A    ; 
+- - - - - - 0x01A62C 06:A61C: 03 A9     .word _animation_A903_2B    ; 
+- - - - - - 0x01A62E 06:A61E: 80 A6     .word _animation_A680_2C    ; 
+- D 1 - I - 0x01A630 06:A620: 96 A7     .word _animation_A796_2D    ; 
+- D 1 - I - 0x01A632 06:A622: 99 A7     .word _animation_A799_2E    ; 
+- D 1 - I - 0x01A634 06:A624: 96 A8     .word _animation_A896_2F    ; 
+- D 1 - I - 0x01A636 06:A626: 70 A7     .word _animation_A770_30    ; 
+- D 1 - I - 0x01A638 06:A628: D5 A7     .word _animation_A7D5_31    ; 
+- D 1 - I - 0x01A63A 06:A62A: BF A7     .word _animation_A7BF_32    ; 
+- D 1 - I - 0x01A63C 06:A62C: 04 A8     .word _animation_A804_33    ; 
+- D 1 - I - 0x01A63E 06:A62E: CE A7     .word _animation_A7CE_34    ; 
+- D 1 - I - 0x01A640 06:A630: CE A7     .word _animation_A7CE_35    ; 
+- - - - - - 0x01A642 06:A632: CE A7     .word _animation_A7CE_36    ; 
+- D 1 - I - 0x01A644 06:A634: EC A7     .word _animation_A7EC_37    ; 
+- D 1 - I - 0x01A646 06:A636: F9 A7     .word _animation_A7F9_38    ; 
+- D 1 - I - 0x01A648 06:A638: 0D A8     .word _animation_A80D_39    ; 
+- D 1 - I - 0x01A64A 06:A63A: 18 A8     .word _animation_A818_3A    ; 
+- D 1 - I - 0x01A64C 06:A63C: 3A A9     .word _animation_A93A_3B    ; 
+- D 1 - I - 0x01A64E 06:A63E: 9C A7     .word _animation_A79C_3C    ; 
+- D 1 - I - 0x01A650 06:A640: 9E A7     .word _animation_A79E_3D    ; 
+- D 1 - I - 0x01A652 06:A642: 4E A9     .word _animation_A94E_3E    ; 
+- D 1 - I - 0x01A654 06:A644: 4E A9     .word _animation_A94E_3F    ; 
+- D 1 - I - 0x01A656 06:A646: 59 A9     .word _animation_A959_40    ; 
+- D 1 - I - 0x01A658 06:A648: 5B A9     .word _animation_A95B_41    ; 
+- D 1 - I - 0x01A65A 06:A64A: 41 A9     .word _animation_A941_42    ; 
+- D 1 - I - 0x01A65C 06:A64C: AE A9     .word _animation_A9AE_43    ; 
+- - - - - - 0x01A65E 06:A64E: D1 A9     .word _animation_A9D1_44    ; 
+- D 1 - I - 0x01A660 06:A650: 70 A7     .word _animation_A770_45    ; 
+- D 1 - I - 0x01A662 06:A652: D9 A7     .word _animation_A7D9_46    ; 
+- D 1 - I - 0x01A664 06:A654: AE A9     .word _animation_A9AE_47    ; 
+- D 1 - I - 0x01A666 06:A656: 95 A9     .word _animation_A995_48    ; 
+- D 1 - I - 0x01A668 06:A658: 98 A9     .word _animation_A998_49    ; 
+- D 1 - I - 0x01A66A 06:A65A: A1 A9     .word _animation_A9A1_4A    ; 
+- D 1 - I - 0x01A66C 06:A65C: A4 A9     .word _animation_A9A4_4B    ; 
+- D 1 - I - 0x01A66E 06:A65E: AB A9     .word _animation_A9AB_4C    ; 
+- D 1 - I - 0x01A670 06:A660: AE A9     .word _animation_A9AE_4D    ; 
+- D 1 - I - 0x01A672 06:A662: BC A9     .word _animation_A9BC_4E    ; 
+- D 1 - I - 0x01A674 06:A664: C6 A9     .word _animation_A9C6_4F    ; 
+- D 1 - I - 0x01A676 06:A666: C1 A9     .word _animation_A9C1_50    ; 
+- D 1 - I - 0x01A678 06:A668: B7 A9     .word _animation_A9B7_51    ; 
+- D 1 - I - 0x01A67A 06:A66A: 70 A7     .word _animation_A770_52    ; 
+- D 1 - I - 0x01A67C 06:A66C: 81 A7     .word _animation_A781_53    ; 
+- D 1 - I - 0x01A67E 06:A66E: 79 A9     .word _animation_A979_54    ; 
+- - - - - - 0x01A680 06:A670: 0B AA     .word _animation_AA0B_55    ; 
+- D 1 - I - 0x01A682 06:A672: 70 A7     .word _animation_A770_56    ; 
+- D 1 - I - 0x01A684 06:A674: AF A7     .word _animation_A7AF_57    ; 
+- D 1 - I - 0x01A686 06:A676: 35 A9     .word _animation_A935_58    ; 
+- D 1 - I - 0x01A688 06:A678: 9C A7     .word _animation_A79C_59    ; 
+- D 1 - I - 0x01A68A 06:A67A: 9E A7     .word _animation_A79E_5A    ; 
+- D 1 - I - 0x01A68C 06:A67C: A6 A7     .word _animation_A7A6_5B    ; 
+- D 1 - I - 0x01A68E 06:A67E: 64 A9     .word _animation_A964_5C    ; 
 
 
 
