@@ -11626,9 +11626,9 @@ bra_B018:
 C - - - - - 0x013028 04:B018: A5 1D     LDA ram_001D
 C - - - - - 0x01302A 04:B01A: 0A        ASL
 C - - - - - 0x01302B 04:B01B: A8        TAY
-C - - - - - 0x01302C 04:B01C: B9 EF B0  LDA tbl_B0EF,Y
+C - - - - - 0x01302C 04:B01C: B9 EF B0  LDA tbl_B0EF_X_Y_Z_смещение_мяча,Y
 C - - - - - 0x01302F 04:B01F: 85 2C     STA ram_002C
-C - - - - - 0x013031 04:B021: B9 F0 B0  LDA tbl_B0EF + 1,Y
+C - - - - - 0x013031 04:B021: B9 F0 B0  LDA tbl_B0EF_X_Y_Z_смещение_мяча + 1,Y
 C - - - - - 0x013034 04:B024: 85 2D     STA ram_002D
 C - - - - - 0x013036 04:B026: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x013039 04:B029: B9 94 00  LDA ram_номер_кадра_анимации,Y
@@ -11804,7 +11804,7 @@ off_B0ED_03:
 
 
 
-tbl_B0EF:
+tbl_B0EF_X_Y_Z_смещение_мяча:
 - D 1 - - - 0x0130FF 04:B0EF: 1D B1     .word off_B11D_00
 - D 1 - - - 0x013101 04:B0F1: 11 B1     .word off_B111_01
 - D 1 - - - 0x013103 04:B0F3: 9E B1     .word off_B19E_02
