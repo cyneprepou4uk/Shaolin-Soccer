@@ -2559,14 +2559,14 @@ C - - - - - 0x0191E2 06:91D2: 85 1D     STA ram_001D
 C - - - - - 0x0191E4 06:91D4: A9 00     LDA #$00
 C - - - - - 0x0191E6 06:91D6: 85 1C     STA ram_001C
 C - - - - - 0x0191E8 06:91D8: A0 00     LDY #$00
-bra_91DA:
+bra_91DA_цикл:
 C - - - - - 0x0191EA 06:91DA: A5 1D     LDA ram_001D
 C - - - - - 0x0191EC 06:91DC: 0A        ASL
 C - - - - - 0x0191ED 06:91DD: 66 1D     ROR ram_001D
 C - - - - - 0x0191EF 06:91DF: 66 1C     ROR ram_001C
 C - - - - - 0x0191F1 06:91E1: C8        INY
 C - - - - - 0x0191F2 06:91E2: C0 03     CPY #$03
-C - - - - - 0x0191F4 06:91E4: 90 F4     BCC bra_91DA
+C - - - - - 0x0191F4 06:91E4: 90 F4     BCC bra_91DA_цикл
 C - - - - - 0x0191F6 06:91E6: 38        SEC
 C - - - - - 0x0191F7 06:91E7: A9 00     LDA #$00
 C - - - - - 0x0191F9 06:91E9: E5 1C     SBC ram_001C
