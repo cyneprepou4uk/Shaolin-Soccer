@@ -4163,17 +4163,17 @@ C - - - - - 0x019C92 06:9C82: BD 86 04  LDA ram_игрок_состояние,X
 C - - - - - 0x019C95 06:9C85: 29 20     AND #$20
 C - - - - - 0x019C97 06:9C87: D0 3F     BNE bra_9CC8_RTS
 C - - - - - 0x019C99 06:9C89: AD 0D 05  LDA ram_таймер_мокрого_мяча
-C - - - - - 0x019C9C 06:9C8C: 10 0C     BPL bra_9C9A
+C - - - - - 0x019C9C 06:9C8C: 10 0C     BPL bra_9CA2
 C - - - - - 0x019C9E 06:9C8E: 0E 00 06  ASL ram_ветер_spd_X_lo
 C - - - - - 0x019CA1 06:9C91: 2E FF 05  ROL ram_ветер_spd_X_hi
 C - - - - - 0x019CA4 06:9C94: 0E 02 06  ASL ram_ветер_spd_Y_lo
 C - - - - - 0x019CA7 06:9C97: 2E 01 06  ROL ram_ветер_spd_Y_hi
-bra_9C9A:
 C - - - - - 0x019CAA 06:9C9A: 4C A2 9C  JMP loc_9CA2
 bra_9C9D:
 C - - - - - 0x019CAD 06:9C9D: BD 86 04  LDA ram_игрок_состояние,X
 C - - - - - 0x019CB0 06:9CA0: 10 26     BPL bra_9CC8_RTS
 loc_9CA2:
+bra_9CA2:
 C D 0 - - - 0x019CB2 06:9CA2: 18        CLC
 C - - - - - 0x019CB3 06:9CA3: BD E8 03  LDA ram_игрок_spd_X_lo,X
 C - - - - - 0x019CB6 06:9CA6: 6D 00 06  ADC ram_ветер_spd_X_lo
