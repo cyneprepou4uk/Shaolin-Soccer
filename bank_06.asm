@@ -5243,17 +5243,17 @@ C - - - - - 0x01A37A 06:A36A: 4A        LSR
 C - - - - - 0x01A37B 06:A36B: A8        TAY
 C - - - - - 0x01A37C 06:A36C: 18        CLC
 C - - - - - 0x01A37D 06:A36D: BD 14 03  LDA ram_игрок_X_lo,X
-C - - - - - 0x01A380 06:A370: 79 1B A4  ADC tbl_A41B,Y
+C - - - - - 0x01A380 06:A370: 79 1B A4  ADC tbl_A41B_X_скорость,Y
 C - - - - - 0x01A383 06:A373: 85 2E     STA ram_002E
 C - - - - - 0x01A385 06:A375: BD 27 03  LDA ram_игрок_X_hi,X
-C - - - - - 0x01A388 06:A378: 79 1C A4  ADC tbl_A41C,Y
+C - - - - - 0x01A388 06:A378: 79 1C A4  ADC tbl_A41B_X_скорость + 1,Y
 C - - - - - 0x01A38B 06:A37B: 85 2F     STA ram_002F
 C - - - - - 0x01A38D 06:A37D: 18        CLC
 C - - - - - 0x01A38E 06:A37E: BD 4D 03  LDA ram_игрок_Y_lo,X
-C - - - - - 0x01A391 06:A381: 79 1D A4  ADC tbl_A41D,Y
+C - - - - - 0x01A391 06:A381: 79 1D A4  ADC tbl_A41B_Y_скорость + 2,Y
 C - - - - - 0x01A394 06:A384: 85 30     STA ram_0030
 C - - - - - 0x01A396 06:A386: BD 60 03  LDA ram_игрок_Y_hi,X
-C - - - - - 0x01A399 06:A389: 79 1E A4  ADC tbl_A41E,Y
+C - - - - - 0x01A399 06:A389: 79 1E A4  ADC tbl_A41B_Y_скорость + 3,Y
 C - - - - - 0x01A39C 06:A38C: 85 31     STA ram_0031
 C - - - - - 0x01A39E 06:A38E: 4C 02 A4  JMP loc_A402
 bra_A391:
@@ -5331,74 +5331,24 @@ C - - - - - 0x01A42A 06:A41A: 60        RTS
 
 
 
-tbl_A41B:
-- - - - - - 0x01A42B 06:A41B: 43        .byte $43   ; 
-tbl_A41C:
-- - - - - - 0x01A42C 06:A41C: 00        .byte $00   ; 
-tbl_A41D:
-- - - - - - 0x01A42D 06:A41D: BD        .byte $BD   ; 
-tbl_A41E:
-- - - - - - 0x01A42E 06:A41E: FF        .byte $FF   ; 
-- - - - - - 0x01A42F 06:A41F: 43        .byte $43   ; 
-- - - - - - 0x01A430 06:A420: 00        .byte $00   ; 
-- - - - - - 0x01A431 06:A421: BD        .byte $BD   ; 
-- - - - - - 0x01A432 06:A422: FF        .byte $FF   ; 
-- D 1 - - - 0x01A433 06:A423: 60        .byte $60   ; 
-- D 1 - - - 0x01A434 06:A424: 00        .byte $00   ; 
-- D 1 - - - 0x01A435 06:A425: 00        .byte $00   ; 
-- D 1 - - - 0x01A436 06:A426: 00        .byte $00   ; 
-- - - - - - 0x01A437 06:A427: 43        .byte $43   ; 
-- - - - - - 0x01A438 06:A428: 00        .byte $00   ; 
-- - - - - - 0x01A439 06:A429: 43        .byte $43   ; 
-- - - - - - 0x01A43A 06:A42A: 00        .byte $00   ; 
-- D 1 - - - 0x01A43B 06:A42B: 43        .byte $43   ; 
-- D 1 - - - 0x01A43C 06:A42C: 00        .byte $00   ; 
-- D 1 - - - 0x01A43D 06:A42D: 43        .byte $43   ; 
-- D 1 - - - 0x01A43E 06:A42E: 00        .byte $00   ; 
-- - - - - - 0x01A43F 06:A42F: BD        .byte $BD   ; 
-- - - - - - 0x01A440 06:A430: FF        .byte $FF   ; 
-- - - - - - 0x01A441 06:A431: 43        .byte $43   ; 
-- - - - - - 0x01A442 06:A432: 00        .byte $00   ; 
-- - - - - - 0x01A443 06:A433: A0        .byte $A0   ; 
-- - - - - - 0x01A444 06:A434: FF        .byte $FF   ; 
-- - - - - - 0x01A445 06:A435: 00        .byte $00   ; 
-- - - - - - 0x01A446 06:A436: 00        .byte $00   ; 
-- - - - - - 0x01A447 06:A437: BD        .byte $BD   ; 
-- - - - - - 0x01A448 06:A438: FF        .byte $FF   ; 
-- - - - - - 0x01A449 06:A439: BD        .byte $BD   ; 
-- - - - - - 0x01A44A 06:A43A: FF        .byte $FF   ; 
-- - - - - - 0x01A44B 06:A43B: BD        .byte $BD   ; 
-- - - - - - 0x01A44C 06:A43C: FF        .byte $FF   ; 
-- - - - - - 0x01A44D 06:A43D: BD        .byte $BD   ; 
-- - - - - - 0x01A44E 06:A43E: FF        .byte $FF   ; 
-- - - - - - 0x01A44F 06:A43F: 43        .byte $43   ; 
-- - - - - - 0x01A450 06:A440: 00        .byte $00   ; 
-- - - - - - 0x01A451 06:A441: BD        .byte $BD   ; 
-- - - - - - 0x01A452 06:A442: FF        .byte $FF   ; 
-- - - - - - 0x01A453 06:A443: 60        .byte $60   ; 
-- - - - - - 0x01A454 06:A444: 00        .byte $00   ; 
-- - - - - - 0x01A455 06:A445: 00        .byte $00   ; 
-- - - - - - 0x01A456 06:A446: 00        .byte $00   ; 
-- - - - - - 0x01A457 06:A447: 43        .byte $43   ; 
-- - - - - - 0x01A458 06:A448: 00        .byte $00   ; 
-- - - - - - 0x01A459 06:A449: 43        .byte $43   ; 
-- - - - - - 0x01A45A 06:A44A: 00        .byte $00   ; 
-- D 1 - - - 0x01A45B 06:A44B: BD        .byte $BD   ; 
-- D 1 - - - 0x01A45C 06:A44C: FF        .byte $FF   ; 
-- D 1 - - - 0x01A45D 06:A44D: 43        .byte $43   ; 
-- D 1 - - - 0x01A45E 06:A44E: 00        .byte $00   ; 
-- - - - - - 0x01A45F 06:A44F: BD        .byte $BD   ; 
-- - - - - - 0x01A460 06:A450: FF        .byte $FF   ; 
-- - - - - - 0x01A461 06:A451: 43        .byte $43   ; 
-- - - - - - 0x01A462 06:A452: 00        .byte $00   ; 
-- - - - - - 0x01A463 06:A453: A0        .byte $A0   ; 
-- - - - - - 0x01A464 06:A454: FF        .byte $FF   ; 
-- - - - - - 0x01A465 06:A455: 00        .byte $00   ; 
-- - - - - - 0x01A466 06:A456: 00        .byte $00   ; 
-- - - - - - 0x01A467 06:A457: BD        .byte $BD   ; 
-- - - - - - 0x01A468 06:A458: FF        .byte $FF   ; 
-- - - - - - 0x01A469 06:A459: BD        .byte $BD   ; 
-- - - - - - 0x01A46A 06:A45A: FF        .byte $FF   ; 
+tbl_A41B_X_скорость:
+tbl_A41B_Y_скорость:
+- - - - - - 0x01A42B 06:A41B: 43 00     .word $0043, $FFBD
+- - - - - - 0x01A42F 06:A41F: 43 00     .word $0043, $FFBD
+- D 1 - - - 0x01A433 06:A423: 60 00     .word $0060, $0000
+- - - - - - 0x01A437 06:A427: 43 00     .word $0043, $0043
+- D 1 - - - 0x01A43B 06:A42B: 43 00     .word $0043, $0043
+- - - - - - 0x01A43F 06:A42F: BD FF     .word $FFBD, $0043
+- - - - - - 0x01A443 06:A433: A0 FF     .word $FFA0, $0000
+- - - - - - 0x01A447 06:A437: BD FF     .word $FFBD, $FFBD
+- - - - - - 0x01A44B 06:A43B: BD FF     .word $FFBD, $FFBD
+- - - - - - 0x01A44F 06:A43F: 43 00     .word $0043, $FFBD
+- - - - - - 0x01A453 06:A443: 60 00     .word $0060, $0000
+- - - - - - 0x01A457 06:A447: 43 00     .word $0043, $0043
+- D 1 - - - 0x01A45B 06:A44B: BD FF     .word $FFBD, $0043
+- - - - - - 0x01A45F 06:A44F: BD FF     .word $FFBD, $0043
+- - - - - - 0x01A463 06:A453: A0 FF     .word $FFA0, $0000
+- - - - - - 0x01A467 06:A457: BD FF     .word $FFBD, $FFBD
 
 
 
