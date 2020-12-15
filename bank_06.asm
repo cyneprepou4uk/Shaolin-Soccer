@@ -7077,7 +7077,7 @@ C - - - - - 0x01AB3A 06:AB2A: AD 85 04  LDA ram_мяч_тип_удара
 C - - - - - 0x01AB3D 06:AB2D: 30 22     BMI bra_AB51_RTS
 C - - - - - 0x01AB3F 06:AB2F: 29 7F     AND #$7F
 C - - - - - 0x01AB41 06:AB31: A8        TAY
-C - - - - - 0x01AB42 06:AB32: B9 4D AC  LDA tbl_AC4D,Y
+C - - - - - 0x01AB42 06:AB32: B9 4D AC  LDA tbl_AC4D_состояние_мяча,Y
 C - - - - - 0x01AB45 06:AB35: 29 0F     AND #$0F
 C - - - - - 0x01AB47 06:AB37: 85 1C     STA ram_001C
 C - - - - - 0x01AB49 06:AB39: AD 92 04  LDA ram_мяч_состояние
@@ -7116,7 +7116,7 @@ bra_AB6E:
 C - - - - - 0x01AB7E 06:AB6E: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x01AB81 06:AB71: 29 7F     AND #$7F
 C - - - - - 0x01AB83 06:AB73: A8        TAY
-C - - - - - 0x01AB84 06:AB74: B9 4D AC  LDA tbl_AC4D,Y
+C - - - - - 0x01AB84 06:AB74: B9 4D AC  LDA tbl_AC4D_состояние_мяча,Y
 C - - - - - 0x01AB87 06:AB77: 05 1C     ORA ram_001C
 C - - - - - 0x01AB89 06:AB79: 8D 92 04  STA ram_мяч_состояние
 C - - - - - 0x01AB8C 06:AB7C: 2C 92 04  BIT ram_мяч_состояние
@@ -7222,7 +7222,7 @@ C - - - - - 0x01AC5C 06:AC4C: 60        RTS
 
 
 
-tbl_AC4D:
+tbl_AC4D_состояние_мяча:
 - D 1 - - - 0x01AC5D 06:AC4D: 00        .byte $00   ; 
 - D 1 - - - 0x01AC5E 06:AC4E: 00        .byte $00   ; 
 - D 1 - - - 0x01AC5F 06:AC4F: 40        .byte $40   ; 
@@ -7528,7 +7528,7 @@ C - - - - - 0x01AD99 06:AD89: A9 05     LDA #$05
 loc_AD8B:
 C D 1 - - - 0x01AD9B 06:AD8B: 8D 65 04  STA ram_мяч_номер_движения
 C - - - - - 0x01AD9E 06:AD8E: A8        TAY
-C - - - - - 0x01AD9F 06:AD8F: B9 4D AC  LDA tbl_AC4D,Y
+C - - - - - 0x01AD9F 06:AD8F: B9 4D AC  LDA tbl_AC4D_состояние_мяча,Y
 C - - - - - 0x01ADA2 06:AD92: 8D 92 04  STA ram_мяч_состояние
 C - - - - - 0x01ADA5 06:AD95: 4C 72 AD  RTS
 
