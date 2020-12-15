@@ -5883,8 +5883,7 @@ off_A6B9_00:
 - - - - - - 0x01A6CE 06:A6BE: 17        .byte $17   ; 
 - - - - - - 0x01A6CF 06:A6BF: F0        .byte con_F0, $04
 - - - - - - 0x01A6D1 06:A6C1: F1        .byte con_F1, $20
-- - - - - - 0x01A6D3 06:A6C3: F2        .byte con_F2
-- - - - - - 0x01A6D4 06:A6C4: 00        .byte $00   ; 
+- - - - - - 0x01A6D3 06:A6C3: F2        .byte con_F2, $00
 - - - - - - 0x01A6D5 06:A6C5: 08        .byte $08   ; 
 - - - - - - 0x01A6D6 06:A6C6: 1D        .byte $1D   ; 
 - - - - - - 0x01A6D7 06:A6C7: FF        .byte con_FF
@@ -5896,8 +5895,7 @@ off_A6C8_01:
 - D 1 - I - 0x01A6DD 06:A6CD: 14        .byte $14   ; 
 - D 1 - I - 0x01A6DE 06:A6CE: F0        .byte con_F0, $04
 - D 1 - I - 0x01A6E0 06:A6D0: F1        .byte con_F1, $20
-- D 1 - I - 0x01A6E2 06:A6D2: F2        .byte con_F2
-- D 1 - I - 0x01A6E3 06:A6D3: 00        .byte $00   ; 
+- D 1 - I - 0x01A6E2 06:A6D2: F2        .byte con_F2, $00
 - D 1 - I - 0x01A6E4 06:A6D4: 08        .byte $08   ; 
 - D 1 - I - 0x01A6E5 06:A6D5: 15        .byte $15   ; 
 - D 1 - I - 0x01A6E6 06:A6D6: FF        .byte con_FF
@@ -5964,8 +5962,7 @@ _animation_A700_1C:
 - D 1 - I - 0x01A715 06:A705: 01        .byte $01   ; 
 - D 1 - I - 0x01A716 06:A706: 02        .byte $02   ; 
 - D 1 - I - 0x01A717 06:A707: 00        .byte $00   ; 
-- D 1 - I - 0x01A718 06:A708: F2        .byte con_F2
-- D 1 - I - 0x01A719 06:A709: 00        .byte $00   ; 
+- D 1 - I - 0x01A718 06:A708: F2        .byte con_F2, $00
 - D 1 - I - 0x01A71A 06:A70A: FF        .byte con_FF
 
 
