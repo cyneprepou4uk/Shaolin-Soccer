@@ -12,13 +12,6 @@ C - - J - - 0x010013 04:8003: 4C 94 AF  JMP loc_AF94
 .export loc_0x010016
 loc_0x010016:
 C - - J - - 0x010016 04:8006: 4C 8D AF  JMP loc_AF8D
-
-
-; bzk
-- - - - - - 0x010019 04:8009: 4C 04 B2  JMP loc_B204
-
-
-
 .export loc_0x01001C
 loc_0x01001C:
 C - - J - - 0x01001C 04:800C: 4C 04 B2  JMP loc_B204
