@@ -10829,7 +10829,7 @@ C - - - - - 0x00ABB7 02:ABA7: E8        INX
 C - - - - - 0x00ABB8 02:ABA8: 8E B0 05  STX ram_номер_палитры_спрайтов + 2
 C - - - - - 0x00ABBB 02:ABAB: E8        INX
 C - - - - - 0x00ABBC 02:ABAC: 8E B1 05  STX ram_номер_палитры_спрайтов + 3
-C - - - - - 0x00ABBF 02:ABAF: 20 33 B0  JSR sub_B033
+C - - - - - 0x00ABBF 02:ABAF: 20 33 B0  JSR sub_B033_анимация_мяча
 C - - - - - 0x00ABC2 02:ABB2: A9 01     LDA #$01
 C - - - - - 0x00ABC4 02:ABB4: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x00ABC7 02:ABB7: 20 59 C0  JSR sub_0x01D05F
@@ -10846,7 +10846,7 @@ C - - - - - 0x00ABDD 02:ABCD: 60        RTS
 
 
 ofs_ABCE_0B:
-C - - J - - 0x00ABDE 02:ABCE: 20 33 B0  JSR sub_B033
+C - - J - - 0x00ABDE 02:ABCE: 20 33 B0  JSR sub_B033_анимация_мяча
 C - - - - - 0x00ABE1 02:ABD1: 20 5C C0  JSR sub_0x01D083
 C - - - - - 0x00ABE4 02:ABD4: 2C B2 05  BIT ram_флаг_яркости
 C - - - - - 0x00ABE7 02:ABD7: 10 04     BPL bra_ABDD_RTS
@@ -10858,7 +10858,7 @@ C - - - - - 0x00ABED 02:ABDD: 60        RTS
 
 
 ofs_ABDE_03:
-C - - J - - 0x00ABEE 02:ABDE: 20 33 B0  JSR sub_B033
+C - - J - - 0x00ABEE 02:ABDE: 20 33 B0  JSR sub_B033_анимация_мяча
 C - - - - - 0x00ABF1 02:ABE1: 20 7C AE  JSR sub_AE7C
 C - - - - - 0x00ABF4 02:ABE4: 30 10     BMI bra_ABF6
 C - - - - - 0x00ABF6 02:ABE6: 50 15     BVC bra_ABFD_RTS
@@ -11588,7 +11588,7 @@ C - - - - - 0x00B042 02:B032: 60        RTS
 
 
 
-sub_B033:
+sub_B033_анимация_мяча:
 C - - - - - 0x00B043 02:B033: A2 0C     LDX #$0C
 C - - - - - 0x00B045 02:B035: D6 87     DEC ram_таймер_кадра_анимации,X
 C - - - - - 0x00B047 02:B037: D0 2F     BNE bra_B068
