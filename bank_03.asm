@@ -41,7 +41,7 @@ C - - - - - 0x00C03A 03:802A: CA        DEX
 C - - - - - 0x00C03B 03:802B: 10 F0     BPL bra_801D
 C - - - - - 0x00C03D 03:802D: AD 92 04  LDA ram_мяч_состояние
 C - - - - - 0x00C040 03:8030: 10 1D     BPL bra_804F
-C - - - - - 0x00C042 03:8032: AD 24 05  LDA ram_0524
+C - - - - - 0x00C042 03:8032: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00C045 03:8035: 85 1C     STA ram_001C
 C - - - - - 0x00C047 03:8037: A0 0C     LDY #$0C
 C - - - - - 0x00C049 03:8039: 20 D0 98  JSR sub_98D0
@@ -3205,10 +3205,10 @@ loc_930F:
 C D 0 - - - 0x00D31F 03:930F: 20 4C 9B  JSR sub_9B4C
 C - - - - - 0x00D322 03:9312: 85 1C     STA ram_001C
 C - - - - - 0x00D324 03:9314: B9 6E 93  LDA tbl_936E,Y
-C - - - - - 0x00D327 03:9317: CD 24 05  CMP ram_0524
+C - - - - - 0x00D327 03:9317: CD 24 05  CMP ram_таймер_прицельного_паса
 C - - - - - 0x00D32A 03:931A: B0 1B     BCS bra_9337
 bra_931C:
-C - - - - - 0x00D32C 03:931C: AD 24 05  LDA ram_0524
+C - - - - - 0x00D32C 03:931C: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00D32F 03:931F: 38        SEC
 C - - - - - 0x00D330 03:9320: E5 1C     SBC ram_001C
 C - - - - - 0x00D332 03:9322: 10 02     BPL bra_9326
@@ -3338,10 +3338,10 @@ loc_93F4:
 C D 0 - - - 0x00D404 03:93F4: 20 4C 9B  JSR sub_9B4C
 C - - - - - 0x00D407 03:93F7: 85 1C     STA ram_001C
 C - - - - - 0x00D409 03:93F9: B9 8F 94  LDA tbl_948F,Y
-C - - - - - 0x00D40C 03:93FC: CD 24 05  CMP ram_0524
+C - - - - - 0x00D40C 03:93FC: CD 24 05  CMP ram_таймер_прицельного_паса
 C - - - - - 0x00D40F 03:93FF: B0 1B     BCS bra_941C
 bra_9401:
-C - - - - - 0x00D411 03:9401: AD 24 05  LDA ram_0524
+C - - - - - 0x00D411 03:9401: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00D414 03:9404: 38        SEC
 C - - - - - 0x00D415 03:9405: E5 1C     SBC ram_001C
 C - - - - - 0x00D417 03:9407: 10 02     BPL bra_940B
@@ -4183,7 +4183,7 @@ C - - - - - 0x00D9EB 03:99DB: 20 4B AE  JSR sub_AE4B
 C - - - - - 0x00D9EE 03:99DE: 20 5F 98  JSR sub_985F
 C - - - - - 0x00D9F1 03:99E1: 60        RTS
 loc_99E2:
-C D 0 - - - 0x00D9F2 03:99E2: AD 24 05  LDA ram_0524
+C D 0 - - - 0x00D9F2 03:99E2: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00D9F5 03:99E5: 85 1C     STA ram_001C
 C - - - - - 0x00D9F7 03:99E7: 20 D0 98  JSR sub_98D0
 C - - - - - 0x00D9FA 03:99EA: 20 75 9B  JSR sub_9B75
@@ -4772,10 +4772,10 @@ C - - - - - 0x00DD9E 03:9D8E: AD 59 03  LDA ram_мяч_Y_lo
 C - - - - - 0x00DDA1 03:9D91: 48        PHA
 C - - - - - 0x00DDA2 03:9D92: AD 6C 03  LDA ram_мяч_Y_hi
 C - - - - - 0x00DDA5 03:9D95: 48        PHA
-C - - - - - 0x00DDA6 03:9D96: AD 24 05  LDA ram_0524
+C - - - - - 0x00DDA6 03:9D96: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00DDA9 03:9D99: F0 1E     BEQ bra_9DB9
 C - - - - - 0x00DDAB 03:9D9B: A0 0C     LDY #$0C
-C - - - - - 0x00DDAD 03:9D9D: AD 24 05  LDA ram_0524
+C - - - - - 0x00DDAD 03:9D9D: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00DDB0 03:9DA0: 85 1C     STA ram_001C
 C - - - - - 0x00DDB2 03:9DA2: 20 D0 98  JSR sub_98D0
 C - - - - - 0x00DDB5 03:9DA5: A5 32     LDA ram_0032
@@ -6109,7 +6109,7 @@ C - - - - - 0x00E5B3 03:A5A3: C8        INY
 C - - - - - 0x00E5B4 03:A5A4: C0 0C     CPY #$0C
 C - - - - - 0x00E5B6 03:A5A6: 90 F7     BCC bra_A59F
 C - - - - - 0x00E5B8 03:A5A8: A0 0C     LDY #$0C
-C - - - - - 0x00E5BA 03:A5AA: AD 24 05  LDA ram_0524
+C - - - - - 0x00E5BA 03:A5AA: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00E5BD 03:A5AD: 85 1C     STA ram_001C
 C - - - - - 0x00E5BF 03:A5AF: 20 D0 98  JSR sub_98D0
 C - - - - - 0x00E5C2 03:A5B2: AD 20 03  LDA ram_мяч_X_lo
@@ -6178,7 +6178,7 @@ C - - - - - 0x00E643 03:A633: A4 44     LDY ram_0044
 C - - - - - 0x00E645 03:A635: B9 76 06  LDA ram_дистанция_ближайшего,Y
 C - - - - - 0x00E648 03:A638: C9 20     CMP #$20
 C - - - - - 0x00E64A 03:A63A: B0 2D     BCS bra_A669
-C - - - - - 0x00E64C 03:A63C: AD 24 05  LDA ram_0524
+C - - - - - 0x00E64C 03:A63C: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00E64F 03:A63F: F0 28     BEQ bra_A669
 C - - - - - 0x00E651 03:A641: C9 10     CMP #$10
 C - - - - - 0x00E653 03:A643: B0 24     BCS bra_A669
@@ -6215,7 +6215,7 @@ C - - - - - 0x00E68C 03:A67C: C9 04     CMP #$04
 C - - - - - 0x00E68E 03:A67E: B0 60     BCS bra_A6E0
 C - - - - - 0x00E690 03:A680: AD 92 04  LDA ram_мяч_состояние
 C - - - - - 0x00E693 03:A683: 10 06     BPL bra_A68B
-C - - - - - 0x00E695 03:A685: AD 24 05  LDA ram_0524
+C - - - - - 0x00E695 03:A685: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00E698 03:A688: 4C 8D A6  JMP loc_A68D
 bra_A68B:
 C - - - - - 0x00E69B 03:A68B: A9 00     LDA #$00
