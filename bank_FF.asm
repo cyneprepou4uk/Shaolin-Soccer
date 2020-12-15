@@ -2439,17 +2439,17 @@ C - - - - - 0x01CEF9 07:CEE9: A8        TAY
 C - - - - - 0x01CEFA 07:CEEA: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01CEFC 07:CEEC: F0 31     BEQ bra_CF1F
 C - - - - - 0x01CEFE 07:CEEE: C9 FF     CMP #$FF
-C - - - - - 0x01CF00 07:CEF0: F0 3E     BEQ bra_CF30
+C - - - - - 0x01CF00 07:CEF0: F0 3E     BEQ bra_CF30_FF
 C - - - - - 0x01CF02 07:CEF2: C9 FE     CMP #$FE
-C - - - - - 0x01CF04 07:CEF4: F0 30     BEQ bra_CF26
+C - - - - - 0x01CF04 07:CEF4: F0 30     BEQ bra_CF26_FE
 C - - - - - 0x01CF06 07:CEF6: C9 FC     CMP #$FC
-C - - - - - 0x01CF08 07:CEF8: F0 67     BEQ bra_CF61
+C - - - - - 0x01CF08 07:CEF8: F0 67     BEQ bra_CF61_FC
 C - - - - - 0x01CF0A 07:CEFA: C9 F0     CMP #$F0
-C - - - - - 0x01CF0C 07:CEFC: F0 44     BEQ bra_CF42
+C - - - - - 0x01CF0C 07:CEFC: F0 44     BEQ bra_CF42_F0
 C - - - - - 0x01CF0E 07:CEFE: C9 F1     CMP #$F1
-C - - - - - 0x01CF10 07:CF00: F0 53     BEQ bra_CF55
+C - - - - - 0x01CF10 07:CF00: F0 53     BEQ bra_CF55_F1
 C - - - - - 0x01CF12 07:CF02: C9 F2     CMP #$F2
-C - - - - - 0x01CF14 07:CF04: F0 69     BEQ bra_CF6F
+C - - - - - 0x01CF14 07:CF04: F0 69     BEQ bra_CF6F_F2
 ; 30fps время анимации увеличено в 1.5 раза (временное решение)
                                         .byte $F2, $03  ; DMA #$03
                                         .byte $F3, $02  ; DVA #$02
@@ -2468,12 +2468,12 @@ C - - - - - 0x01CF2F 07:CF1F: C8        INY
 C - - - - - 0x01CF30 07:CF20: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01CF32 07:CF22: 9D 74 00  STA ram_номер_анимации,X
 C D 2 - - - 0x01CF35 07:CF25: 60        RTS
-bra_CF26:
+bra_CF26_FE:
 C - - - - - 0x01CF36 07:CF26: A9 00     LDA #$00
 C - - - - - 0x01CF38 07:CF28: 9D 94 00  STA ram_номер_кадра_анимации,X
 C - - - - - 0x01CF3B 07:CF2B: 9D 87 00  STA ram_таймер_кадра_анимации,X
 C - - - - - 0x01CF3E 07:CF2E: F0 B5     BEQ bra_CEE5
-bra_CF30:
+bra_CF30_FF:
 C - - - - - 0x01CF40 07:CF30: 8C 44 00  STY ram_0044
 C - - - - - 0x01CF43 07:CF33: 20 90 CF  JSR sub_CF90
 C - - - - - 0x01CF46 07:CF36: AC 44 00  LDY ram_0044
@@ -2481,7 +2481,7 @@ C - - - - - 0x01CF49 07:CF39: 88        DEY
 C - - - - - 0x01CF4A 07:CF3A: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01CF4C 07:CF3C: 9D 74 00  STA ram_номер_анимации,X
 C - - - - - 0x01CF4F 07:CF3F: 4C 25 CF  RTS
-bra_CF42:
+bra_CF42_F0:
 C - - - - - 0x01CF52 07:CF42: C8        INY
 C - - - - - 0x01CF53 07:CF43: BD 86 04  LDA ram_игрок_состояние,X
 C - - - - - 0x01CF56 07:CF46: 29 40     AND #$40
@@ -2491,20 +2491,20 @@ C - - - - - 0x01CF5C 07:CF4C: 8D 85 04  STA ram_мяч_тип_удара
 bra_CF4F:
 C - - - - - 0x01CF5F 07:CF4F: FE 94 00  INC ram_номер_кадра_анимации,X
 C - - - - - 0x01CF62 07:CF52: 4C E5 CE  JMP loc_CEE5
-bra_CF55:
+bra_CF55_F1:
 C - - - - - 0x01CF65 07:CF55: C8        INY
 C - - - - - 0x01CF66 07:CF56: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01CF68 07:CF58: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
 C - - - - - 0x01CF6B 07:CF5B: FE 94 00  INC ram_номер_кадра_анимации,X
 C - - - - - 0x01CF6E 07:CF5E: 4C E5 CE  JMP loc_CEE5
-bra_CF61:
+bra_CF61_FC:
 C - - - - - 0x01CF71 07:CF61: C8        INY
 C - - - - - 0x01CF72 07:CF62: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01CF74 07:CF64: 9D 94 00  STA ram_номер_кадра_анимации,X
 C - - - - - 0x01CF77 07:CF67: A9 00     LDA #$00
 C - - - - - 0x01CF79 07:CF69: 9D 87 00  STA ram_таймер_кадра_анимации,X
 C - - - - - 0x01CF7C 07:CF6C: 4C E5 CE  JMP loc_CEE5
-bra_CF6F:
+bra_CF6F_F2:
 C - - - - - 0x01CF7F 07:CF6F: C8        INY
 C - - - - - 0x01CF80 07:CF70: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01CF82 07:CF72: 85 5C     STA ram_режим_игры_на_поле
