@@ -6905,13 +6905,10 @@ _animation_AA0B_55:
 sub_AA14:
 loc_AA14:
 C - - - - - 0x01AA24 06:AA14: A0 02     LDY #$02
-C - - - - - 0x01AA26 06:AA16: 4C 1B AA  JMP loc_AA1B
-
-
-
+C - - - - - 0x01AA26 06:AA16: 4C 1B AA  BNE bra_AA1B
 sub_AA19:
 C - - - - - 0x01AA29 06:AA19: A0 00     LDY #$00
-loc_AA1B:
+bra_AA1B:
 C D 1 - - - 0x01AA2B 06:AA1B: B9 65 AC  LDA tbl_AC65,Y
 C - - - - - 0x01AA2E 06:AA1E: 85 2C     STA ram_002C
 C - - - - - 0x01AA30 06:AA20: B9 66 AC  LDA tbl_AC65 + 1,Y
