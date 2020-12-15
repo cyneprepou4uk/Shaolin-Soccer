@@ -34,10 +34,6 @@ loc_0x00401C:
 C - - J - - 0x00401C 01:800C: 4C 88 BE  JMP loc_BE88
 
 
-; bzk
-- - - - - - 0x00401F 01:800F: 4C 88 BE  JMP loc_BE88
-
-
 
 off_8024_00:
 - D 0 - I - 0x004034 01:8024: 74 81     .word off_8174_00
