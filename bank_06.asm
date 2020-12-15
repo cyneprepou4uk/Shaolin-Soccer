@@ -5319,7 +5319,7 @@ bra_A402:
 loc_A402:
 C D 1 - - - 0x01A412 06:A402: 20 91 F6  JSR sub_0x01F6A1
 C - - - - - 0x01A415 06:A405: 9D B0 04  STA ram_смена_угла_движения,X
-C - - - - - 0x01A418 06:A408: 20 7D A4  JSR sub_A47D
+C - - - - - 0x01A418 06:A408: 20 7D A4  JSR sub_A47D_пас
 C - - - - - 0x01A41B 06:A40B: 20 67 98  JSR sub_9867_начальная_X_Y_скорость_мяча
 C - - - - - 0x01A41E 06:A40E: 20 D8 A4  JSR sub_A4D8
 C - - - - - 0x01A421 06:A411: A5 2B     LDA ram_002B
@@ -5378,23 +5378,23 @@ tbl_A45D_скорость:
 
 
 
-sub_A47D:
+sub_A47D_пас:
 C - - - - - 0x01A48D 06:A47D: A0 00     LDY #$00
-bra_A47F:
+bra_A47F_цикл:
 C - - - - - 0x01A48F 06:A47F: B9 38 00  LDA ram_0038,Y
 C - - - - - 0x01A492 06:A482: 99 34 00  STA ram_0034,Y
 C - - - - - 0x01A495 06:A485: C8        INY
 C - - - - - 0x01A496 06:A486: C0 04     CPY #$04
-C - - - - - 0x01A498 06:A488: 90 F5     BCC bra_A47F
+C - - - - - 0x01A498 06:A488: 90 F5     BCC bra_A47F_цикл
 C - - - - - 0x01A49A 06:A48A: A0 00     LDY #$00
-bra_A48C:
+bra_A48C_цикл:
 C - - - - - 0x01A49C 06:A48C: 46 35     LSR ram_0035
 C - - - - - 0x01A49E 06:A48E: 66 34     ROR ram_0034
 C - - - - - 0x01A4A0 06:A490: 46 37     LSR ram_0037
 C - - - - - 0x01A4A2 06:A492: 66 36     ROR ram_0036
 C - - - - - 0x01A4A4 06:A494: C8        INY
 C - - - - - 0x01A4A5 06:A495: C0 04     CPY #$04
-C - - - - - 0x01A4A7 06:A497: 90 F3     BCC bra_A48C
+C - - - - - 0x01A4A7 06:A497: 90 F3     BCC bra_A48C_цикл
 C - - - - - 0x01A4A9 06:A499: 18        CLC
 C - - - - - 0x01A4AA 06:A49A: A5 34     LDA ram_0034
 C - - - - - 0x01A4AC 06:A49C: 65 36     ADC ram_0036
