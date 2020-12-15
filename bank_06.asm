@@ -4312,7 +4312,7 @@ C - - - - - 0x019D8D 06:9D7D: 30 12     BMI bra_9D91
 C - - - - - 0x019D8F 06:9D7F: B9 FD 04  LDA ram_защита_поведение,Y
 C - - - - - 0x019D92 06:9D82: 29 03     AND #$03
 C - - - - - 0x019D94 06:9D84: A8        TAY
-C - - - - - 0x019D95 06:9D85: B9 3C B0  LDA tbl_B03C,Y
+C - - - - - 0x019D95 06:9D85: B9 3C B0  LDA tbl_B03C_защита,Y
 C - - - - - 0x019D98 06:9D88: 18        CLC
 C - - - - - 0x019D99 06:9D89: 65 20     ADC ram_0020
 C - - - - - 0x019D9B 06:9D8B: 90 02     BCC bra_9D8F
@@ -7844,7 +7844,7 @@ C - - - - - 0x01AFE7 06:AFD7: B9 FD 04  LDA ram_защита_поведение,
 C - - - - - 0x01AFEA 06:AFDA: 29 03     AND #$03
 C - - - - - 0x01AFEC 06:AFDC: A8        TAY
 C - - - - - 0x01AFED 06:AFDD: 18        CLC
-C - - - - - 0x01AFEE 06:AFDE: B9 3C B0  LDA tbl_B03C,Y
+C - - - - - 0x01AFEE 06:AFDE: B9 3C B0  LDA tbl_B03C_защита,Y
 C - - - - - 0x01AFF1 06:AFE1: A4 1D     LDY ram_001D
 C - - - - - 0x01AFF3 06:AFE3: 79 E4 04  ADC ram_игрок_HP,Y
 C - - - - - 0x01AFF6 06:AFE6: CD F0 04  CMP ram_мяч_HP
@@ -7906,7 +7906,7 @@ tbl_B032:
 
 
 
-tbl_B03C:
+tbl_B03C_защита:
 - D 1 - - - 0x01B04C 06:B03C: 14        .byte $14   ; 
 - D 1 - - - 0x01B04D 06:B03D: 0F        .byte $0F   ; 
 - D 1 - - - 0x01B04E 06:B03E: 0C        .byte $0C   ; 
