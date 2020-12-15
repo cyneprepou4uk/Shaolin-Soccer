@@ -5310,10 +5310,10 @@ C - - - - - 0x01A402 06:A3F2: C8        INY
 bra_A3F3:
 C - - - - - 0x01A403 06:A3F3: 18        CLC
 C - - - - - 0x01A404 06:A3F4: A5 2E     LDA ram_002E
-C - - - - - 0x01A406 06:A3F6: 79 5D A4  ADC tbl_A45D,Y
+C - - - - - 0x01A406 06:A3F6: 79 5D A4  ADC tbl_A45D_скорость,Y
 C - - - - - 0x01A409 06:A3F9: 85 2E     STA ram_002E
 C - - - - - 0x01A40B 06:A3FB: A5 2F     LDA ram_002F
-C - - - - - 0x01A40D 06:A3FD: 79 5E A4  ADC tbl_A45D + 1,Y
+C - - - - - 0x01A40D 06:A3FD: 79 5E A4  ADC tbl_A45D_скорость + 1,Y
 C - - - - - 0x01A410 06:A400: 85 2F     STA ram_002F
 bra_A402:
 loc_A402:
@@ -5358,7 +5358,7 @@ tbl_A45B:
 
 
 
-tbl_A45D:
+tbl_A45D_скорость:
 - D 1 - - - 0x01A46D 06:A45D: 00 00     .word $0000
 - D 1 - - - 0x01A46F 06:A45F: 00 00     .word $0000
 - D 1 - - - 0x01A471 06:A461: 00 00     .word $0000
