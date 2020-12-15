@@ -5681,9 +5681,9 @@ C - - - - - 0x01A5B7 06:A5A7: AD C2 A5  LDA tbl_A5C2
 C - - - - - 0x01A5BA 06:A5AA: 85 30     STA ram_0030
 C - - - - - 0x01A5BC 06:A5AC: AD C3 A5  LDA tbl_A5C2 + 1
 C - - - - - 0x01A5BF 06:A5AF: 85 31     STA ram_0031
-C - - - - - 0x01A5C1 06:A5B1: AD C4 A5  LDA tbl_A5C2 + 2
+C - - - - - 0x01A5C1 06:A5B1: AD C4 A5  LDA tbl_A5C4
 C - - - - - 0x01A5C4 06:A5B4: 85 32     STA ram_0032
-C - - - - - 0x01A5C6 06:A5B6: AD C5 A5  LDA tbl_A5C2 + 3
+C - - - - - 0x01A5C6 06:A5B6: AD C5 A5  LDA tbl_A5C4 + 1
 C - - - - - 0x01A5C9 06:A5B9: 85 33     STA ram_0033
 C - - - - - 0x01A5CB 06:A5BB: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x01A5CE 06:A5BE: 20 BD CE  JSR sub_0x01CECD
