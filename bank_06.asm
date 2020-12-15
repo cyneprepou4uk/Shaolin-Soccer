@@ -5698,104 +5698,104 @@ tbl_A5C4:
 off_A5C6:
 - - - - - - 0x01A5D6 06:A5C6: 80 A6     .word _animation_A680_00    ; 
 - D 1 - I - 0x01A5D8 06:A5C8: 81 A6     .word _animation_A681_01    ; обычная стойка
-- D 1 - I - 0x01A5DA 06:A5CA: 8D A7     .word _animation_A78D_02    ; касание земли при приземлении
+- D 1 - I - 0x01A5DA 06:A5CA: 8D A7     .word _animation_A78D_02    ; приседает якобы после приземления
 - D 1 - I - 0x01A5DC 06:A5CC: 90 A7     .word _animation_A790_03    ; лежачая поза (червячок)
 - D 1 - I - 0x01A5DE 06:A5CE: A0 A7     .word _animation_A7A0_04    ; лежачий труп лицом вверх
 - D 1 - I - 0x01A5E0 06:A5D0: A3 A7     .word _animation_A7A3_05    ; лежачий труп лицом вниз
 - D 1 - I - 0x01A5E2 06:A5D2: 93 A7     .word _animation_A793_06    ; выпученные глаза, слегка подлетает
-- D 1 - I - 0x01A5E4 06:A5D4: 48 A8     .word _animation_A848_07    ; 
-- D 1 - I - 0x01A5E6 06:A5D6: 6F A8     .word _animation_A86F_08    ; 
-- D 1 - I - 0x01A5E8 06:A5D8: 38 A8     .word _animation_A838_09    ; 
-- D 1 - I - 0x01A5EA 06:A5DA: 56 A8     .word _animation_A856_0A    ; 
-- D 1 - I - 0x01A5EC 06:A5DC: BE A8     .word _animation_A8BE_0B    ; 
-- D 1 - I - 0x01A5EE 06:A5DE: F1 A8     .word _animation_A8F1_0C    ; 
-- D 1 - I - 0x01A5F0 06:A5E0: C9 A8     .word _animation_A8C9_0D    ; 
-- D 1 - I - 0x01A5F2 06:A5E2: DD A8     .word _animation_A8DD_0E    ; 
+- D 1 - I - 0x01A5E4 06:A5D4: 48 A8     .word _animation_A848_07    ; замах удара ногой на земле
+- D 1 - I - 0x01A5E6 06:A5D6: 6F A8     .word _animation_A86F_08    ; замах паса ногой на земле
+- D 1 - I - 0x01A5E8 06:A5D8: 38 A8     .word _animation_A838_09    ; замах удара ногой на земле когда игрок владеет мячом
+- D 1 - I - 0x01A5EA 06:A5DA: 56 A8     .word _animation_A856_0A    ; замах паса ногой на земле когда игрок владеет мячом + звук
+- D 1 - I - 0x01A5EC 06:A5DC: BE A8     .word _animation_A8BE_0B    ; подброс мяча коленкой на месте, принятие мяча на коленку/голову
+- D 1 - I - 0x01A5EE 06:A5DE: F1 A8     .word _animation_A8F1_0C    ; кипер только что словил мяч
+- D 1 - I - 0x01A5F0 06:A5E0: C9 A8     .word _animation_A8C9_0D    ; чеканка головой/коленом/пяткой стоя на месте
+- D 1 - I - 0x01A5F2 06:A5E2: DD A8     .word _animation_A8DD_0E    ; подброс мяча коленкой на месте
 - D 1 - I - 0x01A5F4 06:A5E4: 18 A9     .word _animation_A918_0F    ; 
-- D 1 - I - 0x01A5F6 06:A5E6: B1 A8     .word _animation_A8B1_10    ; 
-- D 1 - I - 0x01A5F8 06:A5E8: 2C A9     .word _animation_A92C_11    ; 
+- D 1 - I - 0x01A5F6 06:A5E6: B1 A8     .word _animation_A8B1_10    ; перекидывание мяча пяткой через голову
+- D 1 - I - 0x01A5F8 06:A5E8: 2C A9     .word _animation_A92C_11    ; приказ, синдром давителя
 - - - - - - 0x01A5FA 06:A5EA: 00 A9     .word _animation_A900_12    ; 
 - - - - - - 0x01A5FC 06:A5EC: 80 A6     .word _animation_A680_13    ; 
-- D 1 - I - 0x01A5FE 06:A5EE: A6 A6     .word _animation_A6A6_14    ; 
-- - - - - - 0x01A600 06:A5F0: 5D A8     .word _animation_A85D_15    ; 
-- D 1 - I - 0x01A602 06:A5F2: B4 A6     .word _animation_A6B4_16    ; 
+- D 1 - I - 0x01A5FE 06:A5EE: A6 A6     .word _animation_A6A6_14    ; прыжок
+- - - - - - 0x01A600 06:A5F0: 5D A8     .word _animation_A85D_15    ; замах паса ногой на земле когда игрок владеет мячом + звук
+- D 1 - I - 0x01A602 06:A5F2: B4 A6     .word _animation_A6B4_16    ; вбрасывание мяча из аута
 - - - - - - 0x01A604 06:A5F4: 80 A6     .word _animation_A680_17    ; 
 - - - - - - 0x01A606 06:A5F6: 80 A6     .word _animation_A680_18    ; 
-- D 1 - I - 0x01A608 06:A5F8: 0D A9     .word _animation_A90D_19    ; 
-- D 1 - I - 0x01A60A 06:A5FA: D7 A6     .word _animation_A6D7_1A    ; 
-- D 1 - I - 0x01A60C 06:A5FC: E2 A6     .word _animation_A6E2_1B    ; 
-- D 1 - I - 0x01A60E 06:A5FE: 00 A7     .word _animation_A700_1C    ; 
-- D 1 - I - 0x01A610 06:A600: F3 A6     .word _animation_A6F3_1D    ; 
+- D 1 - I - 0x01A608 06:A5F8: 0D A9     .word _animation_A90D_19    ; удар локтем
+- D 1 - I - 0x01A60A 06:A5FA: D7 A6     .word _animation_A6D7_1A    ; положить мяч на нужную точку
+- D 1 - I - 0x01A60C 06:A5FC: E2 A6     .word _animation_A6E2_1B    ; разогнаться после 1A
+- D 1 - I - 0x01A60E 06:A5FE: 00 A7     .word _animation_A700_1C    ; подбежать к мячу после 1B, затем будет пас 08
+- D 1 - I - 0x01A610 06:A600: F3 A6     .word _animation_A6F3_1D    ; спринт
 - - - - - - 0x01A612 06:A602: 80 A6     .word _animation_A680_1E    ; 
 - - - - - - 0x01A614 06:A604: 80 A6     .word _animation_A680_1F    ; 
-- D 1 - I - 0x01A616 06:A606: 0B A7     .word _animation_A70B_20    ; 
-- D 1 - I - 0x01A618 06:A608: 2E A7     .word _animation_A72E_21    ; 
-- D 1 - I - 0x01A61A 06:A60A: 0D A9     .word _animation_A90D_22    ; 
-- D 1 - I - 0x01A61C 06:A60C: 10 A9     .word _animation_A910_23    ; 
-- D 1 - I - 0x01A61E 06:A60E: 7B A8     .word _animation_A87B_24    ; 
-- D 1 - I - 0x01A620 06:A610: 5F A7     .word _animation_A75F_25    ; 
-- D 1 - I - 0x01A622 06:A612: E4 A8     .word _animation_A8E4_26    ; 
-- D 1 - I - 0x01A624 06:A614: E5 A9     .word _animation_A9E5_27    ; 
-- D 1 - I - 0x01A626 06:A616: DA A9     .word _animation_A9DA_28    ; 
-- D 1 - I - 0x01A628 06:A618: DA A9     .word _animation_A9DA_29    ; 
-- D 1 - I - 0x01A62A 06:A61A: 49 A9     .word _animation_A949_2A    ; 
+- D 1 - I - 0x01A616 06:A606: 0B A7     .word _animation_A70B_20    ; ходьба
+- D 1 - I - 0x01A618 06:A608: 2E A7     .word _animation_A72E_21    ; бег
+- D 1 - I - 0x01A61A 06:A60A: 0D A9     .word _animation_A90D_22    ; удар локтем
+- D 1 - I - 0x01A61C 06:A60C: 10 A9     .word _animation_A910_23    ; подкат
+- D 1 - I - 0x01A61E 06:A60E: 7B A8     .word _animation_A87B_24    ; зачистка с уворотом
+- D 1 - I - 0x01A620 06:A610: 5F A7     .word _animation_A75F_25    ; уворот стоя на мяче на 180 градусов
+- D 1 - I - 0x01A622 06:A612: E4 A8     .word _animation_A8E4_26    ; чеканка головой/коленом когда бежишь с мячом
+- D 1 - I - 0x01A624 06:A614: E5 A9     .word _animation_A9E5_27    ; кручение червячком вверх/вниз
+- D 1 - I - 0x01A626 06:A616: DA A9     .word _animation_A9DA_28    ; нижний прыжок кипера (отбить)
+- D 1 - I - 0x01A628 06:A618: DA A9     .word _animation_A9DA_29    ; нижний прыжок кипера (словить)
+- D 1 - I - 0x01A62A 06:A61A: 49 A9     .word _animation_A949_2A    ; ползание червячком
 - - - - - - 0x01A62C 06:A61C: 03 A9     .word _animation_A903_2B    ; 
 - - - - - - 0x01A62E 06:A61E: 80 A6     .word _animation_A680_2C    ; 
-- D 1 - I - 0x01A630 06:A620: 96 A7     .word _animation_A796_2D    ; 
-- D 1 - I - 0x01A632 06:A622: 99 A7     .word _animation_A799_2E    ; 
-- D 1 - I - 0x01A634 06:A624: 96 A8     .word _animation_A896_2F    ; 
-- D 1 - I - 0x01A636 06:A626: 70 A7     .word _animation_A770_30    ; 
-- D 1 - I - 0x01A638 06:A628: D5 A7     .word _animation_A7D5_31    ; 
-- D 1 - I - 0x01A63A 06:A62A: BF A7     .word _animation_A7BF_32    ; 
-- D 1 - I - 0x01A63C 06:A62C: 04 A8     .word _animation_A804_33    ; 
-- D 1 - I - 0x01A63E 06:A62E: CE A7     .word _animation_A7CE_34    ; 
+- D 1 - I - 0x01A630 06:A620: 96 A7     .word _animation_A796_2D    ; выпученные глаза спереди
+- D 1 - I - 0x01A632 06:A622: 99 A7     .word _animation_A799_2E    ; выпученные глаза со спины
+- D 1 - I - 0x01A634 06:A624: 96 A8     .word _animation_A896_2F    ; зачистка с вращением вокруг своей оси
+- D 1 - I - 0x01A636 06:A626: 70 A7     .word _animation_A770_30    ; прыжок
+- D 1 - I - 0x01A638 06:A628: D5 A7     .word _animation_A7D5_31    ; прыжок червячком
+- D 1 - I - 0x01A63A 06:A62A: BF A7     .word _animation_A7BF_32    ; удар через себя в воздухе без мяча
+- D 1 - I - 0x01A63C 06:A62C: 04 A8     .word _animation_A804_33    ; удар ногой в воздухе без мяча
+- D 1 - I - 0x01A63E 06:A62E: CE A7     .word _animation_A7CE_34    ; удар головой в воздухе без мяча
 - D 1 - I - 0x01A640 06:A630: CE A7     .word _animation_A7CE_35    ; 
 - - - - - - 0x01A642 06:A632: CE A7     .word _animation_A7CE_36    ; 
-- D 1 - I - 0x01A644 06:A634: EC A7     .word _animation_A7EC_37    ; 
-- D 1 - I - 0x01A646 06:A636: F9 A7     .word _animation_A7F9_38    ; 
-- D 1 - I - 0x01A648 06:A638: 0D A8     .word _animation_A80D_39    ; 
-- D 1 - I - 0x01A64A 06:A63A: 18 A8     .word _animation_A818_3A    ; 
-- D 1 - I - 0x01A64C 06:A63C: 3A A9     .word _animation_A93A_3B    ; 
+- D 1 - I - 0x01A644 06:A634: EC A7     .word _animation_A7EC_37    ; удар ногой в воздухе владея мячом
+- D 1 - I - 0x01A646 06:A636: F9 A7     .word _animation_A7F9_38    ; удар головой в воздухе владея мячом
+- D 1 - I - 0x01A648 06:A638: 0D A8     .word _animation_A80D_39    ; пас с воздухе ногой владея мячом
+- D 1 - I - 0x01A64A 06:A63A: 18 A8     .word _animation_A818_3A    ; ? прыжок + пас ногой
+- D 1 - I - 0x01A64C 06:A63C: 3A A9     .word _animation_A93A_3B    ; ? удар локтем
 - D 1 - I - 0x01A64E 06:A63E: 9C A7     .word _animation_A79C_3C    ; выпученные глаза, слегка подлетает
-- D 1 - I - 0x01A650 06:A640: 9E A7     .word _animation_A79E_3D    ; 
-- D 1 - I - 0x01A652 06:A642: 4E A9     .word _animation_A94E_3E    ; 
-- D 1 - I - 0x01A654 06:A644: 4E A9     .word _animation_A94E_3F    ; 
-- D 1 - I - 0x01A656 06:A646: 59 A9     .word _animation_A959_40    ; 
-- D 1 - I - 0x01A658 06:A648: 5B A9     .word _animation_A95B_41    ; 
+- D 1 - I - 0x01A650 06:A640: 9E A7     .word _animation_A79E_3D    ; выпученные глаза, отлетает вбок
+- D 1 - I - 0x01A652 06:A642: 4E A9     .word _animation_A94E_3E    ; верхний прыжок кипера (отбить)
+- D 1 - I - 0x01A654 06:A644: 4E A9     .word _animation_A94E_3F    ; верхний прыжок кипера (словить, видимо только для бота)
+- D 1 - I - 0x01A656 06:A646: 59 A9     .word _animation_A959_40    ; кипер словил мяч руками над головой
+- D 1 - I - 0x01A658 06:A648: 5B A9     .word _animation_A95B_41    ; первый выпад кипера с кулаком
 - D 1 - I - 0x01A65A 06:A64A: 41 A9     .word _animation_A941_42    ; 
-- D 1 - I - 0x01A65C 06:A64C: AE A9     .word _animation_A9AE_43    ; 
-- - - - - - 0x01A65E 06:A64E: D1 A9     .word _animation_A9D1_44    ; 
+- D 1 - I - 0x01A65C 06:A64C: AE A9     .word _animation_A9AE_43    ; крутилка с этажерки игрока внизу
+- - - - - - 0x01A65E 06:A64E: D1 A9     .word _animation_A9D1_44    ; ? какой-то прыжок
 - D 1 - I - 0x01A660 06:A650: 70 A7     .word _animation_A770_45    ; 
-- D 1 - I - 0x01A662 06:A652: D9 A7     .word _animation_A7D9_46    ; 
-- D 1 - I - 0x01A664 06:A654: AE A9     .word _animation_A9AE_47    ; 
-- D 1 - I - 0x01A666 06:A656: 95 A9     .word _animation_A995_48    ; 
-- D 1 - I - 0x01A668 06:A658: 98 A9     .word _animation_A998_49    ; 
-- D 1 - I - 0x01A66A 06:A65A: A1 A9     .word _animation_A9A1_4A    ; 
-- D 1 - I - 0x01A66C 06:A65C: A4 A9     .word _animation_A9A4_4B    ; 
-- D 1 - I - 0x01A66E 06:A65E: AB A9     .word _animation_A9AB_4C    ; 
-- D 1 - I - 0x01A670 06:A660: AE A9     .word _animation_A9AE_4D    ; 
-- D 1 - I - 0x01A672 06:A662: BC A9     .word _animation_A9BC_4E    ; 
-- D 1 - I - 0x01A674 06:A664: C6 A9     .word _animation_A9C6_4F    ; 
-- D 1 - I - 0x01A676 06:A666: C1 A9     .word _animation_A9C1_50    ; 
-- D 1 - I - 0x01A678 06:A668: B7 A9     .word _animation_A9B7_51    ; 
-- D 1 - I - 0x01A67A 06:A66A: 70 A7     .word _animation_A770_52    ; 
+- D 1 - I - 0x01A662 06:A652: D9 A7     .word _animation_A7D9_46    ; удар через себя в воздухе владея мячом
+- D 1 - I - 0x01A664 06:A654: AE A9     .word _animation_A9AE_47    ; крутилка с этажерки игрока вверху
+- D 1 - I - 0x01A666 06:A656: 95 A9     .word _animation_A995_48    ; ветряная крутилка ногой (начало)
+- D 1 - I - 0x01A668 06:A658: 98 A9     .word _animation_A998_49    ; ветряная крутилка ногой (процесс)
+- D 1 - I - 0x01A66A 06:A65A: A1 A9     .word _animation_A9A1_4A    ; мексиканская крутилка головой (начало)
+- D 1 - I - 0x01A66C 06:A65C: A4 A9     .word _animation_A9A4_4B    ; мексиканская крутилка головой (процесс)
+- D 1 - I - 0x01A66E 06:A65E: AB A9     .word _animation_A9AB_4C    ; ветряная крутилка солнышком (начало)
+- D 1 - I - 0x01A670 06:A660: AE A9     .word _animation_A9AE_4D    ; ветряная крутилка солнышком (процесс)
+- D 1 - I - 0x01A672 06:A662: BC A9     .word _animation_A9BC_4E    ; мексиканская крутилка ногами (начало)
+- D 1 - I - 0x01A674 06:A664: C6 A9     .word _animation_A9C6_4F    ; мексиканская крутилка ногами (процесс)
+- D 1 - I - 0x01A676 06:A666: C1 A9     .word _animation_A9C1_50    ; мексиканская крутилка головой (начало)
+- D 1 - I - 0x01A678 06:A668: B7 A9     .word _animation_A9B7_51    ; мексиканская крутилка ногами (процесс)
+- D 1 - I - 0x01A67A 06:A66A: 70 A7     .word _animation_A770_52    ; прыжок кипера на месте
 - D 1 - I - 0x01A67C 06:A66C: 81 A7     .word _animation_A781_53    ; 
-- D 1 - I - 0x01A67E 06:A66E: 79 A9     .word _animation_A979_54    ; 
-- - - - - - 0x01A680 06:A670: 0B AA     .word _animation_AA0B_55    ; 
-- D 1 - I - 0x01A682 06:A672: 70 A7     .word _animation_A770_56    ; 
-- D 1 - I - 0x01A684 06:A674: AF A7     .word _animation_A7AF_57    ; 
-- D 1 - I - 0x01A686 06:A676: 35 A9     .word _animation_A935_58    ; 
-- D 1 - I - 0x01A688 06:A678: 9C A7     .word _animation_A79C_59    ; выпученные глаза, подлетает высоко
-- D 1 - I - 0x01A68A 06:A67A: 9E A7     .word _animation_A79E_5A    ; 
-- D 1 - I - 0x01A68C 06:A67C: A6 A7     .word _animation_A7A6_5B    ; 
-- D 1 - I - 0x01A68E 06:A67E: 64 A9     .word _animation_A964_5C    ; 
+- D 1 - I - 0x01A67E 06:A66E: 79 A9     .word _animation_A979_54    ; второй выпад кипера с кулаком
+- - - - - - 0x01A680 06:A670: 0B AA     .word _animation_AA0B_55    ; унесло вихрем
+- D 1 - I - 0x01A682 06:A672: 70 A7     .word _animation_A770_56    ; запрыгивание на этажерку
+- D 1 - I - 0x01A684 06:A674: AF A7     .word _animation_A7AF_57    ; прыдок высокопрыгающего
+- D 1 - I - 0x01A686 06:A676: 35 A9     .word _animation_A935_58    ; коленочник
+- D 1 - I - 0x01A688 06:A678: 9C A7     .word _animation_A79C_59    ; выпученные глаза, подлетает высоко вниз
+- D 1 - I - 0x01A68A 06:A67A: 9E A7     .word _animation_A79E_5A    ; выпученные глаза, подлетает высоко вверх
+- D 1 - I - 0x01A68C 06:A67C: A6 A7     .word _animation_A7A6_5B    ; гвинейская крутилка
+- D 1 - I - 0x01A68E 06:A67E: 64 A9     .word _animation_A964_5C    ; вратарская крутилка
 
 
 
 con_timer   = $00
 con_anim    = $00
 con_F0      = $F0   ; тип удара мяча
-con_F1      = $F1   ; воспроизвести звук
+con_sound   = $F1   ; воспроизвести звук
 con_F2      = $F2   ; режим игры
 con_FC      = $FC   ; ??? хз, чет не могу найти, но по 0x01CF40 видно что использовалось
 con_FD      = $FD   ; развилка исходя из подтипа анимации
@@ -5885,7 +5885,7 @@ off_A6B9_00:
 - - - - - - 0x01A6CD 06:A6BD: 10        .byte con_timer + $10
 - - - - - - 0x01A6CE 06:A6BE: 17        .byte con_anim + $17
 - - - - - - 0x01A6CF 06:A6BF: F0        .byte con_F0, $04
-- - - - - - 0x01A6D1 06:A6C1: F1        .byte con_F1, $20
+- - - - - - 0x01A6D1 06:A6C1: F1        .byte con_sound, $20
 - - - - - - 0x01A6D3 06:A6C3: F2        .byte con_F2, $00
 - - - - - - 0x01A6D5 06:A6C5: 08        .byte con_timer + $08
 - - - - - - 0x01A6D6 06:A6C6: 1D        .byte con_anim + $1D
@@ -5897,7 +5897,7 @@ off_A6C8_01:
 - D 1 - I - 0x01A6DC 06:A6CC: 10        .byte con_timer + $10
 - D 1 - I - 0x01A6DD 06:A6CD: 14        .byte con_anim + $14
 - D 1 - I - 0x01A6DE 06:A6CE: F0        .byte con_F0, $04
-- D 1 - I - 0x01A6E0 06:A6D0: F1        .byte con_F1, $20
+- D 1 - I - 0x01A6E0 06:A6D0: F1        .byte con_sound, $20
 - D 1 - I - 0x01A6E2 06:A6D2: F2        .byte con_F2, $00
 - D 1 - I - 0x01A6E4 06:A6D4: 08        .byte con_timer + $08
 - D 1 - I - 0x01A6E5 06:A6D5: 15        .byte con_anim + $15
@@ -6323,7 +6323,7 @@ _animation_A80D_39:
 - D 1 - I - 0x01A81F 06:A80F: 03        .byte con_timer + $03
 - D 1 - I - 0x01A820 06:A810: 02        .byte con_anim + $02
 - D 1 - I - 0x01A821 06:A811: F0        .byte con_F0, $04
-- D 1 - I - 0x01A823 06:A813: F1        .byte con_F1, $20
+- D 1 - I - 0x01A823 06:A813: F1        .byte con_sound, $20
 - D 1 - I - 0x01A825 06:A815: 07        .byte con_timer + $07
 - D 1 - I - 0x01A826 06:A816: 06        .byte con_anim + $06
 - D 1 - I - 0x01A827 06:A817: FF        .byte con_FF
@@ -6336,7 +6336,7 @@ _animation_A818_3A:
 - D 1 - I - 0x01A82A 06:A81A: 05        .byte con_timer + $05
 - D 1 - I - 0x01A82B 06:A81B: 03        .byte con_anim + $03
 - D 1 - I - 0x01A82C 06:A81C: F0        .byte con_F0, $04
-- D 1 - I - 0x01A82E 06:A81E: F1        .byte con_F1, $22
+- D 1 - I - 0x01A82E 06:A81E: F1        .byte con_sound, $22
 - D 1 - I - 0x01A830 06:A820: 06        .byte con_timer + $06
 - D 1 - I - 0x01A831 06:A821: 0D        .byte con_anim + $0D
 - D 1 - I - 0x01A832 06:A822: FF        .byte con_FF
@@ -6357,7 +6357,7 @@ off_A82F_00:
 - D 1 - I - 0x01A83F 06:A82F: 03        .byte con_timer + $03
 - D 1 - I - 0x01A840 06:A830: 03        .byte con_anim + $03
 - D 1 - I - 0x01A841 06:A831: F0        .byte con_F0, $04
-- D 1 - I - 0x01A843 06:A833: F1        .byte con_F1, $22
+- D 1 - I - 0x01A843 06:A833: F1        .byte con_sound, $22
 - D 1 - I - 0x01A845 06:A835: 05        .byte con_timer + $05
 - D 1 - I - 0x01A846 06:A836: 0D        .byte con_anim + $0D
 - D 1 - I - 0x01A847 06:A837: FF        .byte con_FF
@@ -6411,7 +6411,7 @@ _animation_A85D_15:
 - - - - - - 0x01A86D 06:A85D: 04        .byte con_timer + $04
 - - - - - - 0x01A86E 06:A85E: 05        .byte con_anim + $05
 - - - - - - 0x01A86F 06:A85F: F0        .byte con_F0, $18
-- - - - - - 0x01A871 06:A861: F1        .byte con_F1, $20
+- - - - - - 0x01A871 06:A861: F1        .byte con_sound, $20
 - - - - - - 0x01A873 06:A863: 04        .byte con_timer + $04
 - - - - - - 0x01A874 06:A864: 06        .byte con_anim + $06
 - - - - - - 0x01A875 06:A865: FF        .byte con_FF
@@ -6420,7 +6420,7 @@ off_A866_02:
 - D 1 - I - 0x01A876 06:A866: 04        .byte con_timer + $04
 - D 1 - I - 0x01A877 06:A867: 05        .byte con_anim + $05
 - D 1 - I - 0x01A878 06:A868: F0        .byte con_F0, $04
-- D 1 - I - 0x01A87A 06:A86A: F1        .byte con_F1, $20
+- D 1 - I - 0x01A87A 06:A86A: F1        .byte con_sound, $20
 - D 1 - I - 0x01A87C 06:A86C: 04        .byte con_timer + $04
 - D 1 - I - 0x01A87D 06:A86D: 06        .byte con_anim + $06
 - D 1 - I - 0x01A87E 06:A86E: FF        .byte con_FF
@@ -6536,18 +6536,18 @@ off_A8C7_00:
 
 _animation_A8C9_0D:
 - D 1 - I - 0x01A8D9 06:A8C9: FD        .byte con_FD
-- D 1 - I - 0x01A8DA 06:A8CA: D6 A8     .word off_A8D6_00
-- D 1 - I - 0x01A8DC 06:A8CC: D0 A8     .word off_A8D0_01
-- D 1 - I - 0x01A8DE 06:A8CE: D3 A8     .word off_A8D3_02
-off_A8D0_01:
+- D 1 - I - 0x01A8DA 06:A8CA: D6 A8     .word off_A8D6_00_чеканка_головой
+- D 1 - I - 0x01A8DC 06:A8CC: D0 A8     .word off_A8D0_01_чеканка_коленом
+- D 1 - I - 0x01A8DE 06:A8CE: D3 A8     .word off_A8D3_02_чеканка_пяткой
+off_A8D0_01_чеканка_коленом:
 - D 1 - I - 0x01A8E0 06:A8D0: 04        .byte con_timer + $04
 - D 1 - I - 0x01A8E1 06:A8D1: 18        .byte con_anim + $18
 - D 1 - I - 0x01A8E2 06:A8D2: FF        .byte con_FF
-off_A8D3_02:
+off_A8D3_02_чеканка_пяткой:
 - D 1 - I - 0x01A8E3 06:A8D3: 04        .byte con_timer + $04
 - D 1 - I - 0x01A8E4 06:A8D4: 0D        .byte con_anim + $0D
 - D 1 - I - 0x01A8E5 06:A8D5: FF        .byte con_FF
-off_A8D6_00:
+off_A8D6_00_чеканка_головой:
 - D 1 - I - 0x01A8E6 06:A8D6: 02        .byte con_timer + $02
 - D 1 - I - 0x01A8E7 06:A8D7: 03        .byte con_anim + $03
 - D 1 - I - 0x01A8E8 06:A8D8: 01        .byte con_timer + $01
@@ -6570,15 +6570,15 @@ _animation_A8DD_0E:
 
 _animation_A8E4_26:
 - D 1 - I - 0x01A8F4 06:A8E4: FD        .byte con_FD
-- D 1 - I - 0x01A8F5 06:A8E5: EE A8     .word off_A8EE_00
-- D 1 - I - 0x01A8F7 06:A8E7: EB A8     .word off_A8EB_01
-- D 1 - I - 0x01A8F9 06:A8E9: EB A8     .word off_A8EB_02
-off_A8EB_01:
-off_A8EB_02:
+- D 1 - I - 0x01A8F5 06:A8E5: EE A8     .word off_A8EE_00_чеканка_головой
+- D 1 - I - 0x01A8F7 06:A8E7: EB A8     .word off_A8EB_01_чеканка_коленом
+- D 1 - I - 0x01A8F9 06:A8E9: EB A8     .word off_A8EB_02_чеканка_коленом
+off_A8EB_01_чеканка_коленом:
+off_A8EB_02_чеканка_коленом:
 - D 1 - I - 0x01A8FB 06:A8EB: 02        .byte con_timer + $02
 - D 1 - I - 0x01A8FC 06:A8EC: 18        .byte con_anim + $18
 - D 1 - I - 0x01A8FD 06:A8ED: FF        .byte con_FF
-off_A8EE_00:
+off_A8EE_00_чеканка_головой:
 - D 1 - I - 0x01A8FE 06:A8EE: 02        .byte con_timer + $02
 - D 1 - I - 0x01A8FF 06:A8EF: 03        .byte con_anim + $03
 - D 1 - I - 0x01A900 06:A8F0: FF        .byte con_FF
@@ -6655,7 +6655,7 @@ _animation_A918_0F:
 - D 1 - I - 0x01A928 06:A918: FD        .byte con_FD
 - D 1 - I - 0x01A929 06:A919: 29 A9     .word off_A929_00
 - D 1 - I - 0x01A92B 06:A91B: 29 A9     .word off_A929_01
-- D 1 - I - 0x01A92D 06:A91D: 08 AA     .word off_AA08_02
+- D 1 - I - 0x01A92D 06:A91D: 08 AA     .word off_AA08_02   ; какой-то особый случай
 - D 1 - I - 0x01A92F 06:A91F: 29 A9     .word off_A929_03
 - D 1 - I - 0x01A931 06:A921: 29 A9     .word off_A929_04
 - D 1 - I - 0x01A933 06:A923: 29 A9     .word off_A929_05
@@ -6764,7 +6764,7 @@ _animation_A95B_41:
 
 
 _animation_A964_5C:
-- D 1 - I - 0x01A974 06:A964: F1        .byte con_F1, $3C
+- D 1 - I - 0x01A974 06:A964: F1        .byte con_sound, $3C
 - D 1 - I - 0x01A976 06:A966: 01        .byte con_timer + $01
 - D 1 - I - 0x01A977 06:A967: 00        .byte con_anim + $00
 - D 1 - I - 0x01A978 06:A968: 01        .byte con_timer + $01
@@ -6781,7 +6781,7 @@ _animation_A964_5C:
 - D 1 - I - 0x01A983 06:A973: D2        .byte con_anim + $D2
 - D 1 - I - 0x01A984 06:A974: 01        .byte con_timer + $01
 - D 1 - I - 0x01A985 06:A975: 52        .byte con_anim + $52
-- D 1 - I - 0x01A986 06:A976: F1        .byte con_F1, $38
+- D 1 - I - 0x01A986 06:A976: F1        .byte con_sound, $38
 - D 1 - I - 0x01A988 06:A978: FF        .byte con_FF
 
 
