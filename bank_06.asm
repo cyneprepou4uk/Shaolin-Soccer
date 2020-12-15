@@ -5686,7 +5686,7 @@ C - - - - - 0x01A5C4 06:A5B4: 85 32     STA ram_0032
 C - - - - - 0x01A5C6 06:A5B6: AD C5 A5  LDA tbl_A5C4 + 1
 C - - - - - 0x01A5C9 06:A5B9: 85 33     STA ram_0033
 C - - - - - 0x01A5CB 06:A5BB: BD 59 04  LDA ram_игрок_номер_движения,X
-C - - - - - 0x01A5CE 06:A5BE: 20 BD CE  JSR sub_0x01CECD
+C - - - - - 0x01A5CE 06:A5BE: 20 BD CE  JSR sub_0x01CECD_вычислить_анимацию
 C - - - - - 0x01A5D1 06:A5C1: 60        RTS
 
 tbl_A5C2:

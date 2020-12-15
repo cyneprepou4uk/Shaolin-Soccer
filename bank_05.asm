@@ -2768,7 +2768,7 @@ C - - - - - 0x014FE2 05:8FD2: 85 30     STA ram_0030
 C - - - - - 0x014FE4 05:8FD4: AD E1 8F  LDA tbl_8FE0 + 1
 C - - - - - 0x014FE7 05:8FD7: 85 31     STA ram_0031
 C - - - - - 0x014FE9 05:8FD9: BD 59 04  LDA ram_игрок_номер_движения,X
-C - - - - - 0x014FEC 05:8FDC: 20 56 C0  JSR sub_0x01CECD
+C - - - - - 0x014FEC 05:8FDC: 20 56 C0  JSR sub_0x01CECD_вычислить_анимацию
 C - - - - - 0x014FEF 05:8FDF: 60        RTS
 
 
@@ -3154,7 +3154,7 @@ C - - - - - 0x0151F2 05:91E2: 85 32     STA ram_0032
 C - - - - - 0x0151F4 05:91E4: AD F3 91  LDA tbl_91F2 + 1
 C - - - - - 0x0151F7 05:91E7: 85 33     STA ram_0033
 C - - - - - 0x0151F9 05:91E9: BD 59 04  LDA ram_игрок_номер_движения,X
-C D 0 - I - 0x0151FC 05:91EC: 20 56 C0  JSR sub_0x01CECD
+C D 0 - I - 0x0151FC 05:91EC: 20 56 C0  JSR sub_0x01CECD_вычислить_анимацию
 C - - - - - 0x0151FF 05:91EF: 60        RTS
 
 
