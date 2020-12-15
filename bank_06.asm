@@ -7848,7 +7848,7 @@ C - - - - - 0x01AFEE 06:AFDE: B9 3C B0  LDA tbl_B03C_защита,Y
 C - - - - - 0x01AFF1 06:AFE1: A4 1D     LDY ram_001D
 C - - - - - 0x01AFF3 06:AFE3: 79 E4 04  ADC ram_игрок_HP,Y
 C - - - - - 0x01AFF6 06:AFE6: CD F0 04  CMP ram_мяч_HP
-C - - - - - 0x01AFF9 06:AFE9: B0 44     BCS bra_B02F_RTS
+C - - - - - 0x01AFF9 06:AFE9: B0 44     BCS bra_B02C_RTS
 C - - - - - 0x01AFFB 06:AFEB: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x01AFFE 06:AFEE: 29 01     AND #$01
 C - - - - - 0x01B000 06:AFF0: F0 07     BEQ bra_AFF9
@@ -7882,9 +7882,8 @@ bra_B02A:
 loc_B02A:
 C D 1 - - - 0x01B03A 06:B02A: 68        PLA
 C - - - - - 0x01B03B 06:B02B: 68        PLA
+bra_B02C_RTS:
 C - - - - - 0x01B03C 06:B02C: 4C 72 AD  RTS
-bra_B02F_RTS:
-C D 1 - - - 0x01B03F 06:B02F: 60        RTS
 
 
 
