@@ -5677,25 +5677,19 @@ tbl_A5A6:
 
 
 sub_A5A7:
-C - - - - - 0x01A5B7 06:A5A7: AD C2 A5  LDA tbl_A5C2
+C - - - - - 0x01A5B7 06:A5A7: AD C2 A5  LDA #< tbl_A5C6_анимации
 C - - - - - 0x01A5BA 06:A5AA: 85 30     STA ram_0030
-C - - - - - 0x01A5BC 06:A5AC: AD C3 A5  LDA tbl_A5C2 + 1
+C - - - - - 0x01A5BC 06:A5AC: AD C3 A5  LDA #> tbl_A5C6_анимации
 C - - - - - 0x01A5BF 06:A5AF: 85 31     STA ram_0031
-C - - - - - 0x01A5C1 06:A5B1: AD C4 A5  LDA tbl_A5C4
+C - - - - - 0x01A5C1 06:A5B1: AD C4 A5  LDA #< ofs_8B6C_вычислить_следующий_номер_движения
 C - - - - - 0x01A5C4 06:A5B4: 85 32     STA ram_0032
-C - - - - - 0x01A5C6 06:A5B6: AD C5 A5  LDA tbl_A5C4 + 1
+C - - - - - 0x01A5C6 06:A5B6: AD C5 A5  LDA #> ofs_8B6C_вычислить_следующий_номер_движения
 C - - - - - 0x01A5C9 06:A5B9: 85 33     STA ram_0033
 C - - - - - 0x01A5CB 06:A5BB: BD 59 04  LDA ram_игрок_номер_движения,X
 C - - - - - 0x01A5CE 06:A5BE: 20 BD CE  JSR sub_0x01CECD_вычислить_анимацию
 C - - - - - 0x01A5D1 06:A5C1: 60        RTS
 
-tbl_A5C2:
-- D 1 - - - 0x01A5D2 06:A5C2: C6 A5     .word off_A5C6
-
-tbl_A5C4:
-- D 1 - - - 0x01A5D4 06:A5C4: 6C 8B     .word ofs_8B6C_вычислить_следующий_номер_движения
-
-off_A5C6:
+tbl_A5C6_анимации:
 - - - - - - 0x01A5D6 06:A5C6: 80 A6     .word _animation_A680_00    ; 
 - D 1 - I - 0x01A5D8 06:A5C8: 81 A6     .word _animation_A681_01    ; обычная стойка
 - D 1 - I - 0x01A5DA 06:A5CA: 8D A7     .word _animation_A78D_02    ; приседает якобы после приземления
