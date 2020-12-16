@@ -5116,16 +5116,16 @@ bra_A1D7_RTS:
 C - - - - - 0x01A1E7 06:A1D7: 60        RTS
 
 tbl_A1D8_X_скорость:
-- D 1 - - - 0x01A1E8 06:A1D8: 00 06     .word $0600     ; $0600
-- D 1 - - - 0x01A1EA 06:A1DA: 00 FA     .word $FA00     ; $FA00
-- D 1 - - - 0x01A1EC 06:A1DC: 00 08     .word $0800     ; $0800
-- D 1 - - - 0x01A1EE 06:A1DE: 00 F8     .word $F800     ; $F800
+- D 1 - - - 0x01A1E8 06:A1D8: 00 06     .word $0600     ; $0600     $0400     30фпс
+- D 1 - - - 0x01A1EA 06:A1DA: 00 FA     .word $FA00     ; $FA00     $FC00
+- D 1 - - - 0x01A1EC 06:A1DC: 00 08     .word $0800     ; $0800     $0555
+- D 1 - - - 0x01A1EE 06:A1DE: 00 F8     .word $F800     ; $F800     $FAAB
 
 tbl_A1E0_Y_скорость:
-- D 1 - - - 0x01A1F0 06:A1E0: 00 04     .word $0400     ; $0400
-- D 1 - - - 0x01A1F2 06:A1E2: 00 FC     .word $FC00     ; $FC00
-- D 1 - - - 0x01A1F4 06:A1E4: 00 08     .word $0800     ; $0800
-- D 1 - - - 0x01A1F6 06:A1E6: 00 F8     .word $F800     ; $F800
+- D 1 - - - 0x01A1F0 06:A1E0: 00 04     .word $0400     ; $0400     $02AB
+- D 1 - - - 0x01A1F2 06:A1E2: 00 FC     .word $FC00     ; $FC00     $FD55
+- D 1 - - - 0x01A1F4 06:A1E4: 00 08     .word $0800     ; $0800     $0555
+- D 1 - - - 0x01A1F6 06:A1E6: 00 F8     .word $F800     ; $F800     $FAAB
 
 
 
