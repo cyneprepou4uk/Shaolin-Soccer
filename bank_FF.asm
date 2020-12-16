@@ -2249,9 +2249,9 @@ C - - - - - 0x01CE20 07:CE10: 30 15     BMI bra_CE27
 C - - - - - 0x01CE22 07:CE12: 0A        ASL
 C - - - - - 0x01CE23 07:CE13: A8        TAY
 loc_CE14:
-C D 2 - - - 0x01CE24 07:CE14: B9 30 CE  LDA tbl_CE30,Y
+C D 2 - - - 0x01CE24 07:CE14: B9 30 CE  LDA tbl_CE30_Z_скорость,Y
 C - - - - - 0x01CE27 07:CE17: 9D 20 04  STA ram_игрок_spd_Z_lo,X
-C - - - - - 0x01CE2A 07:CE1A: B9 31 CE  LDA tbl_CE31,Y
+C - - - - - 0x01CE2A 07:CE1A: B9 31 CE  LDA tbl_CE30_Z_скорость + 1,Y
 C - - - - - 0x01CE2D 07:CE1D: 9D 2E 04  STA ram_игрок_spd_Z_hi,X
 C - - - - - 0x01CE30 07:CE20: 30 0D     BMI bra_CE2F_RTS
 C - - - - - 0x01CE32 07:CE22: BD 99 03  LDA ram_игрок_Z_hi,X
@@ -2265,24 +2265,15 @@ C D 2 - - - 0x01CE3F 07:CE2F: 60        RTS
 
 
 
-tbl_CE30:
-- - - - - - 0x01CE40 07:CE30: E0        .byte $E0   ; 
-tbl_CE31:
-- - - - - - 0x01CE41 07:CE31: FF        .byte $FF   ; 
-- - - - - - 0x01CE42 07:CE32: C0        .byte $C0   ; 
-- - - - - - 0x01CE43 07:CE33: FF        .byte $FF   ; 
-- - - - - - 0x01CE44 07:CE34: 80        .byte $80   ; 
-- - - - - - 0x01CE45 07:CE35: FF        .byte $FF   ; 
-- - - - - - 0x01CE46 07:CE36: 40        .byte $40   ; 
-- - - - - - 0x01CE47 07:CE37: FF        .byte $FF   ; 
-- D 2 - - - 0x01CE48 07:CE38: 20        .byte $20   ; 
-- D 2 - - - 0x01CE49 07:CE39: 00        .byte $00   ; 
-- D 2 - - - 0x01CE4A 07:CE3A: 40        .byte $40   ; 
-- D 2 - - - 0x01CE4B 07:CE3B: 00        .byte $00   ; 
-- D 2 - - - 0x01CE4C 07:CE3C: 80        .byte $80   ; 
-- D 2 - - - 0x01CE4D 07:CE3D: 00        .byte $00   ; 
-- - - - - - 0x01CE4E 07:CE3E: 00        .byte $00   ; 
-- - - - - - 0x01CE4F 07:CE3F: 01        .byte $01   ; 
+tbl_CE30_Z_скорость:
+- - - - - - 0x01CE40 07:CE30: E0 FF     .word $FFE0
+- - - - - - 0x01CE42 07:CE32: C0 FF     .word $FFC0
+- - - - - - 0x01CE44 07:CE34: 80 FF     .word $FF80
+- - - - - - 0x01CE46 07:CE36: 40 FF     .word $FF40
+- D 2 - - - 0x01CE48 07:CE38: 20 00     .word $0020
+- D 2 - - - 0x01CE4A 07:CE3A: 40 00     .word $0040
+- D 2 - - - 0x01CE4C 07:CE3C: 80 00     .word $0080
+- - - - - - 0x01CE4E 07:CE3E: 00 01     .word $0100
 
 
 
