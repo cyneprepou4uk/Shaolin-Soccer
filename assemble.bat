@@ -7,19 +7,20 @@ if exist !goal5.old (copy !goal5.nes !goal5.old)
 :: запустить перевод символов и дождаться выполнения скрипта
 start /wait lua53 preparations.lua
 
-:: -U = нет необходимости писать .import L_xx_xxxx в тех банках, которые ссылаются на .export L_xx_xxxx
+:: -U = нет необходимости писать .import label
 :: -l = создать файл листинга для этого банка
-ca65 -U -l copy_bank_00.asm
-ca65 -U -l copy_bank_01.asm
-ca65 -U -l copy_bank_02.asm
-ca65 -U -l copy_bank_03.asm
-ca65 -U -l copy_bank_04.asm
-ca65 -U -l copy_bank_05.asm
-ca65 -U -l copy_bank_06.asm
-ca65 -U -l copy_bank_FF.asm
+:: -g = создать файл дебага для этого банка
+ca65 -U -l -g copy_bank_00.asm
+ca65 -U -l -g copy_bank_01.asm
+ca65 -U -l -g copy_bank_02.asm
+ca65 -U -l -g copy_bank_03.asm
+ca65 -U -l -g copy_bank_04.asm
+ca65 -U -l -g copy_bank_05.asm
+ca65 -U -l -g copy_bank_06.asm
+ca65 -U -l -g copy_bank_FF.asm
 
 :: компиляция кода в бинарники
-ld65 -C ld65.cfg ^
+ld65 -C ld65.cfg --dbgfile _debug.txt ^
     copy_bank_00.o ^
     copy_bank_01.o ^
     copy_bank_02.o ^
@@ -44,7 +45,7 @@ copy /B header.bin + ^
 del *.o + copy_*.bin + copy_*.asm + copy_*.inc + temp_*.asm + temp_*.inc
 
 :: объединить файлы листинга в один файл
-copy /A copy_*.lst !debug.txt
+copy /A copy_*.lst _listing.txt
 
 :: удалить копии листинга
 del copy_*.lst
