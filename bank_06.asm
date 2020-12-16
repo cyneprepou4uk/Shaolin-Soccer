@@ -5691,7 +5691,7 @@ C - - - - - 0x01A5D1 06:A5C1: 60        RTS
 
 tbl_A5C6_анимации:
 - - - - - - 0x01A5D6 06:A5C6: 80 A6     .word _animation_A680_00    ; 
-- D 1 - I - 0x01A5D8 06:A5C8: 81 A6     .word _animation_A681_01    ; обычная стойка
+- D 1 - I - 0x01A5D8 06:A5C8: 81 A6     .word _animation_A681_01    ; обычная стойка/победа/поражение
 - D 1 - I - 0x01A5DA 06:A5CA: 8D A7     .word _animation_A78D_02    ; приседает якобы после приземления
 - D 1 - I - 0x01A5DC 06:A5CC: 90 A7     .word _animation_A790_03    ; лежачая поза (червячок)
 - D 1 - I - 0x01A5DE 06:A5CE: A0 A7     .word _animation_A7A0_04    ; лежачий труп лицом вверх
@@ -5811,33 +5811,33 @@ _animation_A680_2C:
 
 _animation_A681_01:
 - D 1 - I - 0x01A691 06:A681: FD        .byte con_FD
-- D 1 - I - 0x01A692 06:A682: A6 A6     .word off_A6A6_00
-- D 1 - I - 0x01A694 06:A684: AD A6     .word off_A6AD_01
-- D 1 - I - 0x01A696 06:A686: F8 A9     .word off_A9F8_02
+- D 1 - I - 0x01A692 06:A682: A6 A6     .word off_A6A6_00_стойка_игрока
+- D 1 - I - 0x01A694 06:A684: AD A6     .word off_A6AD_01_стойка_кипера
+- D 1 - I - 0x01A696 06:A686: F8 A9     .word off_A9F8_02_держит_этажерку
 - D 1 - I - 0x01A698 06:A688: A6 A6     .word off_A6A6_03
-- D 1 - I - 0x01A69A 06:A68A: A1 A6     .word off_A6A1_04
-- D 1 - I - 0x01A69C 06:A68C: 92 A6     .word off_A692_05
-- D 1 - I - 0x01A69E 06:A68E: 97 A6     .word off_A697_06
-- D 1 - I - 0x01A6A0 06:A690: 9C A6     .word off_A69C_07
-off_A692_05:
+- D 1 - I - 0x01A69A 06:A68A: A1 A6     .word off_A6A1_04_победа
+- D 1 - I - 0x01A69C 06:A68C: 92 A6     .word off_A692_05_поражение_1
+- D 1 - I - 0x01A69E 06:A68E: 97 A6     .word off_A697_06_поражение_2
+- D 1 - I - 0x01A6A0 06:A690: 9C A6     .word off_A69C_07_поражение_3
+off_A692_05_поражение_1:
 - D 1 - I - 0x01A6A2 06:A692: 03        .byte con_timer + $03
 - D 1 - I - 0x01A6A3 06:A693: 43        .byte con_anim + $43
 - D 1 - I - 0x01A6A4 06:A694: 03        .byte con_timer + $03
 - D 1 - I - 0x01A6A5 06:A695: 45        .byte con_anim + $45
 - D 1 - I - 0x01A6A6 06:A696: FE        .byte con_FE
-off_A697_06:
+off_A697_06_поражение_2:
 - D 1 - I - 0x01A6A7 06:A697: 03        .byte con_timer + $03
 - D 1 - I - 0x01A6A8 06:A698: 46        .byte con_anim + $46
 - D 1 - I - 0x01A6A9 06:A699: 03        .byte con_timer + $03
 - D 1 - I - 0x01A6AA 06:A69A: 47        .byte con_anim + $47
 - D 1 - I - 0x01A6AB 06:A69B: FE        .byte con_FE 
-off_A69C_07:
+off_A69C_07_поражение_3:
 - D 1 - I - 0x01A6AC 06:A69C: 03        .byte con_timer + $03
 - D 1 - I - 0x01A6AD 06:A69D: 49        .byte con_anim + $49
 - D 1 - I - 0x01A6AE 06:A69E: 03        .byte con_timer + $03
 - D 1 - I - 0x01A6AF 06:A69F: 4A        .byte con_anim + $4A
 - D 1 - I - 0x01A6B0 06:A6A0: FE        .byte con_FE 
-off_A6A1_04:
+off_A6A1_04_победа:
 - D 1 - I - 0x01A6B1 06:A6A1: 03        .byte con_timer + $03
 - D 1 - I - 0x01A6B2 06:A6A2: 41        .byte con_anim + $41
 - D 1 - I - 0x01A6B3 06:A6A3: 03        .byte con_timer + $03
@@ -5847,7 +5847,7 @@ off_A6A1_04:
 
 
 _animation_A6A6_14:
-off_A6A6_00:
+off_A6A6_00_стойка_игрока:
 off_A6A6_03:
 - D 1 - I - 0x01A6B6 06:A6A6: 00        .byte con_timer + $00
 - D 1 - I - 0x01A6B7 06:A6A7: 00        .byte con_anim + $00
@@ -5857,11 +5857,12 @@ off_A6A6_03:
 - - - - - - 0x01A6BA 06:A6AA: 00        .byte con_timer + $00
 - - - - - - 0x01A6BB 06:A6AB: 00        .byte con_anim + $00
 - - - - - - 0x01A6BC 06:A6AC: FE        .byte con_FE 
-off_A6AD_01:
+off_A6AD_01_стойка_кипера:
 - D 1 - I - 0x01A6BD 06:A6AD: 00        .byte con_timer + $00
 - D 1 - I - 0x01A6BE 06:A6AE: 10        .byte con_anim + $10
 - - - - - - 0x01A6BF 06:A6AF: 00        .byte con_timer + $00
 - - - - - - 0x01A6C0 06:A6B0: 10        .byte con_anim + $10
+; bzk мусор
 - - - - - - 0x01A6C1 06:A6B1: 00        .byte con_timer + $00
 - - - - - - 0x01A6C2 06:A6B2: 10        .byte con_anim + $10
 - - - - - - 0x01A6C3 06:A6B3: FE        .byte con_FE 
@@ -6975,7 +6976,7 @@ off_A9F1_01:
 - D 1 - I - 0x01AA05 06:A9F5: 02        .byte con_timer + $02
 - D 1 - I - 0x01AA06 06:A9F6: 2E        .byte con_anim + $2E
 - D 1 - I - 0x01AA07 06:A9F7: FF        .byte con_FF
-off_A9F8_02:
+off_A9F8_02_держит_этажерку:
 - D 1 - I - 0x01AA08 06:A9F8: 00        .byte con_timer + $00
 - D 1 - I - 0x01AA09 06:A9F9: 17        .byte con_anim + $17
 off_A9FA_04:
