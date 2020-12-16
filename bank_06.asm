@@ -2593,14 +2593,15 @@ sub_9224_деление_скоростей_на_8:
     DEY
     BNE @цикл
     RTS
-    
+.endscope
+
 sub_9225_деление_X_Y_Z_скоростей_в_1_5_раза:
 ; временные адреса 0190 (lo) и 0191 (hi)
     LDA ram_игрок_spd_X_lo,X
     STA $0190
     LDA ram_игрок_spd_X_hi,X
     STA $0191
-    JSR sub_деление
+    JSR sub_9228_деление
     LDA $0190
     STA ram_игрок_spd_X_lo,X
     LDA $0191
@@ -2610,24 +2611,25 @@ sub_9225_деление_X_Y_Z_скоростей_в_1_5_раза:
     STA $0190
     LDA ram_игрок_spd_Y_hi,X
     STA $0191
-    JSR sub_деление
+    JSR sub_9228_деление
     LDA $0190
     STA ram_игрок_spd_Y_lo,X
     LDA $0191
     STA ram_игрок_spd_Y_hi,X
-    
+
     LDA ram_игрок_spd_Z_lo,X
     STA $0190
     LDA ram_игрок_spd_Z_hi,X
     STA $0191
-    JSR sub_деление
+    JSR sub_9228_деление
     LDA $0190
     STA ram_игрок_spd_Z_lo,X
     LDA $0191
     STA ram_игрок_spd_Z_hi,X
     RTS
     
-sub_деление:
+sub_9228_деление:
+.scope
     LDA $0191
     PHP     ; сохранение N, при необходимости инвертировать скорости до и после
     BPL @пропуск_1
