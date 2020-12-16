@@ -5666,7 +5666,8 @@ C - - - - - 0x01A5A2 06:A592: 38        SEC
 C - - - - - 0x01A5A3 06:A593: BD 2E 04  LDA ram_игрок_spd_Z_hi,X
 C - - - - - 0x01A5A6 06:A596: E5 1C     SBC ram_001C
 C - - - - - 0x01A5A8 06:A598: 9D 2E 04  STA ram_игрок_spd_Z_hi,X
-C - - - - - 0x01A5AB 06:A59B: A9 80     LDA #$80
+; 30fps гравитация паса уменьшена в 2.25 раза
+C - - - - - 0x01A5AB 06:A59B: A9 80     LDA #$39
 C - - - - - 0x01A5AD 06:A59D: 9D 3C 04  STA ram_игрок_гравитация_lo,X
 C - - - - - 0x01A5B0 06:A5A0: A9 00     LDA #$00
 C - - - - - 0x01A5B2 06:A5A2: 9D 4A 04  STA ram_игрок_гравитация_hi,X
