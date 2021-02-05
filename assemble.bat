@@ -59,13 +59,13 @@ if %size% EQU 262160 (
     echo Done! Look for !goal5.nes file in your folder.
     if exist !goal5.bak (
         echo.
-        C:\windows\system32\fc /A /B /T !goal5.nes !goal5.bak > nul && echo Perfect match || echo Differences found 
+        fc /A /B /T !goal5.nes !goal5.bak > nul && echo Perfect match || echo Differences found 
         echo.
         copy !goal5.nes !goal5.bak
         echo Backup created
     )
     echo ----------------------------------------------
-    C:\windows\system32\timeout /T 10
+    timeout /T 10
 ) else (
     echo.
     echo --------------------------------------------------
