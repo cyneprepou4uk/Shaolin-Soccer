@@ -1,4 +1,4 @@
-.segment "BANK_0C"
+.segment "BANK_0D"
 .include "copy_bank_ram.inc"
 .include "copy_bank_val.inc"
 
