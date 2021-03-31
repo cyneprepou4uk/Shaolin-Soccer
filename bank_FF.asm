@@ -88,7 +88,6 @@ tbl_0x01C010:
 
 ; bzk
 - - - - - - 0x01C018 07:C008: 4C D3 EE  JMP loc_EED3_prg_bankswitch
-- - - - - - 0x01C04B 07:C03B: 4C 6A F9  JMP loc_F96A
 - - - - - - 0x01C05D 07:C04D: 4C 6D FA  JMP loc_FA6D
 - - - - - - 0x01C06F 07:C05F: 4C 73 D0  JMP loc_D073
 - - - - - - 0x01C084 07:C074: 4C DB C4  JMP loc_C4DB
@@ -9756,7 +9755,6 @@ tbl_F949:
 
 
 
-loc_F96A:
 sub_0x01F97A:
 C - - - - - 0x01F97A 07:F96A: A9 FF     LDA #$FF
 C - - - - - 0x01F97C 07:F96C: 85 3C     STA ram_003C
