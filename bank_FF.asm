@@ -8402,34 +8402,6 @@ C - - - - - 0x01EE71 07:EE61: 8D 14 40  STA $4014
 C - - - - - 0x01EE74 07:EE64: 60        RTS
 
 
-; bzk мусор
-- - - - - - 0x01EF84 07:EF74: 20 A9 EC  JSR sub_ECA9
-- - - - - - 0x01EF87 07:EF77: 20 71 EE  JSR sub_EE71_disable_NMI
-- - - - - - 0x01EF8A 07:EF7A: A5 4C     LDA ram_for_2000
-- - - - - - 0x01EF8C 07:EF7C: 29 FB     AND #$FB
-- - - - - - 0x01EF8E 07:EF7E: 85 4C     STA ram_for_2000
-- - - - - - 0x01EF90 07:EF80: 8D 00 20  STA $2000
-- - - - - - 0x01EF93 07:EF83: AD 02 20  LDA $2002
-- - - - - - 0x01EF96 07:EF86: A9 3F     LDA #$3F
-- - - - - - 0x01EF98 07:EF88: 8D 06 20  STA $2006
-- - - - - - 0x01EF9B 07:EF8B: A9 00     LDA #$00
-- - - - - - 0x01EF9D 07:EF8D: 8D 06 20  STA $2006
-- - - - - - 0x01EFA0 07:EF90: A0 00     LDY #$00
-- - - - - - 0x01EFA2 07:EF92: A9 0F     LDA #$0F
-bra_EF94_loop:
-- - - - - - 0x01EFA4 07:EF94: 8D 07 20  STA $2007
-- - - - - - 0x01EFA7 07:EF97: C8        INY
-- - - - - - 0x01EFA8 07:EF98: C0 20     CPY #$20
-- - - - - - 0x01EFAA 07:EF9A: 90 F8     BCC bra_EF94_loop
-- - - - - - 0x01EFAC 07:EF9C: A9 3F     LDA #$3F
-- - - - - - 0x01EFAE 07:EF9E: 8D 06 20  STA $2006
-- - - - - - 0x01EFB1 07:EFA1: A9 00     LDA #$00
-- - - - - - 0x01EFB3 07:EFA3: 8D 06 20  STA $2006
-- - - - - - 0x01EFB6 07:EFA6: 8D 06 20  STA $2006
-- - - - - - 0x01EFB9 07:EFA9: 8D 06 20  STA $2006
-- - - - - - 0x01EFBC 07:EFAC: 60        RTS
-
-
 
 .export sub_0x01EFBD_write_buffers_to_ppu
 sub_0x01EFBD_write_buffers_to_ppu:
