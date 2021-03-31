@@ -7084,10 +7084,10 @@ C - - - - - 0x01E844 07:E834: 26 2D     ROL ram_002D
 C - - - - - 0x01E846 07:E836: 06 2C     ASL ram_002C
 C - - - - - 0x01E848 07:E838: 26 2D     ROL ram_002D
 C - - - - - 0x01E84A 07:E83A: A5 2C     LDA ram_002C
-C - - - - - 0x01E84C 07:E83C: 6D 18 EA  ADC tbl_EA18
+C - - - - - 0x01E84C 07:E83C: 6D 18 EA  ADC #< tbl_EA1A_параметры_экрана
 C - - - - - 0x01E84F 07:E83F: 85 2C     STA ram_002C
 C - - - - - 0x01E851 07:E841: A5 2D     LDA ram_002D
-C - - - - - 0x01E853 07:E843: 6D 19 EA  ADC tbl_EA18 + 1
+C - - - - - 0x01E853 07:E843: 6D 19 EA  ADC #> tbl_EA1A_параметры_экрана
 C - - - - - 0x01E856 07:E846: 85 2D     STA ram_002D
 C - - - - - 0x01E858 07:E848: A0 00     LDY #$00
 C - - - - - 0x01E85A 07:E84A: B1 2C     LDA (ram_002C),Y
@@ -7373,10 +7373,7 @@ tbl_EA13:
 
 
 
-tbl_EA18:
-- D 3 - - - 0x01EA28 07:EA18: 1A EA     .word off_EA1A
-
-off_EA1A:
+tbl_EA1A_параметры_экрана:
 ; 00
 - D 3 - I - 0x01EA2A 07:EA1A: 76        .byte $76   ; 
 - D 3 - I - 0x01EA2B 07:EA1B: 00        .byte $00   ; 
@@ -7984,8 +7981,11 @@ C - - - - - 0x01ECC5 07:ECB5: 85 4C     STA ram_for_2000
 C - - - - - 0x01ECC7 07:ECB7: 8D 00 20  STA $2000
 C - - - - - 0x01ECCA 07:ECBA: A9 0F     LDA #$0F
 C - - - - - 0x01ECCC 07:ECBC: 8D 15 40  STA $4015
-bra_ECBF:
-C - - - - - 0x01ECCF 07:ECBF: D0 FE     BNE bra_ECBF
+bra_ECBF_infinite_loop:
+C - - - - - 0x01ECCF 07:ECBF: D0 FE     BNE bra_ECBF_infinite_loop
+
+
+
 sub_0x01ECD1:
 sub_ECC1:
 C D 3 - - - 0x01ECD1 07:ECC1: A5 4D     LDA ram_for_2001
@@ -8003,6 +8003,9 @@ sub_ECCB:
 C D 3 - - - 0x01ECDB 07:ECCB: A5 4D     LDA ram_for_2001
 C - - - - - 0x01ECDD 07:ECCD: 09 18     ORA #$18
 C - - - - - 0x01ECDF 07:ECCF: D0 F4     BNE bra_ECC5
+
+
+
 - - - - - - 0x01ECE1 07:ECD1: A5 4D     LDA ram_for_2001
 - - - - - - 0x01ECE3 07:ECD3: 29 EF     AND #$EF
 - - - - - - 0x01ECE5 07:ECD5: 4C C5 EC  JMP loc_ECC5
