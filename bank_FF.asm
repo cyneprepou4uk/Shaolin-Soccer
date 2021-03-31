@@ -61,9 +61,9 @@
 .export sub_0x01ECD1
 .export sub_0x01ECDB
 .export sub_0x01EE45_вращение_рандома
-.export sub_0x01EE75
+.export sub_0x01EE75_enable_NMI
 .export sub_0x01EE81_disable_NMI
-.export sub_0x01EEAA
+.export sub_0x01EEAA_базовые_банки_спрайтов
 .export sub_0x01EF1A
 .export sub_0x01EF64
 .export sub_0x01EFBD_write_buffers_to_ppu
@@ -1289,7 +1289,7 @@ C - - - - - 0x01C731 07:C721: 20 1F CA  JSR sub_CA1F
 C - - - - - 0x01C734 07:C724: 20 58 CA  JSR sub_CA58
 C - - - - - 0x01C737 07:C727: 20 49 C2  JSR sub_C249
 C - - - - - 0x01C73A 07:C72A: 20 CB EC  JSR sub_ECCB
-C - - - - - 0x01C73D 07:C72D: 20 65 EE  JSR sub_EE65
+C - - - - - 0x01C73D 07:C72D: 20 65 EE  JSR sub_EE65_enable_NMI
 C - - - - - 0x01C740 07:C730: A9 0C     LDA #con_music_spectators
 C - - - - - 0x01C742 07:C732: 20 E4 C2  JSR sub_C2E4_play_sound
 loc_C735:
@@ -1309,7 +1309,7 @@ C - - - - - 0x01C756 07:C746: 20 1F CA  JSR sub_CA1F
 C - - - - - 0x01C759 07:C749: 20 58 CA  JSR sub_CA58
 C - - - - - 0x01C75C 07:C74C: 20 49 C2  JSR sub_C249
 C - - - - - 0x01C75F 07:C74F: 20 CB EC  JSR sub_ECCB
-C - - - - - 0x01C762 07:C752: 20 65 EE  JSR sub_EE65
+C - - - - - 0x01C762 07:C752: 20 65 EE  JSR sub_EE65_enable_NMI
 C - - - - - 0x01C765 07:C755: A9 09     LDA #con_music_screen_score
 C - - - - - 0x01C767 07:C757: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C76A 07:C75A: 4C 35 C7  JMP loc_C735
@@ -1322,7 +1322,7 @@ C - - - - - 0x01C770 07:C760: 20 1F CA  JSR sub_CA1F
 C - - - - - 0x01C773 07:C763: 20 58 CA  JSR sub_CA58
 C - - - - - 0x01C776 07:C766: 20 49 C2  JSR sub_C249
 C - - - - - 0x01C779 07:C769: 20 CB EC  JSR sub_ECCB
-C - - - - - 0x01C77C 07:C76C: 20 65 EE  JSR sub_EE65
+C - - - - - 0x01C77C 07:C76C: 20 65 EE  JSR sub_EE65_enable_NMI
 C - - - - - 0x01C77F 07:C76F: A9 09     LDA #con_music_screen_score
 C - - - - - 0x01C781 07:C771: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C784 07:C774: 4C 35 C7  JMP loc_C735
@@ -2551,7 +2551,7 @@ C - - - - - 0x01CFB6 07:CFA6: 8D 7D 06  STA ram_067D
 C - - - - - 0x01CFB9 07:CFA9: 8D F5 05  STA ram_флаг_гола
 C - - - - - 0x01CFBC 07:CFAC: 20 D9 E7  JSR sub_E7D9
 C - - - - - 0x01CFBF 07:CFAF: 20 26 C3  JSR sub_C326
-C - - - - - 0x01CFC2 07:CFB2: 20 9A EE  JSR sub_EE9A
+C - - - - - 0x01CFC2 07:CFB2: 20 9A EE  JSR sub_EE9A_базовые_банки_спрайтов
 C - - - - - 0x01CFC5 07:CFB5: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x01CFC8 07:CFB8: 8D AC 05  STA ram_palette_id_bg
 C - - - - - 0x01CFCB 07:CFBB: A9 0F     LDA #$0F
@@ -2564,7 +2564,7 @@ C - - - - - 0x01CFDB 07:CFCB: AD F2 05  LDA ram_поле_банк_фона
 C - - - - - 0x01CFDE 07:CFCE: 18        CLC
 C - - - - - 0x01CFDF 07:CFCF: 69 04     ADC #$04
 C - - - - - 0x01CFE1 07:CFD1: 8D BD 05  STA ram_банк_фона + 1
-C - - - - - 0x01CFE4 07:CFD4: 20 7D EE  JSR sub_EE7D
+C - - - - - 0x01CFE4 07:CFD4: 20 7D EE  JSR sub_EE7D_базовые_банки_фона
 C - - - - - 0x01CFE7 07:CFD7: A9 B1     LDA #$B1
 C - - - - - 0x01CFE9 07:CFD9: 85 56     STA ram_limit_spr_Y
 C - - - - - 0x01CFEB 07:CFDB: 20 A9 EC  JSR sub_ECA9
@@ -2594,7 +2594,7 @@ C - - - - - 0x01D01C 07:D00C: AD 5A 05  LDA ram_music_id
 C - - - - - 0x01D01F 07:D00F: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01D022 07:D012: A9 03     LDA #$03
 C - - - - - 0x01D024 07:D014: 8D E6 05  STA ram_скорость_игры
-C - - - - - 0x01D027 07:D017: 20 65 EE  JSR sub_EE65
+C - - - - - 0x01D027 07:D017: 20 65 EE  JSR sub_EE65_enable_NMI
 C - - - - - 0x01D02A 07:D01A: 20 CB EC  JSR sub_ECCB
 C - - - - - 0x01D02D 07:D01D: 58        CLI
 C - - - - - 0x01D02E 07:D01E: 60        RTS
@@ -5353,7 +5353,7 @@ C - - - - - 0x01DE4D 07:DE3D: 18        CLC
 C - - - - - 0x01DE4E 07:DE3E: 69 02     ADC #$02
 C - - - - - 0x01DE50 07:DE40: 8D BD 05  STA ram_банк_фона + 1
 loc_DE43:
-C D 2 - - - 0x01DE53 07:DE43: 20 7D EE  JSR sub_EE7D
+C D 2 - - - 0x01DE53 07:DE43: 20 7D EE  JSR sub_EE7D_базовые_банки_фона
 bra_DE46_RTS:
 C - - - - - 0x01DE56 07:DE46: 60        RTS
 
@@ -7144,7 +7144,7 @@ C - - - - - 0x01E8BB 07:E8AB: 8D AC 05  STA ram_palette_id_bg
 C - - - - - 0x01E8BE 07:E8AE: A5 29     LDA ram_0029
 C - - - - - 0x01E8C0 07:E8B0: 8D AD 05  STA ram_palette_id_bg + 1
 C - - - - - 0x01E8C3 07:E8B3: 20 CB EC  JSR sub_ECCB
-C - - - - - 0x01E8C6 07:E8B6: 20 65 EE  JSR sub_EE65
+C - - - - - 0x01E8C6 07:E8B6: 20 65 EE  JSR sub_EE65_enable_NMI
 C - - - - - 0x01E8C9 07:E8B9: 60        RTS
 
 
@@ -7209,8 +7209,8 @@ C - - - - - 0x01E92B 07:E91B: B9 43 EB  LDA tbl_EB43,Y
 C - - - - - 0x01E92E 07:E91E: 85 2D     STA ram_002D
 C - - - - - 0x01E930 07:E920: A9 00     LDA #$00
 C - - - - - 0x01E932 07:E922: 85 2A     STA ram_002A
-C - - - - - 0x01E934 07:E924: 20 9A EE  JSR sub_EE9A
-C - - - - - 0x01E937 07:E927: 20 7D EE  JSR sub_EE7D
+C - - - - - 0x01E934 07:E924: 20 9A EE  JSR sub_EE9A_базовые_банки_спрайтов
+C - - - - - 0x01E937 07:E927: 20 7D EE  JSR sub_EE7D_базовые_банки_фона
 C - - - - - 0x01E93A 07:E92A: 20 41 E9  JSR sub_E941
 C - - - - - 0x01E93D 07:E92D: 68        PLA
 C - - - - - 0x01E93E 07:E92E: 8D BB 05  STA ram_банк_спрайтов + 3
@@ -7220,7 +7220,7 @@ C - - - - - 0x01E945 07:E935: 68        PLA
 C - - - - - 0x01E946 07:E936: 8D B9 05  STA ram_банк_спрайтов + 1
 C - - - - - 0x01E949 07:E939: 68        PLA
 C - - - - - 0x01E94A 07:E93A: 8D B8 05  STA ram_банк_спрайтов
-C - - - - - 0x01E94D 07:E93D: 20 9A EE  JSR sub_EE9A
+C - - - - - 0x01E94D 07:E93D: 20 9A EE  JSR sub_EE9A_базовые_банки_спрайтов
 C - - - - - 0x01E950 07:E940: 60        RTS
 
 
@@ -8060,19 +8060,19 @@ C - - - - - 0x01ED50 07:ED40: AA        TAX
 C - - - - - 0x01ED51 07:ED41: 68        PLA
 C - - - - - 0x01ED52 07:ED42: A0 00     LDY #$00
 C - - - - - 0x01ED54 07:ED44: 84 0C     STY ram_000C
-bra_ED46:
+bra_ED46_loop:
 C - - - - - 0x01ED56 07:ED46: 91 0C     STA (ram_000C),Y
 C - - - - - 0x01ED58 07:ED48: 88        DEY
-C - - - - - 0x01ED59 07:ED49: D0 FB     BNE bra_ED46
+C - - - - - 0x01ED59 07:ED49: D0 FB     BNE bra_ED46_loop
 C - - - - - 0x01ED5B 07:ED4B: C6 0D     DEC ram_000D
 C - - - - - 0x01ED5D 07:ED4D: E8        INX
-C - - - - - 0x01ED5E 07:ED4E: D0 F6     BNE bra_ED46
+C - - - - - 0x01ED5E 07:ED4E: D0 F6     BNE bra_ED46_loop
 C - - - - - 0x01ED60 07:ED50: A9 00     LDA #$00
 C - - - - - 0x01ED62 07:ED52: A2 7F     LDX #$7F
-bra_ED54:
+bra_ED54_loop:
 C - - - - - 0x01ED64 07:ED54: 9D 00 01  STA ram_0100,X
 C - - - - - 0x01ED67 07:ED57: CA        DEX
-C - - - - - 0x01ED68 07:ED58: 10 FA     BPL bra_ED54
+C - - - - - 0x01ED68 07:ED58: 10 FA     BPL bra_ED54_loop
 C - - - - - 0x01ED6A 07:ED5A: 60        RTS
 
 
@@ -8120,7 +8120,7 @@ C - - - - - 0x01EE19 07:EE09: 8E 16 40  STX $4016
 C - - - - - 0x01EE1C 07:EE0C: CA        DEX
 C - - - - - 0x01EE1D 07:EE0D: 8E 16 40  STX $4016
 C - - - - - 0x01EE20 07:EE10: A2 08     LDX #$08
-bra_EE12:
+bra_EE12_loop:
 C - - - - - 0x01EE22 07:EE12: AD 16 40  LDA $4016
 C - - - - - 0x01EE25 07:EE15: 4A        LSR
 C - - - - - 0x01EE26 07:EE16: 26 08     ROL ram_btn_press
@@ -8132,7 +8132,7 @@ C - - - - - 0x01EE2F 07:EE1F: 26 09     ROL ram_btn_press + 1
 C - - - - - 0x01EE31 07:EE21: 4A        LSR
 C - - - - - 0x01EE32 07:EE22: 26 0D     ROL ram_000D
 C - - - - - 0x01EE34 07:EE24: CA        DEX
-C - - - - - 0x01EE35 07:EE25: D0 EB     BNE bra_EE12
+C - - - - - 0x01EE35 07:EE25: D0 EB     BNE bra_EE12_loop
 C - - - - - 0x01EE37 07:EE27: 60        RTS
 
 
@@ -8156,8 +8156,8 @@ C - - - - - 0x01EE69 07:EE59: 60        RTS
 
 
 
-sub_0x01EE75:
-sub_EE65:
+sub_0x01EE75_enable_NMI:
+sub_EE65_enable_NMI:
 C D 3 - - - 0x01EE75 07:EE65: 48        PHA
 C - - - - - 0x01EE76 07:EE66: A5 4C     LDA ram_for_2000
 C - - - - - 0x01EE78 07:EE68: 09 80     ORA #$80
@@ -8180,7 +8180,7 @@ C - - - - - 0x01EE8C 07:EE7C: 60        RTS
 
 
 
-sub_EE7D:
+sub_EE7D_базовые_банки_фона:
 C - - - - - 0x01EE8D 07:EE7D: A9 00     LDA #$00
 C - - - - - 0x01EE8F 07:EE7F: 8D 4E 00  STA ram_for_8000
 C - - - - - 0x01EE92 07:EE82: 8D 00 80  STA $8000
@@ -8195,8 +8195,8 @@ C - - - - - 0x01EEA9 07:EE99: 60        RTS
 
 
 
-sub_0x01EEAA:
-sub_EE9A:
+sub_0x01EEAA_базовые_банки_спрайтов:
+sub_EE9A_базовые_банки_спрайтов:
 C D 3 - - - 0x01EEAA 07:EE9A: A9 02     LDA #$02
 C - - - - - 0x01EEAC 07:EE9C: 8D 4E 00  STA ram_for_8000
 C - - - - - 0x01EEAF 07:EE9F: 8D 00 80  STA $8000

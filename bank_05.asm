@@ -558,7 +558,7 @@ C - - - - - 0x0143BD 05:83AD: A2 20     LDX #$20
 C - - - - - 0x0143BF 05:83AF: 8E BA 05  STX ram_банк_спрайтов + 2
 C - - - - - 0x0143C2 05:83B2: A2 09     LDX #$09
 C - - - - - 0x0143C4 05:83B4: 8E BB 05  STX ram_банк_спрайтов + 3
-C - - - - - 0x0143C7 05:83B7: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x0143C7 05:83B7: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x0143CA 05:83BA: A9 02     LDA #con_music_menu
 C - - - - - 0x0143CC 05:83BC: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0143CF 05:83BF: A2 09     LDX #$09
@@ -1231,7 +1231,7 @@ C - - - - - 0x014758 05:8748: A2 26     LDX #$26
 C - - - - - 0x01475A 05:874A: 8E B8 05  STX ram_банк_спрайтов
 C - - - - - 0x01475D 05:874D: E8        INX
 C - - - - - 0x01475E 05:874E: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x014761 05:8751: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x014761 05:8751: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x014764 05:8754: 20 53 89  JSR sub_8953
 C - - - - - 0x014767 05:8757: A9 0A     LDA #con_music_walkthrough
 C - - - - - 0x014769 05:8759: 20 02 C0  JSR sub_0x01C2F4_play_sound
@@ -1697,7 +1697,7 @@ C - - - - - 0x0149E2 05:89D2: A9 23     LDA #$23
 C - - - - - 0x0149E4 05:89D4: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x0149E7 05:89D7: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x0149EA 05:89DA: 20 1A C0  JSR sub_0x01ECDB
-C - - - - - 0x0149ED 05:89DD: 20 14 C0  JSR sub_0x01EE75
+C - - - - - 0x0149ED 05:89DD: 20 14 C0  JSR sub_0x01EE75_enable_NMI
 C - - - - - 0x0149F0 05:89E0: 60        RTS
 
 
@@ -1896,7 +1896,7 @@ C - - - - - 0x014B07 05:8AF7: E8        INX
 C - - - - - 0x014B08 05:8AF8: 8E BB 05  STX ram_банк_спрайтов + 3
 C - - - - - 0x014B0B 05:8AFB: 20 38 BD  JSR sub_BD38
 C - - - - - 0x014B0E 05:8AFE: 20 B0 BD  JSR sub_BDB0
-C - - - - - 0x014B11 05:8B01: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x014B11 05:8B01: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x014B14 05:8B04: A2 00     LDX #$00
 bra_8B06:
 C - - - - - 0x014B16 05:8B06: A9 00     LDA #$00
@@ -2064,7 +2064,7 @@ bra_8C2D:
 loc_8C2D:
 C - - - - - 0x014C40 05:8C30: 20 41 80  JSR sub_0x01C297
 C - - - - - 0x014C43 05:8C33: 20 14 80  JSR sub_0x01C2AE
-C - - - - - 0x014C46 05:8C36: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x014C46 05:8C36: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x014C49 05:8C39: AD 66 00  LDA ram_0066
 C - - - - - 0x014C4C 05:8C3C: 8D B9 05  STA ram_банк_спрайтов + 1
 C - - - - - 0x014C4F 05:8C3F: AD 67 00  LDA ram_0067
@@ -2273,7 +2273,7 @@ C - - - - - 0x014D5F 05:8D4F: 88        DEY
 C - - - - - 0x014D60 05:8D50: 10 F8     BPL bra_8D4A
 C - - - - - 0x014D62 05:8D52: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x014D65 05:8D55: 20 1A C0  JSR sub_0x01ECDB
-C - - - - - 0x014D68 05:8D58: 20 14 C0  JSR sub_0x01EE75
+C - - - - - 0x014D68 05:8D58: 20 14 C0  JSR sub_0x01EE75_enable_NMI
 C - - - - - 0x014D6B 05:8D5B: A9 02     LDA #con_music_menu
 C - - - - - 0x014D6D 05:8D5D: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014D70 05:8D60: 60        RTS
@@ -2414,7 +2414,7 @@ C - - - - - 0x014DE9 05:8DD9: E8        INX
 C - - - - - 0x014DEA 05:8DDA: 8E BA 05  STX ram_банк_спрайтов + 2
 C - - - - - 0x014DED 05:8DDD: E8        INX
 C - - - - - 0x014DEE 05:8DDE: 8E BB 05  STX ram_банк_спрайтов + 3
-C - - - - - 0x014DF1 05:8DE1: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x014DF1 05:8DE1: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x014DF4 05:8DE4: A9 00     LDA #$00
 C - - - - - 0x014DF6 05:8DE6: 8D 5D 05  STA ram_лицо_игрока + 1
 C - - - - - 0x014DF9 05:8DE9: 8D 5F 05  STA ram_лицо_игрока + 3
@@ -2727,7 +2727,7 @@ C - - - - - 0x014FAC 05:8F9C: 90 E8     BCC bra_8F86
 C - - - - - 0x014FAE 05:8F9E: 20 9F BE  JSR sub_BE9F
 C - - - - - 0x014FB1 05:8FA1: 20 FA BE  JSR sub_BEFA
 C - - - - - 0x014FB4 05:8FA4: 20 1A C0  JSR sub_0x01ECDB
-C - - - - - 0x014FB7 05:8FA7: 20 14 C0  JSR sub_0x01EE75
+C - - - - - 0x014FB7 05:8FA7: 20 14 C0  JSR sub_0x01EE75_enable_NMI
 C - - - - - 0x014FBA 05:8FAA: 60        RTS
 
 
@@ -2860,7 +2860,7 @@ C - - - - - 0x01505E 05:904E: E8        INX
 C - - - - - 0x01505F 05:904F: 8E B9 05  STX ram_банк_спрайтов + 1
 C - - - - - 0x015062 05:9052: A9 11     LDA #$11
 C - - - - - 0x015064 05:9054: 8D BB 05  STA ram_банк_спрайтов + 3
-C - - - - - 0x015067 05:9057: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x015067 05:9057: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x01506A 05:905A: A9 02     LDA #con_music_menu
 C - - - - - 0x01506C 05:905C: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01506F 05:905F: 60        RTS
@@ -3544,7 +3544,7 @@ C - - - - - 0x0153CF 05:93BF: A2 26     LDX #$26
 C - - - - - 0x0153D1 05:93C1: 8E B8 05  STX ram_банк_спрайтов
 C - - - - - 0x0153D4 05:93C4: E8        INX
 C - - - - - 0x0153D5 05:93C5: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x0153D8 05:93C8: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x0153D8 05:93C8: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x0153DB 05:93CB: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x0153DE 05:93CE: 48        PHA
 C - - - - - 0x0153DF 05:93CF: 20 11 C0  JSR sub_0x01ECB9
@@ -3561,7 +3561,7 @@ C - - - - - 0x0153F9 05:93E9: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x0153FC 05:93EC: C9 0A     CMP #$0A
 C - - - - - 0x0153FE 05:93EE: 90 ED     BCC bra_93DD
 C - - - - - 0x015400 05:93F0: 20 1A C0  JSR sub_0x01ECDB
-C - - - - - 0x015403 05:93F3: 20 14 C0  JSR sub_0x01EE75
+C - - - - - 0x015403 05:93F3: 20 14 C0  JSR sub_0x01EE75_enable_NMI
 C - - - - - 0x015406 05:93F6: 68        PLA
 C - - - - - 0x015407 05:93F7: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x01540A 05:93FA: 20 5D 95  JSR sub_955D
@@ -4514,7 +4514,7 @@ C - - - - - 0x0158A6 05:9896: E8        INX
 C - - - - - 0x0158A7 05:9897: 8E B9 05  STX ram_банк_спрайтов + 1
 C - - - - - 0x0158AA 05:989A: A9 09     LDA #$09
 C - - - - - 0x0158AC 05:989C: 8D BB 05  STA ram_банк_спрайтов + 3
-C - - - - - 0x0158AF 05:989F: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x0158AF 05:989F: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x0158B2 05:98A2: A9 02     LDA #con_music_menu
 C - - - - - 0x0158B4 05:98A4: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0158B7 05:98A7: 60        RTS
@@ -5968,7 +5968,7 @@ C - - - - - 0x01604E 05:A03E: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x016051 05:A041: C9 04     CMP #$04
 C - - - - - 0x016053 05:A043: 90 E4     BCC bra_A029
 C - - - - - 0x016055 05:A045: 20 1A C0  JSR sub_0x01ECDB
-C - - - - - 0x016058 05:A048: 20 14 C0  JSR sub_0x01EE75
+C - - - - - 0x016058 05:A048: 20 14 C0  JSR sub_0x01EE75_enable_NMI
 C - - - - - 0x01605B 05:A04B: 68        PLA
 C - - - - - 0x01605C 05:A04C: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x01605F 05:A04F: 60        RTS
@@ -6099,7 +6099,7 @@ C - - - - - 0x016116 05:A106: A2 26     LDX #$26
 C - - - - - 0x016118 05:A108: 8E B8 05  STX ram_банк_спрайтов
 C - - - - - 0x01611B 05:A10B: E8        INX
 C - - - - - 0x01611C 05:A10C: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x01611F 05:A10F: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x01611F 05:A10F: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x016122 05:A112: A9 28     LDA #$28
 C - - - - - 0x016124 05:A114: 8D 14 03  STA ram_pos_X_lo_player
 C - - - - - 0x016127 05:A117: A9 B8     LDA #$B8
@@ -6109,7 +6109,7 @@ C - - - - - 0x01612F 05:A11F: 20 17 C0  JSR sub_0x01EE81_disable_NMI
 C - - - - - 0x016132 05:A122: 20 1D C0  JSR sub_0x01ECD1
 C - - - - - 0x016135 05:A125: 20 6A A1  JSR sub_A16A
 C - - - - - 0x016138 05:A128: 20 1A C0  JSR sub_0x01ECDB
-C - - - - - 0x01613B 05:A12B: 20 14 C0  JSR sub_0x01EE75
+C - - - - - 0x01613B 05:A12B: 20 14 C0  JSR sub_0x01EE75_enable_NMI
 C - - - - - 0x01613E 05:A12E: A9 02     LDA #con_music_menu
 C - - - - - 0x016140 05:A130: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016143 05:A133: 60        RTS
@@ -6363,7 +6363,7 @@ sub_A295:
 C - - - - - 0x0162A5 05:A295: A9 00     LDA #$00
 C - - - - - 0x0162A7 05:A297: 8D 2C 05  STA ram_номер_команды
 C - - - - - 0x0162AA 05:A29A: 20 38 BD  JSR sub_BD38
-C - - - - - 0x0162AD 05:A29D: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x0162AD 05:A29D: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x0162B0 05:A2A0: AD D1 05  LDA ram_05D1
 C - - - - - 0x0162B3 05:A2A3: 8D 5C 05  STA ram_лицо_игрока
 C - - - - - 0x0162B6 05:A2A6: A9 FF     LDA #$FF
@@ -6548,7 +6548,7 @@ C - - - - - 0x016412 05:A402: C6 2A     DEC ram_002A
 C - - - - - 0x016414 05:A404: 10 CD     BPL bra_A3D3
 bra_A406:
 C - - - - - 0x016416 05:A406: 20 1A C0  JSR sub_0x01ECDB
-C - - - - - 0x016419 05:A409: 20 14 C0  JSR sub_0x01EE75
+C - - - - - 0x016419 05:A409: 20 14 C0  JSR sub_0x01EE75_enable_NMI
 C - - - - - 0x01641C 05:A40C: 60        RTS
 
 
@@ -6940,7 +6940,7 @@ C - - - - - 0x0165C5 05:A5B5: E8        INX
 C - - - - - 0x0165C6 05:A5B6: 8E BA 05  STX ram_банк_спрайтов + 2
 C - - - - - 0x0165C9 05:A5B9: E8        INX
 C - - - - - 0x0165CA 05:A5BA: 8E BB 05  STX ram_банк_спрайтов + 3
-C - - - - - 0x0165CD 05:A5BD: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x0165CD 05:A5BD: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x0165D0 05:A5C0: A9 28     LDA #$28
 C - - - - - 0x0165D2 05:A5C2: 8D 14 03  STA ram_pos_X_lo_player
 C - - - - - 0x0165D5 05:A5C5: A9 B8     LDA #$B8
@@ -7301,7 +7301,7 @@ C - - - - - 0x0167E5 05:A7D5: E8        INX
 C - - - - - 0x0167E6 05:A7D6: 8E B9 05  STX ram_банк_спрайтов + 1
 C - - - - - 0x0167E9 05:A7D9: A2 11     LDX #$11
 C - - - - - 0x0167EB 05:A7DB: 8E BB 05  STX ram_банк_спрайтов + 3
-C - - - - - 0x0167EE 05:A7DE: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x0167EE 05:A7DE: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x0167F1 05:A7E1: A2 00     LDX #$00
 bra_A7E3:
 C - - - - - 0x0167F3 05:A7E3: 8A        TXA
@@ -7343,7 +7343,7 @@ C - - - - - 0x016842 05:A832: E9 0C     SBC #$0C
 C - - - - - 0x016844 05:A834: 8D B7 06  STA ram_байт_2006_lo_графика
 C - - - - - 0x016847 05:A837: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x01684A 05:A83A: 20 1A C0  JSR sub_0x01ECDB
-C - - - - - 0x01684D 05:A83D: 20 14 C0  JSR sub_0x01EE75
+C - - - - - 0x01684D 05:A83D: 20 14 C0  JSR sub_0x01EE75_enable_NMI
 C - - - - - 0x016850 05:A840: 68        PLA
 C - - - - - 0x016851 05:A841: 8D D1 05  STA ram_05D1
 C - - - - - 0x016854 05:A844: A9 FF     LDA #$FF
@@ -9382,7 +9382,7 @@ sub_B2F0:
 - - - - - - 0x017321 05:B311: 8E B9 05  STX ram_банк_спрайтов + 1
 - - - - - - 0x017324 05:B314: A9 2F     LDA #$2F
 - - - - - - 0x017326 05:B316: 8D BB 05  STA ram_банк_спрайтов + 3
-- - - - - - 0x017329 05:B319: 20 0B C0  JSR sub_0x01EEAA
+- - - - - - 0x017329 05:B319: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 - - - - - - 0x01732C 05:B31C: A9 C8     LDA #$C8
 - - - - - - 0x01732E 05:B31E: 8D 20 03  STA ram_pos_X_lo_ball
 - - - - - - 0x017331 05:B321: A9 A0     LDA #$A0
@@ -9675,7 +9675,7 @@ bra_B4D5_RTS:
 sub_B4D6:
 - - - - - - 0x0174E6 05:B4D6: A9 2F     LDA #$2F
 - - - - - - 0x0174E8 05:B4D8: 8D BB 05  STA ram_банк_спрайтов + 3
-- - - - - - 0x0174EB 05:B4DB: 20 0B C0  JSR sub_0x01EEAA
+- - - - - - 0x0174EB 05:B4DB: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 - - - - - - 0x0174EE 05:B4DE: A9 04     LDA #$04
 - - - - - - 0x0174F0 05:B4E0: 8D 6D 00  STA ram_006D
 - - - - - - 0x0174F3 05:B4E3: A9 07     LDA #$07
@@ -9935,7 +9935,7 @@ bra_B695:
 - - - - - - 0x0176BB 05:B6AB: 4C 79 B6  JMP loc_B679
 bra_B6AE:
 - - - - - - 0x0176BE 05:B6AE: 20 1A C0  JSR sub_0x01ECDB
-- - - - - - 0x0176C1 05:B6B1: 20 14 C0  JSR sub_0x01EE75
+- - - - - - 0x0176C1 05:B6B1: 20 14 C0  JSR sub_0x01EE75_enable_NMI
 - - - - - - 0x0176C4 05:B6B4: 60        RTS
 
 
@@ -11596,7 +11596,7 @@ C - - - - - 0x017ED9 05:BEC9: 85 31     STA ram_0031
 C - - - - - 0x017EDB 05:BECB: 20 34 BE  JSR sub_BE34
 C - - - - - 0x017EDE 05:BECE: C6 2B     DEC ram_002B
 C - - - - - 0x017EE0 05:BED0: 10 D1     BPL bra_BEA3
-C - - - - - 0x017EE2 05:BED2: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x017EE2 05:BED2: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x017EE5 05:BED5: 60        RTS
 
 
@@ -11664,7 +11664,7 @@ C - - - - - 0x017F23 05:BF13: 85 30     STA ram_0030
 C - - - - - 0x017F25 05:BF15: A9 02     LDA #$02
 C - - - - - 0x017F27 05:BF17: 85 31     STA ram_0031
 C - - - - - 0x017F29 05:BF19: 20 34 BE  JSR sub_BE34
-C - - - - - 0x017F2C 05:BF1C: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x017F2C 05:BF1C: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x017F2F 05:BF1F: 60        RTS
 
 tbl_BF20:
@@ -11703,7 +11703,7 @@ C - - - - - 0x017F58 05:BF48: 85 30     STA ram_0030
 C - - - - - 0x017F5A 05:BF4A: A9 03     LDA #$03
 C - - - - - 0x017F5C 05:BF4C: 85 31     STA ram_0031
 C - - - - - 0x017F5E 05:BF4E: 20 34 BE  JSR sub_BE34
-C - - - - - 0x017F61 05:BF51: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x017F61 05:BF51: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x017F64 05:BF54: 60        RTS
 
 
@@ -11760,7 +11760,7 @@ C - - - - - 0x017FA5 05:BF95: 85 30     STA ram_0030
 C - - - - - 0x017FA7 05:BF97: A9 02     LDA #$02
 C - - - - - 0x017FA9 05:BF99: 85 31     STA ram_0031
 C - - - - - 0x017FAB 05:BF9B: 20 34 BE  JSR sub_BE34
-C - - - - - 0x017FAE 05:BF9E: 20 0B C0  JSR sub_0x01EEAA
+C - - - - - 0x017FAE 05:BF9E: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x017FB1 05:BFA1: 60        RTS
 
 tbl_BFA2:
