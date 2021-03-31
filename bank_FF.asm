@@ -8163,8 +8163,7 @@ C - - - - - 0x01EE15 07:EE05: 60        RTS
 
 
 sub_EE06:
-C - - - - - 0x01EE16 07:EE06: A6 48     LDX ram_0048
-C - - - - - 0x01EE18 07:EE08: E8        INX
+C - - - - - 0x01EE16 07:EE06: A6 48     LDX #$01
 C - - - - - 0x01EE19 07:EE09: 8E 16 40  STX $4016
 C - - - - - 0x01EE1C 07:EE0C: CA        DEX
 C - - - - - 0x01EE1D 07:EE0D: 8E 16 40  STX $4016
