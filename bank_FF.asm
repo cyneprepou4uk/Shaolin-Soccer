@@ -8044,66 +8044,6 @@ C - - - - - 0x01ED64 07:ED54: 9D 00 01  STA ram_0100,X
 C - - - - - 0x01ED67 07:ED57: CA        DEX
 C - - - - - 0x01ED68 07:ED58: 10 FA     BPL bra_ED54
 C - - - - - 0x01ED6A 07:ED5A: 60        RTS
-- - - - - - 0x01ED6B 07:ED5B: 20 06 EE  JSR sub_EE06
-- - - - - - 0x01ED6E 07:ED5E: F0 28     BEQ bra_ED88
-- - - - - - 0x01ED70 07:ED60: 20 06 EE  JSR sub_EE06
-- - - - - - 0x01ED73 07:ED63: 20 28 EE  JSR sub_EE28
-- - - - - - 0x01ED76 07:ED66: A5 08     LDA ram_btn_press
-- - - - - - 0x01ED78 07:ED68: 85 04     STA ram_btn_hold
-- - - - - - 0x01ED7A 07:ED6A: A5 09     LDA ram_btn_press + 1
-- - - - - - 0x01ED7C 07:ED6C: 85 05     STA ram_btn_hold + 1
-- - - - - - 0x01ED7E 07:ED6E: 20 06 EE  JSR sub_EE06
-- - - - - - 0x01ED81 07:ED71: 20 28 EE  JSR sub_EE28
-- - - - - - 0x01ED84 07:ED74: A5 08     LDA ram_btn_press
-- - - - - - 0x01ED86 07:ED76: C5 04     CMP ram_btn_hold
-- - - - - - 0x01ED88 07:ED78: F0 04     BEQ bra_ED7E
-- - - - - - 0x01ED8A 07:ED7A: A5 0A     LDA ram_btn_press + 2
-- - - - - - 0x01ED8C 07:ED7C: 85 08     STA ram_btn_press
-bra_ED7E:
-- - - - - - 0x01ED8E 07:ED7E: A5 09     LDA ram_btn_press + 1
-- - - - - - 0x01ED90 07:ED80: C5 05     CMP ram_btn_hold + 1
-- - - - - - 0x01ED92 07:ED82: F0 04     BEQ bra_ED88
-- - - - - - 0x01ED94 07:ED84: A5 0B     LDA ram_btn_press + 3
-- - - - - - 0x01ED96 07:ED86: 85 09     STA ram_btn_press + 1
-bra_ED88:
-- - - - - - 0x01ED98 07:ED88: A2 01     LDX #$01
-bra_ED8A:
-- - - - - - 0x01ED9A 07:ED8A: B5 08     LDA ram_btn_press,X
-- - - - - - 0x01ED9C 07:ED8C: 95 04     STA ram_btn_hold,X
-- - - - - - 0x01ED9E 07:ED8E: A8        TAY
-- - - - - - 0x01ED9F 07:ED8F: 55 0A     EOR ram_btn_press + 2,X
-- - - - - - 0x01EDA1 07:ED91: 35 08     AND ram_btn_press,X
-- - - - - - 0x01EDA3 07:ED93: 95 08     STA ram_btn_press,X
-- - - - - - 0x01EDA5 07:ED95: 94 0A     STY ram_btn_press + 2,X
-- - - - - - 0x01EDA7 07:ED97: CA        DEX
-- - - - - - 0x01EDA8 07:ED98: 10 F0     BPL bra_ED8A
-- - - - - - 0x01EDAA 07:ED9A: 60        RTS
-- - - - - - 0x01EDAB 07:ED9B: 20 06 EE  JSR sub_EE06
-bra_ED9E:
-- - - - - - 0x01EDAE 07:ED9E: A4 08     LDY ram_btn_press
-- - - - - - 0x01EDB0 07:EDA0: A5 09     LDA ram_btn_press + 1
-- - - - - - 0x01EDB2 07:EDA2: 48        PHA
-- - - - - - 0x01EDB3 07:EDA3: 20 06 EE  JSR sub_EE06
-- - - - - - 0x01EDB6 07:EDA6: 68        PLA
-- - - - - - 0x01EDB7 07:EDA7: C5 09     CMP ram_btn_press + 1
-- - - - - - 0x01EDB9 07:EDA9: D0 F3     BNE bra_ED9E
-- - - - - - 0x01EDBB 07:EDAB: C4 08     CPY ram_btn_press
-- - - - - - 0x01EDBD 07:EDAD: D0 EF     BNE bra_ED9E
-- - - - - - 0x01EDBF 07:EDAF: F0 D7     BEQ bra_ED88
-- - - - - - 0x01EDC1 07:EDB1: 20 06 EE  JSR sub_EE06
-- - - - - - 0x01EDC4 07:EDB4: 20 28 EE  JSR sub_EE28
-bra_EDB7:
-- - - - - - 0x01EDC7 07:EDB7: A4 08     LDY ram_btn_press
-- - - - - - 0x01EDC9 07:EDB9: A5 09     LDA ram_btn_press + 1
-- - - - - - 0x01EDCB 07:EDBB: 48        PHA
-- - - - - - 0x01EDCC 07:EDBC: 20 06 EE  JSR sub_EE06
-- - - - - - 0x01EDCF 07:EDBF: 20 28 EE  JSR sub_EE28
-- - - - - - 0x01EDD2 07:EDC2: 68        PLA
-- - - - - - 0x01EDD3 07:EDC3: C5 09     CMP ram_btn_press + 1
-- - - - - - 0x01EDD5 07:EDC5: D0 F0     BNE bra_EDB7
-- - - - - - 0x01EDD7 07:EDC7: C4 08     CPY ram_btn_press
-- - - - - - 0x01EDD9 07:EDC9: D0 EC     BNE bra_EDB7
-- - - - - - 0x01EDDB 07:EDCB: F0 BB     BEQ bra_ED88
 
 
 
@@ -8164,17 +8104,6 @@ C - - - - - 0x01EE32 07:EE22: 26 0D     ROL ram_000D
 C - - - - - 0x01EE34 07:EE24: CA        DEX
 C - - - - - 0x01EE35 07:EE25: D0 EB     BNE bra_EE12
 C - - - - - 0x01EE37 07:EE27: 60        RTS
-
-
-
-sub_EE28:
-- - - - - - 0x01EE38 07:EE28: A5 0C     LDA ram_000C
-- - - - - - 0x01EE3A 07:EE2A: 05 08     ORA ram_btn_press
-- - - - - - 0x01EE3C 07:EE2C: 85 08     STA ram_btn_press
-- - - - - - 0x01EE3E 07:EE2E: A5 0D     LDA ram_000D
-- - - - - - 0x01EE40 07:EE30: 05 09     ORA ram_btn_press + 1
-- - - - - - 0x01EE42 07:EE32: 85 09     STA ram_btn_press + 1
-- - - - - - 0x01EE44 07:EE34: 60        RTS
 
 
 
