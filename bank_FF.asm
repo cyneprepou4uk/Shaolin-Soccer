@@ -7377,6 +7377,7 @@ tbl_EA18:
 - D 3 - - - 0x01EA28 07:EA18: 1A EA     .word off_EA1A
 
 off_EA1A:
+; 00
 - D 3 - I - 0x01EA2A 07:EA1A: 76        .byte $76   ; 
 - D 3 - I - 0x01EA2B 07:EA1B: 00        .byte $00   ; 
 - D 3 - I - 0x01EA2C 07:EA1C: 00        .byte $00   ; 
@@ -7385,6 +7386,7 @@ off_EA1A:
 - D 3 - I - 0x01EA2F 07:EA1F: 44        .byte $44   ; 
 - D 3 - I - 0x01EA30 07:EA20: 43        .byte $43   ; 
 - D 3 - I - 0x01EA31 07:EA21: FF        .byte $FF   ; 
+; 01
 - D 3 - I - 0x01EA32 07:EA22: 76        .byte $76   ; 
 - D 3 - I - 0x01EA33 07:EA23: 01        .byte $01   ; 
 - D 3 - I - 0x01EA34 07:EA24: 00        .byte $00   ; 
@@ -7393,6 +7395,7 @@ off_EA1A:
 - D 3 - I - 0x01EA37 07:EA27: 3A        .byte $3A   ; 
 - D 3 - I - 0x01EA38 07:EA28: 3B        .byte $3B   ; 
 - D 3 - I - 0x01EA39 07:EA29: FF        .byte $FF   ; 
+; 02
 - D 3 - I - 0x01EA3A 07:EA2A: 76        .byte $76   ; 
 - D 3 - I - 0x01EA3B 07:EA2B: 02        .byte $02   ; 
 - D 3 - I - 0x01EA3C 07:EA2C: 00        .byte $00   ; 
@@ -7401,6 +7404,7 @@ off_EA1A:
 - D 3 - I - 0x01EA3F 07:EA2F: 15        .byte $15   ; 
 - D 3 - I - 0x01EA40 07:EA30: 16        .byte $16   ; 
 - D 3 - I - 0x01EA41 07:EA31: FF        .byte $FF   ; 
+; 03
 - D 3 - I - 0x01EA42 07:EA32: 76        .byte $76   ; 
 - D 3 - I - 0x01EA43 07:EA33: 03        .byte $03   ; 
 - D 3 - I - 0x01EA44 07:EA34: 00        .byte $00   ; 
@@ -7409,6 +7413,7 @@ off_EA1A:
 - D 3 - I - 0x01EA47 07:EA37: 15        .byte $15   ; 
 - D 3 - I - 0x01EA48 07:EA38: 16        .byte $16   ; 
 - D 3 - I - 0x01EA49 07:EA39: FF        .byte $FF   ; 
+; 04
 - D 3 - I - 0x01EA4A 07:EA3A: 76        .byte $76   ; 
 - D 3 - I - 0x01EA4B 07:EA3B: 04        .byte $04   ; 
 - D 3 - I - 0x01EA4C 07:EA3C: 00        .byte $00   ; 
@@ -7417,6 +7422,7 @@ off_EA1A:
 - D 3 - I - 0x01EA4F 07:EA3F: 15        .byte $15   ; 
 - D 3 - I - 0x01EA50 07:EA40: 16        .byte $16   ; 
 - D 3 - I - 0x01EA51 07:EA41: FF        .byte $FF   ; 
+; 05
 - D 3 - I - 0x01EA52 07:EA42: 76        .byte $76   ; 
 - D 3 - I - 0x01EA53 07:EA43: 05        .byte $05   ; 
 - D 3 - I - 0x01EA54 07:EA44: 00        .byte $00   ; 
@@ -7425,6 +7431,7 @@ off_EA1A:
 - D 3 - I - 0x01EA57 07:EA47: 19        .byte $19   ; 
 - D 3 - I - 0x01EA58 07:EA48: 39        .byte $39   ; 
 - D 3 - I - 0x01EA59 07:EA49: 01        .byte $01   ; 
+; 06
 - D 3 - I - 0x01EA5A 07:EA4A: 76        .byte $76   ; 
 - D 3 - I - 0x01EA5B 07:EA4B: 06        .byte $06   ; 
 - D 3 - I - 0x01EA5C 07:EA4C: 00        .byte $00   ; 
@@ -7433,6 +7440,7 @@ off_EA1A:
 - D 3 - I - 0x01EA5F 07:EA4F: 15        .byte $15   ; 
 - D 3 - I - 0x01EA60 07:EA50: 16        .byte $16   ; 
 - D 3 - I - 0x01EA61 07:EA51: FF        .byte $FF   ; 
+; 07
 - D 3 - I - 0x01EA62 07:EA52: 76        .byte $76   ; 
 - D 3 - I - 0x01EA63 07:EA53: 07        .byte $07   ; 
 - D 3 - I - 0x01EA64 07:EA54: 00        .byte $00   ; 
@@ -7441,6 +7449,7 @@ off_EA1A:
 - D 3 - I - 0x01EA67 07:EA57: 15        .byte $15   ; 
 - D 3 - I - 0x01EA68 07:EA58: 16        .byte $16   ; 
 - D 3 - I - 0x01EA69 07:EA59: 01        .byte $01   ; 
+; 08
 - D 3 - I - 0x01EA6A 07:EA5A: 76        .byte $76   ; 
 - D 3 - I - 0x01EA6B 07:EA5B: 08        .byte $08   ; 
 - D 3 - I - 0x01EA6C 07:EA5C: 00        .byte $00   ; 
@@ -7449,6 +7458,7 @@ off_EA1A:
 - D 3 - I - 0x01EA6F 07:EA5F: 17        .byte $17   ; 
 - D 3 - I - 0x01EA70 07:EA60: 18        .byte $18   ; 
 - D 3 - I - 0x01EA71 07:EA61: FF        .byte $FF   ; 
+; 09
 - D 3 - I - 0x01EA72 07:EA62: 76        .byte $76   ; 
 - D 3 - I - 0x01EA73 07:EA63: 09        .byte $09   ; 
 - D 3 - I - 0x01EA74 07:EA64: 00        .byte $00   ; 
@@ -7457,6 +7467,7 @@ off_EA1A:
 - D 3 - I - 0x01EA77 07:EA67: 15        .byte $15   ; 
 - D 3 - I - 0x01EA78 07:EA68: 16        .byte $16   ; 
 - D 3 - I - 0x01EA79 07:EA69: FF        .byte $FF   ; 
+; 0A
 - D 3 - I - 0x01EA7A 07:EA6A: 76        .byte $76   ; 
 - D 3 - I - 0x01EA7B 07:EA6B: 0A        .byte $0A   ; 
 - D 3 - I - 0x01EA7C 07:EA6C: 00        .byte $00   ; 
@@ -7465,6 +7476,7 @@ off_EA1A:
 - D 3 - I - 0x01EA7F 07:EA6F: 19        .byte $19   ; 
 - D 3 - I - 0x01EA80 07:EA70: 1A        .byte $1A   ; 
 - D 3 - I - 0x01EA81 07:EA71: 00        .byte $00   ; 
+; 0B
 - D 3 - I - 0x01EA82 07:EA72: 76        .byte $76   ; 
 - D 3 - I - 0x01EA83 07:EA73: 0B        .byte $0B   ; 
 - D 3 - I - 0x01EA84 07:EA74: 00        .byte $00   ; 
@@ -7473,6 +7485,7 @@ off_EA1A:
 - D 3 - I - 0x01EA87 07:EA77: 1C        .byte $1C   ; 
 - D 3 - I - 0x01EA88 07:EA78: 1C        .byte $1C   ; 
 - D 3 - I - 0x01EA89 07:EA79: FF        .byte $FF   ; 
+; 0C
 - D 3 - I - 0x01EA8A 07:EA7A: 76        .byte $76   ; 
 - D 3 - I - 0x01EA8B 07:EA7B: 0C        .byte $0C   ; 
 - D 3 - I - 0x01EA8C 07:EA7C: 00        .byte $00   ; 
@@ -7481,6 +7494,7 @@ off_EA1A:
 - D 3 - I - 0x01EA8F 07:EA7F: 19        .byte $19   ; 
 - D 3 - I - 0x01EA90 07:EA80: 1A        .byte $1A   ; 
 - D 3 - I - 0x01EA91 07:EA81: FF        .byte $FF   ; 
+; 0D
 - D 3 - I - 0x01EA92 07:EA82: 7A        .byte $7A   ; 
 - D 3 - I - 0x01EA93 07:EA83: 10        .byte $10   ; 
 - D 3 - I - 0x01EA94 07:EA84: 00        .byte $00   ; 
@@ -7489,6 +7503,7 @@ off_EA1A:
 - D 3 - I - 0x01EA97 07:EA87: 1B        .byte $1B   ; 
 - D 3 - I - 0x01EA98 07:EA88: 1B        .byte $1B   ; 
 - D 3 - I - 0x01EA99 07:EA89: FF        .byte $FF   ; 
+; 0E
 - D 3 - I - 0x01EA9A 07:EA8A: 76        .byte $76   ; 
 - D 3 - I - 0x01EA9B 07:EA8B: 0D        .byte $0D   ; 
 - D 3 - I - 0x01EA9C 07:EA8C: 00        .byte $00   ; 
@@ -7497,6 +7512,7 @@ off_EA1A:
 - D 3 - I - 0x01EA9F 07:EA8F: 15        .byte $15   ; 
 - D 3 - I - 0x01EAA0 07:EA90: 16        .byte $16   ; 
 - D 3 - I - 0x01EAA1 07:EA91: FF        .byte $FF   ; 
+; 0F
 - - - - - - 0x01EAA2 07:EA92: 7A        .byte $7A   ; 
 - - - - - - 0x01EAA3 07:EA93: 0E        .byte $0E   ; 
 - - - - - - 0x01EAA4 07:EA94: 00        .byte $00   ; 
@@ -7505,6 +7521,7 @@ off_EA1A:
 - - - - - - 0x01EAA7 07:EA97: 15        .byte $15   ; 
 - - - - - - 0x01EAA8 07:EA98: 16        .byte $16   ; 
 - - - - - - 0x01EAA9 07:EA99: FF        .byte $FF   ; 
+; 10
 - D 3 - I - 0x01EAAA 07:EA9A: 7A        .byte $7A   ; 
 - D 3 - I - 0x01EAAB 07:EA9B: 13        .byte $13   ; 
 - D 3 - I - 0x01EAAC 07:EA9C: 00        .byte $00   ; 
@@ -7513,6 +7530,7 @@ off_EA1A:
 - D 3 - I - 0x01EAAF 07:EA9F: 10        .byte $10   ; 
 - D 3 - I - 0x01EAB0 07:EAA0: 0A        .byte $0A   ; 
 - D 3 - I - 0x01EAB1 07:EAA1: FF        .byte $FF   ; 
+; 11
 - D 3 - I - 0x01EAB2 07:EAA2: 7A        .byte $7A   ; 
 - D 3 - I - 0x01EAB3 07:EAA3: 11        .byte $11   ; 
 - D 3 - I - 0x01EAB4 07:EAA4: 00        .byte $00   ; 
@@ -7521,6 +7539,7 @@ off_EA1A:
 - D 3 - I - 0x01EAB7 07:EAA7: 10        .byte $10   ; 
 - D 3 - I - 0x01EAB8 07:EAA8: 0A        .byte $0A   ; 
 - D 3 - I - 0x01EAB9 07:EAA9: FF        .byte $FF   ; 
+; 12
 - - - - - - 0x01EABA 07:EAAA: 7A        .byte $7A   ; 
 - - - - - - 0x01EABB 07:EAAB: 12        .byte $12   ; 
 - - - - - - 0x01EABC 07:EAAC: 00        .byte $00   ; 
@@ -7529,6 +7548,7 @@ off_EA1A:
 - - - - - - 0x01EABF 07:EAAF: 10        .byte $10   ; 
 - - - - - - 0x01EAC0 07:EAB0: 0A        .byte $0A   ; 
 - - - - - - 0x01EAC1 07:EAB1: FF        .byte $FF   ; 
+; 13
 - D 3 - I - 0x01EAC2 07:EAB2: 7A        .byte $7A   ; 
 - D 3 - I - 0x01EAC3 07:EAB3: 0F        .byte $0F   ; 
 - D 3 - I - 0x01EAC4 07:EAB4: 00        .byte $00   ; 
@@ -7537,6 +7557,7 @@ off_EA1A:
 - D 3 - I - 0x01EAC7 07:EAB7: 15        .byte $15   ; 
 - D 3 - I - 0x01EAC8 07:EAB8: 16        .byte $16   ; 
 - D 3 - I - 0x01EAC9 07:EAB9: FF        .byte $FF   ; 
+; 14
 - - - - - - 0x01EACA 07:EABA: 7A        .byte $7A   ; 
 - - - - - - 0x01EACB 07:EABB: 14        .byte $14   ; 
 - - - - - - 0x01EACC 07:EABC: 00        .byte $00   ; 
@@ -7545,6 +7566,7 @@ off_EA1A:
 - - - - - - 0x01EACF 07:EABF: 15        .byte $15   ; 
 - - - - - - 0x01EAD0 07:EAC0: 16        .byte $16   ; 
 - - - - - - 0x01EAD1 07:EAC1: FF        .byte $FF   ; 
+; 15
 - - - - - - 0x01EAD2 07:EAC2: 7A        .byte $7A   ; 
 - - - - - - 0x01EAD3 07:EAC3: 15        .byte $15   ; 
 - - - - - - 0x01EAD4 07:EAC4: 00        .byte $00   ; 
@@ -7553,6 +7575,7 @@ off_EA1A:
 - - - - - - 0x01EAD7 07:EAC7: 15        .byte $15   ; 
 - - - - - - 0x01EAD8 07:EAC8: 16        .byte $16   ; 
 - - - - - - 0x01EAD9 07:EAC9: FF        .byte $FF   ; 
+; 16
 - D 3 - I - 0x01EADA 07:EACA: 7A        .byte $7A   ; 
 - D 3 - I - 0x01EADB 07:EACB: 16        .byte $16   ; 
 - D 3 - I - 0x01EADC 07:EACC: 01        .byte $01   ; 
@@ -7561,6 +7584,7 @@ off_EA1A:
 - D 3 - I - 0x01EADF 07:EACF: 19        .byte $19   ; 
 - D 3 - I - 0x01EAE0 07:EAD0: 39        .byte $39   ; 
 - D 3 - I - 0x01EAE1 07:EAD1: 01        .byte $01   ; 
+; 17
 - - - - - - 0x01EAE2 07:EAD2: 7A        .byte $7A   ; 
 - - - - - - 0x01EAE3 07:EAD3: 17        .byte $17   ; 
 - - - - - - 0x01EAE4 07:EAD4: 01        .byte $01   ; 
@@ -7569,6 +7593,7 @@ off_EA1A:
 - - - - - - 0x01EAE7 07:EAD7: 19        .byte $19   ; 
 - - - - - - 0x01EAE8 07:EAD8: 39        .byte $39   ; 
 - - - - - - 0x01EAE9 07:EAD9: 01        .byte $01   ; 
+; 18
 - D 3 - I - 0x01EAEA 07:EADA: 7A        .byte $7A   ; 
 - D 3 - I - 0x01EAEB 07:EADB: 18        .byte $18   ; 
 - D 3 - I - 0x01EAEC 07:EADC: 01        .byte $01   ; 
@@ -7577,6 +7602,7 @@ off_EA1A:
 - D 3 - I - 0x01EAEF 07:EADF: 19        .byte $19   ; 
 - D 3 - I - 0x01EAF0 07:EAE0: 39        .byte $39   ; 
 - D 3 - I - 0x01EAF1 07:EAE1: 01        .byte $01   ; 
+; 19
 - D 3 - I - 0x01EAF2 07:EAE2: 7A        .byte $7A   ; 
 - D 3 - I - 0x01EAF3 07:EAE3: 19        .byte $19   ; 
 - D 3 - I - 0x01EAF4 07:EAE4: 01        .byte $01   ; 
@@ -7585,6 +7611,7 @@ off_EA1A:
 - D 3 - I - 0x01EAF7 07:EAE7: 19        .byte $19   ; 
 - D 3 - I - 0x01EAF8 07:EAE8: 39        .byte $39   ; 
 - D 3 - I - 0x01EAF9 07:EAE9: 01        .byte $01   ; 
+; 1A
 - D 3 - I - 0x01EAFA 07:EAEA: 7A        .byte $7A   ; 
 - D 3 - I - 0x01EAFB 07:EAEB: 1A        .byte $1A   ; 
 - D 3 - I - 0x01EAFC 07:EAEC: 01        .byte $01   ; 
@@ -7593,6 +7620,7 @@ off_EA1A:
 - D 3 - I - 0x01EAFF 07:EAEF: 19        .byte $19   ; 
 - D 3 - I - 0x01EB00 07:EAF0: 39        .byte $39   ; 
 - D 3 - I - 0x01EB01 07:EAF1: 01        .byte $01   ; 
+; 1B
 - D 3 - I - 0x01EB02 07:EAF2: 7A        .byte $7A   ; 
 - D 3 - I - 0x01EB03 07:EAF3: 1B        .byte $1B   ; 
 - D 3 - I - 0x01EB04 07:EAF4: 01        .byte $01   ; 
@@ -7601,6 +7629,7 @@ off_EA1A:
 - D 3 - I - 0x01EB07 07:EAF7: 19        .byte $19   ; 
 - D 3 - I - 0x01EB08 07:EAF8: 39        .byte $39   ; 
 - D 3 - I - 0x01EB09 07:EAF9: 01        .byte $01   ; 
+; 1C
 - - - - - - 0x01EB0A 07:EAFA: 7E        .byte $7E   ; 
 - - - - - - 0x01EB0B 07:EAFB: 1C        .byte $1C   ; 
 - - - - - - 0x01EB0C 07:EAFC: 00        .byte $00   ; 
@@ -7609,6 +7638,7 @@ off_EA1A:
 - - - - - - 0x01EB0F 07:EAFF: 49        .byte $49   ; 
 - - - - - - 0x01EB10 07:EB00: 49        .byte $49   ; 
 - - - - - - 0x01EB11 07:EB01: FF        .byte $FF   ; 
+; 1D
 - - - - - - 0x01EB12 07:EB02: 7E        .byte $7E   ; 
 - - - - - - 0x01EB13 07:EB03: 1D        .byte $1D   ; 
 - - - - - - 0x01EB14 07:EB04: 02        .byte $02   ; 
@@ -7617,6 +7647,7 @@ off_EA1A:
 - - - - - - 0x01EB17 07:EB07: 49        .byte $49   ; 
 - - - - - - 0x01EB18 07:EB08: 49        .byte $49   ; 
 - - - - - - 0x01EB19 07:EB09: FF        .byte $FF   ; 
+; 1E
 - - - - - - 0x01EB1A 07:EB0A: 7E        .byte $7E   ; 
 - - - - - - 0x01EB1B 07:EB0B: 1E        .byte $1E   ; 
 - - - - - - 0x01EB1C 07:EB0C: 02        .byte $02   ; 
@@ -7625,6 +7656,7 @@ off_EA1A:
 - - - - - - 0x01EB1F 07:EB0F: 49        .byte $49   ; 
 - - - - - - 0x01EB20 07:EB10: 49        .byte $49   ; 
 - - - - - - 0x01EB21 07:EB11: FF        .byte $FF   ; 
+; 1F
 - - - - - - 0x01EB22 07:EB12: 7E        .byte $7E   ; 
 - - - - - - 0x01EB23 07:EB13: 1F        .byte $1F   ; 
 - - - - - - 0x01EB24 07:EB14: 02        .byte $02   ; 
@@ -7633,6 +7665,7 @@ off_EA1A:
 - - - - - - 0x01EB27 07:EB17: 49        .byte $49   ; 
 - - - - - - 0x01EB28 07:EB18: 49        .byte $49   ; 
 - - - - - - 0x01EB29 07:EB19: FF        .byte $FF   ; 
+; 20
 - - - - - - 0x01EB2A 07:EB1A: 7E        .byte $7E   ; 
 - - - - - - 0x01EB2B 07:EB1B: 20        .byte $20   ; 
 - - - - - - 0x01EB2C 07:EB1C: 02        .byte $02   ; 
@@ -7641,6 +7674,7 @@ off_EA1A:
 - - - - - - 0x01EB2F 07:EB1F: 49        .byte $49   ; 
 - - - - - - 0x01EB30 07:EB20: 49        .byte $49   ; 
 - - - - - - 0x01EB31 07:EB21: FF        .byte $FF   ; 
+; 21
 - - - - - - 0x01EB32 07:EB22: 7E        .byte $7E   ; 
 - - - - - - 0x01EB33 07:EB23: 21        .byte $21   ; 
 - - - - - - 0x01EB34 07:EB24: 02        .byte $02   ; 
@@ -7649,6 +7683,7 @@ off_EA1A:
 - - - - - - 0x01EB37 07:EB27: 49        .byte $49   ; 
 - - - - - - 0x01EB38 07:EB28: 49        .byte $49   ; 
 - - - - - - 0x01EB39 07:EB29: FF        .byte $FF   ; 
+; 22
 - - - - - - 0x01EB3A 07:EB2A: 7E        .byte $7E   ; 
 - - - - - - 0x01EB3B 07:EB2B: 22        .byte $22   ; 
 - - - - - - 0x01EB3C 07:EB2C: 02        .byte $02   ; 
@@ -7657,6 +7692,7 @@ off_EA1A:
 - - - - - - 0x01EB3F 07:EB2F: 49        .byte $49   ; 
 - - - - - - 0x01EB40 07:EB30: 49        .byte $49   ; 
 - - - - - - 0x01EB41 07:EB31: FF        .byte $FF   ; 
+; 23
 - - - - - - 0x01EB42 07:EB32: 7E        .byte $7E   ; 
 - - - - - - 0x01EB43 07:EB33: 23        .byte $23   ; 
 - - - - - - 0x01EB44 07:EB34: 02        .byte $02   ; 
@@ -7665,6 +7701,7 @@ off_EA1A:
 - - - - - - 0x01EB47 07:EB37: 49        .byte $49   ; 
 - - - - - - 0x01EB48 07:EB38: 49        .byte $49   ; 
 - - - - - - 0x01EB49 07:EB39: FF        .byte $FF   ; 
+; 24
 - - - - - - 0x01EB4A 07:EB3A: 7E        .byte $7E   ; 
 - - - - - - 0x01EB4B 07:EB3B: 24        .byte $24   ; 
 - - - - - - 0x01EB4C 07:EB3C: 02        .byte $02   ; 
