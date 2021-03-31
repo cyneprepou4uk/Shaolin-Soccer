@@ -88,7 +88,6 @@ tbl_0x01C010:
 
 ; bzk
 - - - - - - 0x01C018 07:C008: 4C D3 EE  JMP loc_EED3_prg_bankswitch
-- - - - - - 0x01C06F 07:C05F: 4C 73 D0  JMP loc_D073
 - - - - - - 0x01C084 07:C074: 4C DB C4  JMP loc_C4DB
 
 
@@ -2674,7 +2673,6 @@ C - - - - - 0x01D082 07:D072: 60        RTS
 
 
 sub_0x01D083:
-loc_D073:
 sub_D073:
 C D 2 - - - 0x01D083 07:D073: 2C B2 05  BIT ram_флаг_яркости
 C - - - - - 0x01D086 07:D076: 30 52     BMI bra_D0CA_RTS
