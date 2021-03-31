@@ -553,7 +553,7 @@ C - - - - - 0x0143C2 05:83B2: A2 09     LDX #$09
 C - - - - - 0x0143C4 05:83B4: 8E BB 05  STX ram_банк_спрайтов + 3
 C - - - - - 0x0143C7 05:83B7: 20 0B C0  JSR sub_0x01EEAA
 C - - - - - 0x0143CA 05:83BA: A9 02     LDA #$02
-C - - - - - 0x0143CC 05:83BC: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0143CC 05:83BC: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0143CF 05:83BF: A2 09     LDX #$09
 C - - - - - 0x0143D1 05:83C1: A9 00     LDA #$00
 bra_83C3:
@@ -599,7 +599,7 @@ C - - - - - 0x014404 05:83F4: 20 53 C0  JSR sub_0x01EC9F
 ofs_8403_01:
 ofs_8403_03:
 C - - J - - 0x014413 05:8403: A9 33     LDA #$33
-C - - - - - 0x014415 05:8405: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014415 05:8405: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014418 05:8408: 20 AA 86  JSR sub_86AA
 C - - - - - 0x01441B 05:840B: 4C 55 84  JMP loc_8455
 
@@ -607,7 +607,7 @@ C - - - - - 0x01441B 05:840B: 4C 55 84  JMP loc_8455
 
 ofs_840E_03:
 C - - J - - 0x01441E 05:840E: A9 33     LDA #$33
-C - - - - - 0x014420 05:8410: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014420 05:8410: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014423 05:8413: A9 11     LDA #$11
 C - - - - - 0x014425 05:8415: 8D 79 04  STA ram_action_id_player
 C - - - - - 0x014428 05:8418: A2 02     LDX #$02
@@ -632,7 +632,7 @@ C - - - - - 0x01444A 05:843A: 4C 55 84  JMP loc_8455
 loc_843D:
 ofs_843D_04:
 C D 0 - - - 0x01444D 05:843D: A9 34     LDA #$34
-C - - - - - 0x01444F 05:843F: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x01444F 05:843F: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014452 05:8442: A9 11     LDA #$11
 C - - - - - 0x014454 05:8444: 8D 79 04  STA ram_action_id_player
 C - - - - - 0x014457 05:8447: 4C 55 84  JMP loc_8455
@@ -641,7 +641,7 @@ C - - - - - 0x014457 05:8447: 4C 55 84  JMP loc_8455
 
 ofs_844A_05:
 C - - J - - 0x01445A 05:844A: A9 32     LDA #$32
-C - - - - - 0x01445C 05:844C: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x01445C 05:844C: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01445F 05:844F: 20 DD 81  JSR sub_81DD
 C - - - - - 0x014462 05:8452: 20 73 86  JSR sub_8673
 loc_8455:
@@ -697,7 +697,7 @@ C - - - - - 0x0144B7 05:84A7: 4C 3D 84  JMP loc_843D
 
 ofs_84AA_05:
 C - - J - - 0x0144BA 05:84AA: A9 32     LDA #$32
-C - - - - - 0x0144BC 05:84AC: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0144BC 05:84AC: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0144BF 05:84AF: 20 DD 81  JSR sub_81DD
 C - - - - - 0x0144C2 05:84B2: 20 8F 86  JSR sub_868F
 C - - - - - 0x0144C5 05:84B5: 4C 55 84  JMP loc_8455
@@ -737,7 +737,7 @@ C - - - - - 0x0144FC 05:84EC: 4C 3D 84  JMP loc_843D
 
 ofs_84EF_05:
 C - - J - - 0x0144FF 05:84EF: A9 32     LDA #$32
-C - - - - - 0x014501 05:84F1: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014501 05:84F1: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014504 05:84F4: 20 DD 81  JSR sub_81DD
 C - - - - - 0x014507 05:84F7: 20 A0 86  JSR sub_86A0
 C - - - - - 0x01450A 05:84FA: 4C 55 84  JMP loc_8455
@@ -767,7 +767,7 @@ C - - - - - 0x01451C 05:850C: 20 53 C0  JSR sub_0x01EC9F
 
 ofs_8521_03:
 C - - J - - 0x014531 05:8521: A9 33     LDA #$33
-C - - - - - 0x014533 05:8523: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014533 05:8523: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014536 05:8526: A9 FF     LDA #$FF
 C - - - - - 0x014538 05:8528: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x01453B 05:852B: A9 03     LDA #$03
@@ -802,7 +802,7 @@ C - - - - - 0x01456B 05:855B: A9 21     LDA #$21
 C - - - - - 0x01456D 05:855D: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 loc_8560:
 C D 0 - - - 0x014570 05:8560: A9 32     LDA #$32
-C - - - - - 0x014572 05:8562: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014572 05:8562: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014575 05:8565: 4C 55 84  JMP loc_8455
 
 
@@ -1227,7 +1227,7 @@ C - - - - - 0x01475E 05:874E: 8E B9 05  STX ram_банк_спрайтов + 1
 C - - - - - 0x014761 05:8751: 20 0B C0  JSR sub_0x01EEAA
 C - - - - - 0x014764 05:8754: 20 53 89  JSR sub_8953
 C - - - - - 0x014767 05:8757: A9 0A     LDA #$0A
-C - - - - - 0x014769 05:8759: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014769 05:8759: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01476C 05:875C: 60        RTS
 
 
@@ -1269,7 +1269,7 @@ ofs_8792_03:
 C - - J - - 0x0147A2 05:8792: 20 68 88  JSR sub_8868
 C - - - - - 0x0147A5 05:8795: 90 34     BCC bra_87CB
 C - - - - - 0x0147A7 05:8797: A9 33     LDA #$33
-C - - - - - 0x0147A9 05:8799: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0147A9 05:8799: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0147AC 05:879C: 20 4F 88  JSR sub_884F
 C - - - - - 0x0147AF 05:879F: 20 85 88  JSR sub_8885
 C - - - - - 0x0147B2 05:87A2: 4C CB 87  JMP loc_87CB
@@ -1278,7 +1278,7 @@ C - - - - - 0x0147B2 05:87A2: 4C CB 87  JMP loc_87CB
 
 ofs_87A5_04:
 - - - - - - 0x0147B5 05:87A5: A9 34     LDA #$34
-- - - - - - 0x0147B7 05:87A7: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x0147B7 05:87A7: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x0147BA 05:87AA: 4C CB 87  JMP loc_87CB
 
 
@@ -1286,7 +1286,7 @@ ofs_87A5_04:
 ofs_87AD_05:
 ofs_87AD_06:
 C - - J - - 0x0147BD 05:87AD: A9 32     LDA #$32
-C - - - - - 0x0147BF 05:87AF: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0147BF 05:87AF: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0147C2 05:87B2: 20 FF 88  JSR sub_88FF
 C - - - - - 0x0147C5 05:87B5: A2 00     LDX #$00
 C - - - - - 0x0147C7 05:87B7: 20 DD 81  JSR sub_81DD
@@ -1298,7 +1298,7 @@ C - - - - - 0x0147CD 05:87BD: 4C CB 87  JMP loc_87CB
 ofs_87C0_07:
 ofs_87C0_08:
 C - - J - - 0x0147D0 05:87C0: A9 32     LDA #$32
-C - - - - - 0x0147D2 05:87C2: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0147D2 05:87C2: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0147D5 05:87C5: 20 DD 81  JSR sub_81DD
 C - - - - - 0x0147D8 05:87C8: 4C CB 87  JMP loc_87CB
 
@@ -1458,7 +1458,7 @@ C - - - - - 0x014884 05:8874: 29 03     AND #$03
 C - - - - - 0x014886 05:8876: C9 03     CMP #$03
 C - - - - - 0x014888 05:8878: D0 09     BNE bra_8883
 - - - - - - 0x01488A 05:887A: A9 34     LDA #$34
-- - - - - - 0x01488C 05:887C: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x01488C 05:887C: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x01488F 05:887F: 18        CLC
 - - - - - - 0x014890 05:8880: 4C 84 88  RTS
 bra_8883:
@@ -1483,7 +1483,7 @@ C - - - - - 0x0148A5 05:8895: 30 0B     BMI bra_88A2
 C - - - - - 0x0148A7 05:8897: 20 DF 80  JSR sub_80DF
 C - - - - - 0x0148AA 05:889A: 20 53 89  JSR sub_8953
 C - - - - - 0x0148AD 05:889D: A9 02     LDA #$02
-C - - - - - 0x0148AF 05:889F: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0148AF 05:889F: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_88A2:
 C - - - - - 0x0148B2 05:88A2: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x0148B5 05:88A5: 20 53 C0  JSR sub_0x01EC9F
@@ -1507,7 +1507,7 @@ C - - J - - 0x0148CA 05:88BA: A5 08     LDA ram_btn_press
 C - - - - - 0x0148CC 05:88BC: 29 F0     AND #$F0
 C - - - - - 0x0148CE 05:88BE: F0 0F     BEQ bra_88CF_RTS
 C - - - - - 0x0148D0 05:88C0: A9 33     LDA #$33
-C - - - - - 0x0148D2 05:88C2: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0148D2 05:88C2: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0148D5 05:88C5: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x0148D8 05:88C8: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x0148DB 05:88CB: A9 04     LDA #$04
@@ -1688,7 +1688,7 @@ C - - - - - 0x0149DD 05:89CD: A9 6B     LDA #$6B
 C - - - - - 0x0149DF 05:89CF: 8D 94 06  STA ram_байт_2006_lo_атрибуты
 C - - - - - 0x0149E2 05:89D2: A9 23     LDA #$23
 C - - - - - 0x0149E4 05:89D4: 8D 93 06  STA ram_байт_2006_hi_атрибуты
-C - - - - - 0x0149E7 05:89D7: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x0149E7 05:89D7: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x0149EA 05:89DA: 20 1A C0  JSR sub_0x01ECDB
 C - - - - - 0x0149ED 05:89DD: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x0149F0 05:89E0: 60        RTS
@@ -1992,7 +1992,7 @@ C - - - - - 0x014BBB 05:8BAB: 20 53 C0  JSR sub_0x01EC9F
 
 ofs_8BC0_01:
 C - - J - - 0x014BD0 05:8BC0: A9 33     LDA #$33
-C - - - - - 0x014BD2 05:8BC2: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014BD2 05:8BC2: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_8BC5:
 C - - - - - 0x014BD5 05:8BC5: 20 C6 8C  JSR sub_8CC6
 C - - - - - 0x014BD8 05:8BC8: 20 EE 8C  JSR sub_8CEE
@@ -2005,7 +2005,7 @@ C - - J - - 0x014BDE 05:8BCE: AC CC 05  LDY ram_счетчик_смен
 C - - - - - 0x014BE1 05:8BD1: B9 CA 05  LDA ram_номер_опции,Y
 C - - - - - 0x014BE4 05:8BD4: 30 40     BMI bra_8C16
 C - - - - - 0x014BE6 05:8BD6: A9 33     LDA #$33
-C - - - - - 0x014BE8 05:8BD8: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014BE8 05:8BD8: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014BEB 05:8BDB: B9 CA 05  LDA ram_номер_опции,Y
 C - - - - - 0x014BEE 05:8BDE: 09 80     ORA #$80
 C - - - - - 0x014BF0 05:8BE0: 99 CA 05  STA ram_номер_опции,Y
@@ -2017,7 +2017,7 @@ C - - - - - 0x014BF8 05:8BE8: 4C 16 8C  JMP loc_8C16
 
 ofs_8BEB_04:
 C - - J - - 0x014BFB 05:8BEB: A9 34     LDA #$34
-C - - - - - 0x014BFD 05:8BED: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014BFD 05:8BED: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014C00 05:8BF0: AC CC 05  LDY ram_счетчик_смен
 C - - - - - 0x014C03 05:8BF3: B9 CA 05  LDA ram_номер_опции,Y
 C - - - - - 0x014C06 05:8BF6: 10 1E     BPL bra_8C16
@@ -2037,7 +2037,7 @@ C - - J - - 0x014C16 05:8C06: AC CC 05  LDY ram_счетчик_смен
 C - - - - - 0x014C19 05:8C09: B9 CA 05  LDA ram_номер_опции,Y
 C - - - - - 0x014C1C 05:8C0C: 30 08     BMI bra_8C16
 C - - - - - 0x014C1E 05:8C0E: A9 32     LDA #$32
-C - - - - - 0x014C20 05:8C10: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014C20 05:8C10: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014C23 05:8C13: 20 DD 81  JSR sub_81DD
 bra_8C16:
 loc_8C16:
@@ -2264,11 +2264,11 @@ C - - - - - 0x014D5A 05:8D4A: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x014D5C 05:8D4C: 99 D9 06  STA ram_байт_2006_hi_палитра,Y
 C - - - - - 0x014D5F 05:8D4F: 88        DEY
 C - - - - - 0x014D60 05:8D50: 10 F8     BPL bra_8D4A
-C - - - - - 0x014D62 05:8D52: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x014D62 05:8D52: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x014D65 05:8D55: 20 1A C0  JSR sub_0x01ECDB
 C - - - - - 0x014D68 05:8D58: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x014D6B 05:8D5B: A9 02     LDA #$02
-C - - - - - 0x014D6D 05:8D5D: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014D6D 05:8D5D: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014D70 05:8D60: 60        RTS
 
 
@@ -2416,7 +2416,7 @@ C - - - - - 0x014DFE 05:8DEE: 8D D2 05  STA ram_05D2
 C - - - - - 0x014E01 05:8DF1: 20 3C 8E  JSR sub_8E3C
 C - - - - - 0x014E04 05:8DF4: 20 79 8F  JSR sub_8F79
 C - - - - - 0x014E07 05:8DF7: A9 08     LDA #$08
-C - - - - - 0x014E09 05:8DF9: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014E09 05:8DF9: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x014E0C 05:8DFC: 60        RTS
 
 
@@ -2441,7 +2441,7 @@ C - - - - - 0x014E25 05:8E15: A5 08     LDA ram_btn_press
 C - - - - - 0x014E27 05:8E17: 29 10     AND #$10
 C - - - - - 0x014E29 05:8E19: F0 0B     BEQ bra_8E26
 C - - - - - 0x014E2B 05:8E1B: A9 33     LDA #$33
-C - - - - - 0x014E2D 05:8E1D: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x014E2D 05:8E1D: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_8E20:
 C - - - - - 0x014E30 05:8E20: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x014E33 05:8E23: 4C 32 8E  JMP loc_8E32
@@ -2855,7 +2855,7 @@ C - - - - - 0x015062 05:9052: A9 11     LDA #$11
 C - - - - - 0x015064 05:9054: 8D BB 05  STA ram_банк_спрайтов + 3
 C - - - - - 0x015067 05:9057: 20 0B C0  JSR sub_0x01EEAA
 C - - - - - 0x01506A 05:905A: A9 02     LDA #$02
-C - - - - - 0x01506C 05:905C: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x01506C 05:905C: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01506F 05:905F: 60        RTS
 
 
@@ -2899,7 +2899,7 @@ C - - - - - 0x0150A3 05:9093: 4C A9 90  JMP loc_90A9
 
 ofs_9096_04:
 C - - J - - 0x0150A6 05:9096: A9 34     LDA #$34
-C - - - - - 0x0150A8 05:9098: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0150A8 05:9098: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0150AB 05:909B: 20 FC 90  JSR sub_90FC
 C - - - - - 0x0150AE 05:909E: 4C A9 90  JMP loc_90A9
 
@@ -2910,7 +2910,7 @@ ofs_90A1_06:
 ofs_90A1_07:
 ofs_90A1_08:
 C - - J - - 0x0150B1 05:90A1: A9 32     LDA #$32
-C - - - - - 0x0150B3 05:90A3: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0150B3 05:90A3: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0150B6 05:90A6: 20 DD 81  JSR sub_81DD
 loc_90A9:
 ofs_90A9_00:
@@ -3301,12 +3301,12 @@ C - - - - - 0x015273 05:9263: 10 0B     BPL bra_9270
 C - - - - - 0x015275 05:9265: 0A        ASL
 C - - - - - 0x015276 05:9266: 10 08     BPL bra_9270
 C - - - - - 0x015278 05:9268: A9 34     LDA #$34
-C - - - - - 0x01527A 05:926A: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x01527A 05:926A: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01527D 05:926D: 4C BE 92  RTS
 bra_9270:
 C - - - - - 0x015280 05:9270: 84 44     STY ram_0044
 C - - - - - 0x015282 05:9272: A9 33     LDA #$33
-C - - - - - 0x015284 05:9274: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015284 05:9274: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015287 05:9277: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x01528A 05:927A: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x01528D 05:927D: A4 44     LDY ram_0044
@@ -3548,7 +3548,7 @@ C - - - - - 0x0153EA 05:93DA: 8D C9 05  STA ram_счетчик_опций
 bra_93DD:
 C - - - - - 0x0153ED 05:93DD: 20 5D 95  JSR sub_955D
 C - - - - - 0x0153F0 05:93E0: 20 AA 96  JSR sub_96AA
-C - - - - - 0x0153F3 05:93E3: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x0153F3 05:93E3: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x0153F6 05:93E6: EE C9 05  INC ram_счетчик_опций
 C - - - - - 0x0153F9 05:93E9: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x0153FC 05:93EC: C9 0A     CMP #$0A
@@ -3559,7 +3559,7 @@ C - - - - - 0x015406 05:93F6: 68        PLA
 C - - - - - 0x015407 05:93F7: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x01540A 05:93FA: 20 5D 95  JSR sub_955D
 C - - - - - 0x01540D 05:93FD: A9 02     LDA #$02
-C - - - - - 0x01540F 05:93FF: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x01540F 05:93FF: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015412 05:9402: 60        RTS
 
 
@@ -3606,7 +3606,7 @@ C - - - - - 0x015433 05:9423: 20 53 C0  JSR sub_0x01EC9F
 
 ofs_9438_01:
 C - - J - - 0x015448 05:9438: A9 33     LDA #$33
-C - - - - - 0x01544A 05:943A: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x01544A 05:943A: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_943D:
 C - - - - - 0x01544D 05:943D: 20 C3 97  JSR sub_97C3
 C - - - - - 0x015450 05:9440: 4C 9A 94  JMP loc_949A
@@ -3615,7 +3615,7 @@ C - - - - - 0x015450 05:9440: 4C 9A 94  JMP loc_949A
 
 ofs_9443_03:
 C - - J - - 0x015453 05:9443: A9 33     LDA #$33
-C - - - - - 0x015455 05:9445: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015455 05:9445: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015458 05:9448: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x01545B 05:944B: C9 04     CMP #$04
 C - - - - - 0x01545D 05:944D: F0 EE     BEQ bra_943D
@@ -3627,7 +3627,7 @@ C - - - - - 0x015463 05:9453: 4C 85 94  JMP loc_9485
 
 ofs_9456_04:
 - - - - - - 0x015466 05:9456: A9 34     LDA #$34
-- - - - - - 0x015468 05:9458: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x015468 05:9458: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x01546B 05:945B: 4C 74 94  JMP loc_9474
 
 
@@ -3635,7 +3635,7 @@ ofs_9456_04:
 ofs_945E_07:
 ofs_945E_08:
 C - - J - - 0x01546E 05:945E: A9 32     LDA #$32
-C - - - - - 0x015470 05:9460: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015470 05:9460: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015473 05:9463: 20 DD 81  JSR sub_81DD
 C - - - - - 0x015476 05:9466: 20 E6 95  JSR sub_95E6
 C - - - - - 0x015479 05:9469: 20 AA 96  JSR sub_96AA
@@ -3645,7 +3645,7 @@ C - - - - - 0x01547C 05:946C: 4C 9A 94  JMP loc_949A
 
 ofs_946F_05:
 C - - J - - 0x01547F 05:946F: A9 32     LDA #$32
-C - - - - - 0x015481 05:9471: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015481 05:9471: 20 02 C0  JSR sub_0x01C2F4_play_sound
 loc_9474:
 C - - - - - 0x015484 05:9474: 20 E6 95  JSR sub_95E6
 C - - - - - 0x015487 05:9477: AC C9 05  LDY ram_счетчик_опций
@@ -3656,7 +3656,7 @@ C - - - - - 0x01548D 05:947D: 4C 8E 94  JMP loc_948E
 
 ofs_9480_06:
 C - - J - - 0x015490 05:9480: A9 32     LDA #$32
-C - - - - - 0x015492 05:9482: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015492 05:9482: 20 02 C0  JSR sub_0x01C2F4_play_sound
 loc_9485:
 C D 0 - - - 0x015495 05:9485: 20 E6 95  JSR sub_95E6
 C - - - - - 0x015498 05:9488: AC C9 05  LDY ram_счетчик_опций
@@ -4509,7 +4509,7 @@ C - - - - - 0x0158AA 05:989A: A9 09     LDA #$09
 C - - - - - 0x0158AC 05:989C: 8D BB 05  STA ram_банк_спрайтов + 3
 C - - - - - 0x0158AF 05:989F: 20 0B C0  JSR sub_0x01EEAA
 C - - - - - 0x0158B2 05:98A2: A9 02     LDA #$02
-C - - - - - 0x0158B4 05:98A4: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0158B4 05:98A4: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0158B7 05:98A7: 60        RTS
 
 
@@ -4567,7 +4567,7 @@ C - - - - - 0x0158EE 05:98DE: 20 53 C0  JSR sub_0x01EC9F
 
 ofs_98ED_01:
 - - - - - - 0x0158FD 05:98ED: A9 33     LDA #$33
-- - - - - - 0x0158FF 05:98EF: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x0158FF 05:98EF: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x015902 05:98F2: 20 90 9D  JSR sub_9D90
 - - - - - - 0x015905 05:98F5: 4C 33 99  RTS
 
@@ -4575,7 +4575,7 @@ ofs_98ED_01:
 
 ofs_98F8_03:
 C - - J - - 0x015908 05:98F8: A9 33     LDA #$33
-C - - - - - 0x01590A 05:98FA: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x01590A 05:98FA: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01590D 05:98FD: A9 00     LDA #$00
 C - - - - - 0x01590F 05:98FF: 20 B0 82  JSR sub_82B0
 C - - - - - 0x015912 05:9902: 20 1F 9D  JSR sub_9D1F
@@ -4592,7 +4592,7 @@ C - - - - - 0x015925 05:9915: 4C 2D 99  JMP loc_992D
 
 ofs_9918_04:
 - - - - - - 0x015928 05:9918: A9 34     LDA #$34
-- - - - - - 0x01592A 05:991A: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x01592A 05:991A: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x01592D 05:991D: 4C 2D 99  JMP loc_992D
 
 
@@ -4602,7 +4602,7 @@ C - - J - - 0x015930 05:9920: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x015933 05:9923: 49 01     EOR #$01
 C - - - - - 0x015935 05:9925: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x015938 05:9928: A9 32     LDA #$32
-C - - - - - 0x01593A 05:992A: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x01593A 05:992A: 20 02 C0  JSR sub_0x01C2F4_play_sound
 loc_992D:
 ofs_992D_00:
 ofs_992D_02:
@@ -4633,7 +4633,7 @@ C - - - - - 0x015957 05:9947: 20 53 C0  JSR sub_0x01EC9F
 
 ofs_9956_03:
 C - - J - - 0x015966 05:9956: A9 33     LDA #$33
-C - - - - - 0x015968 05:9958: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015968 05:9958: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01596B 05:995B: A9 00     LDA #$00
 C - - - - - 0x01596D 05:995D: 20 B0 82  JSR sub_82B0
 C - - - - - 0x015970 05:9960: EE C9 05  INC ram_счетчик_опций
@@ -4645,7 +4645,7 @@ C - - - - - 0x015978 05:9968: 4C 2D 99  JMP loc_992D
 
 ofs_996B_04:
 - - - - - - 0x01597B 05:996B: A9 34     LDA #$34
-- - - - - - 0x01597D 05:996D: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x01597D 05:996D: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x015980 05:9970: A9 00     LDA #$00
 - - - - - - 0x015982 05:9972: 20 B0 82  JSR sub_82B0
 - - - - - - 0x015985 05:9975: A9 FF     LDA #$FF
@@ -4658,7 +4658,7 @@ ofs_996B_04:
 
 ofs_9982_05:
 C - - J - - 0x015992 05:9982: A9 32     LDA #$32
-C - - - - - 0x015994 05:9984: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015994 05:9984: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015997 05:9987: 20 7B A0  JSR sub_A07B
 C - - - - - 0x01599A 05:998A: 20 DD 81  JSR sub_81DD
 C - - - - - 0x01599D 05:998D: 20 54 A0  JSR sub_A054
@@ -4689,7 +4689,7 @@ C - - - - - 0x0159BC 05:99AC: 20 53 C0  JSR sub_0x01EC9F
 
 ofs_99BB_03:
 C - - J - - 0x0159CB 05:99BB: A9 33     LDA #$33
-C - - - - - 0x0159CD 05:99BD: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0159CD 05:99BD: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0159D0 05:99C0: A9 00     LDA #$00
 C - - - - - 0x0159D2 05:99C2: 20 B0 82  JSR sub_82B0
 C - - - - - 0x0159D5 05:99C5: EE C9 05  INC ram_счетчик_опций
@@ -4706,7 +4706,7 @@ C - - - - - 0x0159E8 05:99D8: 4C 2D 99  JMP loc_992D
 
 ofs_99DB_04:
 C - - J - - 0x0159EB 05:99DB: A9 34     LDA #$34
-C - - - - - 0x0159ED 05:99DD: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0159ED 05:99DD: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0159F0 05:99E0: A9 00     LDA #$00
 C - - - - - 0x0159F2 05:99E2: 20 B0 82  JSR sub_82B0
 C - - - - - 0x0159F5 05:99E5: 20 2B 9D  JSR sub_9D2B
@@ -4745,7 +4745,7 @@ C - - J - - 0x015A2A 05:9A1A: AD CB 05  LDA ram_номер_опции + 1
 C - - - - - 0x015A2D 05:9A1D: C9 06     CMP #$06
 C - - - - - 0x015A2F 05:9A1F: D0 12     BNE bra_9A33
 C - - - - - 0x015A31 05:9A21: A9 33     LDA #$33
-C - - - - - 0x015A33 05:9A23: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015A33 05:9A23: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015A36 05:9A26: A9 05     LDA #$05
 C - - - - - 0x015A38 05:9A28: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x015A3B 05:9A2B: A9 FF     LDA #$FF
@@ -4756,11 +4756,11 @@ C - - - - - 0x015A43 05:9A33: 20 43 9D  JSR sub_9D43
 C - - - - - 0x015A46 05:9A36: 20 73 9D  JSR sub_9D73
 C - - - - - 0x015A49 05:9A39: B0 08     BCS bra_9A43
 C - - - - - 0x015A4B 05:9A3B: A9 34     LDA #$34
-C - - - - - 0x015A4D 05:9A3D: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015A4D 05:9A3D: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015A50 05:9A40: 4C 2D 99  JMP loc_992D
 bra_9A43:
 C - - - - - 0x015A53 05:9A43: A9 33     LDA #$33
-C - - - - - 0x015A55 05:9A45: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015A55 05:9A45: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015A58 05:9A48: 20 60 9E  JSR sub_9E60
 C - - - - - 0x015A5B 05:9A4B: EE CB 05  INC ram_номер_опции + 1
 C - - - - - 0x015A5E 05:9A4E: AD CB 05  LDA ram_номер_опции + 1
@@ -4777,7 +4777,7 @@ C - - - - - 0x015A70 05:9A60: 4C 2D 99  JMP loc_992D
 
 ofs_9A63_04:
 C - - J - - 0x015A73 05:9A63: A9 34     LDA #$34
-C - - - - - 0x015A75 05:9A65: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015A75 05:9A65: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015A78 05:9A68: 38        SEC
 C - - - - - 0x015A79 05:9A69: AD CB 05  LDA ram_номер_опции + 1
 C - - - - - 0x015A7C 05:9A6C: E9 01     SBC #$01
@@ -4808,7 +4808,7 @@ C - - - - - 0x015AA6 05:9A96: 20 DD 81  JSR sub_81DD
 loc_9A99:
 C D 0 - - - 0x015AA9 05:9A99: 20 43 9D  JSR sub_9D43
 C - - - - - 0x015AAC 05:9A9C: A9 32     LDA #$32
-C - - - - - 0x015AAE 05:9A9E: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015AAE 05:9A9E: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_9AA1:
 C - - - - - 0x015AB1 05:9AA1: 4C 2D 99  JMP loc_992D
 
@@ -4847,7 +4847,7 @@ C - - - - - 0x015ACF 05:9ABF: 20 53 C0  JSR sub_0x01EC9F
 
 ofs_9AD4_01:
 C - - J - - 0x015AE4 05:9AD4: A9 33     LDA #$33
-C - - - - - 0x015AE6 05:9AD6: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015AE6 05:9AD6: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_9AD9:
 C - - - - - 0x015AE9 05:9AD9: 20 90 9D  JSR sub_9D90
 C - - - - - 0x015AEC 05:9ADC: 4C 33 99  RTS
@@ -4856,7 +4856,7 @@ C - - - - - 0x015AEC 05:9ADC: 4C 33 99  RTS
 
 ofs_9ADF_03:
 C - - J - - 0x015AEF 05:9ADF: A9 33     LDA #$33
-C - - - - - 0x015AF1 05:9AE1: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015AF1 05:9AE1: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015AF4 05:9AE4: AC CA 05  LDY ram_номер_опции
 C - - - - - 0x015AF7 05:9AE7: C0 09     CPY #$09
 C - - - - - 0x015AF9 05:9AE9: B0 EE     BCS bra_9AD9
@@ -4871,7 +4871,7 @@ C - - - - - 0x015B06 05:9AF6: 4C 2D 99  JMP loc_992D
 
 ofs_9AF9_04:
 C - - J - - 0x015B09 05:9AF9: A9 34     LDA #$34
-C - - - - - 0x015B0B 05:9AFB: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015B0B 05:9AFB: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015B0E 05:9AFE: A9 05     LDA #$05
 C - - - - - 0x015B10 05:9B00: 4C ED 9A  JMP loc_9AED
 
@@ -4883,7 +4883,7 @@ C - - J - - 0x015B13 05:9B03: 20 DD 81  JSR sub_81DD
 C - - - - - 0x015B16 05:9B06: 20 B3 9C  JSR sub_9CB3
 loc_9B09:
 C D 0 - - - 0x015B19 05:9B09: A9 32     LDA #$32
-C - - - - - 0x015B1B 05:9B0B: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x015B1B 05:9B0B: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015B1E 05:9B0E: 20 64 9F  JSR sub_9F64
 C - - - - - 0x015B21 05:9B11: 4C 2D 99  JMP loc_992D
 
@@ -5944,7 +5944,7 @@ bra_A015:
 C - - - - - 0x016025 05:A015: A2 00     LDX #$00
 C - - - - - 0x016027 05:A017: A9 00     LDA #$00
 C - - - - - 0x016029 05:A019: 20 B0 82  JSR sub_82B0
-C - - - - - 0x01602C 05:A01C: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x01602C 05:A01C: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x01602F 05:A01F: CE C9 05  DEC ram_счетчик_опций
 C - - - - - 0x016032 05:A022: D0 DC     BNE bra_A000
 C - - - - - 0x016034 05:A024: A9 00     LDA #$00
@@ -5955,7 +5955,7 @@ C - - - - - 0x01603C 05:A02C: B9 50 A0  LDA tbl_A050,Y
 C - - - - - 0x01603F 05:A02F: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x016042 05:A032: 20 B3 9C  JSR sub_9CB3
 C - - - - - 0x016045 05:A035: 20 64 9F  JSR sub_9F64
-C - - - - - 0x016048 05:A038: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x016048 05:A038: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x01604B 05:A03B: EE C9 05  INC ram_счетчик_опций
 C - - - - - 0x01604E 05:A03E: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x016051 05:A041: C9 04     CMP #$04
@@ -6104,7 +6104,7 @@ C - - - - - 0x016135 05:A125: 20 6A A1  JSR sub_A16A
 C - - - - - 0x016138 05:A128: 20 1A C0  JSR sub_0x01ECDB
 C - - - - - 0x01613B 05:A12B: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x01613E 05:A12E: A9 02     LDA #$02
-C - - - - - 0x016140 05:A130: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016140 05:A130: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016143 05:A133: 60        RTS
 
 
@@ -6125,7 +6125,7 @@ C - - - - - 0x016155 05:A145: B5 08     LDA ram_btn_press,X
 C - - - - - 0x016157 05:A147: 29 F0     AND #$F0
 C - - - - - 0x016159 05:A149: F0 08     BEQ bra_A153
 C - - - - - 0x01615B 05:A14B: A9 33     LDA #$33
-C - - - - - 0x01615D 05:A14D: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x01615D 05:A14D: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016160 05:A150: 20 5F A1  JSR sub_A15F
 bra_A153:
 loc_A153:
@@ -6179,7 +6179,7 @@ C - - - - - 0x0161BB 05:A1AB: A9 5A     LDA #$5A
 C - - - - - 0x0161BD 05:A1AD: 8D B7 06  STA ram_байт_2006_lo_графика
 C - - - - - 0x0161C0 05:A1B0: A9 22     LDA #$22
 C - - - - - 0x0161C2 05:A1B2: 8D B6 06  STA ram_байт_2006_hi_графика
-C - - - - - 0x0161C5 05:A1B5: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x0161C5 05:A1B5: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x0161C8 05:A1B8: AD 94 04  LDA ram_опция_дождь_ветер
 C - - - - - 0x0161CB 05:A1BB: 29 70     AND #$70
 C - - - - - 0x0161CD 05:A1BD: 4A        LSR
@@ -6207,7 +6207,7 @@ C - - - - - 0x0161FA 05:A1EA: 8D B6 06  STA ram_байт_2006_hi_графика
 C - - - - - 0x0161FD 05:A1ED: 85 2D     STA ram_002D
 C - - - - - 0x0161FF 05:A1EF: A9 D8     LDA #$D8
 C - - - - - 0x016201 05:A1F1: 85 2C     STA ram_002C
-C - - - - - 0x016203 05:A1F3: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x016203 05:A1F3: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x016206 05:A1F6: AD 95 04  LDA ram_направление_молния_смерч
 C - - - - - 0x016209 05:A1F9: 29 0C     AND #$0C
 C - - - - - 0x01620B 05:A1FB: F0 12     BEQ bra_A20F
@@ -6245,7 +6245,7 @@ C - - - - - 0x01623D 05:A22D: A5 2C     LDA ram_002C
 C - - - - - 0x01623F 05:A22F: 8D 94 06  STA ram_байт_2006_lo_атрибуты
 C - - - - - 0x016242 05:A232: A5 2D     LDA ram_002D
 C - - - - - 0x016244 05:A234: 8D 93 06  STA ram_байт_2006_hi_атрибуты
-C - - - - - 0x016247 05:A237: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x016247 05:A237: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x01624A 05:A23A: 60        RTS
 
 
@@ -6370,7 +6370,7 @@ C - - - - - 0x0162C7 05:A2B7: 8D 06 06  STA ram_0606
 C - - - - - 0x0162CA 05:A2BA: A9 80     LDA #$80
 C - - - - - 0x0162CC 05:A2BC: 8D 04 06  STA ram_0604
 C - - - - - 0x0162CF 05:A2BF: A9 02     LDA #$02
-C - - - - - 0x0162D1 05:A2C1: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0162D1 05:A2C1: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0162D4 05:A2C4: 60        RTS
 
 
@@ -6488,7 +6488,7 @@ C - - - - - 0x01639D 05:A38D: 8D DA 06  STA ram_байт_2006_lo_палитра
 C - - - - - 0x0163A0 05:A390: A9 21     LDA #$21
 C - - - - - 0x0163A2 05:A392: 8D B6 06  STA ram_байт_2006_hi_графика
 C - - - - - 0x0163A5 05:A395: 8D D9 06  STA ram_байт_2006_hi_палитра
-C - - - - - 0x0163A8 05:A398: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x0163A8 05:A398: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x0163AB 05:A39B: A4 2B     LDY ram_002B
 C - - - - - 0x0163AD 05:A39D: B9 3F A4  LDA tbl_A43F,Y
 C - - - - - 0x0163B0 05:A3A0: 8D DC 06  STA ram_буфер_палитры
@@ -6566,7 +6566,7 @@ C - - - - - 0x01643E 05:A42E: A5 35     LDA ram_0035
 C - - - - - 0x016440 05:A430: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x016443 05:A433: 69 00     ADC #$00
 C - - - - - 0x016445 05:A435: 8D B6 06  STA ram_байт_2006_hi_графика
-C - - - - - 0x016448 05:A438: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x016448 05:A438: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x01644B 05:A43B: 60        RTS
 
 
@@ -6939,7 +6939,7 @@ C - - - - - 0x0165D2 05:A5C2: 8D 14 03  STA ram_pos_X_lo_player
 C - - - - - 0x0165D5 05:A5C5: A9 B8     LDA #$B8
 C - - - - - 0x0165D7 05:A5C7: 8D 4D 03  STA ram_pos_Y_lo_player
 C - - - - - 0x0165DA 05:A5CA: A9 00     LDA #$00
-C - - - - - 0x0165DC 05:A5CC: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0165DC 05:A5CC: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0165DF 05:A5CF: 60        RTS
 
 
@@ -6981,7 +6981,7 @@ C - - - - - 0x01661D 05:A60D: A9 07     LDA #$07
 C - - - - - 0x01661F 05:A60F: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x016622 05:A612: 20 B1 A6  JSR sub_A6B1
 C - - - - - 0x016625 05:A615: AD 5A 05  LDA ram_номер_музыки
-C - - - - - 0x016628 05:A618: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016628 05:A618: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_A61B:
 C - - - - - 0x01662B 05:A61B: A2 02     LDX #$02
 C - - - - - 0x01662D 05:A61D: 20 7E 81  JSR sub_817E
@@ -7001,7 +7001,7 @@ C - - - - - 0x016630 05:A620: 20 53 C0  JSR sub_0x01EC9F
 ofs_A635_01:
 ofs_A635_03:
 C - - J - - 0x016645 05:A635: A9 33     LDA #$33
-C - - - - - 0x016647 05:A637: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016647 05:A637: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01664A 05:A63A: 20 B1 A6  JSR sub_A6B1
 C - - - - - 0x01664D 05:A63D: 20 D6 A6  JSR sub_A6D6
 C - - - - - 0x016650 05:A640: 4C 6F A6  RTS
@@ -7010,7 +7010,7 @@ C - - - - - 0x016650 05:A640: 4C 6F A6  RTS
 
 ofs_A643_04:
 C - - J - - 0x016653 05:A643: A9 34     LDA #$34
-C - - - - - 0x016655 05:A645: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016655 05:A645: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016658 05:A648: 4C 57 A6  JMP loc_A657
 
 
@@ -7020,7 +7020,7 @@ ofs_A64B_06:
 C - - J - - 0x01665B 05:A64B: 20 DD 81  JSR sub_81DD
 C - - - - - 0x01665E 05:A64E: 20 B1 A6  JSR sub_A6B1
 C - - - - - 0x016661 05:A651: AD 5A 05  LDA ram_номер_музыки
-C - - - - - 0x016664 05:A654: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016664 05:A654: 20 02 C0  JSR sub_0x01C2F4_play_sound
 loc_A657:
 ofs_A657_00:
 ofs_A657_02:
@@ -7234,11 +7234,11 @@ bra_A75E:
 - - - - - - 0x016774 05:A764: 4C 0C A7  JMP loc_A70C
 bra_A767:
 - - - - - - 0x016777 05:A767: AD CB 05  LDA ram_номер_опции + 1
-- - - - - - 0x01677A 05:A76A: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x01677A 05:A76A: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x01677D 05:A76D: 4C 3A A7  RTS
 bra_A770:
 - - - - - - 0x016780 05:A770: A9 00     LDA #$00
-- - - - - - 0x016782 05:A772: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x016782 05:A772: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x016785 05:A775: 4C 3A A7  RTS
 
 
@@ -7318,7 +7318,7 @@ C - - - - - 0x016819 05:A809: A0 00     LDY #$00
 bra_A80B:
 C - - - - - 0x01681B 05:A80B: 8C D1 05  STY ram_05D1
 C - - - - - 0x01681E 05:A80E: 20 A8 B0  JSR sub_B0A8
-C - - - - - 0x016821 05:A811: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x016821 05:A811: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x016824 05:A814: AC D1 05  LDY ram_05D1
 C - - - - - 0x016827 05:A817: C8        INY
 C - - - - - 0x016828 05:A818: C0 0C     CPY #$0C
@@ -7334,7 +7334,7 @@ C - - - - - 0x01683E 05:A82E: 38        SEC
 C - - - - - 0x01683F 05:A82F: AD B7 06  LDA ram_байт_2006_lo_графика
 C - - - - - 0x016842 05:A832: E9 0C     SBC #$0C
 C - - - - - 0x016844 05:A834: 8D B7 06  STA ram_байт_2006_lo_графика
-C - - - - - 0x016847 05:A837: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+C - - - - - 0x016847 05:A837: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x01684A 05:A83A: 20 1A C0  JSR sub_0x01ECDB
 C - - - - - 0x01684D 05:A83D: 20 14 C0  JSR sub_0x01EE75
 C - - - - - 0x016850 05:A840: 68        PLA
@@ -7359,7 +7359,7 @@ C - - J - - 0x01685E 05:A84E: AD B2 05  LDA ram_флаг_яркости
 C - - - - - 0x016861 05:A851: 10 08     BPL bra_A85B
 C - - - - - 0x016863 05:A853: EE C9 05  INC ram_счетчик_опций
 C - - - - - 0x016866 05:A856: A9 02     LDA #$02
-C - - - - - 0x016868 05:A858: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016868 05:A858: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_A85B:
 C - - - - - 0x01686B 05:A85B: 20 5C C0  JSR sub_0x01D083
 C - - - - - 0x01686E 05:A85E: 4C C5 A8  JMP loc_A8C5
@@ -7386,7 +7386,7 @@ C - - - - - 0x016881 05:A871: 20 53 C0  JSR sub_0x01EC9F
 
 ofs_A880_01:
 - - - - - - 0x016890 05:A880: A9 33     LDA #$33
-- - - - - - 0x016892 05:A882: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x016892 05:A882: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_A885:
 C - - - - - 0x016895 05:A885: 20 A7 AC  JSR sub_ACA7
 C - - - - - 0x016898 05:A888: 4C C5 A8  JMP loc_A8C5
@@ -7395,7 +7395,7 @@ C - - - - - 0x016898 05:A888: 4C C5 A8  JMP loc_A8C5
 
 ofs_A88B_03:
 C - - J - - 0x01689B 05:A88B: A9 33     LDA #$33
-C - - - - - 0x01689D 05:A88D: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x01689D 05:A88D: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0168A0 05:A890: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x0168A3 05:A893: C9 04     CMP #$04
 C - - - - - 0x0168A5 05:A895: F0 EE     BEQ bra_A885
@@ -7414,7 +7414,7 @@ C - - - - - 0x0168BD 05:A8AD: 4C C5 A8  JMP loc_A8C5
 
 ofs_A8B0_04:
 C - - J - - 0x0168C0 05:A8B0: A9 34     LDA #$34
-C - - - - - 0x0168C2 05:A8B2: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0168C2 05:A8B2: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0168C5 05:A8B5: A9 04     LDA #$04
 C - - - - - 0x0168C7 05:A8B7: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x0168CA 05:A8BA: 4C C5 A8  JMP loc_A8C5
@@ -7423,7 +7423,7 @@ C - - - - - 0x0168CA 05:A8BA: 4C C5 A8  JMP loc_A8C5
 
 ofs_A8BD_05:
 C - - J - - 0x0168CD 05:A8BD: A9 32     LDA #$32
-C - - - - - 0x0168CF 05:A8BF: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0168CF 05:A8BF: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0168D2 05:A8C2: 20 DD 81  JSR sub_81DD
 loc_A8C5:
 ofs_A8C5_00:
@@ -7487,7 +7487,7 @@ loc_A92F:
 C D 1 - - - 0x01693F 05:A92F: A9 FF     LDA #$FF
 C - - - - - 0x016941 05:A931: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x016944 05:A934: A9 33     LDA #$33
-C - - - - - 0x016946 05:A936: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016946 05:A936: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016949 05:A939: 4C 7C A9  JMP loc_A97C
 
 tbl_A93C:
@@ -7500,7 +7500,7 @@ tbl_A93C:
 
 loc_A940:
 C D 1 - - - 0x016950 05:A940: A9 33     LDA #$33
-C - - - - - 0x016952 05:A942: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016952 05:A942: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016955 05:A945: 20 30 AE  JSR sub_AE30
 loc_A948:
 C D 1 - - - 0x016958 05:A948: AC C9 05  LDY ram_счетчик_опций
@@ -7527,7 +7527,7 @@ tbl_A959:
 
 ofs_A964_04:
 C - - J - - 0x016974 05:A964: A9 34     LDA #$34
-C - - - - - 0x016976 05:A966: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016976 05:A966: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016979 05:A969: 20 30 AE  JSR sub_AE30
 C - - - - - 0x01697C 05:A96C: 4C 48 A9  JMP loc_A948
 
@@ -7536,7 +7536,7 @@ C - - - - - 0x01697C 05:A96C: 4C 48 A9  JMP loc_A948
 ofs_A96F_05:
 C - - J - - 0x01697F 05:A96F: A2 00     LDX #$00
 C - - - - - 0x016981 05:A971: A9 32     LDA #$32
-C - - - - - 0x016983 05:A973: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016983 05:A973: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016986 05:A976: 20 DD 81  JSR sub_81DD
 C - - - - - 0x016989 05:A979: 20 19 AD  JSR sub_AD19
 loc_A97C:
@@ -7578,7 +7578,7 @@ C - - - - - 0x0169BE 05:A9AE: 20 53 C0  JSR sub_0x01EC9F
 
 ofs_A9BD_03:
 C - - J - - 0x0169CD 05:A9BD: A9 33     LDA #$33
-C - - - - - 0x0169CF 05:A9BF: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x0169CF 05:A9BF: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0169D2 05:A9C2: A9 06     LDA #$06
 C - - - - - 0x0169D4 05:A9C4: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x0169D7 05:A9C7: A9 FF     LDA #$FF
@@ -7613,7 +7613,7 @@ C - - - - - 0x016A0D 05:A9FD: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x016A10 05:AA00: 29 0F     AND #$0F
 C - - - - - 0x016A12 05:AA02: A8        TAY
 C - - - - - 0x016A13 05:AA03: B9 33 AA  LDA tbl_AA33,Y
-C - - - - - 0x016A16 05:AA06: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016A16 05:AA06: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016A19 05:AA09: A9 18     LDA #$18
 C - - - - - 0x016A1B 05:AA0B: 8D D2 05  STA ram_05D2
 C - - - - - 0x016A1E 05:AA0E: EE CA 05  INC ram_номер_опции
@@ -7683,7 +7683,7 @@ C - - - - - 0x016A7E 05:AA6E: 20 53 C0  JSR sub_0x01EC9F
 
 ofs_AA7D_03:
 C - - J - - 0x016A8D 05:AA7D: A9 33     LDA #$33
-C - - - - - 0x016A8F 05:AA7F: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016A8F 05:AA7F: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016A92 05:AA82: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x016A95 05:AA85: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x016A98 05:AA88: A9 0A     LDA #$0A
@@ -7736,7 +7736,7 @@ C - - - - - 0x016AE9 05:AAD9: 4C 2F A9  JMP loc_A92F
 
 ofs_AADC_04:
 C - - J - - 0x016AEC 05:AADC: A9 34     LDA #$34
-C - - - - - 0x016AEE 05:AADE: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016AEE 05:AADE: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016AF1 05:AAE1: A9 03     LDA #$03
 C - - - - - 0x016AF3 05:AAE3: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x016AF6 05:AAE6: A9 FF     LDA #$FF
@@ -7758,7 +7758,7 @@ loc_AAFB:
 C D 1 - - - 0x016B0B 05:AAFB: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x016B0E 05:AAFE: 20 53 AD  JSR sub_AD53
 C - - - - - 0x016B11 05:AB01: A9 32     LDA #$32
-C - - - - - 0x016B13 05:AB03: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016B13 05:AB03: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016B16 05:AB06: 4C 7C A9  JMP loc_A97C
 
 
@@ -7861,11 +7861,11 @@ C - - - - - 0x016BB5 05:ABA5: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x016BB8 05:ABA8: 49 01     EOR #$01
 C - - - - - 0x016BBA 05:ABAA: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x016BBD 05:ABAD: A9 4B     LDA #$4B
-C - - - - - 0x016BBF 05:ABAF: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016BBF 05:ABAF: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016BC2 05:ABB2: 4C 32 AB  JMP loc_AB32
 bra_ABB5:
 C - - - - - 0x016BC5 05:ABB5: A9 4D     LDA #$4D
-C - - - - - 0x016BC7 05:ABB7: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x016BC7 05:ABB7: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016BCA 05:ABBA: 20 BD AF  JSR sub_AFBD
 C - - - - - 0x016BCD 05:ABBD: A9 0A     LDA #$0A
 C - - - - - 0x016BCF 05:ABBF: 8D C9 05  STA ram_счетчик_опций
@@ -9382,7 +9382,7 @@ sub_B2F0:
 - - - - - - 0x017333 05:B323: 8D 59 03  STA ram_мяч_Y_lo
 - - - - - - 0x017336 05:B326: 20 47 89  JSR sub_8947
 - - - - - - 0x017339 05:B329: A9 0A     LDA #$0A
-- - - - - - 0x01733B 05:B32B: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x01733B 05:B32B: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x01733E 05:B32E: 60        RTS
 
 
@@ -9423,7 +9423,7 @@ bra_B353:
 ofs_B368_01:
 ofs_B368_03:
 - - - - - - 0x017378 05:B368: A9 33     LDA #$33
-- - - - - - 0x01737A 05:B36A: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x01737A 05:B36A: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x01737D 05:B36D: 20 B2 B3  JSR sub_B3B2
 - - - - - - 0x017380 05:B370: 4C 8D B3  JMP loc_B38D
 
@@ -9431,7 +9431,7 @@ ofs_B368_03:
 
 ofs_B373_04:
 - - - - - - 0x017383 05:B373: A9 34     LDA #$34
-- - - - - - 0x017385 05:B375: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x017385 05:B375: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x017388 05:B378: A9 01     LDA #$01
 - - - - - - 0x01738A 05:B37A: 8D CA 05  STA ram_номер_опции
 - - - - - - 0x01738D 05:B37D: 4C 8D B3  JMP loc_B38D
@@ -9440,7 +9440,7 @@ ofs_B373_04:
 
 ofs_B380_05:
 - - - - - - 0x017390 05:B380: A9 32     LDA #$32
-- - - - - - 0x017392 05:B382: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x017392 05:B382: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x017395 05:B385: AD CA 05  LDA ram_номер_опции
 - - - - - - 0x017398 05:B388: 49 01     EOR #$01
 - - - - - - 0x01739A 05:B38A: 8D CA 05  STA ram_номер_опции
@@ -9621,7 +9621,7 @@ sub_B47C:
 - - - - - - 0x017493 05:B483: 20 D6 B4  JSR sub_B4D6
 - - - - - - 0x017496 05:B486: 20 E6 B5  JSR sub_B5E6
 - - - - - - 0x017499 05:B489: A9 02     LDA #$02
-- - - - - - 0x01749B 05:B48B: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x01749B 05:B48B: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_B48E:
 - - - - - - 0x01749E 05:B48E: AD C9 05  LDA ram_счетчик_опций
 - - - - - - 0x0174A1 05:B491: 20 53 C0  JSR sub_0x01EC9F
@@ -9651,7 +9651,7 @@ ofs_B4AE_01:
 - - - - - - 0x0174C8 05:B4B8: 29 F0     AND #$F0
 - - - - - - 0x0174CA 05:B4BA: F0 19     BEQ bra_B4D5_RTS
 - - - - - - 0x0174CC 05:B4BC: A9 33     LDA #$33
-- - - - - - 0x0174CE 05:B4BE: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+- - - - - - 0x0174CE 05:B4BE: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x0174D1 05:B4C1: 20 44 C0  JSR sub_0x01D057
 - - - - - - 0x0174D4 05:B4C4: 20 4A C0  JSR sub_0x01D072
 - - - - - - 0x0174D7 05:B4C7: A5 5B     LDA ram_для_0059
@@ -9876,7 +9876,7 @@ bra_B60B:
 - - - - - - 0x01765A 05:B64A: A5 33     LDA ram_0033
 - - - - - - 0x01765C 05:B64C: 69 00     ADC #$00
 - - - - - - 0x01765E 05:B64E: 85 33     STA ram_0033
-- - - - - - 0x017660 05:B650: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+- - - - - - 0x017660 05:B650: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 - - - - - - 0x017663 05:B653: A6 20     LDX ram_0020
 - - - - - - 0x017665 05:B655: BD 4B 05  LDA ram_054B,X
 - - - - - - 0x017668 05:B658: 29 0F     AND #$0F
@@ -9912,7 +9912,7 @@ bra_B682:
 - - - - - - 0x01769A 05:B68A: 20 B5 B6  JSR sub_B6B5
 - - - - - - 0x01769D 05:B68D: A9 04     LDA #$04
 - - - - - - 0x01769F 05:B68F: 8D 91 06  STA ram_бит_для_2000_графика
-- - - - - - 0x0176A2 05:B692: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+- - - - - - 0x0176A2 05:B692: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 bra_B695:
 - - - - - - 0x0176A5 05:B695: A6 21     LDX ram_0021
 - - - - - - 0x0176A7 05:B697: E8        INX
@@ -9922,7 +9922,7 @@ bra_B695:
 - - - - - - 0x0176AD 05:B69D: AD 4A 05  LDA ram_054A
 - - - - - - 0x0176B0 05:B6A0: 69 08     ADC #$08
 - - - - - - 0x0176B2 05:B6A2: 20 B5 B6  JSR sub_B6B5
-- - - - - - 0x0176B5 05:B6A5: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+- - - - - - 0x0176B5 05:B6A5: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 - - - - - - 0x0176B8 05:B6A8: A6 20     LDX ram_0020
 - - - - - - 0x0176BA 05:B6AA: E8        INX
 - - - - - - 0x0176BB 05:B6AB: 4C 79 B6  JMP loc_B679
@@ -10000,7 +10000,7 @@ sub_B6EF:
 bra_B73C:
 - - - - - - 0x01774C 05:B73C: A5 22     LDA ram_0022
 - - - - - - 0x01774E 05:B73E: 85 23     STA ram_0023
-- - - - - - 0x017750 05:B740: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
+- - - - - - 0x017750 05:B740: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 - - - - - - 0x017753 05:B743: 60        RTS
 
 

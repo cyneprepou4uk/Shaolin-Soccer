@@ -13634,7 +13634,7 @@ C - - - - - 0x013C3E 04:BC2E: 90 01     BCC bra_BC31
 C - - - - - 0x013C40 04:BC30: C8        INY
 bra_BC31:
 C - - - - - 0x013C41 04:BC31: B9 5F BC  LDA tbl_BC5F_звук,Y
-C - - - - - 0x013C44 04:BC34: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
+C - - - - - 0x013C44 04:BC34: 20 02 C0  JSR sub_0x01C2F4_play_sound
 ; bzk 2 одинаковых прыжка
 C - - - - - 0x013C47 04:BC37: 20 27 80  JSR sub_0x01C25C
 C - - - - - 0x013C4A 04:BC3A: 20 27 80  JSR sub_0x01C25C
