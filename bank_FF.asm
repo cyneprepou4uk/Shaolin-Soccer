@@ -584,152 +584,201 @@ off_C226_0F:
 sub_C271:
 C - - - - - 0x01C281 07:C271: A9 00     LDA #$00
 C - - - - - 0x01C283 07:C273: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C28A:
 C - - - - - 0x01C29A 07:C28A: A9 01     LDA #$01
 C - - - - - 0x01C29C 07:C28C: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C286:
 C - - - - - 0x01C286 07:C276: A9 02     LDA #$02
 C - - - - - 0x01C288 07:C278: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C27B:
 C - - - - - 0x01C28B 07:C27B: A9 03     LDA #$03
 C - - - - - 0x01C28D 07:C27D: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 loc_C244:
 C D 2 - - - 0x01C254 07:C244: A9 04     LDA #$04
 C - - - - - 0x01C256 07:C246: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C249:
 C - - - - - 0x01C259 07:C249: A9 05     LDA #$05
 C - - - - - 0x01C25B 07:C24B: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C25C:
                                         LDA #$06
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C25D:
                                         LDA #$07
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C25E:
                                         LDA #$08
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C25F:
                                         LDA #$09
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C260:
                                         LDA #$0A
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C261:
                                         LDA #$0B
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C29F_положение_мяча_относительно_игрока:
 C - - - - - 0x01C29F 07:C28F: A9 0C     LDA #$0C
 C - - - - - 0x01C2A1 07:C291: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C2A4:
 C - - - - - 0x01C2A4 07:C294: A9 0D     LDA #$0D
 C - - - - - 0x01C2A6 07:C296: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C2E0:
 C - - - - - 0x01C2E0 07:C2D0: A9 0E     LDA #$0E
 C - - - - - 0x01C2E2 07:C2D2: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C2C2:
 C - - - - - 0x01C2C2 07:C2B2: A9 0F     LDA #$0F
 C - - - - - 0x01C2C4 07:C2B4: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C2D5:
 C - - - - - 0x01C2E5 07:C2D5: A9 10     LDA #$10
 C - - - - - 0x01C2E7 07:C2D7: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C299:
 C - - - - - 0x01C2A9 07:C299: A9 11     LDA #$11
 C - - - - - 0x01C2AB 07:C29B: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C2DA:
 C - - - - - 0x01C2EA 07:C2DA: A9 12     LDA #$12
 C - - - - - 0x01C2EC 07:C2DC: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C280:
 C - - - - - 0x01C290 07:C280: A9 13     LDA #$13
 C - - - - - 0x01C292 07:C282: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C29E:
 sub_0x01C2AE:
 C - - - - - 0x01C2AE 07:C29E: A9 14     LDA #$14
 C - - - - - 0x01C2B0 07:C2A0: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C2A3:
 C - - - - - 0x01C2B3 07:C2A3: A9 15     LDA #$15
 C - - - - - 0x01C2B5 07:C2A5: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C2A8:
 C - - - - - 0x01C2B8 07:C2A8: A9 16     LDA #$16
 C - - - - - 0x01C2BA 07:C2AA: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C2AD:
 sub_0x01C2BD:
 C - - - - - 0x01C2BD 07:C2AD: A9 17     LDA #$17
 C - - - - - 0x01C2BF 07:C2AF: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C25D:
 C - - - - - 0x01C26D 07:C25D: A9 18     LDA #$18
 C - - - - - 0x01C26F 07:C25F: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C270:
                                         LDA #$19
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C2EF:
 - - - - - - 0x01C2EF 07:C2DF: A9 1A     LDA #$1A
 - - - - - - 0x01C2F1 07:C2E1: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C285:
 C - - - - - 0x01C295 07:C285: A9 1B     LDA #$1B
 C - - - - - 0x01C297 07:C287: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C296:
                                         LDA #$1C
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C297:
                                         LDA #$1D
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_C24E:
 C - - - - - 0x01C25E 07:C24E: A9 1E     LDA #$1E
 C - - - - - 0x01C260 07:C250: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C263:
 - - - - - - 0x01C263 07:C253: A9 1F     LDA #$1F
 - - - - - - 0x01C265 07:C255: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C2C7:
 C - - - - - 0x01C2C7 07:C2B7: A9 20     LDA #$20
 C - - - - - 0x01C2C9 07:C2B9: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C2CC:
 C - - - - - 0x01C2CC 07:C2BC: A9 21     LDA #$21
 C - - - - - 0x01C2CE 07:C2BE: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C2D1:
 C - - - - - 0x01C2D1 07:C2C1: A9 22     LDA #$22
 C - - - - - 0x01C2D3 07:C2C3: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C2D6:
 C - - - - - 0x01C2D6 07:C2C6: A9 23     LDA #$23
 C - - - - - 0x01C2D8 07:C2C8: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C2DB:
 C - - - - - 0x01C2DB 07:C2CB: A9 24     LDA #$24
 C - - - - - 0x01C2DD 07:C2CD: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C2DС:
                                         LDA #$25
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C2DD:
                                         LDA #$26
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C2DE:
                                         LDA #$27
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C2DF:
                                         LDA #$28
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_C258:
 C - - - - - 0x01C268 07:C258: A9 29     LDA #$29
 C - - - - - 0x01C26A 07:C25A: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C269:
                                         LDA #$2A
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C26A:
                                         LDA #$2B
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C26B:
                                         LDA #$2C
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_C262:
 C - - - - - 0x01C272 07:C262: A9 2D     LDA #$2D
 C - - - - - 0x01C274 07:C264: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C267:
 C - - - - - 0x01C277 07:C267: A9 2E     LDA #$2E
 C - - - - - 0x01C279 07:C269: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_C26C:
 - - - - - - 0x01C27C 07:C26C: A9 2F     LDA #$2F
 - - - - - - 0x01C27E 07:C26E: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
+
 sub_0x01C27F:
                                         LDA #$30
                                         JMP loc_C344_prg_bankswitch_80xx
+                                        
 sub_0x01C280:
                                         LDA #$31
                                         JMP loc_C344_prg_bankswitch_80xx
@@ -841,7 +890,7 @@ tbl_C370_low_byte_addr_for_indirect_jump:
 - D 2 - - - 0x01C392 07:C382: 06        .byte con_prg_bank + $06, < loc_0x018019       ; 09
 - D 2 - - - 0x01C394 07:C384: 06        .byte con_prg_bank + $06, < loc_0x01801C       ; 0A
 - D 2 - - - 0x01C396 07:C386: 06        .byte con_prg_bank + $06, < loc_0x01801F       ; 0B
-- D 2 - - - 0x01C398 07:C388: 04        .byte con_prg_bank + $04, < loc_0x010013       ; 0C положение мяча относительно игрока
+- D 2 - - - 0x01C398 07:C388: 04        .byte con_prg_bank + $04, < loc_0x010013_положение_мяча_относительно_игрока       ; 0C
 - D 2 - - - 0x01C39A 07:C38A: 04        .byte con_prg_bank + $04, < loc_0x010016       ; 0D
 - D 2 - - - 0x01C39C 07:C38C: 02        .byte con_prg_bank + $02, < loc_0x008013       ; 0E
 - D 2 - - - 0x01C39E 07:C38E: 04        .byte con_prg_bank + $04, < loc_0x010028       ; 0F
