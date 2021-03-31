@@ -88,7 +88,6 @@ tbl_0x01C010:
 
 ; bzk
 - - - - - - 0x01C018 07:C008: 4C D3 EE  JMP loc_EED3_prg_bankswitch
-- - - - - - 0x01C033 07:C023: 4C 39 F5  JMP loc_F539
 - - - - - - 0x01C03F 07:C02F: 4C E4 F5  JMP loc_F5E4
 - - - - - - 0x01C048 07:C038: 4C 66 F6  JMP loc_F666
 - - - - - - 0x01C04B 07:C03B: 4C 6A F9  JMP loc_F96A
@@ -9108,39 +9107,6 @@ C - - - - - 0x01F545 07:F535: A8        TAY
 C - - - - - 0x01F546 07:F536: 68        PLA
 C - - - - - 0x01F547 07:F537: AA        TAX
 C - - - - - 0x01F548 07:F538: 60        RTS
-
-
-
-loc_F539:
-- - - - - - 0x01F549 07:F539: 48        PHA
-- - - - - - 0x01F54A 07:F53A: 8A        TXA
-- - - - - - 0x01F54B 07:F53B: 48        PHA
-- - - - - - 0x01F54C 07:F53C: A5 1D     LDA ram_001D
-- - - - - - 0x01F54E 07:F53E: 48        PHA
-- - - - - - 0x01F54F 07:F53F: A9 00     LDA #$00
-- - - - - - 0x01F551 07:F541: 85 1D     STA ram_001D
-- - - - - - 0x01F553 07:F543: A2 10     LDX #$10
-- - - - - - 0x01F555 07:F545: 18        CLC
-- - - - - - 0x01F556 07:F546: 26 2C     ROL ram_002C
-- - - - - - 0x01F558 07:F548: 26 2D     ROL ram_002D
-bra_F54A:
-- - - - - - 0x01F55A 07:F54A: 26 1D     ROL ram_001D
-- - - - - - 0x01F55C 07:F54C: A5 1D     LDA ram_001D
-- - - - - - 0x01F55E 07:F54E: C5 1C     CMP ram_001C
-- - - - - - 0x01F560 07:F550: 90 04     BCC bra_F556
-- - - - - - 0x01F562 07:F552: E5 1C     SBC ram_001C
-- - - - - - 0x01F564 07:F554: 85 1D     STA ram_001D
-bra_F556:
-- - - - - - 0x01F566 07:F556: 26 2C     ROL ram_002C
-- - - - - - 0x01F568 07:F558: 26 2D     ROL ram_002D
-- - - - - - 0x01F56A 07:F55A: CA        DEX
-- - - - - - 0x01F56B 07:F55B: D0 ED     BNE bra_F54A
-- - - - - - 0x01F56D 07:F55D: 68        PLA
-- - - - - - 0x01F56E 07:F55E: 85 1D     STA ram_001D
-- - - - - - 0x01F570 07:F560: 68        PLA
-- - - - - - 0x01F571 07:F561: AA        TAX
-- - - - - - 0x01F572 07:F562: 68        PLA
-- - - - - - 0x01F573 07:F563: 60        RTS
 
 
 
