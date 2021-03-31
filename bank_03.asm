@@ -203,7 +203,7 @@ C - - - - - 0x00C177 03:8167: 20 A1 A7  JSR sub_A7A1
 bra_816A:
 loc_816A:
 C D 0 - - - 0x00C17A 03:816A: A2 00     LDX #$00
-bra_816C:
+bra_816C_loop:
 C - - - - - 0x00C17C 03:816C: DE 68 06  DEC ram_0668,X
 C - - - - - 0x00C17F 03:816F: BD 68 06  LDA ram_0668,X
 C - - - - - 0x00C182 03:8172: 29 0F     AND #$0F
@@ -221,7 +221,7 @@ C - - - - - 0x00C196 03:8186: 9D 68 06  STA ram_0668,X
 loc_8189:
 C D 0 - - - 0x00C199 03:8189: E8        INX
 C - - - - - 0x00C19A 03:818A: E0 0C     CPX #$0C
-C - - - - - 0x00C19C 03:818C: D0 DE     BNE bra_816C
+C - - - - - 0x00C19C 03:818C: D0 DE     BNE bra_816C_loop
 C - - - - - 0x00C19E 03:818E: 60        RTS
 
 
