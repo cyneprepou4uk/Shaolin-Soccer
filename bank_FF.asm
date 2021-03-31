@@ -10598,14 +10598,6 @@ C - - - - - 0x01FDD2 07:FDC2: A9 40     LDA #$40
 C - - - - - 0x01FDD4 07:FDC4: 8D 17 40  STA $4017
 C - - - - - 0x01FDD7 07:FDC7: A9 0F     LDA #$0F
 C - - - - - 0x01FDD9 07:FDC9: 8D 15 40  STA $4015
-C - - - - - 0x01FDDC 07:FDCC: A9 10     LDA #$10
-C - - - - - 0x01FDDE 07:FDCE: AA        TAX
-bra_FDCF:
-C - - - - - 0x01FDDF 07:FDCF: 8D 06 20  STA $2006
-C - - - - - 0x01FDE2 07:FDD2: 8D 06 20  STA $2006
-C - - - - - 0x01FDE5 07:FDD5: 49 00     EOR #$00
-C - - - - - 0x01FDE7 07:FDD7: CA        DEX
-C - - - - - 0x01FDE8 07:FDD8: D0 F5     BNE bra_FDCF
 C - - - - - 0x01FDEA 07:FDDA: 20 64 EF  JSR sub_EF64
 C - - - - - 0x01FDED 07:FDDD: A9 06     LDA #$06
 C - - - - - 0x01FDEF 07:FDDF: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
