@@ -11476,7 +11476,7 @@ C - - - - - 0x002EED 00:AEDD: A9 23     LDA #$23
 C - - - - - 0x002EEF 00:AEDF: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x002EF2 00:AEE2: 60        RTS
 bra_AEE3:
-- - - - - - 0x002EF3 00:AEE3: A5 58     LDA ram_номер_экрана
+- - - - - - 0x002EF3 00:AEE3: A5 58     LDA ram_screen_id
 - - - - - - 0x002EF5 00:AEE5: F0 11     BEQ bra_AEF8
 - - - - - - 0x002EF7 00:AEE7: C9 07     CMP #$07
 - - - - - - 0x002EF9 00:AEE9: B0 0D     BCS bra_AEF8
@@ -11527,7 +11527,7 @@ C - - - - - 0x002F51 00:AF41: 8D 09 06  STA ram_0609
 C - - - - - 0x002F54 00:AF44: 8D 0A 06  STA ram_060A
 C - - - - - 0x002F57 00:AF47: A9 05     LDA #$05
 C - - - - - 0x002F59 00:AF49: 8D 0E 06  STA ram_060E
-C - - - - - 0x002F5C 00:AF4C: A5 58     LDA ram_номер_экрана
+C - - - - - 0x002F5C 00:AF4C: A5 58     LDA ram_screen_id
 C - - - - - 0x002F5E 00:AF4E: F0 09     BEQ bra_AF59
 C - - - - - 0x002F60 00:AF50: C9 07     CMP #$07
 C - - - - - 0x002F62 00:AF52: B0 05     BCS bra_AF59
@@ -11540,7 +11540,7 @@ C - - - - - 0x002F6E 00:AF5E: 8D 05 06  STA ram_0605
 loc_AF61:
 C D 1 - - - 0x002F71 00:AF61: AD 0E 06  LDA ram_060E
 C - - - - - 0x002F74 00:AF64: 8D 0C 06  STA ram_060C
-C - - - - - 0x002F77 00:AF67: A5 58     LDA ram_номер_экрана
+C - - - - - 0x002F77 00:AF67: A5 58     LDA ram_screen_id
 C - - - - - 0x002F79 00:AF69: F0 11     BEQ bra_AF7C
 C - - - - - 0x002F7B 00:AF6B: C9 07     CMP #$07
 C - - - - - 0x002F7D 00:AF6D: B0 0D     BCS bra_AF7C
@@ -11612,7 +11612,7 @@ C - - - - - 0x002FF6 00:AFE6: 4C 23 B0  JMP loc_B023
 loc_AFE9:
 C D 1 - - - 0x002FF9 00:AFE9: AD 0E 06  LDA ram_060E
 C - - - - - 0x002FFC 00:AFEC: 8D 0C 06  STA ram_060C
-C - - - - - 0x002FFF 00:AFEF: A5 58     LDA ram_номер_экрана
+C - - - - - 0x002FFF 00:AFEF: A5 58     LDA ram_screen_id
 C - - - - - 0x003001 00:AFF1: F0 11     BEQ bra_B004
 C - - - - - 0x003003 00:AFF3: C9 07     CMP #$07
 C - - - - - 0x003005 00:AFF5: B0 0D     BCS bra_B004
@@ -14578,7 +14578,7 @@ C - - - - - 0x003B75 00:BB65: 29 01     AND #$01
 C - - - - - 0x003B77 00:BB67: D0 03     BNE bra_BB6C
 C - - - - - 0x003B79 00:BB69: EE 2B 05  INC ram_флаг_владения_мячом_ком + 1
 bra_BB6C:
-C - - - - - 0x003B7C 00:BB6C: AD 5B 05  LDA ram_вариант_расстановки_игроков
+C - - - - - 0x003B7C 00:BB6C: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x003B7F 00:BB6F: 0A        ASL
 C - - - - - 0x003B80 00:BB70: 0D 2A 05  ORA ram_флаг_владения_мячом_ком
 C - - - - - 0x003B83 00:BB73: 0A        ASL
@@ -14587,7 +14587,7 @@ C - - - - - 0x003B85 00:BB75: B9 E8 BD  LDA tbl_BDE8,Y
 C - - - - - 0x003B88 00:BB78: 85 2C     STA ram_002C
 C - - - - - 0x003B8A 00:BB7A: B9 E9 BD  LDA tbl_BDE8 + 1,Y
 C - - - - - 0x003B8D 00:BB7D: 85 2D     STA ram_002D
-C - - - - - 0x003B8F 00:BB7F: AD 5B 05  LDA ram_вариант_расстановки_игроков
+C - - - - - 0x003B8F 00:BB7F: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x003B92 00:BB82: 0A        ASL
 C - - - - - 0x003B93 00:BB83: 0D 2B 05  ORA ram_флаг_владения_мячом_ком + 1
 C - - - - - 0x003B96 00:BB86: 0A        ASL
@@ -14599,20 +14599,20 @@ C - - - - - 0x003BA0 00:BB90: 85 2F     STA ram_002F
 C - - - - - 0x003BA2 00:BB92: AD 2A 05  LDA ram_флаг_владения_мячом_ком
 C - - - - - 0x003BA5 00:BB95: 85 2B     STA ram_002B
 C - - - - - 0x003BA7 00:BB97: A9 00     LDA #$00
-C - - - - - 0x003BA9 00:BB99: 8D F0 04  STA ram_мяч_HP
+C - - - - - 0x003BA9 00:BB99: 8D F0 04  STA ram_hp_ball
 C - - - - - 0x003BAC 00:BB9C: 8D C9 04  STA ram_мяч_таймер_действия
 C - - - - - 0x003BAF 00:BB9F: 8D 25 05  STA ram_таймер_электрического_мяча
-C - - - - - 0x003BB2 00:BBA2: 8D 0D 05  STA ram_таймер_мокрого_мяча
-C - - - - - 0x003BB5 00:BBA5: AD 5B 05  LDA ram_вариант_расстановки_игроков
+C - - - - - 0x003BB2 00:BBA2: 8D 0D 05  STA ram_timer_wet_ball
+C - - - - - 0x003BB5 00:BBA5: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x003BB8 00:BBA8: F0 0A     BEQ bra_BBB4
 C - - - - - 0x003BBA 00:BBAA: A9 20     LDA #$20
 C - - - - - 0x003BBC 00:BBAC: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x003BBE 00:BBAE: A9 01     LDA #$01
-C - - - - - 0x003BC0 00:BBB0: 85 59     STA ram_подтип_экрана
+C - - - - - 0x003BC0 00:BBB0: 85 59     STA ram_screen_sub_id
 C - - - - - 0x003BC2 00:BBB2: D0 06     BNE bra_BBBA
 bra_BBB4:
 C - - - - - 0x003BC4 00:BBB4: A9 01     LDA #$01
-C - - - - - 0x003BC6 00:BBB6: 85 59     STA ram_подтип_экрана
+C - - - - - 0x003BC6 00:BBB6: 85 59     STA ram_screen_sub_id
 C - - - - - 0x003BC8 00:BBB8: 85 5C     STA ram_flag_gameplay
 bra_BBBA:
 C - - - - - 0x003BCA 00:BBBA: A0 00     LDY #$00
@@ -14657,7 +14657,7 @@ bra_BC05:
 C - - - - - 0x003C15 00:BC05: A9 01     LDA #$01
 C - - - - - 0x003C17 00:BC07: 99 2A 05  STA ram_флаг_владения_мячом_ком,Y
 C - - - - - 0x003C1A 00:BC0A: A9 09     LDA #$09
-C - - - - - 0x003C1C 00:BC0C: 85 59     STA ram_подтип_экрана
+C - - - - - 0x003C1C 00:BC0C: 85 59     STA ram_screen_sub_id
 C - - - - - 0x003C1E 00:BC0E: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x003C20 00:BC10: 29 DF     AND #$DF
 C - - - - - 0x003C22 00:BC12: 85 57     STA ram_option_mode_difficulty
@@ -14728,11 +14728,11 @@ C - - - - - 0x003CA2 00:BC92: AD F9 BD  LDA tbl_BDF8 + 1
 C - - - - - 0x003CA5 00:BC95: 85 2F     STA ram_002F
 C - - - - - 0x003CA7 00:BC97: A9 00     LDA #$00
 C - - - - - 0x003CA9 00:BC99: 8D 59 05  STA ram_0559
-C - - - - - 0x003CAC 00:BC9C: 8D BE 05  STA ram_тайм_терции
-C - - - - - 0x003CAF 00:BC9F: 8D C0 05  STA ram_тайм_секунды_десятки
-C - - - - - 0x003CB2 00:BCA2: 8D C1 05  STA ram_тайм_минуты
+C - - - - - 0x003CAC 00:BC9C: 8D BE 05  STA ram_timer_0_00_x
+C - - - - - 0x003CAF 00:BC9F: 8D C0 05  STA ram_timer_0_x0_0
+C - - - - - 0x003CB2 00:BCA2: 8D C1 05  STA ram_timer_x_00_0
 C - - - - - 0x003CB5 00:BCA5: A9 08     LDA #$08
-C - - - - - 0x003CB7 00:BCA7: 8D BF 05  STA ram_тайм_секунды_единицы
+C - - - - - 0x003CB7 00:BCA7: 8D BF 05  STA ram_timer_0_0x_0
 loc_BCAA:
 C D 1 - - - 0x003CBA 00:BCAA: A2 00     LDX #$00
 loc_BCAC:
@@ -14823,7 +14823,7 @@ C - - - - - 0x003D67 00:BD57: A9 30     LDA #$30
 C - - - - - 0x003D69 00:BD59: 8D F6 05  STA ram_смещение_камеры
 C - - - - - 0x003D6C 00:BD5C: A9 0C     LDA #$0C
 C - - - - - 0x003D6E 00:BD5E: 8D AD 03  STA ram_camera_aim
-C - - - - - 0x003D71 00:BD61: AD 5B 05  LDA ram_вариант_расстановки_игроков
+C - - - - - 0x003D71 00:BD61: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x003D74 00:BD64: 0A        ASL
 C - - - - - 0x003D75 00:BD65: 0A        ASL
 C - - - - - 0x003D76 00:BD66: A8        TAY
@@ -15376,7 +15376,7 @@ C - - - - - 0x003F92 00:BF82: 85 1D     STA ram_001D
 C - - - - - 0x003F94 00:BF84: 4A        LSR
 C - - - - - 0x003F95 00:BF85: 18        CLC
 C - - - - - 0x003F96 00:BF86: 65 1D     ADC ram_001D
-C - - - - - 0x003F98 00:BF88: 6D 30 05  ADC ram_расстановка_команды
+C - - - - - 0x003F98 00:BF88: 6D 30 05  ADC ram_team_formation
 C - - - - - 0x003F9B 00:BF8B: A8        TAY
 C - - - - - 0x003F9C 00:BF8C: BD 1F BF  LDA tbl_BF1F,X
 C - - - - - 0x003F9F 00:BF8F: 29 F0     AND #$F0
@@ -15463,7 +15463,7 @@ sub_BFE6:
 C - - - - - 0x003FF6 00:BFE6: A0 0A     LDY #$0A
 bra_BFE8:
 C - - - - - 0x003FF8 00:BFE8: 8A        TXA
-C - - - - - 0x003FF9 00:BFE9: D9 32 05  CMP ram_номер_игрока,Y
+C - - - - - 0x003FF9 00:BFE9: D9 32 05  CMP ram_player_id,Y
 C - - - - - 0x003FFC 00:BFEC: F0 04     BEQ bra_BFF2_RTS
 C - - - - - 0x003FFE 00:BFEE: 88        DEY
 C - - - - - 0x003FFF 00:BFEF: 88        DEY

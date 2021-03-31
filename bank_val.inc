@@ -1,5 +1,9 @@
 ; keep your global constant values inside this file
 
+; MISC разное
+con_prg_bank                    = $00 ; номер prg банка
+con_chr_bank                    = $00 ; номер chr банка
+
 
 
 ; ram_btn_hold                  = $04
@@ -30,6 +34,17 @@ con___btn_Up                    = $05 ;
 con___btn_Down                  = $06 ; 
 con___btn_Left                  = $07 ; 
 con___btn_Right                 = $08 ; 
+
+
+
+; ram_weather_id                = $0466
+con_weather_none                = $00 ; нет
+con_weather_lightning           = $01 ; молния
+con_weather_rain                = $02 ; дождь
+con_weather_tornado             = $03 ; смерч
+con_weather_wind                = $04 ; ветер
+con_weather_teared_net_right    = $05 ; рваная сетка справа
+con_weather_teared_net_left     = $06 ; рваная сетка слева
 
 
 
