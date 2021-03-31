@@ -13314,7 +13314,7 @@ off_B554_0C:
 
 sub_B55C:
 C - - - - - 0x00756C 01:B55C: A2 00     LDX #$00
-loc_B55E:
+loc_B55E_loop:
 C D 1 - - - 0x00756E 01:B55E: A9 24     LDA #$24
 C - - - - - 0x007570 01:B560: 85 2C     STA ram_002C
 C - - - - - 0x007572 01:B562: BD EB B5  LDA tbl_B5EB,X
@@ -13358,21 +13358,21 @@ loc_B5B4:
 C D 1 - - - 0x0075C4 01:B5B4: E8        INX
 C - - - - - 0x0075C5 01:B5B5: E0 02     CPX #$02
 C - - - - - 0x0075C7 01:B5B7: B0 03     BCS bra_B5BC
-C - - - - - 0x0075C9 01:B5B9: 4C 5E B5  JMP loc_B55E
+C - - - - - 0x0075C9 01:B5B9: 4C 5E B5  JMP loc_B55E_loop
 bra_B5BC:
 C - - - - - 0x0075CC 01:B5BC: AD 02 20  LDA $2002
-C - - - - - 0x0075CF 01:B5BF: A9 25     LDA #$25
+C - - - - - 0x0075CF 01:B5BF: A9 25     LDA #> $256F
 C - - - - - 0x0075D1 01:B5C1: 8D 06 20  STA $2006
-C - - - - - 0x0075D4 01:B5C4: A9 6F     LDA #$6F
+C - - - - - 0x0075D4 01:B5C4: A9 6F     LDA #< $256F
 C - - - - - 0x0075D6 01:B5C6: 8D 06 20  STA $2006
 C - - - - - 0x0075D9 01:B5C9: A9 36     LDA #$36
 C - - - - - 0x0075DB 01:B5CB: 8D 07 20  STA $2007
 C - - - - - 0x0075DE 01:B5CE: A9 46     LDA #$46
 C - - - - - 0x0075E0 01:B5D0: 8D 07 20  STA $2007
-C - - - - - 0x0075E3 01:B5D3: AD 02 20  LDA $2002
-C - - - - - 0x0075E6 01:B5D6: A9 25     LDA #$25
+C - - - - - 0x0075E3 01:B5D3: AD 02 20  LDA $2002   ; bzk опт, лишнее
+C - - - - - 0x0075E6 01:B5D6: A9 25     LDA #> $2570
 C - - - - - 0x0075E8 01:B5D8: 8D 06 20  STA $2006
-C - - - - - 0x0075EB 01:B5DB: A9 70     LDA #$70
+C - - - - - 0x0075EB 01:B5DB: A9 70     LDA #< $2570
 C - - - - - 0x0075ED 01:B5DD: 8D 06 20  STA $2006
 C - - - - - 0x0075F0 01:B5E0: A9 36     LDA #$36
 C - - - - - 0x0075F2 01:B5E2: 8D 07 20  STA $2007
@@ -13413,9 +13413,9 @@ C - - - - - 0x007612 01:B602: 8D 00 20  STA $2000
 C - - - - - 0x007615 01:B605: A5 1C     LDA ram_001C
 C - - - - - 0x007617 01:B607: 0A        ASL
 C - - - - - 0x007618 01:B608: A8        TAY
-C - - - - - 0x007619 01:B609: B9 50 B6  LDA tbl_B650,Y
+C - - - - - 0x007619 01:B609: B9 50 B6  LDA tbl_B650_tiles,Y
 C - - - - - 0x00761C 01:B60C: 85 2E     STA ram_002E
-C - - - - - 0x00761E 01:B60E: B9 51 B6  LDA tbl_B650 + 1,Y
+C - - - - - 0x00761E 01:B60E: B9 51 B6  LDA tbl_B650_tiles + 1,Y
 C - - - - - 0x007621 01:B611: 85 2F     STA ram_002F
 C - - - - - 0x007623 01:B613: A0 00     LDY #$00
 C - - - - - 0x007625 01:B615: AD 02 20  LDA $2002
@@ -13452,7 +13452,7 @@ C - - - - - 0x00765F 01:B64F: 60        RTS
 
 
 
-tbl_B650:
+tbl_B650_tiles:
 - D 1 - - - 0x007660 01:B650: 70 B6     .word off_B670_00
 - D 1 - - - 0x007662 01:B652: 80 B6     .word off_B680_01
 - - - - - - 0x007664 01:B654: 78 B6     .word off_B678_02
@@ -13639,9 +13639,9 @@ C - - - - - 0x0076EE 01:B6DE: 8D 00 20  STA $2000
 C - - - - - 0x0076F1 01:B6E1: A5 1C     LDA ram_001C
 C - - - - - 0x0076F3 01:B6E3: 0A        ASL
 C - - - - - 0x0076F4 01:B6E4: A8        TAY
-C - - - - - 0x0076F5 01:B6E5: B9 54 B7  LDA tbl_B754,Y
+C - - - - - 0x0076F5 01:B6E5: B9 54 B7  LDA tbl_B754_tiles,Y
 C - - - - - 0x0076F8 01:B6E8: 85 2E     STA ram_002E
-C - - - - - 0x0076FA 01:B6EA: B9 55 B7  LDA tbl_B754 + 1,Y
+C - - - - - 0x0076FA 01:B6EA: B9 55 B7  LDA tbl_B754_tiles + 1,Y
 C - - - - - 0x0076FD 01:B6ED: 85 2F     STA ram_002F
 C - - - - - 0x0076FF 01:B6EF: A0 00     LDY #$00
 C - - - - - 0x007701 01:B6F1: AD 02 20  LDA $2002
@@ -13649,53 +13649,53 @@ C - - - - - 0x007704 01:B6F4: A5 2C     LDA ram_002C
 C - - - - - 0x007706 01:B6F6: 8D 06 20  STA $2006
 C - - - - - 0x007709 01:B6F9: A5 2D     LDA ram_002D
 C - - - - - 0x00770B 01:B6FB: 8D 06 20  STA $2006
-bra_B6FE:
+bra_B6FE_loop:
 C - - - - - 0x00770E 01:B6FE: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x007710 01:B700: 8D 07 20  STA $2007
 C - - - - - 0x007713 01:B703: C8        INY
 C - - - - - 0x007714 01:B704: C0 06     CPY #$06
-C - - - - - 0x007716 01:B706: 90 F6     BCC bra_B6FE
+C - - - - - 0x007716 01:B706: 90 F6     BCC bra_B6FE_loop
 C - - - - - 0x007718 01:B708: E6 2D     INC ram_002D
 C - - - - - 0x00771A 01:B70A: AD 02 20  LDA $2002
 C - - - - - 0x00771D 01:B70D: A5 2C     LDA ram_002C
 C - - - - - 0x00771F 01:B70F: 8D 06 20  STA $2006
 C - - - - - 0x007722 01:B712: A5 2D     LDA ram_002D
 C - - - - - 0x007724 01:B714: 8D 06 20  STA $2006
-bra_B717:
+bra_B717_loop:
 C - - - - - 0x007727 01:B717: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x007729 01:B719: 8D 07 20  STA $2007
 C - - - - - 0x00772C 01:B71C: C8        INY
 C - - - - - 0x00772D 01:B71D: C0 0C     CPY #$0C
-C - - - - - 0x00772F 01:B71F: 90 F6     BCC bra_B717
+C - - - - - 0x00772F 01:B71F: 90 F6     BCC bra_B717_loop
 C - - - - - 0x007731 01:B721: E6 2D     INC ram_002D
 C - - - - - 0x007733 01:B723: AD 02 20  LDA $2002
 C - - - - - 0x007736 01:B726: A5 2C     LDA ram_002C
 C - - - - - 0x007738 01:B728: 8D 06 20  STA $2006
 C - - - - - 0x00773B 01:B72B: A5 2D     LDA ram_002D
 C - - - - - 0x00773D 01:B72D: 8D 06 20  STA $2006
-bra_B730:
+bra_B730_loop:
 C - - - - - 0x007740 01:B730: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x007742 01:B732: 8D 07 20  STA $2007
 C - - - - - 0x007745 01:B735: C8        INY
 C - - - - - 0x007746 01:B736: C0 12     CPY #$12
-C - - - - - 0x007748 01:B738: 90 F6     BCC bra_B730
+C - - - - - 0x007748 01:B738: 90 F6     BCC bra_B730_loop
 C - - - - - 0x00774A 01:B73A: E6 2D     INC ram_002D
 C - - - - - 0x00774C 01:B73C: AD 02 20  LDA $2002
 C - - - - - 0x00774F 01:B73F: A5 2C     LDA ram_002C
 C - - - - - 0x007751 01:B741: 8D 06 20  STA $2006
 C - - - - - 0x007754 01:B744: A5 2D     LDA ram_002D
 C - - - - - 0x007756 01:B746: 8D 06 20  STA $2006
-bra_B749:
+bra_B749_loop:
 C - - - - - 0x007759 01:B749: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x00775B 01:B74B: 8D 07 20  STA $2007
 C - - - - - 0x00775E 01:B74E: C8        INY
 C - - - - - 0x00775F 01:B74F: C0 18     CPY #$18
-C - - - - - 0x007761 01:B751: 90 F6     BCC bra_B749
+C - - - - - 0x007761 01:B751: 90 F6     BCC bra_B749_loop
 C - - - - - 0x007763 01:B753: 60        RTS
 
 
 
-tbl_B754:
+tbl_B754_tiles:
 - D 1 - - - 0x007764 01:B754: 68 B7     .word off_B768_00
 - D 1 - - - 0x007766 01:B756: 80 B7     .word off_B780_01
 - D 1 - - - 0x007768 01:B758: 98 B7     .word off_B798_02
@@ -13995,44 +13995,44 @@ C - - - - - 0x00786A 01:B85A: 29 FB     AND #$FB
 C - - - - - 0x00786C 01:B85C: 85 4C     STA ram_for_2000
 C - - - - - 0x00786E 01:B85E: 8D 00 20  STA $2000
 C - - - - - 0x007871 01:B861: AD 02 20  LDA $2002
-C - - - - - 0x007874 01:B864: A9 24     LDA #$24
+C - - - - - 0x007874 01:B864: A9 24     LDA #> $24CC
 C - - - - - 0x007876 01:B866: 8D 06 20  STA $2006
-C - - - - - 0x007879 01:B869: A9 CC     LDA #$CC
+C - - - - - 0x007879 01:B869: A9 CC     LDA #< $24CC
 C - - - - - 0x00787B 01:B86B: 8D 06 20  STA $2006
 C - - - - - 0x00787E 01:B86E: A0 00     LDY #$00
-bra_B870:
-C - - - - - 0x007880 01:B870: B9 99 B8  LDA tbl_B899,Y
+bra_B870_loop:
+C - - - - - 0x007880 01:B870: B9 99 B8  LDA tbl_B899_tiles,Y
 C - - - - - 0x007883 01:B873: 8D 07 20  STA $2007
 C - - - - - 0x007886 01:B876: C8        INY
 C - - - - - 0x007887 01:B877: C0 08     CPY #$08
-C - - - - - 0x007889 01:B879: 90 F5     BCC bra_B870
+C - - - - - 0x007889 01:B879: 90 F5     BCC bra_B870_loop
 C - - - - - 0x00788B 01:B87B: AD 02 20  LDA $2002
-C - - - - - 0x00788E 01:B87E: A9 24     LDA #$24
+C - - - - - 0x00788E 01:B87E: A9 24     LDA #> $24EC
 C - - - - - 0x007890 01:B880: 8D 06 20  STA $2006
-C - - - - - 0x007893 01:B883: A9 EC     LDA #$EC
+C - - - - - 0x007893 01:B883: A9 EC     LDA #< $24EC
 C - - - - - 0x007895 01:B885: 8D 06 20  STA $2006
 C - - - - - 0x007898 01:B888: A0 00     LDY #$00
-bra_B88A:
-C - - - - - 0x00789A 01:B88A: B9 99 B8  LDA tbl_B899,Y
+bra_B88A_loop:
+C - - - - - 0x00789A 01:B88A: B9 99 B8  LDA tbl_B899_tiles,Y
 C - - - - - 0x00789D 01:B88D: 18        CLC
 C - - - - - 0x00789E 01:B88E: 69 10     ADC #$10
 C - - - - - 0x0078A0 01:B890: 8D 07 20  STA $2007
 C - - - - - 0x0078A3 01:B893: C8        INY
 C - - - - - 0x0078A4 01:B894: C0 08     CPY #$08
-C - - - - - 0x0078A6 01:B896: 90 F2     BCC bra_B88A
+C - - - - - 0x0078A6 01:B896: 90 F2     BCC bra_B88A_loop
 C - - - - - 0x0078A8 01:B898: 60        RTS
 
 
 
-tbl_B899:
-- D 1 - - - 0x0078A9 01:B899: 87        .byte $87   ; 
-- D 1 - - - 0x0078AA 01:B89A: 80        .byte $80   ; 
-- D 1 - - - 0x0078AB 01:B89B: 8B        .byte $8B   ; 
-- D 1 - - - 0x0078AC 01:B89C: 85        .byte $85   ; 
-- D 1 - - - 0x0078AD 01:B89D: A3        .byte $A3   ; 
-- D 1 - - - 0x0078AE 01:B89E: 88        .byte $88   ; 
-- D 1 - - - 0x0078AF 01:B89F: 8C        .byte $8C   ; 
-- D 1 - - - 0x0078B0 01:B8A0: 84        .byte $84   ; 
+tbl_B899_tiles:
+- D 1 - - - 0x0078A9 01:B899: 87        .byte $87   ; 00
+- D 1 - - - 0x0078AA 01:B89A: 80        .byte $80   ; 01
+- D 1 - - - 0x0078AB 01:B89B: 8B        .byte $8B   ; 02
+- D 1 - - - 0x0078AC 01:B89C: 85        .byte $85   ; 03
+- D 1 - - - 0x0078AD 01:B89D: A3        .byte $A3   ; 04
+- D 1 - - - 0x0078AE 01:B89E: 88        .byte $88   ; 05
+- D 1 - - - 0x0078AF 01:B89F: 8C        .byte $8C   ; 06
+- D 1 - - - 0x0078B0 01:B8A0: 84        .byte $84   ; 07
 
 
 

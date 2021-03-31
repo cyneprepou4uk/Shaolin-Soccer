@@ -6536,9 +6536,9 @@ C - - - - - 0x00E8C4 03:A8B4: 4A        LSR
 C - - - - - 0x00E8C5 03:A8B5: 4A        LSR
 C - - - - - 0x00E8C6 03:A8B6: 4A        LSR
 C - - - - - 0x00E8C7 03:A8B7: A8        TAY
-C - - - - - 0x00E8C8 03:A8B8: B9 80 AB  LDA tbl_AB80,Y
+C - - - - - 0x00E8C8 03:A8B8: B9 80 AB  LDA tbl_AB80_tiles,Y
 C - - - - - 0x00E8CB 03:A8BB: 85 1C     STA ram_001C
-C - - - - - 0x00E8CD 03:A8BD: B9 81 AB  LDA tbl_AB81,Y
+C - - - - - 0x00E8CD 03:A8BD: B9 81 AB  LDA tbl_AB80_tiles + 1,Y
 C - - - - - 0x00E8D0 03:A8C0: 85 1D     STA ram_001D
 C - - - - - 0x00E8D2 03:A8C2: A2 00     LDX #$00
 C - - - - - 0x00E8D4 03:A8C4: A0 13     LDY #$13
@@ -6731,30 +6731,30 @@ C - - - - - 0x00EA00 03:A9F0: 20 01 AB  JSR sub_AB01
 C - - - - - 0x00EA03 03:A9F3: AD 02 20  LDA $2002
 C - - - - - 0x00EA06 03:A9F6: A9 2A     LDA #$2A
 C - - - - - 0x00EA08 03:A9F8: 8D 06 20  STA $2006
-C - - - - - 0x00EA0B 03:A9FB: BD 57 AB  LDA tbl_AB57,X
+C - - - - - 0x00EA0B 03:A9FB: BD 57 AB  LDA tbl_AB57_ppu_lo,X
 C - - - - - 0x00EA0E 03:A9FE: 8D 06 20  STA $2006
 C - - - - - 0x00EA11 03:AA01: A0 00     LDY #$00
-bra_AA03:
+bra_AA03_loop:
 C - - - - - 0x00EA13 03:AA03: B9 1C 00  LDA ram_001C,Y
 C - - - - - 0x00EA16 03:AA06: 8D 07 20  STA $2007
 C - - - - - 0x00EA19 03:AA09: C8        INY
 C - - - - - 0x00EA1A 03:AA0A: C0 05     CPY #$05
-C - - - - - 0x00EA1C 03:AA0C: 90 F5     BCC bra_AA03
+C - - - - - 0x00EA1C 03:AA0C: 90 F5     BCC bra_AA03_loop
 C - - - - - 0x00EA1E 03:AA0E: AD 02 20  LDA $2002
 C - - - - - 0x00EA21 03:AA11: A9 2A     LDA #$2A
 C - - - - - 0x00EA23 03:AA13: 8D 06 20  STA $2006
-C - - - - - 0x00EA26 03:AA16: BD 59 AB  LDA tbl_AB59,X
+C - - - - - 0x00EA26 03:AA16: BD 59 AB  LDA tbl_AB59_ppu_lo,X
 C - - - - - 0x00EA29 03:AA19: 8D 06 20  STA $2006
-bra_AA1C:
+bra_AA1C_loop:
 C - - - - - 0x00EA2C 03:AA1C: B9 1C 00  LDA ram_001C,Y
 C - - - - - 0x00EA2F 03:AA1F: 8D 07 20  STA $2007
 C - - - - - 0x00EA32 03:AA22: C8        INY
 C - - - - - 0x00EA33 03:AA23: C0 0A     CPY #$0A
-C - - - - - 0x00EA35 03:AA25: 90 F5     BCC bra_AA1C
+C - - - - - 0x00EA35 03:AA25: 90 F5     BCC bra_AA1C_loop
 C - - - - - 0x00EA37 03:AA27: AD 02 20  LDA $2002
 C - - - - - 0x00EA3A 03:AA2A: A9 2A     LDA #$2A
 C - - - - - 0x00EA3C 03:AA2C: 8D 06 20  STA $2006
-C - - - - - 0x00EA3F 03:AA2F: BD 5B AB  LDA tbl_AB5B,X
+C - - - - - 0x00EA3F 03:AA2F: BD 5B AB  LDA tbl_AB5B_ppu_lo,X
 C - - - - - 0x00EA42 03:AA32: 8D 06 20  STA $2006
 C - - - - - 0x00EA45 03:AA35: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00EA48 03:AA38: 29 20     AND #$20
@@ -6772,23 +6772,23 @@ C - - - - - 0x00EA5C 03:AA4C: 18        CLC
 C - - - - - 0x00EA5D 03:AA4D: 69 3E     ADC #$3E
 loc_AA4F:
 C D 1 - - - 0x00EA5F 03:AA4F: 8D 07 20  STA $2007
-bra_AA52:
+bra_AA52_loop:
 C - - - - - 0x00EA62 03:AA52: B9 1C 00  LDA ram_001C,Y
 C - - - - - 0x00EA65 03:AA55: 8D 07 20  STA $2007
 C - - - - - 0x00EA68 03:AA58: C8        INY
 C - - - - - 0x00EA69 03:AA59: C0 0C     CPY #$0C
-C - - - - - 0x00EA6B 03:AA5B: 90 F5     BCC bra_AA52
+C - - - - - 0x00EA6B 03:AA5B: 90 F5     BCC bra_AA52_loop
 C - - - - - 0x00EA6D 03:AA5D: AD 02 20  LDA $2002
 C - - - - - 0x00EA70 03:AA60: A9 2A     LDA #$2A
 C - - - - - 0x00EA72 03:AA62: 8D 06 20  STA $2006
-C - - - - - 0x00EA75 03:AA65: BD 5D AB  LDA tbl_AB5D,X
+C - - - - - 0x00EA75 03:AA65: BD 5D AB  LDA tbl_AB5D_ppu_lo,X
 C - - - - - 0x00EA78 03:AA68: 8D 06 20  STA $2006
 C - - - - - 0x00EA7B 03:AA6B: B9 1C 00  LDA ram_001C,Y
 C - - - - - 0x00EA7E 03:AA6E: 8D 07 20  STA $2007
 C - - - - - 0x00EA81 03:AA71: AD 02 20  LDA $2002
 C - - - - - 0x00EA84 03:AA74: A9 2A     LDA #$2A
 C - - - - - 0x00EA86 03:AA76: 8D 06 20  STA $2006
-C - - - - - 0x00EA89 03:AA79: BD 5F AB  LDA tbl_AB5F,X
+C - - - - - 0x00EA89 03:AA79: BD 5F AB  LDA tbl_AB5F_ppu_lo,X
 C - - - - - 0x00EA8C 03:AA7C: 8D 06 20  STA $2006
 C - - - - - 0x00EA8F 03:AA7F: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00EA92 03:AA82: 29 20     AND #$20
@@ -6816,10 +6816,10 @@ C - - - - - 0x00EAB6 03:AAA6: 4A        LSR
 C - - - - - 0x00EAB7 03:AAA7: 4A        LSR
 C - - - - - 0x00EAB8 03:AAA8: 4A        LSR
 C - - - - - 0x00EAB9 03:AAA9: A8        TAY
-C - - - - - 0x00EABA 03:AAAA: B9 80 AB  LDA tbl_AB80,Y
+C - - - - - 0x00EABA 03:AAAA: B9 80 AB  LDA tbl_AB80_tiles,Y
 C - - - - - 0x00EABD 03:AAAD: 8D 07 20  STA $2007
 C - - - - - 0x00EAC0 03:AAB0: C8        INY
-C - - - - - 0x00EAC1 03:AAB1: B9 80 AB  LDA tbl_AB80,Y
+C - - - - - 0x00EAC1 03:AAB1: B9 80 AB  LDA tbl_AB80_tiles,Y
 C - - - - - 0x00EAC4 03:AAB4: 8D 07 20  STA $2007
 C - - - - - 0x00EAC7 03:AAB7: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00EACA 03:AABA: 29 20     AND #$20
@@ -6830,7 +6830,7 @@ bra_AAC3:
 C - - - - - 0x00EAD3 03:AAC3: AD 02 20  LDA $2002
 C - - - - - 0x00EAD6 03:AAC6: A9 2A     LDA #$2A
 C - - - - - 0x00EAD8 03:AAC8: 8D 06 20  STA $2006
-C - - - - - 0x00EADB 03:AACB: BD 61 AB  LDA tbl_AB61,X
+C - - - - - 0x00EADB 03:AACB: BD 61 AB  LDA tbl_89E1_ppu_lo,X
 C - - - - - 0x00EADE 03:AACE: 8D 06 20  STA $2006
 C - - - - - 0x00EAE1 03:AAD1: A9 0C     LDA #$0C
 C - - - - - 0x00EAE3 03:AAD3: 8D 07 20  STA $2007
@@ -6926,29 +6926,29 @@ tbl_AB4B:
 
 
 
-tbl_AB57:
-- D 1 - - - 0x00EB67 03:AB57: 01        .byte $01   ; 
-- D 1 - - - 0x00EB68 03:AB58: 14        .byte $14   ; 
+tbl_AB57_ppu_lo:
+- D 1 - - - 0x00EB67 03:AB57: 01        .byte < $2A01   ; 
+- D 1 - - - 0x00EB68 03:AB58: 14        .byte < $2A14   ; 
 
-tbl_AB59:
-- D 1 - - - 0x00EB69 03:AB59: 21        .byte $21   ; 
-- D 1 - - - 0x00EB6A 03:AB5A: 34        .byte $34   ; 
+tbl_AB59_ppu_lo:
+- D 1 - - - 0x00EB69 03:AB59: 21        .byte < $2A21   ; 
+- D 1 - - - 0x00EB6A 03:AB5A: 34        .byte < $2A34   ; 
 
-tbl_AB5B:
-- D 1 - - - 0x00EB6B 03:AB5B: 41        .byte $41   ; 
-- D 1 - - - 0x00EB6C 03:AB5C: 54        .byte $54   ; 
+tbl_AB5B_ppu_lo:
+- D 1 - - - 0x00EB6B 03:AB5B: 41        .byte < $2A41   ; 
+- D 1 - - - 0x00EB6C 03:AB5C: 54        .byte < $2A54   ; 
 
-tbl_AB5D:
-- D 1 - - - 0x00EB6D 03:AB5D: 64        .byte $64   ; 
-- D 1 - - - 0x00EB6E 03:AB5E: 77        .byte $77   ; 
+tbl_AB5D_ppu_lo:
+- D 1 - - - 0x00EB6D 03:AB5D: 64        .byte < $2A64   ; 
+- D 1 - - - 0x00EB6E 03:AB5E: 77        .byte < $2A77   ; 
 
-tbl_AB5F:
-- D 1 - - - 0x00EB6F 03:AB5F: 44        .byte $44   ; 
-- D 1 - - - 0x00EB70 03:AB60: 57        .byte $57   ; 
+tbl_AB5F_ppu_lo:
+- D 1 - - - 0x00EB6F 03:AB5F: 44        .byte < $2A44   ; 
+- D 1 - - - 0x00EB70 03:AB60: 57        .byte < $2A57   ; 
 
-tbl_AB61:
-- D 1 - - - 0x00EB71 03:AB61: 62        .byte $62   ; 
-- D 1 - - - 0x00EB72 03:AB62: 75        .byte $75   ; 
+tbl_89E1_ppu_lo:
+- D 1 - - - 0x00EB71 03:AB61: 62        .byte < $2A62   ; 
+- D 1 - - - 0x00EB72 03:AB62: 75        .byte < $2A75   ; 
 
 
 
@@ -6998,9 +6998,8 @@ tbl_AB7D:
 
 
 
-tbl_AB80:
+tbl_AB80_tiles:
 - D 1 - - - 0x00EB90 03:AB80: 8F        .byte $8F   ; 
-tbl_AB81:
 - D 1 - - - 0x00EB91 03:AB81: A1        .byte $A1   ; 
 - D 1 - - - 0x00EB92 03:AB82: A0        .byte $A0   ; 
 - D 1 - - - 0x00EB93 03:AB83: 8F        .byte $8F   ; 
