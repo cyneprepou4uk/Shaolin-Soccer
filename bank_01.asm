@@ -15355,7 +15355,7 @@ tbl_BFAF:
 
 
 .segment "BANK_01_ID"
-- D 1 - - - 0x00800F 01:BFFF: 01        .byte $01   ; 
+- D 1 - - - 0x00800F 01:BFFF: 01        .byte con_prg_bank + $01   ; 
 
 
 

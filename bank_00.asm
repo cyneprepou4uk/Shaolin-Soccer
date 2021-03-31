@@ -15475,7 +15475,7 @@ C D 1 - - - 0x004002 00:BFF2: 60        RTS
 
 
 .segment "BANK_00_ID"
-- D 1 - - - 0x00400F 00:BFFF: 00        .byte $00   ; 
+- D 1 - - - 0x00400F 00:BFFF: 00        .byte con_prg_bank + $00   ; 
 
 
 

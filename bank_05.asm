@@ -11809,7 +11809,7 @@ tbl_BFA3:
 
 
 .segment "BANK_05_ID"
-- D 1 - - - 0x01800F 05:BFFF: 05        .byte $05   ; 
+- D 1 - - - 0x01800F 05:BFFF: 05        .byte con_prg_bank + $05   ; 
 
 
 

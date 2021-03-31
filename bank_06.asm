@@ -10494,7 +10494,7 @@ C - - - - - 0x01BEF7 06:BEE7: 60        RTS
 
 
 .segment "BANK_06_ID"
-- D 1 - - - 0x01C00F 06:BFFF: 06        .byte $06   ; 
+- D 1 - - - 0x01C00F 06:BFFF: 06        .byte con_prg_bank + $06   ; 
 
 
 

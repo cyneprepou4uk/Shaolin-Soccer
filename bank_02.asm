@@ -14607,7 +14607,7 @@ off_BF90_06:
 
 
 .segment "BANK_02_ID"
-- D 1 - - - 0x00C00F 02:BFFF: 02        .byte $02   ; 
+- D 1 - - - 0x00C00F 02:BFFF: 02        .byte con_prg_bank + $02   ; 
 
 
 

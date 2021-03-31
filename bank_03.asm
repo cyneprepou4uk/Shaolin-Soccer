@@ -11712,7 +11712,7 @@ C - - - - - 0x00FFEB 03:BFDB: 60        RTS
 
 
 .segment "BANK_03_ID"
-- D 1 - - - 0x01000F 03:BFFF: 03        .byte $03   ; 
+- D 1 - - - 0x01000F 03:BFFF: 03        .byte con_prg_bank + $03   ; 
 
 
 
