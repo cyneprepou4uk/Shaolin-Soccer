@@ -86,12 +86,6 @@ tbl_0x01C010:
 
 
 
-; bzk
-- - - - - - 0x01C018 07:C008: 4C D3 EE  JMP loc_EED3_prg_bankswitch
-- - - - - - 0x01C084 07:C074: 4C DB C4  JMP loc_C4DB
-
-
-
 tbl_C080:
 - D 2 - I - 0x01C090 07:C080: A0 C0     .word off_C0A0_00
 - D 2 - I - 0x01C092 07:C082: DC C0     .word off_C0DC_01
@@ -1005,7 +999,6 @@ ofs_C4BD_03:
 
 
 
-loc_C4DB:
 sub_C4DB:
 C - - - - - 0x01C4EB 07:C4DB: A0 08     LDY #$08
 C - - - - - 0x01C4ED 07:C4DD: A5 08     LDA ram_btn_press
