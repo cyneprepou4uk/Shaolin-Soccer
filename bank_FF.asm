@@ -8575,7 +8575,7 @@ C - - - - - 0x01F12C 07:F11C: D0 03     BNE bra_F121
 C - - - - - 0x01F12E 07:F11E: 4C 5D F1  JMP loc_F15D
 bra_F121:
 C - - - - - 0x01F131 07:F121: A2 00     LDX #$00
-loc_F123_loop:
+bra_F123:
 C D 3 - - - 0x01F133 07:F123: AD 02 20  LDA $2002
 C - - - - - 0x01F136 07:F126: A9 23     LDA #$23
 C - - - - - 0x01F138 07:F128: 8D 06 20  STA $2006
@@ -8585,11 +8585,9 @@ C - - - - - 0x01F141 07:F131: BD 9A 05  LDA ram_059A,X
 C - - - - - 0x01F144 07:F134: 8D 07 20  STA $2007
 C - - - - - 0x01F147 07:F137: E8        INX
 C - - - - - 0x01F148 07:F138: E0 07     CPX #$07
-C - - - - - 0x01F14A 07:F13A: F0 03     BEQ bra_F13F    ; bzk опт
-C - - - - - 0x01F14C 07:F13C: 4C 23 F1  JMP loc_F123_loop
-bra_F13F:
+C - - - - - 0x01F14A 07:F13A: F0 03     BNE bra_F123
 C - - - - - 0x01F14F 07:F13F: A2 00     LDX #$00
-loc_F141_loop:
+bra_F141:
 C D 3 - - - 0x01F151 07:F141: AD 02 20  LDA $2002
 C - - - - - 0x01F154 07:F144: A9 2B     LDA #$2B
 C - - - - - 0x01F156 07:F146: 8D 06 20  STA $2006
@@ -8599,9 +8597,7 @@ C - - - - - 0x01F15F 07:F14F: BD A1 05  LDA ram_05A1,X
 C - - - - - 0x01F162 07:F152: 8D 07 20  STA $2007
 C - - - - - 0x01F165 07:F155: E8        INX
 C - - - - - 0x01F166 07:F156: E0 04     CPX #$04
-C - - - - - 0x01F168 07:F158: F0 03     BEQ bra_F15D    ; bzk опт
-C - - - - - 0x01F16A 07:F15A: 4C 41 F1  JMP loc_F141_loop
-bra_F15D:
+C - - - - - 0x01F168 07:F158: F0 03     BNE bra_F141
 loc_F15D:
 C D 3 - - - 0x01F16D 07:F15D: AD AB 05  LDA ram_флаг_обновл_тайлов_экр
 C - - - - - 0x01F170 07:F160: 29 BF     AND #$BF
