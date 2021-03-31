@@ -14599,14 +14599,14 @@ C - - - - - 0x003BB2 00:BBA2: 8D 0D 05  STA ram_таймер_мокрого_мя
 C - - - - - 0x003BB5 00:BBA5: AD 5B 05  LDA ram_вариант_расстановки_игроков
 C - - - - - 0x003BB8 00:BBA8: F0 0A     BEQ bra_BBB4
 C - - - - - 0x003BBA 00:BBAA: A9 20     LDA #$20
-C - - - - - 0x003BBC 00:BBAC: 85 5C     STA ram_режим_игры_на_поле
+C - - - - - 0x003BBC 00:BBAC: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x003BBE 00:BBAE: A9 01     LDA #$01
 C - - - - - 0x003BC0 00:BBB0: 85 59     STA ram_подтип_экрана
 C - - - - - 0x003BC2 00:BBB2: D0 06     BNE bra_BBBA
 bra_BBB4:
 C - - - - - 0x003BC4 00:BBB4: A9 01     LDA #$01
 C - - - - - 0x003BC6 00:BBB6: 85 59     STA ram_подтип_экрана
-C - - - - - 0x003BC8 00:BBB8: 85 5C     STA ram_режим_игры_на_поле
+C - - - - - 0x003BC8 00:BBB8: 85 5C     STA ram_flag_gameplay
 bra_BBBA:
 C - - - - - 0x003BCA 00:BBBA: A0 00     LDY #$00
 C - - - - - 0x003BCC 00:BBBC: A2 0E     LDX #$0E

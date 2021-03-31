@@ -43,7 +43,7 @@ C - - J - - 0x010034 04:8024: 4C EC BB  JMP loc_BBEC
 
 
 loc_8031:
-C D 0 - - - 0x010041 04:8031: A5 5C     LDA ram_режим_игры_на_поле
+C D 0 - - - 0x010041 04:8031: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x010043 04:8033: 10 01     BPL bra_8036
 C - - - - - 0x010045 04:8035: 60        RTS
 bra_8036:
@@ -12380,7 +12380,7 @@ tbl_B495:
 
 
 loc_B4B2:
-C D 1 - - - 0x0134C2 04:B4B2: A5 5C     LDA ram_режим_игры_на_поле
+C D 1 - - - 0x0134C2 04:B4B2: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x0134C4 04:B4B4: 29 01     AND #$01
 C - - - - - 0x0134C6 04:B4B6: F0 06     BEQ bra_B4BE
 C - - - - - 0x0134C8 04:B4B8: 20 50 B8  JSR sub_B850
@@ -12422,7 +12422,7 @@ C - - - - - 0x01350B 04:B4FB: BD 7C 05  LDA ram_057C_кнопки,X
 C - - - - - 0x01350E 04:B4FE: 8D 21 00  STA ram_0021
 C - - - - - 0x013511 04:B501: BD 68 05  LDA ram_номер_управляемого,X
 C - - - - - 0x013514 04:B504: AA        TAX
-C - - - - - 0x013515 04:B505: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x013515 04:B505: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x013517 04:B507: 29 40     AND #$40
 C - - - - - 0x013519 04:B509: D0 2B     BNE bra_B536
 C - - - - - 0x01351B 04:B50B: BD 86 04  LDA ram_игрок_состояние,X
@@ -14018,7 +14018,7 @@ C - - - - - 0x013DFD 04:BDED: AD 0A BE  LDA tbl_BE0A
 C - - - - - 0x013E00 04:BDF0: 85 32     STA ram_0032
 C - - - - - 0x013E02 04:BDF2: AD 0B BE  LDA tbl_BE0A + 1
 C - - - - - 0x013E05 04:BDF5: 85 33     STA ram_0033
-C - - - - - 0x013E07 04:BDF7: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x013E07 04:BDF7: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x013E09 04:BDF9: 29 40     AND #$40
 C - - - - - 0x013E0B 04:BDFB: F0 04     BEQ bra_BE01
 C - - - - - 0x013E0D 04:BDFD: A9 00     LDA #$00

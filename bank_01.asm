@@ -12144,7 +12144,7 @@ off_B099_04:
 
 
 loc_B0B9:
-C D 1 - - - 0x0070C9 01:B0B9: A5 5C     LDA ram_режим_игры_на_поле
+C D 1 - - - 0x0070C9 01:B0B9: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x0070CB 01:B0BB: 30 0C     BMI bra_B0C9_RTS
 ; bzk такая проверка на hi = 00 уже есть чтобы попасть сюда
 C - - - - - 0x0070CD 01:B0BD: AD E8 05  LDA ram_footprint_hi_2006
@@ -15176,7 +15176,7 @@ C - - - - - 0x007E9D 01:BE8D: 8D 5A 06  STA ram_позиция_управлен�
 C - - - - - 0x007EA0 01:BE90: AD 5B 06  LDA ram_позиция_управление + 11
 C - - - - - 0x007EA3 01:BE93: 09 80     ORA #$80
 C - - - - - 0x007EA5 01:BE95: 8D 5B 06  STA ram_позиция_управление + 11
-C - - - - - 0x007EA8 01:BE98: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x007EA8 01:BE98: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x007EAA 01:BE9A: 4A        LSR
 C - - - - - 0x007EAB 01:BE9B: 29 04     AND #$04
 C - - - - - 0x007EAD 01:BE9D: 85 1C     STA ram_001C
@@ -15210,7 +15210,7 @@ C - - - - - 0x007EE4 01:BED4: B9 7E BF  LDA tbl_BF7E,Y
 C - - - - - 0x007EE7 01:BED7: 0D D6 04  ORA ram_игрок_с_мячом
 C - - - - - 0x007EEA 01:BEDA: AA        TAX
 C - - - - - 0x007EEB 01:BEDB: 8E D6 04  STX ram_игрок_с_мячом
-C - - - - - 0x007EEE 01:BEDE: AD 5C 00  LDA ram_режим_игры_на_поле
+C - - - - - 0x007EEE 01:BEDE: AD 5C 00  LDA ram_flag_gameplay
 C - - - - - 0x007EF1 01:BEE1: 29 04     AND #$04
 C - - - - - 0x007EF3 01:BEE3: D0 2B     BNE bra_BF10
 C - - - - - 0x007EF5 01:BEE5: 06 1C     ASL ram_001C

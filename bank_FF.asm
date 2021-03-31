@@ -1081,11 +1081,11 @@ C - - - - - 0x01C5BA 07:C5AA: 8D FA 05  STA ram_05FA
 C - - - - - 0x01C5BD 07:C5AD: 8D F7 05  STA ram_задержка_перелив_надп
 bra_C5B0:
 C - - - - - 0x01C5C0 07:C5B0: 20 AD C2  JSR sub_C2AD
-C - - - - - 0x01C5C3 07:C5B3: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C5C3 07:C5B3: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C5C5 07:C5B5: 29 20     AND #$20
 C - - - - - 0x01C5C7 07:C5B7: F0 0B     BEQ bra_C5C4
 C - - - - - 0x01C5C9 07:C5B9: 20 7B C8  JSR sub_C87B
-C - - - - - 0x01C5CC 07:C5BC: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C5CC 07:C5BC: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C5CE 07:C5BE: 29 20     AND #$20
 C - - - - - 0x01C5D0 07:C5C0: F0 07     BEQ bra_C5C9
 - - - - - - 0x01C5D2 07:C5C2: D0 4E     BNE bra_C612_RTS
@@ -1095,7 +1095,7 @@ C - - - - - 0x01C5D7 07:C5C7: 70 49     BVS bra_C612_RTS
 bra_C5C9:
 C - - - - - 0x01C5D9 07:C5C9: E6 59     INC ram_подтип_экрана
 C - - - - - 0x01C5DB 07:C5CB: A9 00     LDA #$00
-C - - - - - 0x01C5DD 07:C5CD: 85 5C     STA ram_режим_игры_на_поле
+C - - - - - 0x01C5DD 07:C5CD: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C5DF 07:C5CF: 8D 2A 05  STA ram_флаг_владения_мячом_ком
 C - - - - - 0x01C5E2 07:C5D2: 8D 2B 05  STA ram_флаг_владения_мячом_ком + 1
 C - - - - - 0x01C5E5 07:C5D5: 20 1F D0  JSR sub_D01F
@@ -1135,9 +1135,9 @@ ofs_C615_02:
 C - - J - - 0x01C625 07:C615: AD 08 00  LDA ram_btn_press
 C - - - - - 0x01C628 07:C618: 29 10     AND #$10
 C - - - - - 0x01C62A 07:C61A: F0 1E     BEQ bra_C63A
-C - - - - - 0x01C62C 07:C61C: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C62C 07:C61C: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C62E 07:C61E: 49 80     EOR #$80
-C - - - - - 0x01C630 07:C620: 85 5C     STA ram_режим_игры_на_поле
+C - - - - - 0x01C630 07:C620: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C632 07:C622: 30 09     BMI bra_C62D
 C - - - - - 0x01C634 07:C624: AD 5A 05  LDA ram_номер_музыки
 C - - - - - 0x01C637 07:C627: 20 E4 C2  JSR sub_C2E4_play_sound
@@ -1150,7 +1150,7 @@ C - - - - - 0x01C645 07:C635: A9 2D     LDA #$2D
 C - - - - - 0x01C647 07:C637: 20 E4 C2  JSR sub_C2E4_play_sound
 bra_C63A:
 loc_C63A:
-C D 2 - - - 0x01C64A 07:C63A: A5 5C     LDA ram_режим_игры_на_поле
+C D 2 - - - 0x01C64A 07:C63A: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C64C 07:C63C: 10 2D     BPL bra_C66B
 C - - - - - 0x01C64E 07:C63E: 20 47 DE  JSR sub_DE47
 C - - - - - 0x01C651 07:C641: 20 EE CA  JSR sub_CAEE
@@ -1213,7 +1213,7 @@ C - - - - - 0x01C6D2 07:C6C2: 20 99 C2  JSR sub_C299
 C - - - - - 0x01C6D5 07:C6C5: AD E2 05  LDA ram_таймер_катсцены
 C - - - - - 0x01C6D8 07:C6C8: C9 20     CMP #$20
 C - - - - - 0x01C6DA 07:C6CA: 90 10     BCC bra_C6DC
-C - - - - - 0x01C6DC 07:C6CC: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C6DC 07:C6CC: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C6DE 07:C6CE: 29 02     AND #$02
 C - - - - - 0x01C6E0 07:C6D0: F0 0A     BEQ bra_C6DC
 C - - - - - 0x01C6E2 07:C6D2: AD D6 04  LDA ram_игрок_с_мячом
@@ -1248,7 +1248,7 @@ C - - - - - 0x01C71C 07:C70C: 10 0D     BPL bra_C71B_RTS
 C - - - - - 0x01C71E 07:C70E: 50 0B     BVC bra_C71B_RTS
 C - - - - - 0x01C720 07:C710: 20 1A C9  JSR sub_C91A
 C - - - - - 0x01C723 07:C713: A9 00     LDA #$00
-C - - - - - 0x01C725 07:C715: 8D 5C 00  STA ram_режим_игры_на_поле
+C - - - - - 0x01C725 07:C715: 8D 5C 00  STA ram_flag_gameplay
 C - - - - - 0x01C728 07:C718: 8D E2 05  STA ram_таймер_катсцены
 bra_C71B_RTS:
 C - - - - - 0x01C72B 07:C71B: 4C 98 C6  RTS
@@ -1366,7 +1366,7 @@ C - - - - - 0x01C7FB 07:C7EB: 20 0B C8  JSR sub_C80B
 C - - - - - 0x01C7FE 07:C7EE: 20 85 C2  JSR sub_C285
 C - - - - - 0x01C801 07:C7F1: 20 CC BE  JSR sub_0x01BEDC
 C - - - - - 0x01C804 07:C7F4: 20 9E C2  JSR sub_C29E
-C - - - - - 0x01C807 07:C7F7: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C807 07:C7F7: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C809 07:C7F9: D0 0D     BNE bra_C808_RTS
 C - - - - - 0x01C80B 07:C7FB: A9 02     LDA #$02
 C - - - - - 0x01C80D 07:C7FD: 8D 59 00  STA ram_подтип_экрана
@@ -1387,7 +1387,7 @@ C - - - - - 0x01C826 07:C816: 8D F4 03  STA ram_мяч_spd_X_lo
 C - - - - - 0x01C829 07:C819: 8D 1E 04  STA ram_мяч_spd_Y_hi
 C - - - - - 0x01C82C 07:C81C: 8D 10 04  STA ram_мяч_spd_Y_lo
 bra_C81F:
-C - - - - - 0x01C82F 07:C81F: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C82F 07:C81F: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C831 07:C821: 29 04     AND #$04
 C - - - - - 0x01C833 07:C823: F0 0B     BEQ bra_C830
 C - - - - - 0x01C835 07:C825: AD AD 03  LDA ram_camera_aim
@@ -1453,7 +1453,7 @@ tbl_C878:
 
 
 sub_C87B:
-C - - - - - 0x01C88B 07:C87B: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C88B 07:C87B: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C88D 07:C87D: 29 20     AND #$20
 C - - - - - 0x01C88F 07:C87F: F0 1A     BEQ bra_C89B_RTS
 C - - - - - 0x01C891 07:C881: AD 92 04  LDA ram_мяч_состояние
@@ -1462,9 +1462,9 @@ C - - - - - 0x01C896 07:C886: D0 05     BNE bra_C88D
 - - - - - - 0x01C898 07:C888: EE E2 05  INC ram_таймер_катсцены
 - - - - - - 0x01C89B 07:C88B: 10 0E     BPL bra_C89B_RTS
 bra_C88D:
-C - - - - - 0x01C89D 07:C88D: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C89D 07:C88D: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C89F 07:C88F: 29 DF     AND #$DF
-C - - - - - 0x01C8A1 07:C891: 85 5C     STA ram_режим_игры_на_поле
+C - - - - - 0x01C8A1 07:C891: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C8A3 07:C893: A9 00     LDA #$00
 C - - - - - 0x01C8A5 07:C895: 8D 5B 05  STA ram_вариант_расстановки_игроков
 C - - - - - 0x01C8A8 07:C898: 8D E2 05  STA ram_таймер_катсцены
@@ -1474,12 +1474,12 @@ C - - - - - 0x01C8AB 07:C89B: 60        RTS
 
 
 sub_C89C:
-C - - - - - 0x01C8AC 07:C89C: 24 5C     BIT ram_режим_игры_на_поле
+C - - - - - 0x01C8AC 07:C89C: 24 5C     BIT ram_flag_gameplay
 C - - - - - 0x01C8AE 07:C89E: 50 79     BVC bra_C919_RTS
-C - - - - - 0x01C8B0 07:C8A0: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C8B0 07:C8A0: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C8B2 07:C8A2: 29 20     AND #$20
 C - - - - - 0x01C8B4 07:C8A4: D0 4F     BNE bra_C8F5
-C - - - - - 0x01C8B6 07:C8A6: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C8B6 07:C8A6: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C8B8 07:C8A8: 29 0F     AND #$0F
 C - - - - - 0x01C8BA 07:C8AA: F0 1C     BEQ bra_C8C8
 C - - - - - 0x01C8BC 07:C8AC: 29 02     AND #$02
@@ -1572,14 +1572,14 @@ C - - - - - 0x01C962 07:C952: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01C964 07:C954: 29 20     AND #$20
 C - - - - - 0x01C966 07:C956: F0 10     BEQ bra_C968
 C - - - - - 0x01C968 07:C958: EE CC 05  INC ram_счетчик_смен
-C - - - - - 0x01C96B 07:C95B: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C96B 07:C95B: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C96D 07:C95D: 29 02     AND #$02
 C - - - - - 0x01C96F 07:C95F: D0 1A     BNE bra_C97B
 C - - - - - 0x01C971 07:C961: A9 00     LDA #$00
 C - - - - - 0x01C973 07:C963: 85 59     STA ram_подтип_экрана
 C - - - - - 0x01C975 07:C965: 4C 1E CA  RTS
 bra_C968:
-C - - - - - 0x01C978 07:C968: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C978 07:C968: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C97A 07:C96A: 29 20     AND #$20
 C - - - - - 0x01C97C 07:C96C: F0 07     BEQ bra_C975
 C - - - - - 0x01C97E 07:C96E: A9 00     LDA #$00
@@ -1587,7 +1587,7 @@ bra_C970:
 C - - - - - 0x01C980 07:C970: 85 59     STA ram_подтип_экрана
 C - - - - - 0x01C982 07:C972: 4C 1E CA  RTS
 bra_C975:
-C - - - - - 0x01C985 07:C975: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01C985 07:C975: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C987 07:C977: 29 0F     AND #$0F
 C - - - - - 0x01C989 07:C979: F0 04     BEQ bra_C97F
 bra_C97B:
@@ -2239,7 +2239,7 @@ C - - - - - 0x01CE0F 07:CDFF: 29 01     AND #$01
 C - - - - - 0x01CE11 07:CE01: F0 01     BEQ bra_CE04
 C - - - - - 0x01CE13 07:CE03: C8        INY
 bra_CE04:
-C - - - - - 0x01CE14 07:CE04: 24 5C     BIT ram_режим_игры_на_поле
+C - - - - - 0x01CE14 07:CE04: 24 5C     BIT ram_flag_gameplay
 C - - - - - 0x01CE16 07:CE06: 50 05     BVC bra_CE0D
 C - - - - - 0x01CE18 07:CE08: A0 0C     LDY #$0C
 C - - - - - 0x01CE1A 07:CE0A: 4C 14 CE  JMP loc_CE14
@@ -2497,7 +2497,7 @@ C - - - - - 0x01CF7C 07:CF6C: 4C E5 CE  JMP loc_CEE5_продолжить_чте
 bra_CF6F_F2_режим_игры:
 C - - - - - 0x01CF7F 07:CF6F: C8        INY
 C - - - - - 0x01CF80 07:CF70: B1 2C     LDA (ram_002C),Y
-C - - - - - 0x01CF82 07:CF72: 85 5C     STA ram_режим_игры_на_поле
+C - - - - - 0x01CF82 07:CF72: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01CF84 07:CF74: AD 5A 06  LDA ram_позиция_управление + 10
 C - - - - - 0x01CF87 07:CF77: 29 7F     AND #$7F
 C - - - - - 0x01CF89 07:CF79: 0D 8C 06  ORA ram_управление_кипером
@@ -4334,7 +4334,7 @@ C - - - - - 0x01D7A4 07:D794: A5 59     LDA ram_подтип_экрана
 C - - - - - 0x01D7A6 07:D796: C9 06     CMP #$06
 C - - - - - 0x01D7A8 07:D798: F0 09     BEQ bra_D7A3_RTS
 C - - - - - 0x01D7AA 07:D79A: A9 40     LDA #$40
-C - - - - - 0x01D7AC 07:D79C: 85 5C     STA ram_режим_игры_на_поле
+C - - - - - 0x01D7AC 07:D79C: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01D7AE 07:D79E: A9 31     LDA #$31
 C - - - - - 0x01D7B0 07:D7A0: 20 E4 C2  JSR sub_C2E4_play_sound
 bra_D7A3_RTS:
@@ -4950,7 +4950,7 @@ C - - - - - 0x01DBC3 07:DBB3: 10 E3     BPL bra_DB98
 C - - - - - 0x01DBC5 07:DBB5: A9 03     LDA #$03
 C - - - - - 0x01DBC7 07:DBB7: 8D 66 04  STA ram_погода_номер_эффекта
 bra_DBBA:
-C - - - - - 0x01DBCA 07:DBBA: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01DBCA 07:DBBA: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01DBCC 07:DBBC: 10 03     BPL bra_DBC1
 - - - - - - 0x01DBCE 07:DBBE: 4C 64 DC  JMP loc_DC64
 bra_DBC1:
@@ -5144,7 +5144,7 @@ loc_DD17:
 C D 2 - - - 0x01DD27 07:DD17: A9 00     LDA #$00
 C - - - - - 0x01DD29 07:DD19: 8D 3F 01  STA ram_длительность_погоды_ХЗ
 bra_DD1C:
-C - - - - - 0x01DD2C 07:DD1C: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01DD2C 07:DD1C: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01DD2E 07:DD1E: 10 03     BPL bra_DD23
 - - - - - - 0x01DD30 07:DD20: 4C 91 DD  JMP loc_DD91
 bra_DD23:
@@ -10336,7 +10336,7 @@ C - - - - - 0x01FD03 07:FCF3: C9 01     CMP #$01
 C - - - - - 0x01FD05 07:FCF5: F0 18     BEQ bra_FD0F
 C - - - - - 0x01FD07 07:FCF7: C9 03     CMP #$03
 C - - - - - 0x01FD09 07:FCF9: D0 51     BNE bra_FD4C
-C - - - - - 0x01FD0B 07:FCFB: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x01FD0B 07:FCFB: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01FD0D 07:FCFD: 29 03     AND #$03
 C - - - - - 0x01FD0F 07:FCFF: 0D 59 05  ORA ram_0559
 C - - - - - 0x01FD12 07:FD02: 0D 5B 05  ORA ram_вариант_расстановки_игроков

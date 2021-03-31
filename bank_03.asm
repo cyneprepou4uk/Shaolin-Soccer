@@ -187,7 +187,7 @@ bra_8146:
 C - - - - - 0x00C156 03:8146: A5 59     LDA ram_подтип_экрана
 C - - - - - 0x00C158 03:8148: C9 01     CMP #$01
 C - - - - - 0x00C15A 03:814A: D0 15     BNE bra_8161
-C - - - - - 0x00C15C 03:814C: AD 5C 00  LDA ram_режим_игры_на_поле
+C - - - - - 0x00C15C 03:814C: AD 5C 00  LDA ram_flag_gameplay
 C - - - - - 0x00C15F 03:814F: 29 20     AND #$20
 C - - - - - 0x00C161 03:8151: F0 17     BEQ bra_816A
 C - - - - - 0x00C163 03:8153: AD 2A 05  LDA ram_флаг_владения_мячом_ком
@@ -432,7 +432,7 @@ C - - - - - 0x00C2D8 03:82C8: C8        INY
 C - - - - - 0x00C2D9 03:82C9: C0 0C     CPY #$0C
 C - - - - - 0x00C2DB 03:82CB: 90 EC     BCC bra_82B9
 C - - - - - 0x00C2DD 03:82CD: AE D6 04  LDX ram_игрок_с_мячом
-C - - - - - 0x00C2E0 03:82D0: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x00C2E0 03:82D0: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x00C2E2 03:82D2: 29 04     AND #$04
 C - - - - - 0x00C2E4 03:82D4: D0 43     BNE bra_8319
 C - - - - - 0x00C2E6 03:82D6: AD 1A 05  LDA ram_подающий_Y_hi
@@ -10999,7 +10999,7 @@ off_BAE5_03:
 
 
 loc_BAF9:
-C D 1 - - - 0x00FB09 03:BAF9: A5 5C     LDA ram_режим_игры_на_поле
+C D 1 - - - 0x00FB09 03:BAF9: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x00FB0B 03:BAFB: 29 40     AND #$40
 C - - - - - 0x00FB0D 03:BAFD: D0 0C     BNE bra_BB0B_RTS
 C - - - - - 0x00FB0F 03:BAFF: AD 66 04  LDA ram_погода_номер_эффекта
@@ -11531,9 +11531,9 @@ C D 1 - - - 0x00FEE3 03:BED3: 60        RTS
 loc_BED4:
 C D 1 - - - 0x00FEE4 03:BED4: A5 58     LDA ram_номер_экрана
 C - - - - - 0x00FEE6 03:BED6: D0 3A     BNE bra_BF12_RTS
-C - - - - - 0x00FEE8 03:BED8: 24 5C     BIT ram_режим_игры_на_поле
+C - - - - - 0x00FEE8 03:BED8: 24 5C     BIT ram_flag_gameplay
 C - - - - - 0x00FEEA 03:BEDA: 50 16     BVC bra_BEF2
-C - - - - - 0x00FEEC 03:BEDC: A5 5C     LDA ram_режим_игры_на_поле
+C - - - - - 0x00FEEC 03:BEDC: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x00FEEE 03:BEDE: 29 0F     AND #$0F
 C - - - - - 0x00FEF0 03:BEE0: D0 07     BNE bra_BEE9
 C - - - - - 0x00FEF2 03:BEE2: AD 59 05  LDA ram_0559
