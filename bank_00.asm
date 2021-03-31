@@ -15453,7 +15453,6 @@ C - - - - - 0x003FEC 00:BFDC: B0 85     BCS bra_BF63
 
 sub_BFDE:
 C - - - - - 0x003FEE 00:BFDE: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
-; !!!
 C D 1 - - - 0x003FF1 00:BFE1: 10 80     BPL bra_BF63
 C - - - - - 0x003FF3 00:BFE3: 30 8C     BMI bra_BF71
 
@@ -15461,14 +15460,13 @@ C - - - - - 0x003FF3 00:BFE3: 30 8C     BMI bra_BF71
 
 sub_BFE6:
 C - - - - - 0x003FF6 00:BFE6: A0 0A     LDY #$0A
-bra_BFE8:
+bra_BFE8_loop:
 C - - - - - 0x003FF8 00:BFE8: 8A        TXA
 C - - - - - 0x003FF9 00:BFE9: D9 32 05  CMP ram_player_id,Y
 C - - - - - 0x003FFC 00:BFEC: F0 04     BEQ bra_BFF2_RTS
 C - - - - - 0x003FFE 00:BFEE: 88        DEY
 C - - - - - 0x003FFF 00:BFEF: 88        DEY
-C - - - - - 0x004000 00:BFF0: 10 F6     BPL bra_BFE8
-; !!!
+C - - - - - 0x004000 00:BFF0: 10 F6     BPL bra_BFE8_loop
 bra_BFF2_RTS:
 C D 1 - - - 0x004002 00:BFF2: 60        RTS
 
