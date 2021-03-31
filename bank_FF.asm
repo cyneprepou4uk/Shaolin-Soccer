@@ -10316,25 +10316,6 @@ bra_FBA8_RTS:
 C D 3 - - - 0x01FBB8 07:FBA8: 60        RTS
 
 
-; bzk мусор
-- - - - - - 0x01FBBB 07:FBAB: FF        .byte $FF   ; 
-- - - - - - 0x01FBBC 07:FBAC: 40        .byte $40   ; 
-- - - - - - 0x01FBBD 07:FBAD: C0        .byte $C0   ; 
-- - - - - - 0x01FBBE 07:FBAE: 00        .byte $00   ; 
-- - - - - - 0x01FBBF 07:FBAF: 80        .byte $80   ; 
-- - - - - - 0x01FBC0 07:FBB0: 60        .byte $60   ; 
-- - - - - - 0x01FBC1 07:FBB1: A0        .byte $A0   ; 
-- - - - - - 0x01FBC2 07:FBB2: 00        .byte $00   ; 
-- - - - - - 0x01FBC3 07:FBB3: 00        .byte $00   ; 
-- - - - - - 0x01FBC4 07:FBB4: 20        .byte $20   ; 
-- - - - - - 0x01FBC5 07:FBB5: E0        .byte $E0   ; 
-- - - - - - 0x01FBC6 07:FBB6: 00        .byte $00   ; 
-- - - - - - 0x01FBC7 07:FBB7: 00        .byte $00   ; 
-- - - - - - 0x01FBC8 07:FBB8: 00        .byte $00   ; 
-- - - - - - 0x01FBC9 07:FBB9: 00        .byte $00   ; 
-- - - - - - 0x01FBCA 07:FBBA: 00        .byte $00   ; 
-
-
 
 vec_FBBB_NMI:
 C D 3 - - - 0x01FBCB 07:FBBB: 24 4F     BIT ram_NMI_flag
