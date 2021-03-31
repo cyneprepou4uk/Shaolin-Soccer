@@ -4702,16 +4702,16 @@ C - - - - - 0x01DA34 07:DA24: 90 02     BCC bra_DA28
 C - - - - - 0x01DA36 07:DA26: A9 F8     LDA #$F8
 bra_DA28:
 C - - - - - 0x01DA38 07:DA28: 9D 00 02  STA ram_spr_Y,X
-C - - - - - 0x01DA3B 07:DA2B: E8        INX
 C - - - - - 0x01DA3C 07:DA2C: B9 6A DA  LDA tbl_DA6A,Y
-C - - - - - 0x01DA3F 07:DA2F: 9D 00 02  STA ram_spr_Y,X
-C - - - - - 0x01DA42 07:DA32: E8        INX
+C - - - - - 0x01DA3F 07:DA2F: 9D 00 02  STA ram_spr_T,X
 C - - - - - 0x01DA43 07:DA33: A9 00     LDA #$00
-C - - - - - 0x01DA45 07:DA35: 9D 00 02  STA ram_spr_Y,X
-C - - - - - 0x01DA48 07:DA38: E8        INX
+C - - - - - 0x01DA45 07:DA35: 9D 00 02  STA ram_spr_A,X
 C - - - - - 0x01DA49 07:DA39: B9 00 01  LDA ram_0100,Y
-C - - - - - 0x01DA4C 07:DA3C: 9D 00 02  STA ram_spr_Y,X
+C - - - - - 0x01DA4C 07:DA3C: 9D 00 02  STA ram_spr_X,X
 C - - - - - 0x01DA4F 07:DA3F: E8        INX
+                                        INX
+                                        INX
+                                        INX
 C - - - - - 0x01DA50 07:DA40: C8        INY
 C - - - - - 0x01DA51 07:DA41: C0 0C     CPY #$0C
 C - - - - - 0x01DA53 07:DA43: D0 D9     BNE bra_DA1E
