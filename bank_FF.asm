@@ -88,7 +88,6 @@ tbl_0x01C010:
 
 ; bzk
 - - - - - - 0x01C018 07:C008: 4C D3 EE  JMP loc_EED3_prg_bankswitch
-- - - - - - 0x01C048 07:C038: 4C 66 F6  JMP loc_F666
 - - - - - - 0x01C04B 07:C03B: 4C 6A F9  JMP loc_F96A
 - - - - - - 0x01C05D 07:C04D: 4C 6D FA  JMP loc_FA6D
 - - - - - - 0x01C06F 07:C05F: 4C 73 D0  JMP loc_D073
@@ -9261,19 +9260,6 @@ C - - - - - 0x01F640 07:F630: 60        RTS
 
 
 
-loc_F666:
-- - - - - - 0x01F676 07:F666: BD E8 03  LDA ram_spd_X_lo_player,X
-- - - - - - 0x01F679 07:F669: 85 34     STA ram_0034
-- - - - - - 0x01F67B 07:F66B: BD F6 03  LDA ram_spd_X_hi_player,X
-- - - - - - 0x01F67E 07:F66E: 85 35     STA ram_0035
-- - - - - - 0x01F680 07:F670: BD 04 04  LDA ram_spd_Y_lo_player,X
-- - - - - - 0x01F683 07:F673: 85 36     STA ram_0036
-- - - - - - 0x01F685 07:F675: BD 12 04  LDA ram_spd_Y_hi_player,X
-- - - - - - 0x01F688 07:F678: 85 37     STA ram_0037
-- - - - - - 0x01F68A 07:F67A: 4C B3 F6  JMP loc_F6B3
-
-
-
 sub_0x01F68D:
 sub_F67D:
 C D 3 - - - 0x01F68D 07:F67D: B9 14 03  LDA ram_pos_X_lo_player,Y
@@ -9301,7 +9287,6 @@ C - - - - - 0x01F6BA 07:F6AA: 85 36     STA ram_0036
 C - - - - - 0x01F6BC 07:F6AC: A5 31     LDA ram_0031
 C - - - - - 0x01F6BE 07:F6AE: FD 60 03  SBC ram_pos_Y_hi_player,X
 C - - - - - 0x01F6C1 07:F6B1: 85 37     STA ram_0037
-loc_F6B3:
 C - - - - - 0x01F6C3 07:F6B3: A5 2A     LDA ram_002A
 C - - - - - 0x01F6C5 07:F6B5: 48        PHA
 C - - - - - 0x01F6C6 07:F6B6: A5 2B     LDA ram_002B
