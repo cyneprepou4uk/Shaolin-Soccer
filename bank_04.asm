@@ -251,18 +251,18 @@ loc_818B:
 C D 0 - - - 0x01019B 04:818B: AD 66 04  LDA ram_погода_номер_эффекта
 C - - - - - 0x01019E 04:818E: D0 10     BNE bra_81A0
 C - - - - - 0x0101A0 04:8190: A9 F8     LDA #$F8
-bra_8192:
+bra_8192_loop:
 C - - - - - 0x0101A2 04:8192: 9D 00 02  STA ram_spr_Y,X
 C - - - - - 0x0101A5 04:8195: CA        DEX
 C - - - - - 0x0101A6 04:8196: CA        DEX
 C - - - - - 0x0101A7 04:8197: CA        DEX
 C - - - - - 0x0101A8 04:8198: CA        DEX
 C - - - - - 0x0101A9 04:8199: E0 FC     CPX #$FC
-C - - - - - 0x0101AB 04:819B: D0 F5     BNE bra_8192
+C - - - - - 0x0101AB 04:819B: D0 F5     BNE bra_8192_loop
 C - - - - - 0x0101AD 04:819D: 4C B4 81  JMP loc_81B4
 bra_81A0:
 C - - - - - 0x0101B0 04:81A0: A9 F8     LDA #$F8
-loc_81A2:
+loc_81A2_loop:
 C D 0 - - - 0x0101B2 04:81A2: 9D 00 02  STA ram_spr_Y,X
 C - - - - - 0x0101B5 04:81A5: CA        DEX
 C - - - - - 0x0101B6 04:81A6: CA        DEX
@@ -272,7 +272,7 @@ C - - - - - 0x0101B9 04:81A9: E0 FC     CPX #$FC
 C - - - - - 0x0101BB 04:81AB: F0 07     BEQ bra_81B4
 C - - - - - 0x0101BD 04:81AD: E0 30     CPX #$30
 C - - - - - 0x0101BF 04:81AF: 90 03     BCC bra_81B4
-C - - - - - 0x0101C1 04:81B1: 4C A2 81  JMP loc_81A2
+C - - - - - 0x0101C1 04:81B1: 4C A2 81  JMP loc_81A2_loop
 bra_81B4:
 loc_81B4:
 C D 0 - - - 0x0101C4 04:81B4: A5 F4     LDA ram_00F4
@@ -314,7 +314,7 @@ C - - - - - 0x010204 04:81F4: A9 01     LDA #$01
 C - - - - - 0x010206 04:81F6: 99 02 02  STA ram_spr_A,Y
 C - - - - - 0x010209 04:81F9: 84 44     STY ram_0044
 C - - - - - 0x01020B 04:81FB: A4 1F     LDY ram_001F
-C - - - - - 0x01020D 04:81FD: B9 D3 83  LDA tbl_83D3,Y
+C - - - - - 0x01020D 04:81FD: B9 D3 83  LDA tbl_83D3_spr_T,Y
 C - - - - - 0x010210 04:8200: A4 44     LDY ram_0044
 C - - - - - 0x010212 04:8202: 99 01 02  STA ram_spr_T,Y
 C - - - - - 0x010215 04:8205: A5 1C     LDA ram_001C
@@ -413,7 +413,7 @@ C - - - - - 0x0102B2 04:82A2: A5 1D     LDA ram_001D
 C - - - - - 0x0102B4 04:82A4: 18        CLC
 C - - - - - 0x0102B5 04:82A5: 69 F5     ADC #$F5
 C - - - - - 0x0102B7 04:82A7: 9D 00 02  STA ram_spr_Y,X
-C - - - - - 0x0102BA 04:82AA: B9 CE 83  LDA tbl_83CE,Y
+C - - - - - 0x0102BA 04:82AA: B9 CE 83  LDA tbl_83CE_spr_T,Y
 C - - - - - 0x0102BD 04:82AD: 9D 01 02  STA ram_spr_T,X
 C - - - - - 0x0102C0 04:82B0: A5 24     LDA ram_0024
 C - - - - - 0x0102C2 04:82B2: 9D 02 02  STA ram_spr_A,X
@@ -700,7 +700,7 @@ tbl_83BC:
 
 
 
-tbl_83CE:
+tbl_83CE_spr_T:
 - D 0 - - - 0x0103DE 04:83CE: C0        .byte $C0   ; 
 - D 0 - - - 0x0103DF 04:83CF: C1        .byte $C1   ; 
 - D 0 - - - 0x0103E0 04:83D0: D0        .byte $D0   ; 
@@ -709,7 +709,7 @@ tbl_83CE:
 
 
 
-tbl_83D3:
+tbl_83D3_spr_T:
 - D 0 - - - 0x0103E3 04:83D3: C2        .byte $C2   ; 
 - D 0 - - - 0x0103E4 04:83D4: C0        .byte $C0   ; 
 - D 0 - - - 0x0103E5 04:83D5: C1        .byte $C1   ; 

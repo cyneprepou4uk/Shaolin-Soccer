@@ -4629,20 +4629,20 @@ C - - - - - 0x01D9AE 07:D99E: 60        RTS
 bra_D99F:
 C - - - - - 0x01D9AF 07:D99F: A9 00     LDA #$00
 C - - - - - 0x01D9B1 07:D9A1: 85 0C     STA ram_000C
-bra_D9A3:
+bra_D9A3_loop:
 C - - - - - 0x01D9B3 07:D9A3: A5 0C     LDA ram_000C
 C - - - - - 0x01D9B5 07:D9A5: A8        TAY
 C - - - - - 0x01D9B6 07:D9A6: 0A        ASL
 C - - - - - 0x01D9B7 07:D9A7: 0A        ASL
 C - - - - - 0x01D9B8 07:D9A8: AA        TAX
-C - - - - - 0x01D9B9 07:D9A9: B9 5E DA  LDA tbl_DA5E,Y
+C - - - - - 0x01D9B9 07:D9A9: B9 5E DA  LDA tbl_DA5E_spr_Y,Y
 C - - - - - 0x01D9BC 07:D9AC: 9D 00 02  STA ram_spr_Y,X
 C - - - - - 0x01D9BF 07:D9AF: 99 0C 01  STA ram_010C,Y
-C - - - - - 0x01D9C2 07:D9B2: B9 6A DA  LDA tbl_DA6A,Y
+C - - - - - 0x01D9C2 07:D9B2: B9 6A DA  LDA tbl_DA6A_spr_T,Y
 C - - - - - 0x01D9C5 07:D9B5: 9D 01 02  STA ram_spr_T,X
 C - - - - - 0x01D9C8 07:D9B8: A9 01     LDA #$01
 C - - - - - 0x01D9CA 07:D9BA: 9D 02 02  STA ram_spr_A,X
-C - - - - - 0x01D9CD 07:D9BD: B9 46 DA  LDA tbl_DA46,Y
+C - - - - - 0x01D9CD 07:D9BD: B9 46 DA  LDA tbl_DA46_spr_X,Y
 C - - - - - 0x01D9D0 07:D9C0: 18        CLC
 C - - - - - 0x01D9D1 07:D9C1: 6D 3D 01  ADC ram_013D
 C - - - - - 0x01D9D4 07:D9C4: 9D 03 02  STA ram_spr_X,X
@@ -4650,7 +4650,7 @@ C - - - - - 0x01D9D7 07:D9C7: 99 00 01  STA ram_0100,Y
 C - - - - - 0x01D9DA 07:D9CA: E6 0C     INC ram_000C
 C - - - - - 0x01D9DC 07:D9CC: A5 0C     LDA ram_000C
 C - - - - - 0x01D9DE 07:D9CE: C9 0C     CMP #$0C
-C - - - - - 0x01D9E0 07:D9D0: D0 D1     BNE bra_D9A3
+C - - - - - 0x01D9E0 07:D9D0: D0 D1     BNE bra_D9A3_loop
 C - - - - - 0x01D9E2 07:D9D2: A9 01     LDA #$01
 C - - - - - 0x01D9E4 07:D9D4: 8D 66 04  STA ram_погода_номер_эффекта
 C - - - - - 0x01D9E7 07:D9D7: 60        RTS
@@ -4695,14 +4695,14 @@ C - - - - - 0x01DA28 07:DA18: D0 C0     BNE bra_D9DA
 C - - - - - 0x01DA2A 07:DA1A: A9 00     LDA #$00
 C - - - - - 0x01DA2C 07:DA1C: AA        TAX
 C - - - - - 0x01DA2D 07:DA1D: A8        TAY
-bra_DA1E:
+bra_DA1E_loop:
 C - - - - - 0x01DA2E 07:DA1E: B9 0C 01  LDA ram_010C,Y
 C - - - - - 0x01DA31 07:DA21: CD 3E 01  CMP ram_013E
 C - - - - - 0x01DA34 07:DA24: 90 02     BCC bra_DA28
 C - - - - - 0x01DA36 07:DA26: A9 F8     LDA #$F8
 bra_DA28:
 C - - - - - 0x01DA38 07:DA28: 9D 00 02  STA ram_spr_Y,X
-C - - - - - 0x01DA3C 07:DA2C: B9 6A DA  LDA tbl_DA6A,Y
+C - - - - - 0x01DA3C 07:DA2C: B9 6A DA  LDA tbl_DA6A_spr_T,Y
 C - - - - - 0x01DA3F 07:DA2F: 9D 00 02  STA ram_spr_T,X
 C - - - - - 0x01DA43 07:DA33: A9 00     LDA #$00
 C - - - - - 0x01DA45 07:DA35: 9D 00 02  STA ram_spr_A,X
@@ -4714,12 +4714,12 @@ C - - - - - 0x01DA4F 07:DA3F: E8        INX
                                         INX
 C - - - - - 0x01DA50 07:DA40: C8        INY
 C - - - - - 0x01DA51 07:DA41: C0 0C     CPY #$0C
-C - - - - - 0x01DA53 07:DA43: D0 D9     BNE bra_DA1E
+C - - - - - 0x01DA53 07:DA43: D0 D9     BNE bra_DA1E_loop
 C - - - - - 0x01DA55 07:DA45: 60        RTS
 
 
 
-tbl_DA46:
+tbl_DA46_spr_X:
 - D 2 - - - 0x01DA56 07:DA46: 08        .byte $08   ; 
 - D 2 - - - 0x01DA57 07:DA47: 08        .byte $08   ; 
 - D 2 - - - 0x01DA58 07:DA48: 0D        .byte $0D   ; 
@@ -4751,7 +4751,7 @@ tbl_DA52:
 
 
 
-tbl_DA5E:
+tbl_DA5E_spr_Y:
 - D 2 - - - 0x01DA6E 07:DA5E: 00        .byte $00   ; 
 - D 2 - - - 0x01DA6F 07:DA5F: 08        .byte $08   ; 
 - D 2 - - - 0x01DA70 07:DA60: 08        .byte $08   ; 
@@ -4767,7 +4767,7 @@ tbl_DA5E:
 
 
 
-tbl_DA6A:
+tbl_DA6A_spr_T:
 - D 2 - - - 0x01DA7A 07:DA6A: E0        .byte $E0   ; 
 - D 2 - - - 0x01DA7B 07:DA6B: F0        .byte $F0   ; 
 - D 2 - - - 0x01DA7C 07:DA6C: F1        .byte $F1   ; 
