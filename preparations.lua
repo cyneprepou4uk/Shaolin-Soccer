@@ -13,6 +13,7 @@ files_list = {
     "bank_06.asm",
     "bank_FF.asm",
     "bank_ram.inc",
+    "bank_val.inc",
 }
 
 --конвертация остальных русских символов в английские

@@ -1,6 +1,6 @@
 .segment "BANK_FF"
 .include "copy_bank_ram.inc"
-.include "bank_val.inc"
+.include "copy_bank_val.inc"
 ; 0x01C010-0x02000F
 
 .export tbl_0x01C010
@@ -704,7 +704,6 @@ sub_0x01C280:
 
 
 
-loc_C2E4_play_sound:
 sub_C2E4_play_sound:
 .export sub_0x01C2F4_play_sound
 sub_0x01C2F4_play_sound:
@@ -870,7 +869,7 @@ C - - - - - 0x01C3FE 07:C3EE: 20 39 ED  JSR sub_ED39
 C - - - - - 0x01C401 07:C3F1: 68        PLA
 C - - - - - 0x01C402 07:C3F2: 8D 88 05  STA ram_0588
 C - - - - - 0x01C405 07:C3F5: 20 64 EF  JSR sub_EF64
-C - - - - - 0x01C408 07:C3F8: A9 00     LDA #$00
+C - - - - - 0x01C408 07:C3F8: A9 00     LDA #con_music_off
 C - - - - - 0x01C40A 07:C3FA: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C412 07:C402: A9 C0     LDA #$C0
 C - - - - - 0x01C414 07:C404: 85 4F     STA ram_NMI_flag
@@ -975,7 +974,7 @@ loc_C4DB:
 sub_C4DB:
 C - - - - - 0x01C4EB 07:C4DB: A0 08     LDY #$08
 C - - - - - 0x01C4ED 07:C4DD: A5 08     LDA ram_btn_press
-C - - - - - 0x01C4EF 07:C4DF: 29 30     AND #$30
+C - - - - - 0x01C4EF 07:C4DF: 29 30     AND #con_btns_SS
 C - - - - - 0x01C4F1 07:C4E1: D0 0C     BNE bra_C4EF
 C - - - - - 0x01C4F3 07:C4E3: A0 05     LDY #$05
 C - - - - - 0x01C4F5 07:C4E5: CE 89 05  DEC ram_таймер_демо_lo
@@ -1134,7 +1133,7 @@ C - - - - - 0x01C622 07:C612: 4C 98 C6  RTS
 
 ofs_C615_02:
 C - - J - - 0x01C625 07:C615: AD 08 00  LDA ram_btn_press
-C - - - - - 0x01C628 07:C618: 29 10     AND #$10
+C - - - - - 0x01C628 07:C618: 29 10     AND #con_btn_Start
 C - - - - - 0x01C62A 07:C61A: F0 1E     BEQ bra_C63A
 C - - - - - 0x01C62C 07:C61C: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C62E 07:C61E: 49 80     EOR #$80
@@ -1144,10 +1143,10 @@ C - - - - - 0x01C634 07:C624: AD 5A 05  LDA ram_номер_музыки
 C - - - - - 0x01C637 07:C627: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C63A 07:C62A: 4C 3A C6  JMP loc_C63A
 bra_C62D:
-C - - - - - 0x01C63D 07:C62D: A9 00     LDA #$00
+C - - - - - 0x01C63D 07:C62D: A9 00     LDA #$00   ; con_music_off
 C - - - - - 0x01C63F 07:C62F: 8D FD 06  STA ram_06FD
 C - - - - - 0x01C642 07:C632: 20 E4 C2  JSR sub_C2E4_play_sound
-C - - - - - 0x01C645 07:C635: A9 2D     LDA #$2D
+C - - - - - 0x01C645 07:C635: A9 2D     LDA #con_sfx_violation
 C - - - - - 0x01C647 07:C637: 20 E4 C2  JSR sub_C2E4_play_sound
 bra_C63A:
 loc_C63A:
@@ -1226,7 +1225,7 @@ C - - - - - 0x01C6EC 07:C6DC: AD E2 05  LDA ram_таймер_катсцены
 C - - - - - 0x01C6EF 07:C6DF: C9 40     CMP #$40
 C - - - - - 0x01C6F1 07:C6E1: B0 0D     BCS bra_C6F0
 C - - - - - 0x01C6F3 07:C6E3: AD 08 00  LDA ram_btn_press
-C - - - - - 0x01C6F6 07:C6E6: 29 30     AND #$30
+C - - - - - 0x01C6F6 07:C6E6: 29 30     AND #con_btns_SS
 C - - - - - 0x01C6F8 07:C6E8: D0 0A     BNE bra_C6F4
 C - - - - - 0x01C6FA 07:C6EA: EE E2 05  INC ram_таймер_катсцены
 C - - - - - 0x01C6FD 07:C6ED: 4C 06 C7  JMP loc_C706
@@ -1235,7 +1234,7 @@ C - - - - - 0x01C700 07:C6F0: C9 FF     CMP #$FF
 C - - - - - 0x01C702 07:C6F2: F0 12     BEQ bra_C706
 bra_C6F4:
 C - - - - - 0x01C704 07:C6F4: 20 47 D0  JSR sub_D047
-C - - - - - 0x01C707 07:C6F7: A9 00     LDA #$00
+C - - - - - 0x01C707 07:C6F7: A9 00     LDA #con_music_off
 C - - - - - 0x01C709 07:C6F9: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C70C 07:C6FC: A9 FF     LDA #$FF
 C - - - - - 0x01C70E 07:C6FE: 8D E2 05  STA ram_таймер_катсцены
@@ -1263,7 +1262,7 @@ C - - - - - 0x01C734 07:C724: 20 58 CA  JSR sub_CA58
 C - - - - - 0x01C737 07:C727: 20 49 C2  JSR sub_C249
 C - - - - - 0x01C73A 07:C72A: 20 CB EC  JSR sub_ECCB
 C - - - - - 0x01C73D 07:C72D: 20 65 EE  JSR sub_EE65
-C - - - - - 0x01C740 07:C730: A9 0C     LDA #$0C
+C - - - - - 0x01C740 07:C730: A9 0C     LDA #con_music_spectators
 C - - - - - 0x01C742 07:C732: 20 E4 C2  JSR sub_C2E4_play_sound
 loc_C735:
 C D 2 - - - 0x01C745 07:C735: A9 00     LDA #$00
@@ -1283,7 +1282,7 @@ C - - - - - 0x01C759 07:C749: 20 58 CA  JSR sub_CA58
 C - - - - - 0x01C75C 07:C74C: 20 49 C2  JSR sub_C249
 C - - - - - 0x01C75F 07:C74F: 20 CB EC  JSR sub_ECCB
 C - - - - - 0x01C762 07:C752: 20 65 EE  JSR sub_EE65
-C - - - - - 0x01C765 07:C755: A9 09     LDA #$09
+C - - - - - 0x01C765 07:C755: A9 09     LDA #con_music_screen_score
 C - - - - - 0x01C767 07:C757: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C76A 07:C75A: 4C 35 C7  JMP loc_C735
 
@@ -1296,7 +1295,7 @@ C - - - - - 0x01C773 07:C763: 20 58 CA  JSR sub_CA58
 C - - - - - 0x01C776 07:C766: 20 49 C2  JSR sub_C249
 C - - - - - 0x01C779 07:C769: 20 CB EC  JSR sub_ECCB
 C - - - - - 0x01C77C 07:C76C: 20 65 EE  JSR sub_EE65
-C - - - - - 0x01C77F 07:C76F: A9 09     LDA #$09
+C - - - - - 0x01C77F 07:C76F: A9 09     LDA #con_music_screen_score
 C - - - - - 0x01C781 07:C771: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C784 07:C774: 4C 35 C7  JMP loc_C735
 
@@ -1331,7 +1330,7 @@ C - - - - - 0x01C7B2 07:C7A2: 8D E8 05  STA ram_footprint_hi_2006
 bra_C7A5:
 C - - - - - 0x01C7B5 07:C7A5: EE E2 05  INC ram_таймер_катсцены
 C - - - - - 0x01C7B8 07:C7A8: AD 08 00  LDA ram_btn_press
-C - - - - - 0x01C7BB 07:C7AB: 29 30     AND #$30
+C - - - - - 0x01C7BB 07:C7AB: 29 30     AND #con_btns_SS
 C - - - - - 0x01C7BD 07:C7AD: D0 13     BNE bra_C7C2
 C - - - - - 0x01C7BF 07:C7AF: A5 59     LDA ram_подтип_экрана
 C - - - - - 0x01C7C1 07:C7B1: C9 05     CMP #$05
@@ -1345,7 +1344,7 @@ C - - - - - 0x01C7CE 07:C7BE: C9 F0     CMP #$F0
 C - - - - - 0x01C7D0 07:C7C0: 90 0B     BCC bra_C7CD_RTS
 bra_C7C2:
 C - - - - - 0x01C7D2 07:C7C2: 20 47 D0  JSR sub_D047
-C - - - - - 0x01C7D5 07:C7C5: A9 00     LDA #$00
+C - - - - - 0x01C7D5 07:C7C5: A9 00     LDA #$00    ; con_music_off
 C - - - - - 0x01C7D7 07:C7C7: 8D E8 05  STA ram_footprint_hi_2006
 C - - - - - 0x01C7DA 07:C7CA: 20 E4 C2  JSR sub_C2E4_play_sound
 bra_C7CD_RTS:
@@ -1873,13 +1872,13 @@ C - - - - - 0x01CB74 07:CB64: AC FD 06  LDY ram_06FD
 C - - - - - 0x01CB77 07:CB67: C0 0F     CPY #$0F
 C - - - - - 0x01CB79 07:CB69: F0 27     BEQ bra_CB92
 C - - - - - 0x01CB7B 07:CB6B: AD 08 00  LDA ram_btn_press
-C - - - - - 0x01CB7E 07:CB6E: D9 C7 CB  CMP tbl_CBC7,Y
+C - - - - - 0x01CB7E 07:CB6E: D9 C7 CB  CMP tbl_CBC7_buttons,Y
 C - - - - - 0x01CB81 07:CB71: D0 12     BNE bra_CB85
 - - - - - - 0x01CB83 07:CB73: EE FD 06  INC ram_06FD
 - - - - - - 0x01CB86 07:CB76: AD FD 06  LDA ram_06FD
 - - - - - - 0x01CB89 07:CB79: C9 0F     CMP #$0F
 - - - - - - 0x01CB8B 07:CB7B: D0 05     BNE bra_CB82
-- - - - - - 0x01CB8D 07:CB7D: A9 38     LDA #$38
+- - - - - - 0x01CB8D 07:CB7D: A9 38     LDA #con_sfx_spin_guinea
 - - - - - - 0x01CB8F 07:CB7F: 20 E4 C2  JSR sub_C2E4_play_sound
 bra_CB82:
 - - - - - - 0x01CB92 07:CB82: 4C 8F CB  JMP loc_CB8F
@@ -1915,23 +1914,22 @@ bra_CB92:
 
 
 
-tbl_CBC7:
-- D 2 - - - 0x01CBD7 07:CBC7: 80        .byte $80   ; 
-- - - - - - 0x01CBD8 07:CBC8: 80        .byte $80   ; 
-- - - - - - 0x01CBD9 07:CBC9: 80        .byte $80   ; 
-- - - - - - 0x01CBDA 07:CBCA: 40        .byte $40   ; 
-- - - - - - 0x01CBDB 07:CBCB: 80        .byte $80   ; 
-- - - - - - 0x01CBDC 07:CBCC: 80        .byte $80   ; 
-- - - - - - 0x01CBDD 07:CBCD: 80        .byte $80   ; 
-- - - - - - 0x01CBDE 07:CBCE: 40        .byte $40   ; 
-- - - - - - 0x01CBDF 07:CBCF: 80        .byte $80   ; 
-- - - - - - 0x01CBE0 07:CBD0: 80        .byte $80   ; 
-- - - - - - 0x01CBE1 07:CBD1: 80        .byte $80   ; 
-- - - - - - 0x01CBE2 07:CBD2: 80        .byte $80   ; 
-- - - - - - 0x01CBE3 07:CBD3: 80        .byte $80   ; 
-- - - - - - 0x01CBE4 07:CBD4: 80        .byte $80   ; 
-- - - - - - 0x01CBE5 07:CBD5: 80        .byte $80   ; 
-
+tbl_CBC7_buttons:
+- D 2 - - - 0x01CBD7 07:CBC7: 80        .byte con_btn_A   ; 00
+- - - - - - 0x01CBD8 07:CBC8: 80        .byte con_btn_A   ; 01
+- - - - - - 0x01CBD9 07:CBC9: 80        .byte con_btn_A   ; 02
+- - - - - - 0x01CBDA 07:CBCA: 40        .byte con_btn_B   ; 03
+- - - - - - 0x01CBDB 07:CBCB: 80        .byte con_btn_A   ; 04
+- - - - - - 0x01CBDC 07:CBCC: 80        .byte con_btn_A   ; 05
+- - - - - - 0x01CBDD 07:CBCD: 80        .byte con_btn_A   ; 06
+- - - - - - 0x01CBDE 07:CBCE: 40        .byte con_btn_B   ; 07
+- - - - - - 0x01CBDF 07:CBCF: 80        .byte con_btn_A   ; 08
+- - - - - - 0x01CBE0 07:CBD0: 80        .byte con_btn_A   ; 09
+- - - - - - 0x01CBE1 07:CBD1: 80        .byte con_btn_A   ; 0A
+- - - - - - 0x01CBE2 07:CBD2: 80        .byte con_btn_A   ; 0B
+- - - - - - 0x01CBE3 07:CBD3: 80        .byte con_btn_A   ; 0C
+- - - - - - 0x01CBE4 07:CBD4: 80        .byte con_btn_A   ; 0D
+- - - - - - 0x01CBE5 07:CBD5: 80        .byte con_btn_A   ; 0E
 
 
 .export sub_0x01CBE6
@@ -2380,7 +2378,7 @@ tbl_CE40:
 
 sub_CEA0:
 C - - - - - 0x01CEB0 07:CEA0: A5 0A     LDA ram_btn_press + 2
-C - - - - - 0x01CEB2 07:CEA2: 29 20     AND #$20
+C - - - - - 0x01CEB2 07:CEA2: 29 20     AND #con_btn_Select
 C - - - - - 0x01CEB4 07:CEA4: F0 16     BEQ bra_CEBC_RTS
 bra_CEA6:
 C - - - - - 0x01CEB6 07:CEA6: AD 51 00  LDA ram_frame_delay
@@ -2389,7 +2387,7 @@ C - - - - - 0x01CEB9 07:CEA9: CD 51 00  CMP ram_frame_delay
 C - - - - - 0x01CEBC 07:CEAC: F0 FB     BEQ bra_CEA9
 C - - - - - 0x01CEBE 07:CEAE: 20 CD ED  JSR sub_EDCD
 C - - - - - 0x01CEC1 07:CEB1: A5 0A     LDA ram_btn_press + 2
-C - - - - - 0x01CEC3 07:CEB3: 29 20     AND #$20
+C - - - - - 0x01CEC3 07:CEB3: 29 20     AND #con_btn_Select
 C - - - - - 0x01CEC5 07:CEB5: F0 EF     BEQ bra_CEA6
 C - - - - - 0x01CEC7 07:CEB7: A9 00     LDA #$00
 C - - - - - 0x01CEC9 07:CEB9: 8D 51 00  STA ram_frame_delay
@@ -4336,7 +4334,7 @@ C - - - - - 0x01D7A6 07:D796: C9 06     CMP #$06
 C - - - - - 0x01D7A8 07:D798: F0 09     BEQ bra_D7A3_RTS
 C - - - - - 0x01D7AA 07:D79A: A9 40     LDA #$40
 C - - - - - 0x01D7AC 07:D79C: 85 5C     STA ram_flag_gameplay
-C - - - - - 0x01D7AE 07:D79E: A9 31     LDA #$31
+C - - - - - 0x01D7AE 07:D79E: A9 31     LDA #con_sfx_time_up
 C - - - - - 0x01D7B0 07:D7A0: 20 E4 C2  JSR sub_C2E4_play_sound
 bra_D7A3_RTS:
 C - - - - - 0x01D7B3 07:D7A3: 60        RTS
@@ -7108,7 +7106,7 @@ C - - - - - 0x01E883 07:E873: B9 12 EA  LDA tbl_EA12,Y
 C - - - - - 0x01E886 07:E876: 85 2E     STA ram_002E
 C - - - - - 0x01E888 07:E878: B9 13 EA  LDA tbl_EA13,Y
 C - - - - - 0x01E88B 07:E87B: 85 2F     STA ram_002F
-C - - - - - 0x01E88D 07:E87D: A9 00     LDA #$00
+C - - - - - 0x01E88D 07:E87D: A9 00     LDA #con_music_off
 C - - - - - 0x01E88F 07:E87F: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01E892 07:E882: 20 A9 EC  JSR sub_ECA9
 C - - - - - 0x01E895 07:E885: 20 71 EE  JSR sub_EE71_disable_NMI
@@ -7902,8 +7900,8 @@ tbl_EC8E:
 
 
 sub_EC8F:
-.export sub_0x01EC9F
-sub_0x01EC9F:
+.export sub_0x01EC9F_jump_to_pointers_afetr_JSR
+sub_0x01EC9F_jump_to_pointers_afetr_JSR:
 C D 3 - - - 0x01EC9F 07:EC8F: 0A        ASL
 C - - - - - 0x01ECA0 07:EC90: A8        TAY
 C - - - - - 0x01ECA1 07:EC91: C8        INY
@@ -8070,7 +8068,7 @@ C - - - - - 0x01EDFF 07:EDEF: A5 0B     LDA ram_btn_press + 3
 C - - - - - 0x01EE01 07:EDF1: C5 0D     CMP ram_000D
 C - - - - - 0x01EE03 07:EDF3: D0 DB     BNE bra_EDD0
 C - - - - - 0x01EE05 07:EDF5: A2 03     LDX #$03
-bra_EDF7:
+bra_EDF7_loop:
 C - - - - - 0x01EE07 07:EDF7: B5 08     LDA ram_btn_press,X
 C - - - - - 0x01EE09 07:EDF9: A8        TAY
 C - - - - - 0x01EE0A 07:EDFA: 55 04     EOR ram_btn_hold,X
@@ -8078,7 +8076,7 @@ C - - - - - 0x01EE0C 07:EDFC: 35 08     AND ram_btn_press,X
 C - - - - - 0x01EE0E 07:EDFE: 95 08     STA ram_btn_press,X
 C - - - - - 0x01EE10 07:EE00: 94 04     STY ram_btn_hold,X
 C - - - - - 0x01EE12 07:EE02: CA        DEX
-C - - - - - 0x01EE13 07:EE03: 10 F2     BPL bra_EDF7
+C - - - - - 0x01EE13 07:EE03: 10 F2     BPL bra_EDF7_loop
 C - - - - - 0x01EE15 07:EE05: 60        RTS
 
 
@@ -10107,7 +10105,7 @@ sub_FB5F:
 C - - - - - 0x01FB6F 07:FB5F: A9 00     LDA #$00
 C - - - - - 0x01FB71 07:FB61: 9D 7C 05  STA ram_057C_кнопки,X
 C - - - - - 0x01FB74 07:FB64: BD 08 00  LDA ram_btn_press,X
-C - - - - - 0x01FB77 07:FB67: 29 0F     AND #$0F
+C - - - - - 0x01FB77 07:FB67: 29 0F     AND #con_btns_Dpad
 C - - - - - 0x01FB79 07:FB69: F0 30     BEQ bra_FB9B
 C - - - - - 0x01FB7B 07:FB6B: 85 1C     STA ram_001C
 C - - - - - 0x01FB7D 07:FB6D: 3D 80 05  AND ram_0580_кнопки,X

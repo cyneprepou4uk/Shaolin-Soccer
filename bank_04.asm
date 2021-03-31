@@ -1,6 +1,6 @@
 .segment "BANK_04"
 .include "copy_bank_ram.inc"
-.include "bank_val.inc"
+.include "copy_bank_val.inc"
 ; 0x010010-0x01400F
 
 ; не перемещать начальные прыжки, они должны быть в пределах 8000-80FF
@@ -13027,11 +13027,11 @@ C - - - - - 0x013888 04:B878: 9D 7E 06  STA ram_067E,X
 C - - - - - 0x01388B 04:B87B: 4C A2 B8  JMP loc_B8A2
 bra_B87E:
 C - - - - - 0x01388E 04:B87E: B5 08     LDA ram_btn_press,X
-C - - - - - 0x013890 04:B880: 30 20     BMI bra_B8A2
+C - - - - - 0x013890 04:B880: 30 20     BMI bra_B8A2    ; if A
 C - - - - - 0x013892 04:B882: 0A        ASL
-C - - - - - 0x013893 04:B883: 30 19     BMI bra_B89E
+C - - - - - 0x013893 04:B883: 30 19     BMI bra_B89E    ; if B
 C - - - - - 0x013895 04:B885: A5 08     LDA ram_btn_press
-C - - - - - 0x013897 04:B887: 29 30     AND #$30
+C - - - - - 0x013897 04:B887: 29 30     AND #con_btns_SS
 C - - - - - 0x013899 04:B889: D0 17     BNE bra_B8A2
 C - - - - - 0x01389B 04:B88B: B5 04     LDA ram_btn_hold,X
 C - - - - - 0x01389D 04:B88D: 4A        LSR
@@ -13634,7 +13634,7 @@ C - - - - - 0x013C3C 04:BC2C: C9 04     CMP #$04
 C - - - - - 0x013C3E 04:BC2E: 90 01     BCC bra_BC31
 C - - - - - 0x013C40 04:BC30: C8        INY
 bra_BC31:
-C - - - - - 0x013C41 04:BC31: B9 5F BC  LDA tbl_BC5F_звук,Y
+C - - - - - 0x013C41 04:BC31: B9 5F BC  LDA tbl_BC5F_sound,Y
 C - - - - - 0x013C44 04:BC34: 20 02 C0  JSR sub_0x01C2F4_play_sound
 ; bzk 2 одинаковых прыжка
 C - - - - - 0x013C47 04:BC37: 20 27 80  JSR sub_0x01C25C
@@ -13659,10 +13659,10 @@ C - - - - - 0x013C6E 04:BC5E: 60        RTS
 
 
 
-tbl_BC5F_звук:
-- D 1 - - - 0x013C6F 04:BC5F: 29        .byte $29   ; 
-- D 1 - - - 0x013C70 04:BC60: 28        .byte $28   ; 
-- D 1 - - - 0x013C71 04:BC61: 2A        .byte $2A   ; 
+tbl_BC5F_sound:
+- D 1 - - - 0x013C6F 04:BC5F: 29        .byte con_sfx_УДАР
+- D 1 - - - 0x013C70 04:BC60: 28        .byte con_sfx_КРАСНЫЙ_СУПЕР
+- D 1 - - - 0x013C71 04:BC61: 2A        .byte con_sfx_СУПЕР
 
 
 

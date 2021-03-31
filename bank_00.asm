@@ -1,6 +1,6 @@
 .segment "BANK_00"
 .include "copy_bank_ram.inc"
-.include "bank_val.inc"
+.include "copy_bank_val.inc"
 ; 0x000010-0x00400F
 
 .export sub_0x000016
@@ -11444,7 +11444,7 @@ C - - - - - 0x002EBC 00:AEAC: 60        RTS
 bra_AEAD:
 C - - - - - 0x002EBD 00:AEAD: EE 0C 06  INC ram_060C
 C - - - - - 0x002EC0 00:AEB0: A5 08     LDA ram_btn_press
-C - - - - - 0x002EC2 00:AEB2: 29 F0     AND #$F0
+C - - - - - 0x002EC2 00:AEB2: 29 F0     AND #con_btns__ABSS
 C - - - - - 0x002EC4 00:AEB4: D0 0B     BNE bra_AEC1
 C - - - - - 0x002EC6 00:AEB6: A0 DD     LDY #$DD
 C - - - - - 0x002EC8 00:AEB8: AD 0C 06  LDA ram_060C
@@ -11475,7 +11475,7 @@ bra_AEE3:
 - - - - - - 0x002EF9 00:AEE9: B0 0D     BCS bra_AEF8
 - - - - - - 0x002EFB 00:AEEB: A5 04     LDA ram_btn_hold
 - - - - - - 0x002EFD 00:AEED: 05 05     ORA ram_btn_hold + 1
-- - - - - - 0x002EFF 00:AEEF: 29 F0     AND #$F0
+- - - - - - 0x002EFF 00:AEEF: 29 F0     AND #con_btns__ABSS
 - - - - - - 0x002F01 00:AEF1: F0 05     BEQ bra_AEF8
 - - - - - - 0x002F03 00:AEF3: A9 01     LDA #$01
 - - - - - - 0x002F05 00:AEF5: 8D 0D 06  STA ram_060D
@@ -11539,7 +11539,7 @@ C - - - - - 0x002F7B 00:AF6B: C9 07     CMP #$07
 C - - - - - 0x002F7D 00:AF6D: B0 0D     BCS bra_AF7C
 C - - - - - 0x002F7F 00:AF6F: A5 04     LDA ram_btn_hold
 C - - - - - 0x002F81 00:AF71: 05 05     ORA ram_btn_hold + 1
-C - - - - - 0x002F83 00:AF73: 29 F0     AND #$F0
+C - - - - - 0x002F83 00:AF73: 29 F0     AND #con_btns__ABSS
 C - - - - - 0x002F85 00:AF75: F0 05     BEQ bra_AF7C
 C - - - - - 0x002F87 00:AF77: A9 01     LDA #$01
 C - - - - - 0x002F89 00:AF79: 8D 0C 06  STA ram_060C
@@ -11611,7 +11611,7 @@ C - - - - - 0x003003 00:AFF3: C9 07     CMP #$07
 C - - - - - 0x003005 00:AFF5: B0 0D     BCS bra_B004
 C - - - - - 0x003007 00:AFF7: A5 04     LDA ram_btn_hold
 C - - - - - 0x003009 00:AFF9: 05 05     ORA ram_btn_hold + 1
-C - - - - - 0x00300B 00:AFFB: 29 F0     AND #$F0
+C - - - - - 0x00300B 00:AFFB: 29 F0     AND #con_btns__ABSS
 C - - - - - 0x00300D 00:AFFD: F0 05     BEQ bra_B004
 C - - - - - 0x00300F 00:AFFF: A9 01     LDA #$01
 C - - - - - 0x003011 00:B001: 8D 0C 06  STA ram_060C
@@ -11659,7 +11659,7 @@ bra_B04C:
 C - - - - - 0x00305C 00:B04C: AD B9 06  LDA ram_буфер_графики
 C - - - - - 0x00305F 00:B04F: C9 FF     CMP #$FF
 C - - - - - 0x003061 00:B051: F0 05     BEQ bra_B058_RTS
-C - - - - - 0x003063 00:B053: A9 35     LDA #$35
+C - - - - - 0x003063 00:B053: A9 35     LDA #con_sfx_print_text
 C - - - - - 0x003065 00:B055: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_B058_RTS:
 C - - - - - 0x003068 00:B058: 60        RTS
@@ -11669,7 +11669,7 @@ C - - - - - 0x003068 00:B058: 60        RTS
 loc_B059:
 C D 1 - - - 0x003069 00:B059: 38        SEC
 C - - - - - 0x00306A 00:B05A: E9 F0     SBC #$F0
-C - - - - - 0x00306C 00:B05C: 20 53 C0  JSR sub_0x01EC9F
+C - - - - - 0x00306C 00:B05C: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
 - D 1 - I - 0x00306F 00:B05F: 73 B0     .word ofs_B073_F0
 - D 1 - I - 0x003071 00:B061: 7E B0     .word ofs_B07E_F1
 - D 1 - I - 0x003073 00:B063: 89 B0     .word ofs_B089_F2
@@ -15275,7 +15275,7 @@ C - - - - - 0x003F1B 00:BF0B: 29 0F     AND #$0F
 C - - - - - 0x003F1D 00:BF0D: 85 1C     STA ram_001C
 C - - - - - 0x003F1F 00:BF0F: BD 1F BF  LDA tbl_BF1F,X
 C - - - - - 0x003F22 00:BF12: 29 03     AND #$03
-C - - - - - 0x003F24 00:BF14: 20 53 C0  JSR sub_0x01EC9F
+C - - - - - 0x003F24 00:BF14: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
 - D 1 - I - 0x003F27 00:BF17: 39 BF     .word ofs_BF39_00
 - D 1 - I - 0x003F29 00:BF19: 45 BF     .word ofs_BF45_01
 - D 1 - I - 0x003F2B 00:BF1B: 54 BF     .word ofs_BF54_02
