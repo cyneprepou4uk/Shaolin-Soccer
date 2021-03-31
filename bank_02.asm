@@ -1,5 +1,6 @@
 .segment "BANK_02"
 .include "copy_bank_ram.inc"
+.include "bank_val.inc"
 ; 0x008010-0x00C00F
 
 ; не перемещать эти 2 таблицы по 4 поинтера каждая

@@ -1,5 +1,6 @@
 .segment "BANK_FF"
 .include "copy_bank_ram.inc"
+.include "bank_val.inc"
 ; 0x01C010-0x02000F
 
 .export tbl_0x01C010

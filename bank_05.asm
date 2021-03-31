@@ -1,5 +1,6 @@
 .segment "BANK_05"
 .include "copy_bank_ram.inc"
+.include "bank_val.inc"
 ; 0x014010-0x01800F
 
 ; не перемещать начальные прыжки, они должны быть в пределах 8000-80FF
