@@ -3,50 +3,58 @@
 .include "copy_bank_val.inc"
 ; 0x018010-0x01C00F
 
-; не перемещать начальные прыжки, они должны быть в пределах 8000-80FF
+
+
 .export loc_0x018010
+.export loc_0x018013
+.export loc_0x018016
+.export loc_0x018019
+.export loc_0x01801C
+.export loc_0x01801F
+.export loc_0x018022
+.export loc_0x018025
+.export loc_0x018028
+.export loc_0x01802B
+.export loc_0x01802E
+.export loc_0x018031
+.export loc_0x018034
+.export loc_0x018037
+.export loc_0x01803A
+.export sub_0x01BD7A
+.export sub_0x01BE52
+.export sub_0x01BEDC
+
+
+
+; не перемещать начальные прыжки, они должны быть в пределах 8000-80FF
 loc_0x018010:
 C D 0 J - - 0x018010 06:8000: 4C 95 9B  JMP loc_9B95
-.export loc_0x018013
 loc_0x018013:
 C - - J - - 0x018013 06:8003: 4C 34 9B  JMP loc_9B34
-.export loc_0x018016
 loc_0x018016:
 C - - J - - 0x018016 06:8006: 4C C9 9C  JMP loc_9CC9_очистить_скорости_объекта
-.export loc_0x018019
 loc_0x018019:
 C - - J - - 0x018019 06:8009: 4C 29 9D  JMP loc_9D29
-.export loc_0x01801C
 loc_0x01801C:
 C - - J - - 0x01801C 06:800C: 4C E4 9C  JMP loc_9CE4
-.export loc_0x01801F
 loc_0x01801F:
 C - - J - - 0x01801F 06:800F: 4C 19 9D  JMP loc_9D19
-.export loc_0x018022
 loc_0x018022:
 C - - J - - 0x018022 06:8012: 4C DF BD  JMP loc_BDDF
-.export loc_0x018025
 loc_0x018025:
 C - - J - - 0x018025 06:8015: 4C FC BD  JMP loc_BDFC
-.export loc_0x018028
 loc_0x018028:
 C - - J - - 0x018028 06:8018: 4C 67 98  JMP loc_9867_начальная_X_Y_скорость_мяча
-.export loc_0x01802B
 loc_0x01802B:
 C - - J - - 0x01802B 06:801B: 4C E8 99  JMP loc_99E8_вычислить_скорость_движения_по_углу
-.export loc_0x01802E
 loc_0x01802E:
 C - - J - - 0x01802E 06:801E: 4C 77 9A  JMP loc_9A77
-.export loc_0x018031
 loc_0x018031:
 C - - J - - 0x018031 06:8021: 4C 5D 9B  JMP loc_9B5D_скорость_Z_и_гравитация
-.export loc_0x018034
 loc_0x018034:
 C - - J - - 0x018034 06:8024: 4C DA 9F  JMP loc_9FDA
-.export loc_0x018037
 loc_0x018037:
 - - - - - - 0x018037 06:8027: 4C 14 AA  JMP loc_AA14
-.export loc_0x01803A
 loc_0x01803A:
 - - - - - - 0x01803A 06:802A: 4C C3 AA  JMP loc_AAC3
 
@@ -10262,7 +10270,6 @@ tbl_BD67:
 
 
 
-.export sub_0x01BD7A
 sub_0x01BD7A:
 C - - - - - 0x01BD7A 06:BD6A: 20 B3 AB  JSR sub_ABB3
 C - - - - - 0x01BD7D 06:BD6D: A5 57     LDA ram_option_mode_difficulty
@@ -10378,7 +10385,6 @@ C - - - - - 0x01BE51 06:BE41: 60        RTS
 
 
 
-.export sub_0x01BE52
 sub_0x01BE52:
 C - - - - - 0x01BE52 06:BE42: A2 01     LDX #$01
 bra_BE44:
@@ -10453,7 +10459,6 @@ C - - - - - 0x01BEDB 06:BECB: 60        RTS
 
 
 
-.export sub_0x01BEDC
 sub_0x01BEDC:
 C - - - - - 0x01BEDC 06:BECC: AD 5C 00  LDA ram_flag_gameplay
 C - - - - - 0x01BEDF 06:BECF: 29 02     AND #$02

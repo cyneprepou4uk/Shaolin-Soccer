@@ -3,6 +3,16 @@
 .include "copy_bank_val.inc"
 ; 0x004010-0x00800F
 
+
+
+.export loc_0x004010
+.export loc_0x004013
+.export loc_0x004016
+.export loc_0x004019
+.export loc_0x00401C
+
+
+
 ; не перемещать эти 2 таблицы по 4 поинтера каждая
 ; поинтеры в банке FF, искать LDA $8000, и LDA $8008,
 - D 0 - - - 0x004024 01:8014: 24 80     .word off_8024_00
@@ -17,19 +27,14 @@
 
 ; не перемещать начальные прыжки, они должны быть в пределах 8000-80FF
 ; при удалении/добавлении прыжков корректировать начальный адрес таблицы ниже
-.export loc_0x004010
 loc_0x004010:
 C D 0 J - - 0x004010 01:8000: 4C B9 B0  JMP loc_B0B9
-.export loc_0x004013
 loc_0x004013:
 C - - J - - 0x004013 01:8003: 4C A1 B8  JMP loc_B8A1
-.export loc_0x004016
 loc_0x004016:
 C - - J - - 0x004016 01:8006: 4C C0 B9  JMP loc_B9C0
-.export loc_0x004019
 loc_0x004019:
 C - - J - - 0x004019 01:8009: 4C 12 BC  JMP loc_BC12
-.export loc_0x00401C
 loc_0x00401C:
 C - - J - - 0x00401C 01:800C: 4C 88 BE  JMP loc_BE88
 

@@ -3,20 +3,25 @@
 .include "copy_bank_val.inc"
 ; 0x014010-0x01800F
 
-; не перемещать начальные прыжки, они должны быть в пределах 8000-80FF
+
+
 .export loc_0x014010
+.export loc_0x014013
+.export loc_0x014016
+.export loc_0x014019
+.export loc_0x01401C
+
+
+
+; не перемещать начальные прыжки, они должны быть в пределах 8000-80FF
 loc_0x014010:
 C D 0 J - - 0x014010 05:8000: 4C 55 80  JMP loc_8055
-.export loc_0x014013
 loc_0x014013:
 C - - J - - 0x014013 05:8003: 4C 38 BD  JMP loc_BD38
-.export loc_0x014016
 loc_0x014016:
 C - - J - - 0x014016 05:8006: 4C B0 BD  JMP loc_BDB0
-.export loc_0x014019
 loc_0x014019:
 C - - J - - 0x014019 05:8009: 4C 47 BB  JMP loc_BB47
-.export loc_0x01401C
 loc_0x01401C:
 C - - J - - 0x01401C 05:800C: 4C 84 BB  JMP loc_BB84
 

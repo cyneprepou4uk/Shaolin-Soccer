@@ -3,7 +3,16 @@
 .include "copy_bank_val.inc"
 ; 0x000010-0x00400F
 
+
+
 .export sub_0x000016
+.export sub_0x000193
+.export sub_0x002E96
+.export sub_0x003B23
+.export sub_0x003F16
+
+
+
 sub_0x000016:
 sub_8006:
 C D 0 - - - 0x000016 00:8006: 8D E6 07  STA ram_07E6
@@ -222,7 +231,6 @@ C - - - - - 0x000192 00:8182: 60        RTS
 
 
 
-.export sub_0x000193
 sub_0x000193:
 C D 0 - - - 0x000193 00:8183: 2C E5 07  BIT ram_07E5
 C - - - - - 0x000196 00:8186: 10 67     BPL bra_81EF_RTS
@@ -11417,7 +11425,6 @@ loop_1_ADEE:
 
 
 
-.export sub_0x002E96
 sub_0x002E96:
 C - - - - - 0x002E96 00:AE86: AD 05 06  LDA ram_0605
 C - - - - - 0x002E99 00:AE89: 0A        ASL
@@ -14527,7 +14534,6 @@ off_BA9C_38:
 
 
 
-.export sub_0x003B23
 sub_0x003B23:
 C D 1 - - - 0x003B23 00:BB13: A9 FF     LDA #$FF
 C - - - - - 0x003B25 00:BB15: 8D 68 05  STA ram_номер_управляемого
@@ -15266,7 +15272,6 @@ tbl_BEF6:
 
 
 
-.export sub_0x003F16
 sub_0x003F16:
 C D 1 - - - 0x003F16 00:BF06: A2 0B     LDX #$0B
 bra_BF08:

@@ -3,7 +3,84 @@
 .include "copy_bank_val.inc"
 ; 0x01C010-0x02000F
 
+
+
 .export tbl_0x01C010
+.export sub_0x01C286
+.export sub_0x01C25C
+.export sub_0x01C25D
+.export sub_0x01C25E
+.export sub_0x01C25F
+.export sub_0x01C260
+.export sub_0x01C261
+.export sub_0x01C29F_положение_мяча_относительно_игрока
+.export sub_0x01C2A4
+.export sub_0x01C2E0
+.export sub_0x01C2C2
+.export sub_0x01C2AE
+.export sub_0x01C2BD
+.export sub_0x01C270
+.export sub_0x01C2EF
+.export sub_0x01C296
+.export sub_0x01C297
+.export sub_0x01C263
+.export sub_0x01C2C7
+.export sub_0x01C2CC
+.export sub_0x01C2D1
+.export sub_0x01C2D6
+.export sub_0x01C2DB
+.export sub_0x01C2DС
+.export sub_0x01C2DD
+.export sub_0x01C2DE
+.export sub_0x01C2DF
+.export sub_0x01C269
+.export sub_0x01C26A
+.export sub_0x01C26B
+.export sub_0x01C27F
+.export sub_0x01C280
+.export sub_0x01C2F4_play_sound
+.export sub_0x01C327
+.export sub_0x01C345
+.export sub_0x01CBE6
+.export sub_0x01CD3F
+.export sub_0x01CDDB
+.export sub_0x01CECD_вычислить_анимацию
+.export sub_0x01D046
+.export sub_0x01D057
+.export sub_0x01D05F
+.export sub_0x01D072
+.export sub_0x01D083
+.export sub_0x01D0E5
+.export sub_0x01D5FF
+.export sub_0x01D803
+.export sub_0x01E700
+.export sub_0x01E838
+.export sub_0x01EB9C
+.export sub_0x01EC9F_jump_to_pointers_afetr_JSR
+.export sub_0x01ECB9
+.export sub_0x01ECD1
+.export sub_0x01ECDB
+.export sub_0x01EE45_вращение_рандома
+.export sub_0x01EE75
+.export sub_0x01EE81_disable_NMI
+.export sub_0x01EEAA
+.export sub_0x01EF1A
+.export sub_0x01EF64
+.export sub_0x01EFBD_write_buffers_to_ppu
+.export sub_0x01F479
+.export sub_0x01F4D1
+.export sub_0x01F574
+.export sub_0x01F5AB
+.export sub_0x01F68D
+.export sub_0x01F6A1
+.export sub_0x01F97A
+.export sub_0x01F9EE
+.export sub_0x01FA7D
+.export sub_0x01FAFE
+.export _общий_RTS
+
+
+
 tbl_0x01C010:
 - D 2 - - - 0x01C010 07:C000: 80 C0     .word tbl_C080
 
@@ -523,7 +600,6 @@ C - - - - - 0x01C283 07:C273: 4C 44 C3  JMP loc_C344_свап_prg_банка_80x
 sub_C28A:
 C - - - - - 0x01C29A 07:C28A: A9 01     LDA #$01
 C - - - - - 0x01C29C 07:C28C: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C286
 sub_0x01C286:
 C - - - - - 0x01C286 07:C276: A9 02     LDA #$02
 C - - - - - 0x01C288 07:C278: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
@@ -536,43 +612,33 @@ C - - - - - 0x01C256 07:C246: 4C 44 C3  JMP loc_C344_свап_prg_банка_80x
 sub_C249:
 C - - - - - 0x01C259 07:C249: A9 05     LDA #$05
 C - - - - - 0x01C25B 07:C24B: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C25C
 sub_0x01C25C:
                                         LDA #$06
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C25D
 sub_0x01C25D:
                                         LDA #$07
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C25E
 sub_0x01C25E:
                                         LDA #$08
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C25F
 sub_0x01C25F:
                                         LDA #$09
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C260
 sub_0x01C260:
                                         LDA #$0A
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C261
 sub_0x01C261:
                                         LDA #$0B
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C29F_положение_мяча_относительно_игрока
 sub_0x01C29F_положение_мяча_относительно_игрока:
 C - - - - - 0x01C29F 07:C28F: A9 0C     LDA #$0C
 C - - - - - 0x01C2A1 07:C291: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2A4
 sub_0x01C2A4:
 C - - - - - 0x01C2A4 07:C294: A9 0D     LDA #$0D
 C - - - - - 0x01C2A6 07:C296: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2E0
 sub_0x01C2E0:
 C - - - - - 0x01C2E0 07:C2D0: A9 0E     LDA #$0E
 C - - - - - 0x01C2E2 07:C2D2: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2C2
 sub_0x01C2C2:
 C - - - - - 0x01C2C2 07:C2B2: A9 0F     LDA #$0F
 C - - - - - 0x01C2C4 07:C2B4: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
@@ -589,7 +655,6 @@ sub_C280:
 C - - - - - 0x01C290 07:C280: A9 13     LDA #$13
 C - - - - - 0x01C292 07:C282: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C29E:
-.export sub_0x01C2AE
 sub_0x01C2AE:
 C - - - - - 0x01C2AE 07:C29E: A9 14     LDA #$14
 C - - - - - 0x01C2B0 07:C2A0: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
@@ -600,87 +665,69 @@ sub_C2A8:
 C - - - - - 0x01C2B8 07:C2A8: A9 16     LDA #$16
 C - - - - - 0x01C2BA 07:C2AA: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C2AD:
-.export sub_0x01C2BD
 sub_0x01C2BD:
 C - - - - - 0x01C2BD 07:C2AD: A9 17     LDA #$17
 C - - - - - 0x01C2BF 07:C2AF: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C25D:
 C - - - - - 0x01C26D 07:C25D: A9 18     LDA #$18
 C - - - - - 0x01C26F 07:C25F: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C270
 sub_0x01C270:
                                         LDA #$19
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2EF
 sub_0x01C2EF:
 - - - - - - 0x01C2EF 07:C2DF: A9 1A     LDA #$1A
 - - - - - - 0x01C2F1 07:C2E1: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
 sub_C285:
 C - - - - - 0x01C295 07:C285: A9 1B     LDA #$1B
 C - - - - - 0x01C297 07:C287: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C296
 sub_0x01C296:
                                         LDA #$1C
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C297
 sub_0x01C297:
                                         LDA #$1D
                                         JMP loc_C344_свап_prg_банка_80xx
 sub_C24E:
 C - - - - - 0x01C25E 07:C24E: A9 1E     LDA #$1E
 C - - - - - 0x01C260 07:C250: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C263
 sub_0x01C263:
 - - - - - - 0x01C263 07:C253: A9 1F     LDA #$1F
 - - - - - - 0x01C265 07:C255: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2C7
 sub_0x01C2C7:
 C - - - - - 0x01C2C7 07:C2B7: A9 20     LDA #$20
 C - - - - - 0x01C2C9 07:C2B9: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2CC
 sub_0x01C2CC:
 C - - - - - 0x01C2CC 07:C2BC: A9 21     LDA #$21
 C - - - - - 0x01C2CE 07:C2BE: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2D1
 sub_0x01C2D1:
 C - - - - - 0x01C2D1 07:C2C1: A9 22     LDA #$22
 C - - - - - 0x01C2D3 07:C2C3: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2D6
 sub_0x01C2D6:
 C - - - - - 0x01C2D6 07:C2C6: A9 23     LDA #$23
 C - - - - - 0x01C2D8 07:C2C8: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2DB
 sub_0x01C2DB:
 C - - - - - 0x01C2DB 07:C2CB: A9 24     LDA #$24
 C - - - - - 0x01C2DD 07:C2CD: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2DС
 sub_0x01C2DС:
                                         LDA #$25
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2DD
 sub_0x01C2DD:
                                         LDA #$26
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2DE
 sub_0x01C2DE:
                                         LDA #$27
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C2DF
 sub_0x01C2DF:
                                         LDA #$28
                                         JMP loc_C344_свап_prg_банка_80xx
 sub_C258:
 C - - - - - 0x01C268 07:C258: A9 29     LDA #$29
 C - - - - - 0x01C26A 07:C25A: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C269
 sub_0x01C269:
                                         LDA #$2A
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C26A
 sub_0x01C26A:
                                         LDA #$2B
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C26B
 sub_0x01C26B:
                                         LDA #$2C
                                         JMP loc_C344_свап_prg_банка_80xx
@@ -693,11 +740,9 @@ C - - - - - 0x01C279 07:C269: 4C 44 C3  JMP loc_C344_свап_prg_банка_80x
 sub_C26C:
 - - - - - - 0x01C27C 07:C26C: A9 2F     LDA #$2F
 - - - - - - 0x01C27E 07:C26E: 4C 44 C3  JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C27F
 sub_0x01C27F:
                                         LDA #$30
                                         JMP loc_C344_свап_prg_банка_80xx
-.export sub_0x01C280
 sub_0x01C280:
                                         LDA #$31
                                         JMP loc_C344_свап_prg_банка_80xx
@@ -705,7 +750,6 @@ sub_0x01C280:
 
 
 sub_C2E4_play_sound:
-.export sub_0x01C2F4_play_sound
 sub_0x01C2F4_play_sound:
 C D 2 - - - 0x01C2F4 07:C2E4: 2C 8B 05  BIT ram_флаг_демо
 C - - - - - 0x01C2F7 07:C2E7: 70 1E     BVS bra_C307_RTS
@@ -738,7 +782,6 @@ C - - - - - 0x01C324 07:C314: 4C 68 C3  JMP loc_C368_вернуть_банк_prg
 
 
 
-.export sub_0x01C327
 sub_0x01C327:
 C D 2 - - - 0x01C327 07:C317: AD FF BF  LDA con_bank_id
 C - - - - - 0x01C32A 07:C31A: 48        PHA
@@ -759,7 +802,6 @@ C - - - - - 0x01C342 07:C332: 4C 68 C3  JMP loc_C368_вернуть_банк_prg
 
 
 
-.export sub_0x01C345
 sub_0x01C345:
 C D 2 - - - 0x01C345 07:C335: AD FF BF  LDA con_bank_id
 C - - - - - 0x01C348 07:C338: 48        PHA
@@ -1932,7 +1974,6 @@ tbl_CBC7_buttons:
 - - - - - - 0x01CBE5 07:CBD5: 80        .byte con_btn_A   ; 0E
 
 
-.export sub_0x01CBE6
 sub_0x01CBE6:
 C - - - - - 0x01CBE6 07:CBD6: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x01CBE9 07:CBD9: 0A        ASL
@@ -2128,7 +2169,6 @@ tbl_CD29:
 
 
 
-.export sub_0x01CD3F
 sub_0x01CD3F:
 C - - - - - 0x01CD3F 07:CD2F: BD 99 03  LDA ram_pos_Z_hi_player,X
 C - - - - - 0x01CD42 07:CD32: 30 03     BMI bra_CD37
@@ -2209,7 +2249,6 @@ tbl_CDC9:
 
 
  
-.export sub_0x01CDDB
 sub_0x01CDDB:
 C - - - - - 0x01CDDB 07:CDCB: BD 99 03  LDA ram_pos_Z_hi_player,X
 C - - - - - 0x01CDDE 07:CDCE: 30 12     BMI bra_CDE2
@@ -2396,7 +2435,6 @@ C - - - - - 0x01CECC 07:CEBC: 60        RTS
 
 
 
-.export sub_0x01CECD_вычислить_анимацию
 sub_0x01CECD_вычислить_анимацию:
 ; на вход подается номер движения 0459,X
 C D 2 - - - 0x01CECD 07:CEBD: 0A        ASL
@@ -2593,7 +2631,6 @@ C - - - - - 0x01D045 07:D035: 60        RTS
 
 
 
-.export sub_0x01D046
 sub_0x01D046:
 sub_D036:
 C D 2 - - - 0x01D046 07:D036: A9 40     LDA #$40
@@ -2607,7 +2644,6 @@ C - - - - - 0x01D056 07:D046: 60        RTS
 
 
 sub_D047:
-.export sub_0x01D057
 sub_0x01D057:
 C D 2 - - - 0x01D057 07:D047: A9 40     LDA #$40
 C - - - - - 0x01D059 07:D049: 8D B2 05  STA ram_флаг_яркости
@@ -2615,7 +2651,6 @@ C - - - - - 0x01D05C 07:D04C: 4C 54 D0  JMP loc_D054
 
 
 
-.export sub_0x01D05F
 sub_0x01D05F:
 sub_D04F:
 C D 2 - - - 0x01D05F 07:D04F: A9 00     LDA #$00
@@ -2631,7 +2666,6 @@ C - - - - - 0x01D071 07:D061: 60        RTS
 
 
 bra_D062:
-.export sub_0x01D072
 sub_0x01D072:
 sub_D062:
 C D 2 - - - 0x01D072 07:D062: 20 73 D0  JSR sub_D073
@@ -2645,7 +2679,6 @@ C - - - - - 0x01D082 07:D072: 60        RTS
 
 
 
-.export sub_0x01D083
 sub_0x01D083:
 loc_D073:
 sub_D073:
@@ -2709,7 +2742,6 @@ tbl_D0D0:
 
 
 
-.export sub_0x01D0E5
 sub_0x01D0E5:
 sub_D0D5:
 C D 2 - - - 0x01D0E5 07:D0D5: A2 00     LDX #$00
@@ -4120,7 +4152,6 @@ off_D5EB_00:
 
 
 
-.export sub_0x01D5FF
 sub_0x01D5FF:
 C - - - - - 0x01D5FF 07:D5EF: AD 66 04  LDA ram_погода_номер_эффекта
 C - - - - - 0x01D602 07:D5F2: 29 7F     AND #$7F
@@ -4381,7 +4412,6 @@ C - - - - - 0x01D802 07:D7F2: 60        RTS
 
 
 
-.export sub_0x01D803
 sub_0x01D803:
 C - - - - - 0x01D803 07:D7F3: AD F0 05  LDA ram_footprint_counter
 C - - - - - 0x01D806 07:D7F6: C9 04     CMP #$04
@@ -6904,7 +6934,6 @@ tbl_E610:
 
 
 sub_E6F0:
-.export sub_0x01E700
 sub_0x01E700:
 C - - - - - 0x01E700 07:E6F0: AD FF BF  LDA con_bank_id
 C - - - - - 0x01E703 07:E6F3: 48        PHA
@@ -7059,7 +7088,6 @@ C - - - - - 0x01E805 07:E7F5: 60        RTS
 
 
 
-.export sub_0x01E838
 sub_0x01E838:
 C D 3 - - - 0x01E838 07:E828: 85 2C     STA ram_002C
 C - - - - - 0x01E83A 07:E82A: A9 00     LDA #$00
@@ -7742,7 +7770,6 @@ tbl_EB43:
 
 
 
-.export sub_0x01EB9C
 sub_0x01EB9C:
 C D 3 - - - 0x01EB9C 07:EB8C: A9 00     LDA #$00
 C - - - - - 0x01EB9E 07:EB8E: 85 1C     STA ram_001C
@@ -7900,7 +7927,6 @@ tbl_EC8E:
 
 
 sub_EC8F:
-.export sub_0x01EC9F_jump_to_pointers_afetr_JSR
 sub_0x01EC9F_jump_to_pointers_afetr_JSR:
 C D 3 - - - 0x01EC9F 07:EC8F: 0A        ASL
 C - - - - - 0x01ECA0 07:EC90: A8        TAY
@@ -7923,7 +7949,6 @@ C - - - - - 0x01ECB6 07:ECA6: 6C 0C 00  JMP (ram_000C)
 
 
 
-.export sub_0x01ECB9
 sub_0x01ECB9:
 sub_ECA9:
 C D 3 - - - 0x01ECB9 07:ECA9: 48        PHA
@@ -7939,7 +7964,6 @@ C - - - - - 0x01ECCA 07:ECBA: A9 0F     LDA #$0F
 C - - - - - 0x01ECCC 07:ECBC: 8D 15 40  STA $4015
 bra_ECBF:
 C - - - - - 0x01ECCF 07:ECBF: D0 FE     BNE bra_ECBF
-.export sub_0x01ECD1
 sub_0x01ECD1:
 sub_ECC1:
 C D 3 - - - 0x01ECD1 07:ECC1: A5 4D     LDA ram_for_2001
@@ -7952,7 +7976,6 @@ C - - - - - 0x01ECDA 07:ECCA: 60        RTS
 
 
 
-.export sub_0x01ECDB
 sub_0x01ECDB:
 sub_ECCB:
 C D 3 - - - 0x01ECDB 07:ECCB: A5 4D     LDA ram_for_2001
@@ -8106,7 +8129,6 @@ C - - - - - 0x01EE37 07:EE27: 60        RTS
 
 
 sub_EE35_вращение_рандома:
-.export sub_0x01EE45_вращение_рандома
 sub_0x01EE45_вращение_рандома:
 C - - - - - 0x01EE4D 07:EE3D: B5 00     LDA ram_random
 C - - - - - 0x01EE4F 07:EE3F: 29 02     AND #$02
@@ -8125,7 +8147,6 @@ C - - - - - 0x01EE69 07:EE59: 60        RTS
 
 
 
-.export sub_0x01EE75
 sub_0x01EE75:
 sub_EE65:
 C D 3 - - - 0x01EE75 07:EE65: 48        PHA
@@ -8138,7 +8159,6 @@ C - - - - - 0x01EE80 07:EE70: 60        RTS
 
 
 
-.export sub_0x01EE81_disable_NMI
 sub_0x01EE81_disable_NMI:
 sub_EE71_disable_NMI:
 C D 3 - - - 0x01EE81 07:EE71: 48        PHA
@@ -8167,7 +8187,6 @@ C - - - - - 0x01EEA9 07:EE99: 60        RTS
 
 
 
-.export sub_0x01EEAA
 sub_0x01EEAA:
 sub_EE9A:
 C D 3 - - - 0x01EEAA 07:EE9A: A9 02     LDA #$02
@@ -8234,7 +8253,6 @@ bra_EF02:
 
 
 
-.export sub_0x01EF1A
 sub_0x01EF1A:
 sub_EF0A:
 C D 3 - - - 0x01EF1A 07:EF0A: A9 00     LDA #$00
@@ -8293,7 +8311,6 @@ C - - - - - 0x01EF63 07:EF53: 60        RTS
 
 
 
-.export sub_0x01EF64
 sub_0x01EF64:
 sub_EF54:
 C D 3 - - - 0x01EF64 07:EF54: A5 4D     LDA ram_for_2001
@@ -8323,7 +8340,6 @@ C - - - - - 0x01EE74 07:EE64: 60        RTS
 
 
 
-.export sub_0x01EFBD_write_buffers_to_ppu
 sub_0x01EFBD_write_buffers_to_ppu:
 sub_EFAD_write_buffers_to_ppu:
 C D 3 - - - 0x01EFBD 07:EFAD: A5 58     LDA ram_номер_экрана
@@ -8958,7 +8974,6 @@ C - - - - - 0x01F406 07:F3F6: 60        RTS
 
 
 
-.export sub_0x01F479
 sub_0x01F479:
 C D 3 - - - 0x01F479 07:F469: 8A        TXA
 C - - - - - 0x01F47A 07:F46A: 48        PHA
@@ -9021,7 +9036,6 @@ C - - - - - 0x01F4D0 07:F4C0: 60        RTS
 
 
 sub_F4C1:
-.export sub_0x01F4D1
 sub_0x01F4D1:
 C D 3 - - - 0x01F4D1 07:F4C1: 8A        TXA
 C - - - - - 0x01F4D2 07:F4C2: 48        PHA
@@ -9132,7 +9146,6 @@ bra_F556:
 
 
 
-.export sub_0x01F574
 sub_0x01F574:
 C D 3 - - - 0x01F574 07:F564: 8A        TXA
 C - - - - - 0x01F575 07:F565: 48        PHA
@@ -9177,7 +9190,6 @@ C - - - - - 0x01F5AA 07:F59A: 60        RTS
 
 
 
-.export sub_0x01F5AB
 sub_0x01F5AB:
 C D 3 - - - 0x01F5AB 07:F59B: 8A        TXA
 C - - - - - 0x01F5AC 07:F59C: 48        PHA
@@ -9300,7 +9312,6 @@ loc_F666:
 
 
 
-.export sub_0x01F68D
 sub_0x01F68D:
 sub_F67D:
 C D 3 - - - 0x01F68D 07:F67D: B9 14 03  LDA ram_pos_X_lo_player,Y
@@ -9311,7 +9322,6 @@ C - - - - - 0x01F697 07:F687: B9 4D 03  LDA ram_pos_Y_lo_player,Y
 C - - - - - 0x01F69A 07:F68A: 85 30     STA ram_0030
 C - - - - - 0x01F69C 07:F68C: B9 60 03  LDA ram_pos_Y_hi_player,Y
 C - - - - - 0x01F69F 07:F68F: 85 31     STA ram_0031
-.export sub_0x01F6A1
 sub_0x01F6A1:
 C D 3 - - - 0x01F6A1 07:F691: A9 00     LDA #$00
 C - - - - - 0x01F6A3 07:F693: 85 1C     STA ram_001C
@@ -9800,7 +9810,6 @@ tbl_F949:
 
 
 loc_F96A:
-.export sub_0x01F97A
 sub_0x01F97A:
 C - - - - - 0x01F97A 07:F96A: A9 FF     LDA #$FF
 C - - - - - 0x01F97C 07:F96C: 85 3C     STA ram_003C
@@ -9871,7 +9880,6 @@ C - - - - - 0x01F9EB 07:F9DB: 4C 74 F9  JMP loc_F974
 
 
 
-.export sub_0x01F9EE
 sub_0x01F9EE:
 C D 3 - - - 0x01F9EE 07:F9DE: 8A        TXA
 C - - - - - 0x01F9EF 07:F9DF: 48        PHA
@@ -9958,7 +9966,6 @@ C - - - - - 0x01FA7C 07:FA6C: 60        RTS
 
 
 
-.export sub_0x01FA7D
 sub_0x01FA7D:
 loc_FA6D:
 sub_FA6D:
@@ -10042,7 +10049,6 @@ C - - - - - 0x01FAFD 07:FAED: 60        RTS
 
 
 
-.export sub_0x01FAFE
 sub_0x01FAFE:
 C D 3 - - - 0x01FAFE 07:FAEE: BD 04 00  LDA ram_btn_hold,X
 C - - - - - 0x01FB01 07:FAF1: 4A        LSR
@@ -10393,7 +10399,6 @@ C - - - - - 0x01FE1D 07:FE0D: 4C D4 C3  JMP loc_C3D4
 
 
 
-.export _общий_RTS
 _общий_RTS:
     RTS
 
