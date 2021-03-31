@@ -10375,6 +10375,7 @@ C - - - - - 0x01FDD2 07:FDC2: A9 40     LDA #$40
 C - - - - - 0x01FDD4 07:FDC4: 8D 17 40  STA $4017
 C - - - - - 0x01FDD7 07:FDC7: A9 0F     LDA #$0F
 C - - - - - 0x01FDD9 07:FDC9: 8D 15 40  STA $4015
+                                        JSR sub_0000_копирование_банка_на_батарейку
 C - - - - - 0x01FDEA 07:FDDA: 20 64 EF  JSR sub_EF64
 C - - - - - 0x01FDED 07:FDDD: A9 06     LDA #con_prg_bank + $06
 C - - - - - 0x01FDEF 07:FDDF: 20 D3 EE  JSR sub_EED3_prg_bankswitch
@@ -10404,8 +10405,37 @@ C - - - - - 0x01FE1D 07:FE0D: 4C D4 C3  JMP loc_C3D4
 
 
 
+sub_0000_копирование_банка_на_батарейку:
+    LDA $BFFF
+    PHA
+    LDA #con_prg_bank + $0E
+    JSR sub_EED3_prg_bankswitch
+    LDA #$80    ; разрешение записи в батарейку
+    STA $A001
+    LDY #$00
+    STY ram_0000
+    STY ram_0002
+    LDA #$80    ; начало чтения с 8000
+    STA ram_0001
+    LDA #$60    ; начало записи в 6000
+    STA ram_0003
+    LDX #$20    ; скопировать 32 страницы
+@цикл_копирования:
+    LDA (ram_0000),Y
+    STA (ram_0002),Y
+    INY
+    BNE @цикл_копирования
+    INC ram_0001
+    INC ram_0003
+    DEX
+    BNE @цикл_копирования
+    JMP loc_C368_restore_prg_bank
+
+
+
 _общий_RTS:
     RTS
+
 
 
 .segment "DMC_DATA"
