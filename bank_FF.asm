@@ -4172,27 +4172,25 @@ C - - - - - 0x01D647 07:D637: D0 03     BNE bra_D63C
 C - - - - - 0x01D649 07:D639: 4C 7C D6  JMP loc_D67C
 bra_D63C:
 C - - - - - 0x01D64C 07:D63C: AD 02 20  LDA $2002
-C - - - - - 0x01D64F 07:D63F: A9 2A     LDA #$2A
+C - - - - - 0x01D64F 07:D63F: A9 2A     LDA #> $2A61
 C - - - - - 0x01D651 07:D641: 8D 06 20  STA $2006
-C - - - - - 0x01D654 07:D644: A9 61     LDA #$61
+C - - - - - 0x01D654 07:D644: A9 61     LDA #< $2A61
 C - - - - - 0x01D656 07:D646: 8D 06 20  STA $2006
 C - - - - - 0x01D659 07:D649: AD 96 06  LDA ram_буфер_атрибутов
 C - - - - - 0x01D65C 07:D64C: 8D 07 20  STA $2007
 C - - - - - 0x01D65F 07:D64F: A2 01     LDX #$01
 C - - - - - 0x01D661 07:D651: AD 02 20  LDA $2002
-C - - - - - 0x01D664 07:D654: A9 2A     LDA #$2A
-C - - - - - 0x01D666 07:D656: 8D 06 20  STA $2006
-C - - - - - 0x01D669 07:D659: A9 81     LDA #$81
+C - - - - - 0x01D669 07:D659: A9 81     LDA #< $2A81
 C - - - - - 0x01D66B 07:D65B: 20 CF D6  JSR sub_D6CF
-C - - - - - 0x01D66E 07:D65E: A9 07     LDA #$07
+C - - - - - 0x01D66E 07:D65E: A9 07     LDA #< $2A07
 C - - - - - 0x01D670 07:D660: 20 CF D6  JSR sub_D6CF
-C - - - - - 0x01D673 07:D663: A9 27     LDA #$27
+C - - - - - 0x01D673 07:D663: A9 27     LDA #< $2A27
 C - - - - - 0x01D675 07:D665: 20 CF D6  JSR sub_D6CF
-C - - - - - 0x01D678 07:D668: A9 47     LDA #$47
+C - - - - - 0x01D678 07:D668: A9 47     LDA #< $2A47
 C - - - - - 0x01D67A 07:D66A: 20 CF D6  JSR sub_D6CF
-C - - - - - 0x01D67D 07:D66D: A9 67     LDA #$67
+C - - - - - 0x01D67D 07:D66D: A9 67     LDA #< $2A67
 C - - - - - 0x01D67F 07:D66F: 20 CF D6  JSR sub_D6CF
-C - - - - - 0x01D682 07:D672: A9 87     LDA #$87
+C - - - - - 0x01D682 07:D672: A9 87     LDA #< $2A87
 C - - - - - 0x01D684 07:D674: 20 CF D6  JSR sub_D6CF
 C - - - - - 0x01D687 07:D677: A9 00     LDA #$00
 C - - - - - 0x01D689 07:D679: 8D 06 20  STA $2006
@@ -4202,31 +4200,26 @@ C - - - - - 0x01D68F 07:D67F: 29 10     AND #$10
 C - - - - - 0x01D691 07:D681: D0 03     BNE bra_D686
 C - - - - - 0x01D693 07:D683: 4C C6 D6  JMP loc_D6C6
 bra_D686:
-C - - - - - 0x01D696 07:D686: AD 02 20  LDA $2002
-C - - - - - 0x01D699 07:D689: A9 2A     LDA #$2A
+C - - - - - 0x01D699 07:D689: A9 2A     LDA #> $2A74
 C - - - - - 0x01D69B 07:D68B: 8D 06 20  STA $2006
-C - - - - - 0x01D69E 07:D68E: A9 74     LDA #$74
+C - - - - - 0x01D69E 07:D68E: A9 74     LDA #< $2A74
 C - - - - - 0x01D6A0 07:D690: 8D 06 20  STA $2006
 C - - - - - 0x01D6A3 07:D693: AD B9 06  LDA ram_буфер_графики
 C - - - - - 0x01D6A6 07:D696: 8D 07 20  STA $2007
 C - - - - - 0x01D6A9 07:D699: A2 24     LDX #$24
 C - - - - - 0x01D6AB 07:D69B: AD 02 20  LDA $2002
-C - - - - - 0x01D6AE 07:D69E: A9 2A     LDA #$2A
-C - - - - - 0x01D6B0 07:D6A0: 8D 06 20  STA $2006
-C - - - - - 0x01D6B3 07:D6A3: A9 94     LDA #$94
+C - - - - - 0x01D6B3 07:D6A3: A9 94     LDA #< $2A94
 C - - - - - 0x01D6B5 07:D6A5: 20 CF D6  JSR sub_D6CF
-C - - - - - 0x01D6B8 07:D6A8: A9 1A     LDA #$1A
+C - - - - - 0x01D6B8 07:D6A8: A9 1A     LDA #< $2A1A
 C - - - - - 0x01D6BA 07:D6AA: 20 CF D6  JSR sub_D6CF
-C - - - - - 0x01D6BD 07:D6AD: A9 3A     LDA #$3A
+C - - - - - 0x01D6BD 07:D6AD: A9 3A     LDA #< $2A3A
 C - - - - - 0x01D6BF 07:D6AF: 20 CF D6  JSR sub_D6CF
-C - - - - - 0x01D6C2 07:D6B2: A9 5A     LDA #$5A
+C - - - - - 0x01D6C2 07:D6B2: A9 5A     LDA #< $2A5A
 C - - - - - 0x01D6C4 07:D6B4: 20 CF D6  JSR sub_D6CF
-C - - - - - 0x01D6C7 07:D6B7: A9 7A     LDA #$7A
+C - - - - - 0x01D6C7 07:D6B7: A9 7A     LDA #< $2A7A
 C - - - - - 0x01D6C9 07:D6B9: 20 CF D6  JSR sub_D6CF
-C - - - - - 0x01D6CC 07:D6BC: A9 9A     LDA #$9A
+C - - - - - 0x01D6CC 07:D6BC: A9 9A     LDA #< $2A9A
 C - - - - - 0x01D6CE 07:D6BE: 20 CF D6  JSR sub_D6CF
-C - - - - - 0x01D6D1 07:D6C1: A9 00     LDA #$00
-C - - - - - 0x01D6D3 07:D6C3: 8D 06 20  STA $2006
 loc_D6C6:
 C D 2 - - - 0x01D6D6 07:D6C6: AD AB 05  LDA ram_флаг_обновл_тайлов_экр
 C - - - - - 0x01D6D9 07:D6C9: 29 CF     AND #$CF
@@ -4236,6 +4229,8 @@ C - - - - - 0x01D6DE 07:D6CE: 60        RTS
 
 
 sub_D6CF:
+                                        LDY #$2A
+                                        STY $2006
 C - - - - - 0x01D6DF 07:D6CF: 8D 06 20  STA $2006
 C - - - - - 0x01D6E2 07:D6D2: A0 04     LDY #$04
 bra_D6D4_loop:
@@ -4244,9 +4239,6 @@ C - - - - - 0x01D6E7 07:D6D7: 8D 07 20  STA $2007
 C - - - - - 0x01D6EA 07:D6DA: E8        INX
 C - - - - - 0x01D6EB 07:D6DB: 88        DEY
 C - - - - - 0x01D6EC 07:D6DC: 10 F6     BPL bra_D6D4_loop
-C - - - - - 0x01D6EE 07:D6DE: AD 02 20  LDA $2002
-C - - - - - 0x01D6F1 07:D6E1: A9 2A     LDA #$2A
-C - - - - - 0x01D6F3 07:D6E3: 8D 06 20  STA $2006
 C - - - - - 0x01D6F6 07:D6E6: 60        RTS
 
 
