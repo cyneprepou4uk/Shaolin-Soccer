@@ -941,7 +941,7 @@ C - - - - - 0x01C479 07:C469: 58        CLI
 C - - - - - 0x01C47A 07:C46A: A9 00     LDA #$00
 C - - - - - 0x01C47C 07:C46C: 85 0A     STA ram_btn_press + 2
 C - - - - - 0x01C47E 07:C46E: A9 F0     LDA #$F0
-C - - - - - 0x01C480 07:C470: 8D 56 00  STA ram_spr_Y_limit
+C - - - - - 0x01C480 07:C470: 8D 56 00  STA ram_limit_spr_Y
 C - - - - - 0x01C483 07:C473: A9 01     LDA #$01
 C - - - - - 0x01C485 07:C475: 8D E6 05  STA ram_скорость_игры
 loc_C478_главный_игровой_скрипт:
@@ -1715,7 +1715,7 @@ C D 2 - - - 0x01CA2E 07:CA1E: 60        RTS
 
 sub_CA1F:
 C - - - - - 0x01CA2F 07:CA1F: A9 F0     LDA #$F0
-C - - - - - 0x01CA31 07:CA21: 85 56     STA ram_spr_Y_limit
+C - - - - - 0x01CA31 07:CA21: 85 56     STA ram_limit_spr_Y
 C - - - - - 0x01CA33 07:CA23: A9 64     LDA #$64
 C - - - - - 0x01CA35 07:CA25: 8D BC 05  STA ram_банк_фона
 C - - - - - 0x01CA38 07:CA28: A9 66     LDA #$66
@@ -2566,7 +2566,7 @@ C - - - - - 0x01CFDF 07:CFCF: 69 04     ADC #$04
 C - - - - - 0x01CFE1 07:CFD1: 8D BD 05  STA ram_банк_фона + 1
 C - - - - - 0x01CFE4 07:CFD4: 20 7D EE  JSR sub_EE7D
 C - - - - - 0x01CFE7 07:CFD7: A9 B1     LDA #$B1
-C - - - - - 0x01CFE9 07:CFD9: 85 56     STA ram_spr_Y_limit
+C - - - - - 0x01CFE9 07:CFD9: 85 56     STA ram_limit_spr_Y
 C - - - - - 0x01CFEB 07:CFDB: 20 A9 EC  JSR sub_ECA9
 C - - - - - 0x01CFEE 07:CFDE: 20 71 EE  JSR sub_EE71_disable_NMI
 C - - - - - 0x01CFF1 07:CFE1: 20 C1 EC  JSR sub_ECC1
@@ -5060,7 +5060,7 @@ C D 2 - - - 0x01DC78 07:DC68: CC AC 03  CPY ram_rain_size
 C - - - - - 0x01DC7B 07:DC6B: F0 0C     BEQ bra_DC79
 C - - - - - 0x01DC7D 07:DC6D: B0 0A     BCS bra_DC79
 - - - - - - 0x01DC7F 07:DC6F: B9 0C 01  LDA ram_010C,Y
-- - - - - - 0x01DC82 07:DC72: C5 56     CMP ram_spr_Y_limit
+- - - - - - 0x01DC82 07:DC72: C5 56     CMP ram_limit_spr_Y
 - - - - - - 0x01DC84 07:DC74: B0 03     BCS bra_DC79
 - - - - - - 0x01DC86 07:DC76: 4C 7B DC  JMP loc_DC7B
 bra_DC79:
@@ -5223,7 +5223,7 @@ C - - - - - 0x01DD9F 07:DD8F: D0 9E     BNE bra_DD2F
 loc_DD91:
 C - - - - - 0x01DDA1 07:DD91: A0 00     LDY #$00
 C - - - - - 0x01DDA3 07:DD93: A2 00     LDX #$00
-bra_DD95:
+bra_DD95_loop:
 C - - - - - 0x01DDA5 07:DD95: B9 0C 01  LDA ram_010C,Y
 C - - - - - 0x01DDA8 07:DD98: 9D 00 02  STA ram_spr_Y,X
 C - - - - - 0x01DDAB 07:DD9B: B9 00 01  LDA ram_0100,Y
@@ -5251,7 +5251,7 @@ C - - - - - 0x01DDD7 07:DDC7: E8        INX
 C - - - - - 0x01DDD8 07:DDC8: E8        INX
 C - - - - - 0x01DDD9 07:DDC9: C8        INY
 C - - - - - 0x01DDDA 07:DDCA: C0 0C     CPY #$0C
-C - - - - - 0x01DDDC 07:DDCC: D0 C7     BNE bra_DD95
+C - - - - - 0x01DDDC 07:DDCC: D0 C7     BNE bra_DD95_loop
 C - - - - - 0x01DDDE 07:DDCE: AD 3F 01  LDA ram_длительность_погоды_ХЗ
 C - - - - - 0x01DDE1 07:DDD1: C9 38     CMP #$38
 C - - - - - 0x01DDE3 07:DDD3: 90 05     BCC bra_DDDA_RTS

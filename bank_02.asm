@@ -13839,7 +13839,7 @@ loc_BB5D:
 ofs_BB78_00:
 - - - - - - 0x00BB88 02:BB78: 20 62 C0  JSR sub_0x01EF64
 - - - - - - 0x00BB8B 02:BB7B: A9 F0     LDA #$F0
-- - - - - - 0x00BB8D 02:BB7D: 8D 56 00  STA ram_spr_Y_limit
+- - - - - - 0x00BB8D 02:BB7D: 8D 56 00  STA ram_limit_spr_Y
 - - - - - - 0x00BB90 02:BB80: A9 80     LDA #$80
 - - - - - - 0x00BB92 02:BB82: 85 4F     STA ram_NMI_flag
 - - - - - - 0x00BB94 02:BB84: A9 03     LDA #$03
