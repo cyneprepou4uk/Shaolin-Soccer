@@ -14054,7 +14054,7 @@ C - - - - - 0x0078D3 01:B8C3: 18        CLC
 C - - - - - 0x0078D4 01:B8C4: 69 10     ADC #$10
 C - - - - - 0x0078D6 01:B8C6: 20 68 C0  JSR sub_0x01E838
 C - - - - - 0x0078D9 01:B8C9: 20 11 C0  JSR sub_0x01ECB9
-C - - - - - 0x0078DC 01:B8CC: 20 17 C0  JSR sub_0x01EE81
+C - - - - - 0x0078DC 01:B8CC: 20 17 C0  JSR sub_0x01EE81_disable_NMI
 C - - - - - 0x0078DF 01:B8CF: 20 1D C0  JSR sub_0x01ECD1
 C - - - - - 0x0078E2 01:B8D2: 20 5C B5  JSR sub_B55C
 C - - - - - 0x0078E5 01:B8D5: 20 55 B9  JSR sub_B955

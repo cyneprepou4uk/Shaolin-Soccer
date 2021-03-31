@@ -854,7 +854,7 @@ tbl_C370_младший_байт_непрямого_прыжка:
 
 
 loc_C3D4:
-C D 2 - - - 0x01C3E4 07:C3D4: 20 71 EE  JSR sub_EE71
+C D 2 - - - 0x01C3E4 07:C3D4: 20 71 EE  JSR sub_EE71_disable_NMI
 C - - - - - 0x01C3E7 07:C3D7: A9 06     LDA #$06
 C - - - - - 0x01C3E9 07:C3D9: 20 D3 EE  JSR sub_EED3_переключить_банк_prg
 C - - - - - 0x01C3EC 07:C3DC: 20 54 EF  JSR sub_EF54
@@ -1705,7 +1705,7 @@ C - - - - - 0x01CA56 07:CA46: 8D F1 00  STA ram_копия_камеры_X_hi
 C - - - - - 0x01CA59 07:CA49: A9 00     LDA #$00
 C - - - - - 0x01CA5B 07:CA4B: 8D 00 A0  STA $A000
 C - - - - - 0x01CA5E 07:CA4E: 20 A9 EC  JSR sub_ECA9
-C - - - - - 0x01CA61 07:CA51: 20 71 EE  JSR sub_EE71
+C - - - - - 0x01CA61 07:CA51: 20 71 EE  JSR sub_EE71_disable_NMI
 C - - - - - 0x01CA64 07:CA54: 20 C1 EC  JSR sub_ECC1
 C - - - - - 0x01CA67 07:CA57: 60        RTS
 
@@ -2545,7 +2545,7 @@ C - - - - - 0x01CFE4 07:CFD4: 20 7D EE  JSR sub_EE7D
 C - - - - - 0x01CFE7 07:CFD7: A9 B1     LDA #$B1
 C - - - - - 0x01CFE9 07:CFD9: 85 56     STA ram_ограничитель_Y_спрайтов
 C - - - - - 0x01CFEB 07:CFDB: 20 A9 EC  JSR sub_ECA9
-C - - - - - 0x01CFEE 07:CFDE: 20 71 EE  JSR sub_EE71
+C - - - - - 0x01CFEE 07:CFDE: 20 71 EE  JSR sub_EE71_disable_NMI
 C - - - - - 0x01CFF1 07:CFE1: 20 C1 EC  JSR sub_ECC1
 C - - - - - 0x01CFF4 07:CFE4: 20 D9 E3  JSR sub_E3D9
 C - - - - - 0x01CFF7 07:CFE7: 20 7B C2  JSR sub_C27B
@@ -7118,7 +7118,7 @@ C - - - - - 0x01E88B 07:E87B: 85 2F     STA ram_002F
 C - - - - - 0x01E88D 07:E87D: A9 00     LDA #$00
 C - - - - - 0x01E88F 07:E87F: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
 C - - - - - 0x01E892 07:E882: 20 A9 EC  JSR sub_ECA9
-C - - - - - 0x01E895 07:E885: 20 71 EE  JSR sub_EE71
+C - - - - - 0x01E895 07:E885: 20 71 EE  JSR sub_EE71_disable_NMI
 C - - - - - 0x01E898 07:E888: 20 C1 EC  JSR sub_ECC1
 C - - - - - 0x01E89B 07:E88B: 24 1F     BIT ram_001F
 C - - - - - 0x01E89D 07:E88D: 70 06     BVS bra_E895
@@ -8218,9 +8218,9 @@ C - - - - - 0x01EE80 07:EE70: 60        RTS
 
 
 
-.export sub_0x01EE81
-sub_0x01EE81:
-sub_EE71:
+.export sub_0x01EE81_disable_NMI
+sub_0x01EE81_disable_NMI:
+sub_EE71_disable_NMI:
 C D 3 - - - 0x01EE81 07:EE71: 48        PHA
 C - - - - - 0x01EE82 07:EE72: A5 4C     LDA ram_для_2000
 C - - - - - 0x01EE84 07:EE74: 29 7F     AND #$7F
@@ -8404,7 +8404,7 @@ C - - - - - 0x01EE74 07:EE64: 60        RTS
 
 ; bzk мусор
 - - - - - - 0x01EF84 07:EF74: 20 A9 EC  JSR sub_ECA9
-- - - - - - 0x01EF87 07:EF77: 20 71 EE  JSR sub_EE71
+- - - - - - 0x01EF87 07:EF77: 20 71 EE  JSR sub_EE71_disable_NMI
 - - - - - - 0x01EF8A 07:EF7A: A5 4C     LDA ram_для_2000
 - - - - - - 0x01EF8C 07:EF7C: 29 FB     AND #$FB
 - - - - - - 0x01EF8E 07:EF7E: 85 4C     STA ram_для_2000
