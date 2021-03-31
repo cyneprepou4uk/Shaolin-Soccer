@@ -10369,8 +10369,6 @@ C - - - - - 0x01FDC5 07:FDB5: 86 EE     STX ram_pos_Y_lo_camera
 C - - - - - 0x01FDC7 07:FDB7: 86 EF     STX ram_pos_Y_hi_camera
 C - - - - - 0x01FDC9 07:FDB9: 86 48     STX ram_0048
 C - - - - - 0x01FDCB 07:FDBB: 8E 16 40  STX $4016
-C - - - - - 0x01FDCE 07:FDBE: A9 FF     LDA #$FF
-C - - - - - 0x01FDD0 07:FDC0: 85 47     STA ram_0047
 C - - - - - 0x01FDD2 07:FDC2: A9 40     LDA #$40
 C - - - - - 0x01FDD4 07:FDC4: 8D 17 40  STA $4017
 C - - - - - 0x01FDD7 07:FDC7: A9 0F     LDA #$0F
