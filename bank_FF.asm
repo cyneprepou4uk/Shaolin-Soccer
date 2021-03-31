@@ -7991,7 +7991,6 @@ sub_ECC1:
 C D 3 - - - 0x01ECD1 07:ECC1: A5 4D     LDA ram_for_2001
 C - - - - - 0x01ECD3 07:ECC3: 29 E7     AND #$E7
 bra_ECC5:
-loc_ECC5:
 C - - - - - 0x01ECD5 07:ECC5: 85 4D     STA ram_for_2001
 C - - - - - 0x01ECD7 07:ECC7: 8D 01 20  STA $2001
 C - - - - - 0x01ECDA 07:ECCA: 60        RTS
@@ -8003,21 +8002,6 @@ sub_ECCB:
 C D 3 - - - 0x01ECDB 07:ECCB: A5 4D     LDA ram_for_2001
 C - - - - - 0x01ECDD 07:ECCD: 09 18     ORA #$18
 C - - - - - 0x01ECDF 07:ECCF: D0 F4     BNE bra_ECC5
-
-
-
-- - - - - - 0x01ECE1 07:ECD1: A5 4D     LDA ram_for_2001
-- - - - - - 0x01ECE3 07:ECD3: 29 EF     AND #$EF
-- - - - - - 0x01ECE5 07:ECD5: 4C C5 EC  JMP loc_ECC5
-- - - - - - 0x01ECE8 07:ECD8: A5 4D     LDA ram_for_2001
-- - - - - - 0x01ECEA 07:ECDA: 09 10     ORA #$10
-- - - - - - 0x01ECEC 07:ECDC: D0 E7     BNE bra_ECC5
-- - - - - - 0x01ECEE 07:ECDE: A5 4D     LDA ram_for_2001
-- - - - - - 0x01ECF0 07:ECE0: 29 F7     AND #$F7
-- - - - - - 0x01ECF2 07:ECE2: 4C C5 EC  JMP loc_ECC5
-- - - - - - 0x01ECF5 07:ECE5: A5 4D     LDA ram_for_2001
-- - - - - - 0x01ECF7 07:ECE7: 09 08     ORA #$08
-- - - - - - 0x01ECF9 07:ECE9: D0 DA     BNE bra_ECC5
 
 
 
