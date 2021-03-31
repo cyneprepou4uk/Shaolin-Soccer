@@ -1109,7 +1109,7 @@ C - - - - - 0x01C5F7 07:C5E7: 8D FA 05  STA ram_05FA
 C - - - - - 0x01C5FA 07:C5EA: A9 86     LDA #$86
 C - - - - - 0x01C5FC 07:C5EC: 8D F8 05  STA ram_вид_статусбара
 C - - - - - 0x01C5FF 07:C5EF: A9 00     LDA #$00
-C - - - - - 0x01C601 07:C5F1: 8D F9 05  STA ram_флаг_готового_статусбара
+C - - - - - 0x01C601 07:C5F1: 8D F9 05  STA ram_flag_hud_ready
 C - - - - - 0x01C604 07:C5F4: A2 00     LDX #$00
 C - - - - - 0x01C606 07:C5F6: A9 0F     LDA #$0F
 bra_C5F8:
@@ -1526,7 +1526,7 @@ C - - - - - 0x01C909 07:C8F9: A9 81     LDA #$81
 bra_C8FB:
 C - - - - - 0x01C90B 07:C8FB: 8D F8 05  STA ram_вид_статусбара
 C - - - - - 0x01C90E 07:C8FE: A9 00     LDA #$00
-C - - - - - 0x01C910 07:C900: 8D F9 05  STA ram_флаг_готового_статусбара
+C - - - - - 0x01C910 07:C900: 8D F9 05  STA ram_flag_hud_ready
 C - - - - - 0x01C913 07:C903: A9 0F     LDA #$0F
 C - - - - - 0x01C915 07:C905: 8D AD 05  STA ram_номер_палитры_фона + 1
 C - - - - - 0x01C918 07:C908: 20 D5 D0  JSR sub_D0D5
@@ -2566,7 +2566,7 @@ C - - - - - 0x01D012 07:D002: A9 80     LDA #$80
 bra_D004:
 C - - - - - 0x01D014 07:D004: 8D F8 05  STA ram_вид_статусбара
 C - - - - - 0x01D017 07:D007: A9 00     LDA #$00
-C - - - - - 0x01D019 07:D009: 8D F9 05  STA ram_флаг_готового_статусбара
+C - - - - - 0x01D019 07:D009: 8D F9 05  STA ram_flag_hud_ready
 C - - - - - 0x01D01C 07:D00C: AD 5A 05  LDA ram_номер_музыки
 C - - - - - 0x01D01F 07:D00F: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01D022 07:D012: A9 03     LDA #$03
@@ -4238,12 +4238,12 @@ C - - - - - 0x01D6DE 07:D6CE: 60        RTS
 sub_D6CF:
 C - - - - - 0x01D6DF 07:D6CF: 8D 06 20  STA $2006
 C - - - - - 0x01D6E2 07:D6D2: A0 04     LDY #$04
-bra_D6D4:
+bra_D6D4_loop:
 C - - - - - 0x01D6E4 07:D6D4: BD 96 06  LDA ram_буфер_атрибутов,X
 C - - - - - 0x01D6E7 07:D6D7: 8D 07 20  STA $2007
 C - - - - - 0x01D6EA 07:D6DA: E8        INX
 C - - - - - 0x01D6EB 07:D6DB: 88        DEY
-C - - - - - 0x01D6EC 07:D6DC: 10 F6     BPL bra_D6D4
+C - - - - - 0x01D6EC 07:D6DC: 10 F6     BPL bra_D6D4_loop
 C - - - - - 0x01D6EE 07:D6DE: AD 02 20  LDA $2002
 C - - - - - 0x01D6F1 07:D6E1: A9 2A     LDA #$2A
 C - - - - - 0x01D6F3 07:D6E3: 8D 06 20  STA $2006
@@ -5813,8 +5813,8 @@ C - - - - - 0x01E186 07:E176: A5 4C     LDA ram_for_2000
 C - - - - - 0x01E188 07:E178: 29 FB     AND #$FB
 C - - - - - 0x01E18A 07:E17A: 85 4C     STA ram_for_2000
 C - - - - - 0x01E18C 07:E17C: 8D 00 20  STA $2000
-C - - - - - 0x01E18F 07:E17F: AD F9 05  LDA ram_флаг_готового_статусбара
-C - - - - - 0x01E192 07:E182: F0 74     BEQ bra_E1F8
+C - - - - - 0x01E18F 07:E17F: AD F9 05  LDA ram_flag_hud_ready
+C - - - - - 0x01E192 07:E182: F0 74     BEQ bra_E1F8_hud_is_not_ready
 C - - - - - 0x01E194 07:E184: AD F8 05  LDA ram_вид_статусбара
 C - - - - - 0x01E197 07:E187: 29 7F     AND #$7F
 C - - - - - 0x01E199 07:E189: 0A        ASL
@@ -5824,9 +5824,9 @@ C - - - - - 0x01E19E 07:E18E: 85 0C     STA ram_000C
 C - - - - - 0x01E1A0 07:E190: B9 1A E2  LDA tbl_E219 + 1,Y
 C - - - - - 0x01E1A3 07:E193: 85 0D     STA ram_000D
 C - - - - - 0x01E1A5 07:E195: AD 02 20  LDA $2002
-C - - - - - 0x01E1A8 07:E198: A9 2B     LDA #$2B
+C - - - - - 0x01E1A8 07:E198: A9 2B     LDA #> $2B06
 C - - - - - 0x01E1AA 07:E19A: 8D 06 20  STA $2006
-C - - - - - 0x01E1AD 07:E19D: A9 06     LDA #$06
+C - - - - - 0x01E1AD 07:E19D: A9 06     LDA #< $2B06
 C - - - - - 0x01E1AF 07:E19F: 8D 06 20  STA $2006
 C - - - - - 0x01E1B2 07:E1A2: A0 00     LDY #$00
 bra_E1A4:
@@ -5836,27 +5836,27 @@ C - - - - - 0x01E1B9 07:E1A9: C8        INY
 C - - - - - 0x01E1BA 07:E1AA: C0 15     CPY #$15
 C - - - - - 0x01E1BC 07:E1AC: 90 F6     BCC bra_E1A4
 C - - - - - 0x01E1BE 07:E1AE: AD 02 20  LDA $2002
-C - - - - - 0x01E1C1 07:E1B1: A9 2B     LDA #$2B
+C - - - - - 0x01E1C1 07:E1B1: A9 2B     LDA #> $2B26
 C - - - - - 0x01E1C3 07:E1B3: 8D 06 20  STA $2006
-C - - - - - 0x01E1C6 07:E1B6: A9 26     LDA #$26
+C - - - - - 0x01E1C6 07:E1B6: A9 26     LDA #< $2B26
 C - - - - - 0x01E1C8 07:E1B8: 8D 06 20  STA $2006
-bra_E1BB:
+bra_E1BB_loop:
 C - - - - - 0x01E1CB 07:E1BB: B1 0C     LDA (ram_000C),Y
 C - - - - - 0x01E1CD 07:E1BD: 8D 07 20  STA $2007
 C - - - - - 0x01E1D0 07:E1C0: C8        INY
 C - - - - - 0x01E1D1 07:E1C1: C0 29     CPY #$29
-C - - - - - 0x01E1D3 07:E1C3: 90 F6     BCC bra_E1BB
+C - - - - - 0x01E1D3 07:E1C3: 90 F6     BCC bra_E1BB_loop
 C - - - - - 0x01E1D5 07:E1C5: AD 02 20  LDA $2002
-C - - - - - 0x01E1D8 07:E1C8: A9 2B     LDA #$2B
+C - - - - - 0x01E1D8 07:E1C8: A9 2B     LDA #> $2B46
 C - - - - - 0x01E1DA 07:E1CA: 8D 06 20  STA $2006
-C - - - - - 0x01E1DD 07:E1CD: A9 46     LDA #$46
+C - - - - - 0x01E1DD 07:E1CD: A9 46     LDA #< $2B46
 C - - - - - 0x01E1DF 07:E1CF: 8D 06 20  STA $2006
-bra_E1D2:
+bra_E1D2_loop:
 C - - - - - 0x01E1E2 07:E1D2: B1 0C     LDA (ram_000C),Y
 C - - - - - 0x01E1E4 07:E1D4: 8D 07 20  STA $2007
 C - - - - - 0x01E1E7 07:E1D7: C8        INY
 C - - - - - 0x01E1E8 07:E1D8: C0 3E     CPY #$3E
-C - - - - - 0x01E1EA 07:E1DA: 90 F6     BCC bra_E1D2
+C - - - - - 0x01E1EA 07:E1DA: 90 F6     BCC bra_E1D2_loop
 C - - - - - 0x01E1EC 07:E1DC: AD F8 05  LDA ram_вид_статусбара
 C - - - - - 0x01E1EF 07:E1DF: 29 7F     AND #$7F
 C - - - - - 0x01E1F1 07:E1E1: 8D F8 05  STA ram_вид_статусбара
@@ -5870,19 +5870,19 @@ C - - - - - 0x01E1FF 07:E1EF: A9 00     LDA #$00
 C - - - - - 0x01E201 07:E1F1: 8D FA 05  STA ram_05FA
 C - - - - - 0x01E204 07:E1F4: 8D F7 05  STA ram_задержка_перелив_надп
 C D 3 - - - 0x01E207 07:E1F7: 60        RTS
-bra_E1F8:
+bra_E1F8_hud_is_not_ready:
 C - - - - - 0x01E208 07:E1F8: AD 02 20  LDA $2002
-C - - - - - 0x01E20B 07:E1FB: A9 2B     LDA #$2B
+C - - - - - 0x01E20B 07:E1FB: A9 2B     LDA #> $2BF0
 C - - - - - 0x01E20D 07:E1FD: 8D 06 20  STA $2006
-C - - - - - 0x01E210 07:E200: A9 F0     LDA #$F0
+C - - - - - 0x01E210 07:E200: A9 F0     LDA #< $2BF0
 C - - - - - 0x01E212 07:E202: 8D 06 20  STA $2006
 C - - - - - 0x01E215 07:E205: A2 07     LDX #$07
 C - - - - - 0x01E217 07:E207: A9 AA     LDA #$AA
-bra_E209:
+bra_E209_loop:
 C - - - - - 0x01E219 07:E209: 8D 07 20  STA $2007
 C - - - - - 0x01E21C 07:E20C: CA        DEX
-C - - - - - 0x01E21D 07:E20D: 10 FA     BPL bra_E209
-C - - - - - 0x01E21F 07:E20F: EE F9 05  INC ram_флаг_готового_статусбара
+C - - - - - 0x01E21D 07:E20D: 10 FA     BPL bra_E209_loop
+C - - - - - 0x01E21F 07:E20F: EE F9 05  INC ram_flag_hud_ready
 C - - - - - 0x01E222 07:E212: 60        RTS
 
 
@@ -6621,53 +6621,53 @@ C - - - - - 0x01E5B0 07:E5A0: 60        RTS
 
 sub_E5A1:
 C - - - - - 0x01E5B1 07:E5A1: AD 02 20  LDA $2002
-C - - - - - 0x01E5B4 07:E5A4: A9 2A     LDA #$2A
+C - - - - - 0x01E5B4 07:E5A4: A9 2A     LDA #> $2A00
 C - - - - - 0x01E5B6 07:E5A6: 8D 06 20  STA $2006
-C - - - - - 0x01E5B9 07:E5A9: A9 00     LDA #$00
+C - - - - - 0x01E5B9 07:E5A9: A9 00     LDA #< $2A00
 C - - - - - 0x01E5BB 07:E5AB: 8D 06 20  STA $2006
 C - - - - - 0x01E5BE 07:E5AE: A0 00     LDY #$00
-bra_E5B0:
+bra_E5B0_loop:
 C - - - - - 0x01E5C0 07:E5B0: B9 10 E6  LDA tbl_E610,Y
 C - - - - - 0x01E5C3 07:E5B3: 8D 07 20  STA $2007
 C - - - - - 0x01E5C6 07:E5B6: C8        INY
 C - - - - - 0x01E5C7 07:E5B7: C0 E0     CPY #$E0
-C - - - - - 0x01E5C9 07:E5B9: D0 F5     BNE bra_E5B0
+C - - - - - 0x01E5C9 07:E5B9: D0 F5     BNE bra_E5B0_loop
 C - - - - - 0x01E5CB 07:E5BB: AD 02 20  LDA $2002
-C - - - - - 0x01E5CE 07:E5BE: A9 2A     LDA #$2A
+C - - - - - 0x01E5CE 07:E5BE: A9 2A     LDA #> $2AE0
 C - - - - - 0x01E5D0 07:E5C0: 8D 06 20  STA $2006
-C - - - - - 0x01E5D3 07:E5C3: A9 E0     LDA #$E0
+C - - - - - 0x01E5D3 07:E5C3: A9 E0     LDA #< $2AE0
 C - - - - - 0x01E5D5 07:E5C5: 8D 06 20  STA $2006
 C - - - - - 0x01E5D8 07:E5C8: A0 00     LDY #$00
 C - - - - - 0x01E5DA 07:E5CA: A9 0F     LDA #$0F
-bra_E5CC:
+bra_E5CC_loop:
 C - - - - - 0x01E5DC 07:E5CC: 8D 07 20  STA $2007
 C - - - - - 0x01E5DF 07:E5CF: C8        INY
 C - - - - - 0x01E5E0 07:E5D0: C0 E0     CPY #$E0
-C - - - - - 0x01E5E2 07:E5D2: D0 F8     BNE bra_E5CC
+C - - - - - 0x01E5E2 07:E5D2: D0 F8     BNE bra_E5CC_loop
 C - - - - - 0x01E5E4 07:E5D4: AD 02 20  LDA $2002
-C - - - - - 0x01E5E7 07:E5D7: A9 2B     LDA #$2B
+C - - - - - 0x01E5E7 07:E5D7: A9 2B     LDA #> $2BE0
 C - - - - - 0x01E5E9 07:E5D9: 8D 06 20  STA $2006
-C - - - - - 0x01E5EC 07:E5DC: A9 E0     LDA #$E0
+C - - - - - 0x01E5EC 07:E5DC: A9 E0     LDA #< $2BE0
 C - - - - - 0x01E5EE 07:E5DE: 8D 06 20  STA $2006
 C - - - - - 0x01E5F1 07:E5E1: A0 00     LDY #$00
 C - - - - - 0x01E5F3 07:E5E3: A9 AA     LDA #$AA
-bra_E5E5:
+bra_E5E5_loop:
 C - - - - - 0x01E5F5 07:E5E5: 8D 07 20  STA $2007
 C - - - - - 0x01E5F8 07:E5E8: C8        INY
 C - - - - - 0x01E5F9 07:E5E9: C0 20     CPY #$20
-C - - - - - 0x01E5FB 07:E5EB: D0 F8     BNE bra_E5E5
+C - - - - - 0x01E5FB 07:E5EB: D0 F8     BNE bra_E5E5_loop
 C - - - - - 0x01E5FD 07:E5ED: AD 02 20  LDA $2002
-C - - - - - 0x01E600 07:E5F0: A9 2B     LDA #$2B
+C - - - - - 0x01E600 07:E5F0: A9 2B     LDA #> $2BE0
 C - - - - - 0x01E602 07:E5F2: 8D 06 20  STA $2006
-C - - - - - 0x01E605 07:E5F5: A9 E0     LDA #$E0
+C - - - - - 0x01E605 07:E5F5: A9 E0     LDA #< $2BE0
 C - - - - - 0x01E607 07:E5F7: 8D 06 20  STA $2006
 C - - - - - 0x01E60A 07:E5FA: A0 00     LDY #$00
-bra_E5FC:
+bra_E5FC_loop:
 C - - - - - 0x01E60C 07:E5FC: B9 08 E6  LDA tbl_E608,Y
 C - - - - - 0x01E60F 07:E5FF: 8D 07 20  STA $2007
 C - - - - - 0x01E612 07:E602: C8        INY
 C - - - - - 0x01E613 07:E603: C0 08     CPY #$08
-C - - - - - 0x01E615 07:E605: D0 F5     BNE bra_E5FC
+C - - - - - 0x01E615 07:E605: D0 F5     BNE bra_E5FC_loop
 C - - - - - 0x01E617 07:E607: 60        RTS
 
 
@@ -7982,7 +7982,7 @@ C - - - - - 0x01ECDF 07:ECCF: D0 F4     BNE bra_ECC5
 
 
 
-sub_ECEB:
+sub_ECEB_clear_nmt:
 C - - - - - 0x01ECFB 07:ECEB: 85 0C     STA ram_000C
 C - - - - - 0x01ECFD 07:ECED: 86 0D     STX ram_000D
 C - - - - - 0x01ECFF 07:ECEF: 84 0E     STY ram_000E
@@ -8002,12 +8002,12 @@ C - - - - - 0x01ED1B 07:ED0B: B0 02     BCS bra_ED0F
 bra_ED0F:
 C - - - - - 0x01ED1F 07:ED0F: A0 00     LDY #$00
 C - - - - - 0x01ED21 07:ED11: A5 0D     LDA ram_000D
-bra_ED13:
+bra_ED13_loop:
 C - - - - - 0x01ED23 07:ED13: 8D 07 20  STA $2007
 C - - - - - 0x01ED26 07:ED16: 88        DEY
-C - - - - - 0x01ED27 07:ED17: D0 FA     BNE bra_ED13
+C - - - - - 0x01ED27 07:ED17: D0 FA     BNE bra_ED13_loop
 C - - - - - 0x01ED29 07:ED19: CA        DEX
-C - - - - - 0x01ED2A 07:ED1A: D0 F7     BNE bra_ED13
+C - - - - - 0x01ED2A 07:ED1A: D0 F7     BNE bra_ED13_loop
 C - - - - - 0x01ED2C 07:ED1C: A4 0E     LDY ram_000E
 C - - - - - 0x01ED2E 07:ED1E: A5 0C     LDA ram_000C
 C - - - - - 0x01ED30 07:ED20: C9 20     CMP #$20
@@ -8348,20 +8348,20 @@ sub_EF27:
 C - - - - - 0x01EF37 07:EF27: A9 20     LDA #$20
 C - - - - - 0x01EF39 07:EF29: A0 00     LDY #$00
 C - - - - - 0x01EF3B 07:EF2B: A2 00     LDX #$00
-C - - - - - 0x01EF3D 07:EF2D: 20 EB EC  JSR sub_ECEB
+C - - - - - 0x01EF3D 07:EF2D: 20 EB EC  JSR sub_ECEB_clear_nmt
 C - - - - - 0x01EF40 07:EF30: A9 24     LDA #$24
-C - - - - - 0x01EF42 07:EF32: 20 EB EC  JSR sub_ECEB
+C - - - - - 0x01EF42 07:EF32: 20 EB EC  JSR sub_ECEB_clear_nmt
 C - - - - - 0x01EF45 07:EF35: A9 28     LDA #$28
-C - - - - - 0x01EF47 07:EF37: 20 EB EC  JSR sub_ECEB
-C - - - - - 0x01EF4A 07:EF3A: 20 3E EF  JSR sub_EF3E
+C - - - - - 0x01EF47 07:EF37: 20 EB EC  JSR sub_ECEB_clear_nmt
+C - - - - - 0x01EF4A 07:EF3A: 20 3E EF  JSR sub_EF3E_clear_nmt_attr
 C - - - - - 0x01EF4D 07:EF3D: 60        RTS
 
 
 
-sub_EF3E:
+sub_EF3E_clear_nmt_attr:
 C - - - - - 0x01EF4E 07:EF3E: AD 02 20  LDA $2002
-C - - - - - 0x01EF51 07:EF41: A9 23     LDA #$23
-C - - - - - 0x01EF53 07:EF43: A0 C0     LDY #$C0
+C - - - - - 0x01EF51 07:EF41: A9 23     LDA #> $23C0
+C - - - - - 0x01EF53 07:EF43: A0 C0     LDY #< $23C0
 C - - - - - 0x01EF55 07:EF45: 8D 06 20  STA $2006
 C - - - - - 0x01EF58 07:EF48: 8C 06 20  STY $2006
 C - - - - - 0x01EF5B 07:EF4B: A9 00     LDA #$00
@@ -8523,9 +8523,9 @@ C - - - - - 0x01F0A5 07:F095: D0 F6     BNE bra_F08D_loop
 C - - - - - 0x01F0A7 07:F097: AD D9 06  LDA ram_байт_2006_hi_палитра
 C - - - - - 0x01F0AA 07:F09A: C9 3F     CMP #$3F
 C - - - - - 0x01F0AC 07:F09C: D0 10     BNE bra_F0AE
-C - - - - - 0x01F0AE 07:F09E: A9 3F     LDA #$3F
+C - - - - - 0x01F0AE 07:F09E: A9 3F     LDA #> $3F00    ; bzk опт, A = 3F уже
 C - - - - - 0x01F0B0 07:F0A0: 8D 06 20  STA $2006
-C - - - - - 0x01F0B3 07:F0A3: A9 00     LDA #$00
+C - - - - - 0x01F0B3 07:F0A3: A9 00     LDA #< $3F00
 C - - - - - 0x01F0B5 07:F0A5: 8D 06 20  STA $2006
 C - - - - - 0x01F0B8 07:F0A8: 8D 06 20  STA $2006
 C - - - - - 0x01F0BB 07:F0AB: 8D 06 20  STA $2006
@@ -8583,7 +8583,7 @@ C - - - - - 0x01F12C 07:F11C: D0 03     BNE bra_F121
 C - - - - - 0x01F12E 07:F11E: 4C 5D F1  JMP loc_F15D
 bra_F121:
 C - - - - - 0x01F131 07:F121: A2 00     LDX #$00
-loc_F123:
+loc_F123_loop:
 C D 3 - - - 0x01F133 07:F123: AD 02 20  LDA $2002
 C - - - - - 0x01F136 07:F126: A9 23     LDA #$23
 C - - - - - 0x01F138 07:F128: 8D 06 20  STA $2006
@@ -8593,11 +8593,11 @@ C - - - - - 0x01F141 07:F131: BD 9A 05  LDA ram_059A,X
 C - - - - - 0x01F144 07:F134: 8D 07 20  STA $2007
 C - - - - - 0x01F147 07:F137: E8        INX
 C - - - - - 0x01F148 07:F138: E0 07     CPX #$07
-C - - - - - 0x01F14A 07:F13A: F0 03     BEQ bra_F13F
-C - - - - - 0x01F14C 07:F13C: 4C 23 F1  JMP loc_F123
+C - - - - - 0x01F14A 07:F13A: F0 03     BEQ bra_F13F    ; bzk опт
+C - - - - - 0x01F14C 07:F13C: 4C 23 F1  JMP loc_F123_loop
 bra_F13F:
 C - - - - - 0x01F14F 07:F13F: A2 00     LDX #$00
-loc_F141:
+loc_F141_loop:
 C D 3 - - - 0x01F151 07:F141: AD 02 20  LDA $2002
 C - - - - - 0x01F154 07:F144: A9 2B     LDA #$2B
 C - - - - - 0x01F156 07:F146: 8D 06 20  STA $2006
@@ -8607,8 +8607,8 @@ C - - - - - 0x01F15F 07:F14F: BD A1 05  LDA ram_05A1,X
 C - - - - - 0x01F162 07:F152: 8D 07 20  STA $2007
 C - - - - - 0x01F165 07:F155: E8        INX
 C - - - - - 0x01F166 07:F156: E0 04     CPX #$04
-C - - - - - 0x01F168 07:F158: F0 03     BEQ bra_F15D
-C - - - - - 0x01F16A 07:F15A: 4C 41 F1  JMP loc_F141
+C - - - - - 0x01F168 07:F158: F0 03     BEQ bra_F15D    ; bzk опт
+C - - - - - 0x01F16A 07:F15A: 4C 41 F1  JMP loc_F141_loop
 bra_F15D:
 loc_F15D:
 C D 3 - - - 0x01F16D 07:F15D: AD AB 05  LDA ram_флаг_обновл_тайлов_экр
@@ -8650,42 +8650,42 @@ C - - - - - 0x01F1A2 07:F192: 09 04     ORA #$04
 C - - - - - 0x01F1A4 07:F194: 85 4C     STA ram_for_2000
 C - - - - - 0x01F1A6 07:F196: 8D 00 20  STA $2000
 C - - - - - 0x01F1A9 07:F199: AD 02 20  LDA $2002
-C - - - - - 0x01F1AC 07:F19C: A9 22     LDA #$22
+C - - - - - 0x01F1AC 07:F19C: A9 22     LDA #> $228B
 C - - - - - 0x01F1AE 07:F19E: 8D 06 20  STA $2006
-C - - - - - 0x01F1B1 07:F1A1: A9 8B     LDA #$8B
+C - - - - - 0x01F1B1 07:F1A1: A9 8B     LDA #< $228B
 C - - - - - 0x01F1B3 07:F1A3: 8D 06 20  STA $2006
 C - - - - - 0x01F1B6 07:F1A6: A0 00     LDY #$00
 C - - - - - 0x01F1B8 07:F1A8: A2 05     LDX #$05
-bra_F1AA:
+bra_F1AA_loop:
 C - - - - - 0x01F1BA 07:F1AA: B1 0C     LDA (ram_000C),Y
 C - - - - - 0x01F1BC 07:F1AC: 8D 07 20  STA $2007
 C - - - - - 0x01F1BF 07:F1AF: C8        INY
 C - - - - - 0x01F1C0 07:F1B0: CA        DEX
-C - - - - - 0x01F1C1 07:F1B1: 10 F7     BPL bra_F1AA
+C - - - - - 0x01F1C1 07:F1B1: 10 F7     BPL bra_F1AA_loop
 C - - - - - 0x01F1C3 07:F1B3: AD 02 20  LDA $2002
-C - - - - - 0x01F1C6 07:F1B6: A9 22     LDA #$22
+C - - - - - 0x01F1C6 07:F1B6: A9 22     LDA #> $220C
 C - - - - - 0x01F1C8 07:F1B8: 8D 06 20  STA $2006
-C - - - - - 0x01F1CB 07:F1BB: A9 0C     LDA #$0C
+C - - - - - 0x01F1CB 07:F1BB: A9 0C     LDA #< $220C
 C - - - - - 0x01F1CD 07:F1BD: 8D 06 20  STA $2006
 C - - - - - 0x01F1D0 07:F1C0: A2 0A     LDX #$0A
-bra_F1C2:
+bra_F1C2_loop:
 C - - - - - 0x01F1D2 07:F1C2: B1 0C     LDA (ram_000C),Y
 C - - - - - 0x01F1D4 07:F1C4: 8D 07 20  STA $2007
 C - - - - - 0x01F1D7 07:F1C7: C8        INY
 C - - - - - 0x01F1D8 07:F1C8: CA        DEX
-C - - - - - 0x01F1D9 07:F1C9: 10 F7     BPL bra_F1C2
+C - - - - - 0x01F1D9 07:F1C9: 10 F7     BPL bra_F1C2_loop
 C - - - - - 0x01F1DB 07:F1CB: AD 02 20  LDA $2002
-C - - - - - 0x01F1DE 07:F1CE: A9 21     LDA #$21
+C - - - - - 0x01F1DE 07:F1CE: A9 21     LDA #> $21CD
 C - - - - - 0x01F1E0 07:F1D0: 8D 06 20  STA $2006
-C - - - - - 0x01F1E3 07:F1D3: A9 CD     LDA #$CD
+C - - - - - 0x01F1E3 07:F1D3: A9 CD     LDA #< $21CD
 C - - - - - 0x01F1E5 07:F1D5: 8D 06 20  STA $2006
 C - - - - - 0x01F1E8 07:F1D8: A2 05     LDX #$05
-bra_F1DA:
+bra_F1DA_loop:
 C - - - - - 0x01F1EA 07:F1DA: B1 0C     LDA (ram_000C),Y
 C - - - - - 0x01F1EC 07:F1DC: 8D 07 20  STA $2007
 C - - - - - 0x01F1EF 07:F1DF: C8        INY
 C - - - - - 0x01F1F0 07:F1E0: CA        DEX
-C - - - - - 0x01F1F1 07:F1E1: 10 F7     BPL bra_F1DA
+C - - - - - 0x01F1F1 07:F1E1: 10 F7     BPL bra_F1DA_loop
 C - - - - - 0x01F1F3 07:F1E3: 4C 3A F3  JMP loc_F33A_запись_флага_гола
 
 
@@ -8702,42 +8702,42 @@ C - - - - - 0x01F204 07:F1F4: 09 04     ORA #$04
 C - - - - - 0x01F206 07:F1F6: 85 4C     STA ram_for_2000
 C - - - - - 0x01F208 07:F1F8: 8D 00 20  STA $2000
 C - - - - - 0x01F20B 07:F1FB: AD 02 20  LDA $2002
-C - - - - - 0x01F20E 07:F1FE: A9 22     LDA #$22
+C - - - - - 0x01F20E 07:F1FE: A9 22     LDA #> $2294
 C - - - - - 0x01F210 07:F200: 8D 06 20  STA $2006
-C - - - - - 0x01F213 07:F203: A9 94     LDA #$94
+C - - - - - 0x01F213 07:F203: A9 94     LDA #< $2294
 C - - - - - 0x01F215 07:F205: 8D 06 20  STA $2006
 C - - - - - 0x01F218 07:F208: A0 00     LDY #$00
 C - - - - - 0x01F21A 07:F20A: A2 05     LDX #$05
-bra_F20C:
+bra_F20C_loop:
 C - - - - - 0x01F21C 07:F20C: B1 0C     LDA (ram_000C),Y
 C - - - - - 0x01F21E 07:F20E: 8D 07 20  STA $2007
 C - - - - - 0x01F221 07:F211: C8        INY
 C - - - - - 0x01F222 07:F212: CA        DEX
-C - - - - - 0x01F223 07:F213: 10 F7     BPL bra_F20C
+C - - - - - 0x01F223 07:F213: 10 F7     BPL bra_F20C_loop
 C - - - - - 0x01F225 07:F215: AD 02 20  LDA $2002
-C - - - - - 0x01F228 07:F218: A9 22     LDA #$22
+C - - - - - 0x01F228 07:F218: A9 22     LDA #> $2213
 C - - - - - 0x01F22A 07:F21A: 8D 06 20  STA $2006
-C - - - - - 0x01F22D 07:F21D: A9 13     LDA #$13
+C - - - - - 0x01F22D 07:F21D: A9 13     LDA #< $2213
 C - - - - - 0x01F22F 07:F21F: 8D 06 20  STA $2006
 C - - - - - 0x01F232 07:F222: A2 0A     LDX #$0A
-bra_F224:
+bra_F224_loop:
 C - - - - - 0x01F234 07:F224: B1 0C     LDA (ram_000C),Y
 C - - - - - 0x01F236 07:F226: 8D 07 20  STA $2007
 C - - - - - 0x01F239 07:F229: C8        INY
 C - - - - - 0x01F23A 07:F22A: CA        DEX
-C - - - - - 0x01F23B 07:F22B: 10 F7     BPL bra_F224
+C - - - - - 0x01F23B 07:F22B: 10 F7     BPL bra_F224_loop
 C - - - - - 0x01F23D 07:F22D: AD 02 20  LDA $2002
-C - - - - - 0x01F240 07:F230: A9 21     LDA #$21
+C - - - - - 0x01F240 07:F230: A9 21     LDA #> $21D2
 C - - - - - 0x01F242 07:F232: 8D 06 20  STA $2006
-C - - - - - 0x01F245 07:F235: A9 D2     LDA #$D2
+C - - - - - 0x01F245 07:F235: A9 D2     LDA #< $21D2
 C - - - - - 0x01F247 07:F237: 8D 06 20  STA $2006
 C - - - - - 0x01F24A 07:F23A: A2 05     LDX #$05
-bra_F23C:
+bra_F23C_loop:
 C - - - - - 0x01F24C 07:F23C: B1 0C     LDA (ram_000C),Y
 C - - - - - 0x01F24E 07:F23E: 8D 07 20  STA $2007
 C - - - - - 0x01F251 07:F241: C8        INY
 C - - - - - 0x01F252 07:F242: CA        DEX
-C - - - - - 0x01F253 07:F243: 10 F7     BPL bra_F23C
+C - - - - - 0x01F253 07:F243: 10 F7     BPL bra_F23C_loop
 C - - - - - 0x01F255 07:F245: 4C 3A F3  JMP loc_F33A_запись_флага_гола
 
 
@@ -8864,24 +8864,24 @@ C - - - - - 0x01F2BE 07:F2AE: 09 04     ORA #$04
 C - - - - - 0x01F2C0 07:F2B0: 85 4C     STA ram_for_2000
 C - - - - - 0x01F2C2 07:F2B2: 8D 00 20  STA $2000
 C - - - - - 0x01F2C5 07:F2B5: AD 02 20  LDA $2002
-C - - - - - 0x01F2C8 07:F2B8: A9 21     LDA #$21
+C - - - - - 0x01F2C8 07:F2B8: A9 21     LDA #> $21D1
 C - - - - - 0x01F2CA 07:F2BA: 8D 06 20  STA $2006
-C - - - - - 0x01F2CD 07:F2BD: A9 D1     LDA #$D1
+C - - - - - 0x01F2CD 07:F2BD: A9 D1     LDA #< $21D1
 C - - - - - 0x01F2CF 07:F2BF: 8D 06 20  STA $2006
 C - - - - - 0x01F2D2 07:F2C2: A2 00     LDX #$00
-bra_F2C4:
-C - - - - - 0x01F2D4 07:F2C4: BD 28 F3  LDA tbl_F328,X
+bra_F2C4_loop:
+C - - - - - 0x01F2D4 07:F2C4: BD 28 F3  LDA tbl_F328_tiles,X
 C - - - - - 0x01F2D7 07:F2C7: 8D 07 20  STA $2007
 C - - - - - 0x01F2DA 07:F2CA: E8        INX
 C - - - - - 0x01F2DB 07:F2CB: E0 04     CPX #$04
-C - - - - - 0x01F2DD 07:F2CD: D0 F5     BNE bra_F2C4
+C - - - - - 0x01F2DD 07:F2CD: D0 F5     BNE bra_F2C4_loop
 C - - - - - 0x01F2DF 07:F2CF: AD 02 20  LDA $2002
-C - - - - - 0x01F2E2 07:F2D2: A9 21     LDA #$21
+C - - - - - 0x01F2E2 07:F2D2: A9 21     LDA #> $21D2
 C - - - - - 0x01F2E4 07:F2D4: 8D 06 20  STA $2006
-C - - - - - 0x01F2E7 07:F2D7: A9 D2     LDA #$D2
+C - - - - - 0x01F2E7 07:F2D7: A9 D2     LDA #< $21D2
 C - - - - - 0x01F2E9 07:F2D9: 8D 06 20  STA $2006
 bra_F2DC:
-C - - - - - 0x01F2EC 07:F2DC: BD 28 F3  LDA tbl_F328,X
+C - - - - - 0x01F2EC 07:F2DC: BD 28 F3  LDA tbl_F328_tiles,X
 C - - - - - 0x01F2EF 07:F2DF: 8D 07 20  STA $2007
 C - - - - - 0x01F2F2 07:F2E2: E8        INX
 C - - - - - 0x01F2F3 07:F2E3: E0 09     CPX #$09
@@ -8896,33 +8896,33 @@ C - - - - - 0x01F2FC 07:F2EC: 09 04     ORA #$04
 C - - - - - 0x01F2FE 07:F2EE: 85 4C     STA ram_for_2000
 C - - - - - 0x01F300 07:F2F0: 8D 00 20  STA $2000
 C - - - - - 0x01F303 07:F2F3: AD 02 20  LDA $2002
-C - - - - - 0x01F306 07:F2F6: A9 21     LDA #$21
+C - - - - - 0x01F306 07:F2F6: A9 21     LDA #> $21CE
 C - - - - - 0x01F308 07:F2F8: 8D 06 20  STA $2006
-C - - - - - 0x01F30B 07:F2FB: A9 CE     LDA #$CE
+C - - - - - 0x01F30B 07:F2FB: A9 CE     LDA #< $21CE
 C - - - - - 0x01F30D 07:F2FD: 8D 06 20  STA $2006
 C - - - - - 0x01F310 07:F300: A2 00     LDX #$00
-bra_F302:
-C - - - - - 0x01F312 07:F302: BD 31 F3  LDA tbl_F331,X
+bra_F302_loop:
+C - - - - - 0x01F312 07:F302: BD 31 F3  LDA tbl_F331_tiles,X
 C - - - - - 0x01F315 07:F305: 8D 07 20  STA $2007
 C - - - - - 0x01F318 07:F308: E8        INX
 C - - - - - 0x01F319 07:F309: E0 04     CPX #$04
-C - - - - - 0x01F31B 07:F30B: D0 F5     BNE bra_F302
+C - - - - - 0x01F31B 07:F30B: D0 F5     BNE bra_F302_loop
 C - - - - - 0x01F31D 07:F30D: AD 02 20  LDA $2002
-C - - - - - 0x01F320 07:F310: A9 21     LDA #$21
+C - - - - - 0x01F320 07:F310: A9 21     LDA #> $21CD
 C - - - - - 0x01F322 07:F312: 8D 06 20  STA $2006
-C - - - - - 0x01F325 07:F315: A9 CD     LDA #$CD
+C - - - - - 0x01F325 07:F315: A9 CD     LDA #< $21CD
 C - - - - - 0x01F327 07:F317: 8D 06 20  STA $2006
-bra_F31A:
-C - - - - - 0x01F32A 07:F31A: BD 31 F3  LDA tbl_F331,X
+bra_F31A_loop:
+C - - - - - 0x01F32A 07:F31A: BD 31 F3  LDA tbl_F331_tiles,X
 C - - - - - 0x01F32D 07:F31D: 8D 07 20  STA $2007
 C - - - - - 0x01F330 07:F320: E8        INX
 C - - - - - 0x01F331 07:F321: E0 09     CPX #$09
-C - - - - - 0x01F333 07:F323: D0 F5     BNE bra_F31A
+C - - - - - 0x01F333 07:F323: D0 F5     BNE bra_F31A_loop
 C - - - - - 0x01F335 07:F325: 4C 3A F3  JMP loc_F33A_запись_флага_гола
 
 
 
-tbl_F328:
+tbl_F328_tiles:
 - D 3 - - - 0x01F338 07:F328: 9E        .byte $9E   ; 
 - D 3 - - - 0x01F339 07:F329: 9E        .byte $9E   ; 
 - D 3 - - - 0x01F33A 07:F32A: 9E        .byte $9E   ; 
@@ -8935,7 +8935,7 @@ tbl_F328:
 
 
 
-tbl_F331:
+tbl_F331_tiles:
 - D 3 - - - 0x01F341 07:F331: 9D        .byte $9D   ; 
 - D 3 - - - 0x01F342 07:F332: 9D        .byte $9D   ; 
 - D 3 - - - 0x01F343 07:F333: 9D        .byte $9D   ; 
@@ -8970,9 +8970,9 @@ C - - - - - 0x01F373 07:F363: 29 FB     AND #$FB
 C - - - - - 0x01F375 07:F365: 85 4C     STA ram_for_2000
 C - - - - - 0x01F377 07:F367: 8D 00 20  STA $2000
 C - - - - - 0x01F37A 07:F36A: AD 02 20  LDA $2002
-C - - - - - 0x01F37D 07:F36D: A9 2A     LDA #$2A    ; ppu hi
+C - - - - - 0x01F37D 07:F36D: A9 2A     LDA #> $2A2D
 C - - - - - 0x01F37F 07:F36F: 8D 06 20  STA $2006
-C - - - - - 0x01F382 07:F372: A9 2D     LDA #$2D    ; ppu lo
+C - - - - - 0x01F382 07:F372: A9 2D     LDA #< $2A2D
 C - - - - - 0x01F384 07:F374: 8D 06 20  STA $2006
 C - - - - - 0x01F387 07:F377: A2 05     LDX #$05
 bra_F379_loop:
@@ -10492,9 +10492,9 @@ C - - - - - 0x01FD36 07:FD26: 09 02     ORA #$02
 C - - - - - 0x01FD38 07:FD28: 85 4C     STA ram_for_2000
 C - - - - - 0x01FD3A 07:FD2A: 8D 00 20  STA $2000
 C - - - - - 0x01FD3D 07:FD2D: AD 02 20  LDA $2002
-C - - - - - 0x01FD40 07:FD30: A9 2A     LDA #$2A
+C - - - - - 0x01FD40 07:FD30: A9 2A     LDA #> $2AE0
 C - - - - - 0x01FD42 07:FD32: 8D 06 20  STA $2006
-C - - - - - 0x01FD45 07:FD35: A9 E0     LDA #$E0
+C - - - - - 0x01FD45 07:FD35: A9 E0     LDA #< $2AE0
 C - - - - - 0x01FD47 07:FD37: 8D 06 20  STA $2006
 C - - - - - 0x01FD4A 07:FD3A: 8E 00 80  STX $8000
 C - - - - - 0x01FD4D 07:FD3D: 8E 01 80  STX $8001
@@ -10519,9 +10519,9 @@ C - - - - - 0x01FD71 07:FD61: 29 FC     AND #$FC
 C - - - - - 0x01FD73 07:FD63: 85 4C     STA ram_for_2000
 C - - - - - 0x01FD75 07:FD65: 8D 00 20  STA $2000
 C - - - - - 0x01FD78 07:FD68: AD 02 20  LDA $2002
-C - - - - - 0x01FD7B 07:FD6B: A9 2A     LDA #$2A
+C - - - - - 0x01FD7B 07:FD6B: A9 2A     LDA #> $2A00
 C - - - - - 0x01FD7D 07:FD6D: 8D 06 20  STA $2006
-C - - - - - 0x01FD80 07:FD70: A9 00     LDA #$00
+C - - - - - 0x01FD80 07:FD70: A9 00     LDA #< $2A00
 C - - - - - 0x01FD82 07:FD72: 8D 06 20  STA $2006
 C - - - - - 0x01FD85 07:FD75: A9 04     LDA #$04
 C - - - - - 0x01FD87 07:FD77: 2C 2D 05  BIT ram_номер_команды + 1
