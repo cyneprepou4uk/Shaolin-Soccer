@@ -10357,21 +10357,19 @@ C - - - - - 0x01FDAA 07:FD9A: 8D 01 20  STA $2001
 C - - - - - 0x01FDAD 07:FD9D: 85 4D     STA ram_for_2001
 C - - - - - 0x01FDAF 07:FD9F: A2 FF     LDX #$FF
 C - - - - - 0x01FDB1 07:FDA1: 9A        TXS
-C - - - - - 0x01FDB2 07:FDA2: A2 08     LDX #$08
-bra_FDA4:
+bra_FDA4_loop:
 C - - - - - 0x01FDB4 07:FDA4: 2C 02 20  BIT $2002
-C - - - - - 0x01FDB7 07:FDA7: 10 FB     BPL bra_FDA4
-bra_FDA9:
+C - - - - - 0x01FDB7 07:FDA7: 10 FB     BPL bra_FDA4_loop
+bra_FDA9_loop:
 C - - - - - 0x01FDB9 07:FDA9: 2C 02 20  BIT $2002
-C - - - - - 0x01FDBC 07:FDAC: 30 FB     BMI bra_FDA9
-C - - - - - 0x01FDBE 07:FDAE: CA        DEX
-C - - - - - 0x01FDBF 07:FDAF: D0 F3     BNE bra_FDA4
-C - - - - - 0x01FDC1 07:FDB1: 86 EC     STX ram_pos_X_lo_camera
-C - - - - - 0x01FDC3 07:FDB3: 86 ED     STX ram_pos_X_hi_camera
-C - - - - - 0x01FDC5 07:FDB5: 86 EE     STX ram_pos_Y_lo_camera
-C - - - - - 0x01FDC7 07:FDB7: 86 EF     STX ram_pos_Y_hi_camera
-C - - - - - 0x01FDC9 07:FDB9: 86 48     STX ram_0048
-C - - - - - 0x01FDCB 07:FDBB: 8E 16 40  STX $4016
+C - - - - - 0x01FDBC 07:FDAC: 30 FB     BMI bra_FDA9_loop
+                                        LDA #$00
+C - - - - - 0x01FDC1 07:FDB1: 86 EC     STA ram_pos_X_lo_camera
+C - - - - - 0x01FDC3 07:FDB3: 86 ED     STA ram_pos_X_hi_camera
+C - - - - - 0x01FDC5 07:FDB5: 86 EE     STA ram_pos_Y_lo_camera
+C - - - - - 0x01FDC7 07:FDB7: 86 EF     STA ram_pos_Y_hi_camera
+C - - - - - 0x01FDC9 07:FDB9: 86 48     STA ram_0048
+C - - - - - 0x01FDCB 07:FDBB: 8E 16 40  STA $4016
 C - - - - - 0x01FDD2 07:FDC2: A9 40     LDA #$40
 C - - - - - 0x01FDD4 07:FDC4: 8D 17 40  STA $4017
 C - - - - - 0x01FDD7 07:FDC7: A9 0F     LDA #$0F
