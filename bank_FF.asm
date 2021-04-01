@@ -7140,29 +7140,29 @@ C - - - - - 0x01E851 07:E841: A5 2D     LDA ram_002D
 C - - - - - 0x01E853 07:E843: 6D 19 EA  ADC #> tbl_EA1A_параметры_экрана
 C - - - - - 0x01E856 07:E846: 85 2D     STA ram_002D
 C - - - - - 0x01E858 07:E848: A0 00     LDY #$00
-C - - - - - 0x01E85A 07:E84A: B1 2C     LDA (ram_002C),Y
+C - - - - - 0x01E85A 07:E84A: B1 2C     LDA (ram_002C),Y    ; 
 C - - - - - 0x01E85C 07:E84C: 85 1F     STA ram_001F
 C - - - - - 0x01E85E 07:E84E: C8        INY
-C - - - - - 0x01E85F 07:E84F: B1 2C     LDA (ram_002C),Y
+C - - - - - 0x01E85F 07:E84F: B1 2C     LDA (ram_002C),Y    ; 
 C - - - - - 0x01E861 07:E851: 85 20     STA ram_0020
 C - - - - - 0x01E863 07:E853: C8        INY
 C - - - - - 0x01E864 07:E854: C8        INY
-C - - - - - 0x01E865 07:E855: B1 2C     LDA (ram_002C),Y
+C - - - - - 0x01E865 07:E855: B1 2C     LDA (ram_002C),Y    ; банк фона 1
 C - - - - - 0x01E867 07:E857: 85 26     STA ram_0026
 C - - - - - 0x01E869 07:E859: C8        INY
-C - - - - - 0x01E86A 07:E85A: B1 2C     LDA (ram_002C),Y
+C - - - - - 0x01E86A 07:E85A: B1 2C     LDA (ram_002C),Y    ; банк фона 2
 C - - - - - 0x01E86C 07:E85C: 85 27     STA ram_0027
 C - - - - - 0x01E86E 07:E85E: C8        INY
-C - - - - - 0x01E86F 07:E85F: B1 2C     LDA (ram_002C),Y
+C - - - - - 0x01E86F 07:E85F: B1 2C     LDA (ram_002C),Y    ; палитра фона 1
 C - - - - - 0x01E871 07:E861: 85 28     STA ram_0028
 C - - - - - 0x01E873 07:E863: C8        INY
-C - - - - - 0x01E874 07:E864: B1 2C     LDA (ram_002C),Y
+C - - - - - 0x01E874 07:E864: B1 2C     LDA (ram_002C),Y    ; палитра фона 2
 C - - - - - 0x01E876 07:E866: 85 29     STA ram_0029
 C - - - - - 0x01E878 07:E868: C8        INY
-C - - - - - 0x01E879 07:E869: B1 2C     LDA (ram_002C),Y
+C - - - - - 0x01E879 07:E869: B1 2C     LDA (ram_002C),Y    ; mirroring, FF = vertical, 01 = horisontal
 C - - - - - 0x01E87B 07:E86B: 85 2B     STA ram_002B
 C - - - - - 0x01E87D 07:E86D: A0 02     LDY #$02
-C - - - - - 0x01E87F 07:E86F: B1 2C     LDA (ram_002C),Y
+C - - - - - 0x01E87F 07:E86F: B1 2C     LDA (ram_002C),Y    ; 
 C - - - - - 0x01E881 07:E871: 0A        ASL
 C - - - - - 0x01E882 07:E872: A8        TAY
 C - - - - - 0x01E883 07:E873: B9 12 EA  LDA tbl_EA12,Y
@@ -7301,10 +7301,10 @@ C - - J - - 0x01E96E 07:E95E: A5 1C     LDA ram_001C
 C - - - - - 0x01E970 07:E960: 29 3F     AND #$3F
 C - - - - - 0x01E972 07:E962: AA        TAX
 C - - - - - 0x01E973 07:E963: 20 D2 E9  JSR sub_E9D2
-bra_E966:
-C - - - - - 0x01E976 07:E966: 20 F9 E9  JSR sub_E9F9
+bra_E966_loop:
+C - - - - - 0x01E976 07:E966: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
 C - - - - - 0x01E979 07:E969: CA        DEX
-C - - - - - 0x01E97A 07:E96A: D0 FA     BNE bra_E966
+C - - - - - 0x01E97A 07:E96A: D0 FA     BNE bra_E966_loop
 C - - - - - 0x01E97C 07:E96C: 4C 46 E9  JMP loc_E946
 
 
@@ -7313,11 +7313,11 @@ ofs_E96F_01:
 C - - J - - 0x01E97F 07:E96F: A5 1C     LDA ram_001C
 C - - - - - 0x01E981 07:E971: 29 3F     AND #$3F
 C - - - - - 0x01E983 07:E973: AA        TAX
-bra_E974:
+bra_E974_loop:
 C - - - - - 0x01E984 07:E974: 20 D2 E9  JSR sub_E9D2
-C - - - - - 0x01E987 07:E977: 20 F9 E9  JSR sub_E9F9
+C - - - - - 0x01E987 07:E977: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
 C - - - - - 0x01E98A 07:E97A: CA        DEX
-C - - - - - 0x01E98B 07:E97B: D0 F7     BNE bra_E974
+C - - - - - 0x01E98B 07:E97B: D0 F7     BNE bra_E974_loop
 C - - - - - 0x01E98D 07:E97D: 4C 46 E9  JMP loc_E946
 
 
@@ -7331,15 +7331,15 @@ C - - - - - 0x01E999 07:E989: A5 1C     LDA ram_001C
 C - - - - - 0x01E99B 07:E98B: 85 1E     STA ram_001E
 C - - - - - 0x01E99D 07:E98D: 20 D2 E9  JSR sub_E9D2
 C - - - - - 0x01E9A0 07:E990: A6 1D     LDX ram_001D
-bra_E992:
-C - - - - - 0x01E9A2 07:E992: 20 F9 E9  JSR sub_E9F9
+bra_E992_loop:
+C - - - - - 0x01E9A2 07:E992: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
 C - - - - - 0x01E9A5 07:E995: CA        DEX
-C - - - - - 0x01E9A6 07:E996: D0 FA     BNE bra_E992
+C - - - - - 0x01E9A6 07:E996: D0 FA     BNE bra_E992_loop
 C - - - - - 0x01E9A8 07:E998: A6 1E     LDX ram_001E
-bra_E99A:
-C - - - - - 0x01E9AA 07:E99A: 20 F9 E9  JSR sub_E9F9
+bra_E99A_loop:
+C - - - - - 0x01E9AA 07:E99A: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
 C - - - - - 0x01E9AD 07:E99D: CA        DEX
-C - - - - - 0x01E9AE 07:E99E: D0 FA     BNE bra_E99A
+C - - - - - 0x01E9AE 07:E99E: D0 FA     BNE bra_E99A_loop
 C - - - - - 0x01E9B0 07:E9A0: 4C 46 E9  JMP loc_E946
 
 
@@ -7355,19 +7355,19 @@ C - - - - - 0x01E9C0 07:E9B0: A5 2C     LDA ram_002C
 C - - - - - 0x01E9C2 07:E9B2: 85 32     STA ram_0032
 C - - - - - 0x01E9C4 07:E9B4: A5 2D     LDA ram_002D
 C - - - - - 0x01E9C6 07:E9B6: 85 33     STA ram_0033
-bra_E9B8:
+bra_E9B8_loop:
 C - - - - - 0x01E9C8 07:E9B8: A6 1E     LDX ram_001E
 C - - - - - 0x01E9CA 07:E9BA: A5 32     LDA ram_0032
 C - - - - - 0x01E9CC 07:E9BC: 85 2C     STA ram_002C
 C - - - - - 0x01E9CE 07:E9BE: A5 33     LDA ram_0033
 C - - - - - 0x01E9D0 07:E9C0: 85 2D     STA ram_002D
-bra_E9C2:
+bra_E9C2_loop:
 C - - - - - 0x01E9D2 07:E9C2: 20 D2 E9  JSR sub_E9D2
-C - - - - - 0x01E9D5 07:E9C5: 20 F9 E9  JSR sub_E9F9
+C - - - - - 0x01E9D5 07:E9C5: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
 C - - - - - 0x01E9D8 07:E9C8: CA        DEX
-C - - - - - 0x01E9D9 07:E9C9: D0 F7     BNE bra_E9C2
+C - - - - - 0x01E9D9 07:E9C9: D0 F7     BNE bra_E9C2_loop
 C - - - - - 0x01E9DB 07:E9CB: C6 1D     DEC ram_001D
-C - - - - - 0x01E9DD 07:E9CD: D0 E9     BNE bra_E9B8
+C - - - - - 0x01E9DD 07:E9CD: D0 E9     BNE bra_E9B8_loop
 C - - - - - 0x01E9DF 07:E9CF: 4C 46 E9  JMP loc_E946
 
 
@@ -7396,7 +7396,7 @@ C - - - - - 0x01EA08 07:E9F8: 60        RTS
 
 
 
-sub_E9F9:
+sub_E9F9_запись_байта_в_ppu:
 C - - - - - 0x01EA09 07:E9F9: AD 02 20  LDA $2002
 C - - - - - 0x01EA0C 07:E9FC: A5 2F     LDA ram_002F
 C - - - - - 0x01EA0E 07:E9FE: 8D 06 20  STA $2006
