@@ -10341,23 +10341,13 @@ C - - - - - 0x01FDF2 07:FDE2: A9 C0     LDA #con_nmi_enable_irq
 C - - - - - 0x01FDF4 07:FDE4: 85 4F     STA ram_NMI_flag
 C - - - - - 0x01FDF6 07:FDE6: A9 00     LDA #$00    ; vertical mirroring
 C - - - - - 0x01FDF8 07:FDE8: 8D 00 A0  STA $A000
-C - - - - - 0x01FDFD 07:FDED: AC 02 01  LDY ram_0102
-C - - - - - 0x01FE00 07:FDF0: A2 00     LDX #$00
-bra_FDF2:
-C - - - - - 0x01FE02 07:FDF2: C8        INY
-C - - - - - 0x01FE03 07:FDF3: B9 00 01  LDA ram_0100,Y
-C - - - - - 0x01FE06 07:FDF6: D0 07     BNE bra_FDFF
-C - - - - - 0x01FE08 07:FDF8: C0 FF     CPY #$FF
-C - - - - - 0x01FE0A 07:FDFA: 90 F6     BCC bra_FDF2
-- - - - - - 0x01FE0C 07:FDFC: AC 15 02  LDY ram_spr_T + $14
-bra_FDFF:
-C - - - - - 0x01FE0F 07:FDFF: B9 70 00  LDA ram_0070,Y
-C - - - - - 0x01FE12 07:FE02: 09 25     ORA #$25
-C - - - - - 0x01FE14 07:FE04: 9D 45 00  STA ram_random,X
-C - - - - - 0x01FE17 07:FE07: C8        INY
-C - - - - - 0x01FE18 07:FE08: E8        INX
-C - - - - - 0x01FE19 07:FE09: E0 02     CPX #$02
-C - - - - - 0x01FE1B 07:FE0B: 90 E5     BCC bra_FDF2
+                                        LDX ram_frame_cnt
+                                        LDA ram_0700,X
+                                        ORA #$25
+                                        STA ram_random
+                                        LDA ram_0701,X
+                                        ORA #$25
+                                        STA ram_random + 1
 C - - - - - 0x01FE1D 07:FE0D: 4C D4 C3  JMP loc_C3D4
 
 
