@@ -38,6 +38,15 @@ con_gm_minibattle               = $40 ; минибатл
 con_gm_walkthrough              = $80 ; прохождение
 
 
+    ; если не игра на поле
+; ram_script                    = $58
+con_script_gameplay             = $00 ; игра на поле
+con_script_logo                 = $01 ; логотип, мисако, жми старт
+con_script_menu                 = $02 ; любые меню, где можно выбирать опции (а также VS экран)
+con_script_credits              = $03 ; финальные титры
+
+
+
 ; ram_weather_id                = $0466
 con_weather_none                = $00 ; нет
 con_weather_lightning           = $01 ; молния

@@ -3401,8 +3401,8 @@ C - - - - - 0x019790 06:9780: A9 00     LDA #$00
 C - - - - - 0x019792 06:9782: 9D 30 01  STA ram_surface_player,X
 C - - - - - 0x019795 06:9785: F0 29     BEQ bra_97B0_RTS    ; если на траве
 bra_9787:
-C - - - - - 0x019797 06:9787: A5 58     LDA ram_screen_id
-C - - - - - 0x019799 06:9789: D0 25     BNE bra_97B0_RTS
+C - - - - - 0x019797 06:9787: A5 58     LDA ram_script
+C - - - - - 0x019799 06:9789: D0 25     BNE bra_97B0_RTS    ; если не игра на поле
 C - - - - - 0x01979B 06:978B: 20 F0 E6  JSR sub_0x01E700
 C - - - - - 0x01979E 06:978E: BD 30 01  LDA ram_surface_player,X
 C - - - - - 0x0197A1 06:9791: F0 1D     BEQ bra_97B0_RTS    ; если на траве
@@ -4080,10 +4080,10 @@ C - - - - - 0x019BD5 06:9BC5: 9D 14 03  STA ram_pos_X_lo_player,X
 C - - - - - 0x019BD8 06:9BC8: A9 00     LDA #$00
 C - - - - - 0x019BDA 06:9BCA: 7D 27 03  ADC ram_pos_X_hi_player,X
 C - - - - - 0x019BDD 06:9BCD: 9D 27 03  STA ram_pos_X_hi_player,X
-C - - - - - 0x019BE0 06:9BD0: A5 58     LDA ram_screen_id
-C - - - - - 0x019BE2 06:9BD2: C9 01     CMP #$01
+C - - - - - 0x019BE0 06:9BD0: A5 58     LDA ram_script
+C - - - - - 0x019BE2 06:9BD2: C9 01     CMP #con_script_logo
 C - - - - - 0x019BE4 06:9BD4: F0 27     BEQ bra_9BFD
-C - - - - - 0x019BE6 06:9BD6: C9 03     CMP #$03
+C - - - - - 0x019BE6 06:9BD6: C9 03     CMP #con_script_credits
 C - - - - - 0x019BE8 06:9BD8: F0 23     BEQ bra_9BFD
 C - - - - - 0x019BEA 06:9BDA: 18        CLC
 C - - - - - 0x019BEB 06:9BDB: BD 04 04  LDA ram_spd_Y_lo_player,X
@@ -4161,8 +4161,8 @@ C - - - - - 0x019C79 06:9C69: BD 2E 04  LDA ram_spd_Z_hi_player,X
 C - - - - - 0x019C7C 06:9C6C: FD 4A 04  SBC ram_gravity_hi_player,X
 C - - - - - 0x019C7F 06:9C6F: 9D 2E 04  STA ram_spd_Z_hi_player,X
 loc_9C72:
-C D 0 - - - 0x019C82 06:9C72: A5 58     LDA ram_screen_id
-C - - - - - 0x019C84 06:9C74: D0 52     BNE bra_9CC8_RTS
+C D 0 - - - 0x019C82 06:9C72: A5 58     LDA ram_script
+C - - - - - 0x019C84 06:9C74: D0 52     BNE bra_9CC8_RTS    ; если не игра на поле
 C - - - - - 0x019C86 06:9C76: AD FC 05  LDA ram_05FC
 C - - - - - 0x019C89 06:9C79: D0 03     BNE bra_9C7E
 C - - - - - 0x019C8B 06:9C7B: 4C C8 9C  RTS
@@ -4726,8 +4726,8 @@ tbl_A01F:
 sub_A021:
 C - - - - - 0x01A031 06:A021: A9 00     LDA #con_НА_ТРАВЕ
 C - - - - - 0x01A033 06:A023: 9D 30 01  STA ram_surface_player,X
-C - - - - - 0x01A036 06:A026: A5 58     LDA ram_screen_id
-C - - - - - 0x01A038 06:A028: D0 14     BNE bra_A03E_RTS
+C - - - - - 0x01A036 06:A026: A5 58     LDA ram_script
+C - - - - - 0x01A038 06:A028: D0 14     BNE bra_A03E_RTS    ; если не игра на поле
 C - - - - - 0x01A03A 06:A02A: B5 D9     LDA ram_flag_visible_player,X
 C - - - - - 0x01A03C 06:A02C: F0 03     BEQ bra_A031
 C - - - - - 0x01A03E 06:A02E: 20 F0 E6  JSR sub_0x01E700
@@ -9417,10 +9417,10 @@ off_B7B5_23:
 sub_B7BA:
 C - - - - - 0x01B7CA 06:B7BA: A9 00     LDA #$00
 C - - - - - 0x01B7CC 06:B7BC: 85 1C     STA ram_001C
-C - - - - - 0x01B7CE 06:B7BE: A5 58     LDA ram_screen_id
-C - - - - - 0x01B7D0 06:B7C0: F0 03     BEQ bra_B7C5
+C - - - - - 0x01B7CE 06:B7BE: A5 58     LDA ram_script
+C - - - - - 0x01B7D0 06:B7C0: F0 03     BEQ bra_B7C5_gameplay
 C - - - - - 0x01B7D2 06:B7C2: 4C 9B B8  RTS
-bra_B7C5:
+bra_B7C5_gameplay:
 C - - - - - 0x01B7D5 06:B7C5: E0 0C     CPX #$0C
 C - - - - - 0x01B7D7 06:B7C7: D0 02     BNE bra_B7CB
 C - - - - - 0x01B7D9 06:B7C9: A9 02     LDA #$02
@@ -10412,7 +10412,7 @@ C - - - - - 0x01BE57 06:BE47: A8        TAY
 C - - - - - 0x01BE58 06:BE48: B9 2A 05  LDA ram_флаг_владения_мячом_ком,Y
 C - - - - - 0x01BE5B 06:BE4B: 29 01     AND #$01
 C - - - - - 0x01BE5D 06:BE4D: F0 58     BEQ bra_BEA7
-C - - - - - 0x01BE5F 06:BE4F: A5 59     LDA ram_screen_sub_id
+C - - - - - 0x01BE5F 06:BE4F: A5 59     LDA ram_screen_id
 C - - - - - 0x01BE61 06:BE51: C9 05     CMP #$05
 C - - - - - 0x01BE63 06:BE53: F0 08     BEQ bra_BE5D
 C - - - - - 0x01BE65 06:BE55: A9 80     LDA #$80
@@ -10482,7 +10482,7 @@ C - - - - - 0x01BEDC 06:BECC: AD 5C 00  LDA ram_flag_gameplay
 C - - - - - 0x01BEDF 06:BECF: 29 02     AND #$02
 C - - - - - 0x01BEE1 06:BED1: D0 14     BNE bra_BEE7_RTS
 C - - - - - 0x01BEE3 06:BED3: A2 0E     LDX #$0E
-C - - - - - 0x01BEE5 06:BED5: A5 59     LDA ram_screen_sub_id
+C - - - - - 0x01BEE5 06:BED5: A5 59     LDA ram_screen_id
 C - - - - - 0x01BEE7 06:BED7: C9 01     CMP #$01
 C - - - - - 0x01BEE9 06:BED9: D0 01     BNE bra_BEDC
 C - - - - - 0x01BEEB 06:BEDB: E8        INX

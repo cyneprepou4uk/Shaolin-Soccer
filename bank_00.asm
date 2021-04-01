@@ -11476,8 +11476,8 @@ C - - - - - 0x002EED 00:AEDD: A9 23     LDA #$23
 C - - - - - 0x002EEF 00:AEDF: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x002EF2 00:AEE2: 60        RTS
 bra_AEE3:
-- - - - - - 0x002EF3 00:AEE3: A5 58     LDA ram_screen_id
-- - - - - - 0x002EF5 00:AEE5: F0 11     BEQ bra_AEF8
+- - - - - - 0x002EF3 00:AEE3: A5 58     LDA ram_script
+- - - - - - 0x002EF5 00:AEE5: F0 11     BEQ bra_AEF8    ; если игра на поле
 - - - - - - 0x002EF7 00:AEE7: C9 07     CMP #$07
 - - - - - - 0x002EF9 00:AEE9: B0 0D     BCS bra_AEF8
 - - - - - - 0x002EFB 00:AEEB: A5 04     LDA ram_btn_hold
@@ -11527,8 +11527,8 @@ C - - - - - 0x002F51 00:AF41: 8D 09 06  STA ram_0609
 C - - - - - 0x002F54 00:AF44: 8D 0A 06  STA ram_060A
 C - - - - - 0x002F57 00:AF47: A9 05     LDA #$05
 C - - - - - 0x002F59 00:AF49: 8D 0E 06  STA ram_060E
-C - - - - - 0x002F5C 00:AF4C: A5 58     LDA ram_screen_id
-C - - - - - 0x002F5E 00:AF4E: F0 09     BEQ bra_AF59
+C - - - - - 0x002F5C 00:AF4C: A5 58     LDA ram_script
+C - - - - - 0x002F5E 00:AF4E: F0 09     BEQ bra_AF59    ; если игра на поле
 C - - - - - 0x002F60 00:AF50: C9 07     CMP #$07
 C - - - - - 0x002F62 00:AF52: B0 05     BCS bra_AF59
 C - - - - - 0x002F64 00:AF54: A9 02     LDA #$02
@@ -11540,8 +11540,8 @@ C - - - - - 0x002F6E 00:AF5E: 8D 05 06  STA ram_0605
 loc_AF61:
 C D 1 - - - 0x002F71 00:AF61: AD 0E 06  LDA ram_060E
 C - - - - - 0x002F74 00:AF64: 8D 0C 06  STA ram_060C
-C - - - - - 0x002F77 00:AF67: A5 58     LDA ram_screen_id
-C - - - - - 0x002F79 00:AF69: F0 11     BEQ bra_AF7C
+C - - - - - 0x002F77 00:AF67: A5 58     LDA ram_script
+C - - - - - 0x002F79 00:AF69: F0 11     BEQ bra_AF7C    ; если игра на поле
 C - - - - - 0x002F7B 00:AF6B: C9 07     CMP #$07
 C - - - - - 0x002F7D 00:AF6D: B0 0D     BCS bra_AF7C
 C - - - - - 0x002F7F 00:AF6F: A5 04     LDA ram_btn_hold
@@ -11612,8 +11612,8 @@ C - - - - - 0x002FF6 00:AFE6: 4C 23 B0  JMP loc_B023
 loc_AFE9:
 C D 1 - - - 0x002FF9 00:AFE9: AD 0E 06  LDA ram_060E
 C - - - - - 0x002FFC 00:AFEC: 8D 0C 06  STA ram_060C
-C - - - - - 0x002FFF 00:AFEF: A5 58     LDA ram_screen_id
-C - - - - - 0x003001 00:AFF1: F0 11     BEQ bra_B004
+C - - - - - 0x002FFF 00:AFEF: A5 58     LDA ram_script
+C - - - - - 0x003001 00:AFF1: F0 11     BEQ bra_B004    ; если игра на поле
 C - - - - - 0x003003 00:AFF3: C9 07     CMP #$07
 C - - - - - 0x003005 00:AFF5: B0 0D     BCS bra_B004
 C - - - - - 0x003007 00:AFF7: A5 04     LDA ram_btn_hold
@@ -14608,11 +14608,11 @@ C - - - - - 0x003BB8 00:BBA8: F0 0A     BEQ bra_BBB4
 C - - - - - 0x003BBA 00:BBAA: A9 20     LDA #$20
 C - - - - - 0x003BBC 00:BBAC: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x003BBE 00:BBAE: A9 01     LDA #$01
-C - - - - - 0x003BC0 00:BBB0: 85 59     STA ram_screen_sub_id
+C - - - - - 0x003BC0 00:BBB0: 85 59     STA ram_screen_id
 C - - - - - 0x003BC2 00:BBB2: D0 06     BNE bra_BBBA
 bra_BBB4:
 C - - - - - 0x003BC4 00:BBB4: A9 01     LDA #$01
-C - - - - - 0x003BC6 00:BBB6: 85 59     STA ram_screen_sub_id
+C - - - - - 0x003BC6 00:BBB6: 85 59     STA ram_screen_id
 C - - - - - 0x003BC8 00:BBB8: 85 5C     STA ram_flag_gameplay
 bra_BBBA:
 C - - - - - 0x003BCA 00:BBBA: A0 00     LDY #$00
@@ -14657,9 +14657,9 @@ bra_BC05:
 C - - - - - 0x003C15 00:BC05: A9 01     LDA #$01
 C - - - - - 0x003C17 00:BC07: 99 2A 05  STA ram_флаг_владения_мячом_ком,Y
 C - - - - - 0x003C1A 00:BC0A: A9 09     LDA #$09
-C - - - - - 0x003C1C 00:BC0C: 85 59     STA ram_screen_sub_id
+C - - - - - 0x003C1C 00:BC0C: 85 59     STA ram_screen_id
 C - - - - - 0x003C1E 00:BC0E: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x003C20 00:BC10: 29 DF     AND #$DF
+C - - - - - 0x003C20 00:BC10: 29 DF     AND #con_gm_penalty ^ $FF
 C - - - - - 0x003C22 00:BC12: 85 57     STA ram_option_mode_difficulty
 C - - - - - 0x003C24 00:BC14: A9 00     LDA #$00
 C - - - - - 0x003C26 00:BC16: 8D CC 05  STA ram_счетчик_смен

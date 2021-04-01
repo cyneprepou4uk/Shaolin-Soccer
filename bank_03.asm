@@ -196,7 +196,7 @@ C - - - - - 0x00C14F 03:813F: 90 05     BCC bra_8146
 C - - - - - 0x00C151 03:8141: A9 22     LDA #$22
 C - - - - - 0x00C153 03:8143: 8D 73 06  STA ram_0673
 bra_8146:
-C - - - - - 0x00C156 03:8146: A5 59     LDA ram_screen_sub_id
+C - - - - - 0x00C156 03:8146: A5 59     LDA ram_screen_id
 C - - - - - 0x00C158 03:8148: C9 01     CMP #$01
 C - - - - - 0x00C15A 03:814A: D0 15     BNE bra_8161
 C - - - - - 0x00C15C 03:814C: AD 5C 00  LDA ram_flag_gameplay
@@ -252,7 +252,7 @@ C - - - - - 0x00C1B8 03:81A8: 60        RTS
 
 
 sub_81A9:
-C - - - - - 0x00C1B9 03:81A9: AD 59 00  LDA ram_screen_sub_id
+C - - - - - 0x00C1B9 03:81A9: AD 59 00  LDA ram_screen_id
 C - - - - - 0x00C1BC 03:81AC: C9 03     CMP #$03
 C - - - - - 0x00C1BE 03:81AE: F0 07     BEQ bra_81B7_RTS
 C - - - - - 0x00C1C0 03:81B0: C9 06     CMP #$06
@@ -753,7 +753,7 @@ tbl_84CD:
 ofs_84D1_08:
 C - - J - - 0x00C4E1 03:84D1: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00C4E4 03:84D4: 29 03     AND #$03
-C - - - - - 0x00C4E6 03:84D6: D0 16     BNE bra_84EE
+C - - - - - 0x00C4E6 03:84D6: D0 16     BNE bra_84EE    ; если не легкая сложность
 - - - - - - 0x00C4E8 03:84D8: AD 57 00  LDA ram_option_mode_difficulty
 - - - - - - 0x00C4EB 03:84DB: 29 80     AND #con_gm_walkthrough
 - - - - - - 0x00C4ED 03:84DD: F0 0F     BEQ bra_84EE
@@ -807,7 +807,7 @@ loc_8529:
 ofs_8529_09:
 C D 0 J - - 0x00C539 03:8529: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00C53C 03:852C: 29 03     AND #$03
-C - - - - - 0x00C53E 03:852E: D0 16     BNE bra_8546
+C - - - - - 0x00C53E 03:852E: D0 16     BNE bra_8546    ; если не легкая сложность
 - - - - - - 0x00C540 03:8530: AD 57 00  LDA ram_option_mode_difficulty
 - - - - - - 0x00C543 03:8533: 29 80     AND #con_gm_walkthrough
 - - - - - - 0x00C545 03:8535: F0 0F     BEQ bra_8546
@@ -1814,7 +1814,7 @@ tbl_8AC4:
 ofs_8AC8_0F:
 C - - J - - 0x00CAD8 03:8AC8: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00CADB 03:8ACB: 29 03     AND #$03
-C - - - - - 0x00CADD 03:8ACD: D0 16     BNE bra_8AE5
+C - - - - - 0x00CADD 03:8ACD: D0 16     BNE bra_8AE5    ; если не легкая сложность
 - - - - - - 0x00CADF 03:8ACF: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 - - - - - - 0x00CAE2 03:8AD2: C9 04     CMP #$04
 - - - - - - 0x00CAE4 03:8AD4: B0 0F     BCS bra_8AE5
@@ -2231,9 +2231,9 @@ C - - - - - 0x00CDB1 03:8DA1: 60        RTS
 loc_8DA2:
 C D 0 - - - 0x00CDB2 03:8DA2: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00CDB5 03:8DA5: 29 03     AND #$03
-C - - - - - 0x00CDB7 03:8DA7: D0 03     BNE bra_8DAC
+C - - - - - 0x00CDB7 03:8DA7: D0 03     BNE bra_8DAC_not_easy_diff
 - - - - - - 0x00CDB9 03:8DA9: 4C CE 8B  JMP loc_8BCE
-bra_8DAC:
+bra_8DAC_not_easy_diff:
 C - - - - - 0x00CDBC 03:8DAC: BD F1 04  LDA ram_skill_id,X
 C - - - - - 0x00CDBF 03:8DAF: 29 04     AND #$04
 C - - - - - 0x00CDC1 03:8DB1: F0 0B     BEQ bra_8DBE
@@ -4358,7 +4358,7 @@ C - - - - - 0x00DAF3 03:9AE3: 60        RTS
 sub_9AE4:
 C - - - - - 0x00DAF4 03:9AE4: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00DAF7 03:9AE7: 29 03     AND #$03
-C - - - - - 0x00DAF9 03:9AE9: D0 08     BNE bra_9AF3
+C - - - - - 0x00DAF9 03:9AE9: D0 08     BNE bra_9AF3    ; если не легкая сложность
 - - - - - - 0x00DAFB 03:9AEB: 8A        TXA
 - - - - - - 0x00DAFC 03:9AEC: 29 01     AND #$01
 - - - - - - 0x00DAFE 03:9AEE: F0 03     BEQ bra_9AF3
@@ -4454,7 +4454,7 @@ C - - - - - 0x00DB84 03:9B74: 60        RTS
 sub_9B75:
 C - - - - - 0x00DB85 03:9B75: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00DB88 03:9B78: 29 03     AND #$03
-C - - - - - 0x00DB8A 03:9B7A: D0 45     BNE bra_9BC1_RTS
+C - - - - - 0x00DB8A 03:9B7A: D0 45     BNE bra_9BC1_RTS    ; если не легкая сложность
 - - - - - - 0x00DB8C 03:9B7C: AD 57 00  LDA ram_option_mode_difficulty
 - - - - - - 0x00DB8F 03:9B7F: 10 40     BPL bra_9BC1_RTS    ; если не режим прохождения
 - - - - - - 0x00DB91 03:9B81: 8A        TXA
@@ -4518,7 +4518,7 @@ tbl_9BC2:
 
 
 sub_9BD2:
-C - - - - - 0x00DBE2 03:9BD2: A5 59     LDA ram_screen_sub_id
+C - - - - - 0x00DBE2 03:9BD2: A5 59     LDA ram_screen_id
 C - - - - - 0x00DBE4 03:9BD4: C9 02     CMP #$02
 C - - - - - 0x00DBE6 03:9BD6: F0 01     BEQ bra_9BD9
 C - - - - - 0x00DBE8 03:9BD8: 60        RTS
@@ -4886,7 +4886,7 @@ C - - - - - 0x00DE59 03:9E49: 60        RTS
 sub_9E4A:
 C - - - - - 0x00DE5A 03:9E4A: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00DE5D 03:9E4D: 29 03     AND #$03
-C - - - - - 0x00DE5F 03:9E4F: D0 05     BNE bra_9E56
+C - - - - - 0x00DE5F 03:9E4F: D0 05     BNE bra_9E56    ; если не легкая сложность
 - - - - - - 0x00DE61 03:9E51: A9 00     LDA #$00
 - - - - - - 0x00DE63 03:9E53: 85 1D     STA ram_001D
 - - - - - - 0x00DE65 03:9E55: 60        RTS
@@ -6343,7 +6343,7 @@ bra_A772:
 loc_A772:
 C D 1 - - - 0x00E782 03:A772: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00E785 03:A775: 29 03     AND #$03
-C - - - - - 0x00E787 03:A777: D0 10     BNE bra_A789
+C - - - - - 0x00E787 03:A777: D0 10     BNE bra_A789    ; если не легкая сложность
 - - - - - - 0x00E789 03:A779: E0 01     CPX #$01
 - - - - - - 0x00E78B 03:A77B: D0 0C     BNE bra_A789
 - - - - - - 0x00E78D 03:A77D: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
@@ -6371,14 +6371,14 @@ C - - - - - 0x00E7AD 03:A79D: 60        RTS
 
 
 tbl_A79E:
-- - - - - - 0x00E7AE 03:A79E: 3F        .byte $3F   ; 
-- D 1 - - - 0x00E7AF 03:A79F: 07        .byte $07   ; 
-- D 1 - - - 0x00E7B0 03:A7A0: 00        .byte $00   ; 
+- - - - - - 0x00E7AE 03:A79E: 3F        .byte $3F   ; легко
+- D 1 - - - 0x00E7AF 03:A79F: 07        .byte $07   ; средне
+- D 1 - - - 0x00E7B0 03:A7A0: 00        .byte $00   ; сложно
 
 
 
 sub_A7A1:
-C - - - - - 0x00E7B1 03:A7A1: A5 59     LDA ram_screen_sub_id
+C - - - - - 0x00E7B1 03:A7A1: A5 59     LDA ram_screen_id
 C - - - - - 0x00E7B3 03:A7A3: C9 01     CMP #$01
 C - - - - - 0x00E7B5 03:A7A5: F0 0E     BEQ bra_A7B5_RTS
 C - - - - - 0x00E7B7 03:A7A7: C9 03     CMP #$03
@@ -10530,6 +10530,7 @@ off_B928:
 - D 1 - I - 0x00F939 03:B929: 7F        .byte $7F   ; 
 - D 1 - I - 0x00F93A 03:B92A: 00        .byte $00   ; 
 - D 1 - I - 0x00F93B 03:B92B: 4F        .byte $4F   ; 
+
 off_B92C_06:
 off_B92C_0D:
 off_B92C_05:
@@ -10538,6 +10539,7 @@ off_B92C_0E:
 - D 1 - I - 0x00F93D 03:B92D: 15        .byte $15   ; 
 - D 1 - I - 0x00F93E 03:B92E: 00        .byte $00   ; 
 - D 1 - I - 0x00F93F 03:B92F: 4F        .byte $4F   ; 
+
 off_B930_05:
 off_B930_0B:
 off_B930_07:
@@ -10547,6 +10549,7 @@ off_B930_0E:
 - D 1 - I - 0x00F941 03:B931: 4A        .byte $4A   ; 
 - D 1 - I - 0x00F942 03:B932: 00        .byte $00   ; 
 - D 1 - I - 0x00F943 03:B933: 4F        .byte $4F   ; 
+
 off_B934_06:
 off_B934_08:
 off_B934_07:
@@ -10554,6 +10557,7 @@ off_B934_07:
 - D 1 - I - 0x00F945 03:B935: 4E        .byte $4E   ; 
 - D 1 - I - 0x00F946 03:B936: 00        .byte $00   ; 
 - D 1 - I - 0x00F947 03:B937: 61        .byte $61   ; 
+
 off_B938_08:
 off_B938_04:
 off_B938_0A:
@@ -10563,6 +10567,7 @@ off_B938_0B:
 - D 1 - I - 0x00F949 03:B939: CF        .byte $CF   ; 
 - D 1 - I - 0x00F94A 03:B93A: 00        .byte $00   ; 
 - D 1 - I - 0x00F94B 03:B93B: 61        .byte $61   ; 
+
 off_B93C_04:
 off_B93C_06:
 off_B93C_05:
@@ -10570,11 +10575,13 @@ off_B93C_05:
 - D 1 - I - 0x00F94D 03:B93D: 10        .byte $10   ; 
 - D 1 - I - 0x00F94E 03:B93E: 00        .byte $00   ; 
 - D 1 - I - 0x00F94F 03:B93F: 7D        .byte $7D   ; 
+
 off_B940_09:
 - D 1 - I - 0x00F950 03:B940: 02        .byte $02   ; 
 - D 1 - I - 0x00F951 03:B941: 6D        .byte $6D   ; 
 - D 1 - I - 0x00F952 03:B942: 00        .byte $00   ; 
 - D 1 - I - 0x00F953 03:B943: 7D        .byte $7D   ; 
+
 off_B944_02:
 off_B944_0A:
 off_B944_06:
@@ -10584,6 +10591,7 @@ off_B944_0F:
 - D 1 - I - 0x00F955 03:B945: 28        .byte $28   ; 
 - D 1 - I - 0x00F956 03:B946: 00        .byte $00   ; 
 - D 1 - I - 0x00F957 03:B947: 7D        .byte $7D   ; 
+
 off_B948_07:
 off_B948_0C:
 off_B948_02:
@@ -10593,12 +10601,14 @@ off_B948_0E:
 - D 1 - I - 0x00F959 03:B949: 32        .byte $32   ; 
 - D 1 - I - 0x00F95A 03:B94A: 00        .byte $00   ; 
 - D 1 - I - 0x00F95B 03:B94B: 7D        .byte $7D   ; 
+
 off_B94C_04:
 off_B94C_0C:
 - - - - - - 0x00F95C 03:B94C: 02        .byte $02   ; 
 - - - - - - 0x00F95D 03:B94D: BE        .byte $BE   ; 
 - - - - - - 0x00F95E 03:B94E: 00        .byte $00   ; 
 - - - - - - 0x00F95F 03:B94F: A2        .byte $A2   ; 
+
 off_B950_04:
 off_B950_05:
 off_B950_0E:
@@ -10608,6 +10618,7 @@ off_B950_0F:
 - D 1 - I - 0x00F961 03:B951: 08        .byte $08   ; 
 - D 1 - I - 0x00F962 03:B952: 00        .byte $00   ; 
 - D 1 - I - 0x00F963 03:B953: A2        .byte $A2   ; 
+
 off_B954_09:
 off_B954_0E:
 off_B954_01:
@@ -10617,6 +10628,7 @@ off_B954_0B:
 - D 1 - I - 0x00F965 03:B955: 2F        .byte $2F   ; 
 - D 1 - I - 0x00F966 03:B956: 00        .byte $00   ; 
 - D 1 - I - 0x00F967 03:B957: A2        .byte $A2   ; 
+
 off_B958_05:
 off_B958_03:
 off_B958_04:
@@ -10625,6 +10637,7 @@ off_B958_00:
 - D 1 - I - 0x00F969 03:B959: 33        .byte $33   ; 
 - D 1 - I - 0x00F96A 03:B95A: 00        .byte $00   ; 
 - D 1 - I - 0x00F96B 03:B95B: C3        .byte $C3   ; 
+
 off_B95C_0C:
 off_B95C_0D:
 off_B95C_08:
@@ -10636,6 +10649,7 @@ off_B95C_04:
 - D 1 - I - 0x00F96D 03:B95D: 92        .byte $92   ; 
 - D 1 - I - 0x00F96E 03:B95E: 00        .byte $00   ; 
 - D 1 - I - 0x00F96F 03:B95F: C3        .byte $C3   ; 
+
 off_B960_00:
 off_B960_09:
 off_B960_0F:
@@ -10648,6 +10662,7 @@ off_B960_0A:
 - D 1 - I - 0x00F971 03:B961: 08        .byte $08   ; 
 - D 1 - I - 0x00F972 03:B962: 00        .byte $00   ; 
 - D 1 - I - 0x00F973 03:B963: C3        .byte $C3   ; 
+
 off_B964_00:
 off_B964_08:
 off_B964_0F:
@@ -10662,12 +10677,14 @@ off_B964_03:
 - D 1 - I - 0x00F975 03:B965: 29        .byte $29   ; 
 - D 1 - I - 0x00F976 03:B966: 00        .byte $00   ; 
 - D 1 - I - 0x00F977 03:B967: C3        .byte $C3   ; 
+
 off_B968_07:
 off_B968_0D:
 - D 1 - I - 0x00F978 03:B968: 02        .byte $02   ; 
 - D 1 - I - 0x00F979 03:B969: 90        .byte $90   ; 
 - D 1 - I - 0x00F97A 03:B96A: 01        .byte $01   ; 
 - D 1 - I - 0x00F97B 03:B96B: 3E        .byte $3E   ; 
+
 off_B96C_0D:
 off_B96C_06:
 off_B96C_05:
@@ -10676,6 +10693,7 @@ off_B96C_0E:
 - D 1 - I - 0x00F97D 03:B96D: 35        .byte $35   ; 
 - D 1 - I - 0x00F97E 03:B96E: 01        .byte $01   ; 
 - D 1 - I - 0x00F97F 03:B96F: 3E        .byte $3E   ; 
+
 off_B970_0C:
 off_B970_05:
 off_B970_09:
@@ -10685,6 +10703,7 @@ off_B970_0E:
 - D 1 - I - 0x00F981 03:B971: 61        .byte $61   ; 
 - D 1 - I - 0x00F982 03:B972: 01        .byte $01   ; 
 - D 1 - I - 0x00F983 03:B973: 3E        .byte $3E   ; 
+
 off_B974_06:
 off_B974_08:
 off_B974_07:
@@ -10692,6 +10711,7 @@ off_B974_07:
 - D 1 - I - 0x00F985 03:B975: 59        .byte $59   ; 
 - D 1 - I - 0x00F986 03:B976: 01        .byte $01   ; 
 - D 1 - I - 0x00F987 03:B977: 24        .byte $24   ; 
+
 off_B978_08:
 off_B978_04:
 off_B978_0A:
@@ -10701,6 +10721,7 @@ off_B978_0B:
 - D 1 - I - 0x00F989 03:B979: DB        .byte $DB   ; 
 - D 1 - I - 0x00F98A 03:B97A: 01        .byte $01   ; 
 - D 1 - I - 0x00F98B 03:B97B: 24        .byte $24   ; 
+
 off_B97C_04:
 off_B97C_05:
 off_B97C_06:
@@ -10708,11 +10729,13 @@ off_B97C_06:
 - D 1 - I - 0x00F98D 03:B97D: 18        .byte $18   ; 
 - D 1 - I - 0x00F98E 03:B97E: 01        .byte $01   ; 
 - D 1 - I - 0x00F98F 03:B97F: 0A        .byte $0A   ; 
+
 off_B980_09:
 - - - - - - 0x00F990 03:B980: 02        .byte $02   ; 
 - - - - - - 0x00F991 03:B981: 7C        .byte $7C   ; 
 - - - - - - 0x00F992 03:B982: 01        .byte $01   ; 
 - - - - - - 0x00F993 03:B983: 0A        .byte $0A   ; 
+
 off_B984_06:
 off_B984_0A:
 off_B984_0F:
@@ -10720,6 +10743,7 @@ off_B984_0F:
 - D 1 - I - 0x00F995 03:B985: 30        .byte $30   ; 
 - D 1 - I - 0x00F996 03:B986: 01        .byte $01   ; 
 - D 1 - I - 0x00F997 03:B987: 0A        .byte $0A   ; 
+
 off_B988_07:
 off_B988_02:
 off_B988_0F:
@@ -10728,11 +10752,13 @@ off_B988_0E:
 - D 1 - I - 0x00F999 03:B989: 44        .byte $44   ; 
 - D 1 - I - 0x00F99A 03:B98A: 01        .byte $01   ; 
 - D 1 - I - 0x00F99B 03:B98B: 0A        .byte $0A   ; 
+
 off_B98C_04:
 - - - - - - 0x00F99C 03:B98C: 02        .byte $02   ; 
 - - - - - - 0x00F99D 03:B98D: D6        .byte $D6   ; 
 - - - - - - 0x00F99E 03:B98E: 00        .byte $00   ; 
 - - - - - - 0x00F99F 03:B98F: E3        .byte $E3   ; 
+
 off_B990_04:
 off_B990_0E:
 off_B990_05:
@@ -10742,6 +10768,7 @@ off_B990_0F:
 - D 1 - I - 0x00F9A1 03:B991: 10        .byte $10   ; 
 - D 1 - I - 0x00F9A2 03:B992: 00        .byte $00   ; 
 - D 1 - I - 0x00F9A3 03:B993: E3        .byte $E3   ; 
+
 off_B994_0E:
 off_B994_01:
 off_B994_0A:
@@ -10751,6 +10778,7 @@ off_B994_0B:
 - D 1 - I - 0x00F9A5 03:B995: 35        .byte $35   ; 
 - D 1 - I - 0x00F9A6 03:B996: 00        .byte $00   ; 
 - D 1 - I - 0x00F9A7 03:B997: E3        .byte $E3   ; 
+
 off_B998_01:
 off_B998_03:
 off_B998_00:
@@ -11462,7 +11490,7 @@ C - - - - - 0x00FE42 03:BE32: 8D F2 00  STA ram_copy_pos_Y_lo_camera
 C - - - - - 0x00FE45 03:BE35: AD EF 00  LDA ram_pos_Y_hi_camera
 C - - - - - 0x00FE48 03:BE38: E5 1D     SBC ram_001D
 C - - - - - 0x00FE4A 03:BE3A: 8D F3 00  STA ram_copy_pos_Y_hi_camera
-C - - - - - 0x00FE4D 03:BE3D: A5 59     LDA ram_screen_sub_id
+C - - - - - 0x00FE4D 03:BE3D: A5 59     LDA ram_screen_id
 C - - - - - 0x00FE4F 03:BE3F: C9 05     CMP #$05
 C - - - - - 0x00FE51 03:BE41: F0 04     BEQ bra_BE47
 C - - - - - 0x00FE53 03:BE43: C9 08     CMP #$08
@@ -11539,8 +11567,8 @@ C D 1 - - - 0x00FEE3 03:BED3: 60        RTS
 
 
 loc_BED4:
-C D 1 - - - 0x00FEE4 03:BED4: A5 58     LDA ram_screen_id
-C - - - - - 0x00FEE6 03:BED6: D0 3A     BNE bra_BF12_RTS
+C D 1 - - - 0x00FEE4 03:BED4: A5 58     LDA ram_script
+C - - - - - 0x00FEE6 03:BED6: D0 3A     BNE bra_BF12_RTS    ; если не игра на поле
 C - - - - - 0x00FEE8 03:BED8: 24 5C     BIT ram_flag_gameplay
 C - - - - - 0x00FEEA 03:BEDA: 50 16     BVC bra_BEF2
 C - - - - - 0x00FEEC 03:BEDC: A5 5C     LDA ram_flag_gameplay
