@@ -7379,8 +7379,6 @@ C - - - - - 0x01E9E6 07:E9D6: 24 2A     BIT ram_002A
 C - - - - - 0x01E9E8 07:E9D8: 30 16     BMI bra_E9F0
 C - - - - - 0x01E9EA 07:E9DA: AD 02 20  LDA $2002
 C - - - - - 0x01E9ED 07:E9DD: A5 2D     LDA ram_002D
-; bzk что это за херня
-C - - - - - 0x01E9EF 07:E9DF: 8D 15 04  STA ram_spd_Y_hi_player + 3
 C - - - - - 0x01E9F2 07:E9E2: 8D 06 20  STA $2006
 C - - - - - 0x01E9F5 07:E9E5: A5 2C     LDA ram_002C
 C - - - - - 0x01E9F7 07:E9E7: 8D 06 20  STA $2006
