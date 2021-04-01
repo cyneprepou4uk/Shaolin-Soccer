@@ -10326,7 +10326,6 @@ C - - - - - 0x01FDC1 07:FDB1: 86 EC     STA ram_pos_X_lo_camera
 C - - - - - 0x01FDC3 07:FDB3: 86 ED     STA ram_pos_X_hi_camera
 C - - - - - 0x01FDC5 07:FDB5: 86 EE     STA ram_pos_Y_lo_camera
 C - - - - - 0x01FDC7 07:FDB7: 86 EF     STA ram_pos_Y_hi_camera
-C - - - - - 0x01FDC9 07:FDB9: 86 48     STA ram_0048
 C - - - - - 0x01FDCB 07:FDBB: 8E 16 40  STA $4016
 C - - - - - 0x01FDD2 07:FDC2: A9 40     LDA #$40
 C - - - - - 0x01FDD4 07:FDC4: 8D 17 40  STA $4017
