@@ -7174,13 +7174,7 @@ C - - - - - 0x01E88F 07:E87F: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01E892 07:E882: 20 A9 EC  JSR sub_ECA9_выключить_NMI_при_следующем_вызове
 C - - - - - 0x01E895 07:E885: 20 71 EE  JSR sub_EE71_disable_NMI
 C - - - - - 0x01E898 07:E888: 20 C1 EC  JSR sub_ECC1_скрыть_фон_и_спрайты_за_полоской_слева
-C - - - - - 0x01E89B 07:E88B: 24 1F     BIT ram_001F
-C - - - - - 0x01E89D 07:E88D: 70 06     BVS bra_E895
-- - - - - - 0x01E89F 07:E88F: 20 BA E8  JSR sub_E8BA
-- - - - - - 0x01E8A2 07:E892: 4C 98 E8  JMP loc_E898
-bra_E895:
 C - - - - - 0x01E8A5 07:E895: 20 E6 E8  JSR sub_E8E6
-loc_E898:
 C - - - - - 0x01E8A8 07:E898: A5 2B     LDA ram_002B
 C - - - - - 0x01E8AA 07:E89A: 30 03     BMI bra_E89F
 C - - - - - 0x01E8AC 07:E89C: 8D 00 A0  STA $A000
@@ -7196,35 +7190,6 @@ C - - - - - 0x01E8C0 07:E8B0: 8D AD 05  STA ram_palette_id_bg + 1
 C - - - - - 0x01E8C3 07:E8B3: 20 CB EC  JSR sub_ECCB_отобразить_фон_и_спрайты
 C - - - - - 0x01E8C6 07:E8B6: 20 65 EE  JSR sub_EE65_enable_NMI
 C - - - - - 0x01E8C9 07:E8B9: 60        RTS
-
-
-
-sub_E8BA:
-; bzk неясно из какого банка читается 800F 8010
-; предположительно разрабы планировали хранить некоторые
-; сжатые экраны в prg банках, а не в chr
-- - - - - - 0x01E8CA 07:E8BA: AD FF BF  LDA $BFFF
-- - - - - - 0x01E8CD 07:E8BD: 48        PHA
-- - - - - - 0x01E8CE 07:E8BE: A5 1F     LDA ram_001F
-- - - - - - 0x01E8D0 07:E8C0: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-- - - - - - 0x01E8D3 07:E8C3: AD 0F 80  LDA $800F
-- - - - - - 0x01E8D6 07:E8C6: 85 34     STA ram_0034
-- - - - - - 0x01E8D8 07:E8C8: AD 10 80  LDA $8010
-- - - - - - 0x01E8DB 07:E8CB: 85 35     STA ram_0035
-- - - - - - 0x01E8DD 07:E8CD: A5 20     LDA ram_0020
-- - - - - - 0x01E8DF 07:E8CF: 0A        ASL
-- - - - - - 0x01E8E0 07:E8D0: A8        TAY
-- - - - - - 0x01E8E1 07:E8D1: B1 34     LDA (ram_0034),Y
-- - - - - - 0x01E8E3 07:E8D3: 85 2C     STA ram_002C
-- - - - - - 0x01E8E5 07:E8D5: C8        INY
-- - - - - - 0x01E8E6 07:E8D6: B1 34     LDA (ram_0034),Y
-- - - - - - 0x01E8E8 07:E8D8: 85 2D     STA ram_002D
-- - - - - - 0x01E8EA 07:E8DA: A9 FF     LDA #$FF
-- - - - - - 0x01E8EC 07:E8DC: 85 2A     STA ram_002A
-- - - - - - 0x01E8EE 07:E8DE: 20 41 E9  JSR sub_E941
-- - - - - - 0x01E8F1 07:E8E1: 68        PLA
-- - - - - - 0x01E8F2 07:E8E2: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-- - - - - - 0x01E8F5 07:E8E5: 60        RTS
 
 
 
