@@ -7373,10 +7373,7 @@ C - - - - - 0x01E9DF 07:E9CF: 4C 46 E9  JMP loc_E946
 
 
 sub_E9D2_чтение_байта_из_ppu:
-C - - - - - 0x01E9E2 07:E9D2: A0 00     LDY #$00
-C - - - - - 0x01E9E4 07:E9D4: B1 2C     LDA (ram_002C),Y
-C - - - - - 0x01E9E6 07:E9D6: 24 2A     BIT ram_002A
-C - - - - - 0x01E9E8 07:E9D8: 30 16     BMI bra_E9F0
+; можно юзать Y
 C - - - - - 0x01E9EA 07:E9DA: AD 02 20  LDA $2002
 C - - - - - 0x01E9ED 07:E9DD: A5 2D     LDA ram_002D
 C - - - - - 0x01E9F2 07:E9E2: 8D 06 20  STA $2006
@@ -7384,7 +7381,6 @@ C - - - - - 0x01E9F5 07:E9E5: A5 2C     LDA ram_002C
 C - - - - - 0x01E9F7 07:E9E7: 8D 06 20  STA $2006
 C - - - - - 0x01E9FA 07:E9EA: AD 07 20  LDA $2007
 C - - - - - 0x01E9FD 07:E9ED: AD 07 20  LDA $2007
-bra_E9F0:
 C - - - - - 0x01EA00 07:E9F0: 85 1C     STA ram_001C
 C - - - - - 0x01EA02 07:E9F2: E6 2C     INC ram_002C
 C - - - - - 0x01EA04 07:E9F4: D0 02     BNE bra_E9F8_RTS
