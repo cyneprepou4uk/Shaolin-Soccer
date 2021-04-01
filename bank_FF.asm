@@ -7279,7 +7279,7 @@ sub_E941:
 C - - - - - 0x01E951 07:E941: A9 00     LDA #$00    ; vertical mirroring
 C - - - - - 0x01E953 07:E943: 8D 00 A0  STA $A000
 loc_E946:
-C D 3 - - - 0x01E956 07:E946: 20 D2 E9  JSR sub_E9D2
+C D 3 - - - 0x01E956 07:E946: 20 D2 E9  JSR sub_E9D2_чтение_байта_из_ppu
 C - - - - - 0x01E959 07:E949: A5 1C     LDA ram_001C
 C - - - - - 0x01E95B 07:E94B: F0 10     BEQ bra_E95D_RTS
 C - - - - - 0x01E95D 07:E94D: 29 C0     AND #$C0
@@ -7300,7 +7300,7 @@ ofs_E95E_00:
 C - - J - - 0x01E96E 07:E95E: A5 1C     LDA ram_001C
 C - - - - - 0x01E970 07:E960: 29 3F     AND #$3F
 C - - - - - 0x01E972 07:E962: AA        TAX
-C - - - - - 0x01E973 07:E963: 20 D2 E9  JSR sub_E9D2
+C - - - - - 0x01E973 07:E963: 20 D2 E9  JSR sub_E9D2_чтение_байта_из_ppu
 bra_E966_loop:
 C - - - - - 0x01E976 07:E966: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
 C - - - - - 0x01E979 07:E969: CA        DEX
@@ -7314,7 +7314,7 @@ C - - J - - 0x01E97F 07:E96F: A5 1C     LDA ram_001C
 C - - - - - 0x01E981 07:E971: 29 3F     AND #$3F
 C - - - - - 0x01E983 07:E973: AA        TAX
 bra_E974_loop:
-C - - - - - 0x01E984 07:E974: 20 D2 E9  JSR sub_E9D2
+C - - - - - 0x01E984 07:E974: 20 D2 E9  JSR sub_E9D2_чтение_байта_из_ppu
 C - - - - - 0x01E987 07:E977: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
 C - - - - - 0x01E98A 07:E97A: CA        DEX
 C - - - - - 0x01E98B 07:E97B: D0 F7     BNE bra_E974_loop
@@ -7326,10 +7326,10 @@ ofs_E980_02:
 C - - J - - 0x01E990 07:E980: A5 1C     LDA ram_001C
 C - - - - - 0x01E992 07:E982: 29 3F     AND #$3F
 C - - - - - 0x01E994 07:E984: 85 1D     STA ram_001D
-C - - - - - 0x01E996 07:E986: 20 D2 E9  JSR sub_E9D2
+C - - - - - 0x01E996 07:E986: 20 D2 E9  JSR sub_E9D2_чтение_байта_из_ppu
 C - - - - - 0x01E999 07:E989: A5 1C     LDA ram_001C
 C - - - - - 0x01E99B 07:E98B: 85 1E     STA ram_001E
-C - - - - - 0x01E99D 07:E98D: 20 D2 E9  JSR sub_E9D2
+C - - - - - 0x01E99D 07:E98D: 20 D2 E9  JSR sub_E9D2_чтение_байта_из_ppu
 C - - - - - 0x01E9A0 07:E990: A6 1D     LDX ram_001D
 bra_E992_loop:
 C - - - - - 0x01E9A2 07:E992: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
@@ -7348,7 +7348,7 @@ ofs_E9A3_03:
 C - - J - - 0x01E9B3 07:E9A3: A5 1C     LDA ram_001C
 C - - - - - 0x01E9B5 07:E9A5: 29 3F     AND #$3F
 C - - - - - 0x01E9B7 07:E9A7: 85 1D     STA ram_001D
-C - - - - - 0x01E9B9 07:E9A9: 20 D2 E9  JSR sub_E9D2
+C - - - - - 0x01E9B9 07:E9A9: 20 D2 E9  JSR sub_E9D2_чтение_байта_из_ppu
 C - - - - - 0x01E9BC 07:E9AC: A5 1C     LDA ram_001C
 C - - - - - 0x01E9BE 07:E9AE: 85 1E     STA ram_001E
 C - - - - - 0x01E9C0 07:E9B0: A5 2C     LDA ram_002C
@@ -7362,7 +7362,7 @@ C - - - - - 0x01E9CC 07:E9BC: 85 2C     STA ram_002C
 C - - - - - 0x01E9CE 07:E9BE: A5 33     LDA ram_0033
 C - - - - - 0x01E9D0 07:E9C0: 85 2D     STA ram_002D
 bra_E9C2_loop:
-C - - - - - 0x01E9D2 07:E9C2: 20 D2 E9  JSR sub_E9D2
+C - - - - - 0x01E9D2 07:E9C2: 20 D2 E9  JSR sub_E9D2_чтение_байта_из_ppu
 C - - - - - 0x01E9D5 07:E9C5: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
 C - - - - - 0x01E9D8 07:E9C8: CA        DEX
 C - - - - - 0x01E9D9 07:E9C9: D0 F7     BNE bra_E9C2_loop
@@ -7372,7 +7372,7 @@ C - - - - - 0x01E9DF 07:E9CF: 4C 46 E9  JMP loc_E946
 
 
 
-sub_E9D2:
+sub_E9D2_чтение_байта_из_ppu:
 C - - - - - 0x01E9E2 07:E9D2: A0 00     LDY #$00
 C - - - - - 0x01E9E4 07:E9D4: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01E9E6 07:E9D6: 24 2A     BIT ram_002A
