@@ -10341,7 +10341,6 @@ C - - - - - 0x01FDF2 07:FDE2: A9 C0     LDA #con_nmi_enable_irq
 C - - - - - 0x01FDF4 07:FDE4: 85 4F     STA ram_NMI_flag
 C - - - - - 0x01FDF6 07:FDE6: A9 00     LDA #$00    ; vertical mirroring
 C - - - - - 0x01FDF8 07:FDE8: 8D 00 A0  STA $A000
-C - - - - - 0x01FDFB 07:FDEB: A9 00     LDA #$00
 C - - - - - 0x01FDFD 07:FDED: AC 02 01  LDY ram_0102
 C - - - - - 0x01FE00 07:FDF0: A2 00     LDX #$00
 bra_FDF2:
