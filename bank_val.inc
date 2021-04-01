@@ -24,13 +24,6 @@ con_btns__ABSS                  = con_btn_A + con_btn_B + con_btn_Start + con_bt
 
 
 
-; ram_NMI_flag                  = $4F
-con_nmi_off                     = $00 ; выключить NMI
-con_nmi_disable_irq             = $80 ; выключить IRQ
-con_nmi_enable_irq              = $C0 ; включить IRQ
-
-
-
 ; ram_btn_menu                  = $05CD
 con___btn_nothing               = $00 ; 
 con___btn_Start                 = $01 ; 
@@ -42,6 +35,21 @@ con___btn_Down                  = $06 ;
 con___btn_Left                  = $07 ; 
 con___btn_Right                 = $08 ; 
 
+
+
+; ram_NMI_flag                  = $4F
+con_nmi_off                     = $00 ; выключить NMI
+con_nmi_disable_irq             = $80 ; выключить IRQ
+con_nmi_enable_irq              = $C0 ; включить IRQ
+
+
+
+; ram_option_mode_difficulty    = $57 ; game mode (режим игры)
+con_gm_demo                     = $00 ; демо
+con_gm_pk_menu                  = $20 ; пк из меню
+con_gm_minibattle               = $40 ; минибатл
+con_gm_pk_match                 = $60 ; пк после матча
+con_gm_walkthrough              = $80 ; прохождение
 
 
 ; ram_weather_id                = $0466

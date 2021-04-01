@@ -12519,7 +12519,7 @@ C - - - - - 0x0135BC 04:B5AC: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x0135BE 04:B5AE: 85 2D     STA ram_002D
 C - - - - - 0x0135C0 04:B5B0: BD 86 04  LDA ram_игрок_состояние,X
 C - - - - - 0x0135C3 04:B5B3: 10 21     BPL bra_B5D6
-C - - - - - 0x0135C5 04:B5B5: BD BD 04  LDA ram_игрок_таймер_действия,X
+C - - - - - 0x0135C5 04:B5B5: BD BD 04  LDA ram_timer_action_player,X
 C - - - - - 0x0135C8 04:B5B8: F0 15     BEQ bra_B5CF
 C - - - - - 0x0135CA 04:B5BA: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x0135CD 04:B5BD: 29 7F     AND #$7F
@@ -13384,7 +13384,7 @@ C - - - - - 0x013AD7 04:BAC7: 8D 0F 05  STA ram_номер_супера
 C - - - - - 0x013ADA 04:BACA: C9 1E     CMP #$1E
 C - - - - - 0x013ADC 04:BACC: D0 05     BNE bra_BAD3
 C - - - - - 0x013ADE 04:BACE: A9 7F     LDA #$7F
-C - - - - - 0x013AE0 04:BAD0: 8D 25 05  STA ram_таймер_электрического_мяча
+C - - - - - 0x013AE0 04:BAD0: 8D 25 05  STA ram_timer_electric_ball
 bra_BAD3:
 C - - - - - 0x013AE3 04:BAD3: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x013AE6 04:BAD6: B9 E4 04  LDA ram_hp_player,Y
@@ -13678,7 +13678,7 @@ C - - - - - 0x013C78 04:BC68: 10 05     BPL bra_BC6F
 C - - - - - 0x013C7A 04:BC6A: 20 7F BC  JSR sub_BC7F
 C - - - - - 0x013C7D 04:BC6D: A5 2C     LDA ram_002C
 bra_BC6F:
-C - - - - - 0x013C7F 04:BC6F: 8D C9 04  STA ram_мяч_таймер_действия
+C - - - - - 0x013C7F 04:BC6F: 8D C9 04  STA ram_timer_action_ball
 C - - - - - 0x013C82 04:BC72: A9 00     LDA #$00
 C - - - - - 0x013C84 04:BC74: 9D 4A 04  STA ram_gravity_hi_player,X
 C - - - - - 0x013C87 04:BC77: A9 80     LDA #$80
@@ -13762,7 +13762,7 @@ bra_BCF5:
 C - - - - - 0x013D05 04:BCF5: 10 0C     BPL bra_BD03
 C - - - - - 0x013D07 04:BCF7: BC 86 03  LDY ram_pos_Z_lo_player,X
 C - - - - - 0x013D0A 04:BCFA: F0 05     BEQ bra_BD01
-C - - - - - 0x013D0C 04:BCFC: AC C9 04  LDY ram_мяч_таймер_действия
+C - - - - - 0x013D0C 04:BCFC: AC C9 04  LDY ram_timer_action_ball
 C - - - - - 0x013D0F 04:BCFF: F0 0D     BEQ bra_BD0E_RTS
 bra_BD01:
 C - - - - - 0x013D11 04:BD01: 29 7F     AND #$7F

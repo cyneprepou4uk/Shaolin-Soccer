@@ -14600,8 +14600,8 @@ C - - - - - 0x003BA2 00:BB92: AD 2A 05  LDA ram_флаг_владения_мяч
 C - - - - - 0x003BA5 00:BB95: 85 2B     STA ram_002B
 C - - - - - 0x003BA7 00:BB97: A9 00     LDA #$00
 C - - - - - 0x003BA9 00:BB99: 8D F0 04  STA ram_hp_ball
-C - - - - - 0x003BAC 00:BB9C: 8D C9 04  STA ram_мяч_таймер_действия
-C - - - - - 0x003BAF 00:BB9F: 8D 25 05  STA ram_таймер_электрического_мяча
+C - - - - - 0x003BAC 00:BB9C: 8D C9 04  STA ram_timer_action_ball
+C - - - - - 0x003BAF 00:BB9F: 8D 25 05  STA ram_timer_electric_ball
 C - - - - - 0x003BB2 00:BBA2: 8D 0D 05  STA ram_timer_wet_ball
 C - - - - - 0x003BB5 00:BBA5: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x003BB8 00:BBA8: F0 0A     BEQ bra_BBB4

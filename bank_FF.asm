@@ -1741,7 +1741,7 @@ loc_C9FA:
 C D 2 - - - 0x01CA0A 07:C9FA: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01CA0C 07:C9FC: 10 20     BPL bra_CA1E_RTS
 C - - - - - 0x01CA0E 07:C9FE: A2 00     LDX #$00
-bra_CA00:
+bra_CA00_loop:
 C - - - - - 0x01CA10 07:CA00: BC 32 05  LDY ram_player_id,X
 C - - - - - 0x01CA13 07:CA03: BD 50 06  LDA ram_позиция_управление,X
 C - - - - - 0x01CA16 07:CA06: 29 0F     AND #$0F
@@ -1749,8 +1749,11 @@ C - - - - - 0x01CA18 07:CA08: 99 D5 05  STA ram_05D5,Y
 C - - - - - 0x01CA1B 07:CA0B: E8        INX
 C - - - - - 0x01CA1C 07:CA0C: E8        INX
 C - - - - - 0x01CA1D 07:CA0D: E0 0C     CPX #$0C
-C - - - - - 0x01CA1F 07:CA0F: 90 EF     BCC bra_CA00
+C - - - - - 0x01CA1F 07:CA0F: 90 EF     BCC bra_CA00_loop
 C - - - - - 0x01CA21 07:CA11: 4C 1E CA  RTS
+
+
+
 loc_CA14:
 - - - - - - 0x01CA24 07:CA14: A5 57     LDA ram_option_mode_difficulty
 - - - - - - 0x01CA26 07:CA16: 09 20     ORA #$20
@@ -1819,7 +1822,7 @@ bra_CA87:
 - - - - - - 0x01CAA2 07:CA92: 85 1D     STA ram_001D
 loc_CA94:
 C D 2 - - - 0x01CAA4 07:CA94: AD 57 00  LDA ram_option_mode_difficulty
-C - - - - - 0x01CAA7 07:CA97: 10 27     BPL bra_CAC0
+C - - - - - 0x01CAA7 07:CA97: 10 27     BPL bra_CAC0    ; если не режим прохождения
 C - - - - - 0x01CAA9 07:CA99: AD 2A 05  LDA ram_флаг_владения_мячом_ком
 C - - - - - 0x01CAAC 07:CA9C: 29 01     AND #$01
 C - - - - - 0x01CAAE 07:CA9E: F0 14     BEQ bra_CAB4
@@ -1944,7 +1947,7 @@ C - - - - - 0x01CB6E 07:CB5E: 60        RTS
 
 loc_CB5F:
 C D 2 - - - 0x01CB6F 07:CB5F: AD 57 00  LDA ram_option_mode_difficulty
-C - - - - - 0x01CB72 07:CB62: 10 2B     BPL bra_CB8F
+C - - - - - 0x01CB72 07:CB62: 10 2B     BPL bra_CB8F    ; если не режим прохождения
 C - - - - - 0x01CB74 07:CB64: AC FD 06  LDY ram_06FD
 C - - - - - 0x01CB77 07:CB67: C0 0F     CPY #$0F
 C - - - - - 0x01CB79 07:CB69: F0 27     BEQ bra_CB92
@@ -2068,7 +2071,7 @@ C - - - - - 0x01CC40 07:CC30: A8        TAY
 C - - - - - 0x01CC41 07:CC31: B9 50 06  LDA ram_позиция_управление,Y
 C - - - - - 0x01CC44 07:CC34: 30 0B     BMI bra_CC41
 C - - - - - 0x01CC46 07:CC36: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01CC48 07:CC38: 29 20     AND #$20
+C - - - - - 0x01CC48 07:CC38: 29 20     AND #con_gm_pk_menu
 C - - - - - 0x01CC4A 07:CC3A: F0 0E     BEQ bra_CC4A
 C - - - - - 0x01CC4C 07:CC3C: B9 D9 00  LDA ram_flag_visible_player,Y
 C - - - - - 0x01CC4F 07:CC3F: D0 09     BNE bra_CC4A
@@ -2622,7 +2625,7 @@ C - - - - - 0x01CFF1 07:CFE1: 20 C1 EC  JSR sub_ECC1_скрыть_фон_и_сп
 C - - - - - 0x01CFF4 07:CFE4: 20 D9 E3  JSR sub_E3D9
 C - - - - - 0x01CFF7 07:CFE7: 20 7B C2  JSR sub_C27B
 C - - - - - 0x01CFFA 07:CFEA: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01CFFC 07:CFEC: 29 20     AND #$20
+C - - - - - 0x01CFFC 07:CFEC: 29 20     AND #con_gm_pk_menu
 C - - - - - 0x01CFFE 07:CFEE: D0 09     BNE bra_CFF9
 C - - - - - 0x01D000 07:CFF0: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x01D003 07:CFF3: F0 0D     BEQ bra_D002
@@ -4309,7 +4312,7 @@ C - - - - - 0x01D6F6 07:D6E6: 60        RTS
 
 sub_D6E7:
 C - - - - - 0x01D6F7 07:D6E7: AD 57 00  LDA ram_option_mode_difficulty
-C - - - - - 0x01D6FA 07:D6EA: 29 20     AND #$20
+C - - - - - 0x01D6FA 07:D6EA: 29 20     AND #con_gm_pk_menu
 C - - - - - 0x01D6FC 07:D6EC: D0 1C     BNE bra_D70A
 C - - - - - 0x01D6FE 07:D6EE: A5 59     LDA ram_screen_sub_id
 C - - - - - 0x01D700 07:D6F0: C9 06     CMP #$06
@@ -10273,9 +10276,9 @@ bra_FD4C:
 loc_FD4C:
 C D 3 - - - 0x01FD5C 07:FD4C: 8D 00 E0  STA $E000
 C - - - - - 0x01FD5F 07:FD4F: A2 00     LDX #$00
-bra_FD51:
+bra_FD51_garbage_loop:
 C - - - - - 0x01FD61 07:FD51: CA        DEX
-C - - - - - 0x01FD62 07:FD52: 10 FD     BPL bra_FD51
+C - - - - - 0x01FD62 07:FD52: 10 FD     BPL bra_FD51_garbage_loop
 C - - - - - 0x01FD64 07:FD54: AD 02 20  LDA $2002
 C - - - - - 0x01FD67 07:FD57: A2 00     LDX #$00
 C - - - - - 0x01FD69 07:FD59: 8E 05 20  STX $2005
@@ -10307,10 +10310,10 @@ C - - - - - 0x01FD9C 07:FD8C: 4C 0A FD  JMP loc_FCC3_выход_из_NMI_и_IRQ
 vec_FD8F_RESET:
 C D 3 - - - 0x01FD9F 07:FD8F: 78        SEI
 C - - - - - 0x01FDA0 07:FD90: D8        CLD
-C - - - - - 0x01FDA1 07:FD91: A9 08     LDA #$08
+C - - - - - 0x01FDA1 07:FD91: A9 08     LDA #$08    ; спрайты в 1000-1FFF
 C - - - - - 0x01FDA3 07:FD93: 8D 00 20  STA $2000
 C - - - - - 0x01FDA6 07:FD96: 85 4C     STA ram_for_2000
-C - - - - - 0x01FDA8 07:FD98: A9 06     LDA #$06
+C - - - - - 0x01FDA8 07:FD98: A9 06     LDA #$06    ; отобразить фон и спрайты слева
 C - - - - - 0x01FDAA 07:FD9A: 8D 01 20  STA $2001
 C - - - - - 0x01FDAD 07:FD9D: 85 4D     STA ram_for_2001
 C - - - - - 0x01FDAF 07:FD9F: A2 FF     LDX #$FF
@@ -10358,12 +10361,12 @@ sub_0000_копирование_банка_на_батарейку:
     JSR sub_EED3_prg_bankswitch
     LDA #$80    ; разрешение записи в батарейку
     STA $A001
-    LDY #$00
+    LDY #$00    ; младший байт адреса чтения и записи, Y = 00 будет использован
     STY ram_0000
     STY ram_0002
-    LDA #$80    ; начало чтения с 8000
+    LDA #$80    ; начало чтения с 8000 из банка
     STA ram_0001
-    LDA #$60    ; начало записи в 6000
+    LDA #$60    ; начало записи в 6000 на батарейку
     STA ram_0003
     LDX #$20    ; скопировать 32 страницы
 @цикл_копирования:
@@ -10385,7 +10388,7 @@ sub_0000_копирование_банка_на_батарейку:
 ;     STA $2006
 ;     LDA #< $3F00
 ;     STA $2006
-;     LDX #$00
+;     LDX #$00  ; запись 00-FF в палитру 3F00-3FFF
 ; @цикл:
 ;     STX $2007
 ;     INX
