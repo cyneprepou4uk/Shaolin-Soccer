@@ -7167,7 +7167,7 @@ C - - - - - 0x01E881 07:E871: 0A        ASL
 C - - - - - 0x01E882 07:E872: A8        TAY
 C - - - - - 0x01E883 07:E873: B9 12 EA  LDA tbl_EA12,Y
 C - - - - - 0x01E886 07:E876: 85 2E     STA ram_002E
-C - - - - - 0x01E888 07:E878: B9 13 EA  LDA tbl_EA13,Y
+C - - - - - 0x01E888 07:E878: B9 13 EA  LDA tbl_EA12 + 1,Y
 C - - - - - 0x01E88B 07:E87B: 85 2F     STA ram_002F
 C - - - - - 0x01E88D 07:E87D: A9 00     LDA #con_music_off
 C - - - - - 0x01E88F 07:E87F: 20 E4 C2  JSR sub_C2E4_play_sound
@@ -7201,6 +7201,8 @@ C - - - - - 0x01E8C9 07:E8B9: 60        RTS
 
 sub_E8BA:
 ; bzk неясно из какого банка читается 800F 8010
+; предположительно разрабы планировали хранить некоторые
+; сжатые экраны в prg банках, а не в chr
 - - - - - - 0x01E8CA 07:E8BA: AD FF BF  LDA $BFFF
 - - - - - - 0x01E8CD 07:E8BD: 48        PHA
 - - - - - - 0x01E8CE 07:E8BE: A5 1F     LDA ram_001F
@@ -7407,13 +7409,9 @@ C - - - - - 0x01EA21 07:EA11: 60        RTS
 
 
 tbl_EA12:
-- D 3 - - - 0x01EA22 07:EA12: 00        .byte $00   ; 
-tbl_EA13:
-- D 3 - - - 0x01EA23 07:EA13: 20        .byte $20   ; 
-- D 3 - - - 0x01EA24 07:EA14: 60        .byte $60   ; 
-- D 3 - - - 0x01EA25 07:EA15: 22        .byte $22   ; 
-- - - - - - 0x01EA26 07:EA16: E0        .byte $E0   ; 
-- - - - - - 0x01EA27 07:EA17: 20        .byte $20   ; 
+- D 3 - - - 0x01EA22 07:EA12: 00 20     .word $2000
+- D 3 - - - 0x01EA24 07:EA14: 60 22     .word $2260
+- - - - - - 0x01EA26 07:EA16: E0 20     .word $20E0
 
 
 
@@ -7422,11 +7420,11 @@ tbl_EA1A_параметры_экрана:
 - D 3 - I - 0x01EA2A 07:EA1A: 76        .byte $76   ; 
 - D 3 - I - 0x01EA2B 07:EA1B: 00        .byte $00   ; 
 - D 3 - I - 0x01EA2C 07:EA1C: 00        .byte $00   ; 
-- D 3 - I - 0x01EA2D 07:EA1D: 6E        .byte $6E   ; 
-- D 3 - I - 0x01EA2E 07:EA1E: 02        .byte $02   ; 
-- D 3 - I - 0x01EA2F 07:EA1F: 44        .byte $44   ; 
-- D 3 - I - 0x01EA30 07:EA20: 43        .byte $43   ; 
-- D 3 - I - 0x01EA31 07:EA21: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA2D 07:EA1D: 6E        .byte $6E   ; банк фона 1
+- D 3 - I - 0x01EA2E 07:EA1E: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA2F 07:EA1F: 44        .byte $44   ; палитра фона 1
+- D 3 - I - 0x01EA30 07:EA20: 43        .byte $43   ; палитра фона 2
+- D 3 - I - 0x01EA31 07:EA21: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 01 экран "жми старт" после логотипа
 - D 3 - I - 0x01EA32 07:EA22: 76        .byte $76   ; 
 - D 3 - I - 0x01EA33 07:EA23: 01        .byte $01   ; 
