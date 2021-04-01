@@ -14636,7 +14636,7 @@ C - - - - - 0x003BE3 00:BBD3: B0 09     BCS bra_BBDE
 - - - - - - 0x003BEB 00:BBDB: 4C D1 BB  JMP loc_BBD1
 bra_BBDE:
 C - - - - - 0x003BEE 00:BBDE: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x003BF0 00:BBE0: 29 20     AND #con_gm_pk_menu
+C - - - - - 0x003BF0 00:BBE0: 29 20     AND #con_gm_penalty
 C - - - - - 0x003BF2 00:BBE2: D0 03     BNE bra_BBE7
 C - - - - - 0x003BF4 00:BBE4: 4C AA BC  JMP loc_BCAA
 bra_BBE7:
@@ -14761,7 +14761,7 @@ C - - - - - 0x003CF8 00:BCE8: 9D 73 03  STA ram_pos_Z_sub_player,X
 C - - - - - 0x003CFB 00:BCEB: 9D 86 03  STA ram_pos_Z_lo_player,X
 C - - - - - 0x003CFE 00:BCEE: 9D 99 03  STA ram_pos_Z_hi_player,X
 C - - - - - 0x003D01 00:BCF1: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x003D03 00:BCF3: 29 20     AND #con_gm_pk_menu
+C - - - - - 0x003D03 00:BCF3: 29 20     AND #con_gm_penalty
 C - - - - - 0x003D05 00:BCF5: D0 03     BNE bra_BCFA
 C - - - - - 0x003D07 00:BCF7: 8A        TXA
 C - - - - - 0x003D08 00:BCF8: 6A        ROR
@@ -14773,7 +14773,7 @@ C - - - - - 0x003D0F 00:BCFF: 8A        TXA
 C - - - - - 0x003D10 00:BD00: 29 01     AND #$01
 C - - - - - 0x003D12 00:BD02: D0 2A     BNE bra_BD2E
 C - - - - - 0x003D14 00:BD04: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x003D16 00:BD06: 29 20     AND #con_gm_pk_menu
+C - - - - - 0x003D16 00:BD06: 29 20     AND #con_gm_penalty
 C - - - - - 0x003D18 00:BD08: D0 24     BNE bra_BD2E
 C - - - - - 0x003D1A 00:BD0A: 8A        TXA
 C - - - - - 0x003D1B 00:BD0B: 29 FE     AND #$FE
@@ -14835,7 +14835,7 @@ C - - - - - 0x003D7D 00:BD6D: C8        INY
 bra_BD6E:
 C - - - - - 0x003D7E 00:BD6E: A2 00     LDX #$00
 C - - - - - 0x003D80 00:BD70: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x003D82 00:BD72: 29 20     AND #con_gm_pk_menu
+C - - - - - 0x003D82 00:BD72: 29 20     AND #con_gm_penalty
 C - - - - - 0x003D84 00:BD74: F0 07     BEQ bra_BD7D
 C - - - - - 0x003D86 00:BD76: A9 4C     LDA #$4C
 C - - - - - 0x003D88 00:BD78: 8D AD 03  STA ram_camera_aim

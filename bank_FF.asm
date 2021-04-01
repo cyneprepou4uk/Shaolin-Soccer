@@ -1562,7 +1562,7 @@ C - - - - - 0x01C8BA 07:C8AA: F0 1C     BEQ bra_C8C8
 C - - - - - 0x01C8BC 07:C8AC: 29 02     AND #$02
 C - - - - - 0x01C8BE 07:C8AE: D0 49     BNE bra_C8F9
 C - - - - - 0x01C8C0 07:C8B0: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01C8C2 07:C8B2: 29 20     AND #con_gm_pk_menu
+C - - - - - 0x01C8C2 07:C8B2: 29 20     AND #con_gm_penalty
 C - - - - - 0x01C8C4 07:C8B4: F0 07     BEQ bra_C8BD
 C - - - - - 0x01C8C6 07:C8B6: A9 03     LDA #$03
 C - - - - - 0x01C8C8 07:C8B8: 85 59     STA ram_screen_sub_id
@@ -1646,7 +1646,7 @@ bra_C94F_RTS:
 - - - - - - 0x01C95F 07:C94F: 4C 1E CA  RTS
 bra_C952:
 C - - - - - 0x01C962 07:C952: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01C964 07:C954: 29 20     AND #con_gm_pk_menu
+C - - - - - 0x01C964 07:C954: 29 20     AND #con_gm_penalty
 C - - - - - 0x01C966 07:C956: F0 10     BEQ bra_C968
 C - - - - - 0x01C968 07:C958: EE CC 05  INC ram_счетчик_смен
 C - - - - - 0x01C96B 07:C95B: A5 5C     LDA ram_flag_gameplay
@@ -2071,7 +2071,7 @@ C - - - - - 0x01CC40 07:CC30: A8        TAY
 C - - - - - 0x01CC41 07:CC31: B9 50 06  LDA ram_позиция_управление,Y
 C - - - - - 0x01CC44 07:CC34: 30 0B     BMI bra_CC41
 C - - - - - 0x01CC46 07:CC36: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01CC48 07:CC38: 29 20     AND #con_gm_pk_menu
+C - - - - - 0x01CC48 07:CC38: 29 20     AND #con_gm_penalty
 C - - - - - 0x01CC4A 07:CC3A: F0 0E     BEQ bra_CC4A
 C - - - - - 0x01CC4C 07:CC3C: B9 D9 00  LDA ram_flag_visible_player,Y
 C - - - - - 0x01CC4F 07:CC3F: D0 09     BNE bra_CC4A
@@ -2625,7 +2625,7 @@ C - - - - - 0x01CFF1 07:CFE1: 20 C1 EC  JSR sub_ECC1_скрыть_фон_и_сп
 C - - - - - 0x01CFF4 07:CFE4: 20 D9 E3  JSR sub_E3D9
 C - - - - - 0x01CFF7 07:CFE7: 20 7B C2  JSR sub_C27B
 C - - - - - 0x01CFFA 07:CFEA: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01CFFC 07:CFEC: 29 20     AND #con_gm_pk_menu
+C - - - - - 0x01CFFC 07:CFEC: 29 20     AND #con_gm_penalty
 C - - - - - 0x01CFFE 07:CFEE: D0 09     BNE bra_CFF9
 C - - - - - 0x01D000 07:CFF0: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x01D003 07:CFF3: F0 0D     BEQ bra_D002
@@ -4312,7 +4312,7 @@ C - - - - - 0x01D6F6 07:D6E6: 60        RTS
 
 sub_D6E7:
 C - - - - - 0x01D6F7 07:D6E7: AD 57 00  LDA ram_option_mode_difficulty
-C - - - - - 0x01D6FA 07:D6EA: 29 20     AND #con_gm_pk_menu
+C - - - - - 0x01D6FA 07:D6EA: 29 20     AND #con_gm_penalty
 C - - - - - 0x01D6FC 07:D6EC: D0 1C     BNE bra_D70A
 C - - - - - 0x01D6FE 07:D6EE: A5 59     LDA ram_screen_sub_id
 C - - - - - 0x01D700 07:D6F0: C9 06     CMP #$06

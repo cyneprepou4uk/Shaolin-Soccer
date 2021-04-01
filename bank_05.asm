@@ -1096,7 +1096,7 @@ tbl_8687:
 - D 0 - - - 0x014699 05:8689: 40        .byte con_gm_minibattle
 - D 0 - - - 0x01469A 05:868A: 02        .byte $02   ; 
 
-- D 0 - - - 0x01469B 05:868B: 20        .byte con_gm_pk_menu
+- D 0 - - - 0x01469B 05:868B: 20        .byte con_gm_penalty
 - D 0 - - - 0x01469C 05:868C: 01        .byte $01   ; 
 
 - - - - - - 0x01469D 05:868D: 10        .byte $10   ; 
@@ -1966,7 +1966,7 @@ tbl_8B7D:
 
 ofs_8B80_01:
 C - - J - - 0x014B90 05:8B80: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x014B92 05:8B82: 29 20     AND #con_gm_pk_menu
+C - - - - - 0x014B92 05:8B82: 29 20     AND #con_gm_penalty
 C - - - - - 0x014B94 05:8B84: F0 13     BEQ bra_8B99
 C - - - - - 0x014B96 05:8B86: A5 5D     LDA ram_players_cnt
 C - - - - - 0x014B98 05:8B88: C9 01     CMP #$01
@@ -2194,7 +2194,7 @@ C - - - - - 0x014CE4 05:8CD4: E8        INX
 C - - - - - 0x014CE5 05:8CD5: E0 02     CPX #$02
 C - - - - - 0x014CE7 05:8CD7: 90 EF     BCC bra_8CC8
 C - - - - - 0x014CE9 05:8CD9: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x014CEB 05:8CDB: 29 20     AND #con_gm_pk_menu
+C - - - - - 0x014CEB 05:8CDB: 29 20     AND #con_gm_penalty
 C - - - - - 0x014CED 05:8CDD: F0 0E     BEQ bra_8CED_RTS
 C - - - - - 0x014CEF 05:8CDF: A5 5D     LDA ram_players_cnt
 C - - - - - 0x014CF1 05:8CE1: C9 01     CMP #$01

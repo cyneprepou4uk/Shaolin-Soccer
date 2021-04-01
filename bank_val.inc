@@ -46,9 +46,8 @@ con_nmi_enable_irq              = $C0 ; включить IRQ
 
 ; ram_option_mode_difficulty    = $57 ; game mode (режим игры)
 con_gm_demo                     = $00 ; демо
-con_gm_pk_menu                  = $20 ; пк из меню
+con_gm_penalty                  = $20 ; пк из меню
 con_gm_minibattle               = $40 ; минибатл
-con_gm_pk_match                 = $60 ; пк после матча
 con_gm_walkthrough              = $80 ; прохождение
 
 
