@@ -24,19 +24,6 @@ con_btns__ABSS                  = con_btn_A + con_btn_B + con_btn_Start + con_bt
 
 
 
-; ram_btn_menu                  = $05CD
-con___btn_nothing               = $00 ; 
-con___btn_Start                 = $01 ; 
-con___btn_Select                = $02 ; 
-con___btn_A                     = $03 ; 
-con___btn_B                     = $04 ; 
-con___btn_Up                    = $05 ; 
-con___btn_Down                  = $06 ; 
-con___btn_Left                  = $07 ; 
-con___btn_Right                 = $08 ; 
-
-
-
 ; ram_NMI_flag                  = $4F
 con_nmi_off                     = $00 ; выключить NMI
 con_nmi_disable_irq             = $80 ; выключить IRQ

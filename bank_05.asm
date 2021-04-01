@@ -234,10 +234,10 @@ C - - - - - 0x014190 05:8180: 29 30     AND #con_btns_SS
 C - - - - - 0x014192 05:8182: F0 0E     BEQ bra_8192_not_Start_or_Select
 C - - - - - 0x014194 05:8184: 29 10     AND #con_btn_Start
 C - - - - - 0x014196 05:8186: F0 05     BEQ bra_818D_it_is_Select
-C - - - - - 0x014198 05:8188: A9 01     LDA #con___btn_Start
+C - - - - - 0x014198 05:8188: A9 01     LDA #$01    ; Start
 C - - - - - 0x01419A 05:818A: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_818D_it_is_Select:
-- - - - - - 0x01419D 05:818D: A9 02     LDA #con___btn_Select
+- - - - - - 0x01419D 05:818D: A9 02     LDA #$02
 - - - - - - 0x01419F 05:818F: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_8192_not_Start_or_Select:
 C - - - - - 0x0141A2 05:8192: AC CC 05  LDY ram_счетчик_смен
@@ -247,10 +247,10 @@ C - - - - - 0x0141AA 05:819A: 0A        ASL
 C - - - - - 0x0141AB 05:819B: 30 08     BMI bra_81A5_pressed_B
 C - - - - - 0x0141AD 05:819D: 4C AA 81  JMP loc_81AA_not_A_or_B
 bra_81A0_pressed_A:
-C - - - - - 0x0141B0 05:81A0: A9 03     LDA #con___btn_A
+C - - - - - 0x0141B0 05:81A0: A9 03     LDA #$03
 C - - - - - 0x0141B2 05:81A2: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_81A5_pressed_B:
-C - - - - - 0x0141B5 05:81A5: A9 04     LDA #con___btn_B
+C - - - - - 0x0141B5 05:81A5: A9 04     LDA #$04
 C - - - - - 0x0141B7 05:81A7: 4C CF 81  JMP loc_81CF_запись_кнопки
 loc_81AA_not_A_or_B:
 C D 0 - - - 0x0141BA 05:81AA: B9 08 00  LDA ram_btn_press,Y
@@ -262,19 +262,19 @@ C - - - - - 0x0141C3 05:81B3: 4A        LSR
 C - - - - - 0x0141C4 05:81B4: B0 0D     BCS bra_81C3_pressed_Down
 C - - - - - 0x0141C6 05:81B6: 4A        LSR
 C - - - - - 0x0141C7 05:81B7: B0 05     BCS bra_81BE_pressed_Up
-C - - - - - 0x0141C9 05:81B9: A9 00     LDA #con___btn_nothing
+C - - - - - 0x0141C9 05:81B9: A9 00     LDA #$00
 C - - - - - 0x0141CB 05:81BB: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_81BE_pressed_Up:
-C - - - - - 0x0141CE 05:81BE: A9 05     LDA #con___btn_Up
+C - - - - - 0x0141CE 05:81BE: A9 05     LDA #$05
 C - - - - - 0x0141D0 05:81C0: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_81C3_pressed_Down:
-C - - - - - 0x0141D3 05:81C3: A9 06     LDA #con___btn_Down
+C - - - - - 0x0141D3 05:81C3: A9 06     LDA #$06
 C - - - - - 0x0141D5 05:81C5: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_81C8_pressed_Left:
-C - - - - - 0x0141D8 05:81C8: A9 07     LDA #con___btn_Left
+C - - - - - 0x0141D8 05:81C8: A9 07     LDA #$07
 C - - - - - 0x0141DA 05:81CA: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_81CD_pressed_Right:
-C - - - - - 0x0141DD 05:81CD: A9 08     LDA #con___btn_Right
+C - - - - - 0x0141DD 05:81CD: A9 08     LDA #$08
 loc_81CF_запись_кнопки:
 C D 0 - - - 0x0141DF 05:81CF: 8D CD 05  STA ram_btn_menu
 C - - - - - 0x0141E2 05:81D2: 60        RTS

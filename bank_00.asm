@@ -14545,14 +14545,14 @@ C - - - - - 0x003B33 00:BB23: A0 00     LDY #$00
 C - - - - - 0x003B35 00:BB25: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x003B37 00:BB27: 29 F0     AND #$F0
 C - - - - - 0x003B39 00:BB29: F0 0A     BEQ bra_BB35    ; если демо
-loc_BB2B:
+loc_BB2B_loop:
 C D 1 - - - 0x003B3B 00:BB2B: 30 08     BMI bra_BB35
 C - - - - - 0x003B3D 00:BB2D: C8        INY
 C - - - - - 0x003B3E 00:BB2E: C8        INY
 C - - - - - 0x003B3F 00:BB2F: C8        INY
 C - - - - - 0x003B40 00:BB30: C8        INY
 C - - - - - 0x003B41 00:BB31: 0A        ASL
-C - - - - - 0x003B42 00:BB32: 4C 2B BB  JMP loc_BB2B
+C - - - - - 0x003B42 00:BB32: 4C 2B BB  JMP loc_BB2B_loop
 bra_BB35:
 C - - - - - 0x003B45 00:BB35: B9 B9 BD  LDA tbl_BDB9,Y
 C - - - - - 0x003B48 00:BB38: 9D 68 05  STA ram_номер_управляемого,X
