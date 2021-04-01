@@ -1739,7 +1739,7 @@ C - - - - - 0x01CA06 07:C9F6: A9 03     LDA #$03
 C - - - - - 0x01CA08 07:C9F8: 85 5B     STA ram_for_0059
 loc_C9FA:
 C D 2 - - - 0x01CA0A 07:C9FA: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01CA0C 07:C9FC: 10 20     BPL bra_CA1E_RTS
+C - - - - - 0x01CA0C 07:C9FC: 10 20     BPL bra_CA11_RTS
 C - - - - - 0x01CA0E 07:C9FE: A2 00     LDX #$00
 bra_CA00_loop:
 C - - - - - 0x01CA10 07:CA00: BC 32 05  LDY ram_player_id,X
@@ -1750,6 +1750,7 @@ C - - - - - 0x01CA1B 07:CA0B: E8        INX
 C - - - - - 0x01CA1C 07:CA0C: E8        INX
 C - - - - - 0x01CA1D 07:CA0D: E0 0C     CPX #$0C
 C - - - - - 0x01CA1F 07:CA0F: 90 EF     BCC bra_CA00_loop
+bra_CA11_RTS:
 C - - - - - 0x01CA21 07:CA11: 4C 1E CA  RTS
 
 
@@ -1760,7 +1761,6 @@ loc_CA14:
 - - - - - - 0x01CA28 07:CA18: 85 57     STA ram_option_mode_difficulty
 - - - - - - 0x01CA2A 07:CA1A: A9 00     LDA #$00
 - - - - - - 0x01CA2C 07:CA1C: 85 59     STA ram_screen_sub_id
-bra_CA1E_RTS:
 C D 2 - - - 0x01CA2E 07:CA1E: 60        RTS
 
 
