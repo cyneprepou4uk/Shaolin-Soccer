@@ -1562,7 +1562,7 @@ C - - - - - 0x01C8BA 07:C8AA: F0 1C     BEQ bra_C8C8
 C - - - - - 0x01C8BC 07:C8AC: 29 02     AND #$02
 C - - - - - 0x01C8BE 07:C8AE: D0 49     BNE bra_C8F9
 C - - - - - 0x01C8C0 07:C8B0: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01C8C2 07:C8B2: 29 20     AND #$20
+C - - - - - 0x01C8C2 07:C8B2: 29 20     AND #con_gm_pk_menu
 C - - - - - 0x01C8C4 07:C8B4: F0 07     BEQ bra_C8BD
 C - - - - - 0x01C8C6 07:C8B6: A9 03     LDA #$03
 C - - - - - 0x01C8C8 07:C8B8: 85 59     STA ram_screen_sub_id
@@ -1646,7 +1646,7 @@ bra_C94F_RTS:
 - - - - - - 0x01C95F 07:C94F: 4C 1E CA  RTS
 bra_C952:
 C - - - - - 0x01C962 07:C952: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01C964 07:C954: 29 20     AND #$20
+C - - - - - 0x01C964 07:C954: 29 20     AND #con_gm_pk_menu
 C - - - - - 0x01C966 07:C956: F0 10     BEQ bra_C968
 C - - - - - 0x01C968 07:C958: EE CC 05  INC ram_счетчик_смен
 C - - - - - 0x01C96B 07:C95B: A5 5C     LDA ram_flag_gameplay
@@ -1697,13 +1697,13 @@ C - - - - - 0x01C9B7 07:C9A7: EE 59 05  INC ram_0559
 C - - - - - 0x01C9BA 07:C9AA: 4C FA C9  JMP loc_C9FA
 bra_C9AD:
 C - - - - - 0x01C9BD 07:C9AD: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01C9BF 07:C9AF: 30 0B     BMI bra_C9BC
+C - - - - - 0x01C9BF 07:C9AF: 30 0B     BMI bra_C9BC_walkthrough
 C - - - - - 0x01C9C1 07:C9B1: A9 02     LDA #$02
 C - - - - - 0x01C9C3 07:C9B3: 85 58     STA ram_screen_id
 C - - - - - 0x01C9C5 07:C9B5: A9 01     LDA #$01
 C - - - - - 0x01C9C7 07:C9B7: 85 59     STA ram_screen_sub_id
 C - - - - - 0x01C9C9 07:C9B9: 4C 1E CA  RTS
-bra_C9BC:
+bra_C9BC_walkthrough:
 C - - - - - 0x01C9CC 07:C9BC: AD 4A 05  LDA ram_054A
 C - - - - - 0x01C9CF 07:C9BF: 30 2D     BMI bra_C9EE
 - - - - - - 0x01C9D1 07:C9C1: C9 03     CMP #$03
@@ -1739,7 +1739,7 @@ C - - - - - 0x01CA06 07:C9F6: A9 03     LDA #$03
 C - - - - - 0x01CA08 07:C9F8: 85 5B     STA ram_for_0059
 loc_C9FA:
 C D 2 - - - 0x01CA0A 07:C9FA: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01CA0C 07:C9FC: 10 20     BPL bra_CA11_RTS
+C - - - - - 0x01CA0C 07:C9FC: 10 20     BPL bra_CA11_RTS    ; если режим прохождения
 C - - - - - 0x01CA0E 07:C9FE: A2 00     LDX #$00
 bra_CA00_loop:
 C - - - - - 0x01CA10 07:CA00: BC 32 05  LDY ram_player_id,X

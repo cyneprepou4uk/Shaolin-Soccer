@@ -626,7 +626,7 @@ C - - - - - 0x014434 05:8424: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x014437 05:8427: C9 02     CMP #$02
 C - - - - - 0x014439 05:8429: D0 0C     BNE bra_8437
 C - - - - - 0x01443B 05:842B: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01443D 05:842D: 10 08     BPL bra_8437
+C - - - - - 0x01443D 05:842D: 10 08     BPL bra_8437    ; если не режим прохождения
 C - - - - - 0x01443F 05:842F: A9 04     LDA #$04
 C - - - - - 0x014441 05:8431: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x014444 05:8434: 4C 55 84  JMP loc_8455
@@ -991,24 +991,24 @@ off_85F8_08:
 
 sub_860C:
 C - - - - - 0x01461C 05:860C: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01461E 05:860E: 10 05     BPL bra_8615
+C - - - - - 0x01461E 05:860E: 10 05     BPL bra_8615_not_walkthrough
 C - - - - - 0x014620 05:8610: A9 00     LDA #$00
 C - - - - - 0x014622 05:8612: 4C 34 86  JMP loc_8634_запись_номера_опции
-bra_8615:
+bra_8615_not_walkthrough:
 C - - - - - 0x014625 05:8615: 0A        ASL
-C - - - - - 0x014626 05:8616: 10 05     BPL bra_861D
+C - - - - - 0x014626 05:8616: 10 05     BPL bra_861D_not_minibattle
 C - - - - - 0x014628 05:8618: A9 01     LDA #$01
 C - - - - - 0x01462A 05:861A: 4C 34 86  JMP loc_8634_запись_номера_опции
-bra_861D:
+bra_861D_not_minibattle:
 C - - - - - 0x01462D 05:861D: 0A        ASL
-C - - - - - 0x01462E 05:861E: 10 06     BPL bra_8626
+C - - - - - 0x01462E 05:861E: 10 06     BPL bra_8626_not_pk_menu
 - - - - - - 0x014630 05:8620: 18        CLC
 - - - - - - 0x014631 05:8621: A9 02     LDA #$02
 - - - - - - 0x014633 05:8623: 4C 34 86  JMP loc_8634_запись_номера_опции
-bra_8626:
+bra_8626_not_pk_menu:
 C - - - - - 0x014636 05:8626: 0A        ASL
 C - - - - - 0x014637 05:8627: 10 05     BPL bra_862E
-- - - - - - 0x014639 05:8629: A9 03     LDA #$03
+- - - - - - 0x014639 05:8629: A9 03     LDA #$03    ; bzk мусор, других опций нету
 - - - - - - 0x01463B 05:862B: 4C 34 86  JMP loc_8634_запись_номера_опции
 bra_862E:
 C - - - - - 0x01463E 05:862E: A9 01     LDA #$01
@@ -1083,20 +1083,22 @@ C - - - - - 0x014688 05:8678: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01468A 05:867A: 29 0F     AND #$0F
 C - - - - - 0x01468C 05:867C: 19 87 86  ORA tbl_8687,Y
 C - - - - - 0x01468F 05:867F: 85 57     STA ram_option_mode_difficulty
-C - - - - - 0x014691 05:8681: B9 88 86  LDA tbl_8688,Y
+C - - - - - 0x014691 05:8681: B9 88 86  LDA tbl_8687 + 1,Y
 C - - - - - 0x014694 05:8684: 85 5D     STA ram_players_cnt
 C - - - - - 0x014696 05:8686: 60        RTS
 
 
 
 tbl_8687:
-- D 0 - - - 0x014697 05:8687: 80        .byte $80   ; 
-tbl_8688:
+- D 0 - - - 0x014697 05:8687: 80        .byte con_gm_walkthrough
 - D 0 - - - 0x014698 05:8688: 01        .byte $01   ; 
-- D 0 - - - 0x014699 05:8689: 40        .byte $40   ; 
+
+- D 0 - - - 0x014699 05:8689: 40        .byte con_gm_minibattle
 - D 0 - - - 0x01469A 05:868A: 02        .byte $02   ; 
-- D 0 - - - 0x01469B 05:868B: 20        .byte $20   ; 
+
+- D 0 - - - 0x01469B 05:868B: 20        .byte con_gm_pk_menu
 - D 0 - - - 0x01469C 05:868C: 01        .byte $01   ; 
+
 - - - - - - 0x01469D 05:868D: 10        .byte $10   ; 
 - - - - - - 0x01469E 05:868E: 01        .byte $01   ; 
 
@@ -1149,12 +1151,12 @@ C - - - - - 0x0146D6 05:86C6: 69 01     ADC #$01
 C - - - - - 0x0146D8 05:86C8: C0 0C     CPY #$0C
 C - - - - - 0x0146DA 05:86CA: 90 F1     BCC bra_86BD
 C - - - - - 0x0146DC 05:86CC: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x0146DE 05:86CE: 10 09     BPL bra_86D9
+C - - - - - 0x0146DE 05:86CE: 10 09     BPL bra_86D9_not_walkthrough
 C - - - - - 0x0146E0 05:86D0: A0 03     LDY #$03
 C - - - - - 0x0146E2 05:86D2: 8C 3A 05  STY ram_player_id + 8
 C - - - - - 0x0146E5 05:86D5: C8        INY
 C - - - - - 0x0146E6 05:86D6: 8C 38 05  STY ram_player_id + 6
-bra_86D9:
+bra_86D9_not_walkthrough:
 C - - - - - 0x0146E9 05:86D9: A9 FF     LDA #$FF
 C - - - - - 0x0146EB 05:86DB: 8D 4A 05  STA ram_054A
 C - - - - - 0x0146EE 05:86DE: A0 00     LDY #$00
@@ -1170,7 +1172,7 @@ C - - - - - 0x0146FF 05:86EF: 8D D3 05  STA ram_05D3
 C - - - - - 0x014702 05:86F2: 8D D4 05  STA ram_05D4
 C - - - - - 0x014705 05:86F5: A0 00     LDY #$00
 C - - - - - 0x014707 05:86F7: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x014709 05:86F9: 30 09     BMI bra_8704
+C - - - - - 0x014709 05:86F9: 30 09     BMI bra_8704    ; если режим прохождения
 C - - - - - 0x01470B 05:86FB: C8        INY
 C - - - - - 0x01470C 05:86FC: 0A        ASL
 C - - - - - 0x01470D 05:86FD: 30 05     BMI bra_8704
@@ -1964,7 +1966,7 @@ tbl_8B7D:
 
 ofs_8B80_01:
 C - - J - - 0x014B90 05:8B80: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x014B92 05:8B82: 29 20     AND #$20
+C - - - - - 0x014B92 05:8B82: 29 20     AND #con_gm_pk_menu
 C - - - - - 0x014B94 05:8B84: F0 13     BEQ bra_8B99
 C - - - - - 0x014B96 05:8B86: A5 5D     LDA ram_players_cnt
 C - - - - - 0x014B98 05:8B88: C9 01     CMP #$01
@@ -2192,7 +2194,7 @@ C - - - - - 0x014CE4 05:8CD4: E8        INX
 C - - - - - 0x014CE5 05:8CD5: E0 02     CPX #$02
 C - - - - - 0x014CE7 05:8CD7: 90 EF     BCC bra_8CC8
 C - - - - - 0x014CE9 05:8CD9: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x014CEB 05:8CDB: 29 20     AND #$20
+C - - - - - 0x014CEB 05:8CDB: 29 20     AND #con_gm_pk_menu
 C - - - - - 0x014CED 05:8CDD: F0 0E     BEQ bra_8CED_RTS
 C - - - - - 0x014CEF 05:8CDF: A5 5D     LDA ram_players_cnt
 C - - - - - 0x014CF1 05:8CE1: C9 01     CMP #$01
@@ -2237,14 +2239,14 @@ C - - - - - 0x014D1A 05:8D0A: 20 11 C0  JSR sub_0x01ECB9
 C - - - - - 0x014D1D 05:8D0D: 20 17 C0  JSR sub_0x01EE81_disable_NMI
 C - - - - - 0x014D20 05:8D10: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x014D23 05:8D13: 24 57     BIT ram_option_mode_difficulty
-C - - - - - 0x014D25 05:8D15: 70 0B     BVS bra_8D22
+C - - - - - 0x014D25 05:8D15: 70 0B     BVS bra_8D22_minibattle
 C - - - - - 0x014D27 05:8D17: A0 04     LDY #$04
 bra_8D19:
 C - - - - - 0x014D29 05:8D19: B9 61 8D  LDA tbl_8D61,Y
 C - - - - - 0x014D2C 05:8D1C: 99 93 06  STA ram_байт_2006_hi_атрибуты,Y
 C - - - - - 0x014D2F 05:8D1F: 88        DEY
 C - - - - - 0x014D30 05:8D20: 10 F7     BPL bra_8D19
-bra_8D22:
+bra_8D22_minibattle:
 C - - - - - 0x014D32 05:8D22: A5 5D     LDA ram_players_cnt
 C - - - - - 0x014D34 05:8D24: 09 80     ORA #$80
 C - - - - - 0x014D36 05:8D26: 8D B9 06  STA ram_буфер_графики
@@ -2822,11 +2824,11 @@ C - - - - - 0x015009 05:8FF9: A5 59     LDA ram_screen_sub_id
 C - - - - - 0x01500B 05:8FFB: 30 12     BMI bra_900F
 C - - - - - 0x01500D 05:8FFD: 20 DF 80  JSR sub_80DF
 C - - - - - 0x015010 05:9000: 24 57     BIT ram_option_mode_difficulty
-C - - - - - 0x015012 05:9002: 50 08     BVC bra_900C
+C - - - - - 0x015012 05:9002: 50 08     BVC bra_900C_not_minibattle
 C - - - - - 0x015014 05:9004: A9 13     LDA #$13    ; экран раздевалки без некоторых опций
 C - - - - - 0x015016 05:9006: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
 C - - - - - 0x015019 05:9009: 20 CD 92  JSR sub_92CD
-bra_900C:
+bra_900C_not_minibattle:
 C - - - - - 0x01501C 05:900C: 20 1C 90  JSR sub_901C
 bra_900F:
 C - - - - - 0x01501F 05:900F: 20 C7 90  JSR sub_90C7
@@ -3300,9 +3302,9 @@ C - - - - - 0x015266 05:9256: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x015269 05:9259: 0A        ASL
 C - - - - - 0x01526A 05:925A: A8        TAY
 C - - - - - 0x01526B 05:925B: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01526D 05:925D: 30 01     BMI bra_9260
+C - - - - - 0x01526D 05:925D: 30 01     BMI bra_9260_walkthrough
 C - - - - - 0x01526F 05:925F: C8        INY
-bra_9260:
+bra_9260_walkthrough:
 C - - - - - 0x015270 05:9260: B9 BF 92  LDA tbl_92BF,Y
 C - - - - - 0x015273 05:9263: 10 0B     BPL bra_9270
 C - - - - - 0x015275 05:9265: 0A        ASL
@@ -4423,11 +4425,11 @@ C - - - - - 0x0157ED 05:97DD: B9 D1 A6  LDA tbl_A6D1,Y
 C - - - - - 0x0157F0 05:97E0: 8D 5A 05  STA ram_music_id
 C - - - - - 0x0157F3 05:97E3: A0 00     LDY #$00
 C - - - - - 0x0157F5 05:97E5: 24 57     BIT ram_option_mode_difficulty
-C - - - - - 0x0157F7 05:97E7: 70 06     BVS bra_97EF
+C - - - - - 0x0157F7 05:97E7: 70 06     BVS bra_97EF_minibattle
 C - - - - - 0x0157F9 05:97E9: A9 00     LDA #$00
 C - - - - - 0x0157FB 05:97EB: 85 58     STA ram_screen_id
 C - - - - - 0x0157FD 05:97ED: F0 02     BEQ bra_97F1
-bra_97EF:
+bra_97EF_minibattle:
 C - - - - - 0x0157FF 05:97EF: A9 03     LDA #$03
 bra_97F1:
 C - - - - - 0x015801 05:97F1: 8D 59 00  STA ram_screen_sub_id
@@ -4463,7 +4465,7 @@ C - - - - - 0x01582D 05:981D: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_
 
 sub_982C:
 C - - - - - 0x01583C 05:982C: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01583E 05:982E: 30 11     BMI bra_9841
+C - - - - - 0x01583E 05:982E: 30 11     BMI bra_9841    ; если режим прохождения
 C - - - - - 0x015840 05:9830: AC CC 05  LDY ram_счетчик_смен
 C - - - - - 0x015843 05:9833: B9 2C 05  LDA ram_номер_команды,Y
 C - - - - - 0x015846 05:9836: 29 0F     AND #$0F
@@ -4804,12 +4806,12 @@ C - - J - - 0x015A8E 05:9A7E: AD CB 05  LDA ram_номер_опции + 1
 C - - - - - 0x015A91 05:9A81: C9 06     CMP #$06
 C - - - - - 0x015A93 05:9A83: F0 1C     BEQ bra_9AA1
 C - - - - - 0x015A95 05:9A85: 24 57     BIT ram_option_mode_difficulty
-C - - - - - 0x015A97 05:9A87: 30 0B     BMI bra_9A94
+C - - - - - 0x015A97 05:9A87: 30 0B     BMI bra_9A94_walkthrough
 C - - - - - 0x015A99 05:9A89: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x015A9C 05:9A8C: 49 01     EOR #$01
 C - - - - - 0x015A9E 05:9A8E: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x015AA1 05:9A91: 4C 99 9A  JMP loc_9A99
-bra_9A94:
+bra_9A94_walkthrough:
 C - - - - - 0x015AA4 05:9A94: A2 0C     LDX #$0C
 C - - - - - 0x015AA6 05:9A96: 20 DD 81  JSR sub_81DD
 loc_9A99:
@@ -4826,7 +4828,7 @@ ofs_9AA4_08_Right:
 C - - J - - 0x015AB4 05:9AA4: AD CB 05  LDA ram_номер_опции + 1
 C - - - - - 0x015AB7 05:9AA7: C9 06     CMP #$06
 C - - - - - 0x015AB9 05:9AA9: F0 F6     BEQ bra_9AA1
-C - - - - - 0x015ABB 05:9AAB: D0 E7     BNE bra_9A94
+C - - - - - 0x015ABB 05:9AAB: D0 E7     BNE bra_9A94_walkthrough
 
 
 
@@ -5520,7 +5522,7 @@ bra_9E22:
 C - - - - - 0x015E32 05:9E22: A9 00     LDA #$00
 C - - - - - 0x015E34 05:9E24: 85 1D     STA ram_001D
 C - - - - - 0x015E36 05:9E26: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x015E38 05:9E28: 10 18     BPL bra_9E42
+C - - - - - 0x015E38 05:9E28: 10 18     BPL bra_9E42    ; если не режим прохождения
 C - - - - - 0x015E3A 05:9E2A: BD 5C 05  LDA ram_лицо_игрока,X
 C - - - - - 0x015E3D 05:9E2D: 0A        ASL
 C - - - - - 0x015E3E 05:9E2E: A8        TAY
@@ -6041,7 +6043,7 @@ C - - - - - 0x0160BB 05:A0AB: 0A        ASL
 C - - - - - 0x0160BC 05:A0AC: 65 1C     ADC ram_001C
 C - - - - - 0x0160BE 05:A0AE: A8        TAY
 C - - - - - 0x0160BF 05:A0AF: 24 57     BIT ram_option_mode_difficulty
-C - - - - - 0x0160C1 05:A0B1: 30 07     BMI bra_A0BA
+C - - - - - 0x0160C1 05:A0B1: 30 07     BMI bra_A0BA    ; если режим прохождения
 C - - - - - 0x0160C3 05:A0B3: C8        INY
 C - - - - - 0x0160C4 05:A0B4: AD CC 05  LDA ram_счетчик_смен
 C - - - - - 0x0160C7 05:A0B7: F0 01     BEQ bra_A0BA
@@ -10977,11 +10979,11 @@ C - - - - - 0x017B65 05:BB55: 8D 2A 05  STA ram_флаг_владения_мяч
 C - - - - - 0x017B68 05:BB58: 8D 2B 05  STA ram_флаг_владения_мячом_ком + 1
 C - - - - - 0x017B6B 05:BB5B: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x017B6D 05:BB5D: 29 F0     AND #$F0
-C - - - - - 0x017B6F 05:BB5F: F0 02     BEQ bra_BB63
-C - - - - - 0x017B71 05:BB61: 10 03     BPL bra_BB66
-bra_BB63:
+C - - - - - 0x017B6F 05:BB5F: F0 02     BEQ bra_BB63_demo
+C - - - - - 0x017B71 05:BB61: 10 03     BPL bra_BB66_not_walkthrough
+bra_BB63_demo:
 C - - - - - 0x017B73 05:BB63: 20 C4 B9  JSR sub_B9C4
-bra_BB66:
+bra_BB66_not_walkthrough:
 C - - - - - 0x017B76 05:BB66: AD 94 04  LDA ram_опция_дождь_ветер
 C - - - - - 0x017B79 05:BB69: 29 0F     AND #$0F
 C - - - - - 0x017B7B 05:BB6B: 0A        ASL
@@ -11086,7 +11088,7 @@ C - - - - - 0x017C28 05:BC18: A9 02     LDA #$02
 C - - - - - 0x017C2A 05:BC1A: 8D C1 05  STA ram_timer_x_00_0
 C - - - - - 0x017C2D 05:BC1D: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x017C2F 05:BC1F: 29 F0     AND #$F0
-C - - - - - 0x017C31 05:BC21: F0 0E     BEQ bra_BC31
+C - - - - - 0x017C31 05:BC21: F0 0E     BEQ bra_BC31    ; если демо
 C - - - - - 0x017C33 05:BC23: 29 D0     AND #$D0
 C - - - - - 0x017C35 05:BC25: D0 0A     BNE bra_BC31
 C - - - - - 0x017C37 05:BC27: A9 00     LDA #$00
@@ -11109,10 +11111,10 @@ C - - - - - 0x017C55 05:BC45: 10 F5     BPL bra_BC3C
 C - - - - - 0x017C57 05:BC47: A0 00     LDY #$00
 C - - - - - 0x017C59 05:BC49: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x017C5B 05:BC4B: 29 F0     AND #$F0
-C - - - - - 0x017C5D 05:BC4D: F0 20     BEQ bra_BC6F
-C - - - - - 0x017C5F 05:BC4F: 30 02     BMI bra_BC53
+C - - - - - 0x017C5D 05:BC4D: F0 20     BEQ bra_BC6F_demo
+C - - - - - 0x017C5F 05:BC4F: 30 02     BMI bra_BC53_walkthrough
 C - - - - - 0x017C61 05:BC51: A0 02     LDY #$02
-bra_BC53:
+bra_BC53_walkthrough:
 C - - - - - 0x017C63 05:BC53: B9 02 BD  LDA tbl_BD02,Y
 C - - - - - 0x017C66 05:BC56: 85 2C     STA ram_002C
 C - - - - - 0x017C68 05:BC58: B9 03 BD  LDA tbl_BD02 + 1,Y
@@ -11127,7 +11129,7 @@ C - - - - - 0x017C77 05:BC67: 9D 50 06  STA ram_позиция_управлен�
 C - - - - - 0x017C7A 05:BC6A: C8        INY
 C - - - - - 0x017C7B 05:BC6B: C4 5D     CPY ram_players_cnt
 C - - - - - 0x017C7D 05:BC6D: 90 F0     BCC bra_BC5F
-bra_BC6F:
+bra_BC6F_demo:
 C - - - - - 0x017C7F 05:BC6F: AD 5A 06  LDA ram_позиция_управление + 10
 C - - - - - 0x017C82 05:BC72: 29 80     AND #$80
 C - - - - - 0x017C84 05:BC74: 8D 8C 06  STA ram_управление_кипером
@@ -11731,11 +11733,11 @@ tbl_BF56:
 
 sub_BF65:
 C - - - - - 0x017F75 05:BF65: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x017F77 05:BF67: 30 07     BMI bra_BF70
+C - - - - - 0x017F77 05:BF67: 30 07     BMI bra_BF70_walkthrough
 C - - - - - 0x017F79 05:BF69: 18        CLC
 C - - - - - 0x017F7A 05:BF6A: AD 29 05  LDA ram_опция_материк
 C - - - - - 0x017F7D 05:BF6D: 4C 7F BF  JMP loc_BF7F
-bra_BF70:
+bra_BF70_walkthrough:
 C - - - - - 0x017F80 05:BF70: A0 08     LDY #$08
 C - - - - - 0x017F82 05:BF72: AD 4A 05  LDA ram_054A
 C - - - - - 0x017F85 05:BF75: 10 0A     BPL bra_BF81

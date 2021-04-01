@@ -14600,7 +14600,7 @@ loc_BC30:
 C D 1 - - - 0x007C40 01:BC30: A9 00     LDA #$00
 C - - - - - 0x007C42 01:BC32: 85 1C     STA ram_001C
 C - - - - - 0x007C44 01:BC34: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x007C46 01:BC36: 10 26     BPL bra_BC5E
+C - - - - - 0x007C46 01:BC36: 10 26     BPL bra_BC5E    ; если не режим прохождения
 C - - - - - 0x007C48 01:BC38: 8A        TXA
 C - - - - - 0x007C49 01:BC39: 4A        LSR
 C - - - - - 0x007C4A 01:BC3A: B0 22     BCS bra_BC5E
