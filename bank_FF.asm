@@ -1779,7 +1779,7 @@ C - - - - - 0x01CA4E 07:CA3E: 8D F3 00  STA ram_copy_pos_Y_hi_camera
 C - - - - - 0x01CA51 07:CA41: A9 01     LDA #$01
 C - - - - - 0x01CA53 07:CA43: 8D ED 00  STA ram_pos_X_hi_camera
 C - - - - - 0x01CA56 07:CA46: 8D F1 00  STA ram_copy_pos_X_hi_camera
-C - - - - - 0x01CA59 07:CA49: A9 00     LDA #$00
+C - - - - - 0x01CA59 07:CA49: A9 00     LDA #$00    ; vertical mirroring
 C - - - - - 0x01CA5B 07:CA4B: 8D 00 A0  STA $A000
 C - - - - - 0x01CA5E 07:CA4E: 20 A9 EC  JSR sub_ECA9_выключить_NMI_при_следующем_вызове
 C - - - - - 0x01CA61 07:CA51: 20 71 EE  JSR sub_EE71_disable_NMI
@@ -2209,29 +2209,29 @@ C - - - - - 0x01CD3F 07:CD2F: BD 99 03  LDA ram_pos_Z_hi_player,X
 C - - - - - 0x01CD42 07:CD32: 30 03     BMI bra_CD37
 C - - - - - 0x01CD44 07:CD34: 4C C6 CD  RTS
 bra_CD37:
-C - - - - - 0x01CD47 07:CD37: BD 30 01  LDA ram_игрок_на_поверхности,X
-C - - - - - 0x01CD4A 07:CD3A: D0 03     BNE bra_CD3F
+C - - - - - 0x01CD47 07:CD37: BD 30 01  LDA ram_surface_player,X
+C - - - - - 0x01CD4A 07:CD3A: D0 03     BNE bra_CD3F_не_на_траве
 C - - - - - 0x01CD4C 07:CD3C: 20 F0 E6  JSR sub_E6F0
-bra_CD3F:
-C - - - - - 0x01CD4F 07:CD3F: BD 30 01  LDA ram_игрок_на_поверхности,X
-C - - - - - 0x01CD52 07:CD42: F0 06     BEQ bra_CD4A
+bra_CD3F_не_на_траве:
+C - - - - - 0x01CD4F 07:CD3F: BD 30 01  LDA ram_surface_player,X
+C - - - - - 0x01CD52 07:CD42: F0 06     BEQ bra_CD4A_на_траве
 C - - - - - 0x01CD54 07:CD44: C9 02     CMP #$02
-C - - - - - 0x01CD56 07:CD46: B0 1E     BCS bra_CD66
-C - - - - - 0x01CD58 07:CD48: 90 0E     BCC bra_CD58
-bra_CD4A:
+C - - - - - 0x01CD56 07:CD46: B0 1E     BCS bra_CD66_на_грязи_или_песке
+C - - - - - 0x01CD58 07:CD48: 90 0E     BCC bra_CD58_на_луже
+bra_CD4A_на_траве:
 C - - - - - 0x01CD5A 07:CD4A: A9 00     LDA #$00
 C - - - - - 0x01CD5C 07:CD4C: 9D 4A 04  STA ram_gravity_hi_player,X
 C - - - - - 0x01CD5F 07:CD4F: 9D 3C 04  STA ram_gravity_lo_player,X
 C - - - - - 0x01CD62 07:CD52: 9D 2E 04  STA ram_spd_Z_hi_player,X
 C - - - - - 0x01CD65 07:CD55: 9D 20 04  STA ram_spd_Z_lo_player,X
-bra_CD58:
+bra_CD58_на_луже:
 C - - - - - 0x01CD68 07:CD58: A9 00     LDA #$00
 C - - - - - 0x01CD6A 07:CD5A: 9D 99 03  STA ram_pos_Z_hi_player,X
 C - - - - - 0x01CD6D 07:CD5D: 9D 86 03  STA ram_pos_Z_lo_player,X
 C - - - - - 0x01CD70 07:CD60: 9D 73 03  STA ram_pos_Z_sub_player,X
 C - - - - - 0x01CD73 07:CD63: 4C C6 CD  RTS
-bra_CD66:
-C - - - - - 0x01CD76 07:CD66: BC 30 01  LDY ram_игрок_на_поверхности,X
+bra_CD66_на_грязи_или_песке:
+C - - - - - 0x01CD76 07:CD66: BC 30 01  LDY ram_surface_player,X
 C - - - - - 0x01CD79 07:CD69: 88        DEY
 C - - - - - 0x01CD7A 07:CD6A: 88        DEY
 C - - - - - 0x01CD7B 07:CD6B: BD 86 03  LDA ram_pos_Z_lo_player,X
@@ -2240,8 +2240,8 @@ C - - - - - 0x01CD81 07:CD71: B0 06     BCS bra_CD79
 - - - - - - 0x01CD83 07:CD73: B9 C9 CD  LDA tbl_CDC9,Y
 - - - - - - 0x01CD86 07:CD76: 9D 86 03  STA ram_pos_Z_lo_player,X
 bra_CD79:
-C - - - - - 0x01CD89 07:CD79: BD 30 01  LDA ram_игрок_на_поверхности,X
-C - - - - - 0x01CD8C 07:CD7C: C9 02     CMP #$02
+C - - - - - 0x01CD89 07:CD79: BD 30 01  LDA ram_surface_player,X
+C - - - - - 0x01CD8C 07:CD7C: C9 02     CMP #con_НА_ГРЯЗИ
 C - - - - - 0x01CD8E 07:CD7E: D0 46     BNE bra_CDC6_RTS
 - - - - - - 0x01CD90 07:CD80: BD F6 03  LDA ram_spd_X_hi_player,X
 - - - - - - 0x01CD93 07:CD83: 1D E8 03  ORA ram_spd_X_lo_player,X
@@ -2249,11 +2249,11 @@ C - - - - - 0x01CD8E 07:CD7E: D0 46     BNE bra_CDC6_RTS
 - - - - - - 0x01CD99 07:CD89: 1D 04 04  ORA ram_spd_Y_lo_player,X
 - - - - - - 0x01CD9C 07:CD8C: F0 38     BEQ bra_CDC6_RTS
 - - - - - - 0x01CD9E 07:CD8E: 20 F0 E6  JSR sub_E6F0
-- - - - - - 0x01CDA1 07:CD91: BD 30 01  LDA ram_игрок_на_поверхности,X
-- - - - - - 0x01CDA4 07:CD94: C9 02     CMP #$02
+- - - - - - 0x01CDA1 07:CD91: BD 30 01  LDA ram_surface_player,X
+- - - - - - 0x01CDA4 07:CD94: C9 02     CMP #con_НА_ГРЯЗИ
 - - - - - - 0x01CDA6 07:CD96: F0 2E     BEQ bra_CDC6_RTS
-- - - - - - 0x01CDA8 07:CD98: A9 02     LDA #$02
-- - - - - - 0x01CDAA 07:CD9A: 9D 30 01  STA ram_игрок_на_поверхности,X
+- - - - - - 0x01CDA8 07:CD98: A9 02     LDA #con_НА_ГРЯЗИ
+- - - - - - 0x01CDAA 07:CD9A: 9D 30 01  STA ram_surface_player,X
 - - - - - - 0x01CDAD 07:CD9D: AD 13 05  LDA ram_0513
 - - - - - - 0x01CDB0 07:CDA0: 9D 14 03  STA ram_pos_X_lo_player,X
 - - - - - - 0x01CDB3 07:CDA3: AD 14 05  LDA ram_0514
@@ -2275,12 +2275,12 @@ C D 2 - - - 0x01CDD6 07:CDC6: 60        RTS
 
 
 tbl_CDC7:
-- - - - - - 0x01CDD7 07:CDC7: E8        .byte $E8   ; 
-- D 2 - - - 0x01CDD8 07:CDC8: F8        .byte $F8   ; 
+- - - - - - 0x01CDD7 07:CDC7: E8        .byte $E8   ; на грязи
+- D 2 - - - 0x01CDD8 07:CDC8: F8        .byte $F8   ; на песке
 
 tbl_CDC9:
-- - - - - - 0x01CDD9 07:CDC9: EE        .byte $EE   ; 
-- - - - - - 0x01CDDA 07:CDCA: FA        .byte $FA   ;
+- - - - - - 0x01CDD9 07:CDC9: EE        .byte $EE   ; на грязи
+- - - - - - 0x01CDDA 07:CDCA: FA        .byte $FA   ; на песке
 
 
  
@@ -2295,23 +2295,23 @@ C - - - - - 0x01CDEA 07:CDDA: A9 00     LDA #$00
 C - - - - - 0x01CDEC 07:CDDC: 9D 4A 04  STA ram_gravity_hi_player,X
 C - - - - - 0x01CDEF 07:CDDF: 4C 2F CE  RTS
 bra_CDE2:
-C - - - - - 0x01CDF2 07:CDE2: BD 30 01  LDA ram_игрок_на_поверхности,X
+C - - - - - 0x01CDF2 07:CDE2: BD 30 01  LDA ram_surface_player,X
 C - - - - - 0x01CDF5 07:CDE5: C9 02     CMP #$02
-C - - - - - 0x01CDF7 07:CDE7: B0 0E     BCS bra_CDF7
+C - - - - - 0x01CDF7 07:CDE7: B0 0E     BCS bra_CDF7_на_грязи_или_песке
 C - - - - - 0x01CDF9 07:CDE9: A9 00     LDA #$00
 C - - - - - 0x01CDFB 07:CDEB: 9D 73 03  STA ram_pos_Z_sub_player,X
 C - - - - - 0x01CDFE 07:CDEE: 9D 86 03  STA ram_pos_Z_lo_player,X
 C - - - - - 0x01CE01 07:CDF1: 9D 99 03  STA ram_pos_Z_hi_player,X
 C - - - - - 0x01CE04 07:CDF4: 4C 2F CE  RTS
-bra_CDF7:
+bra_CDF7_на_грязи_или_песке:
 C - - - - - 0x01CE07 07:CDF7: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x01CE0A 07:CDFA: 0A        ASL
 C - - - - - 0x01CE0B 07:CDFB: A8        TAY
-C - - - - - 0x01CE0C 07:CDFC: BD 30 01  LDA ram_игрок_на_поверхности,X
+C - - - - - 0x01CE0C 07:CDFC: BD 30 01  LDA ram_surface_player,X
 C - - - - - 0x01CE0F 07:CDFF: 29 01     AND #$01
-C - - - - - 0x01CE11 07:CE01: F0 01     BEQ bra_CE04
+C - - - - - 0x01CE11 07:CE01: F0 01     BEQ bra_CE04_на_траве_или_грязи
 C - - - - - 0x01CE13 07:CE03: C8        INY
-bra_CE04:
+bra_CE04_на_траве_или_грязи:
 C - - - - - 0x01CE14 07:CE04: 24 5C     BIT ram_flag_gameplay
 C - - - - - 0x01CE16 07:CE06: 50 05     BVC bra_CE0D
 C - - - - - 0x01CE18 07:CE08: A0 0C     LDY #$0C
@@ -2605,7 +2605,7 @@ C - - - - - 0x01CFC5 07:CFB5: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x01CFC8 07:CFB8: 8D AC 05  STA ram_palette_id_bg
 C - - - - - 0x01CFCB 07:CFBB: A9 0F     LDA #$0F
 C - - - - - 0x01CFCD 07:CFBD: 8D AD 05  STA ram_palette_id_bg + 1
-C - - - - - 0x01CFD0 07:CFC0: A9 01     LDA #$01
+C - - - - - 0x01CFD0 07:CFC0: A9 01     LDA #$01    ; horisontal mirroring
 C - - - - - 0x01CFD2 07:CFC2: 8D 00 A0  STA $A000
 C - - - - - 0x01CFD5 07:CFC5: AD F2 05  LDA ram_поле_банк_фона
 C - - - - - 0x01CFD8 07:CFC8: 8D BC 05  STA ram_банк_фона
@@ -7097,7 +7097,7 @@ C - - - - - 0x01E7DC 07:E7CC: 29 0F     AND #$0F
 C - - - - - 0x01E7DE 07:E7CE: 18        CLC
 C - - - - - 0x01E7DF 07:E7CF: 69 01     ADC #$01
 loc_E7D1:
-C D 3 - - - 0x01E7E1 07:E7D1: 9D 30 01  STA ram_игрок_на_поверхности,X
+C D 3 - - - 0x01E7E1 07:E7D1: 9D 30 01  STA ram_surface_player,X
 C - - - - - 0x01E7E4 07:E7D4: 68        PLA
 C - - - - - 0x01E7E5 07:E7D5: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01E7E8 07:E7D8: 60        RTS
@@ -7275,7 +7275,7 @@ C - - - - - 0x01E950 07:E940: 60        RTS
 
 
 sub_E941:
-C - - - - - 0x01E951 07:E941: A9 00     LDA #$00
+C - - - - - 0x01E951 07:E941: A9 00     LDA #$00    ; vertical mirroring
 C - - - - - 0x01E953 07:E943: 8D 00 A0  STA $A000
 loc_E946:
 C D 3 - - - 0x01E956 07:E946: 20 D2 E9  JSR sub_E9D2
@@ -7285,7 +7285,7 @@ C - - - - - 0x01E95D 07:E94D: 29 C0     AND #$C0
 C - - - - - 0x01E95F 07:E94F: 0A        ASL
 C - - - - - 0x01E960 07:E950: 2A        ROL
 C - - - - - 0x01E961 07:E951: 2A        ROL
-C - - - - - 0x01E962 07:E952: 20 8F EC  JSR sub_EC8F
+C - - - - - 0x01E962 07:E952: 20 8F EC  JSR sub_EC8F_jump_to_pointers_afetr_JSR
 - D 3 - I - 0x01E965 07:E955: 5E E9     .word ofs_E95E_00
 - D 3 - I - 0x01E967 07:E957: 6F E9     .word ofs_E96F_01
 - D 3 - I - 0x01E969 07:E959: 80 E9     .word ofs_E980_02
@@ -7994,7 +7994,7 @@ tbl_EC8E:
 
 
 
-sub_EC8F:
+sub_EC8F_jump_to_pointers_afetr_JSR:
 sub_0x01EC9F_jump_to_pointers_afetr_JSR:
 C D 3 - - - 0x01EC9F 07:EC8F: 0A        ASL
 C - - - - - 0x01ECA0 07:EC90: A8        TAY
@@ -10381,7 +10381,7 @@ C - - - - - 0x01FDED 07:FDDD: A9 06     LDA #con_prg_bank + $06
 C - - - - - 0x01FDEF 07:FDDF: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01FDF2 07:FDE2: A9 C0     LDA #$C0
 C - - - - - 0x01FDF4 07:FDE4: 85 4F     STA ram_NMI_flag
-C - - - - - 0x01FDF6 07:FDE6: A9 00     LDA #$00
+C - - - - - 0x01FDF6 07:FDE6: A9 00     LDA #$00    ; vertical mirroring
 C - - - - - 0x01FDF8 07:FDE8: 8D 00 A0  STA $A000
 C - - - - - 0x01FDFB 07:FDEB: A9 00     LDA #$00
 C - - - - - 0x01FDFD 07:FDED: AC 02 01  LDY ram_0102

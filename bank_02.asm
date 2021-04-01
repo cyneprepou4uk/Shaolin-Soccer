@@ -11764,7 +11764,7 @@ C - - - - - 0x00B13A 02:B12A: C9 FF     CMP #$FF
 C - - - - - 0x00B13C 02:B12C: D0 0B     BNE bra_B139
 C - - - - - 0x00B13E 02:B12E: BD A3 04  LDA ram_направление_движения,X
 C - - - - - 0x00B141 02:B131: 09 40     ORA #$40
-C - - - - - 0x00B143 02:B133: 9D 96 04  STA ram_угол_движения,X
+C - - - - - 0x00B143 02:B133: 9D 96 04  STA ram_movement_angle,X
 C - - - - - 0x00B146 02:B136: 4C 4C B1  JMP loc_B14C
 bra_B139:
 C - - - - - 0x00B149 02:B139: BD A3 04  LDA ram_направление_движения,X
@@ -11777,7 +11777,7 @@ C - - - - - 0x00B153 02:B143: 4A        LSR
 C - - - - - 0x00B154 02:B144: 4A        LSR
 C - - - - - 0x00B155 02:B145: A8        TAY
 C - - - - - 0x00B156 02:B146: B9 64 B1  LDA tbl_B164,Y
-C - - - - - 0x00B159 02:B149: 9D 96 04  STA ram_угол_движения,X
+C - - - - - 0x00B159 02:B149: 9D 96 04  STA ram_movement_angle,X
 loc_B14C:
 C D 1 - - - 0x00B15C 02:B14C: 5D A3 04  EOR ram_направление_движения,X
 C - - - - - 0x00B15F 02:B14F: 10 08     BPL bra_B159
@@ -11831,7 +11831,7 @@ C - - - - - 0x00B19D 02:B18D: 30 15     BMI bra_B1A4
 C - - - - - 0x00B19F 02:B18F: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B1A2 02:B192: BD A3 04  LDA ram_направление_движения,X
 C - - - - - 0x00B1A5 02:B195: 09 40     ORA #$40
-C - - - - - 0x00B1A7 02:B197: 9D 96 04  STA ram_угол_движения,X
+C - - - - - 0x00B1A7 02:B197: 9D 96 04  STA ram_movement_angle,X
 loc_B19A:
 C D 1 - - - 0x00B1AA 02:B19A: A9 2B     LDA #con_sfx_jump
 C - - - - - 0x00B1AC 02:B19C: 20 02 C0  JSR sub_0x01C2F4_play_sound
@@ -11866,7 +11866,7 @@ C - - - - - 0x00B1E1 02:B1D1: 30 D1     BMI bra_B1A4
 C - - - - - 0x00B1E3 02:B1D3: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B1E6 02:B1D6: BD A3 04  LDA ram_направление_движения,X
 C - - - - - 0x00B1E9 02:B1D9: 09 40     ORA #$40
-C - - - - - 0x00B1EB 02:B1DB: 9D 96 04  STA ram_угол_движения,X
+C - - - - - 0x00B1EB 02:B1DB: 9D 96 04  STA ram_movement_angle,X
 loc_B1DE:
 C - - - - - 0x00B1EE 02:B1DE: A9 03     LDA #$03
 C - - - - - 0x00B1F0 02:B1E0: 20 93 B2  JSR sub_B293
@@ -11881,7 +11881,7 @@ ofs_B1E6_0A:
 - - - - - - 0x00B1FE 02:B1EE: BD A3 04  LDA ram_направление_движения,X
 - - - - - - 0x00B201 02:B1F1: 09 40     ORA #$40
 - - - - - - 0x00B203 02:B1F3: 49 80     EOR #$80
-- - - - - - 0x00B205 02:B1F5: 9D 96 04  STA ram_угол_движения,X
+- - - - - - 0x00B205 02:B1F5: 9D 96 04  STA ram_movement_angle,X
 - - - - - - 0x00B208 02:B1F8: 4C DE B1  JMP loc_B1DE
 
 
@@ -12459,7 +12459,7 @@ C - - - - - 0x00B4DA 02:B4CA: 29 80     AND #$80
 C - - - - - 0x00B4DC 02:B4CC: 49 80     EOR #$80
 C - - - - - 0x00B4DE 02:B4CE: 9D A3 04  STA ram_направление_движения,X
 C - - - - - 0x00B4E1 02:B4D1: 09 40     ORA #$40
-C - - - - - 0x00B4E3 02:B4D3: 9D 96 04  STA ram_угол_движения,X
+C - - - - - 0x00B4E3 02:B4D3: 9D 96 04  STA ram_movement_angle,X
 C - - - - - 0x00B4E6 02:B4D6: 8A        TXA
 C - - - - - 0x00B4E7 02:B4D7: 0A        ASL
 C - - - - - 0x00B4E8 02:B4D8: 0A        ASL
@@ -13012,7 +13012,7 @@ C - - - - - 0x00B7B0 02:B7A0: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B7B3 02:B7A3: 20 3E AA  JSR sub_0x01C25E
 C - - - - - 0x00B7B6 02:B7A6: BD A3 04  LDA ram_направление_движения,X
 C - - - - - 0x00B7B9 02:B7A9: 09 40     ORA #$40
-C - - - - - 0x00B7BB 02:B7AB: 9D 96 04  STA ram_угол_движения,X
+C - - - - - 0x00B7BB 02:B7AB: 9D 96 04  STA ram_movement_angle,X
 bra_B7AE:
 C - - - - - 0x00B7BE 02:B7AE: A9 03     LDA #$03
 C - - - - - 0x00B7C0 02:B7B0: 20 93 B2  JSR sub_B293
@@ -13030,7 +13030,7 @@ C - - - - - 0x00B7D2 02:B7C2: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B7D5 02:B7C5: 20 3E AA  JSR sub_0x01C25E
 C - - - - - 0x00B7D8 02:B7C8: BD A3 04  LDA ram_направление_движения,X
 C - - - - - 0x00B7DB 02:B7CB: 09 80     ORA #$80
-C - - - - - 0x00B7DD 02:B7CD: 9D 96 04  STA ram_угол_движения,X
+C - - - - - 0x00B7DD 02:B7CD: 9D 96 04  STA ram_movement_angle,X
 C - - - - - 0x00B7E0 02:B7D0: 4C E1 B7  JMP loc_B7E1
 
 
@@ -13043,15 +13043,15 @@ C - - J - - 0x00B7E3 02:B7D3: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x00B7E6 02:B7D6: 10 C8     BPL bra_B7A0
 bra_B7D8:
 C - - - - - 0x00B7E8 02:B7D8: 18        CLC
-C - - - - - 0x00B7E9 02:B7D9: BD 96 04  LDA ram_угол_движения,X
+C - - - - - 0x00B7E9 02:B7D9: BD 96 04  LDA ram_movement_angle,X
 C - - - - - 0x00B7EC 02:B7DC: 69 08     ADC #$08
-C - - - - - 0x00B7EE 02:B7DE: 9D 96 04  STA ram_угол_движения,X
+C - - - - - 0x00B7EE 02:B7DE: 9D 96 04  STA ram_movement_angle,X
 loc_B7E1:
 C D 1 - - - 0x00B7F1 02:B7E1: A9 03     LDA #$03
 C - - - - - 0x00B7F3 02:B7E3: 20 93 B2  JSR sub_B293
 C - - - - - 0x00B7F6 02:B7E6: 20 34 AA  JSR sub_0x01C25C
 C - - - - - 0x00B7F9 02:B7E9: 20 E5 B8  JSR sub_B8E5
-C - - - - - 0x00B7FC 02:B7EC: BD 96 04  LDA ram_угол_движения,X
+C - - - - - 0x00B7FC 02:B7EC: BD 96 04  LDA ram_movement_angle,X
 C - - - - - 0x00B7FF 02:B7EF: 29 80     AND #$80
 C - - - - - 0x00B801 02:B7F1: 1D 74 00  ORA ram_animation_id_player,X
 C - - - - - 0x00B804 02:B7F4: 9D 74 00  STA ram_animation_id_player,X
@@ -13065,7 +13065,7 @@ ofs_B7F8_1F:
 - - - - - - 0x00B80D 02:B7FD: 20 82 B2  JSR sub_B282
 - - - - - - 0x00B810 02:B800: BD A3 04  LDA ram_направление_движения,X
 - - - - - - 0x00B813 02:B803: 09 40     ORA #$40
-- - - - - - 0x00B815 02:B805: 9D 96 04  STA ram_угол_движения,X
+- - - - - - 0x00B815 02:B805: 9D 96 04  STA ram_movement_angle,X
 - - - - - - 0x00B818 02:B808: A9 04     LDA #$04
 - - - - - - 0x00B81A 02:B80A: 20 93 B2  JSR sub_B293
 - - - - - - 0x00B81D 02:B80D: A9 00     LDA #$00
@@ -13079,7 +13079,7 @@ ofs_B812_22:
 - - - - - - 0x00B827 02:B817: 20 82 B2  JSR sub_B282
 - - - - - - 0x00B82A 02:B81A: BD A3 04  LDA ram_направление_движения,X
 - - - - - - 0x00B82D 02:B81D: 09 40     ORA #$40
-- - - - - - 0x00B82F 02:B81F: 9D 96 04  STA ram_угол_движения,X
+- - - - - - 0x00B82F 02:B81F: 9D 96 04  STA ram_movement_angle,X
 - - - - - - 0x00B832 02:B822: A9 07     LDA #$07
 - - - - - - 0x00B834 02:B824: 20 93 B2  JSR sub_B293
 - - - - - - 0x00B837 02:B827: A9 0A     LDA #$0A

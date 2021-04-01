@@ -2239,7 +2239,7 @@ bra_8DBE:
 C - - - - - 0x00CDCE 03:8DBE: BD F1 04  LDA ram_skill_id,X
 C - - - - - 0x00CDD1 03:8DC1: 29 80     AND #$80
 C - - - - - 0x00CDD3 03:8DC3: F0 0A     BEQ bra_8DCF
-C - - - - - 0x00CDD5 03:8DC5: BD 96 04  LDA ram_угол_движения,X
+C - - - - - 0x00CDD5 03:8DC5: BD 96 04  LDA ram_movement_angle,X
 C - - - - - 0x00CDD8 03:8DC8: 29 60     AND #$60
 C - - - - - 0x00CDDA 03:8DCA: F0 03     BEQ bra_8DCF
 C - - - - - 0x00CDDC 03:8DCC: 4C DF 8E  JMP loc_8EDF
@@ -2535,7 +2535,7 @@ C - - - - - 0x00CF27 03:8F17: F0 05     BEQ bra_8F1E
 - - - - - - 0x00CF29 03:8F19: A9 10     LDA #$10
 - - - - - - 0x00CF2B 03:8F1B: 4C 2A 8F  JMP loc_8F2A
 bra_8F1E:
-C - - - - - 0x00CF2E 03:8F1E: BD 96 04  LDA ram_угол_движения,X
+C - - - - - 0x00CF2E 03:8F1E: BD 96 04  LDA ram_movement_angle,X
 C - - - - - 0x00CF31 03:8F21: C9 FF     CMP #$FF
 C - - - - - 0x00CF33 03:8F23: D0 03     BNE bra_8F28
 - - - - - - 0x00CF35 03:8F25: 4C B5 8E  JMP loc_8EB5
@@ -3239,7 +3239,7 @@ C - - - - - 0x00D366 03:9356: 20 75 B1  JSR sub_B175
 C - - - - - 0x00D369 03:9359: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x00D36C 03:935C: C9 FF     CMP #$FF
 C - - - - - 0x00D36E 03:935E: F0 08     BEQ bra_9368
-- - - - - - 0x00D370 03:9360: DD 96 04  CMP ram_угол_движения,X
+- - - - - - 0x00D370 03:9360: DD 96 04  CMP ram_movement_angle,X
 - - - - - - 0x00D373 03:9363: F0 03     BEQ bra_9368
 - - - - - - 0x00D375 03:9365: 4C 57 9B  JMP loc_9B57
 bra_9368:
@@ -3404,7 +3404,7 @@ C - - - - - 0x00D487 03:9477: 20 75 B1  JSR sub_B175
 C - - - - - 0x00D48A 03:947A: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x00D48D 03:947D: C9 FF     CMP #$FF
 C - - - - - 0x00D48F 03:947F: F0 08     BEQ bra_9489
-- - - - - - 0x00D491 03:9481: DD 96 04  CMP ram_угол_движения,X
+- - - - - - 0x00D491 03:9481: DD 96 04  CMP ram_movement_angle,X
 - - - - - - 0x00D494 03:9484: F0 03     BEQ bra_9489
 - - - - - - 0x00D496 03:9486: 4C 57 9B  JMP loc_9B57
 bra_9489:
@@ -4427,7 +4427,7 @@ C - - - - - 0x00DB66 03:9B56: 60        RTS
 
 loc_9B57:
 C D 0 - - - 0x00DB67 03:9B57: BD B0 04  LDA ram_смена_угла_движения,X
-C - - - - - 0x00DB6A 03:9B5A: DD 96 04  CMP ram_угол_движения,X
+C - - - - - 0x00DB6A 03:9B5A: DD 96 04  CMP ram_movement_angle,X
 C - - - - - 0x00DB6D 03:9B5D: D0 06     BNE bra_9B65
 C - - - - - 0x00DB6F 03:9B5F: A9 30     LDA #$30
 C - - - - - 0x00DB71 03:9B61: 9D 79 04  STA ram_action_id_player,X
