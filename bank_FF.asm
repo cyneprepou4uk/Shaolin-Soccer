@@ -1563,11 +1563,11 @@ C - - - - - 0x01C8BC 07:C8AC: 29 02     AND #$02
 C - - - - - 0x01C8BE 07:C8AE: D0 49     BNE bra_C8F9
 C - - - - - 0x01C8C0 07:C8B0: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01C8C2 07:C8B2: 29 20     AND #con_gm_penalty
-C - - - - - 0x01C8C4 07:C8B4: F0 07     BEQ bra_C8BD
+C - - - - - 0x01C8C4 07:C8B4: F0 07     BEQ bra_C8BD_не_пенальти
 C - - - - - 0x01C8C6 07:C8B6: A9 03     LDA #$03
 C - - - - - 0x01C8C8 07:C8B8: 85 59     STA ram_screen_sub_id
 C - - - - - 0x01C8CA 07:C8BA: 4C 19 C9  RTS
-bra_C8BD:
+bra_C8BD_не_пенальти:
 C - - - - - 0x01C8CD 07:C8BD: A9 06     LDA #$06
 C - - - - - 0x01C8CF 07:C8BF: 8D 59 00  STA ram_screen_sub_id
 C - - - - - 0x01C8D2 07:C8C2: 20 58 C2  JSR sub_C258
@@ -1647,7 +1647,7 @@ bra_C94F_RTS:
 bra_C952:
 C - - - - - 0x01C962 07:C952: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01C964 07:C954: 29 20     AND #con_gm_penalty
-C - - - - - 0x01C966 07:C956: F0 10     BEQ bra_C968
+C - - - - - 0x01C966 07:C956: F0 10     BEQ bra_C968_не_пенальти
 C - - - - - 0x01C968 07:C958: EE CC 05  INC ram_счетчик_смен
 C - - - - - 0x01C96B 07:C95B: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C96D 07:C95D: 29 02     AND #$02
@@ -1655,7 +1655,7 @@ C - - - - - 0x01C96F 07:C95F: D0 1A     BNE bra_C97B
 C - - - - - 0x01C971 07:C961: A9 00     LDA #$00
 C - - - - - 0x01C973 07:C963: 85 59     STA ram_screen_sub_id
 C - - - - - 0x01C975 07:C965: 4C 1E CA  RTS
-bra_C968:
+bra_C968_не_пенальти:
 C - - - - - 0x01C978 07:C968: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C97A 07:C96A: 29 20     AND #$20
 C - - - - - 0x01C97C 07:C96C: F0 07     BEQ bra_C975
@@ -2626,12 +2626,12 @@ C - - - - - 0x01CFF4 07:CFE4: 20 D9 E3  JSR sub_E3D9
 C - - - - - 0x01CFF7 07:CFE7: 20 7B C2  JSR sub_C27B
 C - - - - - 0x01CFFA 07:CFEA: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01CFFC 07:CFEC: 29 20     AND #con_gm_penalty
-C - - - - - 0x01CFFE 07:CFEE: D0 09     BNE bra_CFF9
+C - - - - - 0x01CFFE 07:CFEE: D0 09     BNE bra_CFF9_пенальти
 C - - - - - 0x01D000 07:CFF0: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x01D003 07:CFF3: F0 0D     BEQ bra_D002
 C - - - - - 0x01D005 07:CFF5: A9 85     LDA #$85
 C - - - - - 0x01D007 07:CFF7: D0 0B     BNE bra_D004
-bra_CFF9:
+bra_CFF9_пенальти:
 C - - - - - 0x01D009 07:CFF9: A9 0D     LDA #$0D
 C - - - - - 0x01D00B 07:CFFB: 8D 5A 05  STA ram_music_id
 C - - - - - 0x01D00E 07:CFFE: A9 83     LDA #$83

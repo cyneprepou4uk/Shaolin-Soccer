@@ -74,7 +74,7 @@ loc_0x01803A:
 
 
 
-sub_802D:
+sub_802D_обработка_движения_игрока:
 C - - - - - 0x01803D 06:802D: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x018040 06:8030: 0A        ASL
 C - - - - - 0x018041 06:8031: A8        TAY
@@ -463,10 +463,10 @@ C - - - - - 0x018306 06:82F6: 9D 04 04  STA ram_spd_Y_lo_player,X
 bra_82F9:
 C - - - - - 0x018309 06:82F9: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01830B 06:82FB: 29 20     AND #con_gm_penalty
-C - - - - - 0x01830D 06:82FD: F0 04     BEQ bra_8303
+C - - - - - 0x01830D 06:82FD: F0 04     BEQ bra_8303_не_пенальти
 C - - - - - 0x01830F 06:82FF: A9 80     LDA #$80
 C - - - - - 0x018311 06:8301: D0 05     BNE bra_8308
-bra_8303:
+bra_8303_не_пенальти:
 C - - - - - 0x018313 06:8303: 8A        TXA
 C - - - - - 0x018314 06:8304: 6A        ROR
 C - - - - - 0x018315 06:8305: 6A        ROR
@@ -1904,7 +1904,7 @@ C - - - - - 0x018CAC 06:8C9C: 60        RTS
 
 
 
-sub_8C9D_обработка_номера_движения_мяча:
+sub_8C9D_обработка_движения_мяча:
 C - - - - - 0x018CAD 06:8C9D: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x018CB0 06:8CA0: 0A        ASL
 C - - - - - 0x018CB1 06:8CA1: A8        TAY
@@ -4710,9 +4710,9 @@ C - - - - - 0x01A01D 06:A00D: 29 01     AND #$01
 C - - - - - 0x01A01F 06:A00F: A8        TAY
 C - - - - - 0x01A020 06:A010: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01A022 06:A012: 29 20     AND #con_gm_penalty
-C - - - - - 0x01A024 06:A014: F0 02     BEQ bra_A018
+C - - - - - 0x01A024 06:A014: F0 02     BEQ bra_A018_не_пенальти
 C - - - - - 0x01A026 06:A016: A0 00     LDY #$00
-bra_A018:
+bra_A018_не_пенальти:
 C - - - - - 0x01A028 06:A018: B9 1F A0  LDA tbl_A01F,Y
 C - - - - - 0x01A02B 06:A01B: 9D A3 04  STA ram_направление_движения,X
 C - - - - - 0x01A02E 06:A01E: 60        RTS
@@ -5211,7 +5211,7 @@ C - - - - - 0x01A329 06:A319: BD B0 04  LDA ram_смена_угла_движен
 C - - - - - 0x01A32C 06:A31C: 99 7E 06  STA ram_067E,Y
 C - - - - - 0x01A32F 06:A31F: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01A331 06:A321: 29 20     AND #con_gm_penalty
-C - - - - - 0x01A333 06:A323: D0 35     BNE bra_A35A
+C - - - - - 0x01A333 06:A323: D0 35     BNE bra_A35A_пенальти
 bra_A325:
 C - - - - - 0x01A335 06:A325: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x01A338 06:A328: 29 01     AND #$01
@@ -5238,7 +5238,7 @@ C - - - - - 0x01A361 06:A351: 85 2A     STA ram_002A
 C - - - - - 0x01A363 06:A353: 20 6A F9  JSR sub_0x01F97A
 C - - - - - 0x01A366 06:A356: C0 FF     CPY #$FF
 C - - - - - 0x01A368 06:A358: D0 37     BNE bra_A391
-bra_A35A:
+bra_A35A_пенальти:
 C - - - - - 0x01A36A 06:A35A: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x01A36D 06:A35D: 29 01     AND #$01
 C - - - - - 0x01A36F 06:A35F: A8        TAY
@@ -7696,10 +7696,10 @@ C - - - - - 0x01AEF3 06:AEE3: 09 40     ORA #$40
 C - - - - - 0x01AEF5 06:AEE5: 8D 92 04  STA ram_мяч_состояние
 C - - - - - 0x01AEF8 06:AEE8: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01AEFA 06:AEEA: 29 20     AND #con_gm_penalty
-C - - - - - 0x01AEFC 06:AEEC: F0 04     BEQ bra_AEF2
+C - - - - - 0x01AEFC 06:AEEC: F0 04     BEQ bra_AEF2_не_пенальти
 C - - - - - 0x01AEFE 06:AEEE: A9 40     LDA #$40
 C - - - - - 0x01AF00 06:AEF0: 85 5C     STA ram_flag_gameplay
-bra_AEF2:
+bra_AEF2_не_пенальти:
 C - - - - - 0x01AF02 06:AEF2: A4 1D     LDY ram_001D
 C - - - - - 0x01AF04 06:AEF4: B9 86 04  LDA ram_игрок_состояние,Y
 C - - - - - 0x01AF07 06:AEF7: 10 0D     BPL bra_AF06
@@ -9792,11 +9792,11 @@ C - - - - - 0x01BA75 06:BA65: 29 01     AND #$01
 C - - - - - 0x01BA77 06:BA67: A8        TAY
 C - - - - - 0x01BA78 06:BA68: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01BA7A 06:BA6A: 29 20     AND #con_gm_penalty
-C - - - - - 0x01BA7C 06:BA6C: F0 07     BEQ bra_BA75
+C - - - - - 0x01BA7C 06:BA6C: F0 07     BEQ bra_BA75_не_пенальти
 C - - - - - 0x01BA7E 06:BA6E: BD 27 03  LDA ram_pos_X_hi_player,X
 C - - - - - 0x01BA81 06:BA71: F0 42     BEQ bra_BAB5_RTS
 C - - - - - 0x01BA83 06:BA73: D0 08     BNE bra_BA7D
-bra_BA75:
+bra_BA75_не_пенальти:
 C - - - - - 0x01BA85 06:BA75: A0 00     LDY #$00
 C - - - - - 0x01BA87 06:BA77: BD 27 03  LDA ram_pos_X_hi_player,X
 C - - - - - 0x01BA8A 06:BA7A: D0 01     BNE bra_BA7D
@@ -10292,7 +10292,7 @@ sub_0x01BD7A:
 C - - - - - 0x01BD7A 06:BD6A: 20 B3 AB  JSR sub_ABB3
 C - - - - - 0x01BD7D 06:BD6D: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01BD7F 06:BD6F: 29 20     AND #con_gm_penalty
-C - - - - - 0x01BD81 06:BD71: D0 50     BNE bra_BDC3
+C - - - - - 0x01BD81 06:BD71: D0 50     BNE bra_BDC3_пенальти
 C - - - - - 0x01BD83 06:BD73: A2 00     LDX #$00
 bra_BD75_loop:
 C - - - - - 0x01BD85 06:BD75: 20 32 BE  JSR sub_BE32
@@ -10301,14 +10301,14 @@ C - - - - - 0x01BD89 06:BD79: E0 0C     CPX #$0C
 C - - - - - 0x01BD8B 06:BD7B: 90 F8     BCC bra_BD75_loop
 loc_BD7D:
 C D 1 - - - 0x01BD8D 06:BD7D: A2 00     LDX #$00
-bra_BD7F:
+bra_BD7F_loop:
 C - - - - - 0x01BD8F 06:BD7F: 20 C8 AA  JSR sub_AAC8
 C - - - - - 0x01BD92 06:BD82: E8        INX
 C - - - - - 0x01BD93 06:BD83: E0 0C     CPX #$0C
-C - - - - - 0x01BD95 06:BD85: 90 F8     BCC bra_BD7F
+C - - - - - 0x01BD95 06:BD85: 90 F8     BCC bra_BD7F_loop
 C - - - - - 0x01BD97 06:BD87: A2 0C     LDX #$0C
 C - - - - - 0x01BD99 06:BD89: 20 0B AB  JSR sub_AB0B
-C - - - - - 0x01BD9C 06:BD8C: 20 9D 8C  JSR sub_8C9D_обработка_номера_движения_мяча
+C - - - - - 0x01BD9C 06:BD8C: 20 9D 8C  JSR sub_8C9D_обработка_движения_мяча
 C - - - - - 0x01BD9F 06:BD8F: 20 09 96  JSR sub_9609
 C - - - - - 0x01BDA2 06:BD92: 20 C5 B8  JSR sub_B8C5
 C - - - - - 0x01BDA5 06:BD95: AD 92 04  LDA ram_мяч_состояние
@@ -10333,7 +10333,7 @@ C - - - - - 0x01BDC9 06:BDB9: 20 EF D5  JSR sub_0x01D5FF
 C - - - - - 0x01BDCC 06:BDBC: 20 A4 B2  JSR sub_B2A4
 C - - - - - 0x01BDCF 06:BDBF: 20 DE AB  JSR sub_ABDE
 C - - - - - 0x01BDD2 06:BDC2: 60        RTS
-bra_BDC3:
+bra_BDC3_пенальти:
 C - - - - - 0x01BDD3 06:BDC3: 20 B3 AB  JSR sub_ABB3
 C - - - - - 0x01BDD6 06:BDC6: AD CC 05  LDA ram_счетчик_смен
 C - - - - - 0x01BDD9 06:BDC9: 29 0F     AND #$0F
@@ -10352,12 +10352,12 @@ C - - - - - 0x01BDEC 06:BDDC: 4C 7D BD  JMP loc_BD7D
 loc_BDDF:
 C D 1 - - - 0x01BDEF 06:BDDF: A2 00     LDX #$00
 C - - - - - 0x01BDF1 06:BDE1: 20 19 AA  JSR sub_AA19
-C - - - - - 0x01BDF4 06:BDE4: 20 2D 80  JSR sub_802D
+C - - - - - 0x01BDF4 06:BDE4: 20 2D 80  JSR sub_802D_обработка_движения_игрока
 C - - - - - 0x01BDF7 06:BDE7: 20 8C EB  JSR sub_0x01EB9C
 C - - - - - 0x01BDFA 06:BDEA: 20 C8 AA  JSR sub_AAC8
 C - - - - - 0x01BDFD 06:BDED: A2 0C     LDX #$0C
 C - - - - - 0x01BDFF 06:BDEF: 20 0B AB  JSR sub_AB0B
-C - - - - - 0x01BE02 06:BDF2: 20 9D 8C  JSR sub_8C9D_обработка_номера_движения_мяча
+C - - - - - 0x01BE02 06:BDF2: 20 9D 8C  JSR sub_8C9D_обработка_движения_мяча
 C - - - - - 0x01BE05 06:BDF5: 20 52 AB  JSR sub_AB52
 C - - - - - 0x01BE08 06:BDF8: 20 8C EB  JSR sub_0x01EB9C
 C - - - - - 0x01BE0B 06:BDFB: 60        RTS
@@ -10372,7 +10372,7 @@ C - - - - - 0x01BE11 06:BE01: AD E2 05  LDA ram_таймер_катсцены
 C - - - - - 0x01BE14 06:BE04: C9 04     CMP #$04
 C - - - - - 0x01BE16 06:BE06: 90 09     BCC bra_BE11
 C - - - - - 0x01BE18 06:BE08: 20 19 AA  JSR sub_AA19
-C - - - - - 0x01BE1B 06:BE0B: 20 2D 80  JSR sub_802D
+C - - - - - 0x01BE1B 06:BE0B: 20 2D 80  JSR sub_802D_обработка_движения_игрока
 C - - - - - 0x01BE1E 06:BE0E: 20 C8 AA  JSR sub_AAC8
 bra_BE11:
 C - - - - - 0x01BE21 06:BE11: 20 8C EB  JSR sub_0x01EB9C
@@ -10385,7 +10385,7 @@ C - - - - - 0x01BE2E 06:BE1E: 90 0E     BCC bra_BE2E
 C - - - - - 0x01BE30 06:BE20: A9 00     LDA #$00
 C - - - - - 0x01BE32 06:BE22: 8D E2 05  STA ram_таймер_катсцены
 C - - - - - 0x01BE35 06:BE25: 20 0B AB  JSR sub_AB0B
-C - - - - - 0x01BE38 06:BE28: 20 9D 8C  JSR sub_8C9D_обработка_номера_движения_мяча
+C - - - - - 0x01BE38 06:BE28: 20 9D 8C  JSR sub_8C9D_обработка_движения_мяча
 C - - - - - 0x01BE3B 06:BE2B: 20 52 AB  JSR sub_AB52
 bra_BE2E:
 C - - - - - 0x01BE3E 06:BE2E: 20 8C EB  JSR sub_0x01EB9C
@@ -10396,7 +10396,7 @@ C - - - - - 0x01BE41 06:BE31: 60        RTS
 sub_BE32:
 C - - - - - 0x01BE42 06:BE32: 20 19 AA  JSR sub_AA19
 C - - - - - 0x01BE45 06:BE35: 20 76 C2  JSR sub_0x01C286
-C - - - - - 0x01BE48 06:BE38: 20 2D 80  JSR sub_802D
+C - - - - - 0x01BE48 06:BE38: 20 2D 80  JSR sub_802D_обработка_движения_игрока
 C - - - - - 0x01BE4B 06:BE3B: 20 A4 B2  JSR sub_B2A4
 C - - - - - 0x01BE4E 06:BE3E: 20 8C EB  JSR sub_0x01EB9C
 C - - - - - 0x01BE51 06:BE41: 60        RTS

@@ -14637,9 +14637,9 @@ C - - - - - 0x003BE3 00:BBD3: B0 09     BCS bra_BBDE
 bra_BBDE:
 C - - - - - 0x003BEE 00:BBDE: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x003BF0 00:BBE0: 29 20     AND #con_gm_penalty
-C - - - - - 0x003BF2 00:BBE2: D0 03     BNE bra_BBE7
+C - - - - - 0x003BF2 00:BBE2: D0 03     BNE bra_BBE7_пенальти
 C - - - - - 0x003BF4 00:BBE4: 4C AA BC  JMP loc_BCAA
-bra_BBE7:
+bra_BBE7_пенальти:
 C - - - - - 0x003BF7 00:BBE7: AD CC 05  LDA ram_счетчик_смен
 C - - - - - 0x003BFA 00:BBEA: C9 0A     CMP #$0A
 C - - - - - 0x003BFC 00:BBEC: 90 3E     BCC bra_BC2C
@@ -14762,11 +14762,11 @@ C - - - - - 0x003CFB 00:BCEB: 9D 86 03  STA ram_pos_Z_lo_player,X
 C - - - - - 0x003CFE 00:BCEE: 9D 99 03  STA ram_pos_Z_hi_player,X
 C - - - - - 0x003D01 00:BCF1: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x003D03 00:BCF3: 29 20     AND #con_gm_penalty
-C - - - - - 0x003D05 00:BCF5: D0 03     BNE bra_BCFA
+C - - - - - 0x003D05 00:BCF5: D0 03     BNE bra_BCFA_пенальти
 C - - - - - 0x003D07 00:BCF7: 8A        TXA
 C - - - - - 0x003D08 00:BCF8: 6A        ROR
 C - - - - - 0x003D09 00:BCF9: 6A        ROR
-bra_BCFA:
+bra_BCFA_пенальти:
 C - - - - - 0x003D0A 00:BCFA: 29 80     AND #$80
 C - - - - - 0x003D0C 00:BCFC: 9D A3 04  STA ram_направление_движения,X
 C - - - - - 0x003D0F 00:BCFF: 8A        TXA

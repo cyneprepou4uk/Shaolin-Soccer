@@ -6697,7 +6697,7 @@ sub_A9A9:
 C - - - - - 0x00E9B9 03:A9A9: 20 DC AA  JSR sub_AADC
 C - - - - - 0x00E9BC 03:A9AC: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00E9BF 03:A9AF: 29 20     AND #con_gm_penalty
-C - - - - - 0x00E9C1 03:A9B1: F0 17     BEQ bra_A9CA
+C - - - - - 0x00E9C1 03:A9B1: F0 17     BEQ bra_A9CA_не_пенальти
 C - - - - - 0x00E9C3 03:A9B3: 8A        TXA
 C - - - - - 0x00E9C4 03:A9B4: 4D CC 05  EOR ram_счетчик_смен
 C - - - - - 0x00E9C7 03:A9B7: 29 01     AND #$01
@@ -6709,7 +6709,7 @@ C - - - - - 0x00E9D1 03:A9C1: AD CC 05  LDA ram_счетчик_смен
 C - - - - - 0x00E9D4 03:A9C4: 29 7F     AND #$7F
 C - - - - - 0x00E9D6 03:A9C6: 4A        LSR
 C - - - - - 0x00E9D7 03:A9C7: 4C CD A9  JMP loc_A9CD
-bra_A9CA:
+bra_A9CA_не_пенальти:
 C - - - - - 0x00E9DA 03:A9CA: BD 32 05  LDA ram_player_id,X
 loc_A9CD:
 C D 1 - - - 0x00E9DD 03:A9CD: 85 2B     STA ram_002B
@@ -6762,12 +6762,12 @@ C - - - - - 0x00EA3F 03:AA2F: BD 5B AB  LDA tbl_AB5B_ppu_lo,X
 C - - - - - 0x00EA42 03:AA32: 8D 06 20  STA $2006
 C - - - - - 0x00EA45 03:AA35: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00EA48 03:AA38: 29 20     AND #con_gm_penalty
-C - - - - - 0x00EA4A 03:AA3A: D0 0A     BNE bra_AA46
+C - - - - - 0x00EA4A 03:AA3A: D0 0A     BNE bra_AA46_пенальти
 C - - - - - 0x00EA4C 03:AA3C: BD 2C 05  LDA ram_номер_команды,X
 C - - - - - 0x00EA4F 03:AA3F: 10 0A     BPL bra_AA4B
 C - - - - - 0x00EA51 03:AA41: A9 4C     LDA #$4C
 C - - - - - 0x00EA53 03:AA43: 4C 4F AA  JMP loc_AA4F
-bra_AA46:
+bra_AA46_пенальти:
 C - - - - - 0x00EA56 03:AA46: A9 FF     LDA #$FF
 C - - - - - 0x00EA58 03:AA48: 4C 4F AA  JMP loc_AA4F
 bra_AA4B:
@@ -6796,7 +6796,7 @@ C - - - - - 0x00EA89 03:AA79: BD 5F AB  LDA tbl_AB5F_ppu_lo,X
 C - - - - - 0x00EA8C 03:AA7C: 8D 06 20  STA $2006
 C - - - - - 0x00EA8F 03:AA7F: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00EA92 03:AA82: 29 20     AND #con_gm_penalty
-C - - - - - 0x00EA94 03:AA84: F0 1B     BEQ bra_AAA1
+C - - - - - 0x00EA94 03:AA84: F0 1B     BEQ bra_AAA1_не_пенальти
 C - - - - - 0x00EA96 03:AA86: 8A        TXA
 C - - - - - 0x00EA97 03:AA87: 4D CC 05  EOR ram_счетчик_смен
 C - - - - - 0x00EA9A 03:AA8A: 29 01     AND #$01
@@ -6812,7 +6812,7 @@ loc_AA9A:
 C D 1 - - - 0x00EAAA 03:AA9A: A8        TAY
 C - - - - - 0x00EAAB 03:AA9B: B9 50 06  LDA ram_позиция_управление,Y
 C - - - - - 0x00EAAE 03:AA9E: 4C A4 AA  JMP loc_AAA4
-bra_AAA1:
+bra_AAA1_не_пенальти:
 C - - - - - 0x00EAB1 03:AAA1: BD 50 06  LDA ram_позиция_управление,X
 loc_AAA4:
 C D 1 - - - 0x00EAB4 03:AAA4: 29 30     AND #$30
@@ -6827,10 +6827,10 @@ C - - - - - 0x00EAC1 03:AAB1: B9 80 AB  LDA tbl_AB80_tiles,Y
 C - - - - - 0x00EAC4 03:AAB4: 8D 07 20  STA $2007
 C - - - - - 0x00EAC7 03:AAB7: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00EACA 03:AABA: 29 20     AND #con_gm_penalty
-C - - - - - 0x00EACC 03:AABC: D0 05     BNE bra_AAC3
+C - - - - - 0x00EACC 03:AABC: D0 05     BNE bra_AAC3_пенальти
 C - - - - - 0x00EACE 03:AABE: A9 DC     LDA #$DC
 C - - - - - 0x00EAD0 03:AAC0: 8D 07 20  STA $2007
-bra_AAC3:
+bra_AAC3_пенальти:
 C - - - - - 0x00EAD3 03:AAC3: AD 02 20  LDA $2002
 C - - - - - 0x00EAD6 03:AAC6: A9 2A     LDA #$2A
 C - - - - - 0x00EAD8 03:AAC8: 8D 06 20  STA $2006
@@ -10762,10 +10762,10 @@ off_B998_02:
 loc_B999:
 C D 1 - - - 0x00F9A9 03:B999: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x00F9AC 03:B99C: 29 20     AND #con_gm_penalty
-C - - - - - 0x00F9AE 03:B99E: D0 05     BNE bra_B9A5
+C - - - - - 0x00F9AE 03:B99E: D0 05     BNE bra_B9A5_пенальти
 C - - - - - 0x00F9B0 03:B9A0: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x00F9B3 03:B9A3: 10 01     BPL bra_B9A6
-bra_B9A5:
+bra_B9A5_пенальти:
 C - - - - - 0x00F9B5 03:B9A5: 60        RTS
 bra_B9A6:
 C - - - - - 0x00F9B6 03:B9A6: 8A        TXA
