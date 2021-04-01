@@ -23,26 +23,37 @@
 ; не перемещать начальные прыжки, они должны быть в пределах 8000-80FF
 loc_0x010010:
 C D 0 J - - 0x010010 04:8000: 4C 31 80  JMP loc_8031
+
 loc_0x010013_положение_мяча_относительно_игрока:
 C - - J - - 0x010013 04:8003: 4C 94 AF  JMP loc_AF94_положение_мяча_относительно_игрока
+
 loc_0x010016:
 C - - J - - 0x010016 04:8006: 4C 8D AF  JMP loc_AF8D
+
 loc_0x01001C:
 C - - J - - 0x01001C 04:800C: 4C 04 B2  JMP loc_B204
+
 loc_0x01001F:
 C - - J - - 0x01001F 04:800F: 4C 16 B3  JMP loc_B316
+
 loc_0x010022:
 C - - - - - 0x010022 04:8012: 4C E3 BC  JMP loc_BCE3
+
 loc_0x010025:
 C - - J - - 0x010025 04:8015: 4C B2 B4  JMP loc_B4B2
+
 loc_0x010028:
 C - - J - - 0x010028 04:8018: 4C AB B8  JMP loc_B8AB
+
 loc_0x01002B:
 C - - J - - 0x01002B 04:801B: 4C E3 BD  JMP loc_BDE3
+
 loc_0x01002E:
 C - - J - - 0x01002E 04:801E: 4C 1B BA  JMP loc_BA1B
+
 loc_0x010031:
 C - - J - - 0x010031 04:8021: 4C 1E BB  JMP loc_BB1E
+
 loc_0x010034:
 C - - J - - 0x010034 04:8024: 4C EC BB  JMP loc_BBEC
 

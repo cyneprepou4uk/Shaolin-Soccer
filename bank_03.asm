@@ -18,16 +18,22 @@
 ; не перемещать начальные прыжки, они должны быть в пределах 8000-80FF
 loc_0x00C010:
 C D 0 J - - 0x00C010 03:8000: 4C 15 80  JMP loc_8015
+
 loc_0x00C013:
 C - - J - - 0x00C013 03:8003: 4C 99 B9  JMP loc_B999
+
 loc_0x00C016:
 C - - J - - 0x00C016 03:8006: 4C 95 A9  JMP loc_A995
+
 loc_0x00C019:
 C - - J - - 0x00C019 03:8009: 4C F9 BA  JMP loc_BAF9
+
 loc_0x00C01C:
 C - - J - - 0x00C01C 03:800C: 4C F1 BC  JMP loc_BCF1
+
 loc_0x00C01F:
 C - - J - - 0x00C01F 03:800F: 4C D4 BE  JMP loc_BED4
+
 loc_0x00C022:
 C - - J - - 0x00C022 03:8012: 4C 23 BF  JMP loc_BF23
 
