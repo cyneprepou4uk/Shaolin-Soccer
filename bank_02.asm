@@ -10659,8 +10659,8 @@ C - - - - - 0x00AA9C 02:AA8C: 20 49 AE  JSR sub_AE49
 C - - - - - 0x00AA9F 02:AA8F: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 C - - - - - 0x00AAA2 02:AA92: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 ofs_AA95_08:
-C - - - - - 0x00AAA5 02:AA95: A9 00     LDA #$00
-C - - - - - 0x00AAA7 02:AA97: 20 68 C0  JSR sub_0x01E838
+C - - - - - 0x00AAA5 02:AA95: A9 00     LDA #$00    ; логотип с кунио
+C - - - - - 0x00AAA7 02:AA97: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
 C - - - - - 0x00AAAA 02:AA9A: 20 62 C0  JSR sub_0x01EF64_убрать_полоску_слева_на_экране
 C - - - - - 0x00AAAD 02:AA9D: A9 08     LDA #$08
 C - - - - - 0x00AAAF 02:AA9F: 8D 6D 00  STA ram_006D
@@ -10813,8 +10813,8 @@ tbl_AB48:
 ofs_AB78_02:
 C - - J - - 0x00AB88 02:AB78: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 C - - - - - 0x00AB8B 02:AB7B: 20 49 AE  JSR sub_AE49
-C - - - - - 0x00AB8E 02:AB7E: A9 0E     LDA #$0E
-C - - - - - 0x00AB90 02:AB80: 20 68 C0  JSR sub_0x01E838
+C - - - - - 0x00AB8E 02:AB7E: A9 0E     LDA #$0E    ; текст с мисако
+C - - - - - 0x00AB90 02:AB80: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
 C - - - - - 0x00AB93 02:AB83: A9 59     LDA #$59
 C - - - - - 0x00AB95 02:AB85: 8D B8 05  STA ram_банк_спрайтов
 C - - - - - 0x00AB98 02:AB88: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
@@ -10933,8 +10933,8 @@ C - - - - - 0x00AC69 02:AC59: F0 02     BEQ bra_AC5D
 C - - - - - 0x00AC6B 02:AC5B: A0 80     LDY #$80
 bra_AC5D:
 C - - - - - 0x00AC6D 02:AC5D: 8C 8B 05  STY ram_флаг_демо
-C - - - - - 0x00AC70 02:AC60: A9 01     LDA #$01
-C - - - - - 0x00AC72 02:AC62: 20 68 C0  JSR sub_0x01E838
+C - - - - - 0x00AC70 02:AC60: A9 01     LDA #$01    ; экран "жми старт"
+C - - - - - 0x00AC72 02:AC62: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
 C - - - - - 0x00AC75 02:AC65: A2 08     LDX #$08
 C - - - - - 0x00AC77 02:AC67: 8E B8 05  STX ram_банк_спрайтов
 C - - - - - 0x00AC7A 02:AC6A: E8        INX
@@ -13824,9 +13824,9 @@ loc_BB5D:
 - - - - - - 0x00BB6F 02:BB5F: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
 - - - - - - 0x00BB72 02:BB62: 78 BB     .word ofs_BB78_00
 - - - - - - 0x00BB74 02:BB64: B1 BB     .word ofs_BBB1_01
-- - - - - - 0x00BB76 02:BB66: CE BB     .word ofs_BBCE_02
-- - - - - - 0x00BB78 02:BB68: 00 BD     .word ofs_BD00_03
-- - - - - - 0x00BB7A 02:BB6A: C0 BD     .word ofs_BDC0_04
+- - - - - - 0x00BB76 02:BB66: CE BB     .word ofs_BBCE_02_первая_фотка_в_титрах
+- - - - - - 0x00BB78 02:BB68: 00 BD     .word ofs_BD00_03_фотки_в_титрах
+- - - - - - 0x00BB7A 02:BB6A: C0 BD     .word ofs_BDC0_04_последняя_фотка_в_титрах
 - - - - - - 0x00BB7C 02:BB6C: 42 BE     .word ofs_BE42_05
 - - - - - - 0x00BB7E 02:BB6E: 59 BE     .word ofs_BE59_06
 - - - - - - 0x00BB80 02:BB70: 76 BE     .word ofs_BE76_07
@@ -13882,7 +13882,7 @@ ofs_BBB1_01:
 
 
 
-ofs_BBCE_02:
+ofs_BBCE_02_первая_фотка_в_титрах:
 - - - - - - 0x00BBDE 02:BBCE: 20 C8 BE  JSR sub_BEC8
 - - - - - - 0x00BBE1 02:BBD1: 20 7C AE  JSR sub_AE7C
 - - - - - - 0x00BBE4 02:BBD4: 50 DA     BVC bra_BBB0_RTS
@@ -13890,7 +13890,7 @@ ofs_BBCE_02:
 - - - - - - 0x00BBE9 02:BBD9: 20 4A C0  JSR sub_0x01D072
 - - - - - - 0x00BBEC 02:BBDC: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 - - - - - - 0x00BBEF 02:BBDF: A9 1C     LDA #$1C
-- - - - - - 0x00BBF1 02:BBE1: 20 68 C0  JSR sub_0x01E838
+- - - - - - 0x00BBF1 02:BBE1: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
 - - - - - - 0x00BBF4 02:BBE4: AD 1F 06  LDA ram_061F
 - - - - - - 0x00BBF7 02:BBE7: 0A        ASL
 - - - - - - 0x00BBF8 02:BBE8: 0A        ASL
@@ -14047,7 +14047,7 @@ tbl_BCD0:
 
 
 
-ofs_BD00_03:
+ofs_BD00_03_фотки_в_титрах:
 - - - - - - 0x00BD10 02:BD00: 20 D4 BE  JSR sub_BED4
 - - - - - - 0x00BD13 02:BD03: 20 5C C0  JSR sub_0x01D083
 - - - - - - 0x00BD16 02:BD06: 20 7C AE  JSR sub_AE7C
@@ -14059,8 +14059,8 @@ ofs_BD00_03:
 - - - - - - 0x00BD27 02:BD17: AD 8C 05  LDA ram_058C
 - - - - - - 0x00BD2A 02:BD1A: C9 07     CMP #$07
 - - - - - - 0x00BD2C 02:BD1C: B0 AF     BCS bra_BCCD
-- - - - - - 0x00BD2E 02:BD1E: 69 1D     ADC #$1D
-- - - - - - 0x00BD30 02:BD20: 20 68 C0  JSR sub_0x01E838
+- - - - - - 0x00BD2E 02:BD1E: 69 1D     ADC #$1D    ; 1D-23, фотки в титрах
+- - - - - - 0x00BD30 02:BD20: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
 - - - - - - 0x00BD33 02:BD23: AD 8C 05  LDA ram_058C
 - - - - - - 0x00BD36 02:BD26: 0A        ASL
 - - - - - - 0x00BD37 02:BD27: A8        TAY
@@ -14141,7 +14141,7 @@ bra_BDB6:
 
 
 
-ofs_BDC0_04:
+ofs_BDC0_04_последняя_фотка_в_титрах:
 - - - - - - 0x00BDD0 02:BDC0: 20 66 BA  JSR sub_BA66
 - - - - - - 0x00BDD3 02:BDC3: A5 7C     LDA ram_007C
 - - - - - - 0x00BDD5 02:BDC5: 85 74     STA ram_animation_id_player
@@ -14181,8 +14181,8 @@ ofs_BDC0_04:
 - - - - - - 0x00BE33 02:BE23: 8D B0 05  STA ram_palette_id_spr + 2
 - - - - - - 0x00BE36 02:BE26: 8D B1 05  STA ram_palette_id_spr + 3
 - - - - - - 0x00BE39 02:BE29: 20 C8 BE  JSR sub_BEC8
-- - - - - - 0x00BE3C 02:BE2C: A9 24     LDA #$24
-- - - - - - 0x00BE3E 02:BE2E: 20 68 C0  JSR sub_0x01E838
+- - - - - - 0x00BE3C 02:BE2C: A9 24     LDA #$24    ; фотка в титрах
+- - - - - - 0x00BE3E 02:BE2E: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
 - - - - - - 0x00BE41 02:BE31: A9 00     LDA #$00
 - - - - - - 0x00BE43 02:BE33: 20 BF BE  JSR sub_BEBF
 - - - - - - 0x00BE46 02:BE36: EE 8A 05  INC ram_таймер_демо_hi
