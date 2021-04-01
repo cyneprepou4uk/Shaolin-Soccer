@@ -150,7 +150,7 @@ ofs_80D9_0F:
 
 
 sub_80DF:
-C - - - - - 0x0140EF 05:80DF: A9 80     LDA #$80
+C - - - - - 0x0140EF 05:80DF: A9 80     LDA #con_nmi_disable_irq
 C - - - - - 0x0140F1 05:80E1: 85 4F     STA ram_NMI_flag
 C - - - - - 0x0140F3 05:80E3: A9 00     LDA #$00
 C - - - - - 0x0140F5 05:80E5: 8D EC 00  STA ram_pos_X_lo_camera
@@ -235,10 +235,10 @@ C - - - - - 0x014192 05:8182: F0 0E     BEQ bra_8192_not_Start_or_Select
 C - - - - - 0x014194 05:8184: 29 10     AND #con_btn_Start
 C - - - - - 0x014196 05:8186: F0 05     BEQ bra_818D_it_is_Select
 C - - - - - 0x014198 05:8188: A9 01     LDA #con___btn_Start
-C - - - - - 0x01419A 05:818A: 4C CF 81  JMP loc_81CF_write_button_index
+C - - - - - 0x01419A 05:818A: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_818D_it_is_Select:
 - - - - - - 0x01419D 05:818D: A9 02     LDA #con___btn_Select
-- - - - - - 0x01419F 05:818F: 4C CF 81  JMP loc_81CF_write_button_index
+- - - - - - 0x01419F 05:818F: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_8192_not_Start_or_Select:
 C - - - - - 0x0141A2 05:8192: AC CC 05  LDY ram_счетчик_смен
 C - - - - - 0x0141A5 05:8195: B9 08 00  LDA ram_btn_press,Y
@@ -248,10 +248,10 @@ C - - - - - 0x0141AB 05:819B: 30 08     BMI bra_81A5_pressed_B
 C - - - - - 0x0141AD 05:819D: 4C AA 81  JMP loc_81AA_not_A_or_B
 bra_81A0_pressed_A:
 C - - - - - 0x0141B0 05:81A0: A9 03     LDA #con___btn_A
-C - - - - - 0x0141B2 05:81A2: 4C CF 81  JMP loc_81CF_write_button_index
+C - - - - - 0x0141B2 05:81A2: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_81A5_pressed_B:
 C - - - - - 0x0141B5 05:81A5: A9 04     LDA #con___btn_B
-C - - - - - 0x0141B7 05:81A7: 4C CF 81  JMP loc_81CF_write_button_index
+C - - - - - 0x0141B7 05:81A7: 4C CF 81  JMP loc_81CF_запись_кнопки
 loc_81AA_not_A_or_B:
 C D 0 - - - 0x0141BA 05:81AA: B9 08 00  LDA ram_btn_press,Y
 C - - - - - 0x0141BD 05:81AD: 4A        LSR
@@ -263,19 +263,19 @@ C - - - - - 0x0141C4 05:81B4: B0 0D     BCS bra_81C3_pressed_Down
 C - - - - - 0x0141C6 05:81B6: 4A        LSR
 C - - - - - 0x0141C7 05:81B7: B0 05     BCS bra_81BE_pressed_Up
 C - - - - - 0x0141C9 05:81B9: A9 00     LDA #con___btn_nothing
-C - - - - - 0x0141CB 05:81BB: 4C CF 81  JMP loc_81CF_write_button_index
+C - - - - - 0x0141CB 05:81BB: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_81BE_pressed_Up:
 C - - - - - 0x0141CE 05:81BE: A9 05     LDA #con___btn_Up
-C - - - - - 0x0141D0 05:81C0: 4C CF 81  JMP loc_81CF_write_button_index
+C - - - - - 0x0141D0 05:81C0: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_81C3_pressed_Down:
 C - - - - - 0x0141D3 05:81C3: A9 06     LDA #con___btn_Down
-C - - - - - 0x0141D5 05:81C5: 4C CF 81  JMP loc_81CF_write_button_index
+C - - - - - 0x0141D5 05:81C5: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_81C8_pressed_Left:
 C - - - - - 0x0141D8 05:81C8: A9 07     LDA #con___btn_Left
-C - - - - - 0x0141DA 05:81CA: 4C CF 81  JMP loc_81CF_write_button_index
+C - - - - - 0x0141DA 05:81CA: 4C CF 81  JMP loc_81CF_запись_кнопки
 bra_81CD_pressed_Right:
 C - - - - - 0x0141DD 05:81CD: A9 08     LDA #con___btn_Right
-loc_81CF_write_button_index:
+loc_81CF_запись_кнопки:
 C D 0 - - - 0x0141DF 05:81CF: 8D CD 05  STA ram_btn_menu
 C - - - - - 0x0141E2 05:81D2: 60        RTS
 
@@ -993,28 +993,28 @@ sub_860C:
 C - - - - - 0x01461C 05:860C: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01461E 05:860E: 10 05     BPL bra_8615
 C - - - - - 0x014620 05:8610: A9 00     LDA #$00
-C - - - - - 0x014622 05:8612: 4C 34 86  JMP loc_8634
+C - - - - - 0x014622 05:8612: 4C 34 86  JMP loc_8634_запись_номера_опции
 bra_8615:
 C - - - - - 0x014625 05:8615: 0A        ASL
 C - - - - - 0x014626 05:8616: 10 05     BPL bra_861D
 C - - - - - 0x014628 05:8618: A9 01     LDA #$01
-C - - - - - 0x01462A 05:861A: 4C 34 86  JMP loc_8634
+C - - - - - 0x01462A 05:861A: 4C 34 86  JMP loc_8634_запись_номера_опции
 bra_861D:
 C - - - - - 0x01462D 05:861D: 0A        ASL
 C - - - - - 0x01462E 05:861E: 10 06     BPL bra_8626
 - - - - - - 0x014630 05:8620: 18        CLC
 - - - - - - 0x014631 05:8621: A9 02     LDA #$02
-- - - - - - 0x014633 05:8623: 4C 34 86  JMP loc_8634
+- - - - - - 0x014633 05:8623: 4C 34 86  JMP loc_8634_запись_номера_опции
 bra_8626:
 C - - - - - 0x014636 05:8626: 0A        ASL
 C - - - - - 0x014637 05:8627: 10 05     BPL bra_862E
 - - - - - - 0x014639 05:8629: A9 03     LDA #$03
-- - - - - - 0x01463B 05:862B: 4C 34 86  JMP loc_8634
+- - - - - - 0x01463B 05:862B: 4C 34 86  JMP loc_8634_запись_номера_опции
 bra_862E:
 C - - - - - 0x01463E 05:862E: A9 01     LDA #$01
 C - - - - - 0x014640 05:8630: 85 57     STA ram_option_mode_difficulty
 C - - - - - 0x014642 05:8632: A9 00     LDA #$00
-loc_8634:
+loc_8634_запись_номера_опции:
 C D 0 - - - 0x014644 05:8634: 29 07     AND #$07
 C - - - - - 0x014646 05:8636: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x014649 05:8639: 60        RTS
@@ -1029,11 +1029,11 @@ C - - - - - 0x01464C 05:863C: D0 04     BNE bra_8642
 bra_8642:
 C - - - - - 0x014652 05:8642: A0 00     LDY #$00
 C - - - - - 0x014654 05:8644: A5 57     LDA ram_option_mode_difficulty
-loc_8646:
+loc_8646_loop:
 C D 0 - - - 0x014656 05:8646: 30 05     BMI bra_864D
 C - - - - - 0x014658 05:8648: C8        INY
 C - - - - - 0x014659 05:8649: 0A        ASL
-C - - - - - 0x01465A 05:864A: 4C 46 86  JMP loc_8646
+C - - - - - 0x01465A 05:864A: 4C 46 86  JMP loc_8646_loop
 bra_864D:
 C - - - - - 0x01465D 05:864D: 98        TYA
 C - - - - - 0x01465E 05:864E: 0A        ASL

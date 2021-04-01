@@ -949,7 +949,7 @@ C - - - - - 0x01C402 07:C3F2: 8D 88 05  STA ram_0588
 C - - - - - 0x01C405 07:C3F5: 20 64 EF  JSR sub_EF64_очистка_фона_и_спрайтов
 C - - - - - 0x01C408 07:C3F8: A9 00     LDA #con_music_off
 C - - - - - 0x01C40A 07:C3FA: 20 E4 C2  JSR sub_C2E4_play_sound
-C - - - - - 0x01C412 07:C402: A9 C0     LDA #$C0
+C - - - - - 0x01C412 07:C402: A9 C0     LDA #con_nmi_enable_irq
 C - - - - - 0x01C414 07:C404: 85 4F     STA ram_NMI_flag
 C - - - - - 0x01C41C 07:C40C: A9 8C     LDA #$8C
 C - - - - - 0x01C41E 07:C40E: 85 4C     STA ram_for_2000
@@ -1064,7 +1064,7 @@ C - - - - - 0x01C501 07:C4F1: 20 47 D0  JSR sub_D047
 C - - - - - 0x01C504 07:C4F4: 20 62 D0  JSR sub_D062
 C - - - - - 0x01C507 07:C4F7: A5 2B     LDA ram_002B
 C - - - - - 0x01C509 07:C4F9: 85 59     STA ram_screen_sub_id
-C - - - - - 0x01C50B 07:C4FB: A9 80     LDA #$80
+C - - - - - 0x01C50B 07:C4FB: A9 80     LDA #con_nmi_disable_irq
 C - - - - - 0x01C50D 07:C4FD: 85 4F     STA ram_NMI_flag
 C - - - - - 0x01C50F 07:C4FF: A9 01     LDA #$01
 C - - - - - 0x01C511 07:C501: 85 58     STA ram_screen_id
@@ -1107,7 +1107,7 @@ tbl_C51F:
 
 
 ofs_C539_00:
-C - - J - - 0x01C549 07:C539: A9 C0     LDA #$C0
+C - - J - - 0x01C549 07:C539: A9 C0     LDA #con_nmi_enable_irq
 C - - - - - 0x01C54B 07:C53B: 8D 4F 00  STA ram_NMI_flag
 C - - - - - 0x01C54E 07:C53E: 20 5A EF  JSR sub_EF5A_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x01C551 07:C541: 20 93 CF  JSR sub_CF93
@@ -7140,7 +7140,7 @@ C - - - - - 0x01E851 07:E841: A5 2D     LDA ram_002D
 C - - - - - 0x01E853 07:E843: 6D 19 EA  ADC #> tbl_EA1A_параметры_экрана
 C - - - - - 0x01E856 07:E846: 85 2D     STA ram_002D
 C - - - - - 0x01E858 07:E848: A0 00     LDY #$00
-C - - - - - 0x01E85A 07:E84A: B1 2C     LDA (ram_002C),Y    ; 
+C - - - - - 0x01E85A 07:E84A: B1 2C     LDA (ram_002C),Y    ; банк chr для чтения сжатого экрана
 C - - - - - 0x01E85C 07:E84C: 85 1F     STA ram_001F
 C - - - - - 0x01E85E 07:E84E: C8        INY
 C - - - - - 0x01E85F 07:E84F: B1 2C     LDA (ram_002C),Y    ; 
@@ -7228,7 +7228,7 @@ C - - - - - 0x01E930 07:E920: A9 00     LDA #$00
 C - - - - - 0x01E932 07:E922: 85 2A     STA ram_002A
 C - - - - - 0x01E934 07:E924: 20 9A EE  JSR sub_EE9A_базовые_банки_спрайтов
 C - - - - - 0x01E937 07:E927: 20 7D EE  JSR sub_EE7D_базовые_банки_фона
-C - - - - - 0x01E93A 07:E92A: 20 41 E9  JSR sub_E941
+C - - - - - 0x01E93A 07:E92A: 20 41 E9  JSR sub_E941_распаковка_сжатого_экрана
 C - - - - - 0x01E93D 07:E92D: 68        PLA
 C - - - - - 0x01E93E 07:E92E: 8D BB 05  STA ram_банк_спрайтов + 3
 C - - - - - 0x01E941 07:E931: 68        PLA
@@ -7242,10 +7242,10 @@ C - - - - - 0x01E950 07:E940: 60        RTS
 
 
 
-sub_E941:
+sub_E941_распаковка_сжатого_экрана:
 C - - - - - 0x01E951 07:E941: A9 00     LDA #$00    ; vertical mirroring
 C - - - - - 0x01E953 07:E943: 8D 00 A0  STA $A000
-loc_E946:
+loc_E946_следующий_управляемый_байт:
 C D 3 - - - 0x01E956 07:E946: 20 D2 E9  JSR sub_E9D2_чтение_байта_из_ppu
 C - - - - - 0x01E959 07:E949: A5 1C     LDA ram_001C
 C - - - - - 0x01E95B 07:E94B: F0 10     BEQ bra_E95D_RTS
@@ -7272,7 +7272,7 @@ bra_E966_loop:
 C - - - - - 0x01E976 07:E966: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
 C - - - - - 0x01E979 07:E969: CA        DEX
 C - - - - - 0x01E97A 07:E96A: D0 FA     BNE bra_E966_loop
-C - - - - - 0x01E97C 07:E96C: 4C 46 E9  JMP loc_E946
+C - - - - - 0x01E97C 07:E96C: 4C 46 E9  JMP loc_E946_следующий_управляемый_байт
 
 
 
@@ -7285,7 +7285,7 @@ C - - - - - 0x01E984 07:E974: 20 D2 E9  JSR sub_E9D2_чтение_байта_и�
 C - - - - - 0x01E987 07:E977: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
 C - - - - - 0x01E98A 07:E97A: CA        DEX
 C - - - - - 0x01E98B 07:E97B: D0 F7     BNE bra_E974_loop
-C - - - - - 0x01E98D 07:E97D: 4C 46 E9  JMP loc_E946
+C - - - - - 0x01E98D 07:E97D: 4C 46 E9  JMP loc_E946_следующий_управляемый_байт
 
 
 
@@ -7307,7 +7307,7 @@ bra_E99A_loop:
 C - - - - - 0x01E9AA 07:E99A: 20 F9 E9  JSR sub_E9F9_запись_байта_в_ppu
 C - - - - - 0x01E9AD 07:E99D: CA        DEX
 C - - - - - 0x01E9AE 07:E99E: D0 FA     BNE bra_E99A_loop
-C - - - - - 0x01E9B0 07:E9A0: 4C 46 E9  JMP loc_E946
+C - - - - - 0x01E9B0 07:E9A0: 4C 46 E9  JMP loc_E946_следующий_управляемый_байт
 
 
 
@@ -7335,7 +7335,7 @@ C - - - - - 0x01E9D8 07:E9C8: CA        DEX
 C - - - - - 0x01E9D9 07:E9C9: D0 F7     BNE bra_E9C2_loop
 C - - - - - 0x01E9DB 07:E9CB: C6 1D     DEC ram_001D
 C - - - - - 0x01E9DD 07:E9CD: D0 E9     BNE bra_E9B8_loop
-C - - - - - 0x01E9DF 07:E9CF: 4C 46 E9  JMP loc_E946
+C - - - - - 0x01E9DF 07:E9CF: 4C 46 E9  JMP loc_E946_следующий_управляемый_байт
 
 
 
@@ -7382,7 +7382,7 @@ tbl_EA12:
 
 tbl_EA1A_параметры_экрана:
 ; 00 логотип с кунио
-- D 3 - I - 0x01EA2A 07:EA1A: 76        .byte $76   ; 
+- D 3 - I - 0x01EA2A 07:EA1A: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA2B 07:EA1B: 00        .byte $00   ; 
 - D 3 - I - 0x01EA2C 07:EA1C: 00        .byte $00   ; 
 - D 3 - I - 0x01EA2D 07:EA1D: 6E        .byte $6E   ; банк фона 1
@@ -7980,7 +7980,7 @@ sub_ECA9_выключить_NMI_при_следующем_вызове:
 C D 3 - - - 0x01ECB9 07:ECA9: 48        PHA
 C - - - - - 0x01ECBA 07:ECAA: A5 4F     LDA ram_NMI_flag
 C - - - - - 0x01ECBC 07:ECAC: 48        PHA
-C - - - - - 0x01ECBD 07:ECAD: A9 00     LDA #$00
+C - - - - - 0x01ECBD 07:ECAD: A9 00     LDA #con_nmi_off
 C - - - - - 0x01ECBF 07:ECAF: 85 4F     STA ram_NMI_flag
 C - - - - - 0x01ECC1 07:ECB1: A5 4C     LDA ram_for_2000
 C - - - - - 0x01ECC3 07:ECB3: 09 80     ORA #$80
@@ -10337,7 +10337,7 @@ C - - - - - 0x01FDEA 07:FDDA: 20 64 EF  JSR sub_EF64_очистка_фона_и_
 ;                                         JSR sub_0001_подготовка_палитры_vt03
 C - - - - - 0x01FDED 07:FDDD: A9 06     LDA #con_prg_bank + $06
 C - - - - - 0x01FDEF 07:FDDF: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01FDF2 07:FDE2: A9 C0     LDA #$C0
+C - - - - - 0x01FDF2 07:FDE2: A9 C0     LDA #con_nmi_enable_irq
 C - - - - - 0x01FDF4 07:FDE4: 85 4F     STA ram_NMI_flag
 C - - - - - 0x01FDF6 07:FDE6: A9 00     LDA #$00    ; vertical mirroring
 C - - - - - 0x01FDF8 07:FDE8: 8D 00 A0  STA $A000

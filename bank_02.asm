@@ -10653,7 +10653,7 @@ C - - - - - 0x00AA7D 02:AA6D: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_
 
 
 ofs_AA88_00:
-C - - J - - 0x00AA98 02:AA88: A9 80     LDA #$80
+C - - J - - 0x00AA98 02:AA88: A9 80     LDA #con_nmi_disable_irq
 C - - - - - 0x00AA9A 02:AA8A: 85 4F     STA ram_NMI_flag
 C - - - - - 0x00AA9C 02:AA8C: 20 49 AE  JSR sub_AE49
 C - - - - - 0x00AA9F 02:AA8F: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
@@ -10912,7 +10912,7 @@ C - - - - - 0x00AC43 02:AC33: 90 F2     BCC bra_AC27
 C - - - - - 0x00AC45 02:AC35: 20 25 AA  JSR sub_0x01C26A
 C - - - - - 0x00AC48 02:AC38: 20 2A AA  JSR sub_0x01C26B
 C - - - - - 0x00AC4B 02:AC3B: 20 11 AA  JSR sub_0x01C263
-C - - - - - 0x00AC4E 02:AC3E: A9 C0     LDA #$C0
+C - - - - - 0x00AC4E 02:AC3E: A9 C0     LDA #con_nmi_enable_irq
 C - - - - - 0x00AC50 02:AC40: 85 4F     STA ram_NMI_flag
 C - - - - - 0x00AC52 02:AC42: 60        RTS
 
@@ -13840,7 +13840,7 @@ ofs_BB78_00:
 - - - - - - 0x00BB88 02:BB78: 20 62 C0  JSR sub_0x01EF64_убрать_полоску_слева_на_экране
 - - - - - - 0x00BB8B 02:BB7B: A9 F0     LDA #$F0
 - - - - - - 0x00BB8D 02:BB7D: 8D 56 00  STA ram_limit_spr_Y
-- - - - - - 0x00BB90 02:BB80: A9 80     LDA #$80
+- - - - - - 0x00BB90 02:BB80: A9 80     LDA #con_nmi_disable_irq
 - - - - - - 0x00BB92 02:BB82: 85 4F     STA ram_NMI_flag
 - - - - - - 0x00BB94 02:BB84: A9 03     LDA #$03
 - - - - - - 0x00BB96 02:BB86: 8D E6 05  STA ram_скорость_игры
