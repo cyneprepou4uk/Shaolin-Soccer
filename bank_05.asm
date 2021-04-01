@@ -420,10 +420,14 @@ C D 0 - - - 0x0142BF 05:82AF: 60        RTS
 
 
 
+sub_82AF:
+                                        LDA #$02
+                                        BNE bra_82B4
+                                        
 sub_82B0:
 C - - - - - 0x0142C0 05:82B0: 29 01     AND #$01
 C - - - - - 0x0142C2 05:82B2: 09 DC     ORA #$DC
-loc_82B4:
+bra_82B4:
 C D 0 - - - 0x0142C4 05:82B4: 85 1C     STA ram_001C
 C - - - - - 0x0142C6 05:82B6: 20 F4 82  JSR sub_82F4
 C - - - - - 0x0142C9 05:82B9: 8A        TXA
@@ -451,12 +455,6 @@ C - - - - - 0x0142F6 05:82E6: 8D 94 06  STA ram_байт_2006_lo_атрибут�
 C - - - - - 0x0142F9 05:82E9: A5 31     LDA ram_0031
 C - - - - - 0x0142FB 05:82EB: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C D 0 - - - 0x0142FE 05:82EE: 60        RTS
-
-
-
-sub_82EF:
-C - - - - - 0x0142FF 05:82EF: A9 02     LDA #$02
-C - - - - - 0x014301 05:82F1: 4C B4 82  JMP loc_82B4
 
 
 
@@ -589,7 +587,7 @@ C - - - - - 0x0143F0 05:83E0: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x0143F3 05:83E3: 10 09     BPL bra_83EE
 C - - - - - 0x0143F5 05:83E5: 20 0C 86  JSR sub_860C
 C - - - - - 0x0143F8 05:83E8: 20 73 86  JSR sub_8673
-C - - - - - 0x0143FB 05:83EB: 20 EF 82  JSR sub_82EF
+C - - - - - 0x0143FB 05:83EB: 20 EF 82  JSR sub_82AF
 bra_83EE:
 C - - - - - 0x0143FE 05:83EE: 20 7E 81  JSR sub_817E_check_pressed_buttons
 C - - - - - 0x014401 05:83F1: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
@@ -678,7 +676,7 @@ C - - - - - 0x014487 05:8477: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x01448A 05:847A: 10 09     BPL bra_8485
 C - - - - - 0x01448C 05:847C: 20 3A 86  JSR sub_863A
 C - - - - - 0x01448F 05:847F: 20 8F 86  JSR sub_868F
-C - - - - - 0x014492 05:8482: 20 EF 82  JSR sub_82EF
+C - - - - - 0x014492 05:8482: 20 EF 82  JSR sub_82AF
 bra_8485:
 C - - - - - 0x014495 05:8485: 20 7E 81  JSR sub_817E_check_pressed_buttons
 C - - - - - 0x014498 05:8488: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
@@ -694,7 +692,7 @@ C - - - - - 0x01449B 05:848B: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_
 
 ofs_849A_04_B:
 C - - J - - 0x0144AA 05:849A: A2 02     LDX #$02
-C - - - - - 0x0144AC 05:849C: 20 EF 82  JSR sub_82EF
+C - - - - - 0x0144AC 05:849C: 20 EF 82  JSR sub_82AF
 C - - - - - 0x0144AF 05:849F: A9 FF     LDA #$FF
 C - - - - - 0x0144B1 05:84A1: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x0144B4 05:84A4: CE C9 05  DEC ram_счетчик_опций
@@ -717,7 +715,7 @@ C - - - - - 0x0144CA 05:84BA: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x0144CD 05:84BD: 10 09     BPL bra_84C8
 C - - - - - 0x0144CF 05:84BF: 20 6B 86  JSR sub_866B
 C - - - - - 0x0144D2 05:84C2: 20 A0 86  JSR sub_86A0
-C - - - - - 0x0144D5 05:84C5: 20 EF 82  JSR sub_82EF
+C - - - - - 0x0144D5 05:84C5: 20 EF 82  JSR sub_82AF
 bra_84C8:
 C - - - - - 0x0144D8 05:84C8: 20 7E 81  JSR sub_817E_check_pressed_buttons
 C - - - - - 0x0144DB 05:84CB: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
@@ -2033,7 +2031,7 @@ C - - - - - 0x014C06 05:8BF6: 10 1E     BPL bra_8C16
 - - - - - - 0x014C08 05:8BF8: B9 CA 05  LDA ram_номер_опции,Y
 - - - - - - 0x014C0B 05:8BFB: 29 7F     AND #$7F
 - - - - - - 0x014C0D 05:8BFD: 99 CA 05  STA ram_номер_опции,Y
-- - - - - - 0x014C10 05:8C00: 20 EF 82  JSR sub_82EF
+- - - - - - 0x014C10 05:8C00: 20 EF 82  JSR sub_82AF
 - - - - - - 0x014C13 05:8C03: 4C 16 8C  JMP loc_8C16
 
 
@@ -4558,7 +4556,7 @@ C - - J - - 0x0158D6 05:98C6: A2 0C     LDX #$0C
 C - - - - - 0x0158D8 05:98C8: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x0158DB 05:98CB: 10 09     BPL bra_98D6
 C - - - - - 0x0158DD 05:98CD: 20 6C 9C  JSR sub_9C6C
-C - - - - - 0x0158E0 05:98D0: 20 EF 82  JSR sub_82EF
+C - - - - - 0x0158E0 05:98D0: 20 EF 82  JSR sub_82AF
 C - - - - - 0x0158E3 05:98D3: 20 9B 9D  JSR sub_9D9B
 bra_98D6:
 C - - - - - 0x0158E6 05:98D6: A2 0C     LDX #$0C
@@ -4626,7 +4624,7 @@ C - - J - - 0x015944 05:9934: A2 0C     LDX #$0C
 C - - - - - 0x015946 05:9936: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x015949 05:9939: 10 06     BPL bra_9941
 C - - - - - 0x01594B 05:993B: 20 83 9C  JSR sub_9C83
-C - - - - - 0x01594E 05:993E: 20 EF 82  JSR sub_82EF
+C - - - - - 0x01594E 05:993E: 20 EF 82  JSR sub_82AF
 bra_9941:
 C - - - - - 0x015951 05:9941: 20 7E 81  JSR sub_817E_check_pressed_buttons
 C - - - - - 0x015954 05:9944: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
@@ -4681,7 +4679,7 @@ C - - J - - 0x0159A6 05:9996: A2 0C     LDX #$0C
 C - - - - - 0x0159A8 05:9998: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x0159AB 05:999B: 10 09     BPL bra_99A6
 C - - - - - 0x0159AD 05:999D: 20 7C 9C  JSR sub_9C7C
-C - - - - - 0x0159B0 05:99A0: 20 EF 82  JSR sub_82EF
+C - - - - - 0x0159B0 05:99A0: 20 EF 82  JSR sub_82AF
 C - - - - - 0x0159B3 05:99A3: 20 A0 9D  JSR sub_9DA0
 bra_99A6:
 C - - - - - 0x0159B6 05:99A6: 20 7E 81  JSR sub_817E_check_pressed_buttons
@@ -8086,7 +8084,7 @@ C - - - - - 0x016CA1 05:AC91: D0 0E     BNE bra_ACA1
 C - - - - - 0x016CA3 05:AC93: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x016CA6 05:AC96: 29 3F     AND #$3F
 C - - - - - 0x016CA8 05:AC98: 8D CA 05  STA ram_номер_опции
-C - - - - - 0x016CAB 05:AC9B: 20 EF 82  JSR sub_82EF
+C - - - - - 0x016CAB 05:AC9B: 20 EF 82  JSR sub_82AF
 C - - - - - 0x016CAE 05:AC9E: 4C A6 AC  RTS
 bra_ACA1:
 C - - - - - 0x016CB1 05:ACA1: A9 04     LDA #$04
