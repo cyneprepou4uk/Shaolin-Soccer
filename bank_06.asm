@@ -3525,16 +3525,12 @@ C - - - - - 0x01984F 06:983F: BD 99 03  LDA ram_pos_Z_hi_player,X
 C - - - - - 0x019852 06:9842: 10 10     BPL bra_9854_RTS
 C - - - - - 0x019854 06:9844: A9 FF     LDA #$FF
 C - - - - - 0x019856 06:9846: 9D 99 03  STA ram_pos_Z_hi_player,X
-C - - - - - 0x019859 06:9849: AD 55 98  LDA tbl_9855
+C - - - - - 0x019859 06:9849: AD 55 98  LDA #$FC
 C - - - - - 0x01985C 06:984C: DD 86 03  CMP ram_pos_Z_lo_player,X
 C - - - - - 0x01985F 06:984F: 90 03     BCC bra_9854_RTS
 - - - - - - 0x019861 06:9851: 9D 86 03  STA ram_pos_Z_lo_player,X
 bra_9854_RTS:
 C - - - - - 0x019864 06:9854: 60        RTS
-
-; bzk
-tbl_9855:
-- D 0 - - - 0x019865 06:9855: FC        .byte $FC   ; 
 
 
 
