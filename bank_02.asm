@@ -11394,9 +11394,6 @@ C - - - - - 0x00AF2F 02:AF1F: C9 82     CMP #$82
 C - - - - - 0x00AF31 02:AF21: 90 07     BCC bra_AF2A_RTS
 C - - - - - 0x00AF33 02:AF23: A9 01     LDA #$01
 C - - - - - 0x00AF35 02:AF25: 8D 59 04  STA ram_movement_id_player
-; bzk стремно
-bra_AF28:
-loc_AF28:
 C D 1 - - - 0x00AF38 02:AF28: E6 95     INC ram_номер_кадра_анимации + 1
 bra_AF2A_RTS:
 C - - - - - 0x00AF3A 02:AF2A: 60        RTS
@@ -11406,9 +11403,10 @@ C - - - - - 0x00AF3A 02:AF2A: 60        RTS
 ofs_AF2B_01:
 C - - J - - 0x00AF3B 02:AF2B: A9 0E     LDA #$0E
 C - - - - - 0x00AF3D 02:AF2D: 8D 59 04  STA ram_movement_id_player
-C - - - - - 0x00AF40 02:AF30: D0 F6     BNE bra_AF28
-
-
+                                        INC ram_номер_кадра_анимации + 1
+                                        RTS
+                                        
+                                        
 
 ofs_AF32_02:
 C - - J - - 0x00AF42 02:AF32: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
@@ -11471,7 +11469,8 @@ C - - - - - 0x00AF8E 02:AF7E: C5 96     CMP ram_номер_кадра_анима
 C - - - - - 0x00AF90 02:AF80: B0 F8     BCS bra_AF7A_RTS
 C - - - - - 0x00AF92 02:AF82: A9 40     LDA #$40
 C - - - - - 0x00AF94 02:AF84: 20 9A AD  JSR sub_AD9A
-C - - - - - 0x00AF97 02:AF87: 4C 28 AF  JMP loc_AF28
+                                        INC ram_номер_кадра_анимации + 1
+                                        RTS
 
 
 
