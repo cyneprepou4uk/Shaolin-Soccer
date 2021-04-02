@@ -14286,23 +14286,23 @@ sub_BEBF:
 sub_BEC8:
 - - - - - - 0x00BED8 02:BEC8: A9 FF     LDA #$FF
 - - - - - - 0x00BEDA 02:BECA: A2 02     LDX #$02
-bra_BECC:
+bra_BECC_loop:
 - - - - - - 0x00BEDC 02:BECC: 9D 99 03  STA ram_pos_Z_hi_player,X
 - - - - - - 0x00BEDF 02:BECF: E8        INX
 - - - - - - 0x00BEE0 02:BED0: E0 0C     CPX #$0C
-- - - - - - 0x00BEE2 02:BED2: 90 F8     BCC bra_BECC
+- - - - - - 0x00BEE2 02:BED2: 90 F8     BCC bra_BECC_loop
 sub_BED4:
 - - - - - - 0x00BEE4 02:BED4: A9 FF     LDA #$FF
 - - - - - - 0x00BEE6 02:BED6: 8D 0E 05  STA ram_flag_transparent_ball
 - - - - - - 0x00BEE9 02:BED9: A2 00     LDX #$00
-bra_BEDB:
+bra_BEDB_loop:
 - - - - - - 0x00BEEB 02:BEDB: BD 99 03  LDA ram_pos_Z_hi_player,X
 - - - - - - 0x00BEEE 02:BEDE: D0 03     BNE bra_BEE3
 - - - - - - 0x00BEF0 02:BEE0: 20 65 C0  JSR sub_0x01EB9C
 bra_BEE3:
 - - - - - - 0x00BEF3 02:BEE3: E8        INX
 - - - - - - 0x00BEF4 02:BEE4: E0 0D     CPX #$0D
-- - - - - - 0x00BEF6 02:BEE6: 90 F3     BCC bra_BEDB
+- - - - - - 0x00BEF6 02:BEE6: 90 F3     BCC bra_BEDB_loop
 - - - - - - 0x00BEF8 02:BEE8: 20 1B AA  JSR sub_0x01C2AE
 - - - - - - 0x00BEFB 02:BEEB: 60        RTS
 
