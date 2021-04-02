@@ -129,7 +129,7 @@ C - - - - - 0x0140D4 05:80C4: 4C 7A 80  RTS
 
 
 ofs_80C7_0B:
-C - - J - - 0x0140D7 05:80C7: 20 76 A5  JSR sub_A576
+C - - J - - 0x0140D7 05:80C7: 20 76 A5  JSR sub_A576_экран_выбора_музыки
 C - - - - - 0x0140DA 05:80CA: 4C 7A 80  RTS
 
 
@@ -325,7 +325,7 @@ C - - - - - 0x014214 05:8204: 60        RTS
 
 
 
-sub_8205:
+sub_8205_read_pointers_after_JSR:
 C - - - - - 0x014215 05:8205: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x014218 05:8208: 0A        ASL
 C - - - - - 0x014219 05:8209: 0A        ASL
@@ -850,7 +850,7 @@ C - - - - - 0x0145A0 05:8590: 4C 7E 85  JMP loc_857E
 
 
 sub_8593:
-C - - - - - 0x0145A3 05:8593: 20 05 82  JSR sub_8205
+C - - - - - 0x0145A3 05:8593: 20 05 82  JSR sub_8205_read_pointers_after_JSR
 - D 0 - I - 0x0145A6 05:8596: DE 85     .word off_85DE_00
 - D 0 - I - 0x0145A8 05:8598: AA 85     .word off_85AA_01
 - D 0 - I - 0x0145AA 05:859A: DE 85     .word off_85DE_02
@@ -1322,7 +1322,7 @@ C D 0 - - - 0x0147EB 05:87DB: 60        RTS
 
 
 sub_87DC:
-C - - - - - 0x0147EC 05:87DC: 20 05 82  JSR sub_8205
+C - - - - - 0x0147EC 05:87DC: 20 05 82  JSR sub_8205_read_pointers_after_JSR
 - D 0 - I - 0x0147EF 05:87DF: 17 88     .word off_8817_00
 - D 0 - I - 0x0147F1 05:87E1: E7 87     .word off_87E7_01
 - D 0 - I - 0x0147F3 05:87E3: 17 88     .word off_8817_02
@@ -2088,7 +2088,7 @@ C - - - - - 0x014C82 05:8C72: 60        RTS
 
 
 sub_8C73:
-C - - - - - 0x014C83 05:8C73: 20 05 82  JSR sub_8205
+C - - - - - 0x014C83 05:8C73: 20 05 82  JSR sub_8205_read_pointers_after_JSR
 - D 0 - I - 0x014C86 05:8C76: AE 8C     .word off_8CAE_00
 - D 0 - I - 0x014C88 05:8C78: 7E 8C     .word off_8C7E_01
 - D 0 - I - 0x014C8A 05:8C7A: AE 8C     .word off_8CAE_02
@@ -2937,7 +2937,7 @@ C - - - - - 0x0150D6 05:90C6: 60        RTS
 
 
 sub_90C7:
-C - - - - - 0x0150D7 05:90C7: 20 05 82  JSR sub_8205
+C - - - - - 0x0150D7 05:90C7: 20 05 82  JSR sub_8205_read_pointers_after_JSR
 - D 0 - I - 0x0150DA 05:90CA: EE 90     .word off_90EE_00
 - D 0 - I - 0x0150DC 05:90CC: D2 90     .word off_90D2_01
 - D 0 - I - 0x0150DE 05:90CE: EE 90     .word off_90EE_02
@@ -3715,7 +3715,7 @@ tbl_94B8:
 
 
 sub_94C2:
-C - - - - - 0x0154D2 05:94C2: 20 05 82  JSR sub_8205
+C - - - - - 0x0154D2 05:94C2: 20 05 82  JSR sub_8205_read_pointers_after_JSR
 - D 0 - I - 0x0154D5 05:94C5: 1D 95     .word off_951D_00
 - D 0 - I - 0x0154D7 05:94C7: ED 94     .word off_94ED_01
 - - - - - - 0x0154D9 05:94C9: 1D 95     .word off_951D_02
@@ -4901,7 +4901,7 @@ C - - - - - 0x015B2A 05:9B1A: 4C 09 9B  JMP loc_9B09
 
 
 sub_9B1D:
-C - - - - - 0x015B2D 05:9B1D: 20 05 82  JSR sub_8205
+C - - - - - 0x015B2D 05:9B1D: 20 05 82  JSR sub_8205_read_pointers_after_JSR
 - D 0 - I - 0x015B30 05:9B20: A4 9B     .word off_9BA4_00
 - D 0 - I - 0x015B32 05:9B22: 38 9B     .word off_9B38_01
 - D 0 - I - 0x015B34 05:9B24: A4 9B     .word off_9BA4_02
@@ -6901,7 +6901,7 @@ tbl_A492:
 
 
 
-sub_A576:
+sub_A576_экран_выбора_музыки:
 C - - - - - 0x016586 05:A576: A5 59     LDA ram_screen_id
 C - - - - - 0x016588 05:A578: 30 06     BMI bra_A580
 C - - - - - 0x01658A 05:A57A: 20 DF 80  JSR sub_80DF
@@ -6910,8 +6910,8 @@ bra_A580:
 C - - - - - 0x016590 05:A580: 20 70 A6  JSR sub_A670
 C - - - - - 0x016593 05:A583: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x016596 05:A586: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
-- D 1 - I - 0x016599 05:A589: D0 A5     .word ofs_A5D0_00
-- D 1 - I - 0x01659B 05:A58B: DE A5     .word ofs_A5DE_01
+- D 1 - I - 0x016599 05:A589: D0 A5     .word ofs_A5D0_00_экран_выбора_музыки_рисуется
+- D 1 - I - 0x01659B 05:A58B: DE A5     .word ofs_A5DE_01_экран_выбора_музыки_отрисован
 
 
 
@@ -6947,7 +6947,7 @@ C - - - - - 0x0165DF 05:A5CF: 60        RTS
 
 
 
-ofs_A5D0_00:
+ofs_A5D0_00_экран_выбора_музыки_рисуется:
 C - - J - - 0x0165E0 05:A5D0: AD B2 05  LDA ram_flag_brightness
 C - - - - - 0x0165E3 05:A5D3: 10 03     BPL bra_A5D8
 C - - - - - 0x0165E5 05:A5D5: EE C9 05  INC ram_счетчик_опций
@@ -6957,13 +6957,13 @@ C - - - - - 0x0165EB 05:A5DB: 4C 57 A6  JMP loc_A657
 
 
 
-ofs_A5DE_01:
+ofs_A5DE_01_экран_выбора_музыки_отрисован:
 C - - J - - 0x0165EE 05:A5DE: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x0165F1 05:A5E1: C9 08     CMP #$08
-C - - - - - 0x0165F3 05:A5E3: D0 06     BNE bra_A5EB
+C - - - - - 0x0165F3 05:A5E3: D0 06     BNE bra_A5EB_скрытое_меню_не_включено
 - - - - - - 0x0165F5 05:A5E5: 20 E1 A6  JSR sub_A6E1
 - - - - - - 0x0165F8 05:A5E8: 4C 57 A6  JMP loc_A657
-bra_A5EB:
+bra_A5EB_скрытое_меню_не_включено:
 C - - - - - 0x0165FB 05:A5EB: A5 08     LDA ram_btn_press
 C - - - - - 0x0165FD 05:A5ED: 29 20     AND #con_btn_Select
 C - - - - - 0x0165FF 05:A5EF: F0 17     BEQ bra_A608
@@ -7043,7 +7043,7 @@ C D 1 - - - 0x01667F 05:A66F: 60        RTS
 
 
 sub_A670:
-C - - - - - 0x016680 05:A670: 20 05 82  JSR sub_8205
+C - - - - - 0x016680 05:A670: 20 05 82  JSR sub_8205_read_pointers_after_JSR
 - D 1 - I - 0x016683 05:A673: 9F A6     .word off_A69F_00
 - D 1 - I - 0x016685 05:A675: 7B A6     .word off_A67B_01
 - D 1 - I - 0x016687 05:A677: 9F A6     .word off_A69F_02
@@ -7901,7 +7901,7 @@ C - - - - - 0x016BFB 05:ABEB: 4C 28 AB  JMP loc_AB28
 
 
 sub_ABEE:
-C - - - - - 0x016BFE 05:ABEE: 20 05 82  JSR sub_8205
+C - - - - - 0x016BFE 05:ABEE: 20 05 82  JSR sub_8205_read_pointers_after_JSR
 - D 1 - I - 0x016C01 05:ABF1: 5D AC     .word off_AC5D_00
 - D 1 - I - 0x016C03 05:ABF3: 09 AC     .word off_AC09_01
 - D 1 - I - 0x016C05 05:ABF5: 5D AC     .word off_AC5D_02
@@ -9463,7 +9463,7 @@ loc_B38D:
 
 
 sub_B3A3:
-- - - - - - 0x0173B3 05:B3A3: 20 05 82  JSR sub_8205
+- - - - - - 0x0173B3 05:B3A3: 20 05 82  JSR sub_8205_read_pointers_after_JSR
 - - - - - - 0x0173B6 05:B3A6: AE B3     .word off_B3AE_00
 - - - - - - 0x0173B8 05:B3A8: AE B3     .word off_B3AE_01
 - - - - - - 0x0173BA 05:B3AA: AE B3     .word off_B3AE_02
