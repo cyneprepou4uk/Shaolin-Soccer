@@ -10260,7 +10260,6 @@ C - - - - - 0x01FDD4 07:FDC4: 8D 17 40  STA $4017
 C - - - - - 0x01FDD7 07:FDC7: A9 0F     LDA #$0F
 C - - - - - 0x01FDD9 07:FDC9: 8D 15 40  STA $4015
                                         JSR sub_0000_копирование_банка_на_батарейку
-C - - - - - 0x01FDEA 07:FDDA: 20 64 EF  JSR sub_EF64_очистка_фона_и_спрайтов
 ;                                         JSR sub_0001_подготовка_палитры_vt03
 C - - - - - 0x01FDED 07:FDDD: A9 06     LDA #con_prg_bank + $06
 C - - - - - 0x01FDEF 07:FDDF: 20 D3 EE  JSR sub_EED3_prg_bankswitch
