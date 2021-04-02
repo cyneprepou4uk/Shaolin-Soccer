@@ -50,7 +50,7 @@
 .export sub_0x01D05F
 .export sub_0x01D072
 .export sub_0x01D083
-.export sub_0x01D0E5
+.export sub_0x01D0E5_запись_палитры_в_буфер_с_учетом_яркости
 .export sub_0x01D5FF
 .export sub_0x01D803
 .export sub_0x01E700
@@ -1168,7 +1168,7 @@ C - - - - - 0x01C5DD 07:C5CD: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C5DF 07:C5CF: 8D 2A 05  STA ram_флаг_владения_мячом_ком
 C - - - - - 0x01C5E2 07:C5D2: 8D 2B 05  STA ram_флаг_владения_мячом_ком + 1
 C - - - - - 0x01C5E5 07:C5D5: 20 1F D0  JSR sub_D01F
-C - - - - - 0x01C5E8 07:C5D8: 20 D5 D0  JSR sub_D0D5
+C - - - - - 0x01C5E8 07:C5D8: 20 D5 D0  JSR sub_D0D5_запись_палитры_в_буфер_с_учетом_яркости
 C - - - - - 0x01C5EB 07:C5DB: A9 00     LDA #$00
 C - - - - - 0x01C5ED 07:C5DD: 8D 92 06  STA ram_бит_для_2000_палитра
 C - - - - - 0x01C5F0 07:C5E0: A9 3F     LDA #$3F
@@ -1597,7 +1597,7 @@ C - - - - - 0x01C90E 07:C8FE: A9 00     LDA #$00
 C - - - - - 0x01C910 07:C900: 8D F9 05  STA ram_flag_hud_ready
 C - - - - - 0x01C913 07:C903: A9 0F     LDA #$0F
 C - - - - - 0x01C915 07:C905: 8D AD 05  STA ram_palette_id_bg + 1
-C - - - - - 0x01C918 07:C908: 20 D5 D0  JSR sub_D0D5
+C - - - - - 0x01C918 07:C908: 20 D5 D0  JSR sub_D0D5_запись_палитры_в_буфер_с_учетом_яркости
 C - - - - - 0x01C91B 07:C90B: A9 3F     LDA #$3F
 C - - - - - 0x01C91D 07:C90D: 8D D9 06  STA ram_байт_2006_hi_палитра
 bra_C910:
@@ -2666,8 +2666,8 @@ C D 2 - - - 0x01D046 07:D036: A9 40     LDA #$40
 C - - - - - 0x01D048 07:D038: 8D B4 05  STA ram_brightness_current
 C - - - - - 0x01D04B 07:D03B: A9 01     LDA #$01
 C - - - - - 0x01D04D 07:D03D: 8D B3 05  STA ram_brightness_speed
-C - - - - - 0x01D050 07:D040: 20 D5 D0  JSR sub_D0D5
-C - - - - - 0x01D053 07:D043: 20 87 D1  JSR sub_D187
+C - - - - - 0x01D050 07:D040: 20 D5 D0  JSR sub_D0D5_запись_палитры_в_буфер_с_учетом_яркости
+C - - - - - 0x01D053 07:D043: 20 87 D1  JSR sub_D187_ожидание_записи_палитры
 C - - - - - 0x01D056 07:D046: 60        RTS
 
 
@@ -2726,7 +2726,7 @@ loc_D08E:
 C D 2 - - - 0x01D09E 07:D08E: 8D B4 05  STA ram_brightness_current
 C - - - - - 0x01D0A1 07:D091: AD B5 05  LDA ram_brightness_timer
 C - - - - - 0x01D0A4 07:D094: D0 0D     BNE bra_D0A3
-C - - - - - 0x01D0A6 07:D096: 20 D5 D0  JSR sub_D0D5
+C - - - - - 0x01D0A6 07:D096: 20 D5 D0  JSR sub_D0D5_запись_палитры_в_буфер_с_учетом_яркости
 C - - - - - 0x01D0A9 07:D099: A9 00     LDA #$00
 C - - - - - 0x01D0AB 07:D09B: 8D 90 06  STA ram_бит_для_2000_атрибуты
 C - - - - - 0x01D0AE 07:D09E: A9 3F     LDA #$3F
@@ -2770,15 +2770,15 @@ tbl_D0D0:
 
 
 
-sub_0x01D0E5:
-sub_D0D5:
+sub_0x01D0E5_запись_палитры_в_буфер_с_учетом_яркости:
+sub_D0D5_запись_палитры_в_буфер_с_учетом_яркости:
 C D 2 - - - 0x01D0E5 07:D0D5: A2 00     LDX #$00
 C - - - - - 0x01D0E7 07:D0D7: 8E DA 06  STX ram_байт_2006_lo_палитра
 C - - - - - 0x01D0EA 07:D0DA: A9 10     LDA #$10
 C - - - - - 0x01D0EC 07:D0DC: 8D DB 06  STA ram_счетчик_буфера_палитры
 C - - - - - 0x01D0EF 07:D0DF: A9 00     LDA #$00
 C - - - - - 0x01D0F1 07:D0E1: 85 1C     STA ram_001C
-bra_D0E3:
+bra_D0E3_loop:
 C - - - - - 0x01D0F3 07:D0E3: 8A        TXA
 C - - - - - 0x01D0F4 07:D0E4: 4A        LSR
 C - - - - - 0x01D0F5 07:D0E5: 4A        LSR
@@ -2788,9 +2788,9 @@ C - - - - - 0x01D0F9 07:D0E9: A8        TAY
 C - - - - - 0x01D0FA 07:D0EA: B9 AC 05  LDA ram_palette_id_bg,Y
 C - - - - - 0x01D0FD 07:D0ED: 0A        ASL
 C - - - - - 0x01D0FE 07:D0EE: A8        TAY
-C - - - - - 0x01D0FF 07:D0EF: B9 FB D2  LDA tbl_D2FB,Y
+C - - - - - 0x01D0FF 07:D0EF: B9 FB D2  LDA tbl_D2FB_палитра_фона,Y
 C - - - - - 0x01D102 07:D0F2: 85 2C     STA ram_002C
-C - - - - - 0x01D104 07:D0F4: B9 FC D2  LDA tbl_D2FB + 1,Y
+C - - - - - 0x01D104 07:D0F4: B9 FC D2  LDA tbl_D2FB_палитра_фона + 1,Y
 C - - - - - 0x01D107 07:D0F7: 85 2D     STA ram_002D
 bra_D0F9:
 C - - - - - 0x01D109 07:D0F9: 8A        TXA
@@ -2811,7 +2811,7 @@ C - - - - - 0x01D11F 07:D10F: 29 07     AND #$07
 C - - - - - 0x01D121 07:D111: D0 E6     BNE bra_D0F9
 C - - - - - 0x01D123 07:D113: 8A        TXA
 C - - - - - 0x01D124 07:D114: 29 0F     AND #$0F
-C - - - - - 0x01D126 07:D116: D0 CB     BNE bra_D0E3
+C - - - - - 0x01D126 07:D116: D0 CB     BNE bra_D0E3_loop
 C - - - - - 0x01D128 07:D118: AD B2 05  LDA ram_flag_brightness
 C - - - - - 0x01D12B 07:D11B: 29 01     AND #$01
 C - - - - - 0x01D12D 07:D11D: D0 2A     BNE bra_D149
@@ -2819,7 +2819,7 @@ C - - - - - 0x01D12F 07:D11F: 18        CLC
 C - - - - - 0x01D130 07:D120: AD DB 06  LDA ram_счетчик_буфера_палитры
 C - - - - - 0x01D133 07:D123: 69 10     ADC #$10
 C - - - - - 0x01D135 07:D125: 8D DB 06  STA ram_счетчик_буфера_палитры
-bra_D128:
+bra_D128_loop:
 C - - - - - 0x01D138 07:D128: 8A        TXA
 C - - - - - 0x01D139 07:D129: 4A        LSR
 C - - - - - 0x01D13A 07:D12A: 4A        LSR
@@ -2828,31 +2828,34 @@ C - - - - - 0x01D13D 07:D12D: A8        TAY
 C - - - - - 0x01D13E 07:D12E: B9 AE 05  LDA ram_palette_id_spr,Y
 C - - - - - 0x01D141 07:D131: 0A        ASL
 C - - - - - 0x01D142 07:D132: A8        TAY
-C - - - - - 0x01D143 07:D133: B9 B7 D1  LDA tbl_D1B7,Y
+C - - - - - 0x01D143 07:D133: B9 B7 D1  LDA tbl_D1B7_палитра_спрайтов,Y
 C - - - - - 0x01D146 07:D136: 8D 30 00  STA ram_0030
-C - - - - - 0x01D149 07:D139: B9 B8 D1  LDA tbl_D1B7 + 1,Y
+C - - - - - 0x01D149 07:D139: B9 B8 D1  LDA tbl_D1B7_палитра_спрайтов + 1,Y
 C - - - - - 0x01D14C 07:D13C: 8D 31 00  STA ram_0031
 C - - - - - 0x01D14F 07:D13F: A0 00     LDY #$00
 C - - - - - 0x01D151 07:D141: 20 5F D1  JSR sub_D15F
 C - - - - - 0x01D154 07:D144: 8A        TXA
 C - - - - - 0x01D155 07:D145: 29 0F     AND #$0F
-C - - - - - 0x01D157 07:D147: D0 DF     BNE bra_D128
+C - - - - - 0x01D157 07:D147: D0 DF     BNE bra_D128_loop
 bra_D149:
 C - - - - - 0x01D159 07:D149: AD DB 06  LDA ram_счетчик_буфера_палитры
 C - - - - - 0x01D15C 07:D14C: F0 68     BEQ bra_D1B6_RTS
 C - - - - - 0x01D15E 07:D14E: AD DC 06  LDA ram_буфер_палитры
 C - - - - - 0x01D161 07:D151: A0 04     LDY #$04
-bra_D153:
+bra_D153_loop:
 C - - - - - 0x01D163 07:D153: 99 DC 06  STA ram_буфер_палитры,Y
 C - - - - - 0x01D166 07:D156: C8        INY
 C - - - - - 0x01D167 07:D157: C8        INY
 C - - - - - 0x01D168 07:D158: C8        INY
 C - - - - - 0x01D169 07:D159: C8        INY
 C - - - - - 0x01D16A 07:D15A: C0 20     CPY #$20
-C - - - - - 0x01D16C 07:D15C: 90 F5     BCC bra_D153
+C - - - - - 0x01D16C 07:D15C: 90 F5     BCC bra_D153_loop
 C - - - - - 0x01D16E 07:D15E: 60        RTS
-bra_D15F:
+
+
+
 sub_D15F:
+bra_D15F_loop:
 C - - - - - 0x01D16F 07:D15F: AD B4 05  LDA ram_brightness_current
 C - - - - - 0x01D172 07:D162: F0 16     BEQ bra_D17A
 C - - - - - 0x01D174 07:D164: B1 30     LDA (ram_0030),Y
@@ -2874,32 +2877,32 @@ C - - - - - 0x01D18F 07:D17F: C8        INY
 C - - - - - 0x01D190 07:D180: E8        INX
 C - - - - - 0x01D191 07:D181: 8A        TXA
 C - - - - - 0x01D192 07:D182: 29 03     AND #$03
-C - - - - - 0x01D194 07:D184: D0 D9     BNE bra_D15F
+C - - - - - 0x01D194 07:D184: D0 D9     BNE bra_D15F_loop
 C - - - - - 0x01D196 07:D186: 60        RTS
 
 
 
-sub_D187:
+sub_D187_ожидание_записи_палитры:
 C - - - - - 0x01D197 07:D187: A9 00     LDA #$00
 C - - - - - 0x01D199 07:D189: 8D 92 06  STA ram_бит_для_2000_палитра
 C - - - - - 0x01D19C 07:D18C: A9 3F     LDA #$3F
 C - - - - - 0x01D19E 07:D18E: 8D D9 06  STA ram_байт_2006_hi_палитра
-bra_D191:
+bra_D191_infinite_loop:
 C - - - - - 0x01D1A1 07:D191: CD D9 06  CMP ram_байт_2006_hi_палитра
-C - - - - - 0x01D1A4 07:D194: F0 FB     BEQ bra_D191
+C - - - - - 0x01D1A4 07:D194: F0 FB     BEQ bra_D191_infinite_loop
 C - - - - - 0x01D1A6 07:D196: A9 00     LDA #$00
 C - - - - - 0x01D1A8 07:D198: 8D B5 05  STA ram_brightness_timer
 C - - - - - 0x01D1AB 07:D19B: AD B3 05  LDA ram_brightness_speed
 C - - - - - 0x01D1AE 07:D19E: F0 11     BEQ bra_D1B1
-bra_D1A0:
+bra_D1A0_infinite_loop:
 C - - - - - 0x01D1B0 07:D1A0: A5 51     LDA ram_frame_delay
-bra_D1A2:
+bra_D1A2_infinite_loop:
 C - - - - - 0x01D1B2 07:D1A2: C5 51     CMP ram_frame_delay
-C - - - - - 0x01D1B4 07:D1A4: F0 FC     BEQ bra_D1A2
+C - - - - - 0x01D1B4 07:D1A4: F0 FC     BEQ bra_D1A2_infinite_loop
 C - - - - - 0x01D1B6 07:D1A6: EE B5 05  INC ram_brightness_timer
 C - - - - - 0x01D1B9 07:D1A9: AD B5 05  LDA ram_brightness_timer
 C - - - - - 0x01D1BC 07:D1AC: CD B3 05  CMP ram_brightness_speed
-C - - - - - 0x01D1BF 07:D1AF: 90 EF     BCC bra_D1A0
+C - - - - - 0x01D1BF 07:D1AF: 90 EF     BCC bra_D1A0_infinite_loop
 bra_D1B1:
 C - - - - - 0x01D1C1 07:D1B1: A9 00     LDA #$00
 C - - - - - 0x01D1C3 07:D1B3: 8D 51 00  STA ram_frame_delay
@@ -2908,7 +2911,7 @@ C - - - - - 0x01D1C6 07:D1B6: 60        RTS
 
 
 
-tbl_D1B7:
+tbl_D1B7_палитра_спрайтов:
 - D 2 - - - 0x01D1C7 07:D1B7: 23 D2     .word off_D223_00
 - D 2 - - - 0x01D1C9 07:D1B9: 27 D2     .word off_D227_01
 - D 2 - - - 0x01D1CB 07:D1BB: 2B D2     .word off_D22B_02
@@ -3399,7 +3402,7 @@ off_D2F7_35:
 
 
 
-tbl_D2FB:
+tbl_D2FB_палитра_фона:
 - D 2 - - - 0x01D30B 07:D2FB: 93 D3     .word off_D393_00
 - - - - - - 0x01D30D 07:D2FD: 97 D3     .word off_D397_01
 - - - - - - 0x01D30F 07:D2FF: 9B D3     .word off_D39B_02
@@ -4196,7 +4199,7 @@ C - - - - - 0x01D613 07:D603: B9 17 D6  LDA tbl_D617,Y
 C - - - - - 0x01D616 07:D606: CD AE 05  CMP ram_palette_id_spr
 C - - - - - 0x01D619 07:D609: F0 0B     BEQ bra_D616_RTS
 C - - - - - 0x01D61B 07:D60B: 8D AE 05  STA ram_palette_id_spr
-C - - - - - 0x01D61E 07:D60E: 20 D5 D0  JSR sub_D0D5
+C - - - - - 0x01D61E 07:D60E: 20 D5 D0  JSR sub_D0D5_запись_палитры_в_буфер_с_учетом_яркости
 C - - - - - 0x01D621 07:D611: A9 3F     LDA #$3F
 C - - - - - 0x01D623 07:D613: 8D D9 06  STA ram_байт_2006_hi_палитра
 bra_D616_RTS:

@@ -14430,7 +14430,7 @@ C - - - - - 0x007B21 01:BB11: 4C 17 BB  JMP loc_BB17
 bra_BB14:
 C - - - - - 0x007B24 01:BB14: 8D AC 05  STA ram_palette_id_bg
 loc_BB17:
-C D 1 - - - 0x007B27 01:BB17: 20 6E C0  JSR sub_0x01D0E5
+C D 1 - - - 0x007B27 01:BB17: 20 6E C0  JSR sub_0x01D0E5_запись_палитры_в_буфер_с_учетом_яркости
 C - - - - - 0x007B2A 01:BB1A: A9 20     LDA #$20
 C - - - - - 0x007B2C 01:BB1C: 8D DB 06  STA ram_счетчик_буфера_палитры
 C - - - - - 0x007B2F 01:BB1F: A9 00     LDA #$00
