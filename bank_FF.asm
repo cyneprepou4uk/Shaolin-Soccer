@@ -5583,8 +5583,6 @@ C - - - - - 0x01E020 07:E010: 4C 1A E0  JMP loc_E01A
 bra_E013:
 C - - - - - 0x01E023 07:E013: E6 1F     INC ram_001F
 C - - - - - 0x01E025 07:E015: E6 21     INC ram_0021
-; bzk
-C - - - - - 0x01E027 07:E017: 4C 1A E0  JMP loc_E01A
 loc_E01A:
 C D 3 - - - 0x01E02A 07:E01A: AD 8D 05  LDA ram_байт_2006_lo_NMT_1
 C - - - - - 0x01E02D 07:E01D: 29 02     AND #$02
