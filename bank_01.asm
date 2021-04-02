@@ -13324,7 +13324,7 @@ off_B554_0C:
 
 sub_B55C:
 C - - - - - 0x00756C 01:B55C: A2 00     LDX #$00
-loc_B55E_loop:
+bra_B55E_loop:
 C D 1 - - - 0x00756E 01:B55E: A9 24     LDA #$24
 C - - - - - 0x007570 01:B560: 85 2C     STA ram_002C
 C - - - - - 0x007572 01:B562: BD EB B5  LDA tbl_B5EB,X
@@ -13367,8 +13367,7 @@ bra_B58C:
 loc_B5B4:
 C D 1 - - - 0x0075C4 01:B5B4: E8        INX
 C - - - - - 0x0075C5 01:B5B5: E0 02     CPX #$02
-C - - - - - 0x0075C7 01:B5B7: B0 03     BCS bra_B5BC
-C - - - - - 0x0075C9 01:B5B9: 4C 5E B5  JMP loc_B55E_loop
+C - - - - - 0x0075C7 01:B5B7: B0 03     BCC bra_B55E_loop
 bra_B5BC:
 C - - - - - 0x0075CC 01:B5BC: AD 02 20  LDA $2002
 C - - - - - 0x0075CF 01:B5BF: A9 25     LDA #> $256F
