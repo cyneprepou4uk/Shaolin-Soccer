@@ -5524,11 +5524,11 @@ C - - - - - 0x01A581 06:A571: 18        CLC
 C - - - - - 0x01A582 06:A572: A5 2C     LDA ram_002C
 C - - - - - 0x01A584 06:A574: 9D 20 04  STA ram_spd_Z_lo_player,X
 C - - - - - 0x01A587 06:A577: A5 2D     LDA ram_002D
-C - - - - - 0x01A589 06:A579: CD A6 A5  CMP tbl_A5A6
+C - - - - - 0x01A589 06:A579: CD A6 A5  CMP #$10
 C - - - - - 0x01A58C 06:A57C: 90 08     BCC bra_A586
 C - - - - - 0x01A58E 06:A57E: A9 00     LDA #$00
 C - - - - - 0x01A590 06:A580: 9D 20 04  STA ram_spd_Z_lo_player,X
-C - - - - - 0x01A593 06:A583: AD A6 A5  LDA tbl_A5A6
+C - - - - - 0x01A593 06:A583: AD A6 A5  LDA #$10
 bra_A586:
 C - - - - - 0x01A596 06:A586: 9D 2E 04  STA ram_spd_Z_hi_player,X
 C - - - - - 0x01A599 06:A589: BD 86 03  LDA ram_pos_Z_lo_player,X
@@ -5546,10 +5546,6 @@ C - - - - - 0x01A5AD 06:A59D: 9D 3C 04  STA ram_gravity_lo_player,X
 C - - - - - 0x01A5B0 06:A5A0: A9 00     LDA #$00
 C - - - - - 0x01A5B2 06:A5A2: 9D 4A 04  STA ram_gravity_hi_player,X
 C D 1 - - - 0x01A5B5 06:A5A5: 60        RTS
-
-; bzk
-tbl_A5A6:
-- D 1 - - - 0x01A5B6 06:A5A6: 10        .byte $10   ; 
 
 
 
