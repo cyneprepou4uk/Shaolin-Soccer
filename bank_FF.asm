@@ -64,7 +64,7 @@
 .export sub_0x01EE75_enable_NMI
 .export sub_0x01EE81_disable_NMI
 .export sub_0x01EEAA_базовые_банки_спрайтов
-.export sub_0x01EF1A
+.export sub_0x01EF1A_clear_0061_00F8
 .export sub_0x01EF64_убрать_полоску_слева_на_экране
 .export sub_0x01EFBD_write_buffers_to_ppu
 .export sub_0x01F479
@@ -937,7 +937,7 @@ C - - - - - 0x01C3E7 07:C3D7: A9 06     LDA #con_prg_bank + $06
 C - - - - - 0x01C3E9 07:C3D9: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01C3EC 07:C3DC: 20 54 EF  JSR sub_EF54_убрать_полоску_слева_на_экране
 C - - - - - 0x01C3EF 07:C3DF: A2 57     LDX #$57
-C - - - - - 0x01C3F1 07:C3E1: 20 0A EF  JSR sub_EF0A
+C - - - - - 0x01C3F1 07:C3E1: 20 0A EF  JSR sub_EF0A_clear_0057_00F8
 C - - - - - 0x01C3F4 07:C3E4: AD 88 05  LDA ram_0588
 C - - - - - 0x01C3F7 07:C3E7: 48        PHA
 C - - - - - 0x01C3F8 07:C3E8: A9 00     LDA #$00
@@ -8212,8 +8212,8 @@ C - - - - - 0x01EF11 07:EF01: 60        RTS
 
 
 
-sub_0x01EF1A:
-sub_EF0A:
+sub_0x01EF1A_clear_0061_00F8:
+sub_EF0A_clear_0057_00F8:
 C D 3 - - - 0x01EF1A 07:EF0A: A9 00     LDA #$00
 bra_EF0C_loop:
 C - - - - - 0x01EF1C 07:EF0C: 95 00     STA ram_0000,X
@@ -8226,15 +8226,15 @@ C - - - - - 0x01EF23 07:EF13: 60        RTS
 
 sub_EF14_спрятать_спрайты:
 C - - - - - 0x01EF24 07:EF14: A2 FC     LDX #$00
-C - - - - - 0x01EF26 07:EF16: A9 F8     LDA #$F8
+                                        LDA #$F8
 bra_EF18_loop:
-C D 3 - - - 0x01EF28 07:EF18: 9D 00 02  STA ram_spr_Y,X
-C - - - - - 0x01EF2F 07:EF1F: CA        INX
-C - - - - - 0x01EF30 07:EF20: CA        INX
-C - - - - - 0x01EF31 07:EF21: CA        INX
-C - - - - - 0x01EF32 07:EF22: CA        INX
-C - - - - - 0x01EF33 07:EF23: 4C 18 EF  BNE bra_EF18_loop
-C - - - - - 0x01EF36 07:EF26: 60        RTS
+                                        STA ram_spr_Y,X
+                                        INX
+                                        INX
+                                        INX
+                                        INX
+                                        BNE bra_EF18_loop
+                                        RTS
 
 
 
