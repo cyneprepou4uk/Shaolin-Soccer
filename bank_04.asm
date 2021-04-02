@@ -273,7 +273,7 @@ C - - - - - 0x0101AB 04:819B: D0 F5     BNE bra_8192_loop
 C - - - - - 0x0101AD 04:819D: 4C B4 81  JMP loc_81B4
 bra_81A0_какаято_погода_включена:
 C - - - - - 0x0101B0 04:81A0: A9 F8     LDA #$F8
-loc_81A2_loop:
+bra_81A2_loop:
 C D 0 - - - 0x0101B2 04:81A2: 9D 00 02  STA ram_spr_Y,X
 C - - - - - 0x0101B5 04:81A5: CA        DEX
 C - - - - - 0x0101B6 04:81A6: CA        DEX
@@ -282,8 +282,7 @@ C - - - - - 0x0101B8 04:81A8: CA        DEX
 C - - - - - 0x0101B9 04:81A9: E0 FC     CPX #$FC
 C - - - - - 0x0101BB 04:81AB: F0 07     BEQ bra_81B4
 C - - - - - 0x0101BD 04:81AD: E0 30     CPX #$30
-C - - - - - 0x0101BF 04:81AF: 90 03     BCC bra_81B4
-C - - - - - 0x0101C1 04:81B1: 4C A2 81  JMP loc_81A2_loop
+C - - - - - 0x0101BF 04:81AF: 90 03     BCS bra_81A2_loop
 bra_81B4:
 loc_81B4:
 C D 0 - - - 0x0101C4 04:81B4: A5 F4     LDA ram_00F4
