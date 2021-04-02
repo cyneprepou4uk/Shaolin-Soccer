@@ -14611,7 +14611,7 @@ C - - - - - 0x003BBE 00:BBAE: A9 01     LDA #$01
 C - - - - - 0x003BC0 00:BBB0: 85 59     STA ram_subscript
 C - - - - - 0x003BC2 00:BBB2: D0 06     BNE bra_BBBA
 bra_BBB4:
-C - - - - - 0x003BC4 00:BBB4: A9 01     LDA #$01    ж con_gp_kick_off
+C - - - - - 0x003BC4 00:BBB4: A9 01     LDA #$01    ; con_gp_kick_off
 C - - - - - 0x003BC6 00:BBB6: 85 59     STA ram_subscript
 C - - - - - 0x003BC8 00:BBB8: 85 5C     STA ram_flag_gameplay
 bra_BBBA:
