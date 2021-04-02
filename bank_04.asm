@@ -12686,8 +12686,6 @@ C - - - - - 0x013715 04:B705: A9 1D     LDA #$1D
 C - - - - - 0x013717 04:B707: 4C 0F B7  JMP loc_B70F
 bra_B70A:
 C - - - - - 0x01371A 04:B70A: A9 21     LDA #$21
-; bzk
-C - - - - - 0x01371C 04:B70C: 4C 0F B7  JMP loc_B70F
 loc_B70F:
 C D 1 - - - 0x01371F 04:B70F: 9D 79 04  STA ram_action_id_player,X
 bra_B712:
