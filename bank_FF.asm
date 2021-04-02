@@ -8015,51 +8015,6 @@ C - - - - - 0x01ECDF 07:ECCF: D0 F4     BNE bra_ECC5_запись_в_2001
 
 
 
-sub_ECEB_clear_nmt:
-C - - - - - 0x01ECFB 07:ECEB: 85 0C     STA ram_000C
-C - - - - - 0x01ECFD 07:ECED: 86 0D     STX ram_000D
-C - - - - - 0x01ECFF 07:ECEF: 84 0E     STY ram_000E
-C - - - - - 0x01ED01 07:ECF1: AD 02 20  LDA $2002
-C - - - - - 0x01ED04 07:ECF4: A5 4C     LDA ram_for_2000
-C - - - - - 0x01ED06 07:ECF6: 29 FB     AND #$FB    ; увеличивать адрес на 1
-C - - - - - 0x01ED08 07:ECF8: 8D 00 20  STA $2000
-C - - - - - 0x01ED0B 07:ECFB: 85 4C     STA ram_for_2000
-C - - - - - 0x01ED0D 07:ECFD: A5 0C     LDA ram_000C
-C - - - - - 0x01ED0F 07:ECFF: 8D 06 20  STA $2006
-C - - - - - 0x01ED12 07:ED02: A0 00     LDY #$00
-C - - - - - 0x01ED14 07:ED04: 8C 06 20  STY $2006
-C - - - - - 0x01ED17 07:ED07: A2 04     LDX #$04
-C - - - - - 0x01ED19 07:ED09: C9 20     CMP #$20
-C - - - - - 0x01ED1B 07:ED0B: B0 02     BCS bra_ED0F
-- - - - - - 0x01ED1D 07:ED0D: A6 0E     LDX ram_000E
-bra_ED0F:
-C - - - - - 0x01ED1F 07:ED0F: A0 00     LDY #$00
-C - - - - - 0x01ED21 07:ED11: A5 0D     LDA ram_000D
-bra_ED13_loop:
-C - - - - - 0x01ED23 07:ED13: 8D 07 20  STA $2007
-C - - - - - 0x01ED26 07:ED16: 88        DEY
-C - - - - - 0x01ED27 07:ED17: D0 FA     BNE bra_ED13_loop
-C - - - - - 0x01ED29 07:ED19: CA        DEX
-C - - - - - 0x01ED2A 07:ED1A: D0 F7     BNE bra_ED13_loop
-C - - - - - 0x01ED2C 07:ED1C: A4 0E     LDY ram_000E
-C - - - - - 0x01ED2E 07:ED1E: A5 0C     LDA ram_000C
-C - - - - - 0x01ED30 07:ED20: C9 20     CMP #$20
-C - - - - - 0x01ED32 07:ED22: 90 12     BCC bra_ED36
-C - - - - - 0x01ED34 07:ED24: 69 02     ADC #$02
-C - - - - - 0x01ED36 07:ED26: 8D 06 20  STA $2006
-C - - - - - 0x01ED39 07:ED29: A9 C0     LDA #$C0
-C - - - - - 0x01ED3B 07:ED2B: 8D 06 20  STA $2006
-C - - - - - 0x01ED3E 07:ED2E: A2 40     LDX #$40
-bra_ED30_loop:
-C - - - - - 0x01ED40 07:ED30: 8C 07 20  STY $2007
-C - - - - - 0x01ED43 07:ED33: CA        DEX
-C - - - - - 0x01ED44 07:ED34: D0 FA     BNE bra_ED30_loop
-bra_ED36:
-C - - - - - 0x01ED46 07:ED36: A6 0D     LDX ram_000D
-C - - - - - 0x01ED48 07:ED38: 60        RTS
-
-
-
 sub_ED39:
 C - - - - - 0x01ED49 07:ED39: 48        PHA
 C - - - - - 0x01ED4A 07:ED3A: 8A        TXA
@@ -8298,32 +8253,26 @@ C - - - - - 0x01EF36 07:EF26: 60        RTS
 
 
 
-sub_EF27_очистить_обе_nmt:
-C - - - - - 0x01EF37 07:EF27: A9 20     LDA #$20
-C - - - - - 0x01EF39 07:EF29: A0 00     LDY #$00
-C - - - - - 0x01EF3B 07:EF2B: A2 00     LDX #$00
-C - - - - - 0x01EF3D 07:EF2D: 20 EB EC  JSR sub_ECEB_clear_nmt
-C - - - - - 0x01EF40 07:EF30: A9 24     LDA #$24
-C - - - - - 0x01EF42 07:EF32: 20 EB EC  JSR sub_ECEB_clear_nmt
-C - - - - - 0x01EF45 07:EF35: A9 28     LDA #$28
-C - - - - - 0x01EF47 07:EF37: 20 EB EC  JSR sub_ECEB_clear_nmt
-C - - - - - 0x01EF4A 07:EF3A: 20 3E EF  JSR sub_EF3E_clear_nmt_attr
-C - - - - - 0x01EF4D 07:EF3D: 60        RTS
-
-
-
-sub_EF3E_clear_nmt_attr:
-C - - - - - 0x01EF4E 07:EF3E: AD 02 20  LDA $2002
-C - - - - - 0x01EF51 07:EF41: A9 23     LDA #> $23C0
-C - - - - - 0x01EF53 07:EF43: A0 C0     LDY #< $23C0
-C - - - - - 0x01EF55 07:EF45: 8D 06 20  STA $2006
-C - - - - - 0x01EF58 07:EF48: 8C 06 20  STY $2006
-C - - - - - 0x01EF5B 07:EF4B: A9 00     LDA #$00
-bra_EF4D_loop:
-C - - - - - 0x01EF5D 07:EF4D: 8D 07 20  STA $2007
-C - - - - - 0x01EF60 07:EF50: C8        INY
-C - - - - - 0x01EF61 07:EF51: D0 FA     BNE bra_EF4D_loop
-C - - - - - 0x01EF63 07:EF53: 60        RTS
+sub_EF27_очистить_ppu_2000_2FFF:
+C - - - - - 0x01EF37 07:EF27: A9 20     BIT $2002
+                                        LDA ram_for_2000
+                                        AND #$FB    ; увеличивать адрес на 1
+                                        STA $2000
+                                        STA ram_for_2000
+                                        LDA #> $2000
+                                        STA $2006
+                                        LDA #< $2000
+                                        STA $2006
+                                        LDA #$00
+                                        LDX #$00
+                                        LDY #$10
+@цикл_очистки:
+                                        STA $2007
+                                        INX
+                                        BNE @цикл_очистки
+                                        DEY
+                                        BNE @цикл_очистки
+                                        RTS
 
 
 
@@ -8347,7 +8296,7 @@ C - - - - - 0x01EF73 07:EF63: 60        RTS
 
 sub_EF64_очистка_фона_и_спрайтов:
 C - - - - - 0x01EF74 07:EF64: 20 C1 EC  JSR sub_ECC1_скрыть_фон_и_спрайты_за_полоской_слева
-C - - - - - 0x01EF77 07:EF67: 20 27 EF  JSR sub_EF27_очистить_обе_nmt
+C - - - - - 0x01EF77 07:EF67: 20 27 EF  JSR sub_EF27_очистить_ppu_2000_2FFF
 C - - - - - 0x01EF7A 07:EF6A: 20 14 EF  JSR sub_EF14_спрятать_спрайты
 C - - - - - 0x01EF7D 07:EF6D: 20 A9 EC  JSR sub_ECA9_выключить_NMI_при_следующем_вызове
 sub_EE5A_write_to_4014:

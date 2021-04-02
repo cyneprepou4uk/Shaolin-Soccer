@@ -16,7 +16,7 @@ ram_btn_press                   = $08 ; 35
     ram_000B                      = $0B ; 2   
 ram_000C                        = $0C ; 72   ($indirect) <1>   ($indirect),Y <16>   
 ram_000D                        = $0D ; 39   
-ram_000E                        = $0E ; 2   
+ram_000E                        = $0E ; 2   unused, использовался для хранения X = 00 в коде очистки ppu
 ram_000F                        = $0F ; N/A
 ram_0010                        = $10 ; N/A
 ram_0011                        = $11 ; N/A
