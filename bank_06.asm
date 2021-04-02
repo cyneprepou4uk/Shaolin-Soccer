@@ -4607,33 +4607,6 @@ bra_9F6F_RTS:
 C D 0 - - - 0x019F7F 06:9F6F: 60        RTS
 
 
-; bzk
-- - - - - - 0x019F80 06:9F70: BD 86 04  LDA ram_игрок_состояние,X
-- - - - - - 0x019F83 06:9F73: 29 20     AND #$20
-- - - - - - 0x019F85 06:9F75: F0 02     BEQ bra_9F79
-- - - - - - 0x019F87 06:9F77: A0 02     LDY #$02
-bra_9F79:
-- - - - - - 0x019F89 06:9F79: 38        SEC
-- - - - - - 0x019F8A 06:9F7A: AD 92 03  LDA ram_pos_Z_lo_ball
-- - - - - - 0x019F8D 06:9F7D: FD 86 03  SBC ram_pos_Z_lo_player,X
-- - - - - - 0x019F90 06:9F80: 85 1C     STA ram_001C
-- - - - - - 0x019F92 06:9F82: AD A5 03  LDA ram_pos_Z_hi_ball
-- - - - - - 0x019F95 06:9F85: FD 99 03  SBC ram_pos_Z_hi_player,X
-- - - - - - 0x019F98 06:9F88: 30 0A     BMI bra_9F94
-- - - - - - 0x019F9A 06:9F8A: A5 1C     LDA ram_001C
-- - - - - - 0x019F9C 06:9F8C: D9 98 9F  CMP tbl_9F98,Y
-- - - - - - 0x019F9F 06:9F8F: 90 03     BCC bra_9F94
-- - - - - - 0x019FA1 06:9F91: FE 59 04  INC ram_movement_id_player,X
-bra_9F94:
-- - - - - - 0x019FA4 06:9F94: BD 59 04  LDA ram_movement_id_player,X
-- - - - - - 0x019FA7 06:9F97: 60        RTS
-
-tbl_9F98:
-- - - - - - 0x019FA8 06:9F98: 10        .byte $10   ; 
-- - - - - - 0x019FA9 06:9F99: 20        .byte $20   ; 
-- - - - - - 0x019FAA 06:9F9A: 08        .byte $08   ; 
-
-
 
 sub_9F9B:
 C - - - - - 0x019FAB 06:9F9B: BD 86 04  LDA ram_игрок_состояние,X
