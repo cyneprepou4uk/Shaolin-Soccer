@@ -7996,25 +7996,6 @@ C - - - - - 0x01ECCF 07:ECBF: D0 FE     BNE bra_ECBF_infinite_loop
 
 
 
-sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева:
-sub_ECC1_скрыть_фон_и_спрайты_за_полоской_слева:
-C D 3 - - - 0x01ECD1 07:ECC1: A5 4D     LDA ram_for_2001
-C - - - - - 0x01ECD3 07:ECC3: 29 E7     AND #$E7
-bra_ECC5_запись_в_2001:
-C - - - - - 0x01ECD5 07:ECC5: 85 4D     STA ram_for_2001
-C - - - - - 0x01ECD7 07:ECC7: 8D 01 20  STA $2001
-C - - - - - 0x01ECDA 07:ECCA: 60        RTS
-
-
-
-sub_0x01ECDB_отобразить_фон_и_спрайты:
-sub_ECCB_отобразить_фон_и_спрайты:
-C D 3 - - - 0x01ECDB 07:ECCB: A5 4D     LDA ram_for_2001
-C - - - - - 0x01ECDD 07:ECCD: 09 18     ORA #$18
-C - - - - - 0x01ECDF 07:ECCF: D0 F4     BNE bra_ECC5_запись_в_2001
-
-
-
 sub_ED39:
 C - - - - - 0x01ED49 07:ED39: 48        PHA
 C - - - - - 0x01ED4A 07:ED3A: 8A        TXA
@@ -8261,6 +8242,17 @@ C - - - - - 0x01EF37 07:EF27: A9 20     BIT $2002
 
 
 
+sub_EF5A_скрыть_фон_и_спрайты_за_полоской_слева:
+C - - - - - 0x01EF6A 07:EF5A: A5 4D     LDA ram_for_2001
+C - - - - - 0x01EF6C 07:EF5C: 29 F9     AND #$F9
+loc_EF5E_запись_в_2001:
+bra_EF5E_запись_в_2001:
+C - - - - - 0x01EF6E 07:EF5E: 85 4D     STA ram_for_2001
+C - - - - - 0x01EF70 07:EF60: 8D 01 20  STA $2001
+C - - - - - 0x01EF73 07:EF63: 60        RTS
+
+
+
 sub_0x01EF64_убрать_полоску_слева_на_экране:
 sub_EF54_убрать_полоску_слева_на_экране:
 C D 3 - - - 0x01EF64 07:EF54: A5 4D     LDA ram_for_2001
@@ -8269,13 +8261,19 @@ C - - - - - 0x01EF68 07:EF58: D0 04     BNE bra_EF5E_запись_в_2001
 
 
 
-sub_EF5A_скрыть_фон_и_спрайты_за_полоской_слева:
-C - - - - - 0x01EF6A 07:EF5A: A5 4D     LDA ram_for_2001
-C - - - - - 0x01EF6C 07:EF5C: 29 F9     AND #$F9
-bra_EF5E_запись_в_2001:
-C - - - - - 0x01EF6E 07:EF5E: 85 4D     STA ram_for_2001
-C - - - - - 0x01EF70 07:EF60: 8D 01 20  STA $2001
-C - - - - - 0x01EF73 07:EF63: 60        RTS
+sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева:
+sub_ECC1_скрыть_фон_и_спрайты_за_полоской_слева:
+C D 3 - - - 0x01ECD1 07:ECC1: A5 4D     LDA ram_for_2001
+C - - - - - 0x01ECD3 07:ECC3: 29 E7     AND #$E7
+                                        JMP loc_EF5E_запись_в_2001
+
+
+
+sub_0x01ECDB_отобразить_фон_и_спрайты:
+sub_ECCB_отобразить_фон_и_спрайты:
+C D 3 - - - 0x01ECDB 07:ECCB: A5 4D     LDA ram_for_2001
+C - - - - - 0x01ECDD 07:ECCD: 09 18     ORA #$18
+C - - - - - 0x01ECDF 07:ECCF: D0 F4     BNE bra_EF5E_запись_в_2001
 
 
 
