@@ -1224,6 +1224,23 @@ C - - - - - 0x01C64C 07:C63C: 10 2D     BPL bra_C66B
 C - - - - - 0x01C64E 07:C63E: 20 47 DE  JSR sub_DE47
 C - - - - - 0x01C651 07:C641: 20 EE CA  JSR sub_CAEE
 C - - - - - 0x01C654 07:C644: 4C 5F CB  JMP loc_CB5F
+bra_C66B:
+C - - - - - 0x01C67B 07:C66B: 20 0B DE  JSR sub_DE0B
+C - - - - - 0x01C67E 07:C66E: 20 E7 D6  JSR sub_D6E7
+C - - - - - 0x01C681 07:C671: 20 47 DE  JSR sub_DE47
+C - - - - - 0x01C684 07:C674: 20 EE CA  JSR sub_CAEE
+C - - - - - 0x01C687 07:C677: 20 4E C2  JSR sub_C24E
+C - - - - - 0x01C68A 07:C67A: 20 AD C2  JSR sub_C2AD
+C - - - - - 0x01C68D 07:C67D: 20 71 C2  JSR sub_C271
+C - - - - - 0x01C690 07:C680: 20 6A BD  JSR sub_0x01BD7A
+C - - - - - 0x01C693 07:C683: 20 A3 C2  JSR sub_C2A3
+C - - - - - 0x01C696 07:C686: 20 85 C2  JSR sub_C285
+C - - - - - 0x01C699 07:C689: 20 9C C8  JSR sub_C89C
+C - - - - - 0x01C69C 07:C68C: 20 CC BE  JSR sub_0x01BEDC
+C - - - - - 0x01C69F 07:C68F: 20 9E C2  JSR sub_C29E
+C - - - - - 0x01C6A2 07:C692: 20 99 C2  JSR sub_C299
+C - - - - - 0x01C6A5 07:C695: 20 73 D0  JSR sub_D073
+C D 2 - - - 0x01C6A8 07:C698: 60        RTS
 
 
 
@@ -1242,24 +1259,6 @@ C - - - - - 0x01C66F 07:C65F: 8D A8 05  STA ram_hud_tile + 3
 C - - - - - 0x01C672 07:C662: 8D A9 05  STA ram_hud_tile + 4
 C - - - - - 0x01C675 07:C665: 8D AA 05  STA ram_hud_tile + 5
 C D 2 - - - 0x01C678 07:C668: 4C 98 C6  RTS
-; bzk опт
-bra_C66B:
-C - - - - - 0x01C67B 07:C66B: 20 0B DE  JSR sub_DE0B
-C - - - - - 0x01C67E 07:C66E: 20 E7 D6  JSR sub_D6E7
-C - - - - - 0x01C681 07:C671: 20 47 DE  JSR sub_DE47
-C - - - - - 0x01C684 07:C674: 20 EE CA  JSR sub_CAEE
-C - - - - - 0x01C687 07:C677: 20 4E C2  JSR sub_C24E
-C - - - - - 0x01C68A 07:C67A: 20 AD C2  JSR sub_C2AD
-C - - - - - 0x01C68D 07:C67D: 20 71 C2  JSR sub_C271
-C - - - - - 0x01C690 07:C680: 20 6A BD  JSR sub_0x01BD7A
-C - - - - - 0x01C693 07:C683: 20 A3 C2  JSR sub_C2A3
-C - - - - - 0x01C696 07:C686: 20 85 C2  JSR sub_C285
-C - - - - - 0x01C699 07:C689: 20 9C C8  JSR sub_C89C
-C - - - - - 0x01C69C 07:C68C: 20 CC BE  JSR sub_0x01BEDC
-C - - - - - 0x01C69F 07:C68F: 20 9E C2  JSR sub_C29E
-C - - - - - 0x01C6A2 07:C692: 20 99 C2  JSR sub_C299
-C - - - - - 0x01C6A5 07:C695: 20 73 D0  JSR sub_D073
-C D 2 - - - 0x01C6A8 07:C698: 60        RTS
 
 
 
