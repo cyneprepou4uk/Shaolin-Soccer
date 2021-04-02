@@ -8419,9 +8419,9 @@ C - - - - - 0x01B322 06:B312: 60        RTS
 
 
 sub_B313:
-C - - - - - 0x01B323 06:B313: AD 4D B5  LDA tbl_B54D
+C - - - - - 0x01B323 06:B313: AD 4D B5  LDA #< tbl_B60B
 C - - - - - 0x01B326 06:B316: 85 2C     STA ram_002C
-C - - - - - 0x01B328 06:B318: AD 4E B5  LDA tbl_B54D + 1
+C - - - - - 0x01B328 06:B318: AD 4E B5  LDA #> tbl_B60B
 C - - - - - 0x01B32B 06:B31B: 85 2D     STA ram_002D
 C - - - - - 0x01B32D 06:B31D: AD 65 04  LDA ram_movement_id_ball
 C - - - - - 0x01B330 06:B320: 29 7F     AND #$7F
@@ -8758,8 +8758,6 @@ tbl_B53B:
 
 
 ; bzk
-tbl_B54D:
-- D 1 - - - 0x01B55D 06:B54D: 0B B6     .word off_B60B
 tbl_B54F:
 - D 1 - - - 0x01B55F 06:B54F: 39 B6     .word off_B639
 
@@ -8955,7 +8953,7 @@ tbl_B551:
 
 
 
-off_B60B:
+tbl_B60B:
 - - - - - - 0x01B61B 06:B60B: FF        .byte $FF   ; 
 - - - - - - 0x01B61C 06:B60C: FF        .byte $FF   ; 
 - D 1 - I - 0x01B61D 06:B60D: 00        .byte $00   ; 
