@@ -9303,8 +9303,6 @@ C - - - - - 0x01F7F2 07:F7E2: 20 D5 F8  JSR sub_F8D5
 C - - - - - 0x01F7F5 07:F7E5: A9 00     LDA #$00
 C - - - - - 0x01F7F7 07:F7E7: 38        SEC
 C - - - - - 0x01F7F8 07:F7E8: E5 2A     SBC ram_002A
-; bzk
-C - - - - - 0x01F7FA 07:F7EA: 4C ED F7  JMP loc_F7ED
 loc_F7ED:
 C D 3 - - - 0x01F7FD 07:F7ED: 85 42     STA ram_0042
 C - - - - - 0x01F7FF 07:F7EF: 68        PLA
