@@ -11432,7 +11432,8 @@ C - - - - - 0x00AF64 02:AF54: 85 96     STA ram_номер_кадра_анима
 C - - - - - 0x00AF66 02:AF56: B9 61 AF  LDA tbl_AF60 + 1,Y
 C - - - - - 0x00AF69 02:AF59: 8D A3 04  STA ram_направление_движения
 C - - - - - 0x00AF6C 02:AF5C: E6 97     INC ram_номер_кадра_анимации + 3
-C - - - - - 0x00AF6E 02:AF5E: D0 C8     BNE bra_AF28
+                                        INC ram_номер_кадра_анимации + 1
+                                        RTS
 
 
 
@@ -11479,7 +11480,8 @@ C - - J - - 0x00AF9A 02:AF8A: AD 33 03  LDA ram_pos_X_hi_ball
 C - - - - - 0x00AF9D 02:AF8D: F0 9B     BEQ bra_AF2A_RTS
 C - - - - - 0x00AF9F 02:AF8F: A9 21     LDA #$21
 C - - - - - 0x00AFA1 02:AF91: 8D 59 04  STA ram_movement_id_player
-C - - - - - 0x00AFA4 02:AF94: D0 92     BNE bra_AF28
+                                        INC ram_номер_кадра_анимации + 1
+                                        RTS
 
 
 
