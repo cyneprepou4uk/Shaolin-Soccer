@@ -14358,10 +14358,10 @@ C D 1 - - - 0x007A85 01:BA75: 8D 03 04  STA ram_spd_X_hi_weather
 C - - - - - 0x007A88 01:BA78: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x007A8B 01:BA7B: 10 05     BPL bra_BA82
 C - - - - - 0x007A8D 01:BA7D: A9 02     LDA #$02
-C - - - - - 0x007A8F 01:BA7F: 4C 84 BA  JMP loc_BA84    ; bzk опт
+C - - - - - 0x007A8F 01:BA7F: 4C 84 BA  BNE bra_BA84
 bra_BA82:
 - - - - - - 0x007A92 01:BA82: A9 FE     LDA #$FE
-loc_BA84:
+bra_BA84:
 C D 1 - - - 0x007A94 01:BA84: 8D 1F 04  STA ram_spd_Y_hi_weather
 C - - - - - 0x007A97 01:BA87: 4C 3E BB  JMP loc_BB3E
 
