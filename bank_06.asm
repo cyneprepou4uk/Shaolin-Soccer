@@ -8432,9 +8432,9 @@ C - - - - - 0x01B334 06:B324: 60        RTS
 
 
 sub_B325:
-C - - - - - 0x01B335 06:B325: AD 4F B5  LDA tbl_B54F
+C - - - - - 0x01B335 06:B325: AD 4F B5  LDA #< tbl_B639
 C - - - - - 0x01B338 06:B328: 85 2C     STA ram_002C
-C - - - - - 0x01B33A 06:B32A: AD 50 B5  LDA tbl_B54F + 1
+C - - - - - 0x01B33A 06:B32A: AD 50 B5  LDA #> tbl_B639
 C - - - - - 0x01B33D 06:B32D: 85 2D     STA ram_002D
 C - - - - - 0x01B33F 06:B32F: AD 66 04  LDA ram_weather_id
 C - - - - - 0x01B342 06:B332: 29 7F     AND #$7F
@@ -8757,11 +8757,6 @@ tbl_B53B:
 - D 1 - - - 0x01B554 06:B544: 0A        .byte $0A   ; 
 
 
-; bzk
-tbl_B54F:
-- D 1 - - - 0x01B55F 06:B54F: 39 B6     .word off_B639
-
-
 
 tbl_B551:
 - D 1 - I - 0x01B561 06:B551: 01        .byte $01   ; 
@@ -9003,7 +8998,7 @@ tbl_B60B:
 
 
 
-off_B639:
+tbl_B639:
 - D 1 - I - 0x01B649 06:B639: FF        .byte $FF   ; 
 - D 1 - I - 0x01B64A 06:B63A: FF        .byte $FF   ; 
 - - - - - - 0x01B64B 06:B63B: 22        .byte $22   ; 
