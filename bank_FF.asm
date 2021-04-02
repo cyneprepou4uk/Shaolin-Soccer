@@ -938,14 +938,7 @@ C - - - - - 0x01C3E9 07:C3D9: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01C3EC 07:C3DC: 20 54 EF  JSR sub_EF54_убрать_полоску_слева_на_экране
 C - - - - - 0x01C3EF 07:C3DF: A2 57     LDX #$57
 C - - - - - 0x01C3F1 07:C3E1: 20 0A EF  JSR sub_EF0A_clear_0057_00F8
-C - - - - - 0x01C3F4 07:C3E4: AD 88 05  LDA ram_0588
-C - - - - - 0x01C3F7 07:C3E7: 48        PHA
-C - - - - - 0x01C3F8 07:C3E8: A9 00     LDA #$00
-C - - - - - 0x01C3FA 07:C3EA: A2 02     LDX #$02
-C - - - - - 0x01C3FC 07:C3EC: A0 07     LDY #$07
-C - - - - - 0x01C3FE 07:C3EE: 20 39 ED  JSR sub_ED39
-C - - - - - 0x01C401 07:C3F1: 68        PLA
-C - - - - - 0x01C402 07:C3F2: 8D 88 05  STA ram_0588
+C - - - - - 0x01C3FE 07:C3EE: 20 39 ED  JSR sub_ED39_clear_0200_07FF___0100_017F
 C - - - - - 0x01C405 07:C3F5: 20 64 EF  JSR sub_EF64_очистка_фона_и_спрайтов
 C - - - - - 0x01C408 07:C3F8: A9 00     LDA #con_music_off
 C - - - - - 0x01C40A 07:C3FA: 20 E4 C2  JSR sub_C2E4_play_sound
@@ -7996,24 +7989,20 @@ C - - - - - 0x01ECCF 07:ECBF: D0 FE     BNE bra_ECBF_infinite_loop
 
 
 
-sub_ED39:
-C - - - - - 0x01ED49 07:ED39: 48        PHA
-C - - - - - 0x01ED4A 07:ED3A: 8A        TXA
-C - - - - - 0x01ED4B 07:ED3B: 84 0D     STY ram_000D
-C - - - - - 0x01ED4D 07:ED3D: 18        CLC
-C - - - - - 0x01ED4E 07:ED3E: E5 0D     SBC ram_000D
-C - - - - - 0x01ED50 07:ED40: AA        TAX
-C - - - - - 0x01ED51 07:ED41: 68        PLA
-C - - - - - 0x01ED52 07:ED42: A0 00     LDY #$00
-C - - - - - 0x01ED54 07:ED44: 84 0C     STY ram_000C
+sub_ED39_clear_0200_07FF___0100_017F:
+                                        LDA #$07
+                                        STA ram_000D
+                                        LDA #$00
+                                        STA ram_000C
+                                        TAY
+                                        LDX #$FA
 bra_ED46_loop:
 C - - - - - 0x01ED56 07:ED46: 91 0C     STA (ram_000C),Y
-C - - - - - 0x01ED58 07:ED48: 88        DEY
+C - - - - - 0x01ED58 07:ED48: 88        INY
 C - - - - - 0x01ED59 07:ED49: D0 FB     BNE bra_ED46_loop
 C - - - - - 0x01ED5B 07:ED4B: C6 0D     DEC ram_000D
 C - - - - - 0x01ED5D 07:ED4D: E8        INX
 C - - - - - 0x01ED5E 07:ED4E: D0 F6     BNE bra_ED46_loop
-C - - - - - 0x01ED60 07:ED50: A9 00     LDA #$00
 C - - - - - 0x01ED62 07:ED52: A2 7F     LDX #$7F
 bra_ED54_loop:
 C - - - - - 0x01ED64 07:ED54: 9D 00 01  STA ram_0100,X
