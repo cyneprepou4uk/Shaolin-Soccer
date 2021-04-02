@@ -7794,13 +7794,13 @@ C - - - - - 0x01EC02 07:EBF2: 38        SEC
 C - - - - - 0x01EC03 07:EBF3: BD 14 03  LDA ram_pos_X_lo_player,X
 C - - - - - 0x01EC06 07:EBF6: ED 85 EC  SBC tbl_EC85
 C - - - - - 0x01EC09 07:EBF9: BD 27 03  LDA ram_pos_X_hi_player,X
-C - - - - - 0x01EC0C 07:EBFC: ED 86 EC  SBC tbl_EC86
+C - - - - - 0x01EC0C 07:EBFC: ED 86 EC  SBC tbl_EC85 + 1
 C - - - - - 0x01EC0F 07:EBFF: 30 7D     BMI bra_EC7E
 C - - - - - 0x01EC11 07:EC01: 38        SEC
 C - - - - - 0x01EC12 07:EC02: BD 14 03  LDA ram_pos_X_lo_player,X
 C - - - - - 0x01EC15 07:EC05: ED 87 EC  SBC tbl_EC87
 C - - - - - 0x01EC18 07:EC08: BD 27 03  LDA ram_pos_X_hi_player,X
-C - - - - - 0x01EC1B 07:EC0B: ED 88 EC  SBC tbl_EC88
+C - - - - - 0x01EC1B 07:EC0B: ED 88 EC  SBC tbl_EC87 + 1
 C - - - - - 0x01EC1E 07:EC0E: 10 6E     BPL bra_EC7E
 C - - - - - 0x01EC20 07:EC10: 4C 84 EC  RTS
 bra_EC13:
@@ -7814,7 +7814,7 @@ C - - - - - 0x01EC30 07:EC20: 38        SEC
 C - - - - - 0x01EC31 07:EC21: BD 4D 03  LDA ram_pos_Y_lo_player,X
 C - - - - - 0x01EC34 07:EC24: ED 8D EC  SBC tbl_EC8D
 C - - - - - 0x01EC37 07:EC27: BD 60 03  LDA ram_pos_Y_hi_player,X
-C - - - - - 0x01EC3A 07:EC2A: ED 8E EC  SBC tbl_EC8E
+C - - - - - 0x01EC3A 07:EC2A: ED 8E EC  SBC tbl_EC8D + 1
 C - - - - - 0x01EC3D 07:EC2D: B0 55     BCS bra_EC84_RTS
 C - - - - - 0x01EC3F 07:EC2F: 38        SEC
 C - - - - - 0x01EC40 07:EC30: BD 4D 03  LDA ram_pos_Y_lo_player,X
@@ -7827,13 +7827,13 @@ C - - - - - 0x01EC50 07:EC40: 38        SEC
 C - - - - - 0x01EC51 07:EC41: A5 2C     LDA ram_002C
 C - - - - - 0x01EC53 07:EC43: ED 89 EC  SBC tbl_EC89
 C - - - - - 0x01EC56 07:EC46: A5 2D     LDA ram_002D
-C - - - - - 0x01EC58 07:EC48: ED 8A EC  SBC tbl_EC8A
+C - - - - - 0x01EC58 07:EC48: ED 8A EC  SBC tbl_EC89 + 1
 C - - - - - 0x01EC5B 07:EC4B: 30 10     BMI bra_EC5D
 C - - - - - 0x01EC5D 07:EC4D: 38        SEC
 C - - - - - 0x01EC5E 07:EC4E: A5 2C     LDA ram_002C
 C - - - - - 0x01EC60 07:EC50: ED 8B EC  SBC tbl_EC8B
 C - - - - - 0x01EC63 07:EC53: A5 2D     LDA ram_002D
-C - - - - - 0x01EC65 07:EC55: ED 8C EC  SBC tbl_EC8C
+C - - - - - 0x01EC65 07:EC55: ED 8C EC  SBC tbl_EC8B + 1
 C - - - - - 0x01EC68 07:EC58: 10 2A     BPL bra_EC84_RTS
 C - - - - - 0x01EC6A 07:EC5A: 4C 7E EC  JMP loc_EC7E
 bra_EC5D:
@@ -7841,13 +7841,13 @@ C - - - - - 0x01EC6D 07:EC5D: 38        SEC
 C - - - - - 0x01EC6E 07:EC5E: BD 4D 03  LDA ram_pos_Y_lo_player,X
 C - - - - - 0x01EC71 07:EC61: ED 89 EC  SBC tbl_EC89
 C - - - - - 0x01EC74 07:EC64: BD 60 03  LDA ram_pos_Y_hi_player,X
-C - - - - - 0x01EC77 07:EC67: ED 8A EC  SBC tbl_EC8A
+C - - - - - 0x01EC77 07:EC67: ED 8A EC  SBC tbl_EC89 + 1
 C - - - - - 0x01EC7A 07:EC6A: 30 18     BMI bra_EC84_RTS
 C - - - - - 0x01EC7C 07:EC6C: 38        SEC
 C - - - - - 0x01EC7D 07:EC6D: BD 4D 03  LDA ram_pos_Y_lo_player,X
 C - - - - - 0x01EC80 07:EC70: ED 8D EC  SBC tbl_EC8D
 C - - - - - 0x01EC83 07:EC73: BD 60 03  LDA ram_pos_Y_hi_player,X
-C - - - - - 0x01EC86 07:EC76: ED 8E EC  SBC tbl_EC8E
+C - - - - - 0x01EC86 07:EC76: ED 8E EC  SBC tbl_EC8D + 1
 C - - - - - 0x01EC89 07:EC79: 10 09     BPL bra_EC84_RTS
 C - - - - - 0x01EC8B 07:EC7B: 4C 82 EC  JMP loc_EC82
 bra_EC7E:
@@ -7861,27 +7861,21 @@ bra_EC84_RTS:
 C D 3 - - - 0x01EC94 07:EC84: 60        RTS
 
 
-; bzk
+
 tbl_EC85:
-- D 3 - - - 0x01EC95 07:EC85: 88        .byte $88   ; 
-tbl_EC86:
-- D 3 - - - 0x01EC96 07:EC86: 00        .byte $00   ; 
+- D 3 - - - 0x01EC95 07:EC85: 88 00     .word $0088
+
 tbl_EC87:
-- D 3 - - - 0x01EC97 07:EC87: 78        .byte $78   ; 
-tbl_EC88:
-- D 3 - - - 0x01EC98 07:EC88: 03        .byte $03   ; 
+- D 3 - - - 0x01EC97 07:EC87: 78 03     .word $0378
+
 tbl_EC89:
-- D 3 - - - 0x01EC99 07:EC89: 70        .byte $70   ; 
-tbl_EC8A:
-- D 3 - - - 0x01EC9A 07:EC8A: 00        .byte $00   ; 
+- D 3 - - - 0x01EC99 07:EC89: 70 00     .word $0070
+
 tbl_EC8B:
-- D 3 - - - 0x01EC9B 07:EC8B: A5        .byte $A5   ; 
-tbl_EC8C:
-- D 3 - - - 0x01EC9C 07:EC8C: 00        .byte $00   ; 
+- D 3 - - - 0x01EC9B 07:EC8B: A5 00     .word $00A5
+
 tbl_EC8D:
-- D 3 - - - 0x01EC9D 07:EC8D: E4        .byte $E4   ; 
-tbl_EC8E:
-- D 3 - - - 0x01EC9E 07:EC8E: 00        .byte $00   ; 
+- D 3 - - - 0x01EC9D 07:EC8D: E4 00     .word $00E4
 
 
 
