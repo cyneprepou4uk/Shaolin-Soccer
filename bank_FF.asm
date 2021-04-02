@@ -936,7 +936,7 @@ tbl_C370_low_byte_addr_for_indirect_jump:
 sub_0000_RESET_init:
                                         LDA $BFFF
                                         PHA
-                                        LDA #con_prg_bank + $0E
+                                        LDA #con_prg_bank + $08
                                         JSR sub_EED3_prg_bankswitch
                                         JSR sub_0x000000_RESET_init
                                         JMP loc_C368_restore_prg_bank
