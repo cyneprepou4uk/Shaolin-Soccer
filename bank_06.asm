@@ -8468,9 +8468,9 @@ C - - - - - 0x01B36B 06:B35B: 0A        ASL
 C - - - - - 0x01B36C 06:B35C: 10 22     BPL bra_B380
 C - - - - - 0x01B36E 06:B35E: 29 7F     AND #$7F
 C - - - - - 0x01B370 06:B360: A8        TAY
-C - - - - - 0x01B371 06:B361: AD 49 B5  LDA tbl_B549
+C - - - - - 0x01B371 06:B361: AD 49 B5  LDA #< tbl_B65C
 C - - - - - 0x01B374 06:B364: 85 32     STA ram_0032
-C - - - - - 0x01B376 06:B366: AD 4A B5  LDA tbl_B549 + 1
+C - - - - - 0x01B376 06:B366: AD 4A B5  LDA #> tbl_B65C
 C - - - - - 0x01B379 06:B369: 85 33     STA ram_0033
 C - - - - - 0x01B37B 06:B36B: B1 32     LDA (ram_0032),Y
 C - - - - - 0x01B37D 06:B36D: 85 2C     STA ram_002C
@@ -8758,8 +8758,6 @@ tbl_B53B:
 
 
 ; bzk
-tbl_B549:
-- D 1 - - - 0x01B559 06:B549: 5C B6     .word off_B65C
 tbl_B54B:
 - D 1 - - - 0x01B55B 06:B54B: 51 B5     .word off_B551
 tbl_B54D:
@@ -9052,7 +9050,7 @@ off_B654_03:
 
 
 
-off_B65C:
+tbl_B65C:
 - D 1 - I - 0x01B66C 06:B65C: 7A B6     .word off_B67A_00
 - D 1 - I - 0x01B66E 06:B65E: 82 B6     .word off_B682_01
 - D 1 - I - 0x01B670 06:B660: 87 B6     .word off_B687_02
