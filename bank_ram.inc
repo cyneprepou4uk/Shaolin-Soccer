@@ -529,11 +529,11 @@ ram_01FF                        = $01FF ; N/A
 
 
 
-ram_oam                         = $0200
-ram_spr_Y                       = $0200 ; 18   
-ram_spr_T                       = $0201 ; 11   
-ram_spr_A                       = $0202 ; 13   
-ram_spr_X                       = $0203 ; 12   
+ram_oam                         = $0800
+ram_spr_Y                       = ram_oam           ; 0800
+ram_spr_T                       = ram_oam + $0100   ; 0900
+ram_spr_A                       = ram_oam + $0200   ; 0A00
+ram_spr_X                       = ram_oam + $0300   ; 0B00
 
 
 

@@ -4615,9 +4615,6 @@ C D 2 - - - 0x01D988 07:D978: 9D 02 02  STA ram_spr_A,X
 C D 2 - - - 0x01D98B 07:D97B: B9 00 01  LDA ram_0100,Y
 C D 2 - - - 0x01D98E 07:D97E: 9D 03 02  STA ram_spr_X,X
 C D 2 - - - 0x01D991 07:D981: E8        INX
-C D 2 - - - 0x01D992 07:D982: E8        INX
-C D 2 - - - 0x01D993 07:D983: E8        INX
-C D 2 - - - 0x01D994 07:D984: E8        INX
 C D 2 - - - 0x01D995 07:D985: C8        INY
 C D 2 - - - 0x01D996 07:D986: C0 0C     CPY #$0C
 C D 2 - - - 0x01D998 07:D988: F0 08     BEQ bra_D992_RTS
@@ -4642,8 +4639,6 @@ C - - - - - 0x01D9B1 07:D9A1: 85 0C     STA ram_000C
 bra_D9A3_loop:
 C - - - - - 0x01D9B3 07:D9A3: A5 0C     LDA ram_000C
 C - - - - - 0x01D9B5 07:D9A5: A8        TAY
-C - - - - - 0x01D9B6 07:D9A6: 0A        ASL
-C - - - - - 0x01D9B7 07:D9A7: 0A        ASL
 C - - - - - 0x01D9B8 07:D9A8: AA        TAX
 C - - - - - 0x01D9B9 07:D9A9: B9 5E DA  LDA tbl_DA5E_spr_Y,Y
 C - - - - - 0x01D9BC 07:D9AC: 9D 00 02  STA ram_spr_Y,X
@@ -4719,9 +4714,6 @@ C - - - - - 0x01DA45 07:DA35: 9D 00 02  STA ram_spr_A,X
 C - - - - - 0x01DA49 07:DA39: B9 00 01  LDA ram_0100,Y
 C - - - - - 0x01DA4C 07:DA3C: 9D 00 02  STA ram_spr_X,X
 C - - - - - 0x01DA4F 07:DA3F: E8        INX
-                                        INX
-                                        INX
-                                        INX
 C - - - - - 0x01DA50 07:DA40: C8        INY
 C - - - - - 0x01DA51 07:DA41: C0 0C     CPY #$0C
 C - - - - - 0x01DA53 07:DA43: D0 D9     BNE bra_DA1E_loop
@@ -4927,15 +4919,12 @@ C - - - - - 0x01DB6D 07:DB5D: 9D 02 02  STA ram_spr_A,X
 C - - - - - 0x01DB70 07:DB60: B9 00 01  LDA ram_0100,Y
 C - - - - - 0x01DB73 07:DB63: 9D 03 02  STA ram_spr_X,X
 C - - - - - 0x01DB76 07:DB66: E8        INX
-C - - - - - 0x01DB77 07:DB67: E8        INX
-C - - - - - 0x01DB78 07:DB68: E8        INX
-C - - - - - 0x01DB79 07:DB69: E8        INX
 C - - - - - 0x01DB7A 07:DB6A: C8        INY
 C - - - - - 0x01DB7B 07:DB6B: CC E3 05  CPY ram_счетчик_спрайтов
 C - - - - - 0x01DB7E 07:DB6E: F0 07     BEQ bra_DB77_RTS
-C - - - - - 0x01DB80 07:DB70: E0 30     CPX #$30
+C - - - - - 0x01DB80 07:DB70: E0 30     CPX #$0C
 C - - - - - 0x01DB82 07:DB72: F0 03     BEQ bra_DB77_RTS
-C - - - - - 0x01DB84 07:DB74: 4C 3F DB  JMP loc_DB3F
+C - - - - - 0x01DB84 07:DB74: 4C 3F DB  JMP loc_DB3F    ; bzk опт
 bra_DB77_RTS:
 C D 2 - - - 0x01DB87 07:DB77: 60        RTS
 
@@ -5090,10 +5079,7 @@ C D 2 - - - 0x01DC9F 07:DC8F: 9D 02 02  STA ram_spr_A,X
 C - - - - - 0x01DCA2 07:DC92: B9 00 01  LDA ram_0100,Y
 C - - - - - 0x01DCA5 07:DC95: 9D 03 02  STA ram_spr_X,X
 C - - - - - 0x01DCA8 07:DC98: E8        INX
-C - - - - - 0x01DCA9 07:DC99: E8        INX
-C - - - - - 0x01DCAA 07:DC9A: E8        INX
-C - - - - - 0x01DCAB 07:DC9B: E8        INX
-C - - - - - 0x01DCAC 07:DC9C: E0 30     CPX #$30
+C - - - - - 0x01DCAC 07:DC9C: E0 30     CPX #$0C
 C - - - - - 0x01DCAE 07:DC9E: F0 04     BEQ bra_DCA4_RTS
 C - - - - - 0x01DCB0 07:DCA0: C8        INY
 C - - - - - 0x01DCB1 07:DCA1: 4C 68 DC  JMP loc_DC68
@@ -5256,9 +5242,6 @@ C - - - - - 0x01DDCC 07:DDBC: 9D 02 02  STA ram_spr_A,X
 C - - - - - 0x01DDCF 07:DDBF: B9 FF DD  LDA tbl_DDFF,Y
 C - - - - - 0x01DDD2 07:DDC2: 9D 01 02  STA ram_spr_T,X
 C - - - - - 0x01DDD5 07:DDC5: E8        INX
-C - - - - - 0x01DDD6 07:DDC6: E8        INX
-C - - - - - 0x01DDD7 07:DDC7: E8        INX
-C - - - - - 0x01DDD8 07:DDC8: E8        INX
 C - - - - - 0x01DDD9 07:DDC9: C8        INY
 C - - - - - 0x01DDDA 07:DDCA: C0 0C     CPY #$0C
 C - - - - - 0x01DDDC 07:DDCC: D0 C7     BNE bra_DD95_loop
@@ -8145,9 +8128,6 @@ C - - - - - 0x01EF24 07:EF14: A2 FC     LDX #$00
                                         LDA #$F8
 bra_EF18_loop:
                                         STA ram_spr_Y,X
-                                        INX
-                                        INX
-                                        INX
                                         INX
                                         BNE bra_EF18_loop
                                         RTS
