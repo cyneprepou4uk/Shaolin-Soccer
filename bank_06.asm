@@ -7491,9 +7491,6 @@ C - - - - - 0x01AD6F 06:AD5F: 20 8F EC  JSR sub_0x01EC9F_jump_to_pointers_afetr_
 - D 1 - I - 0x01AD7C 06:AD6C: C9 AD     .word ofs_ADC9_05
 - D 1 - I - 0x01AD7E 06:AD6E: AA AE     .word ofs_AEAA_06
 - D 1 - I - 0x01AD80 06:AD70: 36 AF     .word ofs_AF36_07
-
-
-; bzk переместить
 bra_AD72_RTS:
 C D 1 - - - 0x01AD82 06:AD72: 60        RTS
 
@@ -7502,12 +7499,12 @@ C D 1 - - - 0x01AD82 06:AD72: 60        RTS
 ofs_AD73_00:
 ofs_AD73_01:
 C - - J - - 0x01AD83 06:AD73: AD 10 05  LDA ram_подтип_супера
-C - - - - - 0x01AD86 06:AD76: D0 FA     BNE bra_AD72_RTS
+C - - - - - 0x01AD86 06:AD76: D0 FA     BNE bra_AD95_RTS
 C - - - - - 0x01AD88 06:AD78: AD C9 04  LDA ram_timer_action_ball
 C - - - - - 0x01AD8B 06:AD7B: F0 07     BEQ bra_AD84
 C - - - - - 0x01AD8D 06:AD7D: A4 1D     LDY ram_001D
 C - - - - - 0x01AD8F 06:AD7F: CC D6 04  CPY ram_игрок_с_мячом
-C - - - - - 0x01AD92 06:AD82: F0 EE     BEQ bra_AD72_RTS
+C - - - - - 0x01AD92 06:AD82: F0 EE     BEQ bra_AD95_RTS
 bra_AD84:
 C - - - - - 0x01AD94 06:AD84: A4 1D     LDY ram_001D
 C - - - - - 0x01AD96 06:AD86: 8C D6 04  STY ram_игрок_с_мячом
@@ -7517,6 +7514,7 @@ C D 1 - - - 0x01AD9B 06:AD8B: 8D 65 04  STA ram_movement_id_ball
 C - - - - - 0x01AD9E 06:AD8E: A8        TAY
 C - - - - - 0x01AD9F 06:AD8F: B9 4D AC  LDA tbl_AC4D_состояние_мяча,Y
 C - - - - - 0x01ADA2 06:AD92: 8D 92 04  STA ram_мяч_состояние
+bra_AD95_RTS:
 C - - - - - 0x01ADA5 06:AD95: 4C 72 AD  RTS
 
 
