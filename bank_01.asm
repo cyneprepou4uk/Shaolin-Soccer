@@ -13409,7 +13409,7 @@ tbl_B5F1:
 
 
 sub_B5F3:
-C - - - - - 0x007603 01:B5F3: A5 59     LDA ram_screen_id
+C - - - - - 0x007603 01:B5F3: A5 59     LDA ram_subscript
 C - - - - - 0x007605 01:B5F5: C9 07     CMP #$07
 C - - - - - 0x007607 01:B5F7: D0 03     BNE bra_B5FC
 C - - - - - 0x007609 01:B5F9: 4C 58 B8  JMP loc_B858

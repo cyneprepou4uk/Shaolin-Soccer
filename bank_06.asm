@@ -10412,7 +10412,7 @@ C - - - - - 0x01BE57 06:BE47: A8        TAY
 C - - - - - 0x01BE58 06:BE48: B9 2A 05  LDA ram_флаг_владения_мячом_ком,Y
 C - - - - - 0x01BE5B 06:BE4B: 29 01     AND #$01
 C - - - - - 0x01BE5D 06:BE4D: F0 58     BEQ bra_BEA7
-C - - - - - 0x01BE5F 06:BE4F: A5 59     LDA ram_screen_id
+C - - - - - 0x01BE5F 06:BE4F: A5 59     LDA ram_subscript
 C - - - - - 0x01BE61 06:BE51: C9 05     CMP #$05
 C - - - - - 0x01BE63 06:BE53: F0 08     BEQ bra_BE5D
 C - - - - - 0x01BE65 06:BE55: A9 80     LDA #$80
@@ -10482,12 +10482,12 @@ C - - - - - 0x01BEDC 06:BECC: AD 5C 00  LDA ram_flag_gameplay
 C - - - - - 0x01BEDF 06:BECF: 29 02     AND #$02
 C - - - - - 0x01BEE1 06:BED1: D0 14     BNE bra_BEE7_RTS
 C - - - - - 0x01BEE3 06:BED3: A2 0E     LDX #$0E
-C - - - - - 0x01BEE5 06:BED5: A5 59     LDA ram_screen_id
+C - - - - - 0x01BEE5 06:BED5: A5 59     LDA ram_subscript
 C - - - - - 0x01BEE7 06:BED7: C9 01     CMP #$01
 C - - - - - 0x01BEE9 06:BED9: D0 01     BNE bra_BEDC
 C - - - - - 0x01BEEB 06:BEDB: E8        INX
 bra_BEDC:
-C - - - - - 0x01BEEC 06:BEDC: 20 D6 CB  JSR sub_0x01CBE6
+C - - - - - 0x01BEEC 06:BEDC: 20 D6 CB  JSR sub_0x01CBE6_циферки
 C - - - - - 0x01BEEF 06:BEDF: 20 8C EB  JSR sub_0x01EB9C
 C - - - - - 0x01BEF2 06:BEE2: E8        INX
 C - - - - - 0x01BEF3 06:BEE3: E0 13     CPX #$13

@@ -32,7 +32,7 @@ C - - J - - 0x01401C 05:800C: 4C 84 BB  JMP loc_BB84
 
 
 loc_8055_menu_script:
-C D 0 - - - 0x014065 05:8055: A5 59     LDA ram_screen_id
+C D 0 - - - 0x014065 05:8055: A5 59     LDA ram_subscript
 C - - - - - 0x014067 05:8057: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
 - D 0 - I - 0x01406A 05:805A: 83 80     .word ofs_8083_00
 - D 0 - I - 0x01406C 05:805C: 8B 80     .word ofs_808B_01
@@ -53,7 +53,7 @@ C - - - - - 0x014067 05:8057: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_
 
 
 
-- - - - - - 0x01408B 05:807B: A5 59     LDA ram_screen_id
+- - - - - - 0x01408B 05:807B: A5 59     LDA ram_subscript
 - - - - - - 0x01408D 05:807D: 30 03     BMI bra_8082_RTS
 - - - - - - 0x01408F 05:807F: 20 DF 80  JSR sub_80DF
 bra_8082_RTS:
@@ -63,7 +63,7 @@ bra_8082_RTS:
 
 ofs_8083_00:
 C - - J - - 0x014093 05:8083: A9 01     LDA #$01
-C - - - - - 0x014095 05:8085: 8D 59 00  STA ram_screen_id
+C - - - - - 0x014095 05:8085: 8D 59 00  STA ram_subscript
 C - - - - - 0x014098 05:8088: 4C 7A 80  RTS
 
 
@@ -170,7 +170,7 @@ C - - - - - 0x014110 05:8100: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x014113 05:8103: 8D CE 05  STA ram_05CE
 C - - - - - 0x014116 05:8106: A9 F0     LDA #$F0
 C - - - - - 0x014118 05:8108: 8D 56 00  STA ram_limit_spr_Y
-C - - - - - 0x01411B 05:810B: AC 59 00  LDY ram_screen_id
+C - - - - - 0x01411B 05:810B: AC 59 00  LDY ram_subscript
 C - - - - - 0x01411E 05:810E: B9 6E 81  LDA tbl_816E_экраны,Y
 C - - - - - 0x014121 05:8111: 30 5A     BMI bra_816D_RTS
 C - - - - - 0x014123 05:8113: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
@@ -204,9 +204,9 @@ C - - - - - 0x01416F 05:815F: A9 FF     LDA #$FF
 C - - - - - 0x014171 05:8161: 9D 79 04  STA ram_action_id_player,X
 C - - - - - 0x014174 05:8164: CA        DEX
 C - - - - - 0x014175 05:8165: 10 B7     BPL bra_811E
-C - - - - - 0x014177 05:8167: A5 59     LDA ram_screen_id
+C - - - - - 0x014177 05:8167: A5 59     LDA ram_subscript
 C - - - - - 0x014179 05:8169: 09 80     ORA #$80
-C - - - - - 0x01417B 05:816B: 85 59     STA ram_screen_id
+C - - - - - 0x01417B 05:816B: 85 59     STA ram_subscript
 bra_816D_RTS:
 C - - - - - 0x01417D 05:816D: 60        RTS
 
@@ -506,7 +506,7 @@ C - - - - - 0x014347 05:8337: 60        RTS
 
 
 sub_8338:
-C - - - - - 0x014348 05:8338: A5 59     LDA ram_screen_id
+C - - - - - 0x014348 05:8338: A5 59     LDA ram_subscript
 C - - - - - 0x01434A 05:833A: 30 06     BMI bra_8342
 C - - - - - 0x01434C 05:833C: 20 DF 80  JSR sub_80DF
 C - - - - - 0x01434F 05:833F: 20 55 83  JSR sub_8355
@@ -1186,7 +1186,7 @@ bra_8704:
 C - - - - - 0x014717 05:8707: B9 12 87  LDA #con_script_menu
 C - - - - - 0x01471A 05:870A: 85 58     STA ram_script
 C - - - - - 0x01471C 05:870C: B9 13 87  LDA tbl_8712,Y
-C - - - - - 0x01471F 05:870F: 85 59     STA ram_screen_id
+C - - - - - 0x01471F 05:870F: 85 59     STA ram_subscript
 C - - - - - 0x014721 05:8711: 60        RTS
 
 
@@ -1200,7 +1200,7 @@ tbl_8712:
 
 
 sub_871A:
-C - - - - - 0x01472A 05:871A: A5 59     LDA ram_screen_id
+C - - - - - 0x01472A 05:871A: A5 59     LDA ram_subscript
 C - - - - - 0x01472C 05:871C: 30 06     BMI bra_8724
 C - - - - - 0x01472E 05:871E: 20 DF 80  JSR sub_80DF
 C - - - - - 0x014731 05:8721: 20 31 87  JSR sub_8731
@@ -1475,13 +1475,13 @@ C - - - - - 0x014895 05:8885: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x014898 05:8888: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x01489B 05:888B: 20 47 BB  JSR sub_BB47
 C - - - - - 0x01489E 05:888E: A9 03     LDA #$03
-C - - - - - 0x0148A0 05:8890: 85 59     STA ram_screen_id
+C - - - - - 0x0148A0 05:8890: 85 59     STA ram_subscript
 C - - - - - 0x0148A2 05:8892: 60        RTS
 
 
 
 sub_8893:
-C - - - - - 0x0148A3 05:8893: A5 59     LDA ram_screen_id
+C - - - - - 0x0148A3 05:8893: A5 59     LDA ram_subscript
 C - - - - - 0x0148A5 05:8895: 30 0B     BMI bra_88A2
 C - - - - - 0x0148A7 05:8897: 20 DF 80  JSR sub_80DF
 C - - - - - 0x0148AA 05:889A: 20 53 89  JSR sub_8953
@@ -1514,7 +1514,7 @@ C - - - - - 0x0148D2 05:88C2: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0148D5 05:88C5: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x0148D8 05:88C8: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x0148DB 05:88CB: A9 04     LDA #$04
-C - - - - - 0x0148DD 05:88CD: 85 59     STA ram_screen_id
+C - - - - - 0x0148DD 05:88CD: 85 59     STA ram_subscript
 bra_88CF_RTS:
 C D 0 - - - 0x0148DF 05:88CF: 60        RTS
 
@@ -1861,7 +1861,7 @@ C - - - - - 0x014ACD 05:8ABD: 60        RTS
 
 
 sub_8ABE:
-C - - - - - 0x014ACE 05:8ABE: A5 59     LDA ram_screen_id
+C - - - - - 0x014ACE 05:8ABE: A5 59     LDA ram_subscript
 C - - - - - 0x014AD0 05:8AC0: 30 06     BMI bra_8AC8
 C - - - - - 0x014AD2 05:8AC2: 20 DF 80  JSR sub_80DF
 C - - - - - 0x014AD5 05:8AC5: 20 D5 8A  JSR sub_8AD5
@@ -2207,7 +2207,7 @@ C - - - - - 0x014D01 05:8CF1: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x014D04 05:8CF4: A9 00     LDA #$00
 C - - - - - 0x014D06 05:8CF6: 8D CC 05  STA ram_счетчик_смен
 C - - - - - 0x014D09 05:8CF9: A9 06     LDA #$06
-C - - - - - 0x014D0B 05:8CFB: 85 59     STA ram_screen_id
+C - - - - - 0x014D0B 05:8CFB: 85 59     STA ram_subscript
 C - - - - - 0x014D0D 05:8CFD: 60        RTS
 
 
@@ -2389,7 +2389,7 @@ off_8DA9_04:
 
 
 sub_8DBC:
-C - - - - - 0x014DCC 05:8DBC: A5 59     LDA ram_screen_id
+C - - - - - 0x014DCC 05:8DBC: A5 59     LDA ram_subscript
 C - - - - - 0x014DCE 05:8DBE: 30 06     BMI bra_8DC6
 C - - - - - 0x014DD0 05:8DC0: 20 DF 80  JSR sub_80DF
 C - - - - - 0x014DD3 05:8DC3: 20 D0 8D  JSR sub_8DD0
@@ -2697,7 +2697,7 @@ tbl_8F6E:
 
 sub_8F73:
 C - - - - - 0x014F83 05:8F73: A9 04     LDA #$04
-C - - - - - 0x014F85 05:8F75: 8D 59 00  STA ram_screen_id
+C - - - - - 0x014F85 05:8F75: 8D 59 00  STA ram_subscript
 C - - - - - 0x014F88 05:8F78: 60        RTS
 
 
@@ -2814,7 +2814,7 @@ off_8FF4_04:
 
 
 sub_8FF9:
-C - - - - - 0x015009 05:8FF9: A5 59     LDA ram_screen_id
+C - - - - - 0x015009 05:8FF9: A5 59     LDA ram_subscript
 C - - - - - 0x01500B 05:8FFB: 30 12     BMI bra_900F
 C - - - - - 0x01500D 05:8FFD: 20 DF 80  JSR sub_80DF
 C - - - - - 0x015010 05:9000: 24 57     BIT ram_option_mode_difficulty
@@ -3322,7 +3322,7 @@ C - - - - - 0x01529A 05:928A: AC 4A 05  LDY ram_054A
 C - - - - - 0x01529D 05:928D: 30 02     BMI bra_9291
 - - - - - - 0x01529F 05:928F: A9 0F     LDA #$0F
 bra_9291:
-C - - - - - 0x0152A1 05:9291: 85 59     STA ram_screen_id
+C - - - - - 0x0152A1 05:9291: 85 59     STA ram_subscript
 C - - - - - 0x0152A3 05:9293: A9 04     LDA #$04
 C - - - - - 0x0152A5 05:9295: 8D 5B 00  STA ram_for_0059
 C - - - - - 0x0152A8 05:9298: 4C BE 92  RTS
@@ -3331,7 +3331,7 @@ C - - - - - 0x0152AB 05:929B: 20 7D C0  JSR sub_0x01C345
 C - - - - - 0x0152AE 05:929E: A9 00     LDA #$00    ; con_script_gameplay
 C - - - - - 0x0152B0 05:92A0: 8D CC 05  STA ram_счетчик_смен
 C - - - - - 0x0152B3 05:92A3: 85 58     STA ram_script
-C - - - - - 0x0152B5 05:92A5: 85 59     STA ram_screen_id
+C - - - - - 0x0152B5 05:92A5: 85 59     STA ram_subscript
 C - - - - - 0x0152B7 05:92A7: 20 84 BB  JSR sub_BB84
 C - - - - - 0x0152BA 05:92AA: 20 0F 80  JSR sub_0x01C263
 C - - - - - 0x0152BD 05:92AD: 4C BE 92  RTS
@@ -3339,9 +3339,9 @@ bra_92B0:
 C - - - - - 0x0152C0 05:92B0: AD CC 05  LDA ram_счетчик_смен
 C - - - - - 0x0152C3 05:92B3: D0 E6     BNE bra_929B
 C - - - - - 0x0152C5 05:92B5: EE CC 05  INC ram_счетчик_смен
-C - - - - - 0x0152C8 05:92B8: A5 59     LDA ram_screen_id
+C - - - - - 0x0152C8 05:92B8: A5 59     LDA ram_subscript
 C - - - - - 0x0152CA 05:92BA: 29 7F     AND #$7F
-C - - - - - 0x0152CC 05:92BC: 85 59     STA ram_screen_id
+C - - - - - 0x0152CC 05:92BC: 85 59     STA ram_subscript
 C D 0 - - - 0x0152CE 05:92BE: 60        RTS
 
 
@@ -3491,7 +3491,7 @@ off_9351_0E:
 ; bzk
 off_9357_0F:
 sub_9357:
-C - - - - - 0x015367 05:9357: A5 59     LDA ram_screen_id
+C - - - - - 0x015367 05:9357: A5 59     LDA ram_subscript
 C - - - - - 0x015369 05:9359: 30 06     BMI bra_9361
 C - - - - - 0x01536B 05:935B: 20 DF 80  JSR sub_80DF
 C - - - - - 0x01536E 05:935E: 20 96 93  JSR sub_9396
@@ -4426,13 +4426,13 @@ C - - - - - 0x0157FD 05:97ED: F0 02     BEQ bra_97F1
 bra_97EF_minibattle:
 C - - - - - 0x0157FF 05:97EF: A9 03     LDA #$03
 bra_97F1:   ; A = 00
-C - - - - - 0x015801 05:97F1: 8D 59 00  STA ram_screen_id
+C - - - - - 0x015801 05:97F1: 8D 59 00  STA ram_subscript
 C - - - - - 0x015804 05:97F4: 60        RTS
 
 
 
 sub_97F5:
-C - - - - - 0x015805 05:97F5: A5 59     LDA ram_screen_id
+C - - - - - 0x015805 05:97F5: A5 59     LDA ram_subscript
 C - - - - - 0x015807 05:97F7: 30 06     BMI bra_97FF
 C - - - - - 0x015809 05:97F9: 20 DF 80  JSR sub_80DF
 C - - - - - 0x01580C 05:97FC: 20 2C 98  JSR sub_982C
@@ -5430,7 +5430,7 @@ sub_9D90:
 C - - - - - 0x015DA0 05:9D90: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x015DA3 05:9D93: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x015DA6 05:9D96: A9 04     LDA #$04
-C - - - - - 0x015DA8 05:9D98: 85 59     STA ram_screen_id
+C - - - - - 0x015DA8 05:9D98: 85 59     STA ram_subscript
 C - - - - - 0x015DAA 05:9D9A: 60        RTS
 
 
@@ -6071,7 +6071,7 @@ tbl_A0D7:
 
 
 sub_A0E0:
-C - - - - - 0x0160F0 05:A0E0: A5 59     LDA ram_screen_id
+C - - - - - 0x0160F0 05:A0E0: A5 59     LDA ram_subscript
 C - - - - - 0x0160F2 05:A0E2: 30 06     BMI bra_A0EA
 C - - - - - 0x0160F4 05:A0E4: 20 DF 80  JSR sub_80DF
 C - - - - - 0x0160F7 05:A0E7: 20 F4 A0  JSR sub_A0F4
@@ -6144,7 +6144,7 @@ sub_A15F:
 C - - - - - 0x01616F 05:A15F: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x016172 05:A162: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x016175 05:A165: A9 04     LDA #$04
-C - - - - - 0x016177 05:A167: 85 59     STA ram_screen_id
+C - - - - - 0x016177 05:A167: 85 59     STA ram_subscript
 C - - - - - 0x016179 05:A169: 60        RTS
 
 
@@ -6343,7 +6343,7 @@ tbl_A279:
 
 
 sub_A281:
-C - - - - - 0x016291 05:A281: A5 59     LDA ram_screen_id
+C - - - - - 0x016291 05:A281: A5 59     LDA ram_subscript
 C - - - - - 0x016293 05:A283: 30 06     BMI bra_A28B
 C - - - - - 0x016295 05:A285: 20 DF 80  JSR sub_80DF
 C - - - - - 0x016298 05:A288: 20 95 A2  JSR sub_A295
@@ -6435,7 +6435,7 @@ tbl_A317:
 
 sub_A318:
 C - - - - - 0x016328 05:A318: AD 5B 00  LDA ram_for_0059
-C - - - - - 0x01632B 05:A31B: 8D 59 00  STA ram_screen_id
+C - - - - - 0x01632B 05:A31B: 8D 59 00  STA ram_subscript
 C - - - - - 0x01632E 05:A31E: 60        RTS
 
 
@@ -6902,7 +6902,7 @@ tbl_A492:
 
 
 sub_A576_экран_выбора_музыки:
-C - - - - - 0x016586 05:A576: A5 59     LDA ram_screen_id
+C - - - - - 0x016586 05:A576: A5 59     LDA ram_subscript
 C - - - - - 0x016588 05:A578: 30 06     BMI bra_A580
 C - - - - - 0x01658A 05:A57A: 20 DF 80  JSR sub_80DF
 C - - - - - 0x01658D 05:A57D: 20 8D A5  JSR sub_A58D
@@ -7154,7 +7154,7 @@ sub_A6D6:
 C - - - - - 0x0166E6 05:A6D6: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x0166E9 05:A6D9: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x0166EC 05:A6DC: A9 04     LDA #$04
-C - - - - - 0x0166EE 05:A6DE: 85 59     STA ram_screen_id
+C - - - - - 0x0166EE 05:A6DE: 85 59     STA ram_subscript
 C - - - - - 0x0166F0 05:A6E0: 60        RTS
 
 
@@ -7247,7 +7247,7 @@ bra_A770:
 
 
 sub_A778:
-C - - - - - 0x016788 05:A778: A5 59     LDA ram_screen_id
+C - - - - - 0x016788 05:A778: A5 59     LDA ram_subscript
 C - - - - - 0x01678A 05:A77A: 30 09     BMI bra_A785
 C - - - - - 0x01678C 05:A77C: 20 DF 80  JSR sub_80DF
 C - - - - - 0x01678F 05:A77F: 20 A4 A7  JSR sub_A7A4
@@ -7690,7 +7690,7 @@ C - - - - - 0x016A8F 05:AA7F: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x016A92 05:AA82: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x016A95 05:AA85: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x016A98 05:AA88: A9 0A     LDA #$0A
-C - - - - - 0x016A9A 05:AA8A: 85 59     STA ram_screen_id
+C - - - - - 0x016A9A 05:AA8A: 85 59     STA ram_subscript
 C - - - - - 0x016A9C 05:AA8C: A9 0D     LDA #$0D
 C - - - - - 0x016A9E 05:AA8E: 85 5B     STA ram_for_0059
 C - - - - - 0x016AA0 05:AA90: 4C EC A8  RTS
@@ -8093,7 +8093,7 @@ sub_ACA7:
 C - - - - - 0x016CB7 05:ACA7: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x016CBA 05:ACAA: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x016CBD 05:ACAD: A9 04     LDA #$04
-C - - - - - 0x016CBF 05:ACAF: 8D 59 00  STA ram_screen_id
+C - - - - - 0x016CBF 05:ACAF: 8D 59 00  STA ram_subscript
 C - - - - - 0x016CC2 05:ACB2: 60        RTS
 
 
@@ -9327,7 +9327,7 @@ tbl_B2AF:
 
 
 sub_B2B2:
-C - - - - - 0x0172C2 05:B2B2: A5 59     LDA ram_screen_id
+C - - - - - 0x0172C2 05:B2B2: A5 59     LDA ram_subscript
 C - - - - - 0x0172C4 05:B2B4: 30 2D     BMI bra_B2E3
 C - - - - - 0x0172C6 05:B2B6: AD 4A 05  LDA ram_054A
 C - - - - - 0x0172C9 05:B2B9: 30 05     BMI bra_B2C0
@@ -9501,7 +9501,7 @@ loc_B3BD:
 loc_B3D3:
 bra_B3D3:
 C D 1 - - - 0x0173E3 05:B3D3: B9 DC B3  LDA tbl_B3DC,Y
-C - - - - - 0x0173E6 05:B3D6: 85 59     STA ram_screen_id
+C - - - - - 0x0173E6 05:B3D6: 85 59     STA ram_subscript
 C - - - - - 0x0173E8 05:B3D8: 20 47 BB  JSR sub_BB47
 C - - - - - 0x0173EB 05:B3DB: 60        RTS
 
@@ -9618,7 +9618,7 @@ tbl_B46C:
 
 
 sub_B47C:
-- - - - - - 0x01748C 05:B47C: A5 59     LDA ram_screen_id
+- - - - - - 0x01748C 05:B47C: A5 59     LDA ram_subscript
 - - - - - - 0x01748E 05:B47E: 30 0E     BMI bra_B48E
 - - - - - - 0x017490 05:B480: 20 DF 80  JSR sub_80DF
 - - - - - - 0x017493 05:B483: 20 D6 B4  JSR sub_B4D6
@@ -9658,7 +9658,7 @@ ofs_B4AE_01:
 - - - - - - 0x0174D1 05:B4C1: 20 44 C0  JSR sub_0x01D057
 - - - - - - 0x0174D4 05:B4C4: 20 4A C0  JSR sub_0x01D072
 - - - - - - 0x0174D7 05:B4C7: A5 5B     LDA ram_for_0059
-- - - - - - 0x0174D9 05:B4C9: 85 59     STA ram_screen_id
+- - - - - - 0x0174D9 05:B4C9: 85 59     STA ram_subscript
 - - - - - - 0x0174DB 05:B4CB: A9 04     LDA #$04
 - - - - - - 0x0174DD 05:B4CD: 8D 29 05  STA ram_опция_материк
 - - - - - - 0x0174E0 05:B4D0: A9 06     LDA #$06

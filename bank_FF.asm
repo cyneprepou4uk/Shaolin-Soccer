@@ -41,7 +41,7 @@
 .export sub_0x01C2F4_play_sound
 .export sub_0x01C327
 .export sub_0x01C345
-.export sub_0x01CBE6
+.export sub_0x01CBE6_циферки
 .export sub_0x01CD3F
 .export sub_0x01CDDB
 .export sub_0x01CECD_вычислить_анимацию
@@ -959,7 +959,7 @@ C D 2 - - - 0x01C488 07:C478: A9 00     LDA #$00
 C - - - - - 0x01C48A 07:C47A: 85 51     STA ram_frame_delay
 C - - - - - 0x01C48C 07:C47C: 20 A8 C2  JSR sub_C2A8
 C - - - - - 0x01C48F 07:C47F: 20 A0 CE  JSR sub_CEA0
-C - - - - - 0x01C492 07:C482: A5 59     LDA ram_screen_id
+C - - - - - 0x01C492 07:C482: A5 59     LDA ram_subscript
 C - - - - - 0x01C494 07:C484: 85 5A     STA ram_copy_screen_id
 C - - - - - 0x01C496 07:C486: EE 00 03  INC ram_frame_cnt
 C - - - - - 0x01C499 07:C489: 20 8A C2  JSR sub_C28A
@@ -1024,7 +1024,7 @@ C - - - - - 0x01C4FF 07:C4EF: 84 2B     STY ram_002B
 C - - - - - 0x01C501 07:C4F1: 20 47 D0  JSR sub_D047
 C - - - - - 0x01C504 07:C4F4: 20 62 D0  JSR sub_D062
 C - - - - - 0x01C507 07:C4F7: A5 2B     LDA ram_002B
-C - - - - - 0x01C509 07:C4F9: 85 59     STA ram_screen_id
+C - - - - - 0x01C509 07:C4F9: 85 59     STA ram_subscript
 C - - - - - 0x01C50B 07:C4FB: A9 80     LDA #con_nmi_disable_irq
 C - - - - - 0x01C50D 07:C4FD: 85 4F     STA ram_NMI_flag
 C - - - - - 0x01C50F 07:C4FF: A9 01     LDA #con_script_logo
@@ -1041,7 +1041,7 @@ C - - - - - 0x01C516 07:C506: AD 8B 05  LDA ram_флаг_демо
 C - - - - - 0x01C519 07:C509: 10 03     BPL bra_C50E
 C - - - - - 0x01C51B 07:C50B: 20 DB C4  JSR sub_C4DB
 bra_C50E:
-C - - - - - 0x01C51E 07:C50E: A5 59     LDA ram_screen_id
+C - - - - - 0x01C51E 07:C50E: A5 59     LDA ram_subscript
 C - - - - - 0x01C520 07:C510: 0A        ASL
 C - - - - - 0x01C521 07:C511: A8        TAY
 C - - - - - 0x01C522 07:C512: B9 1F C5  LDA tbl_C51F,Y
@@ -1131,7 +1131,7 @@ bra_C5C4:
 C - - - - - 0x01C5D4 07:C5C4: 2C 92 04  BIT ram_мяч_состояние
 C - - - - - 0x01C5D7 07:C5C7: 70 49     BVS bra_C612_RTS
 bra_C5C9:
-C - - - - - 0x01C5D9 07:C5C9: E6 59     INC ram_screen_id
+C - - - - - 0x01C5D9 07:C5C9: E6 59     INC ram_subscript
 C - - - - - 0x01C5DB 07:C5CB: A9 00     LDA #$00
 C - - - - - 0x01C5DD 07:C5CD: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C5DF 07:C5CF: 8D 2A 05  STA ram_флаг_владения_мячом_ком
@@ -1305,7 +1305,7 @@ loc_C735:
 C D 2 - - - 0x01C745 07:C735: A9 00     LDA #$00
 C - - - - - 0x01C747 07:C737: 8D E2 05  STA ram_таймер_катсцены
 C - - - - - 0x01C74A 07:C73A: 20 4F D0  JSR sub_D04F
-C - - - - - 0x01C74D 07:C73D: E6 59     INC ram_screen_id
+C - - - - - 0x01C74D 07:C73D: E6 59     INC ram_subscript
 C - - - - - 0x01C74F 07:C73F: 78        SEI
 C - - - - - 0x01C750 07:C740: 4C 98 C6  RTS
 
@@ -1369,7 +1369,7 @@ C - - - - - 0x01C7B5 07:C7A5: EE E2 05  INC ram_таймер_катсцены
 C - - - - - 0x01C7B8 07:C7A8: AD 08 00  LDA ram_btn_press
 C - - - - - 0x01C7BB 07:C7AB: 29 30     AND #con_btns_SS
 C - - - - - 0x01C7BD 07:C7AD: D0 13     BNE bra_C7C2
-C - - - - - 0x01C7BF 07:C7AF: A5 59     LDA ram_screen_id
+C - - - - - 0x01C7BF 07:C7AF: A5 59     LDA ram_subscript
 C - - - - - 0x01C7C1 07:C7B1: C9 05     CMP #$05
 C - - - - - 0x01C7C3 07:C7B3: F0 06     BEQ bra_C7BB
 C - - - - - 0x01C7C5 07:C7B5: 24 08     BIT ram_btn_press
@@ -1406,7 +1406,7 @@ C - - - - - 0x01C804 07:C7F4: 20 9E C2  JSR sub_C29E
 C - - - - - 0x01C807 07:C7F7: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C809 07:C7F9: D0 0D     BNE bra_C808_RTS
 C - - - - - 0x01C80B 07:C7FB: A9 02     LDA #$02
-C - - - - - 0x01C80D 07:C7FD: 8D 59 00  STA ram_screen_id
+C - - - - - 0x01C80D 07:C7FD: 8D 59 00  STA ram_subscript
 C - - - - - 0x01C810 07:C800: AD AD 03  LDA ram_camera_aim
 C - - - - - 0x01C813 07:C803: 29 7F     AND #$7F
 C - - - - - 0x01C815 07:C805: 8D AD 03  STA ram_camera_aim
@@ -1525,11 +1525,11 @@ C - - - - - 0x01C8C0 07:C8B0: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01C8C2 07:C8B2: 29 20     AND #con_gm_penalty
 C - - - - - 0x01C8C4 07:C8B4: F0 07     BEQ bra_C8BD_не_пенальти
 C - - - - - 0x01C8C6 07:C8B6: A9 03     LDA #$03
-C - - - - - 0x01C8C8 07:C8B8: 85 59     STA ram_screen_id
+C - - - - - 0x01C8C8 07:C8B8: 85 59     STA ram_subscript
 C - - - - - 0x01C8CA 07:C8BA: 4C 19 C9  RTS
 bra_C8BD_не_пенальти:
 C - - - - - 0x01C8CD 07:C8BD: A9 06     LDA #$06
-C - - - - - 0x01C8CF 07:C8BF: 8D 59 00  STA ram_screen_id
+C - - - - - 0x01C8CF 07:C8BF: 8D 59 00  STA ram_subscript
 C - - - - - 0x01C8D2 07:C8C2: 20 58 C2  JSR sub_C258
 C - - - - - 0x01C8D5 07:C8C5: 4C 19 C9  RTS
 bra_C8C8:
@@ -1571,7 +1571,7 @@ C - - - - - 0x01C91B 07:C90B: A9 3F     LDA #$3F
 C - - - - - 0x01C91D 07:C90D: 8D D9 06  STA ram_байт_2006_hi_палитра
 bra_C910:
 C - - - - - 0x01C920 07:C910: A9 03     LDA #$03
-C - - - - - 0x01C922 07:C912: 85 59     STA ram_screen_id
+C - - - - - 0x01C922 07:C912: 85 59     STA ram_subscript
 C - - - - - 0x01C924 07:C914: A9 00     LDA #$00
 C - - - - - 0x01C926 07:C916: 8D E2 05  STA ram_таймер_катсцены
 bra_C919_RTS:
@@ -1590,7 +1590,7 @@ C - - - - - 0x01C93B 07:C92B: 8D 02 06  STA ram_spd_Y_lo_wind
 C - - - - - 0x01C93E 07:C92E: A9 FF     LDA #$FF
 C - - - - - 0x01C940 07:C930: 8D F5 05  STA ram_флаг_гола
 C - - - - - 0x01C943 07:C933: 8D FA 05  STA ram_05FA
-C - - - - - 0x01C946 07:C936: A5 59     LDA ram_screen_id
+C - - - - - 0x01C946 07:C936: A5 59     LDA ram_subscript
 C - - - - - 0x01C948 07:C938: C9 03     CMP #$03
 C - - - - - 0x01C94A 07:C93A: F0 16     BEQ bra_C952
 C - - - - - 0x01C94C 07:C93C: C9 05     CMP #$05
@@ -1613,7 +1613,7 @@ C - - - - - 0x01C96B 07:C95B: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C96D 07:C95D: 29 02     AND #$02
 C - - - - - 0x01C96F 07:C95F: D0 1A     BNE bra_C97B
 C - - - - - 0x01C971 07:C961: A9 00     LDA #$00
-C - - - - - 0x01C973 07:C963: 85 59     STA ram_screen_id
+C - - - - - 0x01C973 07:C963: 85 59     STA ram_subscript
 C - - - - - 0x01C975 07:C965: 4C 1E CA  RTS
 bra_C968_не_пенальти:
 C - - - - - 0x01C978 07:C968: A5 5C     LDA ram_flag_gameplay
@@ -1621,7 +1621,7 @@ C - - - - - 0x01C97A 07:C96A: 29 20     AND #$20
 C - - - - - 0x01C97C 07:C96C: F0 07     BEQ bra_C975
 C - - - - - 0x01C97E 07:C96E: A9 00     LDA #$00
 bra_C970:
-C - - - - - 0x01C980 07:C970: 85 59     STA ram_screen_id
+C - - - - - 0x01C980 07:C970: 85 59     STA ram_subscript
 C - - - - - 0x01C982 07:C972: 4C 1E CA  RTS
 bra_C975:
 C - - - - - 0x01C985 07:C975: A5 5C     LDA ram_flag_gameplay
@@ -1646,13 +1646,13 @@ bra_C994:
 - - - - - - 0x01C9A6 07:C996: D0 D8     BNE bra_C970
 bra_C998:
 C - - - - - 0x01C9A8 07:C998: A9 00     LDA #$00
-C - - - - - 0x01C9AA 07:C99A: 85 59     STA ram_screen_id
+C - - - - - 0x01C9AA 07:C99A: 85 59     STA ram_subscript
 C - - - - - 0x01C9AC 07:C99C: 4C 1E CA  RTS
 bra_C99F:
 C - - - - - 0x01C9AF 07:C99F: A9 02     LDA #con_script_menu
 C - - - - - 0x01C9B1 07:C9A1: 85 58     STA ram_script
 C - - - - - 0x01C9B3 07:C9A3: A9 04     LDA #$04
-C - - - - - 0x01C9B5 07:C9A5: 85 59     STA ram_screen_id
+C - - - - - 0x01C9B5 07:C9A5: 85 59     STA ram_subscript
 C - - - - - 0x01C9B7 07:C9A7: EE 59 05  INC ram_0559
 C - - - - - 0x01C9BA 07:C9AA: 4C FA C9  JMP loc_C9FA
 bra_C9AD:
@@ -1661,7 +1661,7 @@ C - - - - - 0x01C9BF 07:C9AF: 30 0B     BMI bra_C9BC_walkthrough
 C - - - - - 0x01C9C1 07:C9B1: A9 02     LDA #con_script_menu
 C - - - - - 0x01C9C3 07:C9B3: 85 58     STA ram_script
 C - - - - - 0x01C9C5 07:C9B5: A9 01     LDA #$01
-C - - - - - 0x01C9C7 07:C9B7: 85 59     STA ram_screen_id
+C - - - - - 0x01C9C7 07:C9B7: 85 59     STA ram_subscript
 C - - - - - 0x01C9C9 07:C9B9: 4C 1E CA  RTS
 bra_C9BC_walkthrough:
 C - - - - - 0x01C9CC 07:C9BC: AD 4A 05  LDA ram_054A
@@ -1686,7 +1686,7 @@ bra_C9DD:
 - - - - - - 0x01C9F0 07:C9E0: A9 03     LDA #con_script_credits
 - - - - - - 0x01C9F2 07:C9E2: 85 58     STA ram_script
 - - - - - - 0x01C9F4 07:C9E4: A9 00     LDA #$00
-- - - - - - 0x01C9F6 07:C9E6: 85 59     STA ram_screen_id
+- - - - - - 0x01C9F6 07:C9E6: 85 59     STA ram_subscript
 - - - - - - 0x01C9F8 07:C9E8: 4C 1E CA  RTS
 bra_C9EB:
 - - - - - - 0x01C9FB 07:C9EB: EE 4A 05  INC ram_054A
@@ -1694,7 +1694,7 @@ bra_C9EE:
 C - - - - - 0x01C9FE 07:C9EE: A9 02     LDA #con_script_menu
 C - - - - - 0x01CA00 07:C9F0: 85 58     STA ram_script
 C - - - - - 0x01CA02 07:C9F2: A9 0E     LDA #$0E
-C - - - - - 0x01CA04 07:C9F4: 85 59     STA ram_screen_id
+C - - - - - 0x01CA04 07:C9F4: 85 59     STA ram_subscript
 C - - - - - 0x01CA06 07:C9F6: A9 03     LDA #$03
 C - - - - - 0x01CA08 07:C9F8: 85 5B     STA ram_for_0059
 loc_C9FA:
@@ -1720,7 +1720,7 @@ loc_CA14:
 - - - - - - 0x01CA26 07:CA16: 09 20     ORA #con_gm_penalty
 - - - - - - 0x01CA28 07:CA18: 85 57     STA ram_option_mode_difficulty
 - - - - - - 0x01CA2A 07:CA1A: A9 00     LDA #$00
-- - - - - - 0x01CA2C 07:CA1C: 85 59     STA ram_screen_id
+- - - - - - 0x01CA2C 07:CA1C: 85 59     STA ram_subscript
 C D 2 - - - 0x01CA2E 07:CA1E: 60        RTS
 
 
@@ -1972,7 +1972,7 @@ tbl_CBC7_buttons:
 - - - - - - 0x01CBE5 07:CBD5: 80        .byte con_btn_A   ; 0E
 
 
-sub_0x01CBE6:
+sub_0x01CBE6_циферки:
 C - - - - - 0x01CBE6 07:CBD6: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x01CBE9 07:CBD9: 0A        ASL
 C - - - - - 0x01CBEA 07:CBDA: A8        TAY
@@ -2077,7 +2077,7 @@ C - - - - - 0x01CCA6 07:CC96: 9D 99 03  STA ram_pos_Z_hi_player,X
 C - - - - - 0x01CCA9 07:CC99: 4C 1E CD  RTS
 bra_CC9C:
 loc_CC9C:
-C D 2 - - - 0x01CCAC 07:CC9C: AD 59 00  LDA ram_screen_id
+C D 2 - - - 0x01CCAC 07:CC9C: AD 59 00  LDA ram_subscript
 C - - - - - 0x01CCAF 07:CC9F: C9 01     CMP #$01
 C - - - - - 0x01CCB1 07:CCA1: D0 08     BNE bra_CCAB
 C - - - - - 0x01CCB3 07:CCA3: A9 7F     LDA #$7F
@@ -2093,20 +2093,20 @@ C - - - - - 0x01CCC8 07:CCB8: 85 2E     STA ram_002E
 C - - - - - 0x01CCCA 07:CCBA: B9 60 03  LDA ram_pos_Y_hi_player,Y
 C - - - - - 0x01CCCD 07:CCBD: 85 2F     STA ram_002F
 C - - - - - 0x01CCCF 07:CCBF: A0 00     LDY #$00
-bra_CCC1:
+bra_CCC1_loop:
 C - - - - - 0x01CCD1 07:CCC1: 46 2D     LSR ram_002D
 C - - - - - 0x01CCD3 07:CCC3: 66 2C     ROR ram_002C
 C - - - - - 0x01CCD5 07:CCC5: 46 2F     LSR ram_002F
 C - - - - - 0x01CCD7 07:CCC7: 66 2E     ROR ram_002E
 C - - - - - 0x01CCD9 07:CCC9: C8        INY
 C - - - - - 0x01CCDA 07:CCCA: C0 04     CPY #$04
-C - - - - - 0x01CCDC 07:CCCC: 90 F3     BCC bra_CCC1
+C - - - - - 0x01CCDC 07:CCCC: 90 F3     BCC bra_CCC1_loop
 C - - - - - 0x01CCDE 07:CCCE: 18        CLC
 C - - - - - 0x01CCDF 07:CCCF: AD F0 00  LDA ram_copy_pos_X_lo_camera
 C - - - - - 0x01CCE2 07:CCD2: 6D 1F CD  ADC tbl_CD1F
 C - - - - - 0x01CCE5 07:CCD5: 9D 14 03  STA ram_pos_X_lo_player,X
 C - - - - - 0x01CCE8 07:CCD8: AD F1 00  LDA ram_copy_pos_X_hi_camera
-C - - - - - 0x01CCEB 07:CCDB: 6D 20 CD  ADC tbl_CD20
+C - - - - - 0x01CCEB 07:CCDB: 6D 20 CD  ADC tbl_CD1F + 1
 C - - - - - 0x01CCEE 07:CCDE: 9D 27 03  STA ram_pos_X_hi_player,X
 C - - - - - 0x01CCF1 07:CCE1: 18        CLC
 C - - - - - 0x01CCF2 07:CCE2: BD 14 03  LDA ram_pos_X_lo_player,X
@@ -2120,7 +2120,7 @@ C - - - - - 0x01CD03 07:CCF3: AD F2 00  LDA ram_copy_pos_Y_lo_camera
 C - - - - - 0x01CD06 07:CCF6: 6D 21 CD  ADC tbl_CD21
 C - - - - - 0x01CD09 07:CCF9: 9D 4D 03  STA ram_pos_Y_lo_player,X
 C - - - - - 0x01CD0C 07:CCFC: AD F3 00  LDA ram_copy_pos_Y_hi_camera
-C - - - - - 0x01CD0F 07:CCFF: 6D 22 CD  ADC tbl_CD22
+C - - - - - 0x01CD0F 07:CCFF: 6D 22 CD  ADC tbl_CD21 + 1
 C - - - - - 0x01CD12 07:CD02: 9D 60 03  STA ram_pos_Y_hi_player,X
 C - - - - - 0x01CD15 07:CD05: 18        CLC
 C - - - - - 0x01CD16 07:CD06: BD 4D 03  LDA ram_pos_Y_lo_player,X
@@ -2135,15 +2135,12 @@ C - - - - - 0x01CD2B 07:CD1B: 9D 99 03  STA ram_pos_Z_hi_player,X
 C D 2 - - - 0x01CD2E 07:CD1E: 60        RTS
 
 
-; bzk
+
 tbl_CD1F:
-- D 2 - - - 0x01CD2F 07:CD1F: 60        .byte $60   ; 
-tbl_CD20:
-- D 2 - - - 0x01CD30 07:CD20: 00        .byte $00   ; 
+- D 2 - - - 0x01CD2F 07:CD1F: 60 00     .word $0060 ; X
+
 tbl_CD21:
-- D 2 - - - 0x01CD31 07:CD21: CD        .byte $CD   ; 
-tbl_CD22:
-- D 2 - - - 0x01CD32 07:CD22: 00        .byte $00   ; 
+- D 2 - - - 0x01CD31 07:CD21: CD 00     .word $00CD ; Y
 
 
 
@@ -4180,7 +4177,7 @@ tbl_D617:
 
 
 sub_E170_draw_hud_info:
-C D 2 - - - 0x01D62A 07:D61A: A5 59     LDA ram_screen_id
+C D 2 - - - 0x01D62A 07:D61A: A5 59     LDA ram_subscript
 C - - - - - 0x01D62C 07:D61C: C5 5A     CMP ram_copy_screen_id
 C - - - - - 0x01D62E 07:D61E: D0 08     BNE bra_D628_RTS
 C - - - - - 0x01D630 07:D620: C9 02     CMP #$02
@@ -4275,7 +4272,7 @@ sub_D6E7:
 C - - - - - 0x01D6F7 07:D6E7: AD 57 00  LDA ram_option_mode_difficulty
 C - - - - - 0x01D6FA 07:D6EA: 29 20     AND #con_gm_penalty
 C - - - - - 0x01D6FC 07:D6EC: D0 1C     BNE bra_D70A
-C - - - - - 0x01D6FE 07:D6EE: A5 59     LDA ram_screen_id
+C - - - - - 0x01D6FE 07:D6EE: A5 59     LDA ram_subscript
 C - - - - - 0x01D700 07:D6F0: C9 06     CMP #$06
 C - - - - - 0x01D702 07:D6F2: F0 13     BEQ bra_D707
 C - - - - - 0x01D704 07:D6F4: AC D6 04  LDY ram_игрок_с_мячом
@@ -4358,7 +4355,7 @@ bra_D78F:
 C - - - - - 0x01D79F 07:D78F: A9 00     LDA #con_weather_none
 C - - - - - 0x01D7A1 07:D791: 8D 66 04  STA ram_weather_id
 loc_D794:
-C - - - - - 0x01D7A4 07:D794: A5 59     LDA ram_screen_id
+C - - - - - 0x01D7A4 07:D794: A5 59     LDA ram_subscript
 C - - - - - 0x01D7A6 07:D796: C9 06     CMP #$06
 C - - - - - 0x01D7A8 07:D798: F0 09     BEQ bra_D7A3_RTS
 C - - - - - 0x01D7AA 07:D79A: A9 40     LDA #$40
@@ -5360,7 +5357,7 @@ C - - - - - 0x01DE57 07:DE47: AD FF BF  LDA $BFFF
 C - - - - - 0x01DE5A 07:DE4A: 48        PHA
 C - - - - - 0x01DE5B 07:DE4B: AD F3 05  LDA ram_номер_prg_банка
 C - - - - - 0x01DE5E 07:DE4E: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01DE61 07:DE51: A5 59     LDA ram_screen_id
+C - - - - - 0x01DE61 07:DE51: A5 59     LDA ram_subscript
 C - - - - - 0x01DE63 07:DE53: C9 02     CMP #$02
 C - - - - - 0x01DE65 07:DE55: F0 07     BEQ bra_DE5E
 C - - - - - 0x01DE67 07:DE57: C9 06     CMP #$06
@@ -8212,7 +8209,7 @@ sub_0x01EFBD_write_buffers_to_ppu:
 sub_EFAD_write_buffers_to_ppu:
 C D 3 - - - 0x01EFBD 07:EFAD: A5 58     LDA ram_script
 C - - - - - 0x01EFBF 07:EFAF: D0 34     BNE bra_EFE5_write_3_buffers_to_ppu ; если не игра на поле
-C - - - - - 0x01EFC1 07:EFB1: A5 59     LDA ram_screen_id
+C - - - - - 0x01EFC1 07:EFB1: A5 59     LDA ram_subscript
 C - - - - - 0x01EFC3 07:EFB3: F0 30     BEQ bra_EFE5_write_3_buffers_to_ppu
 C - - - - - 0x01EFC5 07:EFB5: C9 05     CMP #$05
 C - - - - - 0x01EFC7 07:EFB7: 90 1B     BCC bra_EFD4
@@ -8755,7 +8752,7 @@ C - - - - - 0x01F34F 07:F33F: 60        RTS
 
 
 sub_E170_draw_hud_timer_and_footprints:
-C - - - - - 0x01F360 07:F350: A5 59     LDA ram_screen_id
+C - - - - - 0x01F360 07:F350: A5 59     LDA ram_subscript
 C - - - - - 0x01F362 07:F352: C5 5A     CMP ram_copy_screen_id
 C - - - - - 0x01F364 07:F354: D0 4E     BNE bra_F3A4_RTS
 C - - - - - 0x01F366 07:F356: C9 02     CMP #$02
@@ -10083,7 +10080,7 @@ C - - - - - 0x01FCFB 07:FCEB: A5 0C     LDA ram_000C
 C - - - - - 0x01FCFD 07:FCED: 48        PHA
 C - - - - - 0x01FCFE 07:FCEE: A5 0D     LDA ram_000D
 C - - - - - 0x01FD00 07:FCF0: 48        PHA
-C - - - - - 0x01FD01 07:FCF1: A5 59     LDA ram_screen_id
+C - - - - - 0x01FD01 07:FCF1: A5 59     LDA ram_subscript
 C - - - - - 0x01FD03 07:FCF3: C9 01     CMP #$01
 C - - - - - 0x01FD05 07:FCF5: F0 18     BEQ bra_FD0F
 C - - - - - 0x01FD07 07:FCF7: C9 03     CMP #$03

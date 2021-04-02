@@ -10641,7 +10641,7 @@ off_A9D1_07:
 
 
 loc_AA6B_logo_script:
-C D 1 - - - 0x00AA7B 02:AA6B: A5 59     LDA ram_screen_id
+C D 1 - - - 0x00AA7B 02:AA6B: A5 59     LDA ram_subscript
 C - - - - - 0x00AA7D 02:AA6D: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
 - D 1 - I - 0x00AA80 02:AA70: 88 AA     .word ofs_AA88_00_черный_экран_до_кунио
 - D 1 - I - 0x00AA82 02:AA72: D9 AA     .word ofs_AAD9_01_кунио_с_кулаком
@@ -10691,7 +10691,7 @@ C - - - - - 0x00AADB 02:AACB: 20 0B C0  JSR sub_0x01EEAA_базовые_банк
 C - - - - - 0x00AADE 02:AACE: 20 59 C0  JSR sub_0x01D05F
 C - - - - - 0x00AAE1 02:AAD1: A9 04     LDA #$04
 C - - - - - 0x00AAE3 02:AAD3: 8D B3 05  STA ram_brightness_speed
-C - - - - - 0x00AAE6 02:AAD6: E6 59     INC ram_screen_id
+C - - - - - 0x00AAE6 02:AAD6: E6 59     INC ram_subscript
 C - - - - - 0x00AAE8 02:AAD8: 60        RTS
 
 
@@ -10851,7 +10851,7 @@ C - - - - - 0x00ABD1 02:ABC1: 8D 89 05  STA ram_таймер_демо_lo
 C - - - - - 0x00ABD4 02:ABC4: A9 06     LDA #$06
 C - - - - - 0x00ABD6 02:ABC6: 8D 8A 05  STA ram_таймер_демо_hi
 C - - - - - 0x00ABD9 02:ABC9: A9 0B     LDA #$0B
-C - - - - - 0x00ABDB 02:ABCB: 85 59     STA ram_screen_id
+C - - - - - 0x00ABDB 02:ABCB: 85 59     STA ram_subscript
 C - - - - - 0x00ABDD 02:ABCD: 60        RTS
 
 
@@ -10862,7 +10862,7 @@ C - - - - - 0x00ABE1 02:ABD1: 20 5C C0  JSR sub_0x01D083
 C - - - - - 0x00ABE4 02:ABD4: 2C B2 05  BIT ram_flag_brightness
 C - - - - - 0x00ABE7 02:ABD7: 10 04     BPL bra_ABDD_RTS
 C - - - - - 0x00ABE9 02:ABD9: A9 03     LDA #$03
-C - - - - - 0x00ABEB 02:ABDB: 85 59     STA ram_screen_id
+C - - - - - 0x00ABEB 02:ABDB: 85 59     STA ram_subscript
 bra_ABDD_RTS:
 C - - - - - 0x00ABED 02:ABDD: 60        RTS
 
@@ -10877,12 +10877,12 @@ C - - - - - 0x00ABF8 02:ABE8: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x00ABFB 02:ABEB: A9 04     LDA #$04
 C - - - - - 0x00ABFD 02:ABED: 8D B3 05  STA ram_brightness_speed
 C - - - - - 0x00AC00 02:ABF0: 20 4A C0  JSR sub_0x01D072
-C - - - - - 0x00AC03 02:ABF3: E6 59     INC ram_screen_id
+C - - - - - 0x00AC03 02:ABF3: E6 59     INC ram_subscript
 C - - - - - 0x00AC05 02:ABF5: 60        RTS
 bra_ABF6:
 C - - - - - 0x00AC06 02:ABF6: 20 65 AE  JSR sub_AE65
 C - - - - - 0x00AC09 02:ABF9: A9 08     LDA #$08
-C - - - - - 0x00AC0B 02:ABFB: 85 59     STA ram_screen_id
+C - - - - - 0x00AC0B 02:ABFB: 85 59     STA ram_subscript
 bra_ABFD_RTS:
 C - - - - - 0x00AC0D 02:ABFD: 60        RTS
 
@@ -10893,7 +10893,7 @@ C - - J - - 0x00AC0E 02:ABFE: A9 01     LDA #$01    ; средняя сложн�
 C - - - - - 0x00AC10 02:AC00: 8D 57 00  STA ram_option_mode_difficulty
 C - - - - - 0x00AC13 02:AC03: A9 00     LDA #$00    ; con_script_gameplay
 C - - - - - 0x00AC15 02:AC05: 85 58     STA ram_script
-C - - - - - 0x00AC17 02:AC07: 85 59     STA ram_screen_id
+C - - - - - 0x00AC17 02:AC07: 85 59     STA ram_subscript
 C - - - - - 0x00AC19 02:AC09: 8D 89 05  STA ram_таймер_демо_lo
 C - - - - - 0x00AC1C 02:AC0C: A9 03     LDA #$03
 C - - - - - 0x00AC1E 02:AC0E: 8D 8A 05  STA ram_таймер_демо_hi
@@ -10933,7 +10933,7 @@ C - - - - - 0x00AC5B 02:AC4B: 8D 00 03  STA ram_frame_cnt
 C - - - - - 0x00AC5E 02:AC4E: A9 02     LDA #$02
 C - - - - - 0x00AC60 02:AC50: 8D 8A 05  STA ram_таймер_демо_hi
 C - - - - - 0x00AC63 02:AC53: A0 40     LDY #$40
-C - - - - - 0x00AC65 02:AC55: A5 59     LDA ram_screen_id
+C - - - - - 0x00AC65 02:AC55: A5 59     LDA ram_subscript
 C - - - - - 0x00AC67 02:AC57: C9 05     CMP #$05
 C - - - - - 0x00AC69 02:AC59: F0 02     BEQ bra_AC5D
 C - - - - - 0x00AC6B 02:AC5B: A0 80     LDY #$80
@@ -10966,7 +10966,7 @@ C - - - - - 0x00ACAA 02:AC9A: 20 A5 AD  JSR sub_ADA5
 C - - - - - 0x00ACAD 02:AC9D: 20 62 C0  JSR sub_0x01EF64_убрать_полоску_слева_на_экране
 C - - - - - 0x00ACB0 02:ACA0: 20 1B AA  JSR sub_0x01C2AE
 C - - - - - 0x00ACB3 02:ACA3: 20 59 C0  JSR sub_0x01D05F
-C - - - - - 0x00ACB6 02:ACA6: E6 59     INC ram_screen_id
+C - - - - - 0x00ACB6 02:ACA6: E6 59     INC ram_subscript
 C - - - - - 0x00ACB8 02:ACA8: 60        RTS
 
 
@@ -10979,7 +10979,7 @@ C - - - - - 0x00ACBF 02:ACAF: 20 1B AA  JSR sub_0x01C2AE
 C - - - - - 0x00ACC2 02:ACB2: 20 5C C0  JSR sub_0x01D083
 C - - - - - 0x00ACC5 02:ACB5: 2C B2 05  BIT ram_flag_brightness
 C - - - - - 0x00ACC8 02:ACB8: 10 02     BPL bra_ACBC_RTS
-C - - - - - 0x00ACCA 02:ACBA: E6 59     INC ram_screen_id
+C - - - - - 0x00ACCA 02:ACBA: E6 59     INC ram_subscript
 bra_ACBC_RTS:
 C - - - - - 0x00ACCC 02:ACBC: 60        RTS
 
@@ -11006,7 +11006,7 @@ C - - - - - 0x00ACF1 02:ACE1: A9 02     LDA #con_script_menu
 C - - - - - 0x00ACF3 02:ACE3: 85 58     STA ram_script
 C - - - - - 0x00ACF5 02:ACE5: A9 00     LDA #$00
 bra_ACE7:
-C - - - - - 0x00ACF7 02:ACE7: 85 59     STA ram_screen_id
+C - - - - - 0x00ACF7 02:ACE7: 85 59     STA ram_subscript
 C - - - - - 0x00ACF9 02:ACE9: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x00ACFC 02:ACEC: A9 04     LDA #$04
 C - - - - - 0x00ACFE 02:ACEE: 8D B3 05  STA ram_brightness_speed
@@ -11018,7 +11018,7 @@ C - - - - - 0x00AD07 02:ACF7: 60        RTS
 
 
 sub_ACF8:
-C - - - - - 0x00AD08 02:ACF8: A5 59     LDA ram_screen_id
+C - - - - - 0x00AD08 02:ACF8: A5 59     LDA ram_subscript
 C - - - - - 0x00AD0A 02:ACFA: C9 08     CMP #$08
 C - - - - - 0x00AD0C 02:ACFC: B0 09     BCS bra_AD07
 C - - - - - 0x00AD0E 02:ACFE: A5 08     LDA ram_btn_press
@@ -11146,7 +11146,7 @@ C - - - - - 0x00ADDB 02:ADCB: 9D 14 03  STA ram_pos_X_lo_player,X
 C - - - - - 0x00ADDE 02:ADCE: E0 00     CPX #$00
 C - - - - - 0x00ADE0 02:ADD0: D0 18     BNE bra_ADEA
 C - - - - - 0x00ADE2 02:ADD2: A0 00     LDY #$00
-C - - - - - 0x00ADE4 02:ADD4: A5 59     LDA ram_screen_id
+C - - - - - 0x00ADE4 02:ADD4: A5 59     LDA ram_subscript
 C - - - - - 0x00ADE6 02:ADD6: C9 08     CMP #$08
 C - - - - - 0x00ADE8 02:ADD8: B0 08     BCS bra_ADE2
 C - - - - - 0x00ADEA 02:ADDA: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
@@ -11270,7 +11270,7 @@ C - - - - - 0x00AE80 02:AE70: 8D B3 05  STA ram_brightness_speed
 C - - - - - 0x00AE83 02:AE73: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x00AE86 02:AE76: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 bra_AE79_credits:
-C - - - - - 0x00AE89 02:AE79: E6 59     INC ram_screen_id
+C - - - - - 0x00AE89 02:AE79: E6 59     INC ram_subscript
 C - - - - - 0x00AE8B 02:AE7B: 60        RTS
 
 
@@ -12423,7 +12423,7 @@ C - - - - - 0x00B47F 02:B46F: 9D 59 04  STA ram_movement_id_player,X
 C - - - - - 0x00B482 02:B472: A5 58     LDA ram_script
 C - - - - - 0x00B484 02:B474: C9 03     CMP #con_script_credits
 C - - - - - 0x00B486 02:B476: F0 0B     BEQ bra_B483
-C - - - - - 0x00B488 02:B478: A5 59     LDA ram_screen_id
+C - - - - - 0x00B488 02:B478: A5 59     LDA ram_subscript
 C - - - - - 0x00B48A 02:B47A: C9 04     CMP #$04
 C - - - - - 0x00B48C 02:B47C: F0 05     BEQ bra_B483
 C - - - - - 0x00B48E 02:B47E: A9 0C     LDA #$0C
@@ -13825,7 +13825,7 @@ sub_BB3C:
 
 
 loc_BB5D_credits_script:
-- - - - - - 0x00BB6D 02:BB5D: A5 59     LDA ram_screen_id
+- - - - - - 0x00BB6D 02:BB5D: A5 59     LDA ram_subscript
 - - - - - - 0x00BB6F 02:BB5F: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
 - - - - - - 0x00BB72 02:BB62: 78 BB     .word ofs_BB78_00
 - - - - - - 0x00BB74 02:BB64: B1 BB     .word ofs_BBB1_01
@@ -13866,7 +13866,7 @@ ofs_BB78_00:
 - - - - - - 0x00BBB9 02:BBA9: A9 0B     LDA #con_music_КУБОК
 - - - - - - 0x00BBBB 02:BBAB: 20 02 C0  JSR sub_0x01C2F4_play_sound
 loc_BBAE:
-- - - - - - 0x00BBBE 02:BBAE: E6 59     INC ram_screen_id
+- - - - - - 0x00BBBE 02:BBAE: E6 59     INC ram_subscript
 bra_BBB0_RTS:
 - - - - - - 0x00BBC0 02:BBB0: 60        RTS
 
@@ -13994,7 +13994,7 @@ bra_BC27:
 - - - - - - 0x00BCD8 02:BCC8: A9 80     LDA #$80
 - - - - - - 0x00BCDA 02:BCCA: 8D 8B 05  STA ram_флаг_демо
 bra_BCCD:
-- - - - - - 0x00BCDD 02:BCCD: E6 59     INC ram_screen_id
+- - - - - - 0x00BCDD 02:BCCD: E6 59     INC ram_subscript
 bra_BCCF_RTS:
 - - - - - - 0x00BCDF 02:BCCF: 60        RTS
 
@@ -14194,7 +14194,7 @@ ofs_BDC0_04_последняя_фотка_в_титрах:
 - - - - - - 0x00BE49 02:BE39: EE 8A 05  INC ram_таймер_демо_hi
 - - - - - - 0x00BE4C 02:BE3C: 20 59 C0  JSR sub_0x01D05F
 bra_BE3F:
-- - - - - - 0x00BE4F 02:BE3F: E6 59     INC ram_screen_id
+- - - - - - 0x00BE4F 02:BE3F: E6 59     INC ram_subscript
 bra_BE41_RTS:
 - - - - - - 0x00BE51 02:BE41: 60        RTS
 
@@ -14240,7 +14240,7 @@ ofs_BE76_07:
 - - - - - - 0x00BE9A 02:BE8A: A9 00     LDA #$00
 - - - - - - 0x00BE9C 02:BE8C: 8D E6 05  STA ram_скорость_игры
 - - - - - - 0x00BE9F 02:BE8F: 8D 92 03  STA ram_pos_Z_lo_ball
-- - - - - - 0x00BEA2 02:BE92: E6 59     INC ram_screen_id
+- - - - - - 0x00BEA2 02:BE92: E6 59     INC ram_subscript
 bra_BE94_RTS:
 - - - - - - 0x00BEA4 02:BE94: 60        RTS
 

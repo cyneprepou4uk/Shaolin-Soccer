@@ -87,7 +87,7 @@ sub_0x000000_RESET_init:
                                         LDA #con_script_logo
                                         STA ram_script
                                         LDA #$00
-                                        STA ram_screen_id
+                                        STA ram_subscript
                                         STA $E000
                                         LDA #$00
                                         STA ram_btn_press + 2   ; bzk оно надо?
