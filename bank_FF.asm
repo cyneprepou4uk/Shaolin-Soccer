@@ -4889,7 +4889,7 @@ C - - - - - 0x01DB48 07:DB38: A8        TAY
 C - - - - - 0x01DB49 07:DB39: AA        TAX
 C - - - - - 0x01DB4A 07:DB3A: AD E3 05  LDA ram_счетчик_спрайтов
 C - - - - - 0x01DB4D 07:DB3D: F0 38     BEQ bra_DB77_RTS
-loc_DB3F:
+bra_DB3F_loop:
 C D 2 - - - 0x01DB4F 07:DB3F: CC AC 03  CPY ram_rain_size
 C - - - - - 0x01DB52 07:DB42: F0 08     BEQ bra_DB4C
 C - - - - - 0x01DB54 07:DB44: B0 06     BCS bra_DB4C
@@ -4912,8 +4912,7 @@ C - - - - - 0x01DB7A 07:DB6A: C8        INY
 C - - - - - 0x01DB7B 07:DB6B: CC E3 05  CPY ram_счетчик_спрайтов
 C - - - - - 0x01DB7E 07:DB6E: F0 07     BEQ bra_DB77_RTS
 C - - - - - 0x01DB80 07:DB70: E0 30     CPX #$0C
-C - - - - - 0x01DB82 07:DB72: F0 03     BEQ bra_DB77_RTS
-C - - - - - 0x01DB84 07:DB74: 4C 3F DB  JMP loc_DB3F    ; bzk опт
+C - - - - - 0x01DB82 07:DB72: F0 03     BNE bra_DB3F_loop
 bra_DB77_RTS:
 C D 2 - - - 0x01DB87 07:DB77: 60        RTS
 
