@@ -8207,20 +8207,8 @@ C - - - - - 0x01EF05 07:EEF5: 8D 01 80  STA $8001
 C - - - - - 0x01EF08 07:EEF8: 68        PLA
 C - - - - - 0x01EF09 07:EEF9: AA        TAX
 C - - - - - 0x01EF0A 07:EEFA: 68        PLA
-C - - - - - 0x01EF0B 07:EEFB: CD FF BF  CMP $BFFF
-C - - - - - 0x01EF0E 07:EEFE: D0 02     BNE bra_EF02
 C - - - - - 0x01EF10 07:EF00: 28        PLP
 C - - - - - 0x01EF11 07:EF01: 60        RTS
-; bzk
-bra_EF02:
-- - - - - - 0x01EF12 07:EF02: EA        .byte $EA   ; 
-- - - - - - 0x01EF13 07:EF03: AE        .byte $AE   ; 
-- - - - - - 0x01EF14 07:EF04: FF        .byte $FF   ; 
-- - - - - - 0x01EF15 07:EF05: BF        .byte $BF   ; 
-- - - - - - 0x01EF16 07:EF06: 80        .byte $80   ; 
-- - - - - - 0x01EF17 07:EF07: EA        .byte $EA   ; 
-- - - - - - 0x01EF18 07:EF08: A2        .byte $A2   ; 
-- - - - - - 0x01EF19 07:EF09: 00        .byte $00   ; 
 
 
 
