@@ -8120,13 +8120,13 @@ C - - - - - 0x016CEA 05:ACDA: AD 36 AE  LDA tbl_AE35 + 1
 C - - - - - 0x016CED 05:ACDD: 69 00     ADC #$00
 C - - - - - 0x016CEF 05:ACDF: 85 35     STA ram_0035
 C - - - - - 0x016CF1 05:ACE1: A0 00     LDY #$00
-bra_ACE3:
+bra_ACE3_loop:
 ; bzk I
 C - - - - - 0x016CF3 05:ACE3: B1 34     LDA (ram_0034),Y
 C - - - - - 0x016CF5 05:ACE5: 99 B9 06  STA ram_буфер_графики,Y
 C D 1 - I - 0x016CF8 05:ACE8: C8        INY
 C - - - - - 0x016CF9 05:ACE9: C0 10     CPY #$10
-C - - - - - 0x016CFB 05:ACEB: 90 F6     BCC bra_ACE3
+C - - - - - 0x016CFB 05:ACEB: 90 F6     BCC bra_ACE3_loop
 C D 1 - I - 0x016CFD 05:ACED: A9 10     LDA #$10
 C - - - - - 0x016CFF 05:ACEF: 8D B8 06  STA ram_счетчик_буфера_графики
 C - - - - - 0x016D02 05:ACF2: A5 33     LDA ram_0033
