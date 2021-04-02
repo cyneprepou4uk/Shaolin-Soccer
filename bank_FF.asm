@@ -1601,7 +1601,11 @@ C - - - - - 0x01C954 07:C944: C9 0A     CMP #$0A
 C - - - - - 0x01C956 07:C946: F0 65     BEQ bra_C9AD
 - - - - - - 0x01C958 07:C948: C9 0C     CMP #$0C
 - - - - - - 0x01C95A 07:C94A: D0 03     BNE bra_C94F_RTS
-- - - - - - 0x01C95C 07:C94C: 4C 14 CA  JMP loc_CA14
+- - - - - - 0x01CA24 07:CA14: A5 57     LDA ram_option_mode_difficulty
+- - - - - - 0x01CA26 07:CA16: 09 20     ORA #con_gm_penalty
+- - - - - - 0x01CA28 07:CA18: 85 57     STA ram_option_mode_difficulty
+- - - - - - 0x01CA2A 07:CA1A: A9 00     LDA #$00
+- - - - - - 0x01CA2C 07:CA1C: 85 59     STA ram_subscript                             
 bra_C94F_RTS:
 - - - - - - 0x01C95F 07:C94F: 4C 1E CA  RTS
 bra_C952:
@@ -1712,16 +1716,6 @@ C - - - - - 0x01CA1D 07:CA0D: E0 0C     CPX #$0C
 C - - - - - 0x01CA1F 07:CA0F: 90 EF     BCC bra_CA00_loop
 bra_CA11_RTS:
 C - - - - - 0x01CA21 07:CA11: 4C 1E CA  RTS
-
-
-
-loc_CA14:
-- - - - - - 0x01CA24 07:CA14: A5 57     LDA ram_option_mode_difficulty
-- - - - - - 0x01CA26 07:CA16: 09 20     ORA #con_gm_penalty
-- - - - - - 0x01CA28 07:CA18: 85 57     STA ram_option_mode_difficulty
-- - - - - - 0x01CA2A 07:CA1A: A9 00     LDA #$00
-- - - - - - 0x01CA2C 07:CA1C: 85 59     STA ram_subscript
-C D 2 - - - 0x01CA2E 07:CA1E: 60        RTS
 
 
 
