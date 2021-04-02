@@ -14605,13 +14605,13 @@ C - - - - - 0x003BAF 00:BB9F: 8D 25 05  STA ram_timer_electric_ball
 C - - - - - 0x003BB2 00:BBA2: 8D 0D 05  STA ram_timer_wet_ball
 C - - - - - 0x003BB5 00:BBA5: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x003BB8 00:BBA8: F0 0A     BEQ bra_BBB4
-C - - - - - 0x003BBA 00:BBAA: A9 20     LDA #$20
+C - - - - - 0x003BBA 00:BBAA: A9 20     LDA #con_gp_violation
 C - - - - - 0x003BBC 00:BBAC: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x003BBE 00:BBAE: A9 01     LDA #$01
 C - - - - - 0x003BC0 00:BBB0: 85 59     STA ram_subscript
 C - - - - - 0x003BC2 00:BBB2: D0 06     BNE bra_BBBA
 bra_BBB4:
-C - - - - - 0x003BC4 00:BBB4: A9 01     LDA #$01
+C - - - - - 0x003BC4 00:BBB4: A9 01     LDA #$01    ж con_gp_kick_off
 C - - - - - 0x003BC6 00:BBB6: 85 59     STA ram_subscript
 C - - - - - 0x003BC8 00:BBB8: 85 5C     STA ram_flag_gameplay
 bra_BBBA:

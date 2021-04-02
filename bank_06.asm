@@ -4415,7 +4415,7 @@ C - - - - - 0x019E47 06:9E37: B9 2A 05  LDA ram_флаг_владения_мяч
 C - - - - - 0x019E4A 06:9E3A: 09 01     ORA #$01
 C - - - - - 0x019E4C 06:9E3C: 99 2A 05  STA ram_флаг_владения_мячом_ком,Y
 C - - - - - 0x019E4F 06:9E3F: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x019E51 06:9E41: 09 60     ORA #$60
+C - - - - - 0x019E51 06:9E41: 09 60     ORA #con_gp_pk
 C - - - - - 0x019E53 06:9E43: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x019E55 06:9E45: A9 2D     LDA #con_sfx_violation
 C - - - - - 0x019E57 06:9E47: 20 E4 C2  JSR sub_0x01C2F4_play_sound
@@ -7697,7 +7697,7 @@ C - - - - - 0x01AEF5 06:AEE5: 8D 92 04  STA ram_мяч_состояние
 C - - - - - 0x01AEF8 06:AEE8: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x01AEFA 06:AEEA: 29 20     AND #con_gm_penalty
 C - - - - - 0x01AEFC 06:AEEC: F0 04     BEQ bra_AEF2_не_пенальти
-C - - - - - 0x01AEFE 06:AEEE: A9 40     LDA #$40
+C - - - - - 0x01AEFE 06:AEEE: A9 40     LDA #con_gp_time_up
 C - - - - - 0x01AF00 06:AEF0: 85 5C     STA ram_flag_gameplay
 bra_AEF2_не_пенальти:
 C - - - - - 0x01AF02 06:AEF2: A4 1D     LDY ram_001D
@@ -10275,16 +10275,16 @@ C - - - - - 0x01BD65 06:BD55: A8        TAY
 C - - - - - 0x01BD66 06:BD56: 2C 5C 00  BIT ram_flag_gameplay
 C - - - - - 0x01BD69 06:BD59: 70 0B     BVS bra_BD66_RTS
 C - - - - - 0x01BD6B 06:BD5B: AD 5C 00  LDA ram_flag_gameplay
-C - - - - - 0x01BD6E 06:BD5E: 29 80     AND #$80
+C - - - - - 0x01BD6E 06:BD5E: 29 80     AND #con_gp_pause
 C - - - - - 0x01BD70 06:BD60: 19 67 BD  ORA tbl_BD67,Y
 C - - - - - 0x01BD73 06:BD63: 8D 5C 00  STA ram_flag_gameplay
 bra_BD66_RTS:
 C - - - - - 0x01BD76 06:BD66: 60        RTS
 
 tbl_BD67:
-- D 1 - - - 0x01BD77 06:BD67: 48        .byte $48   ; 
-- D 1 - - - 0x01BD78 06:BD68: 44        .byte $44   ; 
-- D 1 - - - 0x01BD79 06:BD69: 42        .byte $42   ; 
+- D 1 - - - 0x01BD77 06:BD67: 48        .byte con_gp_corner_gk
+- D 1 - - - 0x01BD78 06:BD68: 44        .byte con_gp_out
+- D 1 - - - 0x01BD79 06:BD69: 42        .byte con_gp_goal
 
 
 

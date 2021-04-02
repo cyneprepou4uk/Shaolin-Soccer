@@ -47,6 +47,19 @@ con_script_credits              = $03 ; финальные титры
 
 
 
+; ram_flag_gameplay             = $5C
+con_gp_normal                   = $00 ; нормальная игра, возможность двигаться игроками, без нарушений в данный момент
+con_gp_kick_off                 = $01 ; игроки стоят на разводке
+con_gp_violation                = $20 ; нарушение
+con_gp_time_up                  = $40 ; время вышло
+con_gp_goal                     = $42 ; гол
+con_gp_out                      = $44 ; аут
+con_gp_corner_gk                = $48 ; угловой (corner kick) и от ворот (goal kick)
+con_gp_pk                       = $60 ; пенальти которые после матча
+con_gp_pause                    = $80 ; пауза
+
+
+
 ; ram_weather_id                = $0466
 con_weather_none                = $00 ; нет
 con_weather_lightning           = $01 ; молния
@@ -63,6 +76,17 @@ con_НА_ТРАВЕ                    = $00 ; трава или сухая зе
 con_НА_ЛУЖЕ                     = $01 ; скользит и оставляет следы
 con_НА_ГРЯЗИ                    = $02 ; тонет и оставляет следы
 con_НА_ПЕСКЕ                    = $03 ; оставляет следы
+
+
+
+; ram_hud_mode                  = $05F8
+con_hud_kick_off                = $00 ; 
+con_hud_goal                    = $01 ; 
+con_hud_game_set                = $02 ; 
+con_hud_pk                      = $03 ; 
+con_hud_penalty                 = $04 ; 
+con_hud_freekick                = $05 ; 
+con_hud_minimap                 = $06 ; 
 
 
 

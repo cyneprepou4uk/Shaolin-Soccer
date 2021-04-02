@@ -12155,7 +12155,7 @@ off_B099_04:
 
 loc_B0B9:
 C D 1 - - - 0x0070C9 01:B0B9: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x0070CB 01:B0BB: 30 0C     BMI bra_B0C9_RTS
+C - - - - - 0x0070CB 01:B0BB: 30 0C     BMI bra_B0C9_RTS    ; если пауза
 ; bzk такая проверка на hi = 00 уже есть чтобы попасть сюда
 C - - - - - 0x0070CD 01:B0BD: AD E8 05  LDA ram_footprint_hi_2006
 C - - - - - 0x0070D0 01:B0C0: F0 07     BEQ bra_B0C9_RTS

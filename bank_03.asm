@@ -200,8 +200,8 @@ C - - - - - 0x00C156 03:8146: A5 59     LDA ram_subscript
 C - - - - - 0x00C158 03:8148: C9 01     CMP #$01
 C - - - - - 0x00C15A 03:814A: D0 15     BNE bra_8161
 C - - - - - 0x00C15C 03:814C: AD 5C 00  LDA ram_flag_gameplay
-C - - - - - 0x00C15F 03:814F: 29 20     AND #$20
-C - - - - - 0x00C161 03:8151: F0 17     BEQ bra_816A
+C - - - - - 0x00C15F 03:814F: 29 20     AND #con_gp_violation
+C - - - - - 0x00C161 03:8151: F0 17     BEQ bra_816A_not_violation
 C - - - - - 0x00C163 03:8153: AD 2A 05  LDA ram_флаг_владения_мячом_ком
 C - - - - - 0x00C166 03:8156: 29 01     AND #$01
 C - - - - - 0x00C168 03:8158: A8        TAY
@@ -212,7 +212,7 @@ bra_8161:
 C - - - - - 0x00C171 03:8161: 20 A9 81  JSR sub_81A9
 C - - - - - 0x00C174 03:8164: 20 17 A0  JSR sub_A017
 C - - - - - 0x00C177 03:8167: 20 A1 A7  JSR sub_A7A1
-bra_816A:
+bra_816A_not_violation:
 loc_816A:
 C D 0 - - - 0x00C17A 03:816A: A2 00     LDX #$00
 bra_816C_loop:

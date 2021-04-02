@@ -61,9 +61,9 @@ C - - J - - 0x010034 04:8024: 4C EC BB  JMP loc_BBEC
 
 loc_8031:
 C D 0 - - - 0x010041 04:8031: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x010043 04:8033: 10 01     BPL bra_8036
+C - - - - - 0x010043 04:8033: 10 01     BPL bra_8036_not_pause
 C - - - - - 0x010045 04:8035: 60        RTS
-bra_8036:
+bra_8036_not_pause:
 C - - - - - 0x010046 04:8036: A9 40     LDA #$FF
 C - - - - - 0x010048 04:8038: 8D E3 05  STA ram_счетчик_спрайтов
 C - - - - - 0x01004B 04:803B: A2 FC     LDX #$FF
@@ -12382,17 +12382,17 @@ tbl_B495:
 
 loc_B4B2:
 C D 1 - - - 0x0134C2 04:B4B2: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x0134C4 04:B4B4: 29 01     AND #$01
-C - - - - - 0x0134C6 04:B4B6: F0 06     BEQ bra_B4BE
+C - - - - - 0x0134C4 04:B4B4: 29 01     AND #con_gp_kick_off
+C - - - - - 0x0134C6 04:B4B6: F0 06     BEQ bra_B4BE_not_kick_off
 C - - - - - 0x0134C8 04:B4B8: 20 50 B8  JSR sub_B850
 C - - - - - 0x0134CB 04:B4BB: 4C C8 B4  RTS
-bra_B4BE:
+bra_B4BE_not_kick_off:
 C - - - - - 0x0134CE 04:B4BE: A2 00     LDX #$00
-bra_B4C0:
+bra_B4C0_loop:
 C - - - - - 0x0134D0 04:B4C0: 20 C9 B4  JSR sub_B4C9
 C - - - - - 0x0134D3 04:B4C3: E8        INX
 C - - - - - 0x0134D4 04:B4C4: E0 04     CPX #$04
-C - - - - - 0x0134D6 04:B4C6: 90 F8     BCC bra_B4C0
+C - - - - - 0x0134D6 04:B4C6: 90 F8     BCC bra_B4C0_loop
 C D 1 - - - 0x0134D8 04:B4C8: 60        RTS
 
 

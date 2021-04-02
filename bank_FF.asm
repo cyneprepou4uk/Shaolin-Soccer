@@ -1107,12 +1107,12 @@ C - - - - - 0x01C59F 07:C58F: AD B2 05  LDA ram_flag_brightness
 C - - - - - 0x01C5A2 07:C592: 10 E6     BPL bra_C57A_RTS
 C - - - - - 0x01C5A4 07:C594: AD FA 05  LDA ram_05FA
 C - - - - - 0x01C5A7 07:C597: 10 17     BPL bra_C5B0
-C - - - - - 0x01C5A9 07:C599: AD F8 05  LDA ram_вид_статусбара
-C - - - - - 0x01C5AC 07:C59C: C9 02     CMP #$02
+C - - - - - 0x01C5A9 07:C599: AD F8 05  LDA ram_hud_mode
+C - - - - - 0x01C5AC 07:C59C: C9 02     CMP #con_hud_game_set
 C - - - - - 0x01C5AE 07:C59E: F0 10     BEQ bra_C5B0
-C - - - - - 0x01C5B0 07:C5A0: C9 03     CMP #$03
+C - - - - - 0x01C5B0 07:C5A0: C9 03     CMP #con_hud_pk
 C - - - - - 0x01C5B2 07:C5A2: F0 0C     BEQ bra_C5B0
-C - - - - - 0x01C5B4 07:C5A4: C9 06     CMP #$06
+C - - - - - 0x01C5B4 07:C5A4: C9 06     CMP #con_hud_minimap
 C - - - - - 0x01C5B6 07:C5A6: F0 08     BEQ bra_C5B0
 C - - - - - 0x01C5B8 07:C5A8: A9 00     LDA #$00
 C - - - - - 0x01C5BA 07:C5AA: 8D FA 05  STA ram_05FA
@@ -1120,19 +1120,19 @@ C - - - - - 0x01C5BD 07:C5AD: 8D F7 05  STA ram_задержка_перелив_
 bra_C5B0:
 C - - - - - 0x01C5C0 07:C5B0: 20 AD C2  JSR sub_C2AD
 C - - - - - 0x01C5C3 07:C5B3: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C5C5 07:C5B5: 29 20     AND #$20
-C - - - - - 0x01C5C7 07:C5B7: F0 0B     BEQ bra_C5C4
+C - - - - - 0x01C5C5 07:C5B5: 29 20     AND #con_gp_violation
+C - - - - - 0x01C5C7 07:C5B7: F0 0B     BEQ bra_C5C4_not_violation
 C - - - - - 0x01C5C9 07:C5B9: 20 7B C8  JSR sub_C87B
 C - - - - - 0x01C5CC 07:C5BC: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C5CE 07:C5BE: 29 20     AND #$20
-C - - - - - 0x01C5D0 07:C5C0: F0 07     BEQ bra_C5C9
+C - - - - - 0x01C5CE 07:C5BE: 29 20     AND #con_gp_violation
+C - - - - - 0x01C5D0 07:C5C0: F0 07     BEQ bra_C5C9_not_violation
 - - - - - - 0x01C5D2 07:C5C2: D0 4E     BNE bra_C612_RTS
-bra_C5C4:
+bra_C5C4_not_violation:
 C - - - - - 0x01C5D4 07:C5C4: 2C 92 04  BIT ram_мяч_состояние
 C - - - - - 0x01C5D7 07:C5C7: 70 49     BVS bra_C612_RTS
-bra_C5C9:
+bra_C5C9_not_violation:
 C - - - - - 0x01C5D9 07:C5C9: E6 59     INC ram_subscript
-C - - - - - 0x01C5DB 07:C5CB: A9 00     LDA #$00
+C - - - - - 0x01C5DB 07:C5CB: A9 00     LDA #$00    ; con_gp_normal
 C - - - - - 0x01C5DD 07:C5CD: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C5DF 07:C5CF: 8D 2A 05  STA ram_флаг_владения_мячом_ком
 C - - - - - 0x01C5E2 07:C5D2: 8D 2B 05  STA ram_флаг_владения_мячом_ком + 1
@@ -1144,8 +1144,8 @@ C - - - - - 0x01C5F0 07:C5E0: A9 3F     LDA #$3F
 C - - - - - 0x01C5F2 07:C5E2: 8D D9 06  STA ram_байт_2006_hi_палитра
 C - - - - - 0x01C5F5 07:C5E5: A9 FF     LDA #$FF
 C - - - - - 0x01C5F7 07:C5E7: 8D FA 05  STA ram_05FA
-C - - - - - 0x01C5FA 07:C5EA: A9 86     LDA #$86
-C - - - - - 0x01C5FC 07:C5EC: 8D F8 05  STA ram_вид_статусбара
+C - - - - - 0x01C5FA 07:C5EA: A9 86     LDA #con_hud_minimap + $80
+C - - - - - 0x01C5FC 07:C5EC: 8D F8 05  STA ram_hud_mode
 C - - - - - 0x01C5FF 07:C5EF: A9 00     LDA #$00
 C - - - - - 0x01C601 07:C5F1: 8D F9 05  STA ram_flag_hud_ready
 C - - - - - 0x01C604 07:C5F4: A2 00     LDX #$00
@@ -1174,7 +1174,7 @@ C - - J - - 0x01C625 07:C615: AD 08 00  LDA ram_btn_press
 C - - - - - 0x01C628 07:C618: 29 10     AND #con_btn_Start
 C - - - - - 0x01C62A 07:C61A: F0 1E     BEQ bra_C63A
 C - - - - - 0x01C62C 07:C61C: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C62E 07:C61E: 49 80     EOR #$80
+C - - - - - 0x01C62E 07:C61E: 49 80     EOR #con_gp_pause
 C - - - - - 0x01C630 07:C620: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C632 07:C622: 30 09     BMI bra_C62D
 C - - - - - 0x01C634 07:C624: AD 5A 05  LDA ram_music_id
@@ -1189,11 +1189,11 @@ C - - - - - 0x01C647 07:C637: 20 E4 C2  JSR sub_C2E4_play_sound
 bra_C63A:
 loc_C63A:
 C D 2 - - - 0x01C64A 07:C63A: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C64C 07:C63C: 10 2D     BPL bra_C66B
+C - - - - - 0x01C64C 07:C63C: 10 2D     BPL bra_C66B_not_pause
 C - - - - - 0x01C64E 07:C63E: 20 47 DE  JSR sub_DE47
 C - - - - - 0x01C651 07:C641: 20 EE CA  JSR sub_CAEE
 C - - - - - 0x01C654 07:C644: 4C 5F CB  JMP loc_CB5F
-bra_C66B:
+bra_C66B_not_pause:
 C - - - - - 0x01C67B 07:C66B: 20 0B DE  JSR sub_DE0B
 C - - - - - 0x01C67E 07:C66E: 20 E7 D6  JSR sub_D6E7
 C - - - - - 0x01C681 07:C671: 20 47 DE  JSR sub_DE47
@@ -1284,7 +1284,7 @@ C - - - - - 0x01C719 07:C709: 2C B2 05  BIT ram_flag_brightness
 C - - - - - 0x01C71C 07:C70C: 10 0D     BPL bra_C71B_RTS
 C - - - - - 0x01C71E 07:C70E: 50 0B     BVC bra_C71B_RTS
 C - - - - - 0x01C720 07:C710: 20 1A C9  JSR sub_C91A
-C - - - - - 0x01C723 07:C713: A9 00     LDA #$00
+C - - - - - 0x01C723 07:C713: A9 00     LDA #$00    ; con_gp_normal
 C - - - - - 0x01C725 07:C715: 8D 5C 00  STA ram_flag_gameplay
 C - - - - - 0x01C728 07:C718: 8D E2 05  STA ram_таймер_катсцены
 bra_C71B_RTS:
@@ -1491,7 +1491,7 @@ tbl_C878:
 
 sub_C87B:
 C - - - - - 0x01C88B 07:C87B: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C88D 07:C87D: 29 20     AND #$20
+C - - - - - 0x01C88D 07:C87D: 29 20     AND #con_gp_violation
 C - - - - - 0x01C88F 07:C87F: F0 1A     BEQ bra_C89B_RTS
 C - - - - - 0x01C891 07:C881: AD 92 04  LDA ram_мяч_состояние
 C - - - - - 0x01C894 07:C884: 29 C0     AND #$C0
@@ -1500,7 +1500,7 @@ C - - - - - 0x01C896 07:C886: D0 05     BNE bra_C88D
 - - - - - - 0x01C89B 07:C88B: 10 0E     BPL bra_C89B_RTS
 bra_C88D:
 C - - - - - 0x01C89D 07:C88D: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C89F 07:C88F: 29 DF     AND #$DF
+C - - - - - 0x01C89F 07:C88F: 29 DF     AND #con_gp_violation ^ $FF
 C - - - - - 0x01C8A1 07:C891: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C8A3 07:C893: A9 00     LDA #$00
 C - - - - - 0x01C8A5 07:C895: 8D 5B 05  STA ram_field_formation
@@ -1514,7 +1514,7 @@ sub_C89C:
 C - - - - - 0x01C8AC 07:C89C: 24 5C     BIT ram_flag_gameplay
 C - - - - - 0x01C8AE 07:C89E: 50 79     BVC bra_C919_RTS
 C - - - - - 0x01C8B0 07:C8A0: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C8B2 07:C8A2: 29 20     AND #$20
+C - - - - - 0x01C8B2 07:C8A2: 29 20     AND #con_gp_violation
 C - - - - - 0x01C8B4 07:C8A4: D0 4F     BNE bra_C8F5
 C - - - - - 0x01C8B6 07:C8A6: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C8B8 07:C8A8: 29 0F     AND #$0F
@@ -1556,12 +1556,12 @@ C - - - - - 0x01C8FF 07:C8EF: A9 82     LDA #$82
 C - - - - - 0x01C901 07:C8F1: 65 1C     ADC ram_001C
 C - - - - - 0x01C903 07:C8F3: D0 06     BNE bra_C8FB
 bra_C8F5:
-C - - - - - 0x01C905 07:C8F5: A9 84     LDA #$84
+C - - - - - 0x01C905 07:C8F5: A9 84     LDA #con_hud_penalty + $80
 C - - - - - 0x01C907 07:C8F7: D0 02     BNE bra_C8FB
 bra_C8F9:
-C - - - - - 0x01C909 07:C8F9: A9 81     LDA #$81
+C - - - - - 0x01C909 07:C8F9: A9 81     LDA #con_hud_goal + $80
 bra_C8FB:
-C - - - - - 0x01C90B 07:C8FB: 8D F8 05  STA ram_вид_статусбара
+C - - - - - 0x01C90B 07:C8FB: 8D F8 05  STA ram_hud_mode
 C - - - - - 0x01C90E 07:C8FE: A9 00     LDA #$00
 C - - - - - 0x01C910 07:C900: 8D F9 05  STA ram_flag_hud_ready
 C - - - - - 0x01C913 07:C903: A9 0F     LDA #$0F
@@ -1580,8 +1580,8 @@ C D 2 - - - 0x01C929 07:C919: 60        RTS
 
 
 sub_C91A:
-C - - - - - 0x01C92A 07:C91A: A9 00     LDA #$00
-C - - - - - 0x01C92C 07:C91C: 8D F8 05  STA ram_вид_статусбара
+C - - - - - 0x01C92A 07:C91A: A9 00     LDA #$00    ; con_hud_kick_off
+C - - - - - 0x01C92C 07:C91C: 8D F8 05  STA ram_hud_mode
 C - - - - - 0x01C92F 07:C91F: 8D FD 05  STA ram_сила_ветра
 C - - - - - 0x01C932 07:C922: 8D FF 05  STA ram_spd_X_hi_wind
 C - - - - - 0x01C935 07:C925: 8D 00 06  STA ram_spd_X_lo_wind
@@ -1621,7 +1621,7 @@ C - - - - - 0x01C973 07:C963: 85 59     STA ram_subscript
 C - - - - - 0x01C975 07:C965: 4C 1E CA  RTS
 bra_C968_не_пенальти:
 C - - - - - 0x01C978 07:C968: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C97A 07:C96A: 29 20     AND #$20
+C - - - - - 0x01C97A 07:C96A: 29 20     AND #con_gp_violation
 C - - - - - 0x01C97C 07:C96C: F0 07     BEQ bra_C975
 C - - - - - 0x01C97E 07:C96E: A9 00     LDA #$00
 bra_C970:
@@ -2580,17 +2580,17 @@ C - - - - - 0x01CFFC 07:CFEC: 29 20     AND #con_gm_penalty
 C - - - - - 0x01CFFE 07:CFEE: D0 09     BNE bra_CFF9_пенальти
 C - - - - - 0x01D000 07:CFF0: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x01D003 07:CFF3: F0 0D     BEQ bra_D002
-C - - - - - 0x01D005 07:CFF5: A9 85     LDA #$85
+C - - - - - 0x01D005 07:CFF5: A9 85     LDA #con_hud_freekick + $80
 C - - - - - 0x01D007 07:CFF7: D0 0B     BNE bra_D004
 bra_CFF9_пенальти:
 C - - - - - 0x01D009 07:CFF9: A9 0D     LDA #$0D
 C - - - - - 0x01D00B 07:CFFB: 8D 5A 05  STA ram_music_id
-C - - - - - 0x01D00E 07:CFFE: A9 83     LDA #$83
+C - - - - - 0x01D00E 07:CFFE: A9 83     LDA #con_hud_pk + $80
 C - - - - - 0x01D010 07:D000: D0 02     BNE bra_D004
 bra_D002:
-C - - - - - 0x01D012 07:D002: A9 80     LDA #$80
+C - - - - - 0x01D012 07:D002: A9 80     LDA #con_hud_kick_off + $80
 bra_D004:
-C - - - - - 0x01D014 07:D004: 8D F8 05  STA ram_вид_статусбара
+C - - - - - 0x01D014 07:D004: 8D F8 05  STA ram_hud_mode
 C - - - - - 0x01D017 07:D007: A9 00     LDA #$00
 C - - - - - 0x01D019 07:D009: 8D F9 05  STA ram_flag_hud_ready
 C - - - - - 0x01D01C 07:D00C: AD 5A 05  LDA ram_music_id
@@ -4352,7 +4352,7 @@ loc_D794:
 C - - - - - 0x01D7A4 07:D794: A5 59     LDA ram_subscript
 C - - - - - 0x01D7A6 07:D796: C9 06     CMP #$06
 C - - - - - 0x01D7A8 07:D798: F0 09     BEQ bra_D7A3_RTS
-C - - - - - 0x01D7AA 07:D79A: A9 40     LDA #$40
+C - - - - - 0x01D7AA 07:D79A: A9 40     LDA #con_gp_time_up
 C - - - - - 0x01D7AC 07:D79C: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01D7AE 07:D79E: A9 31     LDA #con_sfx_time_up
 C - - - - - 0x01D7B0 07:D7A0: 20 E4 C2  JSR sub_C2E4_play_sound
@@ -4958,9 +4958,9 @@ C - - - - - 0x01DBC5 07:DBB5: A9 03     LDA #con_weather_tornado
 C - - - - - 0x01DBC7 07:DBB7: 8D 66 04  STA ram_weather_id
 bra_DBBA:
 C - - - - - 0x01DBCA 07:DBBA: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01DBCC 07:DBBC: 10 03     BPL bra_DBC1
+C - - - - - 0x01DBCC 07:DBBC: 10 03     BPL bra_DBC1_not_pause
 - - - - - - 0x01DBCE 07:DBBE: 4C 64 DC  JMP loc_DC64
-bra_DBC1:
+bra_DBC1_not_pause:
 C - - - - - 0x01DBD1 07:DBC1: A2 0B     LDX #$0B
 loc_DBC3:
 C D 2 - - - 0x01DBD3 07:DBC3: FE 18 01  INC ram_0118,X
@@ -5149,9 +5149,9 @@ C D 2 - - - 0x01DD27 07:DD17: A9 00     LDA #$00
 C - - - - - 0x01DD29 07:DD19: 8D 3F 01  STA ram_длительность_погоды_ХЗ
 bra_DD1C:
 C - - - - - 0x01DD2C 07:DD1C: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01DD2E 07:DD1E: 10 03     BPL bra_DD23
+C - - - - - 0x01DD2E 07:DD1E: 10 03     BPL bra_DD23_not_pause
 - - - - - - 0x01DD30 07:DD20: 4C 91 DD  JMP loc_DD91
-bra_DD23:
+bra_DD23_not_pause:
 C - - - - - 0x01DD33 07:DD23: EE 3F 01  INC ram_длительность_погоды_ХЗ
 C - - - - - 0x01DD36 07:DD26: AD 3F 01  LDA ram_длительность_погоды_ХЗ
 C - - - - - 0x01DD39 07:DD29: 29 03     AND #$03
@@ -5798,7 +5798,7 @@ C - - - - - 0x01E17F 07:E16F: 60        RTS
 
 
 sub_E170_draw_hud_big_text:
-C D 3 - - - 0x01E180 07:E170: AD F8 05  LDA ram_вид_статусбара
+C D 3 - - - 0x01E180 07:E170: AD F8 05  LDA ram_hud_mode
 C - - - - - 0x01E183 07:E173: 30 01     BMI bra_E176
 - - - - - - 0x01E185 07:E175: 60        RTS
 bra_E176:
@@ -5808,7 +5808,7 @@ C - - - - - 0x01E18A 07:E17A: 85 4C     STA ram_for_2000
 C - - - - - 0x01E18C 07:E17C: 8D 00 20  STA $2000
 C - - - - - 0x01E18F 07:E17F: AD F9 05  LDA ram_flag_hud_ready
 C - - - - - 0x01E192 07:E182: F0 74     BEQ bra_E1F8_hud_is_not_ready
-C - - - - - 0x01E194 07:E184: AD F8 05  LDA ram_вид_статусбара
+C - - - - - 0x01E194 07:E184: AD F8 05  LDA ram_hud_mode
 C - - - - - 0x01E197 07:E187: 29 7F     AND #$7F
 C - - - - - 0x01E199 07:E189: 0A        ASL
 C - - - - - 0x01E19A 07:E18A: A8        TAY
@@ -5850,12 +5850,12 @@ C - - - - - 0x01E1E4 07:E1D4: 8D 07 20  STA $2007
 C - - - - - 0x01E1E7 07:E1D7: C8        INY
 C - - - - - 0x01E1E8 07:E1D8: C0 3E     CPY #$3E
 C - - - - - 0x01E1EA 07:E1DA: 90 F6     BCC bra_E1D2_loop
-C - - - - - 0x01E1EC 07:E1DC: AD F8 05  LDA ram_вид_статусбара
+C - - - - - 0x01E1EC 07:E1DC: AD F8 05  LDA ram_hud_mode
 C - - - - - 0x01E1EF 07:E1DF: 29 7F     AND #$7F
-C - - - - - 0x01E1F1 07:E1E1: 8D F8 05  STA ram_вид_статусбара
-C - - - - - 0x01E1F4 07:E1E4: C9 01     CMP #$01
+C - - - - - 0x01E1F1 07:E1E1: 8D F8 05  STA ram_hud_mode
+C - - - - - 0x01E1F4 07:E1E4: C9 01     CMP #con_hud_goal
 C - - - - - 0x01E1F6 07:E1E6: F0 07     BEQ bra_E1EF
-C - - - - - 0x01E1F8 07:E1E8: C9 02     CMP #$02
+C - - - - - 0x01E1F8 07:E1E8: C9 02     CMP #con_hud_game_set
 C - - - - - 0x01E1FA 07:E1EA: F0 03     BEQ bra_E1EF
 C - - - - - 0x01E1FC 07:E1EC: 4C F7 E1  RTS
 bra_E1EF:
@@ -5881,15 +5881,15 @@ C - - - - - 0x01E222 07:E212: 60        RTS
 
 
 tbl_E219:
-- D 3 - - - 0x01E229 07:E219: 27 E2     .word off_E227_00
-- D 3 - - - 0x01E22B 07:E21B: 65 E2     .word off_E265_01
-- D 3 - - - 0x01E22D 07:E21D: A3 E2     .word off_E2A3_02
-- D 3 - - - 0x01E22F 07:E21F: E1 E2     .word off_E2E1_03
-- D 3 - - - 0x01E231 07:E221: 1F E3     .word off_E31F_04
-- D 3 - - - 0x01E233 07:E223: 5D E3     .word off_E35D_05
-- D 3 - - - 0x01E235 07:E225: 9B E3     .word off_E39B_06
+- D 3 - - - 0x01E229 07:E219: 27 E2     .word off_E227_00_kick_off
+- D 3 - - - 0x01E22B 07:E21B: 65 E2     .word off_E265_01_goal
+- D 3 - - - 0x01E22D 07:E21D: A3 E2     .word off_E2A3_02_game_set
+- D 3 - - - 0x01E22F 07:E21F: E1 E2     .word off_E2E1_03_pk
+- D 3 - - - 0x01E231 07:E221: 1F E3     .word off_E31F_04_penalty
+- D 3 - - - 0x01E233 07:E223: 5D E3     .word off_E35D_05_freekick
+- D 3 - - - 0x01E235 07:E225: 9B E3     .word off_E39B_06_minimap
 
-off_E227_00:
+off_E227_00_kick_off:
 - D 3 - I - 0x01E237 07:E227: 02        .byte $02   ; 
 - D 3 - I - 0x01E238 07:E228: 32        .byte $32   ; 
 - D 3 - I - 0x01E239 07:E229: 62        .byte $62   ; 
@@ -5955,7 +5955,7 @@ off_E227_00:
 
 
 
-off_E265_01:
+off_E265_01_goal:
 - D 3 - I - 0x01E275 07:E265: 02        .byte $02   ; 
 - D 3 - I - 0x01E276 07:E266: 02        .byte $02   ; 
 - D 3 - I - 0x01E277 07:E267: 02        .byte $02   ; 
@@ -6021,7 +6021,7 @@ off_E265_01:
 
 
 
-off_E2A3_02:
+off_E2A3_02_game_set:
 - D 3 - I - 0x01E2B3 07:E2A3: 04        .byte $04   ; 
 - D 3 - I - 0x01E2B4 07:E2A4: 05        .byte $05   ; 
 - D 3 - I - 0x01E2B5 07:E2A5: 06        .byte $06   ; 
@@ -6087,7 +6087,7 @@ off_E2A3_02:
 
 
 
-off_E2E1_03:
+off_E2E1_03_pk:
 - D 3 - I - 0x01E2F1 07:E2E1: 02        .byte $02   ; 
 - D 3 - I - 0x01E2F2 07:E2E2: 02        .byte $02   ; 
 - D 3 - I - 0x01E2F3 07:E2E3: 02        .byte $02   ; 
@@ -6153,7 +6153,7 @@ off_E2E1_03:
 
 
 
-off_E31F_04:
+off_E31F_04_penalty:
 - D 3 - I - 0x01E32F 07:E31F: 02        .byte $02   ; 
 - D 3 - I - 0x01E330 07:E320: 0C        .byte $0C   ; 
 - D 3 - I - 0x01E331 07:E321: 6C        .byte $6C   ; 
@@ -6219,7 +6219,7 @@ off_E31F_04:
 
 
 
-off_E35D_05:
+off_E35D_05_freekick:
 - D 3 - I - 0x01E36D 07:E35D: 0C        .byte $0C   ; 
 - D 3 - I - 0x01E36E 07:E35E: 80        .byte $80   ; 
 - D 3 - I - 0x01E36F 07:E35F: 8F        .byte $8F   ; 
@@ -6285,7 +6285,7 @@ off_E35D_05:
 
 
 
-off_E39B_06:
+off_E39B_06_minimap:
 - D 3 - I - 0x01E3AB 07:E39B: 02        .byte $02   ; 
 - D 3 - I - 0x01E3AC 07:E39C: 02        .byte $02   ; 
 - D 3 - I - 0x01E3AD 07:E39D: 02        .byte $02   ; 
