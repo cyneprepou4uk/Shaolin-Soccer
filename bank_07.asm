@@ -89,7 +89,6 @@ sub_0x000000_RESET_init:
                                         LDA #$00
                                         STA ram_screen_id
                                         STA $E000
-                                        CLI
                                         LDA #$00
                                         STA ram_btn_press + 2   ; bzk оно надо?
                                         LDA #$F0
@@ -120,9 +119,10 @@ sub_скопировать_на_батарейку:
                                         INC ram_0003
                                         DEX
                                         BNE @цикл_копирования_на_батарейку
-
-
-
+                                        RTS
+                                        
+                                        
+                                        
 sub_подготовка_палитры_vt03:
                                         BIT $2002
                                         LDA #> $3F00

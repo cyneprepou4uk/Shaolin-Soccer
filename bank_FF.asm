@@ -941,6 +941,8 @@ sub_0000_RESET_init:
                                         JSR sub_0x000000_RESET_init
                                         JMP loc_C368_restore_prg_bank
                                         
+                                        
+                                        
 vec_FD8F_RESET:
 C D 3 - - - 0x01FD9F 07:FD8F: 78        SEI
 C - - - - - 0x01FDA0 07:FD90: D8        CLD
@@ -951,6 +953,7 @@ C - - - - - 0x01C3E9 07:C3D9: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01C408 07:C3F8: A9 00     LDA #con_music_off
 C - - - - - 0x01C40A 07:C3FA: 20 E4 C2  JSR sub_C2E4_play_sound
                                         JSR sub_0000_RESET_init
+                                        CLI
 loc_C478_главный_игровой_скрипт:
 C D 2 - - - 0x01C488 07:C478: A9 00     LDA #$00
 C - - - - - 0x01C48A 07:C47A: 85 51     STA ram_frame_delay
