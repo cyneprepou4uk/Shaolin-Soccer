@@ -936,7 +936,6 @@ C D 2 - - - 0x01C3E4 07:C3D4: 20 71 EE  JSR sub_EE71_disable_NMI
 C - - - - - 0x01C3E7 07:C3D7: A9 06     LDA #con_prg_bank + $06
 C - - - - - 0x01C3E9 07:C3D9: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01C3EC 07:C3DC: 20 54 EF  JSR sub_EF54_убрать_полоску_слева_на_экране
-C - - - - - 0x01C3EF 07:C3DF: A2 57     LDX #$57
 C - - - - - 0x01C3F1 07:C3E1: 20 0A EF  JSR sub_EF0A_clear_0057_00F8
 C - - - - - 0x01C3FE 07:C3EE: 20 39 ED  JSR sub_ED39_clear_0200_07FF___0100_017F
 C - - - - - 0x01C405 07:C3F5: 20 64 EF  JSR sub_EF64_очистка_фона_и_спрайтов
@@ -8182,8 +8181,12 @@ C - - - - - 0x01EF11 07:EF01: 60        RTS
 
 
 
-sub_0x01EF1A_clear_0061_00F8:
 sub_EF0A_clear_0057_00F8:
+                                        LDX #$57
+                                        BNE bra_EF0A
+sub_0x01EF1A_clear_0061_00F8:
+                                        LDX #$61
+bra_EF0A:
 C D 3 - - - 0x01EF1A 07:EF0A: A9 00     LDA #$00
 bra_EF0C_loop:
 C - - - - - 0x01EF1C 07:EF0C: 95 00     STA ram_0000,X
