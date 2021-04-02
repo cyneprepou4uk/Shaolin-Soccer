@@ -11529,7 +11529,8 @@ C - - - - - 0x00AFE2 02:AFD2: 90 E4     BCC bra_AFB8_RTS
 C - - - - - 0x00AFE4 02:AFD4: A9 80     LDA #$80
 C - - - - - 0x00AFE6 02:AFD6: 8D A3 04  STA ram_направление_движения
 C - - - - - 0x00AFE9 02:AFD9: E6 97     INC ram_номер_кадра_анимации + 3
-C - - - - - 0x00AFEB 02:AFDB: D0 D9     BNE bra_AFB6
+                                        INC ram_номер_кадра_анимации + 1
+                                        RTS
 bra_AFDD:
 C - - - - - 0x00AFED 02:AFDD: A9 04     LDA #$04
 C - - - - - 0x00AFEF 02:AFDF: 85 95     STA ram_номер_кадра_анимации + 1
