@@ -10355,50 +10355,50 @@ C - - - - - 0x01FE1D 07:FE0D: 4C D4 C3  JMP loc_C3D4
 
 
 sub_0000_копирование_банка_на_батарейку:
-    LDA $BFFF
-    PHA
-    LDA #con_prg_bank + $0E
-    JSR sub_EED3_prg_bankswitch
-    LDA #$80    ; разрешение записи в батарейку
-    STA $A001
-    LDY #$00    ; младший байт адреса чтения и записи, Y = 00 будет использован
-    STY ram_0000
-    STY ram_0002
-    LDA #$80    ; начало чтения с 8000 из банка
-    STA ram_0001
-    LDA #$60    ; начало записи в 6000 на батарейку
-    STA ram_0003
-    LDX #$20    ; скопировать 32 страницы
+                                        LDA $BFFF
+                                        PHA
+                                        LDA #con_prg_bank + $0E
+                                        JSR sub_EED3_prg_bankswitch
+                                        LDA #$80    ; разрешение записи в батарейку
+                                        STA $A001
+                                        LDY #$00    ; младший байт адреса чтения и записи, Y = 00 будет использован
+                                        STY ram_0000
+                                        STY ram_0002
+                                        LDA #$80    ; начало чтения с 8000 из банка
+                                        STA ram_0001
+                                        LDA #$60    ; начало записи в 6000 на батарейку
+                                        STA ram_0003
+                                        LDX #$20    ; скопировать 32 страницы
 @цикл_копирования:
-    LDA (ram_0000),Y
-    STA (ram_0002),Y
-    INY
-    BNE @цикл_копирования
-    INC ram_0001
-    INC ram_0003
-    DEX
-    BNE @цикл_копирования
-    JMP loc_C368_restore_prg_bank
+                                        LDA (ram_0000),Y
+                                        STA (ram_0002),Y
+                                        INY
+                                        BNE @цикл_копирования
+                                        INC ram_0001
+                                        INC ram_0003
+                                        DEX
+                                        BNE @цикл_копирования
+                                        JMP loc_C368_restore_prg_bank
 
 
 
 ; sub_0001_подготовка_палитры_vt03:
-;     BIT $2002
-;     LDA #> $3F00
-;     STA $2006
-;     LDA #< $3F00
-;     STA $2006
-;     LDX #$00  ; запись 00-FF в палитру 3F00-3FFF
+;                                       BIT $2002
+;                                       LDA #> $3F00
+;                                       STA $2006
+;                                       LDA #< $3F00
+;                                       STA $2006
+;                                       LDX #$00  ; запись 00-FF в палитру 3F00-3FFF
 ; @цикл:
-;     STX $2007
-;     INX
-;     BNE @цикл
-;     RTS
+;                                       STX $2007
+;                                       INX
+;                                       BNE @цикл
+;                                       RTS
 
 
 
 _общий_RTS:
-    RTS
+                                        RTS
 
 
 

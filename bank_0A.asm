@@ -5,7 +5,7 @@
 
 
 .segment "BANK_0A_ID"
-    .byte con_prg_bank + $0A   ; 
+                                        .byte con_prg_bank + $0A   ; 
 
 
 

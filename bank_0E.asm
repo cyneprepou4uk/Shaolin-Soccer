@@ -4,15 +4,15 @@
 ; батарейка, используется лишь половина банка 8000-9FFF
 
 
-    .byte "++++++++++++++++"
-    .byte "  PRG-NVRAM by  "
-    .byte " Cyneprepou4uk  "
-    .byte "++++++++++++++++"
+                                        .byte "++++++++++++++++"
+                                        .byte "  PRG-NVRAM by  "
+                                        .byte " Cyneprepou4uk  "
+                                        .byte "++++++++++++++++"
 
 
 
 .segment "BANK_0E_ID"
-    .byte con_prg_bank + $0E   ; BFFF
+                                        .byte con_prg_bank + $0E   ; BFFF
 
 
 
