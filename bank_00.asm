@@ -14618,7 +14618,7 @@ C - - - - - 0x003BC8 00:BBB8: 85 5C     STA ram_flag_gameplay
 bra_BBBA:
 C - - - - - 0x003BCA 00:BBBA: A0 00     LDY #$00
 C - - - - - 0x003BCC 00:BBBC: A2 0E     LDX #$0E
-bra_BBBE:
+bra_BBBE_loop:
 C - - - - - 0x003BCE 00:BBBE: B9 E3 BD  LDA tbl_BDE3,Y
 C - - - - - 0x003BD1 00:BBC1: 9D 59 04  STA ram_movement_id_player,X
 C - - - - - 0x003BD4 00:BBC4: A9 03     LDA #$03
@@ -14626,15 +14626,15 @@ C - - - - - 0x003BD6 00:BBC6: 9D 61 00  STA ram_0061,X
 C - - - - - 0x003BD9 00:BBC9: E8        INX
 C - - - - - 0x003BDA 00:BBCA: C8        INY
 C - - - - - 0x003BDB 00:BBCB: C4 5D     CPY ram_players_cnt
-C - - - - - 0x003BDD 00:BBCD: 90 EF     BCC bra_BBBE
-C - - - - - 0x003BDF 00:BBCF: F0 ED     BEQ bra_BBBE
-loc_BBD1:
+C - - - - - 0x003BDD 00:BBCD: 90 EF     BCC bra_BBBE_loop
+C - - - - - 0x003BDF 00:BBCF: F0 ED     BEQ bra_BBBE_loop
+loc_BBD1_loop:
 C - - - - - 0x003BE1 00:BBD1: E0 04     CPX #$04
 C - - - - - 0x003BE3 00:BBD3: B0 09     BCS bra_BBDE
 - - - - - - 0x003BE5 00:BBD5: A9 00     LDA #$00
 - - - - - - 0x003BE7 00:BBD7: 9D 59 04  STA ram_movement_id_player,X
 - - - - - - 0x003BEA 00:BBDA: E8        INX
-- - - - - - 0x003BEB 00:BBDB: 4C D1 BB  JMP loc_BBD1
+- - - - - - 0x003BEB 00:BBDB: 4C D1 BB  JMP loc_BBD1_loop
 bra_BBDE:
 C - - - - - 0x003BEE 00:BBDE: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x003BF0 00:BBE0: 29 20     AND #con_gm_penalty
@@ -14706,7 +14706,7 @@ C - - - - - 0x003C73 00:BC63: 09 0A     ORA #$0A
 C - - - - - 0x003C75 00:BC65: 99 68 05  STA ram_номер_управляемого,Y
 bra_BC68:
 C - - - - - 0x003C78 00:BC68: A2 0B     LDX #$0B
-bra_BC6A:
+bra_BC6A_loop:
 C - - - - - 0x003C7A 00:BC6A: 8A        TXA
 C - - - - - 0x003C7B 00:BC6B: 29 01     AND #$01
 C - - - - - 0x003C7D 00:BC6D: A8        TAY
@@ -14718,7 +14718,7 @@ C - - - - - 0x003C88 00:BC78: 29 7F     AND #$7F
 C - - - - - 0x003C8A 00:BC7A: 05 1C     ORA ram_001C
 C - - - - - 0x003C8C 00:BC7C: 9D 50 06  STA ram_позиция_управление,X
 C - - - - - 0x003C8F 00:BC7F: CA        DEX
-C - - - - - 0x003C90 00:BC80: 10 E8     BPL bra_BC6A
+C - - - - - 0x003C90 00:BC80: 10 E8     BPL bra_BC6A_loop
 C - - - - - 0x003C92 00:BC82: A9 00     LDA #$00
 C - - - - - 0x003C94 00:BC84: 8D 8E 06  STA ram_068E
 C - - - - - 0x003C97 00:BC87: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
@@ -14736,7 +14736,7 @@ C - - - - - 0x003CB5 00:BCA5: A9 08     LDA #$08
 C - - - - - 0x003CB7 00:BCA7: 8D BF 05  STA ram_timer_0_0x_0
 loc_BCAA:
 C D 1 - - - 0x003CBA 00:BCAA: A2 00     LDX #$00
-loc_BCAC:
+loc_BCAC_loop:
 C D 1 - - - 0x003CBC 00:BCAC: A9 FF     LDA #$FF
 C - - - - - 0x003CBE 00:BCAE: 9D B0 04  STA ram_смена_угла_движения,X
 C - - - - - 0x003CC1 00:BCB1: 9D 79 04  STA ram_action_id_player,X
@@ -14818,7 +14818,7 @@ loc_BD4F:
 C D 1 - - - 0x003D5F 00:BD4F: E8        INX
 C - - - - - 0x003D60 00:BD50: E0 0D     CPX #$0D
 C - - - - - 0x003D62 00:BD52: B0 03     BCS bra_BD57
-C - - - - - 0x003D64 00:BD54: 4C AC BC  JMP loc_BCAC
+C - - - - - 0x003D64 00:BD54: 4C AC BC  JMP loc_BCAC_loop
 bra_BD57:
 C - - - - - 0x003D67 00:BD57: A9 30     LDA #$30
 C - - - - - 0x003D69 00:BD59: 8D F6 05  STA ram_смещение_камеры
@@ -14857,10 +14857,10 @@ C - - - - - 0x003DA6 00:BD96: 8D EF 00  STA ram_pos_Y_hi_camera
 C - - - - - 0x003DA9 00:BD99: 8D F3 00  STA ram_copy_pos_Y_hi_camera
 C - - - - - 0x003DAC 00:BD9C: A0 1B     LDY #$1B
 C - - - - - 0x003DAE 00:BD9E: A9 00     LDA #$00
-bra_BDA0:
+bra_BDA0_loop:
 C - - - - - 0x003DB0 00:BDA0: 99 6C 05  STA ram_056C_кнопки,Y
 C - - - - - 0x003DB3 00:BDA3: 88        DEY
-C - - - - - 0x003DB4 00:BDA4: 10 FA     BPL bra_BDA0
+C - - - - - 0x003DB4 00:BDA4: 10 FA     BPL bra_BDA0_loop
 C - - - - - 0x003DB6 00:BDA6: 60        RTS
 
 
