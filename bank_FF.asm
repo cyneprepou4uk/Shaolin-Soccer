@@ -2792,7 +2792,7 @@ C - - - - - 0x01D0FF 07:D0EF: B9 FB D2  LDA tbl_D2FB_палитра_фона,Y
 C - - - - - 0x01D102 07:D0F2: 85 2C     STA ram_002C
 C - - - - - 0x01D104 07:D0F4: B9 FC D2  LDA tbl_D2FB_палитра_фона + 1,Y
 C - - - - - 0x01D107 07:D0F7: 85 2D     STA ram_002D
-bra_D0F9:
+bra_D0F9_loop:
 C - - - - - 0x01D109 07:D0F9: 8A        TXA
 C - - - - - 0x01D10A 07:D0FA: 4A        LSR
 C - - - - - 0x01D10B 07:D0FB: 4A        LSR
@@ -2807,7 +2807,7 @@ C - - - - - 0x01D117 07:D107: 85 31     STA ram_0031
 C - - - - - 0x01D11B 07:D10B: 20 5F D1  JSR sub_D15F
 C - - - - - 0x01D11E 07:D10E: 8A        TXA
 C - - - - - 0x01D11F 07:D10F: 29 07     AND #$07
-C - - - - - 0x01D121 07:D111: D0 E6     BNE bra_D0F9
+C - - - - - 0x01D121 07:D111: D0 E6     BNE bra_D0F9_loop
 C - - - - - 0x01D123 07:D113: 8A        TXA
 C - - - - - 0x01D124 07:D114: 29 0F     AND #$0F
 C - - - - - 0x01D126 07:D116: D0 CB     BNE bra_D0E3_loop
