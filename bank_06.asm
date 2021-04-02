@@ -3664,18 +3664,6 @@ C - - - - - 0x019944 06:9934: 9D 6C 04  STA ram_animation_sub_id_player,X
 C - - - - - 0x019947 06:9937: 60        RTS
 
 
-; bzk мусор
-- - - - - - 0x019948 06:9938: DD 59 04  CMP ram_movement_id_player,X
-- - - - - - 0x01994B 06:993B: F0 0E     BEQ bra_994B_RTS
-- - - - - - 0x01994D 06:993D: 9D 59 04  STA ram_movement_id_player,X
-- - - - - - 0x019950 06:9940: A9 00     LDA #$00
-- - - - - - 0x019952 06:9942: 9D 87 00  STA ram_animation_timer_player,X
-- - - - - - 0x019955 06:9945: 9D 94 00  STA ram_номер_кадра_анимации,X
-- - - - - - 0x019958 06:9948: 9D 6C 04  STA ram_animation_sub_id_player,X
-bra_994B_RTS:
-- - - - - - 0x01995B 06:994B: 60        RTS
-
-
 
 sub_994C:
 C - - - - - 0x01995C 06:994C: A0 00     LDY #$00
