@@ -11250,13 +11250,13 @@ C - - - - - 0x00AE62 02:AE52: 84 2D     STY ram_002D
 C - - - - - 0x00AE64 02:AE54: 85 2C     STA ram_002C
 C - - - - - 0x00AE66 02:AE56: A0 8E     LDY #$8E
 C - - - - - 0x00AE68 02:AE58: A2 04     LDX #$04
-bra_AE5A:
+bra_AE5A_loop:
 C - - - - - 0x00AE6A 02:AE5A: 91 2C     STA (ram_002C),Y
 C - - - - - 0x00AE6C 02:AE5C: 88        DEY
-C - - - - - 0x00AE6D 02:AE5D: D0 FB     BNE bra_AE5A
+C - - - - - 0x00AE6D 02:AE5D: D0 FB     BNE bra_AE5A_loop
 C - - - - - 0x00AE6F 02:AE5F: C6 2D     DEC ram_002D
 C - - - - - 0x00AE71 02:AE61: CA        DEX
-C - - - - - 0x00AE72 02:AE62: D0 F6     BNE bra_AE5A
+C - - - - - 0x00AE72 02:AE62: D0 F6     BNE bra_AE5A_loop
 C - - - - - 0x00AE74 02:AE64: 60        RTS
 
 
