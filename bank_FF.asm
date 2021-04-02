@@ -1428,7 +1428,7 @@ C - - - - - 0x01C83A 07:C82A: 8D AD 03  STA ram_camera_aim
 C - - - - - 0x01C83D 07:C82D: 4C 72 C8  RTS
 bra_C830:
 C - - - - - 0x01C840 07:C830: AD F1 00  LDA ram_copy_pos_X_hi_camera
-C - - - - - 0x01C843 07:C833: CD 74 C8  CMP tbl_C874
+C - - - - - 0x01C843 07:C833: CD 74 C8  CMP tbl_C873 + 1
 C - - - - - 0x01C846 07:C836: F0 04     BEQ bra_C83C
 C - - - - - 0x01C848 07:C838: 90 0A     BCC bra_C844
 C - - - - - 0x01C84A 07:C83A: B0 0D     BCS bra_C849
@@ -1441,7 +1441,7 @@ C - - - - - 0x01C854 07:C844: A0 00     LDY #$00
 C - - - - - 0x01C856 07:C846: 4C 5F C8  JMP loc_C85F
 bra_C849:
 C - - - - - 0x01C859 07:C849: AD F1 00  LDA ram_copy_pos_X_hi_camera
-C - - - - - 0x01C85C 07:C84C: CD 76 C8  CMP tbl_C876
+C - - - - - 0x01C85C 07:C84C: CD 76 C8  CMP tbl_C875 + 1
 C - - - - - 0x01C85F 07:C84F: F0 04     BEQ bra_C855
 C - - - - - 0x01C861 07:C851: B0 0A     BCS bra_C85D
 C - - - - - 0x01C863 07:C853: 90 1D     BCC bra_C872_RTS
@@ -1463,15 +1463,12 @@ bra_C872_RTS:
 C D 2 - - - 0x01C882 07:C872: 60        RTS
 
 
-; bzk
+
 tbl_C873:
-- D 2 - - - 0x01C883 07:C873: 80        .byte $80   ; 
-tbl_C874:
-- D 2 - - - 0x01C884 07:C874: 00        .byte $00   ; 
+- D 2 - - - 0x01C883 07:C873: 80 00     .word $0080
+
 tbl_C875:
-- D 2 - - - 0x01C885 07:C875: 80        .byte $80   ; 
-tbl_C876:
-- D 2 - - - 0x01C886 07:C876: 02        .byte $02   ; 
+- D 2 - - - 0x01C885 07:C875: 80 02     .word $0280
 
 
 
