@@ -5,7 +5,7 @@
 
 
 
-.export tbl_0x01C010
+.export tbl_0x01C090
 .export sub_0x01C286
 .export sub_0x01C25C
 .export sub_0x01C25D
@@ -83,12 +83,7 @@
 
 
 
-tbl_0x01C010:
-- D 2 - - - 0x01C010 07:C000: 80 C0     .word tbl_C080
-
-
-
-tbl_C080:
+tbl_0x01C090:
 - D 2 - I - 0x01C090 07:C080: A0 C0     .word off_C0A0_00
 - D 2 - I - 0x01C092 07:C082: DC C0     .word off_C0DC_01
 - - - - - - 0x01C094 07:C084: 18 C1     .word off_C118_02

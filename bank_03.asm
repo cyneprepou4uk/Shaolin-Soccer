@@ -6845,9 +6845,9 @@ C - - - - - 0x00EAEB 03:AADB: 60        RTS
 
 
 sub_AADC:
-C - - - - - 0x00EAEC 03:AADC: AD 00 C0  LDA tbl_0x01C010
+C - - - - - 0x00EAEC 03:AADC: AD 00 C0  LDA #< tbl_0x01C090
 C - - - - - 0x00EAEF 03:AADF: 85 32     STA ram_0032
-C - - - - - 0x00EAF1 03:AAE1: AD 01 C0  LDA tbl_0x01C010 + 1
+C - - - - - 0x00EAF1 03:AAE1: AD 01 C0  LDA #> tbl_0x01C090
 C - - - - - 0x00EAF4 03:AAE4: 85 33     STA ram_0033
 C - - - - - 0x00EAF6 03:AAE6: BD 2C 05  LDA ram_номер_команды,X
 C - - - - - 0x00EAF9 03:AAE9: 29 0F     AND #$0F
