@@ -1442,7 +1442,7 @@ C - - - - - 0x0189E0 06:89D0: 38        SEC
 C - - - - - 0x0189E1 06:89D1: AD 92 03  LDA ram_pos_Z_lo_ball
 C - - - - - 0x0189E4 06:89D4: FD 86 03  SBC ram_pos_Z_lo_player,X
 C - - - - - 0x0189E7 06:89D7: 30 06     BMI bra_89DF
-C - - - - - 0x0189E9 06:89D9: CD 02 8A  CMP tbl_8A02
+C - - - - - 0x0189E9 06:89D9: CD 02 8A  CMP #$10
 C - - - - - 0x0189EC 06:89DC: 90 01     BCC bra_89DF
 C - - - - - 0x0189EE 06:89DE: C8        INY
 bra_89DF:
@@ -1459,10 +1459,6 @@ C - - - - - 0x018A09 06:89F9: 8D 3A 04  STA ram_spd_Z_hi_ball
 bra_89FC:
 C - - - - - 0x018A0C 06:89FC: 20 33 A1  JSR sub_A133_смещение_объекта_в_воздухе
 C - - - - - 0x018A0F 06:89FF: 4C 50 87  JMP loc_8750
-
-; bzk
-tbl_8A02:
-- D 0 - - - 0x018A12 06:8A02: 10        .byte $10   ; 
 
 tbl_8A03:
 - D 0 - - - 0x018A13 06:8A03: 39        .byte $39   ; 
