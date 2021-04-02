@@ -11247,6 +11247,7 @@ C - - - - - 0x00AE5B 02:AE4B: 20 77 C0  JSR sub_0x01EF1A_clear_0061_00F8
 C - - - - - 0x00AE5E 02:AE4E: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x00AE60 02:AE50: A0 06     LDY #$06
 C - - - - - 0x00AE62 02:AE52: 84 2D     STY ram_002D
+                                        LDA #$00
 C - - - - - 0x00AE64 02:AE54: 85 2C     STA ram_002C
 C - - - - - 0x00AE66 02:AE56: A0 8E     LDY #$8E
 C - - - - - 0x00AE68 02:AE58: A2 04     LDX #$04
