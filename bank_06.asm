@@ -8406,9 +8406,9 @@ tbl_B2F9:
 
 
 sub_B301:
-C - - - - - 0x01B311 06:B301: AD 4B B5  LDA tbl_B54B
+C - - - - - 0x01B311 06:B301: AD 4B B5  LDA #< tbl_B551
 C - - - - - 0x01B314 06:B304: 85 2C     STA ram_002C
-C - - - - - 0x01B316 06:B306: AD 4C B5  LDA tbl_B54B + 1
+C - - - - - 0x01B316 06:B306: AD 4C B5  LDA #> tbl_B551
 C - - - - - 0x01B319 06:B309: 85 2D     STA ram_002D
 C - - - - - 0x01B31B 06:B30B: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x01B31E 06:B30E: 29 7F     AND #$7F
@@ -8758,8 +8758,6 @@ tbl_B53B:
 
 
 ; bzk
-tbl_B54B:
-- D 1 - - - 0x01B55B 06:B54B: 51 B5     .word off_B551
 tbl_B54D:
 - D 1 - - - 0x01B55D 06:B54D: 0B B6     .word off_B60B
 tbl_B54F:
@@ -8767,7 +8765,7 @@ tbl_B54F:
 
 
 
-off_B551:
+tbl_B551:
 - D 1 - I - 0x01B561 06:B551: 01        .byte $01   ; 
 - D 1 - I - 0x01B562 06:B552: 01        .byte $01   ; 
 - D 1 - I - 0x01B563 06:B553: 83        .byte $83   ; 
