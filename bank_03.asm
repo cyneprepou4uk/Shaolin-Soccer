@@ -7910,11 +7910,6 @@ off_AE0B_0F:
 - - - - - - 0x00EE26 03:AE16: 95        .byte $95   ; 
 
 
-; bzk
-loc_AE17:
-- - - - - - 0x00EE27 03:AE17: 4C 17 AE  JMP loc_AE17
-
-
 
 sub_AE1A:
 C - - - - - 0x00EE2A 03:AE1A: 98        TYA
