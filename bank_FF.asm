@@ -2804,7 +2804,6 @@ C - - - - - 0x01D112 07:D102: 85 30     STA ram_0030
 C - - - - - 0x01D114 07:D104: C8        INY
 C - - - - - 0x01D115 07:D105: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01D117 07:D107: 85 31     STA ram_0031
-C - - - - - 0x01D119 07:D109: A0 00     LDY #$00
 C - - - - - 0x01D11B 07:D10B: 20 5F D1  JSR sub_D15F
 C - - - - - 0x01D11E 07:D10E: 8A        TXA
 C - - - - - 0x01D11F 07:D10F: 29 07     AND #$07
@@ -2832,7 +2831,6 @@ C - - - - - 0x01D143 07:D133: B9 B7 D1  LDA tbl_D1B7_палитра_спрайт
 C - - - - - 0x01D146 07:D136: 8D 30 00  STA ram_0030
 C - - - - - 0x01D149 07:D139: B9 B8 D1  LDA tbl_D1B7_палитра_спрайтов + 1,Y
 C - - - - - 0x01D14C 07:D13C: 8D 31 00  STA ram_0031
-C - - - - - 0x01D14F 07:D13F: A0 00     LDY #$00
 C - - - - - 0x01D151 07:D141: 20 5F D1  JSR sub_D15F
 C - - - - - 0x01D154 07:D144: 8A        TXA
 C - - - - - 0x01D155 07:D145: 29 0F     AND #$0F
@@ -2855,6 +2853,7 @@ C - - - - - 0x01D16E 07:D15E: 60        RTS
 
 
 sub_D15F:
+                                        LDY #$00
 bra_D15F_loop:
 C - - - - - 0x01D16F 07:D15F: AD B4 05  LDA ram_brightness_current
 C - - - - - 0x01D172 07:D162: F0 16     BEQ bra_D17A
