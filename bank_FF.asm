@@ -64,6 +64,7 @@
 .export sub_0x01EE75_enable_NMI
 .export sub_0x01EE81_disable_NMI
 .export sub_0x01EEAA_базовые_банки_спрайтов
+.export sub_0x01EF1A_clear_0057_00F8
 .export sub_0x01EF1A_clear_0061_00F8
 .export sub_0x01EF64_убрать_полоску_слева_на_экране
 .export sub_0x01EFBD_write_buffers_to_ppu
@@ -77,6 +78,7 @@
 .export sub_0x01F9EE
 .export sub_0x01FA7D
 .export sub_0x01FAFE
+.export sub_0x01EF74_очистка_фона_и_спрайтов
 .export _общий_RTS
 
 
@@ -931,60 +933,24 @@ tbl_C370_low_byte_addr_for_indirect_jump:
 
 
 
-loc_C3D4:
-C D 2 - - - 0x01C3E4 07:C3D4: 20 71 EE  JSR sub_EE71_disable_NMI
+sub_0000_RESET_init:
+                                        LDA $BFFF
+                                        PHA
+                                        LDA #con_prg_bank + $0E
+                                        JSR sub_EED3_prg_bankswitch
+                                        JSR sub_0x000000_RESET_init
+                                        JMP loc_C368_restore_prg_bank
+                                        
+vec_FD8F_RESET:
+C D 3 - - - 0x01FD9F 07:FD8F: 78        SEI
+C - - - - - 0x01FDA0 07:FD90: D8        CLD
+                                        LDX #$FF
+                                        TXS
 C - - - - - 0x01C3E7 07:C3D7: A9 06     LDA #con_prg_bank + $06
 C - - - - - 0x01C3E9 07:C3D9: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01C3EC 07:C3DC: 20 54 EF  JSR sub_EF54_убрать_полоску_слева_на_экране
-C - - - - - 0x01C3F1 07:C3E1: 20 0A EF  JSR sub_EF0A_clear_0057_00F8
-C - - - - - 0x01C3FE 07:C3EE: 20 39 ED  JSR sub_ED39_clear_0200_07FF___0100_017F
-C - - - - - 0x01C405 07:C3F5: 20 64 EF  JSR sub_EF64_очистка_фона_и_спрайтов
 C - - - - - 0x01C408 07:C3F8: A9 00     LDA #con_music_off
 C - - - - - 0x01C40A 07:C3FA: 20 E4 C2  JSR sub_C2E4_play_sound
-C - - - - - 0x01C412 07:C402: A9 C0     LDA #con_nmi_enable_irq
-C - - - - - 0x01C414 07:C404: 85 4F     STA ram_NMI_flag
-C - - - - - 0x01C41C 07:C40C: A9 8C     LDA #$8C
-C - - - - - 0x01C41E 07:C40E: 85 4C     STA ram_for_2000
-C - - - - - 0x01C420 07:C410: 8D 00 20  STA $2000
-C - - - - - 0x01C423 07:C413: A9 18     LDA #$18
-C - - - - - 0x01C425 07:C415: 85 4D     STA ram_for_2001
-C - - - - - 0x01C427 07:C417: 8D 01 20  STA $2001
-C - - - - - 0x01C42A 07:C41A: A9 FF     LDA #$FF
-C - - - - - 0x01C42C 07:C41C: 8D 93 06  STA ram_байт_2006_hi_атрибуты
-C - - - - - 0x01C42F 07:C41F: 8D B6 06  STA ram_байт_2006_hi_графика
-C - - - - - 0x01C432 07:C422: 8D D9 06  STA ram_байт_2006_hi_палитра
-C - - - - - 0x01C435 07:C425: 8D F5 05  STA ram_флаг_гола
-C - - - - - 0x01C438 07:C428: 8D 4A 05  STA ram_054A
-C - - - - - 0x01C43B 07:C42B: A9 42     LDA #$42
-C - - - - - 0x01C43D 07:C42D: 8D AC 05  STA ram_palette_id_bg
-C - - - - - 0x01C440 07:C430: 8D AD 05  STA ram_palette_id_bg + 1
-C - - - - - 0x01C443 07:C433: A9 00     LDA #$00
-C - - - - - 0x01C445 07:C435: 8D AE 05  STA ram_palette_id_spr
-C - - - - - 0x01C448 07:C438: 8D AF 05  STA ram_palette_id_spr + 1
-C - - - - - 0x01C44B 07:C43B: 8D B0 05  STA ram_palette_id_spr + 2
-C - - - - - 0x01C44E 07:C43E: 8D B1 05  STA ram_palette_id_spr + 3
-C - - - - - 0x01C451 07:C441: 20 36 D0  JSR sub_D036
-C - - - - - 0x01C454 07:C444: A9 22     LDA #$22
-C - - - - - 0x01C456 07:C446: 8D 07 06  STA ram_0607
-C - - - - - 0x01C459 07:C449: 8D 10 06  STA ram_0610
-C - - - - - 0x01C45C 07:C44C: A9 E3     LDA #$E3
-C - - - - - 0x01C45E 07:C44E: 8D 08 06  STA ram_0608
-C - - - - - 0x01C461 07:C451: 8D 0F 06  STA ram_060F
-C - - - - - 0x01C464 07:C454: A9 F8     LDA #$F8
-C - - - - - 0x01C466 07:C456: 8D 15 06  STA ram_0615
-C - - - - - 0x01C469 07:C459: 8D 1C 06  STA ram_061C
-C - - - - - 0x01C46C 07:C45C: A9 01     LDA #con_script_logo
-C - - - - - 0x01C46E 07:C45E: 8D 58 00  STA ram_script
-C - - - - - 0x01C471 07:C461: A9 00     LDA #$00
-C - - - - - 0x01C473 07:C463: 8D 59 00  STA ram_screen_id
-C - - - - - 0x01C476 07:C466: 8D 00 E0  STA $E000
-C - - - - - 0x01C479 07:C469: 58        CLI
-C - - - - - 0x01C47A 07:C46A: A9 00     LDA #$00
-C - - - - - 0x01C47C 07:C46C: 85 0A     STA ram_btn_press + 2
-C - - - - - 0x01C47E 07:C46E: A9 F0     LDA #$F0
-C - - - - - 0x01C480 07:C470: 8D 56 00  STA ram_limit_spr_Y
-C - - - - - 0x01C483 07:C473: A9 01     LDA #$01
-C - - - - - 0x01C485 07:C475: 8D E6 05  STA ram_скорость_игры
+                                        JSR sub_0000_RESET_init
 loc_C478_главный_игровой_скрипт:
 C D 2 - - - 0x01C488 07:C478: A9 00     LDA #$00
 C - - - - - 0x01C48A 07:C47A: 85 51     STA ram_frame_delay
@@ -2661,7 +2627,6 @@ C - - - - - 0x01D045 07:D035: 60        RTS
 
 
 sub_0x01D046:
-sub_D036:
 C D 2 - - - 0x01D046 07:D036: A9 40     LDA #$40
 C - - - - - 0x01D048 07:D038: 8D B4 05  STA ram_brightness_current
 C - - - - - 0x01D04B 07:D03B: A9 01     LDA #$01
@@ -7989,29 +7954,6 @@ C - - - - - 0x01ECCF 07:ECBF: D0 FE     BNE bra_ECBF_infinite_loop
 
 
 
-sub_ED39_clear_0200_07FF___0100_017F:
-                                        LDA #$07
-                                        STA ram_000D
-                                        LDA #$00
-                                        STA ram_000C
-                                        TAY
-                                        LDX #$FA
-bra_ED46_loop:
-C - - - - - 0x01ED56 07:ED46: 91 0C     STA (ram_000C),Y
-C - - - - - 0x01ED58 07:ED48: 88        INY
-C - - - - - 0x01ED59 07:ED49: D0 FB     BNE bra_ED46_loop
-C - - - - - 0x01ED5B 07:ED4B: C6 0D     DEC ram_000D
-C - - - - - 0x01ED5D 07:ED4D: E8        INX
-C - - - - - 0x01ED5E 07:ED4E: D0 F6     BNE bra_ED46_loop
-C - - - - - 0x01ED62 07:ED52: A2 7F     LDX #$7F
-bra_ED54_loop:
-C - - - - - 0x01ED64 07:ED54: 9D 00 01  STA ram_0100,X
-C - - - - - 0x01ED67 07:ED57: CA        DEX
-C - - - - - 0x01ED68 07:ED58: 10 FA     BPL bra_ED54_loop
-C - - - - - 0x01ED6A 07:ED5A: 60        RTS
-
-
-
 sub_EDCD:
 C - - - - - 0x01EDDD 07:EDCD: 20 06 EE  JSR sub_EE06
 bra_EDD0:
@@ -8182,7 +8124,7 @@ C - - - - - 0x01EF11 07:EF01: 60        RTS
 
 
 
-sub_EF0A_clear_0057_00F8:
+sub_0x01EF1A_clear_0057_00F8:
                                         LDX #$57
                                         BNE bra_EF0A
 sub_0x01EF1A_clear_0061_00F8:
@@ -8247,7 +8189,6 @@ C - - - - - 0x01EF73 07:EF63: 60        RTS
 
 
 sub_0x01EF64_убрать_полоску_слева_на_экране:
-sub_EF54_убрать_полоску_слева_на_экране:
 C D 3 - - - 0x01EF64 07:EF54: A5 4D     LDA ram_for_2001
 C - - - - - 0x01EF66 07:EF56: 09 02     ORA #$02
 C - - - - - 0x01EF68 07:EF58: D0 04     BNE bra_EF5E_запись_в_2001
@@ -8270,7 +8211,7 @@ C - - - - - 0x01ECDF 07:ECCF: D0 F4     BNE bra_EF5E_запись_в_2001
 
 
 
-sub_EF64_очистка_фона_и_спрайтов:
+sub_0x01EF74_очистка_фона_и_спрайтов:
 C - - - - - 0x01EF74 07:EF64: 20 C1 EC  JSR sub_ECC1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x01EF77 07:EF67: 20 27 EF  JSR sub_EF27_очистить_ppu_2000_2FFF
 C - - - - - 0x01EF7A 07:EF6A: 20 14 EF  JSR sub_EF14_спрятать_спрайты
@@ -10229,95 +10170,6 @@ C - - - - - 0x01FD95 07:FD85: 8E 00 80  STX $8000
 C - - - - - 0x01FD98 07:FD88: E8        INX
 C - - - - - 0x01FD99 07:FD89: 8E 01 80  STX $8001
 C - - - - - 0x01FD9C 07:FD8C: 4C 0A FD  JMP loc_FCC3_выход_из_NMI_и_IRQ
-
-
-
-vec_FD8F_RESET:
-C D 3 - - - 0x01FD9F 07:FD8F: 78        SEI
-C - - - - - 0x01FDA0 07:FD90: D8        CLD
-C - - - - - 0x01FDA1 07:FD91: A9 08     LDA #$08    ; спрайты в 1000-1FFF
-C - - - - - 0x01FDA3 07:FD93: 8D 00 20  STA $2000
-C - - - - - 0x01FDA6 07:FD96: 85 4C     STA ram_for_2000
-C - - - - - 0x01FDA8 07:FD98: A9 06     LDA #$06    ; отобразить фон и спрайты слева
-C - - - - - 0x01FDAA 07:FD9A: 8D 01 20  STA $2001
-C - - - - - 0x01FDAD 07:FD9D: 85 4D     STA ram_for_2001
-C - - - - - 0x01FDAF 07:FD9F: A2 FF     LDX #$FF
-C - - - - - 0x01FDB1 07:FDA1: 9A        TXS
-bra_FDA4_loop:
-C - - - - - 0x01FDB4 07:FDA4: 2C 02 20  BIT $2002
-C - - - - - 0x01FDB7 07:FDA7: 10 FB     BPL bra_FDA4_loop
-bra_FDA9_loop:
-C - - - - - 0x01FDB9 07:FDA9: 2C 02 20  BIT $2002
-C - - - - - 0x01FDBC 07:FDAC: 30 FB     BMI bra_FDA9_loop
-                                        LDA #$00
-C - - - - - 0x01FDC1 07:FDB1: 86 EC     STA ram_pos_X_lo_camera
-C - - - - - 0x01FDC3 07:FDB3: 86 ED     STA ram_pos_X_hi_camera
-C - - - - - 0x01FDC5 07:FDB5: 86 EE     STA ram_pos_Y_lo_camera
-C - - - - - 0x01FDC7 07:FDB7: 86 EF     STA ram_pos_Y_hi_camera
-C - - - - - 0x01FDCB 07:FDBB: 8E 16 40  STA $4016
-C - - - - - 0x01FDD2 07:FDC2: A9 40     LDA #$40
-C - - - - - 0x01FDD4 07:FDC4: 8D 17 40  STA $4017
-C - - - - - 0x01FDD7 07:FDC7: A9 0F     LDA #$0F
-C - - - - - 0x01FDD9 07:FDC9: 8D 15 40  STA $4015
-                                        JSR sub_0000_копирование_банка_на_батарейку
-;                                         JSR sub_0001_подготовка_палитры_vt03
-C - - - - - 0x01FDED 07:FDDD: A9 06     LDA #con_prg_bank + $06
-C - - - - - 0x01FDEF 07:FDDF: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01FDF2 07:FDE2: A9 C0     LDA #con_nmi_enable_irq
-C - - - - - 0x01FDF4 07:FDE4: 85 4F     STA ram_NMI_flag
-C - - - - - 0x01FDF6 07:FDE6: A9 00     LDA #$00    ; vertical mirroring
-C - - - - - 0x01FDF8 07:FDE8: 8D 00 A0  STA $A000
-                                        LDX ram_frame_cnt
-                                        LDA ram_0700,X
-                                        ORA #$25
-                                        STA ram_random
-                                        LDA ram_0701,X
-                                        ORA #$25
-                                        STA ram_random + 1
-C - - - - - 0x01FE1D 07:FE0D: 4C D4 C3  JMP loc_C3D4
-
-
-
-sub_0000_копирование_банка_на_батарейку:
-                                        LDA $BFFF
-                                        PHA
-                                        LDA #con_prg_bank + $0E
-                                        JSR sub_EED3_prg_bankswitch
-                                        LDA #$80    ; разрешение записи в батарейку
-                                        STA $A001
-                                        LDY #$00    ; младший байт адреса чтения и записи, Y = 00 будет использован
-                                        STY ram_0000
-                                        STY ram_0002
-                                        LDA #$80    ; начало чтения с 8000 из банка
-                                        STA ram_0001
-                                        LDA #$60    ; начало записи в 6000 на батарейку
-                                        STA ram_0003
-                                        LDX #$20    ; скопировать 32 страницы
-@цикл_копирования:
-                                        LDA (ram_0000),Y
-                                        STA (ram_0002),Y
-                                        INY
-                                        BNE @цикл_копирования
-                                        INC ram_0001
-                                        INC ram_0003
-                                        DEX
-                                        BNE @цикл_копирования
-                                        JMP loc_C368_restore_prg_bank
-
-
-
-; sub_0001_подготовка_палитры_vt03:
-;                                         BIT $2002
-;                                         LDA #> $3F00
-;                                         STA $2006
-;                                         LDA #< $3F00
-;                                         STA $2006
-;                                         LDX #$00  ; запись 00-FF в палитру 3F00-3FFF
-; @цикл:
-;                                         STX $2007
-;                                         INX
-;                                         BNE @цикл
-;                                         RTS
 
 
 
