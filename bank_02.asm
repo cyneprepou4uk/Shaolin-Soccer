@@ -11503,8 +11503,6 @@ C - - - - - 0x00AFBD 02:AFAD: C9 50     CMP #$50
 C - - - - - 0x00AFBF 02:AFAF: 90 07     BCC bra_AFB8_RTS
 C - - - - - 0x00AFC1 02:AFB1: A9 C0     LDA #$C0
 C - - - - - 0x00AFC3 02:AFB3: 20 9A AD  JSR sub_AD9A
-; bzk стремно
-bra_AFB6:
 C - - - - - 0x00AFC6 02:AFB6: E6 95     INC ram_номер_кадра_анимации + 1
 bra_AFB8_RTS:
 C - - - - - 0x00AFC8 02:AFB8: 60        RTS
@@ -11517,9 +11515,8 @@ C - - - - - 0x00AFCC 02:AFBC: C9 81     CMP #$81
 C - - - - - 0x00AFCE 02:AFBE: D0 F8     BNE bra_AFB8_RTS
 C - - - - - 0x00AFD0 02:AFC0: A9 21     LDA #$21
 C - - - - - 0x00AFD2 02:AFC2: 8D 59 04  STA ram_movement_id_player
-C - - - - - 0x00AFD5 02:AFC5: D0 EF     BNE bra_AFB6
-
-
+                                        INC ram_номер_кадра_анимации + 1
+                                        RTS
 
 ofs_AFC7_02:
 C - - J - - 0x00AFD7 02:AFC7: A5 97     LDA ram_номер_кадра_анимации + 3
