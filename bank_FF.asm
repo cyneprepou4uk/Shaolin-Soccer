@@ -8237,18 +8237,15 @@ C - - - - - 0x01EF23 07:EF13: 60        RTS
 
 
 sub_EF14_спрятать_спрайты:
-C - - - - - 0x01EF24 07:EF14: A2 FC     LDX #$FC
+C - - - - - 0x01EF24 07:EF14: A2 FC     LDX #$00
 C - - - - - 0x01EF26 07:EF16: A9 F8     LDA #$F8
-loc_EF18_loop:
+bra_EF18_loop:
 C D 3 - - - 0x01EF28 07:EF18: 9D 00 02  STA ram_spr_Y,X
-C - - - - - 0x01EF2B 07:EF1B: E0 00     CPX #$00
-C - - - - - 0x01EF2D 07:EF1D: F0 07     BEQ bra_EF26_RTS
-C - - - - - 0x01EF2F 07:EF1F: CA        DEX
-C - - - - - 0x01EF30 07:EF20: CA        DEX
-C - - - - - 0x01EF31 07:EF21: CA        DEX
-C - - - - - 0x01EF32 07:EF22: CA        DEX
-C - - - - - 0x01EF33 07:EF23: 4C 18 EF  JMP loc_EF18_loop
-bra_EF26_RTS:
+C - - - - - 0x01EF2F 07:EF1F: CA        INX
+C - - - - - 0x01EF30 07:EF20: CA        INX
+C - - - - - 0x01EF31 07:EF21: CA        INX
+C - - - - - 0x01EF32 07:EF22: CA        INX
+C - - - - - 0x01EF33 07:EF23: 4C 18 EF  BNE bra_EF18_loop
 C - - - - - 0x01EF36 07:EF26: 60        RTS
 
 
