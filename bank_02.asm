@@ -10659,7 +10659,7 @@ C - - - - - 0x00AA7D 02:AA6D: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_
 
 
 ofs_AA88_00_черный_экран_до_кунио:
-C - - J - - 0x00AA98 02:AA88: A9 80     LDA #con_nmi_disable_irq
+C - - J - - 0x00AA98 02:AA88: A9 80     LDA #con_nmi_irq_выкл
 C - - - - - 0x00AA9A 02:AA8A: 85 4F     STA ram_NMI_flag
 C - - - - - 0x00AA9C 02:AA8C: 20 49 AE  JSR sub_AE49
 C - - - - - 0x00AA9F 02:AA8F: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
@@ -10891,7 +10891,7 @@ C - - - - - 0x00AC0D 02:ABFD: 60        RTS
 ofs_ABFE_04:
 C - - J - - 0x00AC0E 02:ABFE: A9 01     LDA #$01    ; средняя сложность
 C - - - - - 0x00AC10 02:AC00: 8D 57 00  STA ram_option_mode_difficulty
-C - - - - - 0x00AC13 02:AC03: A9 00     LDA #$00    ; con_script_gameplay
+C - - - - - 0x00AC13 02:AC03: A9 00     LDA #$00    ; con_script_игра_на_поле
 C - - - - - 0x00AC15 02:AC05: 85 58     STA ram_script
 C - - - - - 0x00AC17 02:AC07: 85 59     STA ram_subscript
 C - - - - - 0x00AC19 02:AC09: 8D 89 05  STA ram_таймер_демо_lo
@@ -10918,7 +10918,7 @@ C - - - - - 0x00AC43 02:AC33: 90 F2     BCC bra_AC27_loop
 C - - - - - 0x00AC45 02:AC35: 20 25 AA  JSR sub_0x01C26A
 C - - - - - 0x00AC48 02:AC38: 20 2A AA  JSR sub_0x01C26B
 C - - - - - 0x00AC4B 02:AC3B: 20 11 AA  JSR sub_0x01C263_выставить_базовые_параметры_игроков
-C - - - - - 0x00AC4E 02:AC3E: A9 C0     LDA #con_nmi_enable_irq
+C - - - - - 0x00AC4E 02:AC3E: A9 C0     LDA #con_nmi_irq_вкл
 C - - - - - 0x00AC50 02:AC40: 85 4F     STA ram_NMI_flag
 C - - - - - 0x00AC52 02:AC42: 60        RTS
 
@@ -11002,7 +11002,7 @@ C - - - - - 0x00ACE7 02:ACD7: A9 00     LDA #$00
 C - - - - - 0x00ACE9 02:ACD9: 8D 8B 05  STA ram_флаг_демо
 C - - - - - 0x00ACEC 02:ACDC: A9 33     LDA #con_sfx_yes
 C - - - - - 0x00ACEE 02:ACDE: 20 02 C0  JSR sub_0x01C2F4_play_sound
-C - - - - - 0x00ACF1 02:ACE1: A9 02     LDA #con_script_menu
+C - - - - - 0x00ACF1 02:ACE1: A9 02     LDA #con_script_меню
 C - - - - - 0x00ACF3 02:ACE3: 85 58     STA ram_script
 C - - - - - 0x00ACF5 02:ACE5: A9 00     LDA #$00
 bra_ACE7:
@@ -11243,7 +11243,7 @@ C - - - - - 0x00AE58 02:AE48: 60        RTS
 
 sub_AE49:
 C - - - - - 0x00AE5B 02:AE4B: 20 77 C0  JSR sub_0x01EF1A_clear_0061_00F8
-                                        LDA #con_gp_normal
+                                        LDA #con_gp_игра
 C - - - - - 0x00AE5E 02:AE4E: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x00AE60 02:AE50: A0 06     LDY #$06
 C - - - - - 0x00AE62 02:AE52: 84 2D     STY ram_002D
@@ -11264,7 +11264,7 @@ C - - - - - 0x00AE74 02:AE64: 60        RTS
 
 sub_AE65:
 C - - - - - 0x00AE75 02:AE65: A5 58     LDA ram_script
-C - - - - - 0x00AE77 02:AE67: C9 03     CMP #con_script_credits
+C - - - - - 0x00AE77 02:AE67: C9 03     CMP #con_script_титры
 C - - - - - 0x00AE79 02:AE69: F0 0E     BEQ bra_AE79_credits
 C - - - - - 0x00AE7B 02:AE6B: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x00AE7E 02:AE6E: A9 04     LDA #$04
@@ -11857,7 +11857,7 @@ C - - - - - 0x00B1CA 02:B1BA: A9 00     LDA #$00
 C - - - - - 0x00B1CC 02:B1BC: 9D 73 03  STA ram_pos_Z_sub_player,X
 C - - - - - 0x00B1CF 02:B1BF: 9D 86 03  STA ram_pos_Z_lo_player,X
 C - - - - - 0x00B1D2 02:B1C2: 9D 99 03  STA ram_pos_Z_hi_player,X
-C - - - - - 0x00B1D5 02:B1C5: A9 2C     LDA #con_sfx_land_on_ground
+C - - - - - 0x00B1D5 02:B1C5: A9 2C     LDA #con_sfx_приземление
 C - - - - - 0x00B1D7 02:B1C7: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x00B1DA 02:B1CA: 20 4A B2  JSR sub_B24A
 bra_B1CD_RTS:
@@ -12025,7 +12025,7 @@ C - - - - - 0x00B2CB 02:B2BB: 60        RTS
 sub_B2BC:
 C - - - - - 0x00B2CC 02:B2BC: A0 00     LDY #$00
 C - - - - - 0x00B2CE 02:B2BE: A5 58     LDA ram_script
-C - - - - - 0x00B2D0 02:B2C0: C9 03     CMP #con_script_credits
+C - - - - - 0x00B2D0 02:B2C0: C9 03     CMP #con_script_титры
 C - - - - - 0x00B2D2 02:B2C2: D0 02     BNE bra_B2C6_not_credits
 - - - - - - 0x00B2D4 02:B2C4: A0 04     LDY #$04
 bra_B2C6_not_credits:
@@ -12072,7 +12072,7 @@ bra_B318:
 - - - - - - 0x00B32E 02:B31E: B9 38 B3  LDA tbl_B338,Y
 - - - - - - 0x00B331 02:B321: 9D 27 03  STA ram_pos_X_hi_player,X
 - - - - - - 0x00B334 02:B324: A5 58     LDA ram_script
-- - - - - - 0x00B336 02:B326: C9 03     CMP #con_script_credits
+- - - - - - 0x00B336 02:B326: C9 03     CMP #con_script_титры
 - - - - - - 0x00B338 02:B328: D0 08     BNE bra_B332_RTS
 - - - - - - 0x00B33A 02:B32A: BD 14 03  LDA ram_pos_X_lo_player,X
 - - - - - - 0x00B33D 02:B32D: 29 80     AND #$80
@@ -12106,7 +12106,7 @@ tbl_B338:
 sub_B33F:
 C - - - - - 0x00B34F 02:B33F: A0 00     LDY #$00
 C - - - - - 0x00B351 02:B341: A5 58     LDA ram_script
-C - - - - - 0x00B353 02:B343: C9 03     CMP #con_script_credits
+C - - - - - 0x00B353 02:B343: C9 03     CMP #con_script_титры
 C - - - - - 0x00B355 02:B345: D0 09     BNE bra_B350
 - - - - - - 0x00B357 02:B347: AD 1F 06  LDA ram_061F
 - - - - - - 0x00B35A 02:B34A: C9 02     CMP #$02
@@ -12421,7 +12421,7 @@ C - - - - - 0x00B479 02:B469: 9D 61 00  STA ram_0061,X
 C - - - - - 0x00B47C 02:B46C: BD 29 B5  LDA tbl_B529,X
 C - - - - - 0x00B47F 02:B46F: 9D 59 04  STA ram_movement_id_player,X
 C - - - - - 0x00B482 02:B472: A5 58     LDA ram_script
-C - - - - - 0x00B484 02:B474: C9 03     CMP #con_script_credits
+C - - - - - 0x00B484 02:B474: C9 03     CMP #con_script_титры
 C - - - - - 0x00B486 02:B476: F0 0B     BEQ bra_B483
 C - - - - - 0x00B488 02:B478: A5 59     LDA ram_subscript
 C - - - - - 0x00B48A 02:B47A: C9 04     CMP #$04
@@ -13118,9 +13118,9 @@ C - - - - - 0x00B866 02:B856: 9D 86 03  STA ram_pos_Z_lo_player,X
 C - - - - - 0x00B869 02:B859: 9D 99 03  STA ram_pos_Z_hi_player,X
 C - - - - - 0x00B86C 02:B85C: 20 6B B8  JSR sub_B86B
 C - - - - - 0x00B86F 02:B85F: A5 58     LDA ram_script
-C - - - - - 0x00B871 02:B861: C9 03     CMP #con_script_credits
+C - - - - - 0x00B871 02:B861: C9 03     CMP #con_script_титры
 C - - - - - 0x00B873 02:B863: F0 05     BEQ bra_B86A_RTS
-C - - - - - 0x00B875 02:B865: A9 2C     LDA #con_sfx_land_on_ground
+C - - - - - 0x00B875 02:B865: A9 2C     LDA #con_sfx_приземление
 C - - - - - 0x00B877 02:B867: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_B86A_RTS:
 C - - - - - 0x00B87A 02:B86A: 60        RTS
@@ -13142,7 +13142,7 @@ C - - - - - 0x00B884 02:B874: 10 2D     BPL bra_B8A3
 - - - - - - 0x00B88F 02:B87F: A8        TAY
 - - - - - - 0x00B890 02:B880: 86 1C     STX ram_001C
 - - - - - - 0x00B892 02:B882: A5 58     LDA ram_script
-- - - - - - 0x00B894 02:B884: C9 03     CMP #con_script_credits
+- - - - - - 0x00B894 02:B884: C9 03     CMP #con_script_титры
 - - - - - - 0x00B896 02:B886: D0 04     BNE bra_B88C_credits
 - - - - - - 0x00B898 02:B888: A2 01     LDX #$01
 - - - - - - 0x00B89A 02:B88A: D0 04     BNE bra_B890
@@ -13845,7 +13845,7 @@ ofs_BB78_00:
 - - - - - - 0x00BB88 02:BB78: 20 62 C0  JSR sub_0x01EF64_убрать_полоску_слева_на_экране
 - - - - - - 0x00BB8B 02:BB7B: A9 F0     LDA #$F0
 - - - - - - 0x00BB8D 02:BB7D: 8D 56 00  STA ram_limit_spr_Y
-- - - - - - 0x00BB90 02:BB80: A9 80     LDA #con_nmi_disable_irq
+- - - - - - 0x00BB90 02:BB80: A9 80     LDA #con_nmi_irq_выкл
 - - - - - - 0x00BB92 02:BB82: 85 4F     STA ram_NMI_flag
 - - - - - - 0x00BB94 02:BB84: A9 03     LDA #$03
 - - - - - - 0x00BB96 02:BB86: 8D E6 05  STA ram_скорость_игры

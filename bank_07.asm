@@ -40,7 +40,7 @@ sub_0x000000_RESET_init:
                                         STA $4017
                                         LDA #$0F
                                         STA $4015
-                                        LDA #con_nmi_enable_irq
+                                        LDA #con_nmi_irq_вкл
                                         STA ram_NMI_flag
                                         LDA #$00    ; vertical mirroring
                                         STA $A000
@@ -84,7 +84,7 @@ sub_0x000000_RESET_init:
                                         LDA #$F8
                                         STA ram_0615
                                         STA ram_061C
-                                        LDA #con_script_logo
+                                        LDA #con_script_логотип
                                         STA ram_script
                                         LDA #$00
                                         STA ram_subscript

@@ -12380,7 +12380,7 @@ tbl_B492:
 
 loc_B4B2:
 C D 1 - - - 0x0134C2 04:B4B2: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x0134C4 04:B4B4: 29 01     AND #con_gp_kick_off
+C - - - - - 0x0134C4 04:B4B4: 29 01     AND #con_gp_разводка
 C - - - - - 0x0134C6 04:B4B6: F0 06     BEQ bra_B4BE_not_kick_off
 C - - - - - 0x0134C8 04:B4B8: 20 50 B8  JSR sub_B850
 C - - - - - 0x0134CB 04:B4BB: 4C C8 B4  RTS
@@ -13656,9 +13656,9 @@ C - - - - - 0x013C6E 04:BC5E: 60        RTS
 
 
 tbl_BC5F_sound:
-- D 1 - - - 0x013C6F 04:BC5F: 29        .byte con_sfx_УДАР
-- D 1 - - - 0x013C70 04:BC60: 28        .byte con_sfx_КРАСНЫЙ_СУПЕР
-- D 1 - - - 0x013C71 04:BC61: 2A        .byte con_sfx_СУПЕР
+- D 1 - - - 0x013C6F 04:BC5F: 29        .byte con_sfx_удар
+- D 1 - - - 0x013C70 04:BC60: 28        .byte con_sfx_красный_супер
+- D 1 - - - 0x013C71 04:BC61: 2A        .byte con_sfx_супер
 
 
 

@@ -25,38 +25,38 @@ con_btns__ABSS                  = con_btn_A + con_btn_B + con_btn_Start + con_bt
 
 
 ; ram_NMI_flag                  = $4F
-con_nmi_off                     = $00 ; выключить NMI
-con_nmi_disable_irq             = $80 ; выключить IRQ
-con_nmi_enable_irq              = $C0 ; включить IRQ
+con_nmi_выкл                    = $00 ; выключить NMI
+con_nmi_irq_выкл                = $80 ; выключить IRQ во время NMI
+con_nmi_irq_вкл                 = $C0 ; включить IRQ во время NMI
 
 
 
 ; ram_option_mode_difficulty    = $57 ; game mode (режим игры)
-con_gm_demo                     = $00 ; демо
-con_gm_penalty                  = $20 ; пк из меню
-con_gm_minibattle               = $40 ; минибатл
-con_gm_walkthrough              = $80 ; прохождение
+con_gm_демо                     = $00 ; 
+con_gm_пенальти                 = $20 ; 
+con_gm_минибатл                 = $40 ; 
+con_gm_прохождение              = $80 ; прохождение
 
 
 
 ; ram_script                    = $58
-con_script_gameplay             = $00 ; игра на поле
-con_script_logo                 = $01 ; логотип, мисако, жми старт
-con_script_menu                 = $02 ; любые меню, где можно выбирать опции (а также VS экран)
-con_script_credits              = $03 ; финальные титры
+con_script_игра_на_поле         = $00 ; игра на поле
+con_script_логотип              = $01 ; логотип, мисако, жми старт
+con_script_меню                 = $02 ; любые меню, где можно выбирать опции (а также VS экран)
+con_script_титры                = $03 ; финальные титры
 
 
 
 ; ram_flag_gameplay             = $5C
-con_gp_normal                   = $00 ; нормальная игра, возможность двигаться игроками, без нарушений в данный момент
-con_gp_kick_off                 = $01 ; игроки стоят на разводке
-con_gp_violation                = $20 ; нарушение
-con_gp_time_up                  = $40 ; время вышло
-con_gp_goal                     = $42 ; гол
-con_gp_out                      = $44 ; аут
-con_gp_corner_gk                = $48 ; угловой (corner kick) и от ворот (goal kick)
-con_gp_pk                       = $60 ; пенальти которые после матча
-con_gp_pause                    = $80 ; пауза
+con_gp_игра                     = $00 ; нормальная игра, возможность двигаться игроками, без нарушений в данный момент
+con_gp_разводка                 = $01 ; 
+con_gp_нарушение                = $20 ; 
+con_gp_время_вышло              = $40 ; 
+con_gp_гол                      = $42 ; 
+con_gp_аут                      = $44 ; 
+con_gp_угловой_от_ворот         = $48 ; угловой (corner kick) и от ворот (goal kick)
+con_gp_пенальти                 = $60 ; пенальти которые после матча
+con_gp_пауза                    = $80 ; пауза
 
 
 
@@ -86,7 +86,7 @@ con_hud_game_set                = $02 ;
 con_hud_pk                      = $03 ; 
 con_hud_penalty                 = $04 ; 
 con_hud_freekick                = $05 ; 
-con_hud_minimap                 = $06 ; 
+con_hud_миникарта               = $06 ; 
 
 
 
@@ -99,9 +99,9 @@ con_music_поле_04                   = $04 ;
 con_music_поле_05                   = $05 ; 
 con_music_поле_06                   = $06 ; 
 con_music_поле_07                   = $07 ; 
-con_music_screen_vs                 = $08 ; 
-con_music_screen_score              = $09 ; 
-con_music_walkthrough               = $0A ; прохождение
+con_music_экран_vs                  = $08 ; 
+con_music_экран_со_счетом           = $09 ; 
+con_music_прохождение               = $0A ; 
 con_music_кубок					    = $0B ; экран с кубком на башке
 con_music_зрители                   = $0C ; 
 con_music_пенальти                  = $0D ; 
@@ -127,17 +127,17 @@ con_sfx_пас_ногой                   = $20 ;
 ; unused                            = $21 ; 
 con_sfx_пас_головой				    = $22 ; 
 con_sfx_принять_мяч                 = $23 ; на грудь или голову
-con_sfx_run_w_ball                  = $24 ; бег с мячом - средний бег как у ботов
+con_sfx_бег_с_мячои                 = $24 ; средний бег как у ботов
 ; unused                            = $25 ; 
 con_sfx_словить_отбить              = $26 ; для киперов
 con_sfx_штанга                      = $27 ; 
-con_sfx_КРАСНЫЙ_СУПЕР               = $28 ; 
-con_sfx_УДАР                        = $29 ; 
-con_sfx_СУПЕР                       = $2A ; 
+con_sfx_красный_супер               = $28 ; 
+con_sfx_удар                        = $29 ; 
+con_sfx_супер                       = $2A ; уникальный супер игрока/команды
 con_sfx_прыжок                      = $2B ; 
-con_sfx_land_on_ground              = $2C ; приземление на землю
-con_sfx_violation                   = $2D ; нарушение - мяч вне игры, фрикик, пенальти; также пауза
-con_sfx_score_a_goal                = $2E ; 
+con_sfx_приземление                 = $2C ; на землю
+con_sfx_нарушение                   = $2D ; мяч вне игры, фрикик, пенальти, пауза на Start
+con_sfx_гол                         = $2E ; 
 ; unused                            = $2F ; 
 ; unused                            = $30 ; 
 con_sfx_время_вышло                 = $31 ; 
@@ -152,13 +152,13 @@ con_sfx_унесло_вихрем               = $39 ;
 ; unused                            = $3A ; 
 con_sfx_локоть_подкат               = $3B ; 
 con_sfx_крутилка_обычная            = $3C ; зачистка, вратарская крутилка, ветряная крутилка
-con_sfx_bounce_from_ground_ball     = $3D ; отскок мяча от земли
-con_sfx_bounce_from_ground_special  = $3E ; отскок супера от земли
+con_sfx_отскок_мяча_от_земли        = $3D ; 
+con_sfx_отскок_супера_от_земли      = $3E ; 
 con_sfx_шум_зрителей                = $3F ; 
 con_sfx_свист_зрителей              = $40 ; 
 con_sfx_ветер                       = $41 ; 
 ; unused                            = $42 ; 
-con_sfx_land_on_ball                = $43 ; прыжок на мяч
+con_sfx_прыжок_на_мяч               = $43 ; 
 con_sfx_unk_44                      = $44 ; не помню откуда, наподобие змеи
 con_sfx_молния                      = $45 ; молния
 con_sfx_unk_46                      = $46 ; наподобие неправильного ответа, но не 2F	

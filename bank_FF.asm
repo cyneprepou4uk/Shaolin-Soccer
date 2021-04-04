@@ -1020,9 +1020,9 @@ C - - - - - 0x01C501 07:C4F1: 20 47 D0  JSR sub_D047
 C - - - - - 0x01C504 07:C4F4: 20 62 D0  JSR sub_D062
 C - - - - - 0x01C507 07:C4F7: A5 2B     LDA ram_002B
 C - - - - - 0x01C509 07:C4F9: 85 59     STA ram_subscript
-C - - - - - 0x01C50B 07:C4FB: A9 80     LDA #con_nmi_disable_irq
+C - - - - - 0x01C50B 07:C4FB: A9 80     LDA #con_nmi_irq_выкл
 C - - - - - 0x01C50D 07:C4FD: 85 4F     STA ram_NMI_flag
-C - - - - - 0x01C50F 07:C4FF: A9 01     LDA #con_script_logo
+C - - - - - 0x01C50F 07:C4FF: A9 01     LDA #con_script_логотип
 C - - - - - 0x01C511 07:C501: 85 58     STA ram_script
 C - - - - - 0x01C513 07:C503: 68        PLA
 C - - - - - 0x01C514 07:C504: 68        PLA
@@ -1063,7 +1063,7 @@ tbl_C51F:
 
 
 ofs_C539_00:
-C - - J - - 0x01C549 07:C539: A9 C0     LDA #con_nmi_enable_irq
+C - - J - - 0x01C549 07:C539: A9 C0     LDA #con_nmi_irq_вкл
 C - - - - - 0x01C54B 07:C53B: 8D 4F 00  STA ram_NMI_flag
 C - - - - - 0x01C54E 07:C53E: 20 5A EF  JSR sub_EF5A_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x01C551 07:C541: 20 93 CF  JSR sub_CF93
@@ -1107,7 +1107,7 @@ C - - - - - 0x01C5AC 07:C59C: C9 02     CMP #con_hud_game_set
 C - - - - - 0x01C5AE 07:C59E: F0 10     BEQ bra_C5B0
 C - - - - - 0x01C5B0 07:C5A0: C9 03     CMP #con_hud_pk
 C - - - - - 0x01C5B2 07:C5A2: F0 0C     BEQ bra_C5B0
-C - - - - - 0x01C5B4 07:C5A4: C9 06     CMP #con_hud_minimap
+C - - - - - 0x01C5B4 07:C5A4: C9 06     CMP #con_hud_миникарта
 C - - - - - 0x01C5B6 07:C5A6: F0 08     BEQ bra_C5B0
 C - - - - - 0x01C5B8 07:C5A8: A9 00     LDA #$00
 C - - - - - 0x01C5BA 07:C5AA: 8D FA 05  STA ram_05FA
@@ -1115,11 +1115,11 @@ C - - - - - 0x01C5BD 07:C5AD: 8D F7 05  STA ram_задержка_перелив_
 bra_C5B0:
 C - - - - - 0x01C5C0 07:C5B0: 20 AD C2  JSR sub_C2AD
 C - - - - - 0x01C5C3 07:C5B3: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C5C5 07:C5B5: 29 20     AND #con_gp_violation
+C - - - - - 0x01C5C5 07:C5B5: 29 20     AND #con_gp_нарушение
 C - - - - - 0x01C5C7 07:C5B7: F0 0B     BEQ bra_C5C4_not_violation
 C - - - - - 0x01C5C9 07:C5B9: 20 7B C8  JSR sub_C87B
 C - - - - - 0x01C5CC 07:C5BC: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C5CE 07:C5BE: 29 20     AND #con_gp_violation
+C - - - - - 0x01C5CE 07:C5BE: 29 20     AND #con_gp_нарушение
 C - - - - - 0x01C5D0 07:C5C0: F0 07     BEQ bra_C5C9_not_violation
 - - - - - - 0x01C5D2 07:C5C2: D0 4E     BNE bra_C612_RTS
 bra_C5C4_not_violation:
@@ -1127,7 +1127,7 @@ C - - - - - 0x01C5D4 07:C5C4: 2C 92 04  BIT ram_мяч_состояние
 C - - - - - 0x01C5D7 07:C5C7: 70 49     BVS bra_C612_RTS
 bra_C5C9_not_violation:
 C - - - - - 0x01C5D9 07:C5C9: E6 59     INC ram_subscript
-C - - - - - 0x01C5DB 07:C5CB: A9 00     LDA #$00    ; con_gp_normal
+C - - - - - 0x01C5DB 07:C5CB: A9 00     LDA #$00    ; con_gp_игра
 C - - - - - 0x01C5DD 07:C5CD: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C5DF 07:C5CF: 8D 2A 05  STA ram_флаг_владения_мячом_ком
 C - - - - - 0x01C5E2 07:C5D2: 8D 2B 05  STA ram_флаг_владения_мячом_ком + 1
@@ -1139,7 +1139,7 @@ C - - - - - 0x01C5F0 07:C5E0: A9 3F     LDA #$3F
 C - - - - - 0x01C5F2 07:C5E2: 8D D9 06  STA ram_байт_2006_hi_палитра
 C - - - - - 0x01C5F5 07:C5E5: A9 FF     LDA #$FF
 C - - - - - 0x01C5F7 07:C5E7: 8D FA 05  STA ram_05FA
-C - - - - - 0x01C5FA 07:C5EA: A9 86     LDA #con_hud_minimap + $80
+C - - - - - 0x01C5FA 07:C5EA: A9 86     LDA #con_hud_миникарта + $80
 C - - - - - 0x01C5FC 07:C5EC: 8D F8 05  STA ram_hud_mode
 C - - - - - 0x01C5FF 07:C5EF: A9 00     LDA #$00
 C - - - - - 0x01C601 07:C5F1: 8D F9 05  STA ram_flag_hud_ready
@@ -1169,7 +1169,7 @@ C - - J - - 0x01C625 07:C615: AD 08 00  LDA ram_btn_press
 C - - - - - 0x01C628 07:C618: 29 10     AND #con_btn_Start
 C - - - - - 0x01C62A 07:C61A: F0 1E     BEQ bra_C63A_Start_не_нажата
 C - - - - - 0x01C62C 07:C61C: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C62E 07:C61E: 49 80     EOR #con_gp_pause   ; вкл/выкл паузу
+C - - - - - 0x01C62E 07:C61E: 49 80     EOR #con_gp_пауза   ; вкл/выкл паузу
 C - - - - - 0x01C630 07:C620: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C632 07:C622: 30 09     BMI bra_C62D_пауза_выставлена
 C - - - - - 0x01C634 07:C624: AD 5A 05  LDA ram_music_id    ; если не выставлена, включить музыку на поле
@@ -1179,7 +1179,7 @@ bra_C62D_пауза_выставлена:
 C - - - - - 0x01C63D 07:C62D: A9 00     LDA #$00   ; con_music_выкл
 C - - - - - 0x01C63F 07:C62F: 8D FD 06  STA ram_счетчик_комбы_на_паузе
 C - - - - - 0x01C642 07:C632: 20 E4 C2  JSR sub_C2E4_play_sound
-C - - - - - 0x01C645 07:C635: A9 2D     LDA #con_sfx_violation
+C - - - - - 0x01C645 07:C635: A9 2D     LDA #con_sfx_нарушение
 C - - - - - 0x01C647 07:C637: 20 E4 C2  JSR sub_C2E4_play_sound
 bra_C63A_Start_не_нажата:
 loc_C63A:   ; bzk опт, лишняя проверка паузы, прыгать ниже
@@ -1279,7 +1279,7 @@ C - - - - - 0x01C719 07:C709: 2C B2 05  BIT ram_flag_brightness
 C - - - - - 0x01C71C 07:C70C: 10 0D     BPL bra_C71B_RTS
 C - - - - - 0x01C71E 07:C70E: 50 0B     BVC bra_C71B_RTS
 C - - - - - 0x01C720 07:C710: 20 1A C9  JSR sub_C91A
-C - - - - - 0x01C723 07:C713: A9 00     LDA #$00    ; con_gp_normal
+C - - - - - 0x01C723 07:C713: A9 00     LDA #$00    ; con_gp_игра
 C - - - - - 0x01C725 07:C715: 8D 5C 00  STA ram_flag_gameplay
 C - - - - - 0x01C728 07:C718: 8D E2 05  STA ram_таймер_катсцены
 bra_C71B_RTS:
@@ -1314,7 +1314,7 @@ C - - - - - 0x01C759 07:C749: 20 58 CA  JSR sub_CA58
 C - - - - - 0x01C75C 07:C74C: 20 49 C2  JSR sub_C249
 C - - - - - 0x01C75F 07:C74F: 20 CB EC  JSR sub_ECCB_отобразить_фон_и_спрайты
 C - - - - - 0x01C762 07:C752: 20 65 EE  JSR sub_EE65_enable_NMI
-C - - - - - 0x01C765 07:C755: A9 09     LDA #con_music_screen_score
+C - - - - - 0x01C765 07:C755: A9 09     LDA #con_music_экран_со_счетом
 C - - - - - 0x01C767 07:C757: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C76A 07:C75A: 4C 35 C7  JMP loc_C735
 
@@ -1327,7 +1327,7 @@ C - - - - - 0x01C773 07:C763: 20 58 CA  JSR sub_CA58
 C - - - - - 0x01C776 07:C766: 20 49 C2  JSR sub_C249
 C - - - - - 0x01C779 07:C769: 20 CB EC  JSR sub_ECCB_отобразить_фон_и_спрайты
 C - - - - - 0x01C77C 07:C76C: 20 65 EE  JSR sub_EE65_enable_NMI
-C - - - - - 0x01C77F 07:C76F: A9 09     LDA #con_music_screen_score
+C - - - - - 0x01C77F 07:C76F: A9 09     LDA #con_music_экран_со_счетом
 C - - - - - 0x01C781 07:C771: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C784 07:C774: 4C 35 C7  JMP loc_C735
 
@@ -1483,7 +1483,7 @@ tbl_C878:
 
 sub_C87B:
 C - - - - - 0x01C88B 07:C87B: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C88D 07:C87D: 29 20     AND #con_gp_violation
+C - - - - - 0x01C88D 07:C87D: 29 20     AND #con_gp_нарушение
 C - - - - - 0x01C88F 07:C87F: F0 1A     BEQ bra_C89B_RTS
 C - - - - - 0x01C891 07:C881: AD 92 04  LDA ram_мяч_состояние
 C - - - - - 0x01C894 07:C884: 29 C0     AND #$C0
@@ -1492,7 +1492,7 @@ C - - - - - 0x01C896 07:C886: D0 05     BNE bra_C88D
 - - - - - - 0x01C89B 07:C88B: 10 0E     BPL bra_C89B_RTS
 bra_C88D:
 C - - - - - 0x01C89D 07:C88D: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C89F 07:C88F: 29 DF     AND #con_gp_violation ^ $FF
+C - - - - - 0x01C89F 07:C88F: 29 DF     AND #con_gp_нарушение ^ $FF
 C - - - - - 0x01C8A1 07:C891: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C8A3 07:C893: A9 00     LDA #$00
 C - - - - - 0x01C8A5 07:C895: 8D 5B 05  STA ram_field_formation
@@ -1506,7 +1506,7 @@ sub_C89C:
 C - - - - - 0x01C8AC 07:C89C: 24 5C     BIT ram_flag_gameplay
 C - - - - - 0x01C8AE 07:C89E: 50 79     BVC bra_C919_RTS
 C - - - - - 0x01C8B0 07:C8A0: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C8B2 07:C8A2: 29 20     AND #con_gp_violation
+C - - - - - 0x01C8B2 07:C8A2: 29 20     AND #con_gp_нарушение
 C - - - - - 0x01C8B4 07:C8A4: D0 4F     BNE bra_C8F5
 C - - - - - 0x01C8B6 07:C8A6: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C8B8 07:C8A8: 29 0F     AND #$0F
@@ -1514,7 +1514,7 @@ C - - - - - 0x01C8BA 07:C8AA: F0 1C     BEQ bra_C8C8
 C - - - - - 0x01C8BC 07:C8AC: 29 02     AND #$02
 C - - - - - 0x01C8BE 07:C8AE: D0 49     BNE bra_C8F9
 C - - - - - 0x01C8C0 07:C8B0: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01C8C2 07:C8B2: 29 20     AND #con_gm_penalty
+C - - - - - 0x01C8C2 07:C8B2: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01C8C4 07:C8B4: F0 07     BEQ bra_C8BD_не_пенальти
 C - - - - - 0x01C8C6 07:C8B6: A9 03     LDA #$03
 C - - - - - 0x01C8C8 07:C8B8: 85 59     STA ram_subscript
@@ -1594,7 +1594,7 @@ C - - - - - 0x01C956 07:C946: F0 65     BEQ bra_C9AD
 - - - - - - 0x01C958 07:C948: C9 0C     CMP #$0C
 - - - - - - 0x01C95A 07:C94A: D0 03     BNE bra_C94F_RTS
 - - - - - - 0x01CA24 07:CA14: A5 57     LDA ram_option_mode_difficulty
-- - - - - - 0x01CA26 07:CA16: 09 20     ORA #con_gm_penalty
+- - - - - - 0x01CA26 07:CA16: 09 20     ORA #con_gm_пенальти
 - - - - - - 0x01CA28 07:CA18: 85 57     STA ram_option_mode_difficulty
 - - - - - - 0x01CA2A 07:CA1A: A9 00     LDA #$00
 - - - - - - 0x01CA2C 07:CA1C: 85 59     STA ram_subscript                             
@@ -1602,7 +1602,7 @@ bra_C94F_RTS:
 - - - - - - 0x01C95F 07:C94F: 4C 1E CA  RTS
 bra_C952:
 C - - - - - 0x01C962 07:C952: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01C964 07:C954: 29 20     AND #con_gm_penalty
+C - - - - - 0x01C964 07:C954: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01C966 07:C956: F0 10     BEQ bra_C968_не_пенальти
 C - - - - - 0x01C968 07:C958: EE CC 05  INC ram_счетчик_смен
 C - - - - - 0x01C96B 07:C95B: A5 5C     LDA ram_flag_gameplay
@@ -1613,7 +1613,7 @@ C - - - - - 0x01C973 07:C963: 85 59     STA ram_subscript
 C - - - - - 0x01C975 07:C965: 4C 1E CA  RTS
 bra_C968_не_пенальти:
 C - - - - - 0x01C978 07:C968: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01C97A 07:C96A: 29 20     AND #con_gp_violation
+C - - - - - 0x01C97A 07:C96A: 29 20     AND #con_gp_нарушение
 C - - - - - 0x01C97C 07:C96C: F0 07     BEQ bra_C975
 C - - - - - 0x01C97E 07:C96E: A9 00     LDA #$00
 bra_C970:
@@ -1645,7 +1645,7 @@ C - - - - - 0x01C9A8 07:C998: A9 00     LDA #$00
 C - - - - - 0x01C9AA 07:C99A: 85 59     STA ram_subscript
 C - - - - - 0x01C9AC 07:C99C: 4C 1E CA  RTS
 bra_C99F:
-C - - - - - 0x01C9AF 07:C99F: A9 02     LDA #con_script_menu
+C - - - - - 0x01C9AF 07:C99F: A9 02     LDA #con_script_меню
 C - - - - - 0x01C9B1 07:C9A1: 85 58     STA ram_script
 C - - - - - 0x01C9B3 07:C9A3: A9 04     LDA #$04
 C - - - - - 0x01C9B5 07:C9A5: 85 59     STA ram_subscript
@@ -1653,13 +1653,13 @@ C - - - - - 0x01C9B7 07:C9A7: EE 59 05  INC ram_номер_тайма
 C - - - - - 0x01C9BA 07:C9AA: 4C FA C9  JMP loc_C9FA
 bra_C9AD:
 C - - - - - 0x01C9BD 07:C9AD: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01C9BF 07:C9AF: 30 0B     BMI bra_C9BC_walkthrough
-C - - - - - 0x01C9C1 07:C9B1: A9 02     LDA #con_script_menu
+C - - - - - 0x01C9BF 07:C9AF: 30 0B     BMI bra_C9BC_прохождение
+C - - - - - 0x01C9C1 07:C9B1: A9 02     LDA #con_script_меню
 C - - - - - 0x01C9C3 07:C9B3: 85 58     STA ram_script
 C - - - - - 0x01C9C5 07:C9B5: A9 01     LDA #$01
 C - - - - - 0x01C9C7 07:C9B7: 85 59     STA ram_subscript
 C - - - - - 0x01C9C9 07:C9B9: 4C 1E CA  RTS
-bra_C9BC_walkthrough:
+bra_C9BC_прохождение:
 C - - - - - 0x01C9CC 07:C9BC: AD 4A 05  LDA ram_054A
 C - - - - - 0x01C9CF 07:C9BF: 30 2D     BMI bra_C9EE
 - - - - - - 0x01C9D1 07:C9C1: C9 03     CMP #$03
@@ -1679,7 +1679,7 @@ bra_C9D4:
 - - - - - - 0x01C9EB 07:C9DB: A9 02     LDA #$02
 bra_C9DD:
 - - - - - - 0x01C9ED 07:C9DD: 8D 1F 06  STA ram_061F
-- - - - - - 0x01C9F0 07:C9E0: A9 03     LDA #con_script_credits
+- - - - - - 0x01C9F0 07:C9E0: A9 03     LDA #con_script_титры
 - - - - - - 0x01C9F2 07:C9E2: 85 58     STA ram_script
 - - - - - - 0x01C9F4 07:C9E4: A9 00     LDA #$00
 - - - - - - 0x01C9F6 07:C9E6: 85 59     STA ram_subscript
@@ -1687,7 +1687,7 @@ bra_C9DD:
 bra_C9EB:
 - - - - - - 0x01C9FB 07:C9EB: EE 4A 05  INC ram_054A
 bra_C9EE:
-C - - - - - 0x01C9FE 07:C9EE: A9 02     LDA #con_script_menu
+C - - - - - 0x01C9FE 07:C9EE: A9 02     LDA #con_script_меню
 C - - - - - 0x01CA00 07:C9F0: 85 58     STA ram_script
 C - - - - - 0x01CA02 07:C9F2: A9 0E     LDA #$0E
 C - - - - - 0x01CA04 07:C9F4: 85 59     STA ram_subscript
@@ -2017,7 +2017,7 @@ C - - - - - 0x01CC40 07:CC30: A8        TAY
 C - - - - - 0x01CC41 07:CC31: B9 50 06  LDA ram_позиция_управление,Y
 C - - - - - 0x01CC44 07:CC34: 30 0B     BMI bra_CC41    ; если это бот
 C - - - - - 0x01CC46 07:CC36: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01CC48 07:CC38: 29 20     AND #con_gm_penalty
+C - - - - - 0x01CC48 07:CC38: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01CC4A 07:CC3A: F0 0E     BEQ bra_CC4A
 C - - - - - 0x01CC4C 07:CC3C: B9 D9 00  LDA ram_flag_visible_player,Y
 C - - - - - 0x01CC4F 07:CC3F: D0 09     BNE bra_CC4A    ; если на экране
@@ -2568,7 +2568,7 @@ C - - - - - 0x01CFF1 07:CFE1: 20 C1 EC  JSR sub_ECC1_скрыть_фон_и_сп
 C - - - - - 0x01CFF4 07:CFE4: 20 D9 E3  JSR sub_E3D9
 C - - - - - 0x01CFF7 07:CFE7: 20 7B C2  JSR sub_C27B
 C - - - - - 0x01CFFA 07:CFEA: A5 57     LDA ram_option_mode_difficulty
-C - - - - - 0x01CFFC 07:CFEC: 29 20     AND #con_gm_penalty
+C - - - - - 0x01CFFC 07:CFEC: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01CFFE 07:CFEE: D0 09     BNE bra_CFF9_пенальти
 C - - - - - 0x01D000 07:CFF0: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x01D003 07:CFF3: F0 0D     BEQ bra_D002
@@ -4257,7 +4257,7 @@ C - - - - - 0x01D6F6 07:D6E6: 60        RTS
 
 sub_D6E7_игровой_таймер_и_выбор_погоды:
 C - - - - - 0x01D6F7 07:D6E7: AD 57 00  LDA ram_option_mode_difficulty
-C - - - - - 0x01D6FA 07:D6EA: 29 20     AND #con_gm_penalty
+C - - - - - 0x01D6FA 07:D6EA: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01D6FC 07:D6EC: D0 1C     BNE bra_D70A
 C - - - - - 0x01D6FE 07:D6EE: A5 59     LDA ram_subscript
 C - - - - - 0x01D700 07:D6F0: C9 06     CMP #$06
@@ -4345,7 +4345,7 @@ loc_D794:
 C - - - - - 0x01D7A4 07:D794: A5 59     LDA ram_subscript
 C - - - - - 0x01D7A6 07:D796: C9 06     CMP #$06
 C - - - - - 0x01D7A8 07:D798: F0 09     BEQ bra_D7A3_RTS
-C - - - - - 0x01D7AA 07:D79A: A9 40     LDA #con_gp_time_up
+C - - - - - 0x01D7AA 07:D79A: A9 40     LDA #con_gp_время_вышло
 C - - - - - 0x01D7AC 07:D79C: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01D7AE 07:D79E: A9 31     LDA #con_sfx_время_вышло
 C - - - - - 0x01D7B0 07:D7A0: 20 E4 C2  JSR sub_C2E4_play_sound
@@ -7897,7 +7897,7 @@ sub_ECA9_выключить_NMI_при_следующем_вызове:
 C D 3 - - - 0x01ECB9 07:ECA9: 48        PHA
 C - - - - - 0x01ECBA 07:ECAA: A5 4F     LDA ram_NMI_flag
 C - - - - - 0x01ECBC 07:ECAC: 48        PHA
-C - - - - - 0x01ECBD 07:ECAD: A9 00     LDA #con_nmi_off
+C - - - - - 0x01ECBD 07:ECAD: A9 00     LDA #con_nmi_выкл
 C - - - - - 0x01ECBF 07:ECAF: 85 4F     STA ram_NMI_flag
 C - - - - - 0x01ECC1 07:ECB1: A5 4C     LDA ram_for_2000
 C - - - - - 0x01ECC3 07:ECB3: 09 80     ORA #$80
