@@ -6985,28 +6985,25 @@ C - - - - - 0x01E790 07:E780: 30 0B     BMI bra_E78D
 C - - - - - 0x01E792 07:E782: C9 40     CMP #$40
 C - - - - - 0x01E794 07:E784: 90 12     BCC bra_E798
 C - - - - - 0x01E796 07:E786: C9 6C     CMP #$6C
-C - - - - - 0x01E798 07:E788: 90 2E     BCC bra_E7AE
+C - - - - - 0x01E798 07:E788: 90 2E     BCC bra_E7C4
 C - - - - - 0x01E79A 07:E78A: 4C BD E7  JMP loc_E7BD
 bra_E78D:
 C - - - - - 0x01E79D 07:E78D: C9 95     CMP #$95
 C - - - - - 0x01E79F 07:E78F: 90 07     BCC bra_E798
 C - - - - - 0x01E7A1 07:E791: C9 E8     CMP #$E8
-C - - - - - 0x01E7A3 07:E793: 90 23     BCC bra_E7AE
+C - - - - - 0x01E7A3 07:E793: 90 23     BCC bra_E7C4
 C - - - - - 0x01E7A5 07:E795: 4C BD E7  JMP loc_E7BD
 bra_E798:
 C - - - - - 0x01E7A8 07:E798: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x01E7AB 07:E79B: C9 04     CMP #$04
 C - - - - - 0x01E7AD 07:E79D: F0 14     BEQ bra_E7B3
 C - - - - - 0x01E7AF 07:E79F: 29 01     AND #$01
-C - - - - - 0x01E7B1 07:E7A1: F0 0B     BEQ bra_E7AE
+C - - - - - 0x01E7B1 07:E7A1: F0 0B     BEQ bra_E7C4
 - - - - - - 0x01E7B3 07:E7A3: AD FB 05  LDA ram_опция_поверхность_влажность
 - - - - - - 0x01E7B6 07:E7A6: 29 0F     AND #$0F
 - - - - - - 0x01E7B8 07:E7A8: 18        CLC
 - - - - - - 0x01E7B9 07:E7A9: 69 01     ADC #$01
 - - - - - - 0x01E7BB 07:E7AB: 4C B0 E7  BNE bra_E7D1_запись_surface
-bra_E7AE:
-C - - - - - 0x01E7BE 07:E7AE: A9 00     LDA #con_НА_ТРАВЕ
-C - - - - - 0x01E7C0 07:E7B0: 4C D1 E7  BEQ bra_E7D1_запись_surface
 bra_E7B3:
 C - - - - - 0x01E7C3 07:E7B3: A9 03     LDA #con_НА_ПЕСКЕ
 C - - - - - 0x01E7C5 07:E7B5: 4C D1 E7  BNE bra_E7D1_запись_surface
@@ -7014,6 +7011,7 @@ loc_E7BD:
 C D 3 - - - 0x01E7CD 07:E7BD: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x01E7D0 07:E7C0: 29 01     AND #$01
 C - - - - - 0x01E7D2 07:E7C2: F0 05     BEQ bra_E7C9
+bra_E7C4:
 - - - - - - 0x01E7D4 07:E7C4: A9 00     LDA #con_НА_ТРАВЕ
 - - - - - - 0x01E7D6 07:E7C6: 4C D1 E7  BEQ bra_E7D1_запись_surface
 bra_E7C9:
