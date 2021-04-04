@@ -11208,7 +11208,7 @@ C D 1 - - - 0x00FC50 03:BC40: 20 84 BC  JSR sub_BC84
 C - - - - - 0x00FC53 03:BC43: AD 66 04  LDA ram_weather_id
 C - - - - - 0x00FC56 03:BC46: C9 84     CMP #con_weather_wind + $80
 C - - - - - 0x00FC58 03:BC48: D0 05     BNE bra_BC4F
-C - - - - - 0x00FC5A 03:BC4A: A9 41     LDA #con_sfx_wind
+C - - - - - 0x00FC5A 03:BC4A: A9 41     LDA #con_sfx_ветер
 C - - - - - 0x00FC5C 03:BC4C: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_BC4F:
 C - - - - - 0x00FC5F 03:BC4F: AD 95 04  LDA ram_направление_молния_смерч

@@ -529,7 +529,7 @@ C - - - - - 0x018378 06:8368: 20 27 99  JSR sub_9927_зафиксировать_
 C - - - - - 0x01837B 06:836B: A9 00     LDA #$00
 C - - - - - 0x01837D 06:836D: 20 F7 A1  JSR sub_A1F7
 C - - - - - 0x018380 06:8370: 20 34 9B  JSR sub_9B34
-C - - - - - 0x018383 06:8373: A9 3B     LDA #con_sfx_elbow_tackle
+C - - - - - 0x018383 06:8373: A9 3B     LDA #con_sfx_локоть_подкат
 C - - - - - 0x018385 06:8375: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 bra_8378:
 C - - - - - 0x018388 06:8378: A9 03     LDA #$03
@@ -771,7 +771,7 @@ C - - - - - 0x01850D 06:84FD: A0 04     LDY #$04
 C - - - - - 0x01850F 06:84FF: 20 3F A0  JSR sub_A03F
 loc_8502:
 C D 0 - - - 0x018512 06:8502: 20 27 99  JSR sub_9927_зафиксировать_и_очистить_анимацию_объекта
-C - - - - - 0x018515 06:8505: A9 3B     LDA #con_sfx_elbow_tackle
+C - - - - - 0x018515 06:8505: A9 3B     LDA #con_sfx_локоть_подкат
 C - - - - - 0x018517 06:8507: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01851A 06:850A: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x01851D 06:850D: C9 FF     CMP #$FF
@@ -804,7 +804,7 @@ C - - - - - 0x018552 06:8542: A0 04     LDY #$04
 C - - - - - 0x018554 06:8544: 20 3F A0  JSR sub_A03F
 C - - - - - 0x018557 06:8547: 20 27 99  JSR sub_9927_зафиксировать_и_очистить_анимацию_объекта
 C - - - - - 0x01855A 06:854A: 20 E4 9C  JSR sub_9CE4
-C - - - - - 0x01855D 06:854D: A9 3B     LDA #con_sfx_elbow_tackle
+C - - - - - 0x01855D 06:854D: A9 3B     LDA #con_sfx_локоть_подкат
 C - - - - - 0x01855F 06:854F: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x018562 06:8552: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x018565 06:8555: C9 FF     CMP #$FF
@@ -868,7 +868,7 @@ C - - - - - 0x0185DE 06:85CE: 90 EF     BCC bra_85BF
 C - - - - - 0x0185E0 06:85D0: 4C DB 85  JMP loc_85DB
 bra_85D3:
 C - - - - - 0x0185E3 06:85D3: 20 C9 9C  JSR sub_9CC9_очистить_скорости_объекта
-C - - - - - 0x0185E6 06:85D6: A9 3B     LDA #con_sfx_elbow_tackle
+C - - - - - 0x0185E6 06:85D6: A9 3B     LDA #con_sfx_локоть_подкат
 C - - - - - 0x0185E8 06:85D8: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 bra_85DB:
 loc_85DB:
@@ -880,7 +880,7 @@ ofs_85DE_2F:
 C - - J - - 0x0185EE 06:85DE: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x0185F1 06:85E1: 30 22     BMI bra_8605
 C - - - - - 0x0185F3 06:85E3: 20 27 99  JSR sub_9927_зафиксировать_и_очистить_анимацию_объекта
-C - - - - - 0x0185F6 06:85E6: A9 3C     LDA #con_sfx_spin_normal
+C - - - - - 0x0185F6 06:85E6: A9 3C     LDA #con_sfx_крутилка_обычная
 C - - - - - 0x0185F8 06:85E8: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0185FB 06:85EB: 20 19 9D  JSR sub_9D19
 C - - - - - 0x0185FE 06:85EE: 20 08 86  JSR sub_8608
@@ -1073,7 +1073,7 @@ C - - - - - 0x018738 06:8728: 20 3F A0  JSR sub_A03F
 C - - - - - 0x01873B 06:872B: A0 06     LDY #$06
 C - - - - - 0x01873D 06:872D: 20 3F A0  JSR sub_A03F
 C - - - - - 0x018740 06:8730: 20 27 99  JSR sub_9927_зафиксировать_и_очистить_анимацию_объекта
-C - - - - - 0x018743 06:8733: A9 2B     LDA #con_sfx_jump
+C - - - - - 0x018743 06:8733: A9 2B     LDA #con_sfx_прыжок
 C - - - - - 0x018745 06:8735: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x018748 06:8738: BD A3 04  LDA ram_направление_движения,X
 C - - - - - 0x01874B 06:873B: 09 40     ORA #$40
@@ -1130,7 +1130,7 @@ ofs_879F_56:
 C - - J - - 0x0187AF 06:879F: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x0187B2 06:87A2: 30 0D     BMI bra_87B1
 C - - - - - 0x0187B4 06:87A4: 20 27 99  JSR sub_9927_зафиксировать_и_очистить_анимацию_объекта
-C - - - - - 0x0187B7 06:87A7: A9 2B     LDA #con_sfx_jump
+C - - - - - 0x0187B7 06:87A7: A9 2B     LDA #con_sfx_прыжок
 C - - - - - 0x0187B9 06:87A9: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0187BC 06:87AC: A9 00     LDA #$00
 C - - - - - 0x0187BE 06:87AE: 20 60 9B  JSR sub_9B60_скорость_Z_и_гравитация
@@ -1150,7 +1150,7 @@ C - - - - - 0x0187D5 06:87C5: 30 12     BMI bra_87D9
 C - - - - - 0x0187D7 06:87C7: A0 06     LDY #$06
 C - - - - - 0x0187D9 06:87C9: 20 3F A0  JSR sub_A03F
 C - - - - - 0x0187DC 06:87CC: 20 27 99  JSR sub_9927_зафиксировать_и_очистить_анимацию_объекта
-C - - - - - 0x0187DF 06:87CF: A9 2B     LDA #con_sfx_jump
+C - - - - - 0x0187DF 06:87CF: A9 2B     LDA #con_sfx_прыжок
 C - - - - - 0x0187E1 06:87D1: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0187E4 06:87D4: A9 06     LDA #$06
 C - - - - - 0x0187E6 06:87D6: 20 60 9B  JSR sub_9B60_скорость_Z_и_гравитация
@@ -1164,7 +1164,7 @@ ofs_87DF_57:
 C - - J - - 0x0187EF 06:87DF: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x0187F2 06:87E2: 30 15     BMI bra_87F9
 C - - - - - 0x0187F4 06:87E4: 20 27 99  JSR sub_9927_зафиксировать_и_очистить_анимацию_объекта
-C - - - - - 0x0187F7 06:87E7: A9 2B     LDA #con_sfx_jump
+C - - - - - 0x0187F7 06:87E7: A9 2B     LDA #con_sfx_прыжок
 C - - - - - 0x0187F9 06:87E9: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0187FC 06:87EC: BD A3 04  LDA ram_направление_движения,X
 C - - - - - 0x0187FF 06:87EF: 09 40     ORA #$40
@@ -1384,7 +1384,7 @@ ofs_896C_4F:
 C - - J - - 0x01897C 06:896C: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x01897F 06:896F: 30 1B     BMI bra_898C
 C - - - - - 0x018981 06:8971: 20 27 99  JSR sub_9927_зафиксировать_и_очистить_анимацию_объекта
-C - - - - - 0x018984 06:8974: A9 3C     LDA #con_sfx_spin_normal
+C - - - - - 0x018984 06:8974: A9 3C     LDA #con_sfx_крутилка_обычная
 C - - - - - 0x018986 06:8976: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x018989 06:8979: A9 00     LDA #$00
 C - - - - - 0x01898B 06:897B: 9D 20 04  STA ram_spd_Z_lo_player,X
@@ -1467,7 +1467,7 @@ C - - - - - 0x018A18 06:8A08: 30 12     BMI bra_8A1C
 C - - - - - 0x018A1A 06:8A0A: A0 04     LDY #$04
 C - - - - - 0x018A1C 06:8A0C: 20 3F A0  JSR sub_A03F
 C - - - - - 0x018A1F 06:8A0F: 20 27 99  JSR sub_9927_зафиксировать_и_очистить_анимацию_объекта
-C - - - - - 0x018A22 06:8A12: A9 3B     LDA #con_sfx_elbow_tackle
+C - - - - - 0x018A22 06:8A12: A9 3B     LDA #con_sfx_локоть_подкат
 C - - - - - 0x018A24 06:8A14: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x018A27 06:8A17: A9 03     LDA #$03
 C - - - - - 0x018A29 06:8A19: 20 60 9B  JSR sub_9B60_скорость_Z_и_гравитация
@@ -1495,7 +1495,7 @@ C - - J - - 0x018A50 06:8A40: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x018A53 06:8A43: 30 10     BMI bra_8A55
 C - - - - - 0x018A55 06:8A45: 20 27 99  JSR sub_9927_зафиксировать_и_очистить_анимацию_объекта
 C - - - - - 0x018A58 06:8A48: 20 0C A0  JSR sub_A00C_вычислить_направление_движения
-C - - - - - 0x018A5B 06:8A4B: A9 38     LDA #con_sfx_spin_guinea
+C - - - - - 0x018A5B 06:8A4B: A9 38     LDA #con_sfx_крутилка_гвинейская
 C - - - - - 0x018A5D 06:8A4D: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x018A60 06:8A50: A9 04     LDA #$04
 C - - - - - 0x018A62 06:8A52: 20 60 9B  JSR sub_9B60_скорость_Z_и_гравитация
@@ -1512,7 +1512,7 @@ C - - - - - 0x018A6F 06:8A5F: 20 3F A0  JSR sub_A03F
 C - - - - - 0x018A72 06:8A62: 20 27 99  JSR sub_9927_зафиксировать_и_очистить_анимацию_объекта
 C - - - - - 0x018A75 06:8A65: 20 E4 9C  JSR sub_9CE4
 C - - - - - 0x018A78 06:8A68: 20 19 9D  JSR sub_9D19
-C - - - - - 0x018A7B 06:8A6B: A9 38     LDA #con_sfx_spin_guinea
+C - - - - - 0x018A7B 06:8A6B: A9 38     LDA #con_sfx_крутилка_гвинейская
 C - - - - - 0x018A7D 06:8A6D: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x018A80 06:8A70: A9 07     LDA #$07
 C - - - - - 0x018A82 06:8A72: 20 EB 99  JSR sub_99EB_вычислить_скорость_движения_по_углу
@@ -1641,7 +1641,7 @@ C - - - - - 0x018B57 06:8B47: 09 40     ORA #$40
 C - - - - - 0x018B59 06:8B49: 9D 96 04  STA ram_movement_angle,X
 C - - - - - 0x018B5C 06:8B4C: A9 05     LDA #$05
 C - - - - - 0x018B5E 06:8B4E: 20 EB 99  JSR sub_99EB_вычислить_скорость_движения_по_углу
-C - - - - - 0x018B61 06:8B51: A9 38     LDA #con_sfx_spin_guinea
+C - - - - - 0x018B61 06:8B51: A9 38     LDA #con_sfx_крутилка_гвинейская
 C - - - - - 0x018B63 06:8B53: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 bra_8B56:
 C - - - - - 0x018B66 06:8B56: 4C 1F 8A  JMP loc_8A1F
@@ -2074,7 +2074,7 @@ C - - - - - 0x018E0E 06:8DFE: A5 2D     LDA ram_002D
 C - - - - - 0x018E10 06:8E00: 7D 27 03  ADC ram_pos_X_hi_player,X
 C - - - - - 0x018E13 06:8E03: 9D 27 03  STA ram_pos_X_hi_player,X
 C - - - - - 0x018E16 06:8E06: BD 30 01  LDA ram_surface_player,X
-C - - - - - 0x018E19 06:8E09: C9 02     CMP #con_НА_ГРЯЗИ
+C - - - - - 0x018E19 06:8E09: C9 02     CMP #con_на_грязи
 C - - - - - 0x018E1B 06:8E0B: F0 10     BEQ bra_8E1D
 C - - - - - 0x018E1D 06:8E0D: BD 99 03  LDA ram_pos_Z_hi_player,X
 C - - - - - 0x018E20 06:8E10: 10 0B     BPL bra_8E1D
@@ -3417,7 +3417,7 @@ C - - - - - 0x0197C0 06:97B0: 60        RTS
 
 sub_97B1_увеличить_таймер_мокрого_мяча:
 C - - - - - 0x0197C1 06:97B1: BD 30 01  LDA ram_surface_player,X
-C - - - - - 0x0197C4 06:97B4: C9 01     CMP #con_НА_ЛУЖЕ
+C - - - - - 0x0197C4 06:97B4: C9 01     CMP #con_на_луже
 C - - - - - 0x0197C6 06:97B6: D0 0D     BNE bra_97C5_RTS
 C - - - - - 0x0197C8 06:97B8: 18        CLC
 C - - - - - 0x0197C9 06:97B9: AD 0D 05  LDA ram_timer_wet_ball
@@ -4588,7 +4588,7 @@ sub_9F9B:
 C - - - - - 0x019FAB 06:9F9B: BD 86 04  LDA ram_игрок_состояние,X
 C - - - - - 0x019FAE 06:9F9E: 29 10     AND #$10
 C - - - - - 0x019FB0 06:9FA0: F0 33     BEQ bra_9FD5_RTS
-C - - - - - 0x019FB2 06:9FA2: A9 00     LDA #con_НА_ТРАВЕ
+C - - - - - 0x019FB2 06:9FA2: A9 00     LDA #con_на_траве
 C - - - - - 0x019FB4 06:9FA4: 9D 30 01  STA ram_surface_player,X
 C - - - - - 0x019FB7 06:9FA7: A0 00     LDY #$00
 C - - - - - 0x019FB9 06:9FA9: AD 65 04  LDA ram_movement_id_ball
@@ -4673,7 +4673,7 @@ tbl_A01F:
 
 
 sub_A021_вычислить_surface_и_следы:
-C - - - - - 0x01A031 06:A021: A9 00     LDA #con_НА_ТРАВЕ
+C - - - - - 0x01A031 06:A021: A9 00     LDA #con_на_траве
 C - - - - - 0x01A033 06:A023: 9D 30 01  STA ram_surface_player,X
 C - - - - - 0x01A036 06:A026: A5 58     LDA ram_script
 C - - - - - 0x01A038 06:A028: D0 14     BNE bra_A03E_RTS    ; если не игра на поле
@@ -7465,7 +7465,7 @@ C - - - - - 0x01ADA5 06:AD95: 4C 72 AD  RTS
 
 
 ofs_AD98_02:
-C - - J - - 0x01ADA8 06:AD98: A9 20     LDA #con_sfx_pass_w_foot
+C - - J - - 0x01ADA8 06:AD98: A9 20     LDA #con_sfx_пас_ногой
 C - - - - - 0x01ADAA 06:AD9A: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01ADAD 06:AD9D: A4 1D     LDY ram_001D
 C - - - - - 0x01ADAF 06:AD9F: 20 63 AF  JSR sub_AF63
@@ -7476,7 +7476,7 @@ C - - - - - 0x01ADB7 06:ADA7: 4C 8B AD  JMP loc_AD8B
 
 
 ofs_ADAA_03:
-C - - J - - 0x01ADBA 06:ADAA: A9 23     LDA #con_sfx_recieve_ball
+C - - J - - 0x01ADBA 06:ADAA: A9 23     LDA #con_sfx_принять_мяч
 C - - - - - 0x01ADBC 06:ADAC: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01ADBF 06:ADAF: A4 1D     LDY ram_001D
 C - - - - - 0x01ADC1 06:ADB1: 20 63 AF  JSR sub_AF63
@@ -7591,7 +7591,7 @@ C - - - - - 0x01AE8F 06:AE7F: 20 5D B0  JSR sub_B05D_толкнуть_игрок
 C - - - - - 0x01AE92 06:AE82: A9 0B     LDA #$0B
 C - - - - - 0x01AE94 06:AE84: 20 7B B0  JSR sub_B07B
 loc_AE87:
-C D 1 - - - 0x01AE97 06:AE87: A9 23     LDA #con_sfx_recieve_ball
+C D 1 - - - 0x01AE97 06:AE87: A9 23     LDA #con_sfx_принять_мяч
 C - - - - - 0x01AE99 06:AE89: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01AE9C 06:AE8C: A9 09     LDA #$09
 C - - - - - 0x01AE9E 06:AE8E: 4C 8B AD  JMP loc_AD8B
@@ -7600,7 +7600,7 @@ C - - - - - 0x01AEA1 06:AE91: BD 86 03  LDA ram_pos_Z_lo_player,X
 C - - - - - 0x01AEA4 06:AE94: 30 E4     BMI bra_AE7A
 C - - - - - 0x01AEA6 06:AE96: F0 E2     BEQ bra_AE7A
 C - - - - - 0x01AEA8 06:AE98: 20 5D B0  JSR sub_B05D_толкнуть_игрока_мокрым_мячом
-C - - - - - 0x01AEAB 06:AE9B: A9 23     LDA #con_sfx_recieve_ball
+C - - - - - 0x01AEAB 06:AE9B: A9 23     LDA #con_sfx_принять_мяч
 C - - - - - 0x01AEAD 06:AE9D: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01AEB0 06:AEA0: A9 26     LDA #$26
 C - - - - - 0x01AEB2 06:AEA2: 20 7B B0  JSR sub_B07B
@@ -7619,7 +7619,7 @@ C - - - - - 0x01AEC7 06:AEB7: 29 40     AND #$40
 C - - - - - 0x01AEC9 06:AEB9: F0 03     BEQ bra_AEBE    ; если время не вышло/мяч не вне игры
 C - - - - - 0x01AECB 06:AEBB: 4C 72 AD  RTS
 bra_AEBE:
-C - - - - - 0x01AECE 06:AEBE: A9 26     LDA #con_sfx_catch_punch
+C - - - - - 0x01AECE 06:AEBE: A9 26     LDA #con_sfx_словить_отбить
 C - - - - - 0x01AED0 06:AEC0: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01AED3 06:AEC3: A4 1D     LDY ram_001D
 C - - - - - 0x01AED5 06:AEC5: 8C D6 04  STY ram_игрок_с_мячом
@@ -7688,7 +7688,7 @@ C - - - - - 0x01AF4E 06:AF3E: 30 03     BMI bra_AF43
 C - - - - - 0x01AF50 06:AF40: 4C 72 AD  RTS
 bra_AF43:
 C - - - - - 0x01AF53 06:AF43: 8C D6 04  STY ram_игрок_с_мячом
-C - - - - - 0x01AF56 06:AF46: A9 26     LDA #con_sfx_catch_punch
+C - - - - - 0x01AF56 06:AF46: A9 26     LDA #con_sfx_словить_отбить
 C - - - - - 0x01AF58 06:AF48: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01AF5B 06:AF4B: A9 10     LDA #$10
 C - - - - - 0x01AF5D 06:AF4D: 4C 8B AD  JMP loc_AD8B
@@ -9550,7 +9550,7 @@ C - - - - - 0x01B909 06:B8F9: 20 31 BA  JSR sub_BA31
 C - - - - - 0x01B90C 06:B8FC: AD F0 04  LDA ram_hp_ball
 C - - - - - 0x01B90F 06:B8FF: F0 19     BEQ bra_B91A
 C - - - - - 0x01B911 06:B901: 20 C8 BC  JSR sub_BCC8
-C - - - - - 0x01B914 06:B904: A9 27     LDA #con_sfx_goalpost
+C - - - - - 0x01B914 06:B904: A9 27     LDA #con_sfx_штанга
 C - - - - - 0x01B916 06:B906: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01B919 06:B909: AD C9 04  LDA ram_timer_action_ball
 C - - - - - 0x01B91C 06:B90C: 4A        LSR
@@ -9601,7 +9601,7 @@ bra_B96F:
 C - - - - - 0x01B97F 06:B96F: BD F6 03  LDA ram_spd_X_hi_player,X
 C - - - - - 0x01B982 06:B972: 1D E8 03  ORA ram_spd_X_lo_player,X
 C - - - - - 0x01B985 06:B975: F0 1E     BEQ bra_B995_RTS
-C - - - - - 0x01B987 06:B977: A9 27     LDA #con_sfx_goalpost
+C - - - - - 0x01B987 06:B977: A9 27     LDA #con_sfx_штанга
 C - - - - - 0x01B989 06:B979: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01B98C 06:B97C: 20 CA BB  JSR sub_BBCA
 C - - - - - 0x01B98F 06:B97F: 20 87 A1  JSR sub_A187_ограничение_максимальной_скорости
@@ -10181,7 +10181,7 @@ C - - - - - 0x01BD42 06:BD32: 70 1E     BVS bra_BD52_RTS
 C - - - - - 0x01BD44 06:BD34: 30 01     BMI bra_BD37
 C - - - - - 0x01BD46 06:BD36: C8        INY
 bra_BD37:
-C - - - - - 0x01BD47 06:BD37: A9 27     LDA #con_sfx_goalpost
+C - - - - - 0x01BD47 06:BD37: A9 27     LDA #con_sfx_штанга
 C - - - - - 0x01BD49 06:BD39: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x01BD4C 06:BD3C: A9 02     LDA #$02
 C - - - - - 0x01BD4E 06:BD3E: 05 1D     ORA ram_001D
@@ -10392,7 +10392,7 @@ C - - - - - 0x01BEBD 06:BEAD: 10 1C     BPL bra_BECB_RTS
 C - - - - - 0x01BEBF 06:BEAF: AD 00 03  LDA ram_frame_cnt
 C - - - - - 0x01BEC2 06:BEB2: 29 3F     AND #$3F
 C - - - - - 0x01BEC4 06:BEB4: D0 04     BNE bra_BEBA
-C - - - - - 0x01BEC6 06:BEB6: A9 3F     LDA #con_sfx_spec_noise
+C - - - - - 0x01BEC6 06:BEB6: A9 3F     LDA #con_sfx_шум_зрителей
 C - - - - - 0x01BEC8 06:BEB8: D0 0E     BNE bra_BEC8
 bra_BEBA:
 C - - - - - 0x01BECA 06:BEBA: AD 00 03  LDA ram_frame_cnt
@@ -10400,7 +10400,7 @@ C - - - - - 0x01BECD 06:BEBD: 29 07     AND #$07
 C - - - - - 0x01BECF 06:BEBF: D0 0A     BNE bra_BECB_RTS
 C - - - - - 0x01BED1 06:BEC1: 20 35 EE  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x01BED4 06:BEC4: 10 05     BPL bra_BECB_RTS
-C - - - - - 0x01BED6 06:BEC6: A9 40     LDA #con_sfx_spec_whistle
+C - - - - - 0x01BED6 06:BEC6: A9 40     LDA #con_sfx_свист_зрителей
 bra_BEC8:
 C - - - - - 0x01BED8 06:BEC8: 20 E4 C2  JSR sub_0x01C2F4_play_sound
 bra_BECB_RTS:

@@ -14289,7 +14289,7 @@ ofs_BA05_01_молния:
 C - - J - - 0x007A15 01:BA05: A9 00     LDA #$00
 C - - - - - 0x007A17 01:BA07: 8D FD 05  STA ram_wind_power
 C - - - - - 0x007A1A 01:BA0A: 8D 3F 01  STA ram_timer_weather
-C - - - - - 0x007A1D 01:BA0D: A9 45     LDA #con_sfx_lightning
+C - - - - - 0x007A1D 01:BA0D: A9 45     LDA #con_sfx_молния
 C - - - - - 0x007A1F 01:BA0F: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x007A22 01:BA12: AD 45 00  LDA ram_random
 C - - - - - 0x007A25 01:BA15: 29 07     AND #$07
@@ -14323,7 +14323,7 @@ tbl_BA25:
 
 
 ofs_BA2E_03_смерч:
-C - - J - - 0x007A3E 01:BA2E: A9 41     LDA #con_sfx_wind
+C - - J - - 0x007A3E 01:BA2E: A9 41     LDA #con_sfx_ветер
 C - - - - - 0x007A40 01:BA30: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x007A43 01:BA33: A9 00     LDA #$00
 C - - - - - 0x007A45 01:BA35: 8D FD 05  STA ram_wind_power

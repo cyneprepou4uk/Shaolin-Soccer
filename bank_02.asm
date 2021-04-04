@@ -10841,7 +10841,7 @@ C - - - - - 0x00ABB8 02:ABA8: 8E B0 05  STX ram_palette_id_spr + 2
 C - - - - - 0x00ABBB 02:ABAB: E8        INX
 C - - - - - 0x00ABBC 02:ABAC: 8E B1 05  STX ram_palette_id_spr + 3
 C - - - - - 0x00ABBF 02:ABAF: 20 33 B0  JSR sub_B033_анимация_мяча
-C - - - - - 0x00ABC2 02:ABB2: A9 01     LDA #con_music_logo
+C - - - - - 0x00ABC2 02:ABB2: A9 01     LDA #con_music_логотип
 C - - - - - 0x00ABC4 02:ABB4: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x00ABC7 02:ABB7: 20 59 C0  JSR sub_0x01D05F
 C - - - - - 0x00ABCA 02:ABBA: A9 04     LDA #$04
@@ -11838,7 +11838,7 @@ C - - - - - 0x00B1A2 02:B192: BD A3 04  LDA ram_направление_движ�
 C - - - - - 0x00B1A5 02:B195: 09 40     ORA #$40
 C - - - - - 0x00B1A7 02:B197: 9D 96 04  STA ram_movement_angle,X
 loc_B19A:
-C D 1 - - - 0x00B1AA 02:B19A: A9 2B     LDA #con_sfx_jump
+C D 1 - - - 0x00B1AA 02:B19A: A9 2B     LDA #con_sfx_прыжок
 C - - - - - 0x00B1AC 02:B19C: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x00B1AF 02:B19F: A9 0A     LDA #$0A
 C - - - - - 0x00B1B1 02:B1A1: 20 A1 B2  JSR sub_B2A1
@@ -13098,7 +13098,7 @@ ofs_B82C_26:
 C - - J - - 0x00B83C 02:B82C: BD 59 04  LDA ram_movement_id_player,X
 C - - - - - 0x00B83F 02:B82F: 30 0D     BMI bra_B83E
 C - - - - - 0x00B841 02:B831: 20 82 B2  JSR sub_B282
-C - - - - - 0x00B844 02:B834: A9 2B     LDA #con_sfx_jump
+C - - - - - 0x00B844 02:B834: A9 2B     LDA #con_sfx_прыжок
 C - - - - - 0x00B846 02:B836: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x00B849 02:B839: A9 00     LDA #$00
 loc_B83B:
@@ -13863,7 +13863,7 @@ ofs_BB78_00:
 - - - - - - 0x00BBB0 02:BBA0: 20 3C BB  JSR sub_BB3C
 - - - - - - 0x00BBB3 02:BBA3: 20 1B AA  JSR sub_0x01C2AE
 - - - - - - 0x00BBB6 02:BBA6: 20 59 C0  JSR sub_0x01D05F
-- - - - - - 0x00BBB9 02:BBA9: A9 0B     LDA #con_music_КУБОК
+- - - - - - 0x00BBB9 02:BBA9: A9 0B     LDA #con_music_кубок
 - - - - - - 0x00BBBB 02:BBAB: 20 02 C0  JSR sub_0x01C2F4_play_sound
 loc_BBAE:
 - - - - - - 0x00BBBE 02:BBAE: E6 59     INC ram_subscript
@@ -13989,7 +13989,7 @@ bra_BC27:
 - - - - - - 0x00BCCA 02:BCBA: EE 8A 05  INC ram_таймер_демо_hi
 - - - - - - 0x00BCCD 02:BCBD: 20 D4 BE  JSR sub_BED4
 - - - - - - 0x00BCD0 02:BCC0: 20 59 C0  JSR sub_0x01D05F
-- - - - - - 0x00BCD3 02:BCC3: A9 0E     LDA #con_music_ФИНАЛ
+- - - - - - 0x00BCD3 02:BCC3: A9 0E     LDA #con_music_финал
 - - - - - - 0x00BCD5 02:BCC5: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x00BCD8 02:BCC8: A9 80     LDA #$80
 - - - - - - 0x00BCDA 02:BCCA: 8D 8B 05  STA ram_флаг_демо
@@ -14263,11 +14263,11 @@ sub_BE9B:
 - - - - - - 0x00BEB9 02:BEA9: B0 13     BCS bra_BEBE_RTS
 - - - - - - 0x00BEBB 02:BEAB: A9 40     LDA #$40
 - - - - - - 0x00BEBD 02:BEAD: 20 BF BE  JSR sub_BEBF
-- - - - - - 0x00BEC0 02:BEB0: A9 4C     LDA #con_sfx_ТЕБЕ_ЗВОНЯТ
+- - - - - - 0x00BEC0 02:BEB0: A9 4C     LDA #con_sfx_тебе_звонят
 - - - - - - 0x00BEC2 02:BEB2: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x00BEC5 02:BEB5: 18        CLC
 - - - - - - 0x00BEC6 02:BEB6: 90 06     BCC bra_BEBE_RTS
-- - - - - - 0x00BEC8 02:BEB8: A9 4E     LDA #con_sfx_ТЫ_ПОДНИМАЕШЬ_ТРУБКУ
+- - - - - - 0x00BEC8 02:BEB8: A9 4E     LDA #con_sfx_ты_поднимаешь_трубку
 - - - - - - 0x00BECA 02:BEBA: 20 02 C0  JSR sub_0x01C2F4_play_sound
 - - - - - - 0x00BECD 02:BEBD: 38        SEC
 bra_BEBE_RTS:

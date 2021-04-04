@@ -946,7 +946,7 @@ C - - - - - 0x01FDA0 07:FD90: D8        CLD
                                         JSR sub_0000_RESET_init
 C - - - - - 0x01C3E7 07:C3D7: A9 06     LDA #con_prg_bank + $06
 C - - - - - 0x01C3E9 07:C3D9: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01C408 07:C3F8: A9 00     LDA #con_music_off
+C - - - - - 0x01C408 07:C3F8: A9 00     LDA #con_music_выкл
 C - - - - - 0x01C40A 07:C3FA: 20 E4 C2  JSR sub_C2E4_play_sound
                                         CLI
 loc_C478_главный_игровой_скрипт:
@@ -1176,7 +1176,7 @@ C - - - - - 0x01C634 07:C624: AD 5A 05  LDA ram_music_id    ; если не вы
 C - - - - - 0x01C637 07:C627: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C63A 07:C62A: 4C 3A C6  JMP loc_C63A
 bra_C62D_пауза_выставлена:
-C - - - - - 0x01C63D 07:C62D: A9 00     LDA #$00   ; con_music_off
+C - - - - - 0x01C63D 07:C62D: A9 00     LDA #$00   ; con_music_выкл
 C - - - - - 0x01C63F 07:C62F: 8D FD 06  STA ram_счетчик_комбы_на_паузе
 C - - - - - 0x01C642 07:C632: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C645 07:C635: A9 2D     LDA #con_sfx_violation
@@ -1266,7 +1266,7 @@ C - - - - - 0x01C700 07:C6F0: C9 FF     CMP #$FF
 C - - - - - 0x01C702 07:C6F2: F0 12     BEQ bra_C706
 bra_C6F4:
 C - - - - - 0x01C704 07:C6F4: 20 47 D0  JSR sub_D047
-C - - - - - 0x01C707 07:C6F7: A9 00     LDA #con_music_off
+C - - - - - 0x01C707 07:C6F7: A9 00     LDA #con_music_выкл
 C - - - - - 0x01C709 07:C6F9: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01C70C 07:C6FC: A9 FF     LDA #$FF
 C - - - - - 0x01C70E 07:C6FE: 8D E2 05  STA ram_таймер_катсцены
@@ -1294,7 +1294,7 @@ C - - - - - 0x01C734 07:C724: 20 58 CA  JSR sub_CA58
 C - - - - - 0x01C737 07:C727: 20 49 C2  JSR sub_C249
 C - - - - - 0x01C73A 07:C72A: 20 CB EC  JSR sub_ECCB_отобразить_фон_и_спрайты
 C - - - - - 0x01C73D 07:C72D: 20 65 EE  JSR sub_EE65_enable_NMI
-C - - - - - 0x01C740 07:C730: A9 0C     LDA #con_music_spectators
+C - - - - - 0x01C740 07:C730: A9 0C     LDA #con_music_зрители
 C - - - - - 0x01C742 07:C732: 20 E4 C2  JSR sub_C2E4_play_sound
 loc_C735:
 C D 2 - - - 0x01C745 07:C735: A9 00     LDA #$00
@@ -1376,7 +1376,7 @@ C - - - - - 0x01C7CE 07:C7BE: C9 F0     CMP #$F0
 C - - - - - 0x01C7D0 07:C7C0: 90 0B     BCC bra_C7CD_RTS
 bra_C7C2:
 C - - - - - 0x01C7D2 07:C7C2: 20 47 D0  JSR sub_D047
-C - - - - - 0x01C7D5 07:C7C5: A9 00     LDA #$00    ; con_music_off
+C - - - - - 0x01C7D5 07:C7C5: A9 00     LDA #$00    ; con_music_выкл
 C - - - - - 0x01C7D7 07:C7C7: 8D E8 05  STA ram_footprint_hi_2006
 C - - - - - 0x01C7DA 07:C7CA: 20 E4 C2  JSR sub_C2E4_play_sound
 bra_C7CD_RTS:
@@ -1904,7 +1904,7 @@ C - - - - - 0x01CB81 07:CB71: D0 12     BNE bra_CB85_нажата_неправи
 - - - - - - 0x01CB86 07:CB76: AD FD 06  LDA ram_счетчик_комбы_на_паузе
 - - - - - - 0x01CB89 07:CB79: C9 0F     CMP #$0F
 - - - - - - 0x01CB8B 07:CB7B: D0 05     BNE bra_CB82
-- - - - - - 0x01CB8D 07:CB7D: A9 38     LDA #con_sfx_spin_guinea    ; bzk опт, какой-то стремный код
+- - - - - - 0x01CB8D 07:CB7D: A9 38     LDA #con_sfx_крутилка_гвинейская    ; bzk опт, какой-то стремный код
 - - - - - - 0x01CB8F 07:CB7F: 20 E4 C2  JSR sub_C2E4_play_sound     ; возможно некая скрытая комбинация на паузе
 bra_CB82:
 - - - - - - 0x01CB92 07:CB82: 4C 8F CB  JMP loc_CB8F    ; bzk опт
@@ -2187,7 +2187,7 @@ C - - - - - 0x01CD81 07:CD71: B0 06     BCS bra_CD79
 - - - - - - 0x01CD86 07:CD76: 9D 86 03  STA ram_pos_Z_lo_player,X
 bra_CD79:
 C - - - - - 0x01CD89 07:CD79: BD 30 01  LDA ram_surface_player,X
-C - - - - - 0x01CD8C 07:CD7C: C9 02     CMP #con_НА_ГРЯЗИ
+C - - - - - 0x01CD8C 07:CD7C: C9 02     CMP #con_на_грязи
 C - - - - - 0x01CD8E 07:CD7E: D0 46     BNE bra_CDC6_RTS
 - - - - - - 0x01CD90 07:CD80: BD F6 03  LDA ram_spd_X_hi_player,X
 - - - - - - 0x01CD93 07:CD83: 1D E8 03  ORA ram_spd_X_lo_player,X
@@ -2196,9 +2196,9 @@ C - - - - - 0x01CD8E 07:CD7E: D0 46     BNE bra_CDC6_RTS
 - - - - - - 0x01CD9C 07:CD8C: F0 38     BEQ bra_CDC6_RTS
 - - - - - - 0x01CD9E 07:CD8E: 20 F0 E6  JSR sub_E6F0_вычислить_surface
 - - - - - - 0x01CDA1 07:CD91: BD 30 01  LDA ram_surface_player,X
-- - - - - - 0x01CDA4 07:CD94: C9 02     CMP #con_НА_ГРЯЗИ
+- - - - - - 0x01CDA4 07:CD94: C9 02     CMP #con_на_грязи
 - - - - - - 0x01CDA6 07:CD96: F0 2E     BEQ bra_CDC6_RTS
-- - - - - - 0x01CDA8 07:CD98: A9 02     LDA #con_НА_ГРЯЗИ
+- - - - - - 0x01CDA8 07:CD98: A9 02     LDA #con_на_грязи
 - - - - - - 0x01CDAA 07:CD9A: 9D 30 01  STA ram_surface_player,X
 - - - - - - 0x01CDAD 07:CD9D: AD 13 05  LDA ram_0513
 - - - - - - 0x01CDB0 07:CDA0: 9D 14 03  STA ram_pos_X_lo_player,X
@@ -4347,7 +4347,7 @@ C - - - - - 0x01D7A6 07:D796: C9 06     CMP #$06
 C - - - - - 0x01D7A8 07:D798: F0 09     BEQ bra_D7A3_RTS
 C - - - - - 0x01D7AA 07:D79A: A9 40     LDA #con_gp_time_up
 C - - - - - 0x01D7AC 07:D79C: 85 5C     STA ram_flag_gameplay
-C - - - - - 0x01D7AE 07:D79E: A9 31     LDA #con_sfx_time_up
+C - - - - - 0x01D7AE 07:D79E: A9 31     LDA #con_sfx_время_вышло
 C - - - - - 0x01D7B0 07:D7A0: 20 E4 C2  JSR sub_C2E4_play_sound
 bra_D7A3_RTS:
 C - - - - - 0x01D7B3 07:D7A3: 60        RTS
@@ -7005,14 +7005,14 @@ C - - - - - 0x01E7B1 07:E7A1: F0 0B     BEQ bra_E7C4_на_траве
 - - - - - - 0x01E7B9 07:E7A9: 69 01     ADC #$01
 - - - - - - 0x01E7BB 07:E7AB: 4C B0 E7  BNE bra_E7D1_запись_surface
 bra_E7B3_на_песке:
-C - - - - - 0x01E7C3 07:E7B3: A9 03     LDA #con_НА_ПЕСКЕ
+C - - - - - 0x01E7C3 07:E7B3: A9 03     LDA #con_на_песке
 C - - - - - 0x01E7C5 07:E7B5: 4C D1 E7  BNE bra_E7D1_запись_surface
 loc_E7BD:
 C D 3 - - - 0x01E7CD 07:E7BD: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x01E7D0 07:E7C0: 29 01     AND #$01
 C - - - - - 0x01E7D2 07:E7C2: F0 05     BEQ bra_E7C9
 bra_E7C4_на_траве:
-- - - - - - 0x01E7D4 07:E7C4: A9 00     LDA #con_НА_ТРАВЕ
+- - - - - - 0x01E7D4 07:E7C4: A9 00     LDA #con_на_траве
 - - - - - - 0x01E7D6 07:E7C6: 4C D1 E7  BEQ bra_E7D1_запись_surface
 bra_E7C9:
 C - - - - - 0x01E7D9 07:E7C9: AD FB 05  LDA ram_опция_поверхность_влажность
@@ -7092,7 +7092,7 @@ C - - - - - 0x01E883 07:E873: B9 12 EA  LDA tbl_EA12,Y
 C - - - - - 0x01E886 07:E876: 85 2E     STA ram_002E
 C - - - - - 0x01E888 07:E878: B9 13 EA  LDA tbl_EA12 + 1,Y
 C - - - - - 0x01E88B 07:E87B: 85 2F     STA ram_002F
-C - - - - - 0x01E88D 07:E87D: A9 00     LDA #con_music_off
+C - - - - - 0x01E88D 07:E87D: A9 00     LDA #con_music_выкл
 C - - - - - 0x01E88F 07:E87F: 20 E4 C2  JSR sub_C2E4_play_sound
 C - - - - - 0x01E892 07:E882: 20 A9 EC  JSR sub_ECA9_выключить_NMI_при_следующем_вызове
 C - - - - - 0x01E895 07:E885: 20 71 EE  JSR sub_EE71_disable_NMI
