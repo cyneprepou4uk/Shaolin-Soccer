@@ -60,12 +60,6 @@ C - - - - - 0x014098 05:8088: 4C 7A 80  RTS
 
 
 
-ofs_809D_04_раздевалка:
-C - - J - - 0x0140AD 05:809D: 20 F9 8F  JSR sub_8FF9
-C - - - - - 0x0140B0 05:80A0: 4C 7A 80  RTS
-
-
-
 ofs_80A3_05_выбор_команд:
 C - - J - - 0x0140B3 05:80A3: 20 BE 8A  JSR sub_8ABE
 C - - - - - 0x0140B6 05:80A6: 4C 7A 80  RTS
@@ -2779,7 +2773,7 @@ off_8FF4_04:
 
 
 
-sub_8FF9:
+ofs_809D_04_раздевалка:
 C - - - - - 0x015009 05:8FF9: A5 59     LDA ram_subscript
 C - - - - - 0x01500B 05:8FFB: 30 12     BMI bra_900F
 C - - - - - 0x01500D 05:8FFD: 20 DF 80  JSR sub_80DF
