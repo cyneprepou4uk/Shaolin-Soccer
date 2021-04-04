@@ -31,7 +31,7 @@ C - - J - - 0x01401C 05:800C: 4C 84 BB  JMP loc_BB84
 
 
 
-loc_8055_menu_script:
+loc_8055_menu_script: ;  а инфа?
 C D 0 - - - 0x014065 05:8055: A5 59     LDA ram_subscript
 C - - - - - 0x014067 05:8057: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x01406A 05:805A: 83 80     .word ofs_8083_00_переход_от_скрипта_логотипа_к_скрипту_меню
