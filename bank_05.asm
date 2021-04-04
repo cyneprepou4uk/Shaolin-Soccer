@@ -60,12 +60,6 @@ C - - - - - 0x014098 05:8088: 4C 7A 80  RTS
 
 
 
-ofs_80D9_0F:
-- - - - - - 0x0140E9 05:80D9: 20 7C B4  JSR sub_B47C
-- - - - - - 0x0140EC 05:80DC: 4C 7A 80  RTS
-
-
-
 sub_80DF:
 C - - - - - 0x0140EF 05:80DF: A9 80     LDA #con_nmi_disable_irq
 C - - - - - 0x0140F1 05:80E1: 85 4F     STA ram_NMI_flag
@@ -9528,7 +9522,7 @@ tbl_B46C:
 
 
 
-sub_B47C:
+ofs_80D9_0F:
 - - - - - - 0x01748C 05:B47C: A5 59     LDA ram_subscript
 - - - - - - 0x01748E 05:B47E: 30 0E     BMI bra_B48E
 - - - - - - 0x017490 05:B480: 20 DF 80  JSR sub_80DF
