@@ -7003,18 +7003,18 @@ C - - - - - 0x01E7B1 07:E7A1: F0 0B     BEQ bra_E7AE
 - - - - - - 0x01E7B6 07:E7A6: 29 0F     AND #$0F
 - - - - - - 0x01E7B8 07:E7A8: 18        CLC
 - - - - - - 0x01E7B9 07:E7A9: 69 01     ADC #$01
-- - - - - - 0x01E7BB 07:E7AB: 4C B0 E7  JMP bra_E7B0
+- - - - - - 0x01E7BB 07:E7AB: 4C B0 E7  JMP loc_E7B0
 bra_E7AE:
 C - - - - - 0x01E7BE 07:E7AE: A9 00     LDA #con_НА_ТРАВЕ
-bra_E7B0:   ; bzk опт
-C - - - - - 0x01E7C0 07:E7B0: 4C D1 E7  BEQ bra_E7D1
+loc_E7B0:   ; bzk опт
+C - - - - - 0x01E7C0 07:E7B0: 4C D1 E7  JMP loc_E7D1
 bra_E7B3:
 C - - - - - 0x01E7C3 07:E7B3: A9 03     LDA #con_НА_ПЕСКЕ
-C - - - - - 0x01E7C5 07:E7B5: 4C D1 E7  BNE bra_E7D1
+C - - - - - 0x01E7C5 07:E7B5: 4C D1 E7  JMP loc_E7D1
 bra_E7B8:   ; bzk опт
 C - - - - - 0x01E7C8 07:E7B8: A9 00     LDA #con_НА_ТРАВЕ
-C - - - - - 0x01E7CA 07:E7BA: 4C D1 E7  BEQ bra_E7D1
-bra_E7BD:
+C - - - - - 0x01E7CA 07:E7BA: 4C D1 E7  JMP loc_E7D1
+loc_E7BD:
 C D 3 - - - 0x01E7CD 07:E7BD: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x01E7D0 07:E7C0: 29 01     AND #$01
 C - - - - - 0x01E7D2 07:E7C2: F0 05     BEQ bra_E7C9
@@ -7025,7 +7025,7 @@ C - - - - - 0x01E7D9 07:E7C9: AD FB 05  LDA ram_опция_поверхност�
 C - - - - - 0x01E7DC 07:E7CC: 29 0F     AND #$0F
 C - - - - - 0x01E7DE 07:E7CE: 18        CLC
 C - - - - - 0x01E7DF 07:E7CF: 69 01     ADC #$01
-bra_E7D1:
+loc_E7D1:
 C D 3 - - - 0x01E7E1 07:E7D1: 9D 30 01  STA ram_surface_player,X
 C - - - - - 0x01E7E4 07:E7D4: 68        PLA
 C - - - - - 0x01E7E5 07:E7D5: 20 D3 EE  JSR sub_EED3_prg_bankswitch
