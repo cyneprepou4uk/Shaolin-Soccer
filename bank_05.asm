@@ -52,7 +52,7 @@ C - - - - - 0x014067 05:8057: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_
 - - - - - - 0x014088 05:8078: D9 80     .word ofs_80D9_0F
 
 
-
+; bzk мусор
 - - - - - - 0x01408B 05:807B: A5 59     LDA ram_subscript
 - - - - - - 0x01408D 05:807D: 30 03     BMI bra_8082_RTS
 - - - - - - 0x01408F 05:807F: 20 DF 80  JSR sub_80DF
@@ -317,8 +317,8 @@ C - - - - - 0x014209 05:81F9: 8A        TXA
 C - - - - - 0x01420A 05:81FA: 29 01     AND #$01
 C - - - - - 0x01420C 05:81FC: A8        TAY
 C - - - - - 0x01420D 05:81FD: A5 1C     LDA ram_001C
-bra_81FF:
-C - - - - - 0x01420F 05:81FF: 30 FE     BMI bra_81FF
+bra_81FF_infinite_loop:
+C - - - - - 0x01420F 05:81FF: 30 FE     BMI bra_81FF_infinite_loop
 C - - - - - 0x014211 05:8201: 99 CA 05  STA ram_номер_опции,Y
 bra_8204_RTS:
 C - - - - - 0x014214 05:8204: 60        RTS
@@ -372,14 +372,14 @@ C - - - - - 0x014254 05:8244: A9 00     LDA #$00
 C - - - - - 0x014256 05:8246: 9D 27 03  STA ram_pos_X_hi_player,X
 C - - - - - 0x014259 05:8249: 9D 60 03  STA ram_pos_Y_hi_player,X
 C - - - - - 0x01425C 05:824C: A0 00     LDY #$00
-bra_824E:
+bra_824E_loop:
 C - - - - - 0x01425E 05:824E: 1E 14 03  ASL ram_pos_X_lo_player,X
 C - - - - - 0x014261 05:8251: 3E 27 03  ROL ram_pos_X_hi_player,X
 C - - - - - 0x014264 05:8254: 1E 4D 03  ASL ram_pos_Y_lo_player,X
 C - - - - - 0x014267 05:8257: 3E 60 03  ROL ram_pos_Y_hi_player,X
 C - - - - - 0x01426A 05:825A: C8        INY
 C - - - - - 0x01426B 05:825B: C0 03     CPY #$03
-C - - - - - 0x01426D 05:825D: 90 EF     BCC bra_824E
+C - - - - - 0x01426D 05:825D: 90 EF     BCC bra_824E_loop
 C - - - - - 0x01426F 05:825F: AD CE 05  LDA ram_05CE
 C - - - - - 0x014272 05:8262: 29 0F     AND #$0F
 C - - - - - 0x014274 05:8264: 18        CLC
@@ -488,12 +488,12 @@ C - - - - - 0x014329 05:8319: 85 30     STA ram_0030
 C - - - - - 0x01432B 05:831B: A9 00     LDA #$00
 C - - - - - 0x01432D 05:831D: 85 31     STA ram_0031
 C - - - - - 0x01432F 05:831F: A0 00     LDY #$00
-bra_8321:
+bra_8321_loop:
 C - - - - - 0x014331 05:8321: 06 30     ASL ram_0030
 C - - - - - 0x014333 05:8323: 26 31     ROL ram_0031
 C - - - - - 0x014335 05:8325: C8        INY
 C - - - - - 0x014336 05:8326: C0 05     CPY #$05
-C - - - - - 0x014338 05:8328: 90 F7     BCC bra_8321
+C - - - - - 0x014338 05:8328: 90 F7     BCC bra_8321_loop
 C - - - - - 0x01433A 05:832A: 18        CLC
 C - - - - - 0x01433B 05:832B: A5 1D     LDA ram_001D
 C - - - - - 0x01433D 05:832D: 65 30     ADC ram_0030
@@ -565,10 +565,10 @@ C - - - - - 0x0143CA 05:83BA: A9 02     LDA #con_music_menu
 C - - - - - 0x0143CC 05:83BC: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x0143CF 05:83BF: A2 09     LDX #$09
 C - - - - - 0x0143D1 05:83C1: A9 00     LDA #$00
-bra_83C3:
+bra_83C3_loop:
 C - - - - - 0x0143D3 05:83C3: 9D 6E 04  STA ram_046E,X
 C - - - - - 0x0143D6 05:83C6: CA        DEX
-C - - - - - 0x0143D7 05:83C7: 10 FA     BPL bra_83C3
+C - - - - - 0x0143D7 05:83C7: 10 FA     BPL bra_83C3_loop
 C - - - - - 0x0143D9 05:83C9: 60        RTS
 
 
@@ -829,9 +829,9 @@ ofs_8574_07_Left:
 C - - J - - 0x014584 05:8574: 38        SEC
 C - - - - - 0x014585 05:8575: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x014588 05:8578: E9 01     SBC #$01
-C - - - - - 0x01458A 05:857A: 10 02     BPL bra_857E
+C - - - - - 0x01458A 05:857A: 10 02     BPL bra_857E_запись_номера_опции
 C - - - - - 0x01458C 05:857C: A9 09     LDA #$09
-bra_857E:
+bra_857E_запись_номера_опции:
 loc_857E:
 C D 0 - - - 0x01458E 05:857E: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x014591 05:8581: 4C 60 85  JMP loc_8560
@@ -843,7 +843,7 @@ C - - J - - 0x014594 05:8584: 18        CLC
 C - - - - - 0x014595 05:8585: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x014598 05:8588: 69 01     ADC #$01
 C - - - - - 0x01459A 05:858A: C9 0A     CMP #$0A
-C - - - - - 0x01459C 05:858C: 90 F0     BCC bra_857E
+C - - - - - 0x01459C 05:858C: 90 F0     BCC bra_857E_запись_номера_опции
 C - - - - - 0x01459E 05:858E: A9 00     LDA #$00
 C - - - - - 0x0145A0 05:8590: 4C 7E 85  JMP loc_857E
 
@@ -1003,11 +1003,11 @@ C - - - - - 0x014628 05:8618: A9 01     LDA #$01
 C - - - - - 0x01462A 05:861A: 4C 34 86  JMP loc_8634_запись_номера_опции
 bra_861D_not_minibattle:
 C - - - - - 0x01462D 05:861D: 0A        ASL
-C - - - - - 0x01462E 05:861E: 10 06     BPL bra_8626_not_pk_menu
+C - - - - - 0x01462E 05:861E: 10 06     BPL bra_8626_not_pk
 - - - - - - 0x014630 05:8620: 18        CLC
 - - - - - - 0x014631 05:8621: A9 02     LDA #$02
 - - - - - - 0x014633 05:8623: 4C 34 86  JMP loc_8634_запись_номера_опции
-bra_8626_not_pk_menu:
+bra_8626_not_pk:
 C - - - - - 0x014636 05:8626: 0A        ASL
 C - - - - - 0x014637 05:8627: 10 05     BPL bra_862E
 - - - - - - 0x014639 05:8629: A9 03     LDA #$03    ; bzk мусор, других опций нету
@@ -1415,7 +1415,7 @@ C - - - - - 0x01483F 05:882F: A0 00     LDY #$00
 C - - - - - 0x014841 05:8831: AD 2D 05  LDA ram_номер_команды + 1
 C - - - - - 0x014844 05:8834: 29 0F     AND #$0F
 C - - - - - 0x014846 05:8836: 85 1C     STA ram_001C
-bra_8838:
+bra_8838_loop:
 C - - - - - 0x014848 05:8838: B9 F9 89  LDA tbl_89F9,Y
 C - - - - - 0x01484B 05:883B: 29 0F     AND #$0F
 C - - - - - 0x01484D 05:883D: C5 1C     CMP ram_001C
@@ -1423,7 +1423,7 @@ C - - - - - 0x01484F 05:883F: F0 08     BEQ bra_8849
 C - - - - - 0x014851 05:8841: C8        INY
 C - - - - - 0x014852 05:8842: C8        INY
 C - - - - - 0x014853 05:8843: C0 18     CPY #$18
-C - - - - - 0x014855 05:8845: 90 F1     BCC bra_8838
+C - - - - - 0x014855 05:8845: 90 F1     BCC bra_8838_loop
 C - - - - - 0x014857 05:8847: A0 00     LDY #$00
 bra_8849:
 C - - - - - 0x014859 05:8849: 98        TYA
@@ -1530,7 +1530,7 @@ C - - - - - 0x0148EA 05:88DA: 85 30     STA ram_0030
 C - - - - - 0x0148EC 05:88DC: B9 2C 89  LDA tbl_892B + 1,Y
 C - - - - - 0x0148EF 05:88DF: 85 31     STA ram_0031
 C - - - - - 0x0148F1 05:88E1: A2 00     LDX #$00
-bra_88E3:
+bra_88E3_loop:
 C - - - - - 0x0148F3 05:88E3: B9 3F 89  LDA tbl_893F,Y
 C - - - - - 0x0148F6 05:88E6: 9D B9 06  STA ram_буфер_графики,X
 C - - - - - 0x0148F9 05:88E9: E8        INX
@@ -1540,7 +1540,7 @@ C - - - - - 0x0148FD 05:88ED: D0 01     BNE bra_88F0
 C - - - - - 0x0148FF 05:88EF: C8        INY
 bra_88F0:
 C - - - - - 0x014900 05:88F0: E0 10     CPX #$10
-C - - - - - 0x014902 05:88F2: 90 EF     BCC bra_88E3
+C - - - - - 0x014902 05:88F2: 90 EF     BCC bra_88E3_loop
 C - - - - - 0x014904 05:88F4: A0 02     LDY #$02
 bra_88F6_loop:
 C - - - - - 0x014906 05:88F6: B1 30     LDA (ram_0030),Y
@@ -1562,18 +1562,18 @@ C - - - - - 0x01491B 05:890B: 85 30     STA ram_0030
 C - - - - - 0x01491D 05:890D: B9 2C 89  LDA tbl_892B + 1,Y
 C - - - - - 0x014920 05:8910: 85 31     STA ram_0031
 C - - - - - 0x014922 05:8912: A2 00     LDX #$00
-bra_8914:
+bra_8914_loop:
 C - - - - - 0x014924 05:8914: A9 FF     LDA #$FF
 C - - - - - 0x014926 05:8916: 9D 96 06  STA ram_буфер_атрибутов,X
 C - - - - - 0x014929 05:8919: E8        INX
 C - - - - - 0x01492A 05:891A: E0 10     CPX #$10
-C - - - - - 0x01492C 05:891C: 90 F6     BCC bra_8914
+C - - - - - 0x01492C 05:891C: 90 F6     BCC bra_8914_loop
 C - - - - - 0x01492E 05:891E: A0 02     LDY #$02
-bra_8920:
+bra_8920_loop:
 C - - - - - 0x014930 05:8920: B1 30     LDA (ram_0030),Y
 C - - - - - 0x014932 05:8922: 99 93 06  STA ram_байт_2006_hi_атрибуты,Y
 C - - - - - 0x014935 05:8925: 88        DEY
-C - - - - - 0x014936 05:8926: 10 F8     BPL bra_8920
+C - - - - - 0x014936 05:8926: 10 F8     BPL bra_8920_loop
 C - - - - - 0x014938 05:8928: A4 44     LDY ram_0044
 C - - - - - 0x01493A 05:892A: 60        RTS
 
@@ -1652,7 +1652,7 @@ C - - - - - 0x014989 05:8979: 8D 06 20  STA $2006
 C - - - - - 0x01498C 05:897C: B9 E1 89  LDA tbl_89E1_ppu,Y
 C - - - - - 0x01498F 05:897F: 8D 06 20  STA $2006
 C - - - - - 0x014992 05:8982: A0 00     LDY #$00
-bra_8984:
+bra_8984_loop:
 C - - - - - 0x014994 05:8984: A5 1C     LDA ram_001C
 C - - - - - 0x014996 05:8986: 10 05     BPL bra_898D
 C - - - - - 0x014998 05:8988: A9 16     LDA #$16
@@ -1664,7 +1664,7 @@ C D 0 - - - 0x01499F 05:898F: 8D 07 20  STA $2007
 C - - - - - 0x0149A2 05:8992: 06 1C     ASL ram_001C
 C - - - - - 0x0149A4 05:8994: C8        INY
 C - - - - - 0x0149A5 05:8995: C4 1D     CPY ram_001D
-C - - - - - 0x0149A7 05:8997: 90 EB     BCC bra_8984
+C - - - - - 0x0149A7 05:8997: 90 EB     BCC bra_8984_loop
 bra_8999:
 C - - - - - 0x0149A9 05:8999: E8        INX
 C - - - - - 0x0149AA 05:899A: E0 0C     CPX #$0C
@@ -1748,8 +1748,8 @@ C - - - - - 0x014A21 05:8A11: 85 30     STA ram_0030
 C - - - - - 0x014A23 05:8A13: A9 00     LDA #$00
 C - - - - - 0x014A25 05:8A15: 85 31     STA ram_0031
 C - - - - - 0x014A27 05:8A17: 85 32     STA ram_0032
-bra_8A19:
 loc_8A19:
+bra_8A19_loop:
 C - - - - - 0x014A29 05:8A19: 38        SEC
 C - - - - - 0x014A2A 05:8A1A: A5 30     LDA ram_0030
 C - - - - - 0x014A2C 05:8A1C: E9 0A     SBC #$0A
@@ -1760,7 +1760,7 @@ C - - - - - 0x014A31 05:8A21: 85 30     STA ram_0030
 C - - - - - 0x014A33 05:8A23: E6 31     INC ram_0031
 C - - - - - 0x014A35 05:8A25: A5 31     LDA ram_0031
 C - - - - - 0x014A37 05:8A27: C9 0A     CMP #$0A
-C - - - - - 0x014A39 05:8A29: 90 EE     BCC bra_8A19
+C - - - - - 0x014A39 05:8A29: 90 EE     BCC bra_8A19_loop
 - - - - - - 0x014A3B 05:8A2B: A9 00     LDA #$00
 - - - - - - 0x014A3D 05:8A2D: 85 31     STA ram_0031
 - - - - - - 0x014A3F 05:8A2F: E6 32     INC ram_0032
@@ -1780,7 +1780,7 @@ C - - - - - 0x014A57 05:8A47: A5 30     LDA ram_0030
 C - - - - - 0x014A59 05:8A49: 09 80     ORA #$80
 C - - - - - 0x014A5B 05:8A4B: 85 30     STA ram_0030
 C - - - - - 0x014A5D 05:8A4D: A0 02     LDY #$02
-bra_8A4F:
+bra_8A4F_loop:
 C - - - - - 0x014A5F 05:8A4F: B9 30 00  LDA ram_0030,Y
 C - - - - - 0x014A62 05:8A52: D0 08     BNE bra_8A5C
 C - - - - - 0x014A64 05:8A54: 24 21     BIT ram_0021
@@ -1794,7 +1794,7 @@ C - - - - - 0x014A6E 05:8A5E: 09 80     ORA #$80
 bra_8A60:
 C - - - - - 0x014A70 05:8A60: 8D 07 20  STA $2007
 C - - - - - 0x014A73 05:8A63: 88        DEY
-C - - - - - 0x014A74 05:8A64: 10 E9     BPL bra_8A4F
+C - - - - - 0x014A74 05:8A64: 10 E9     BPL bra_8A4F_loop
 C - - - - - 0x014A76 05:8A66: 60        RTS
 
 tbl_8A67_ppu:
@@ -1806,11 +1806,11 @@ tbl_8A67_ppu:
 
 sub_8A6D:
 C - - - - - 0x014A7D 05:8A6D: A0 09     LDY #$09
-bra_8A6F:
+bra_8A6F_loop:
 C - - - - - 0x014A7F 05:8A6F: B9 2C 00  LDA ram_002C,Y
 C - - - - - 0x014A82 05:8A72: 99 6E 04  STA ram_046E,Y
 C - - - - - 0x014A85 05:8A75: 88        DEY
-C - - - - - 0x014A86 05:8A76: 10 F7     BPL bra_8A6F
+C - - - - - 0x014A86 05:8A76: 10 F7     BPL bra_8A6F_loop
 C - - - - - 0x014A88 05:8A78: 60        RTS
 
 
@@ -1839,15 +1839,15 @@ C - - - - - 0x014AB7 05:8AA7: 60        RTS
 
 
 
-bra_8AA8:
 sub_8AA8:
+bra_8AA8_loop:
 C - - - - - 0x014AB8 05:8AA8: B9 6E 04  LDA ram_046E,Y
 C - - - - - 0x014ABB 05:8AAB: 09 80     ORA #$80
 C - - - - - 0x014ABD 05:8AAD: 9D 96 06  STA ram_буфер_атрибутов,X
 C - - - - - 0x014AC0 05:8AB0: E8        INX
 C - - - - - 0x014AC1 05:8AB1: C8        INY
 C - - - - - 0x014AC2 05:8AB2: C4 1C     CPY ram_001C
-C - - - - - 0x014AC4 05:8AB4: 90 F2     BCC bra_8AA8
+C - - - - - 0x014AC4 05:8AB4: 90 F2     BCC bra_8AA8_loop
 C - - - - - 0x014AC6 05:8AB6: 60        RTS
 
 
@@ -2178,7 +2178,7 @@ off_8CAE_02:
 
 sub_8CC6:
 C - - - - - 0x014CD6 05:8CC6: A2 00     LDX #$00
-bra_8CC8:
+bra_8CC8_loop:
 C - - - - - 0x014CD8 05:8CC8: BD CA 05  LDA ram_номер_опции,X
 C - - - - - 0x014CDB 05:8CCB: 29 0F     AND #$0F
 C - - - - - 0x014CDD 05:8CCD: A8        TAY
@@ -2186,7 +2186,7 @@ C - - - - - 0x014CDE 05:8CCE: B9 FE 8C  LDA tbl_8CFE,Y
 C - - - - - 0x014CE1 05:8CD1: 9D 2C 05  STA ram_номер_команды,X
 C - - - - - 0x014CE4 05:8CD4: E8        INX
 C - - - - - 0x014CE5 05:8CD5: E0 02     CPX #$02
-C - - - - - 0x014CE7 05:8CD7: 90 EF     BCC bra_8CC8
+C - - - - - 0x014CE7 05:8CD7: 90 EF     BCC bra_8CC8_loop
 C - - - - - 0x014CE9 05:8CD9: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x014CEB 05:8CDB: 29 20     AND #con_gm_penalty
 C - - - - - 0x014CED 05:8CDD: F0 0E     BEQ bra_8CED_RTS
@@ -2235,11 +2235,11 @@ C - - - - - 0x014D20 05:8D10: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_
 C - - - - - 0x014D23 05:8D13: 24 57     BIT ram_option_mode_difficulty
 C - - - - - 0x014D25 05:8D15: 70 0B     BVS bra_8D22_minibattle
 C - - - - - 0x014D27 05:8D17: A0 04     LDY #$04
-bra_8D19:
+bra_8D19_loop:
 C - - - - - 0x014D29 05:8D19: B9 61 8D  LDA tbl_8D61,Y
 C - - - - - 0x014D2C 05:8D1C: 99 93 06  STA ram_байт_2006_hi_атрибуты,Y
 C - - - - - 0x014D2F 05:8D1F: 88        DEY
-C - - - - - 0x014D30 05:8D20: 10 F7     BPL bra_8D19
+C - - - - - 0x014D30 05:8D20: 10 F7     BPL bra_8D19_loop
 bra_8D22_minibattle:
 C - - - - - 0x014D32 05:8D22: A5 5D     LDA ram_players_cnt
 C - - - - - 0x014D34 05:8D24: 09 80     ORA #$80
@@ -2465,7 +2465,7 @@ C D 0 - - - 0x014E4B 05:8E3B: 60        RTS
 
 sub_8E3C:
 C - - - - - 0x014E4C 05:8E3C: A2 00     LDX #$00
-bra_8E3E:
+bra_8E3E_loop:
 C - - - - - 0x014E4E 05:8E3E: 86 43     STX ram_0043
 C - - - - - 0x014E50 05:8E40: E0 02     CPX #$02
 C - - - - - 0x014E52 05:8E42: B0 15     BCS bra_8E59
@@ -2487,16 +2487,16 @@ C - - - - - 0x014E73 05:8E63: 0A        ASL
 C - - - - - 0x014E74 05:8E64: AA        TAX
 C - - - - - 0x014E75 05:8E65: BD D5 8E  LDA tbl_8ED5,X
 C - - - - - 0x014E78 05:8E68: 99 14 03  STA ram_pos_X_lo_player,Y
-C - - - - - 0x014E7B 05:8E6B: BD D6 8E  LDA tbl_8ED6,X
+C - - - - - 0x014E7B 05:8E6B: BD D6 8E  LDA tbl_8ED5 + 1,X
 C - - - - - 0x014E7E 05:8E6E: 99 27 03  STA ram_pos_X_hi_player,Y
-C - - - - - 0x014E81 05:8E71: BD D7 8E  LDA tbl_8ED7,X
+C - - - - - 0x014E81 05:8E71: BD D7 8E  LDA tbl_8ED5 + 2,X
 C - - - - - 0x014E84 05:8E74: 99 4D 03  STA ram_pos_Y_lo_player,Y
-C - - - - - 0x014E87 05:8E77: BD D8 8E  LDA tbl_8ED8,X
+C - - - - - 0x014E87 05:8E77: BD D8 8E  LDA tbl_8ED5 + 3,X
 C - - - - - 0x014E8A 05:8E7A: 99 60 03  STA ram_pos_Y_hi_player,Y
 C - - - - - 0x014E8D 05:8E7D: A6 43     LDX ram_0043
 C - - - - - 0x014E8F 05:8E7F: E8        INX
 C - - - - - 0x014E90 05:8E80: E0 04     CPX #$04
-C - - - - - 0x014E92 05:8E82: 90 BA     BCC bra_8E3E
+C - - - - - 0x014E92 05:8E82: 90 BA     BCC bra_8E3E_loop
 C - - - - - 0x014E94 05:8E84: A9 01     LDA #$01
 C - - - - - 0x014E96 05:8E86: 8D 5C 04  STA ram_movement_id_player + 3
 C - - - - - 0x014E99 05:8E89: AD 29 05  LDA ram_опция_материк
@@ -2505,29 +2505,32 @@ C - - - - - 0x014E9D 05:8E8D: 6D 29 05  ADC ram_опция_материк
 C - - - - - 0x014EA0 05:8E90: A8        TAY
 C - - - - - 0x014EA1 05:8E91: B9 A4 8E  LDA tbl_8EA4,Y
 C - - - - - 0x014EA4 05:8E94: 8D 5A 04  STA ram_movement_id_player + 1
-C - - - - - 0x014EA7 05:8E97: B9 A5 8E  LDA tbl_8EA5,Y
+C - - - - - 0x014EA7 05:8E97: B9 A5 8E  LDA tbl_8EA4 + 1,Y
 C - - - - - 0x014EAA 05:8E9A: 8D B0 05  STA ram_palette_id_spr + 2
-C - - - - - 0x014EAD 05:8E9D: B9 A6 8E  LDA tbl_8EA6,Y
+C - - - - - 0x014EAD 05:8E9D: B9 A6 8E  LDA tbl_8EA4 + 2,Y
 C - - - - - 0x014EB0 05:8EA0: 8D B1 05  STA ram_palette_id_spr + 3
 C - - - - - 0x014EB3 05:8EA3: 60        RTS
 
 
 
 tbl_8EA4:
+; 00
 - D 0 - - - 0x014EB4 05:8EA4: 04        .byte $04   ; 
-tbl_8EA5:
 - D 0 - - - 0x014EB5 05:8EA5: 24        .byte $24   ; 
-tbl_8EA6:
 - D 0 - - - 0x014EB6 05:8EA6: 24        .byte $24   ; 
+; 01
 - D 0 - - - 0x014EB7 05:8EA7: 03        .byte $03   ; 
 - D 0 - - - 0x014EB8 05:8EA8: 23        .byte $23   ; 
 - D 0 - - - 0x014EB9 05:8EA9: 23        .byte $23   ; 
+; 02
 - D 0 - - - 0x014EBA 05:8EAA: 04        .byte $04   ; 
 - D 0 - - - 0x014EBB 05:8EAB: 25        .byte $25   ; 
 - D 0 - - - 0x014EBC 05:8EAC: 25        .byte $25   ; 
+; 03
 - D 0 - - - 0x014EBD 05:8EAD: 02        .byte $02   ; 
 - D 0 - - - 0x014EBE 05:8EAE: 1A        .byte $1A   ; 
 - D 0 - - - 0x014EBF 05:8EAF: 1B        .byte $1B   ; 
+; 04 bzk мусор? лишний материк
 - - - - - - 0x014EC0 05:8EB0: 03        .byte $03   ; 
 - - - - - - 0x014EC1 05:8EB1: 23        .byte $23   ; 
 - - - - - - 0x014EC2 05:8EB2: 23        .byte $23   ; 
@@ -2577,31 +2580,24 @@ tbl_8EC3:
 
 
 tbl_8ED5:
-- D 0 - - - 0x014EE5 05:8ED5: 40        .byte $40   ; 
-tbl_8ED6:
-- D 0 - - - 0x014EE6 05:8ED6: 00        .byte $00   ; 
-tbl_8ED7:
-- D 0 - - - 0x014EE7 05:8ED7: 97        .byte $97   ; 
-tbl_8ED8:
-- D 0 - - - 0x014EE8 05:8ED8: 00        .byte $00   ; 
-- D 0 - - - 0x014EE9 05:8ED9: B8        .byte $B8   ; 
-- D 0 - - - 0x014EEA 05:8EDA: 00        .byte $00   ; 
-- D 0 - - - 0x014EEB 05:8EDB: 97        .byte $97   ; 
-- D 0 - - - 0x014EEC 05:8EDC: 00        .byte $00   ; 
-- D 0 - - - 0x014EED 05:8EDD: 20        .byte $20   ; 
-- D 0 - - - 0x014EEE 05:8EDE: 01        .byte $01   ; 
-- D 0 - - - 0x014EEF 05:8EDF: C8        .byte $C8   ; 
-- D 0 - - - 0x014EF0 05:8EE0: 00        .byte $00   ; 
-- D 0 - - - 0x014EF1 05:8EE1: 20        .byte $20   ; 
-- D 0 - - - 0x014EF2 05:8EE2: 01        .byte $01   ; 
-- D 0 - - - 0x014EF3 05:8EE3: C8        .byte $C8   ; 
-- D 0 - - - 0x014EF4 05:8EE4: 00        .byte $00   ; 
+; 00
+- D 0 - - - 0x014EE5 05:8ED5: 40 00     .word $0040
+- D 0 - - - 0x014EE7 05:8ED7: 97 00     .word $0097
+; 01
+- D 0 - - - 0x014EE9 05:8ED9: B8 00     .word $00B8
+- D 0 - - - 0x014EEB 05:8EDB: 97 00     .word $0097
+; 02
+- D 0 - - - 0x014EED 05:8EDD: 20 01     .word $0120
+- D 0 - - - 0x014EEF 05:8EDF: C8 00     .word $00C8
+; 03
+- D 0 - - - 0x014EF1 05:8EE1: 20 01     .word $0120
+- D 0 - - - 0x014EF3 05:8EE3: C8 00     .word $00C8
 
 
 
 sub_8EE5:
 C - - - - - 0x014EF5 05:8EE5: A2 00     LDX #$00
-bra_8EE7:
+bra_8EE7_loop:
 C - - - - - 0x014EF7 05:8EE7: 86 43     STX ram_0043
 C - - - - - 0x014EF9 05:8EE9: BD FB 8E  LDA tbl_8EFB,X
 C - - - - - 0x014EFC 05:8EEC: AA        TAX
@@ -2610,7 +2606,7 @@ C - - - - - 0x014F00 05:8EF0: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x014F03 05:8EF3: A6 43     LDX ram_0043
 C - - - - - 0x014F05 05:8EF5: E8        INX
 C - - - - - 0x014F06 05:8EF6: E0 04     CPX #$04
-C - - - - - 0x014F08 05:8EF8: 90 ED     BCC bra_8EE7
+C - - - - - 0x014F08 05:8EF8: 90 ED     BCC bra_8EE7_loop
 C - - - - - 0x014F0A 05:8EFA: 60        RTS
 
 
@@ -2675,27 +2671,23 @@ C - - - - - 0x014F68 05:8F58: 38        SEC
 C - - - - - 0x014F69 05:8F59: E9 02     SBC #$02
 C - - - - - 0x014F6B 05:8F5B: 0A        ASL
 C - - - - - 0x014F6C 05:8F5C: A8        TAY
-C - - - - - 0x014F6D 05:8F5D: B9 6D 8F  LDA tbl_8F6D,Y
+C - - - - - 0x014F6D 05:8F5D: B9 6D 8F  LDA tbl_8F6D_spd_X,Y
 C - - - - - 0x014F70 05:8F60: 9D E8 03  STA ram_spd_X_lo_player,X
-C - - - - - 0x014F73 05:8F63: B9 6E 8F  LDA tbl_8F6E,Y
+C - - - - - 0x014F73 05:8F63: B9 6E 8F  LDA tbl_8F6D_spd_X + 1,Y
 C - - - - - 0x014F76 05:8F66: 9D F6 03  STA ram_spd_X_hi_player,X
 C - - - - - 0x014F79 05:8F69: 20 1E 80  JSR sub_0x01C25C
 C - - - - - 0x014F7C 05:8F6C: 60        RTS
 
 
 
-tbl_8F6D:
-- D 0 - - - 0x014F7D 05:8F6D: 80        .byte $80   ; 
-tbl_8F6E:
-- D 0 - - - 0x014F7E 05:8F6E: FF        .byte $FF   ; 
-- D 0 - - - 0x014F7F 05:8F6F: A0        .byte $A0   ; 
-- D 0 - - - 0x014F80 05:8F70: FF        .byte $FF   ; 
-- D 0 - - - 0x014F81 05:8F71: C0        .byte $C0   ; 
-- D 0 - - - 0x014F82 05:8F72: FF        .byte $FF   ; 
+tbl_8F6D_spd_X:
+- D 0 - - - 0x014F7D 05:8F6D: 80 FF     .word $FF80
+- D 0 - - - 0x014F7F 05:8F6F: A0 FF     .word $FFA0
+- D 0 - - - 0x014F81 05:8F71: C0 FF     .word $FFC0
 
 
 
-sub_8F73:
+sub_8F73:   ; bzk опт
 C - - - - - 0x014F83 05:8F73: A9 04     LDA #$04
 C - - - - - 0x014F85 05:8F75: 8D 59 00  STA ram_subscript
 C - - - - - 0x014F88 05:8F78: 60        RTS
@@ -2708,7 +2700,7 @@ C - - - - - 0x014F8C 05:8F7C: 20 17 C0  JSR sub_0x01EE81_disable_NMI
 C - - - - - 0x014F8F 05:8F7F: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x014F92 05:8F82: A2 00     LDX #$00
 C - - - - - 0x014F94 05:8F84: 86 1C     STX ram_001C
-bra_8F86:
+bra_8F86_loop:
 C - - - - - 0x014F96 05:8F86: BD 2C 05  LDA ram_номер_команды,X
 C - - - - - 0x014F99 05:8F89: 29 0F     AND #$0F
 C - - - - - 0x014F9B 05:8F8B: 0A        ASL
@@ -2719,7 +2711,7 @@ C - - - - - 0x014FA3 05:8F93: B9 B0 8F  LDA tbl_8FB0,Y
 C - - - - - 0x014FA6 05:8F96: 8D BD 05  STA ram_банк_фона + 1
 C - - - - - 0x014FA9 05:8F99: E8        INX
 C - - - - - 0x014FAA 05:8F9A: E0 02     CPX #$02
-C - - - - - 0x014FAC 05:8F9C: 90 E8     BCC bra_8F86
+C - - - - - 0x014FAC 05:8F9C: 90 E8     BCC bra_8F86_loop
 C - - - - - 0x014FAE 05:8F9E: 20 9F BE  JSR sub_BE9F
 C - - - - - 0x014FB1 05:8FA1: 20 FA BE  JSR sub_BEFA
 C - - - - - 0x014FB4 05:8FA4: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
@@ -2776,7 +2768,7 @@ C - - - - - 0x014FEF 05:8FDF: 60        RTS
 
 
 
-tbl_8FE0:
+tbl_8FE0:   ; bzk опт
 - D 0 - - - 0x014FF0 05:8FE0: E2 8F     .word tbl_8FE2
 
 tbl_8FE2:
