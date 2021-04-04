@@ -60,13 +60,6 @@ C - - - - - 0x014098 05:8088: 4C 7A 80  RTS
 
 
 
-ofs_80CD_0C:
-ofs_80CD_0D_весь_состав_японии:
-C - - J - - 0x0140DD 05:80CD: 20 78 A7  JSR sub_A778
-C - - - - - 0x0140E0 05:80D0: 4C 7A 80  RTS
-
-
-
 ofs_80D3_0E:
 C - - J - - 0x0140E3 05:80D3: 20 B2 B2  JSR sub_B2B2
 C - - - - - 0x0140E6 05:80D6: 4C 7A 80  RTS
@@ -7169,7 +7162,8 @@ bra_A770:
 
 
 
-sub_A778:
+ofs_80CD_0C:
+ofs_80CD_0D_весь_состав_японии:
 C - - - - - 0x016788 05:A778: A5 59     LDA ram_subscript
 C - - - - - 0x01678A 05:A77A: 30 09     BMI bra_A785
 C - - - - - 0x01678C 05:A77C: 20 DF 80  JSR sub_80DF
