@@ -60,12 +60,6 @@ C - - - - - 0x014098 05:8088: 4C 7A 80  RTS
 
 
 
-ofs_80A3_05_выбор_команд:
-C - - J - - 0x0140B3 05:80A3: 20 BE 8A  JSR sub_8ABE
-C - - - - - 0x0140B6 05:80A6: 4C 7A 80  RTS
-
-
-
 ofs_80A9_06_выбор_погоды:
 C - - J - - 0x0140B9 05:80A9: 20 57 93  JSR sub_9357
 C - - - - - 0x0140BC 05:80AC: 4C 7A 80  RTS
@@ -1828,7 +1822,7 @@ C - - - - - 0x014ACD 05:8ABD: 60        RTS
 
 
 
-sub_8ABE:
+ofs_80A3_05_выбор_команд:
 C - - - - - 0x014ACE 05:8ABE: A5 59     LDA ram_subscript
 C - - - - - 0x014AD0 05:8AC0: 30 06     BMI bra_8AC8
 C - - - - - 0x014AD2 05:8AC2: 20 DF 80  JSR sub_80DF
