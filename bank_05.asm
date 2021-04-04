@@ -60,12 +60,6 @@ C - - - - - 0x014098 05:8088: 4C 7A 80  RTS
 
 
 
-ofs_80D3_0E:
-C - - J - - 0x0140E3 05:80D3: 20 B2 B2  JSR sub_B2B2
-C - - - - - 0x0140E6 05:80D6: 4C 7A 80  RTS
-
-
-
 ofs_80D9_0F:
 - - - - - - 0x0140E9 05:80D9: 20 7C B4  JSR sub_B47C
 - - - - - - 0x0140EC 05:80DC: 4C 7A 80  RTS
@@ -9243,7 +9237,7 @@ tbl_B2AF:
 
 
 
-sub_B2B2:
+ofs_80D3_0E:
 C - - - - - 0x0172C2 05:B2B2: A5 59     LDA ram_subscript
 C - - - - - 0x0172C4 05:B2B4: 30 2D     BMI bra_B2E3
 C - - - - - 0x0172C6 05:B2B6: AD 4A 05  LDA ram_054A
