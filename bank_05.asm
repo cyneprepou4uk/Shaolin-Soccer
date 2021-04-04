@@ -18,7 +18,7 @@ loc_0x014010_menu_script:
 C D 0 J - - 0x014010 05:8000: 4C 55 80  JMP loc_8055_menu_script
 
 loc_0x014013:
-C - - J - - 0x014013 05:8003: 4C 38 BD  JMP loc_BD38
+C - - J - - 0x014013 05:8003: 4C 38 BD  JMP loc_BD38_рожи
 
 loc_0x014016:
 C - - J - - 0x014016 05:8006: 4C B0 BD  JMP loc_BDB0
@@ -33,21 +33,21 @@ C - - J - - 0x01401C 05:800C: 4C 84 BB  JMP loc_BB84
 
 loc_8055_menu_script:
 C D 0 - - - 0x014065 05:8055: A5 59     LDA ram_subscript
-C - - - - - 0x014067 05:8057: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
-- D 0 - I - 0x01406A 05:805A: 83 80     .word ofs_8083_00
-- D 0 - I - 0x01406C 05:805C: 8B 80     .word ofs_808B_01
-- D 0 - I - 0x01406E 05:805E: 91 80     .word ofs_8091_02
-- D 0 - I - 0x014070 05:8060: 97 80     .word ofs_8097_03
-- D 0 - I - 0x014072 05:8062: 9D 80     .word ofs_809D_04
-- D 0 - I - 0x014074 05:8064: A3 80     .word ofs_80A3_05
-- D 0 - I - 0x014076 05:8066: A9 80     .word ofs_80A9_06
-- D 0 - I - 0x014078 05:8068: AF 80     .word ofs_80AF_07
-- D 0 - I - 0x01407A 05:806A: B5 80     .word ofs_80B5_08
-- D 0 - I - 0x01407C 05:806C: BB 80     .word ofs_80BB_09
-- D 0 - I - 0x01407E 05:806E: C1 80     .word ofs_80C1_0A
-- D 0 - I - 0x014080 05:8070: C7 80     .word ofs_80C7_0B
+C - - - - - 0x014067 05:8057: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
+- D 0 - I - 0x01406A 05:805A: 83 80     .word ofs_8083_00_переход_от_скрипта_логотипа_к_скрипту_меню
+- D 0 - I - 0x01406C 05:805C: 8B 80     .word ofs_808B_01_главное_меню
+- D 0 - I - 0x01406E 05:805E: 91 80     .word ofs_8091_02_выбор_соперника_на_прохождение
+- D 0 - I - 0x014070 05:8060: 97 80     .word ofs_8097_03_экран_VS
+- D 0 - I - 0x014072 05:8062: 9D 80     .word ofs_809D_04_раздевалка
+- D 0 - I - 0x014074 05:8064: A3 80     .word ofs_80A3_05_выбор_команд
+- D 0 - I - 0x014076 05:8066: A9 80     .word ofs_80A9_06_выбор_погоды
+- D 0 - I - 0x014078 05:8068: AF 80     .word ofs_80AF_07_расстановка
+- D 0 - I - 0x01407A 05:806A: B5 80     .word ofs_80B5_08_прогноз_погоды
+- D 0 - I - 0x01407C 05:806C: BB 80     .word ofs_80BB_09_турнирная_таблица
+- D 0 - I - 0x01407E 05:806E: C1 80     .word ofs_80C1_0A_параметры_игрока_японии
+- D 0 - I - 0x014080 05:8070: C7 80     .word ofs_80C7_0B_выбор_музыки
 - - - - - - 0x014082 05:8072: CD 80     .word ofs_80CD_0C
-- D 0 - I - 0x014084 05:8074: CD 80     .word ofs_80CD_0D
+- D 0 - I - 0x014084 05:8074: CD 80     .word ofs_80CD_0D_весь_состав_японии
 - D 0 - I - 0x014086 05:8076: D3 80     .word ofs_80D3_0E
 - - - - - - 0x014088 05:8078: D9 80     .word ofs_80D9_0F
 
@@ -61,81 +61,81 @@ bra_8082_RTS:
 
 
 
-ofs_8083_00:
+ofs_8083_00_переход_от_скрипта_логотипа_к_скрипту_меню:
 C - - J - - 0x014093 05:8083: A9 01     LDA #$01
 C - - - - - 0x014095 05:8085: 8D 59 00  STA ram_subscript
 C - - - - - 0x014098 05:8088: 4C 7A 80  RTS
 
 
 
-ofs_808B_01:
+ofs_808B_01_главное_меню:
 C - - J - - 0x01409B 05:808B: 20 38 83  JSR sub_8338
 C - - - - - 0x01409E 05:808E: 4C 7A 80  RTS
 
 
 
-ofs_8091_02:
+ofs_8091_02_выбор_соперника_на_прохождение:
 C - - J - - 0x0140A1 05:8091: 20 1A 87  JSR sub_871A
 C - - - - - 0x0140A4 05:8094: 4C 7A 80  RTS
 
 
 
-ofs_8097_03:
+ofs_8097_03_экран_VS:
 C - - J - - 0x0140A7 05:8097: 20 BC 8D  JSR sub_8DBC
 C - - - - - 0x0140AA 05:809A: 4C 7A 80  RTS
 
 
 
-ofs_809D_04:
+ofs_809D_04_раздевалка:
 C - - J - - 0x0140AD 05:809D: 20 F9 8F  JSR sub_8FF9
 C - - - - - 0x0140B0 05:80A0: 4C 7A 80  RTS
 
 
 
-ofs_80A3_05:
+ofs_80A3_05_выбор_команд:
 C - - J - - 0x0140B3 05:80A3: 20 BE 8A  JSR sub_8ABE
 C - - - - - 0x0140B6 05:80A6: 4C 7A 80  RTS
 
 
 
-ofs_80A9_06:
+ofs_80A9_06_выбор_погоды:
 C - - J - - 0x0140B9 05:80A9: 20 57 93  JSR sub_9357
 C - - - - - 0x0140BC 05:80AC: 4C 7A 80  RTS
 
 
 
-ofs_80AF_07:
+ofs_80AF_07_расстановка:
 C - - J - - 0x0140BF 05:80AF: 20 F5 97  JSR sub_97F5
 C - - - - - 0x0140C2 05:80B2: 4C 7A 80  RTS
 
 
 
-ofs_80B5_08:
+ofs_80B5_08_прогноз_погоды:
 C - - J - - 0x0140C5 05:80B5: 20 E0 A0  JSR sub_A0E0
 C - - - - - 0x0140C8 05:80B8: 4C 7A 80  RTS
 
 
 
-ofs_80BB_09:
+ofs_80BB_09_турнирная_таблица:
 C - - J - - 0x0140CB 05:80BB: 20 93 88  JSR sub_8893
 C - - - - - 0x0140CE 05:80BE: 4C 7A 80  RTS
 
 
 
-ofs_80C1_0A:
+ofs_80C1_0A_параметры_игрока_японии:
 C - - J - - 0x0140D1 05:80C1: 20 81 A2  JSR sub_A281
 C - - - - - 0x0140D4 05:80C4: 4C 7A 80  RTS
 
 
 
-ofs_80C7_0B:
+ofs_80C7_0B_выбор_музыки:
 C - - J - - 0x0140D7 05:80C7: 20 76 A5  JSR sub_A576_экран_выбора_музыки
 C - - - - - 0x0140DA 05:80CA: 4C 7A 80  RTS
 
 
 
 ofs_80CD_0C:
-ofs_80CD_0D:
+ofs_80CD_0D_весь_состав_японии:
 C - - J - - 0x0140DD 05:80CD: 20 78 A7  JSR sub_A778
 C - - - - - 0x0140E0 05:80D0: 4C 7A 80  RTS
 
@@ -157,14 +157,14 @@ sub_80DF:
 C - - - - - 0x0140EF 05:80DF: A9 80     LDA #con_nmi_disable_irq
 C - - - - - 0x0140F1 05:80E1: 85 4F     STA ram_NMI_flag
 C - - - - - 0x0140F3 05:80E3: A9 00     LDA #$00
-C - - - - - 0x0140F5 05:80E5: 8D EC 00  STA ram_pos_X_lo_camera
-C - - - - - 0x0140F8 05:80E8: 8D ED 00  STA ram_pos_X_hi_camera
-C - - - - - 0x0140FB 05:80EB: 8D EE 00  STA ram_pos_Y_lo_camera
-C - - - - - 0x0140FE 05:80EE: 8D EF 00  STA ram_pos_Y_hi_camera
-C - - - - - 0x014101 05:80F1: 8D F0 00  STA ram_copy_pos_X_lo_camera
-C - - - - - 0x014104 05:80F4: 8D F1 00  STA ram_copy_pos_X_hi_camera
-C - - - - - 0x014107 05:80F7: 8D F2 00  STA ram_copy_pos_Y_lo_camera
-C - - - - - 0x01410A 05:80FA: 8D F3 00  STA ram_copy_pos_Y_hi_camera
+C - - - - - 0x0140F5 05:80E5: 8D EC 00  STA ram_pos_X_lo_scroll     ; bzk опт, общая подпрограмма очистки скролла, найти остальные места
+C - - - - - 0x0140F8 05:80E8: 8D ED 00  STA ram_pos_X_hi_scroll
+C - - - - - 0x0140FB 05:80EB: 8D EE 00  STA ram_pos_Y_lo_scroll
+C - - - - - 0x0140FE 05:80EE: 8D EF 00  STA ram_pos_Y_hi_scroll
+C - - - - - 0x014101 05:80F1: 8D F0 00  STA ram_pos_X_lo_camera
+C - - - - - 0x014104 05:80F4: 8D F1 00  STA ram_pos_X_hi_camera
+C - - - - - 0x014107 05:80F7: 8D F2 00  STA ram_pos_Y_lo_camera
+C - - - - - 0x01410A 05:80FA: 8D F3 00  STA ram_pos_Y_hi_camera
 C - - - - - 0x01410D 05:80FD: 8D E6 05  STA ram_скорость_игры
 C - - - - - 0x014110 05:8100: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x014113 05:8103: 8D CE 05  STA ram_05CE
@@ -177,7 +177,7 @@ C - - - - - 0x014123 05:8113: 20 68 C0  JSR sub_0x01E838_отрисовать_с
 C - - - - - 0x014126 05:8116: 20 62 C0  JSR sub_0x01EF64_убрать_полоску_слева_на_экране
 C - - - - - 0x014129 05:8119: 20 59 C0  JSR sub_0x01D05F
 C - - - - - 0x01412C 05:811C: A2 0C     LDX #$0C
-bra_811E:
+bra_811E_loop:
 C - - - - - 0x01412E 05:811E: A9 00     LDA #$00
 C - - - - - 0x014130 05:8120: 9D 59 04  STA ram_movement_id_player,X
 C - - - - - 0x014133 05:8123: 9D 86 04  STA ram_игрок_состояние,X
@@ -203,7 +203,7 @@ C - - - - - 0x01416C 05:815C: 9D 3C 04  STA ram_gravity_lo_player,X
 C - - - - - 0x01416F 05:815F: A9 FF     LDA #$FF
 C - - - - - 0x014171 05:8161: 9D 79 04  STA ram_action_id_player,X
 C - - - - - 0x014174 05:8164: CA        DEX
-C - - - - - 0x014175 05:8165: 10 B7     BPL bra_811E
+C - - - - - 0x014175 05:8165: 10 B7     BPL bra_811E_loop
 C - - - - - 0x014177 05:8167: A5 59     LDA ram_subscript
 C - - - - - 0x014179 05:8169: 09 80     ORA #$80
 C - - - - - 0x01417B 05:816B: 85 59     STA ram_subscript
@@ -232,7 +232,7 @@ tbl_816E_экраны:
 
 
 
-sub_817E_check_pressed_buttons:
+sub_817E_конвертация_нажатых_кнопок_в_индекс:
 C - - - - - 0x01418E 05:817E: A5 08     LDA ram_btn_press
 C - - - - - 0x014190 05:8180: 29 30     AND #con_btns_SS
 C - - - - - 0x014192 05:8182: F0 0E     BEQ bra_8192_not_Start_or_Select
@@ -285,7 +285,7 @@ C - - - - - 0x0141E2 05:81D2: 60        RTS
 
 
 
-sub_81D3_convert_dpad_buttons:
+sub_81D3_конвертация_индексов_Dpad_в_05:
 ; нужно если выбор подпрограммы не зависит от нажатия стороны
 C - - - - - 0x0141E3 05:81D3: AD CD 05  LDA ram_btn_menu
 C - - - - - 0x0141E6 05:81D6: C9 05     CMP #$05
@@ -513,7 +513,7 @@ C - - - - - 0x01434F 05:833F: 20 55 83  JSR sub_8355
 bra_8342:
 C - - - - - 0x014352 05:8342: 20 93 85  JSR sub_8593
 C - - - - - 0x014355 05:8345: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x014358 05:8348: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x014358 05:8348: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x01435B 05:834B: CA 83     .word ofs_83CA_00
 - D 0 - I - 0x01435D 05:834D: DE 83     .word ofs_83DE_01
 - D 0 - I - 0x01435F 05:834F: 75 84     .word ofs_8475_02
@@ -593,9 +593,9 @@ C - - - - - 0x0143F5 05:83E5: 20 0C 86  JSR sub_860C
 C - - - - - 0x0143F8 05:83E8: 20 73 86  JSR sub_8673
 C - - - - - 0x0143FB 05:83EB: 20 EF 82  JSR sub_82AF
 bra_83EE:
-C - - - - - 0x0143FE 05:83EE: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x014401 05:83F1: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-C - - - - - 0x014404 05:83F4: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x0143FE 05:83EE: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x014401 05:83F1: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+C - - - - - 0x014404 05:83F4: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x014407 05:83F7: 55 84     .word ofs_8455_00_nothing
 - D 0 - I - 0x014409 05:83F9: 03 84     .word ofs_8403_01_Start
 - - - - - - 0x01440B 05:83FB: 55 84     .word ofs_8455_02_Select
@@ -682,9 +682,9 @@ C - - - - - 0x01448C 05:847C: 20 3A 86  JSR sub_863A
 C - - - - - 0x01448F 05:847F: 20 8F 86  JSR sub_868F
 C - - - - - 0x014492 05:8482: 20 EF 82  JSR sub_82AF
 bra_8485:
-C - - - - - 0x014495 05:8485: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x014498 05:8488: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-C - - - - - 0x01449B 05:848B: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x014495 05:8485: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x014498 05:8488: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+C - - - - - 0x01449B 05:848B: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x01449E 05:848E: 55 84     .word ofs_8455_00_nothing
 - D 0 - I - 0x0144A0 05:8490: 03 84     .word ofs_8403_01_Start
 - - - - - - 0x0144A2 05:8492: 55 84     .word ofs_8455_02_Select
@@ -721,9 +721,9 @@ C - - - - - 0x0144CF 05:84BF: 20 6B 86  JSR sub_866B
 C - - - - - 0x0144D2 05:84C2: 20 A0 86  JSR sub_86A0
 C - - - - - 0x0144D5 05:84C5: 20 EF 82  JSR sub_82AF
 bra_84C8:
-C - - - - - 0x0144D8 05:84C8: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x0144DB 05:84CB: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-C - - - - - 0x0144DE 05:84CE: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x0144D8 05:84C8: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x0144DB 05:84CB: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+C - - - - - 0x0144DE 05:84CE: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x0144E1 05:84D1: 55 84     .word ofs_8455_00_nothing
 - D 0 - I - 0x0144E3 05:84D3: 03 84     .word ofs_8403_01_Start
 - - - - - - 0x0144E5 05:84D5: 55 84     .word ofs_8455_02_Select
@@ -760,8 +760,8 @@ C - - - - - 0x014512 05:8502: 10 05     BPL bra_8509
 C - - - - - 0x014514 05:8504: A9 00     LDA #$00
 C - - - - - 0x014516 05:8506: 8D CA 05  STA ram_номер_опции
 bra_8509:
-C - - - - - 0x014519 05:8509: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x01451C 05:850C: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x014519 05:8509: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x01451C 05:850C: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x01451F 05:850F: 55 84     .word ofs_8455_00_nothing
 - D 0 - I - 0x014521 05:8511: 03 84     .word ofs_8403_01_Start
 - - - - - - 0x014523 05:8513: 55 84     .word ofs_8455_02_Select
@@ -805,9 +805,9 @@ C - - - - - 0x01455B 05:854B: 99 6E 04  STA ram_046E,Y
 C - - - - - 0x01455E 05:854E: 20 79 8A  JSR sub_8A79
 C - - - - - 0x014561 05:8551: A9 0C     LDA #$0C
 C - - - - - 0x014563 05:8553: 8D 95 06  STA ram_счетчик_буфера_атрибутов
-C - - - - - 0x014566 05:8556: A9 0F     LDA #$0F
+C - - - - - 0x014566 05:8556: A9 0F     LDA #< $210F
 C - - - - - 0x014568 05:8558: 8D 94 06  STA ram_байт_2006_lo_атрибуты
-C - - - - - 0x01456B 05:855B: A9 21     LDA #$21
+C - - - - - 0x01456B 05:855B: A9 21     LDA #> $210F
 C - - - - - 0x01456D 05:855D: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 loc_8560:
 C D 0 - - - 0x014570 05:8560: A9 32     LDA #con_sfx_move_cursor
@@ -1108,13 +1108,13 @@ tbl_8687:
 
 sub_868F:
 C - - - - - 0x01469F 05:868F: AC CA 05  LDY ram_номер_опции
-C - - - - - 0x0146A2 05:8692: B9 98 86  LDA tbl_8698,Y
+C - - - - - 0x0146A2 05:8692: B9 98 86  LDA tbl_8698_количество_игроков,Y
 C - - - - - 0x0146A5 05:8695: 85 5D     STA ram_players_cnt
 C - - - - - 0x0146A7 05:8697: 60        RTS
 
 
 
-tbl_8698:
+tbl_8698_количество_игроков:
 - D 0 - - - 0x0146A8 05:8698: 01        .byte $01   ; 
 - D 0 - - - 0x0146A9 05:8699: 02        .byte $02   ; 
 - D 0 - - - 0x0146AA 05:869A: 02        .byte $02   ; 
@@ -1143,7 +1143,7 @@ C - - - - - 0x0146C3 05:86B3: A0 00     LDY #$00
 C - - - - - 0x0146C5 05:86B5: A9 00     LDA #$00
 C - - - - - 0x0146C7 05:86B7: 8D 2A 05  STA ram_флаг_владения_мячом_ком
 C - - - - - 0x0146CA 05:86BA: 8D 2B 05  STA ram_флаг_владения_мячом_ком + 1
-bra_86BD:
+bra_86BD_loop:
 C - - - - - 0x0146CD 05:86BD: 99 32 05  STA ram_player_id,Y
 C - - - - - 0x0146D0 05:86C0: C8        INY
 C - - - - - 0x0146D1 05:86C1: 99 32 05  STA ram_player_id,Y
@@ -1151,7 +1151,7 @@ C - - - - - 0x0146D4 05:86C4: C8        INY
 C - - - - - 0x0146D5 05:86C5: 18        CLC
 C - - - - - 0x0146D6 05:86C6: 69 01     ADC #$01
 C - - - - - 0x0146D8 05:86C8: C0 0C     CPY #$0C
-C - - - - - 0x0146DA 05:86CA: 90 F1     BCC bra_86BD
+C - - - - - 0x0146DA 05:86CA: 90 F1     BCC bra_86BD_loop
 C - - - - - 0x0146DC 05:86CC: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x0146DE 05:86CE: 10 09     BPL bra_86D9_not_walkthrough
 C - - - - - 0x0146E0 05:86D0: A0 03     LDY #$03
@@ -1163,12 +1163,12 @@ C - - - - - 0x0146E9 05:86D9: A9 FF     LDA #$FF
 C - - - - - 0x0146EB 05:86DB: 8D 4A 05  STA ram_054A
 C - - - - - 0x0146EE 05:86DE: A0 00     LDY #$00
 C - - - - - 0x0146F0 05:86E0: A9 08     LDA #$08
-bra_86E2:
+bra_86E2_loop:
 C - - - - - 0x0146F2 05:86E2: 99 D5 05  STA ram_05D5,Y
 C - - - - - 0x0146F5 05:86E5: 99 50 06  STA ram_позиция_управление,Y
 C - - - - - 0x0146F8 05:86E8: C8        INY
 C - - - - - 0x0146F9 05:86E9: C0 0C     CPY #$0C
-C - - - - - 0x0146FB 05:86EB: 90 F5     BCC bra_86E2
+C - - - - - 0x0146FB 05:86EB: 90 F5     BCC bra_86E2_loop
 C - - - - - 0x0146FD 05:86ED: A9 55     LDA #$55
 C - - - - - 0x0146FF 05:86EF: 8D D3 05  STA ram_05D3
 C - - - - - 0x014702 05:86F2: 8D D4 05  STA ram_05D4
@@ -1207,7 +1207,7 @@ C - - - - - 0x014731 05:8721: 20 31 87  JSR sub_8731
 bra_8724:
 C - - - - - 0x014734 05:8724: 20 DC 87  JSR sub_87DC
 C - - - - - 0x014737 05:8727: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x01473A 05:872A: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x01473A 05:872A: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x01473D 05:872D: 5D 87     .word ofs_875D_00
 - D 0 - I - 0x01473F 05:872F: 6B 87     .word ofs_876B_01
 
@@ -1253,8 +1253,8 @@ C - - - - - 0x014782 05:8772: 20 2F 88  JSR sub_882F
 C - - - - - 0x014785 05:8775: 20 D0 88  JSR sub_88D0
 C - - - - - 0x014788 05:8778: A2 00     LDX #$00
 bra_877A:
-C - - - - - 0x01478A 05:877A: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x01478D 05:877D: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x01478A 05:877A: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x01478D 05:877D: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x014790 05:8780: CB 87     .word ofs_87CB_00_nothing
 - D 0 - I - 0x014792 05:8782: 92 87     .word ofs_8792_01_Start
 - - - - - - 0x014794 05:8784: CB 87     .word ofs_87CB_02_Select
@@ -1489,7 +1489,7 @@ C - - - - - 0x0148AD 05:889D: A9 02     LDA #con_music_menu
 C - - - - - 0x0148AF 05:889F: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_88A2:
 C - - - - - 0x0148B2 05:88A2: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x0148B5 05:88A5: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x0148B5 05:88A5: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x0148B8 05:88A8: AC 88     .word ofs_88AC_00
 - D 0 - I - 0x0148BA 05:88AA: BA 88     .word ofs_88BA_01
 
@@ -1542,11 +1542,11 @@ bra_88F0:
 C - - - - - 0x014900 05:88F0: E0 10     CPX #$10
 C - - - - - 0x014902 05:88F2: 90 EF     BCC bra_88E3
 C - - - - - 0x014904 05:88F4: A0 02     LDY #$02
-bra_88F6:
+bra_88F6_loop:
 C - - - - - 0x014906 05:88F6: B1 30     LDA (ram_0030),Y
 C - - - - - 0x014908 05:88F8: 99 B6 06  STA ram_байт_2006_hi_графика,Y
 C - - - - - 0x01490B 05:88FB: 88        DEY
-C - - - - - 0x01490C 05:88FC: 10 F8     BPL bra_88F6
+C - - - - - 0x01490C 05:88FC: 10 F8     BPL bra_88F6_loop
 C - - - - - 0x01490E 05:88FE: 60        RTS
 
 
@@ -1687,9 +1687,9 @@ C - - - - - 0x0149D2 05:89C2: 20 6D 8A  JSR sub_8A6D
 C - - - - - 0x0149D5 05:89C5: 20 79 8A  JSR sub_8A79
 C - - - - - 0x0149D8 05:89C8: A9 0C     LDA #$0C
 C - - - - - 0x0149DA 05:89CA: 8D 95 06  STA ram_счетчик_буфера_атрибутов
-C - - - - - 0x0149DD 05:89CD: A9 6B     LDA #$6B
+C - - - - - 0x0149DD 05:89CD: A9 6B     LDA #< $236B
 C - - - - - 0x0149DF 05:89CF: 8D 94 06  STA ram_байт_2006_lo_атрибуты
-C - - - - - 0x0149E2 05:89D2: A9 23     LDA #$23
+C - - - - - 0x0149E2 05:89D2: A9 23     LDA #> $236B
 C - - - - - 0x0149E4 05:89D4: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x0149E7 05:89D7: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x0149EA 05:89DA: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
@@ -1831,9 +1831,9 @@ C - - - - - 0x014AA3 05:8A93: 85 1C     STA ram_001C
 C - - - - - 0x014AA5 05:8A95: 20 A8 8A  JSR sub_8AA8
 C - - - - - 0x014AA8 05:8A98: A9 0C     LDA #$0C
 C - - - - - 0x014AAA 05:8A9A: 8D 95 06  STA ram_счетчик_буфера_атрибутов
-C - - - - - 0x014AAD 05:8A9D: A9 6B     LDA #$6B
+C - - - - - 0x014AAD 05:8A9D: A9 6B     LDA #< $236B
 C - - - - - 0x014AAF 05:8A9F: 8D 94 06  STA ram_байт_2006_lo_атрибуты
-C - - - - - 0x014AB2 05:8AA2: A9 23     LDA #$23
+C - - - - - 0x014AB2 05:8AA2: A9 23     LDA #> $236B
 C - - - - - 0x014AB4 05:8AA4: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x014AB7 05:8AA7: 60        RTS
 
@@ -1868,7 +1868,7 @@ C - - - - - 0x014AD5 05:8AC5: 20 D5 8A  JSR sub_8AD5
 bra_8AC8:
 C - - - - - 0x014AD8 05:8AC8: 20 73 8C  JSR sub_8C73
 C - - - - - 0x014ADB 05:8ACB: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x014ADE 05:8ACE: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x014ADE 05:8ACE: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x014AE1 05:8AD1: 6E 8B     .word ofs_8B6E_00
 - D 0 - I - 0x014AE3 05:8AD3: 80 8B     .word ofs_8B80_01
 
@@ -1890,7 +1890,7 @@ C - - - - - 0x014B02 05:8AF2: A2 08     LDX #$08
 C - - - - - 0x014B04 05:8AF4: 8E B8 05  STX ram_банк_спрайтов
 C - - - - - 0x014B07 05:8AF7: E8        INX
 C - - - - - 0x014B08 05:8AF8: 8E BB 05  STX ram_банк_спрайтов + 3
-C - - - - - 0x014B0B 05:8AFB: 20 38 BD  JSR sub_BD38
+C - - - - - 0x014B0B 05:8AFB: 20 38 BD  JSR sub_BD38_рожи
 C - - - - - 0x014B0E 05:8AFE: 20 B0 BD  JSR sub_BDB0
 C - - - - - 0x014B11 05:8B01: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x014B14 05:8B04: A2 00     LDX #$00
@@ -1979,8 +1979,8 @@ C D 0 - - - 0x014BAD 05:8B9D: 8C CC 05  STY ram_счетчик_смен
 C - - - - - 0x014BB0 05:8BA0: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x014BB3 05:8BA3: 2D CB 05  AND ram_номер_опции + 1
 C - - - - - 0x014BB6 05:8BA6: 30 1D     BMI bra_8BC5
-C - - - - - 0x014BB8 05:8BA8: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x014BBB 05:8BAB: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x014BB8 05:8BA8: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x014BBB 05:8BAB: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x014BBE 05:8BAE: 16 8C     .word ofs_8C16_00_nothing
 - D 0 - I - 0x014BC0 05:8BB0: C0 8B     .word ofs_8BC0_01_Start
 - - - - - - 0x014BC2 05:8BB2: 16 8C     .word ofs_8C16_02_Select
@@ -2065,7 +2065,7 @@ C - - - - - 0x014C49 05:8C39: AD 66 00  LDA ram_0066
 C - - - - - 0x014C4C 05:8C3C: 8D B9 05  STA ram_банк_спрайтов + 1
 C - - - - - 0x014C4F 05:8C3F: AD 67 00  LDA ram_0067
 C - - - - - 0x014C52 05:8C42: 8D BA 05  STA ram_банк_спрайтов + 2
-C - - - - - 0x014C55 05:8C45: 20 38 BD  JSR sub_BD38
+C - - - - - 0x014C55 05:8C45: 20 38 BD  JSR sub_BD38_рожи
 C - - - - - 0x014C58 05:8C48: AD 66 00  LDA ram_0066
 C - - - - - 0x014C5B 05:8C4B: 48        PHA
 C - - - - - 0x014C5C 05:8C4C: AD 67 00  LDA ram_0067
@@ -2245,11 +2245,11 @@ C - - - - - 0x014D32 05:8D22: A5 5D     LDA ram_players_cnt
 C - - - - - 0x014D34 05:8D24: 09 80     ORA #$80
 C - - - - - 0x014D36 05:8D26: 8D B9 06  STA ram_буфер_графики
 C - - - - - 0x014D39 05:8D29: A0 02     LDY #$02
-bra_8D2B:
+bra_8D2B_loop:
 C - - - - - 0x014D3B 05:8D2B: B9 66 8D  LDA tbl_8D66,Y
 C - - - - - 0x014D3E 05:8D2E: 99 B6 06  STA ram_байт_2006_hi_графика,Y
 C - - - - - 0x014D41 05:8D31: 88        DEY
-C - - - - - 0x014D42 05:8D32: 10 F7     BPL bra_8D2B
+C - - - - - 0x014D42 05:8D32: 10 F7     BPL bra_8D2B_loop
 C - - - - - 0x014D44 05:8D34: A5 5D     LDA ram_players_cnt
 C - - - - - 0x014D46 05:8D36: 0A        ASL
 C - - - - - 0x014D47 05:8D37: A8        TAY
@@ -2262,11 +2262,11 @@ C - - - - - 0x014D54 05:8D44: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x014D56 05:8D46: 18        CLC
 C - - - - - 0x014D57 05:8D47: 69 03     ADC #$03
 C - - - - - 0x014D59 05:8D49: A8        TAY
-bra_8D4A:
+bra_8D4A_loop:
 C - - - - - 0x014D5A 05:8D4A: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x014D5C 05:8D4C: 99 D9 06  STA ram_байт_2006_hi_палитра,Y
 C - - - - - 0x014D5F 05:8D4F: 88        DEY
-C - - - - - 0x014D60 05:8D50: 10 F8     BPL bra_8D4A
+C - - - - - 0x014D60 05:8D50: 10 F8     BPL bra_8D4A_loop
 C - - - - - 0x014D62 05:8D52: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x014D65 05:8D55: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
 C - - - - - 0x014D68 05:8D58: 20 14 C0  JSR sub_0x01EE75_enable_NMI
@@ -2392,16 +2392,16 @@ sub_8DBC:
 C - - - - - 0x014DCC 05:8DBC: A5 59     LDA ram_subscript
 C - - - - - 0x014DCE 05:8DBE: 30 06     BMI bra_8DC6
 C - - - - - 0x014DD0 05:8DC0: 20 DF 80  JSR sub_80DF
-C - - - - - 0x014DD3 05:8DC3: 20 D0 8D  JSR sub_8DD0
+C - - - - - 0x014DD3 05:8DC3: 20 D0 8D  JSR sub_8DD0_экран_vs
 bra_8DC6:
 C - - - - - 0x014DD6 05:8DC6: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x014DD9 05:8DC9: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x014DD9 05:8DC9: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x014DDC 05:8DCC: FD 8D     .word ofs_8DFD_00
 - D 0 - I - 0x014DDE 05:8DCE: 08 8E     .word ofs_8E08_01
 
 
 
-sub_8DD0:
+sub_8DD0_экран_vs:
 C - - - - - 0x014DE0 05:8DD0: A2 28     LDX #$28
 C - - - - - 0x014DE2 05:8DD2: 8E B8 05  STX ram_банк_спрайтов
 C - - - - - 0x014DE5 05:8DD5: E8        INX
@@ -2625,7 +2625,7 @@ tbl_8EFB:
 
 sub_8EFF:
 C - - - - - 0x014F0F 05:8EFF: BD 59 04  LDA ram_movement_id_player,X
-C - - - - - 0x014F12 05:8F02: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x014F12 05:8F02: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x014F15 05:8F05: 0F 8F     .word _общий_RTS
 - D 0 - I - 0x014F17 05:8F07: 10 8F     .word ofs_8F10_01
 - D 0 - I - 0x014F19 05:8F09: 40 8F     .word ofs_8F40_02
@@ -2666,7 +2666,7 @@ C - - - - - 0x014F53 05:8F43: 30 0D     BMI bra_8F52
 C - - - - - 0x014F55 05:8F45: 09 80     ORA #$80
 C - - - - - 0x014F57 05:8F47: 9D 59 04  STA ram_movement_id_player,X
 C - - - - - 0x014F5A 05:8F4A: A9 00     LDA #$00
-C - - - - - 0x014F5C 05:8F4C: 9D 87 00  STA ram_animation_timer_player,X
+C - - - - - 0x014F5C 05:8F4C: 9D 87 00  STA ram_timer_animation_player,X
 C - - - - - 0x014F5F 05:8F4F: 9D 94 00  STA ram_номер_кадра_анимации,X
 bra_8F52:
 C - - - - - 0x014F62 05:8F52: 20 CF 8F  JSR sub_8FCF
@@ -2827,7 +2827,7 @@ C - - - - - 0x01501C 05:900C: 20 1C 90  JSR sub_901C
 bra_900F:
 C - - - - - 0x01501F 05:900F: 20 C7 90  JSR sub_90C7
 C - - - - - 0x015022 05:9012: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x015025 05:9015: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x015025 05:9015: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x015028 05:9018: 60 90     .word ofs_9060_00
 - D 0 - I - 0x01502A 05:901A: 6E 90     .word ofs_906E_01
 
@@ -2841,14 +2841,14 @@ C - - - - - 0x015033 05:9023: 8D 61 00  STA ram_0061
 C - - - - - 0x015036 05:9026: 8D 62 00  STA ram_0062
 C - - - - - 0x015039 05:9029: 8D 64 00  STA ram_0064
 C - - - - - 0x01503C 05:902C: A9 00     LDA #$00
-C - - - - - 0x01503E 05:902E: 8D EC 00  STA ram_pos_X_lo_camera
-C - - - - - 0x015041 05:9031: 8D ED 00  STA ram_pos_X_hi_camera
-C - - - - - 0x015044 05:9034: 8D EE 00  STA ram_pos_Y_lo_camera
-C - - - - - 0x015047 05:9037: 8D EF 00  STA ram_pos_Y_hi_camera
-C - - - - - 0x01504A 05:903A: 8D F0 00  STA ram_copy_pos_X_lo_camera
-C - - - - - 0x01504D 05:903D: 8D F1 00  STA ram_copy_pos_X_hi_camera
-C - - - - - 0x015050 05:9040: 8D F2 00  STA ram_copy_pos_Y_lo_camera
-C - - - - - 0x015053 05:9043: 8D F3 00  STA ram_copy_pos_Y_hi_camera
+C - - - - - 0x01503E 05:902E: 8D EC 00  STA ram_pos_X_lo_scroll
+C - - - - - 0x015041 05:9031: 8D ED 00  STA ram_pos_X_hi_scroll
+C - - - - - 0x015044 05:9034: 8D EE 00  STA ram_pos_Y_lo_scroll
+C - - - - - 0x015047 05:9037: 8D EF 00  STA ram_pos_Y_hi_scroll
+C - - - - - 0x01504A 05:903A: 8D F0 00  STA ram_pos_X_lo_camera
+C - - - - - 0x01504D 05:903D: 8D F1 00  STA ram_pos_X_hi_camera
+C - - - - - 0x015050 05:9040: 8D F2 00  STA ram_pos_Y_lo_camera
+C - - - - - 0x015053 05:9043: 8D F3 00  STA ram_pos_Y_hi_camera
 C - - - - - 0x015056 05:9046: 20 02 91  JSR sub_9102
 C - - - - - 0x015059 05:9049: A2 26     LDX #$26
 C - - - - - 0x01505B 05:904B: 8E B8 05  STX ram_банк_спрайтов
@@ -2879,8 +2879,8 @@ C - - - - - 0x015080 05:9070: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x015083 05:9073: 10 03     BPL bra_9078
 C - - - - - 0x015085 05:9075: 20 FC 90  JSR sub_90FC
 bra_9078:
-C - - - - - 0x015088 05:9078: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x01508B 05:907B: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x015088 05:9078: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x01508B 05:907B: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x01508E 05:907E: A9 90     .word ofs_90A9_00_nothing
 - D 0 - I - 0x015090 05:9080: 90 90     .word ofs_9090_01_Start
 - - - - - - 0x015092 05:9082: A9 90     .word ofs_90A9_02_Select
@@ -3096,7 +3096,7 @@ tbl_9191:
 
 sub_9194:
 C - - - - - 0x0151A4 05:9194: BD 59 04  LDA ram_movement_id_player,X
-C - - - - - 0x0151A7 05:9197: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x0151A7 05:9197: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - - - - - - 0x0151AA 05:919A: AE 91     .word _общий_RTS
 - D 0 - I - 0x0151AC 05:919C: AF 91     .word ofs_91AF_01
 - D 0 - I - 0x0151AE 05:919E: AF 91     .word ofs_91AF_02
@@ -3132,9 +3132,9 @@ sub_91BB:
 C - - - - - 0x0151CB 05:91BB: 09 80     ORA #$80
 C - - - - - 0x0151CD 05:91BD: 9D 59 04  STA ram_movement_id_player,X
 C - - - - - 0x0151D0 05:91C0: A9 00     LDA #$00
-C - - - - - 0x0151D2 05:91C2: 9D 87 00  STA ram_animation_timer_player,X
+C - - - - - 0x0151D2 05:91C2: 9D 87 00  STA ram_timer_animation_player,X
 C - - - - - 0x0151D5 05:91C5: 9D 94 00  STA ram_номер_кадра_анимации,X
-C - - - - - 0x0151D8 05:91C8: 9D 6C 04  STA ram_animation_sub_id_player,X
+C - - - - - 0x0151D8 05:91C8: 9D 6C 04  STA ram_animation_type_player,X
 C - - - - - 0x0151DB 05:91CB: 60        RTS
 
 
@@ -3333,7 +3333,7 @@ C - - - - - 0x0152B0 05:92A0: 8D CC 05  STA ram_счетчик_смен
 C - - - - - 0x0152B3 05:92A3: 85 58     STA ram_script
 C - - - - - 0x0152B5 05:92A5: 85 59     STA ram_subscript
 C - - - - - 0x0152B7 05:92A7: 20 84 BB  JSR sub_BB84
-C - - - - - 0x0152BA 05:92AA: 20 0F 80  JSR sub_0x01C263
+C - - - - - 0x0152BA 05:92AA: 20 0F 80  JSR sub_0x01C263_выставить_базовые_параметры_игроков
 C - - - - - 0x0152BD 05:92AD: 4C BE 92  RTS
 bra_92B0:
 C - - - - - 0x0152C0 05:92B0: AD CC 05  LDA ram_счетчик_смен
@@ -3401,7 +3401,7 @@ C - - - - - 0x015322 05:9312: 60        RTS
 
 
 tbl_9313:
-- D 0 - - - 0x015323 05:9313: 33 93     .word off_9333_00
+- D 0 - - - 0x015323 05:9313: 33 93     .word off_9333_00_япония
 - - - - - - 0x015325 05:9315: 39 93     .word off_9339_01
 - - - - - - 0x015327 05:9317: 39 93     .word off_9339_02
 - - - - - - 0x015329 05:9319: 39 93     .word off_9339_03
@@ -3420,7 +3420,7 @@ tbl_9313:
 
 
 
-off_9333_00:
+off_9333_00_япония:
 - D 0 - I - 0x015343 05:9333: B9        .byte $B9   ; 
 - D 0 - I - 0x015344 05:9334: D0        .byte $D0   ; 
 - D 0 - I - 0x015345 05:9335: AA        .byte $AA   ; 
@@ -3488,7 +3488,7 @@ off_9351_0E:
 - D 0 - I - 0x015366 05:9356: CF        .byte $CF   ; 
 
 
-; bzk
+; bzk мусор
 off_9357_0F:
 sub_9357:
 C - - - - - 0x015367 05:9357: A5 59     LDA ram_subscript
@@ -3497,16 +3497,16 @@ C - - - - - 0x01536B 05:935B: 20 DF 80  JSR sub_80DF
 C - - - - - 0x01536E 05:935E: 20 96 93  JSR sub_9396
 bra_9361:
 C - - - - - 0x015371 05:9361: 20 C2 94  JSR sub_94C2
-C - - - - - 0x015374 05:9364: AD F0 00  LDA ram_copy_pos_X_lo_camera
-C - - - - - 0x015377 05:9367: 8D EC 00  STA ram_pos_X_lo_camera
-C - - - - - 0x01537A 05:936A: AD F1 00  LDA ram_copy_pos_X_hi_camera
-C - - - - - 0x01537D 05:936D: 8D ED 00  STA ram_pos_X_hi_camera
-C - - - - - 0x015380 05:9370: AD F2 00  LDA ram_copy_pos_Y_lo_camera
-C - - - - - 0x015383 05:9373: 8D EE 00  STA ram_pos_Y_lo_camera
-C - - - - - 0x015386 05:9376: AD F3 00  LDA ram_copy_pos_Y_hi_camera
-C - - - - - 0x015389 05:9379: 8D EF 00  STA ram_pos_Y_hi_camera
+C - - - - - 0x015374 05:9364: AD F0 00  LDA ram_pos_X_lo_camera     ; bzk опт, подпрограмма 0x01CAFE
+C - - - - - 0x015377 05:9367: 8D EC 00  STA ram_pos_X_lo_scroll
+C - - - - - 0x01537A 05:936A: AD F1 00  LDA ram_pos_X_hi_camera
+C - - - - - 0x01537D 05:936D: 8D ED 00  STA ram_pos_X_hi_scroll
+C - - - - - 0x015380 05:9370: AD F2 00  LDA ram_pos_Y_lo_camera
+C - - - - - 0x015383 05:9373: 8D EE 00  STA ram_pos_Y_lo_scroll
+C - - - - - 0x015386 05:9376: AD F3 00  LDA ram_pos_Y_hi_camera
+C - - - - - 0x015389 05:9379: 8D EF 00  STA ram_pos_Y_hi_scroll
 C - - - - - 0x01538C 05:937C: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x01538F 05:937F: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x01538F 05:937F: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x015392 05:9382: 03 94     .word ofs_9403_00
 - - - - - - 0x015394 05:9384: 03 94     .word ofs_9403_01
 - D 0 - I - 0x015396 05:9386: 14 94     .word ofs_9414_02
@@ -3549,7 +3549,7 @@ C - - - - - 0x0153E5 05:93D5: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_
 C - - - - - 0x0153E8 05:93D8: A9 02     LDA #$02
 C - - - - - 0x0153EA 05:93DA: 8D C9 05  STA ram_счетчик_опций
 bra_93DD:
-C - - - - - 0x0153ED 05:93DD: 20 5D 95  JSR sub_955D
+C - - - - - 0x0153ED 05:93DD: 20 5D 95  JSR sub_955D_опции_погоды
 C - - - - - 0x0153F0 05:93E0: 20 AA 96  JSR sub_96AA
 C - - - - - 0x0153F3 05:93E3: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x0153F6 05:93E6: EE C9 05  INC ram_счетчик_опций
@@ -3560,7 +3560,7 @@ C - - - - - 0x015400 05:93F0: 20 1A C0  JSR sub_0x01ECDB_отобразить_ф
 C - - - - - 0x015403 05:93F3: 20 14 C0  JSR sub_0x01EE75_enable_NMI
 C - - - - - 0x015406 05:93F6: 68        PLA
 C - - - - - 0x015407 05:93F7: 8D C9 05  STA ram_счетчик_опций
-C - - - - - 0x01540A 05:93FA: 20 5D 95  JSR sub_955D
+C - - - - - 0x01540A 05:93FA: 20 5D 95  JSR sub_955D_опции_погоды
 C - - - - - 0x01540D 05:93FD: A9 02     LDA #con_music_menu
 C - - - - - 0x01540F 05:93FF: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x015412 05:9402: 60        RTS
@@ -3593,8 +3593,8 @@ C - - - - - 0x015429 05:9419: 10 05     BPL bra_9420
 - - - - - - 0x01542B 05:941B: A9 00     LDA #$00
 - - - - - - 0x01542D 05:941D: 8D CA 05  STA ram_номер_опции
 bra_9420:
-C - - - - - 0x015430 05:9420: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x015433 05:9423: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x015430 05:9420: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x015433 05:9423: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x015436 05:9426: 9A 94     .word ofs_949A_00_nothing
 - D 0 - I - 0x015438 05:9428: 38 94     .word ofs_9438_01_Start
 - - - - - - 0x01543A 05:942A: 9A 94     .word ofs_949A_02_Select
@@ -3666,7 +3666,7 @@ C - - - - - 0x015498 05:9488: AC C9 05  LDY ram_счетчик_опций
 C - - - - - 0x01549B 05:948B: B9 B8 94  LDA tbl_94B8,Y
 loc_948E:
 C D 0 - - - 0x01549E 05:948E: 8D C9 05  STA ram_счетчик_опций
-C - - - - - 0x0154A1 05:9491: 20 5D 95  JSR sub_955D
+C - - - - - 0x0154A1 05:9491: 20 5D 95  JSR sub_955D_опции_погоды
 C - - - - - 0x0154A4 05:9494: 20 05 9C  JSR sub_9C05
 C - - - - - 0x0154A7 05:9497: 4C AD 94  RTS
 
@@ -3904,33 +3904,40 @@ off_9555_12:
 
 
 
-sub_955D:
+sub_955D_опции_погоды:
+; вызывается при смещении курсора погоды вверх/вниз
 C - - - - - 0x01556D 05:955D: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x015570 05:9560: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x015570 05:9560: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x015573 05:9563: 77 95     .word _общий_RTS
 - - - - - - 0x015575 05:9565: 77 95     .word _общий_RTS
-- D 0 - I - 0x015577 05:9567: 78 95     .word ofs_9578_02
-- D 0 - I - 0x015579 05:9569: 83 95     .word ofs_9583_03
-- D 0 - I - 0x01557B 05:956B: 8E 95     .word ofs_958E_04
-- D 0 - I - 0x01557D 05:956D: A5 95     .word ofs_95A5_05
-- D 0 - I - 0x01557F 05:956F: B0 95     .word ofs_95B0_06
-- D 0 - I - 0x015581 05:9571: BF 95     .word ofs_95BF_07
-- D 0 - I - 0x015583 05:9573: CA 95     .word ofs_95CA_08
-- D 0 - I - 0x015585 05:9575: D7 95     .word ofs_95D7_09
+- D 0 - I - 0x015577 05:9567: 78 95     .word ofs_9578_02_материк
+- D 0 - I - 0x015579 05:9569: 83 95     .word ofs_9583_03_поверхность
+- D 0 - I - 0x01557B 05:956B: 8E 95     .word ofs_958E_04_влажность
+- D 0 - I - 0x01557D 05:956D: A5 95     .word ofs_95A5_05_дождь
+- D 0 - I - 0x01557F 05:956F: B0 95     .word ofs_95B0_06_ветер
+- D 0 - I - 0x015581 05:9571: BF 95     .word ofs_95BF_07_направление
+- D 0 - I - 0x015583 05:9573: CA 95     .word ofs_95CA_08_молния
+- D 0 - I - 0x015585 05:9575: D7 95     .word ofs_95D7_09_смерч
 
 
 
-ofs_9578_02:
+ofs_9578_02_материк:
 C - - J - - 0x015588 05:9578: AD 29 05  LDA ram_опция_материк
 C - - - - - 0x01558B 05:957B: 29 03     AND #$03
 C - - - - - 0x01558D 05:957D: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x015590 05:9580: 4C 77 95  RTS
-ofs_9583_03:
+
+
+
+ofs_9583_03_поверхность:
 C - - J - - 0x015593 05:9583: AD FB 05  LDA ram_опция_поверхность_влажность
 C - - - - - 0x015596 05:9586: 29 0F     AND #$0F
 C - - - - - 0x015598 05:9588: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x01559B 05:958B: 4C 77 95  RTS
-ofs_958E_04:
+
+
+
+ofs_958E_04_влажность:
 C - - J - - 0x01559E 05:958E: AD FB 05  LDA ram_опция_поверхность_влажность
 C - - - - - 0x0155A1 05:9591: 4A        LSR
 C - - - - - 0x0155A2 05:9592: 4A        LSR
@@ -3940,8 +3947,6 @@ C - - - - - 0x0155A5 05:9595: A8        TAY
 C - - - - - 0x0155A6 05:9596: B9 9F 95  LDA tbl_959F,Y
 C - - - - - 0x0155A9 05:9599: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x0155AC 05:959C: 4C 77 95  RTS
-
-
 
 tbl_959F:
 - D 0 - - - 0x0155AF 05:959F: 00        .byte $00   ; 
@@ -3953,7 +3958,7 @@ tbl_959F:
 
 
 
-ofs_95A5_05:
+ofs_95A5_05_дождь:
 C - - J - - 0x0155B5 05:95A5: AD 94 04  LDA ram_опция_дождь_ветер
 C - - - - - 0x0155B8 05:95A8: 29 0F     AND #$0F
 C - - - - - 0x0155BA 05:95AA: 8D CA 05  STA ram_номер_опции
@@ -3961,7 +3966,7 @@ C - - - - - 0x0155BD 05:95AD: 4C 77 95  RTS
 
 
 
-ofs_95B0_06:
+ofs_95B0_06_ветер:
 C - - J - - 0x0155C0 05:95B0: AD 94 04  LDA ram_опция_дождь_ветер
 C - - - - - 0x0155C3 05:95B3: 29 F0     AND #$F0
 C - - - - - 0x0155C5 05:95B5: 4A        LSR
@@ -3973,7 +3978,7 @@ C - - - - - 0x0155CC 05:95BC: 4C 77 95  RTS
 
 
 
-ofs_95BF_07:
+ofs_95BF_07_направление:
 C - - J - - 0x0155CF 05:95BF: AD 95 04  LDA ram_направление_молния_смерч
 C - - - - - 0x0155D2 05:95C2: 29 03     AND #$03
 C - - - - - 0x0155D4 05:95C4: 8D CA 05  STA ram_номер_опции
@@ -3981,7 +3986,7 @@ C - - - - - 0x0155D7 05:95C7: 4C 77 95  RTS
 
 
 
-ofs_95CA_08:
+ofs_95CA_08_молния:
 C - - J - - 0x0155DA 05:95CA: AD 95 04  LDA ram_направление_молния_смерч
 C - - - - - 0x0155DD 05:95CD: 29 0C     AND #$0C
 C - - - - - 0x0155DF 05:95CF: 4A        LSR
@@ -3991,7 +3996,7 @@ C - - - - - 0x0155E4 05:95D4: 4C 77 95  RTS
 
 
 
-ofs_95D7_09:
+ofs_95D7_09_смерч:
 C - - J - - 0x0155E7 05:95D7: AD 95 04  LDA ram_направление_молния_смерч
 C - - - - - 0x0155EA 05:95DA: 29 30     AND #$30
 C - - - - - 0x0155EC 05:95DC: 4A        LSR
@@ -4005,7 +4010,7 @@ C - - - - - 0x0155F3 05:95E3: 4C 77 95  RTS
 
 sub_95E6:
 C - - - - - 0x0155F6 05:95E6: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x0155F9 05:95E9: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x0155F9 05:95E9: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - - - - - - 0x0155FC 05:95EC: 00 96     .word _общий_RTS
 - - - - - - 0x0155FE 05:95EE: 00 96     .word _общий_RTS
 - D 0 - I - 0x015600 05:95F0: 01 96     .word ofs_9601_02
@@ -4413,7 +4418,7 @@ C - - - - - 0x0157DC 05:97CC: 29 0F     AND #$0F
 C - - - - - 0x0157DE 05:97CE: 8D F2 05  STA ram_поле_банк_фона
 C - - - - - 0x0157E1 05:97D1: 20 47 BB  JSR sub_BB47
 C - - - - - 0x0157E4 05:97D4: 20 84 BB  JSR sub_BB84
-C - - - - - 0x0157E7 05:97D7: 20 0F 80  JSR sub_0x01C263
+C - - - - - 0x0157E7 05:97D7: 20 0F 80  JSR sub_0x01C263_выставить_базовые_параметры_игроков
 C - - - - - 0x0157EA 05:97DA: AC 29 05  LDY ram_опция_материк
 C - - - - - 0x0157ED 05:97DD: B9 D1 A6  LDA tbl_A6D1,Y
 C - - - - - 0x0157F0 05:97E0: 8D 5A 05  STA ram_music_id
@@ -4438,16 +4443,16 @@ C - - - - - 0x015809 05:97F9: 20 DF 80  JSR sub_80DF
 C - - - - - 0x01580C 05:97FC: 20 2C 98  JSR sub_982C
 bra_97FF:
 C - - - - - 0x01580F 05:97FF: 20 1D 9B  JSR sub_9B1D
-C - - - - - 0x015812 05:9802: AD F0 00  LDA ram_copy_pos_X_lo_camera
-C - - - - - 0x015815 05:9805: 8D EC 00  STA ram_pos_X_lo_camera
-C - - - - - 0x015818 05:9808: AD F1 00  LDA ram_copy_pos_X_hi_camera
-C - - - - - 0x01581B 05:980B: 8D ED 00  STA ram_pos_X_hi_camera
-C - - - - - 0x01581E 05:980E: AD F2 00  LDA ram_copy_pos_Y_lo_camera
-C - - - - - 0x015821 05:9811: 8D EE 00  STA ram_pos_Y_lo_camera
-C - - - - - 0x015824 05:9814: AD F3 00  LDA ram_copy_pos_Y_hi_camera
-C - - - - - 0x015827 05:9817: 8D EF 00  STA ram_pos_Y_hi_camera
+C - - - - - 0x015812 05:9802: AD F0 00  LDA ram_pos_X_lo_camera     ; bzk опт, подпрограмма 0x01CAFE
+C - - - - - 0x015815 05:9805: 8D EC 00  STA ram_pos_X_lo_scroll
+C - - - - - 0x015818 05:9808: AD F1 00  LDA ram_pos_X_hi_camera
+C - - - - - 0x01581B 05:980B: 8D ED 00  STA ram_pos_X_hi_scroll
+C - - - - - 0x01581E 05:980E: AD F2 00  LDA ram_pos_Y_lo_camera
+C - - - - - 0x015821 05:9811: 8D EE 00  STA ram_pos_Y_lo_scroll
+C - - - - - 0x015824 05:9814: AD F3 00  LDA ram_pos_Y_hi_camera
+C - - - - - 0x015827 05:9817: 8D EF 00  STA ram_pos_Y_hi_scroll
 C - - - - - 0x01582A 05:981A: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x01582D 05:981D: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x01582D 05:981D: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x015830 05:9820: B8 98     .word ofs_98B8_00
 - D 0 - I - 0x015832 05:9822: C6 98     .word ofs_98C6_01
 - D 0 - I - 0x015834 05:9824: 34 99     .word ofs_9934_02
@@ -4488,7 +4493,7 @@ bra_9865:
 C - - - - - 0x015875 05:9865: 8A        TXA
 C - - - - - 0x015876 05:9866: 0D CC 05  ORA ram_счетчик_смен
 C - - - - - 0x015879 05:9869: AA        TAX
-C - - - - - 0x01587A 05:986A: 20 59 9D  JSR sub_9D59
+C - - - - - 0x01587A 05:986A: 20 59 9D  JSR sub_9D59_рожи
 C - - - - - 0x01587D 05:986D: E8        INX
 C - - - - - 0x01587E 05:986E: E0 0C     CPX #$0C
 C - - - - - 0x015880 05:9870: 90 F3     BCC bra_9865
@@ -4556,9 +4561,9 @@ C - - - - - 0x0158E0 05:98D0: 20 EF 82  JSR sub_82AF
 C - - - - - 0x0158E3 05:98D3: 20 9B 9D  JSR sub_9D9B
 bra_98D6:
 C - - - - - 0x0158E6 05:98D6: A2 0C     LDX #$0C
-C - - - - - 0x0158E8 05:98D8: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x0158EB 05:98DB: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-C - - - - - 0x0158EE 05:98DE: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x0158E8 05:98D8: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x0158EB 05:98DB: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+C - - - - - 0x0158EE 05:98DE: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x0158F1 05:98E1: 2D 99     .word ofs_992D_00_nothing
 - - - - - - 0x0158F3 05:98E3: ED 98     .word ofs_98ED_01_Start
 - - - - - - 0x0158F5 05:98E5: 2D 99     .word ofs_992D_02_Select
@@ -4622,9 +4627,9 @@ C - - - - - 0x015949 05:9939: 10 06     BPL bra_9941
 C - - - - - 0x01594B 05:993B: 20 83 9C  JSR sub_9C83
 C - - - - - 0x01594E 05:993E: 20 EF 82  JSR sub_82AF
 bra_9941:
-C - - - - - 0x015951 05:9941: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x015954 05:9944: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-C - - - - - 0x015957 05:9947: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x015951 05:9941: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x015954 05:9944: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+C - - - - - 0x015957 05:9947: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x01595A 05:994A: 2D 99     .word ofs_992D_00_nothing
 - - - - - - 0x01595C 05:994C: ED 98     .word ofs_98ED_01_Start
 - - - - - - 0x01595E 05:994E: 2D 99     .word ofs_992D_02_Select
@@ -4678,9 +4683,9 @@ C - - - - - 0x0159AD 05:999D: 20 7C 9C  JSR sub_9C7C
 C - - - - - 0x0159B0 05:99A0: 20 EF 82  JSR sub_82AF
 C - - - - - 0x0159B3 05:99A3: 20 A0 9D  JSR sub_9DA0
 bra_99A6:
-C - - - - - 0x0159B6 05:99A6: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x0159B9 05:99A9: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-C - - - - - 0x0159BC 05:99AC: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x0159B6 05:99A6: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x0159B9 05:99A9: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+C - - - - - 0x0159BC 05:99AC: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x0159BF 05:99AF: 2D 99     .word ofs_992D_00_nothing
 - - - - - - 0x0159C1 05:99B1: ED 98     .word ofs_98ED_01_Start
 - - - - - - 0x0159C3 05:99B3: 2D 99     .word ofs_992D_02_Select
@@ -4728,8 +4733,8 @@ C - - - - - 0x015A0A 05:99FA: 20 8F 9C  JSR sub_9C8F
 C - - - - - 0x015A0D 05:99FD: 20 95 9C  JSR sub_9C95
 bra_9A00:
 C - - - - - 0x015A10 05:9A00: A2 0C     LDX #$0C
-C - - - - - 0x015A12 05:9A02: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x015A15 05:9A05: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x015A12 05:9A02: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x015A15 05:9A05: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x015A18 05:9A08: 2D 99     .word ofs_992D_00_nothing
 - - - - - - 0x015A1A 05:9A0A: 1A 9A     .word ofs_9A1A_01_Start
 - - - - - - 0x015A1C 05:9A0C: 2D 99     .word ofs_992D_02_Select
@@ -4834,8 +4839,8 @@ C - - - - - 0x015AC4 05:9AB4: A9 00     LDA #$00
 C - - - - - 0x015AC6 05:9AB6: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x015AC9 05:9AB9: 20 B3 9C  JSR sub_9CB3
 bra_9ABC:
-C - - - - - 0x015ACC 05:9ABC: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x015ACF 05:9ABF: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x015ACC 05:9ABC: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x015ACF 05:9ABF: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 0 - I - 0x015AD2 05:9AC2: 2D 99     .word ofs_992D_00_nothing
 - D 0 - I - 0x015AD4 05:9AC4: D4 9A     .word ofs_9AD4_01_Start
 - - - - - - 0x015AD6 05:9AC6: 2D 99     .word ofs_992D_02_Select
@@ -5131,12 +5136,12 @@ C - - - - - 0x015BFE 05:9BEE: 20 8D 82  JSR sub_828D
 C - - - - - 0x015C01 05:9BF1: 20 65 C0  JSR sub_0x01EB9C
 bra_9BF4:
 C - - - - - 0x015C04 05:9BF4: A2 00     LDX #$00
-bra_9BF6:
-C - - - - - 0x015C06 05:9BF6: 20 C2 9D  JSR sub_9DC2
+bra_9BF6_loop:
+C - - - - - 0x015C06 05:9BF6: 20 C2 9D  JSR sub_9DC2_рожи_в_расстановке
 C - - - - - 0x015C09 05:9BF9: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x015C0C 05:9BFC: E8        INX
 C - - - - - 0x015C0D 05:9BFD: E0 0C     CPX #$0C
-C - - - - - 0x015C0F 05:9BFF: 90 F5     BCC bra_9BF6
+C - - - - - 0x015C0F 05:9BFF: 90 F5     BCC bra_9BF6_loop
 C - - - - - 0x015C11 05:9C01: 20 14 80  JSR sub_0x01C2AE
 C - - - - - 0x015C14 05:9C04: 60        RTS
 
@@ -5146,51 +5151,51 @@ sub_9C05:
 C - - - - - 0x015C15 05:9C05: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x015C18 05:9C08: C9 05     CMP #$05
 C - - - - - 0x015C1A 05:9C0A: 90 26     BCC bra_9C32
-C - - - - - 0x015C1C 05:9C0C: AD F2 00  LDA ram_copy_pos_Y_lo_camera
+C - - - - - 0x015C1C 05:9C0C: AD F2 00  LDA ram_pos_Y_lo_camera
 C - - - - - 0x015C1F 05:9C0F: D0 07     BNE bra_9C18
-C - - - - - 0x015C21 05:9C11: AD F3 00  LDA ram_copy_pos_Y_hi_camera
+C - - - - - 0x015C21 05:9C11: AD F3 00  LDA ram_pos_Y_hi_camera
 C - - - - - 0x015C24 05:9C14: C9 01     CMP #$01
 C - - - - - 0x015C26 05:9C16: F0 53     BEQ bra_9C6B_RTS
 bra_9C18:
 C - - - - - 0x015C28 05:9C18: 18        CLC
-C - - - - - 0x015C29 05:9C19: AD F2 00  LDA ram_copy_pos_Y_lo_camera
+C - - - - - 0x015C29 05:9C19: AD F2 00  LDA ram_pos_Y_lo_camera
 C - - - - - 0x015C2C 05:9C1C: 69 04     ADC #$04
-C - - - - - 0x015C2E 05:9C1E: 8D F2 00  STA ram_copy_pos_Y_lo_camera
+C - - - - - 0x015C2E 05:9C1E: 8D F2 00  STA ram_pos_Y_lo_camera
 C - - - - - 0x015C31 05:9C21: C9 F0     CMP #$F0
 C - - - - - 0x015C33 05:9C23: 90 46     BCC bra_9C6B_RTS
 C - - - - - 0x015C35 05:9C25: A9 00     LDA #$00
-C - - - - - 0x015C37 05:9C27: 8D F2 00  STA ram_copy_pos_Y_lo_camera
+C - - - - - 0x015C37 05:9C27: 8D F2 00  STA ram_pos_Y_lo_camera
 C - - - - - 0x015C3A 05:9C2A: A9 01     LDA #$01
-C - - - - - 0x015C3C 05:9C2C: 8D F3 00  STA ram_copy_pos_Y_hi_camera
+C - - - - - 0x015C3C 05:9C2C: 8D F3 00  STA ram_pos_Y_hi_camera
 C - - - - - 0x015C3F 05:9C2F: 4C 6B 9C  RTS
 bra_9C32:
-C - - - - - 0x015C42 05:9C32: AD F2 00  LDA ram_copy_pos_Y_lo_camera
+C - - - - - 0x015C42 05:9C32: AD F2 00  LDA ram_pos_Y_lo_camera
 C - - - - - 0x015C45 05:9C35: D0 05     BNE bra_9C3C
-C - - - - - 0x015C47 05:9C37: AD F3 00  LDA ram_copy_pos_Y_hi_camera
+C - - - - - 0x015C47 05:9C37: AD F3 00  LDA ram_pos_Y_hi_camera
 C - - - - - 0x015C4A 05:9C3A: F0 2F     BEQ bra_9C6B_RTS
 bra_9C3C:
 C - - - - - 0x015C4C 05:9C3C: 38        SEC
-C - - - - - 0x015C4D 05:9C3D: AD F2 00  LDA ram_copy_pos_Y_lo_camera
+C - - - - - 0x015C4D 05:9C3D: AD F2 00  LDA ram_pos_Y_lo_camera
 C - - - - - 0x015C50 05:9C40: E9 04     SBC #$04
-C - - - - - 0x015C52 05:9C42: 8D F2 00  STA ram_copy_pos_Y_lo_camera
+C - - - - - 0x015C52 05:9C42: 8D F2 00  STA ram_pos_Y_lo_camera
 C - - - - - 0x015C55 05:9C45: C9 F0     CMP #$F0
 C - - - - - 0x015C57 05:9C47: 90 0E     BCC bra_9C57
 C - - - - - 0x015C59 05:9C49: E9 10     SBC #$10
-C - - - - - 0x015C5B 05:9C4B: 8D F2 00  STA ram_copy_pos_Y_lo_camera
+C - - - - - 0x015C5B 05:9C4B: 8D F2 00  STA ram_pos_Y_lo_camera
 C - - - - - 0x015C5E 05:9C4E: 38        SEC
-C - - - - - 0x015C5F 05:9C4F: AD F3 00  LDA ram_copy_pos_Y_hi_camera
+C - - - - - 0x015C5F 05:9C4F: AD F3 00  LDA ram_pos_Y_hi_camera
 C - - - - - 0x015C62 05:9C52: E9 01     SBC #$01
-C - - - - - 0x015C64 05:9C54: 8D F3 00  STA ram_copy_pos_Y_hi_camera
+C - - - - - 0x015C64 05:9C54: 8D F3 00  STA ram_pos_Y_hi_camera
 bra_9C57:
-C - - - - - 0x015C67 05:9C57: AD F3 00  LDA ram_copy_pos_Y_hi_camera
+C - - - - - 0x015C67 05:9C57: AD F3 00  LDA ram_pos_Y_hi_camera
 C - - - - - 0x015C6A 05:9C5A: 30 07     BMI bra_9C63
 C - - - - - 0x015C6C 05:9C5C: D0 0D     BNE bra_9C6B_RTS
-C - - - - - 0x015C6E 05:9C5E: AD F2 00  LDA ram_copy_pos_Y_lo_camera
+C - - - - - 0x015C6E 05:9C5E: AD F2 00  LDA ram_pos_Y_lo_camera
 C - - - - - 0x015C71 05:9C61: D0 08     BNE bra_9C6B_RTS
 bra_9C63:
 C - - - - - 0x015C73 05:9C63: A9 00     LDA #$00
-C - - - - - 0x015C75 05:9C65: 8D F2 00  STA ram_copy_pos_Y_lo_camera
-C - - - - - 0x015C78 05:9C68: 8D F3 00  STA ram_copy_pos_Y_hi_camera
+C - - - - - 0x015C75 05:9C65: 8D F2 00  STA ram_pos_Y_lo_camera
+C - - - - - 0x015C78 05:9C68: 8D F3 00  STA ram_pos_Y_hi_camera
 bra_9C6B_RTS:
 C D 0 - - - 0x015C7B 05:9C6B: 60        RTS
 
@@ -5239,12 +5244,12 @@ C - - - - - 0x015CA9 05:9C99: 0D CC 05  ORA ram_счетчик_смен
 C - - - - - 0x015CAC 05:9C9C: AA        TAX
 C - - - - - 0x015CAD 05:9C9D: BD 32 05  LDA ram_player_id,X
 C - - - - - 0x015CB0 05:9CA0: A0 00     LDY #$00
-bra_9CA2:
+bra_9CA2_loop:
 C - - - - - 0x015CB2 05:9CA2: D9 2E 9F  CMP tbl_9F2E,Y
 C - - - - - 0x015CB5 05:9CA5: F0 07     BEQ bra_9CAE
 C - - - - - 0x015CB7 05:9CA7: C8        INY
 C - - - - - 0x015CB8 05:9CA8: C0 0C     CPY #$0C
-C - - - - - 0x015CBA 05:9CAA: 90 F6     BCC bra_9CA2
+C - - - - - 0x015CBA 05:9CAA: 90 F6     BCC bra_9CA2_loop
 - - - - - - 0x015CBC 05:9CAC: A0 00     LDY #$00
 bra_9CAE:
 C - - - - - 0x015CBE 05:9CAE: 98        TYA
@@ -5379,18 +5384,18 @@ C - - - - - 0x015D5B 05:9D4B: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x015D5E 05:9D4E: A8        TAY
 C - - - - - 0x015D5F 05:9D4F: B9 2E 9F  LDA tbl_9F2E,Y
 C - - - - - 0x015D62 05:9D52: 9D 32 05  STA ram_player_id,X
-C - - - - - 0x015D65 05:9D55: 20 59 9D  JSR sub_9D59
+C - - - - - 0x015D65 05:9D55: 20 59 9D  JSR sub_9D59_рожи
 C - - - - - 0x015D68 05:9D58: 60        RTS
 
 
 
-sub_9D59:
+sub_9D59_рожи:
 C - - - - - 0x015D69 05:9D59: AC CC 05  LDY ram_счетчик_смен
 C - - - - - 0x015D6C 05:9D5C: B9 2C 05  LDA ram_номер_команды,Y
 C - - - - - 0x015D6F 05:9D5F: 29 0F     AND #$0F
-C - - - - - 0x015D71 05:9D61: F0 02     BEQ bra_9D65
+C - - - - - 0x015D71 05:9D61: F0 02     BEQ bra_9D65_это_япония
 C - - - - - 0x015D73 05:9D63: A9 0C     LDA #$0C
-bra_9D65:
+bra_9D65_это_япония:
 C - - - - - 0x015D75 05:9D65: 18        CLC
 C - - - - - 0x015D76 05:9D66: 7D 32 05  ADC ram_player_id,X
 C - - - - - 0x015D79 05:9D69: A8        TAY
@@ -5410,13 +5415,13 @@ C - - - - - 0x015D87 05:9D77: 0D CC 05  ORA ram_счетчик_смен
 C - - - - - 0x015D8A 05:9D7A: A8        TAY
 C - - - - - 0x015D8B 05:9D7B: B9 32 05  LDA ram_player_id,Y
 C - - - - - 0x015D8E 05:9D7E: 85 1C     STA ram_001C
-bra_9D80:
+bra_9D80_loop:
 C - - - - - 0x015D90 05:9D80: 88        DEY
 C - - - - - 0x015D91 05:9D81: 88        DEY
 C - - - - - 0x015D92 05:9D82: 30 0A     BMI bra_9D8E
 C - - - - - 0x015D94 05:9D84: B9 32 05  LDA ram_player_id,Y
 C - - - - - 0x015D97 05:9D87: C5 1C     CMP ram_001C
-C - - - - - 0x015D99 05:9D89: D0 F5     BNE bra_9D80
+C - - - - - 0x015D99 05:9D89: D0 F5     BNE bra_9D80_loop
 C - - - - - 0x015D9B 05:9D8B: 18        CLC
 C - - - - - 0x015D9C 05:9D8C: 90 01     BCC bra_9D8F_RTS
 bra_9D8E:
@@ -5450,9 +5455,9 @@ C - - - - - 0x015DB8 05:9DA8: B9 BE 9D  LDA tbl_9DBE,Y
 C - - - - - 0x015DBB 05:9DAB: 8D B9 06  STA ram_буфер_графики
 C - - - - - 0x015DBE 05:9DAE: A9 02     LDA #$02
 C - - - - - 0x015DC0 05:9DB0: 8D B8 06  STA ram_счетчик_буфера_графики
-C - - - - - 0x015DC3 05:9DB3: A9 44     LDA #$44
+C - - - - - 0x015DC3 05:9DB3: A9 44     LDA #< $2144
 C - - - - - 0x015DC5 05:9DB5: 8D B7 06  STA ram_байт_2006_lo_графика
-C - - - - - 0x015DC8 05:9DB8: A9 21     LDA #$21
+C - - - - - 0x015DC8 05:9DB8: A9 21     LDA #> $2144
 C - - - - - 0x015DCA 05:9DBA: 8D B6 06  STA ram_байт_2006_hi_графика
 C - - - - - 0x015DCD 05:9DBD: 60        RTS
 
@@ -5465,7 +5470,7 @@ tbl_9DBF:
 
 
 
-sub_9DC2:
+sub_9DC2_рожи_в_расстановке:
 C - - - - - 0x015DD2 05:9DC2: AC CC 05  LDY ram_счетчик_смен
 C - - - - - 0x015DD5 05:9DC5: B9 30 05  LDA ram_team_formation,Y
 C - - - - - 0x015DD8 05:9DC8: 0A        ASL
@@ -6050,9 +6055,9 @@ C - - - - - 0x0160D2 05:A0C2: A9 1F     LDA #$1F
 C - - - - - 0x0160D4 05:A0C4: 8D DD 06  STA ram_буфер_палитры + 1
 C - - - - - 0x0160D7 05:A0C7: A9 02     LDA #$02
 C - - - - - 0x0160D9 05:A0C9: 8D DB 06  STA ram_счетчик_буфера_палитры
-C - - - - - 0x0160DC 05:A0CC: A9 24     LDA #$24
+C - - - - - 0x0160DC 05:A0CC: A9 24     LDA #< $2124
 C - - - - - 0x0160DE 05:A0CE: 8D DA 06  STA ram_байт_2006_lo_палитра
-C - - - - - 0x0160E1 05:A0D1: A9 21     LDA #$21
+C - - - - - 0x0160E1 05:A0D1: A9 21     LDA #> $2124
 C - - - - - 0x0160E3 05:A0D3: 8D D9 06  STA ram_байт_2006_hi_палитра
 bra_A0D6_RTS:
 C - - - - - 0x0160E6 05:A0D6: 60        RTS
@@ -6077,7 +6082,7 @@ C - - - - - 0x0160F4 05:A0E4: 20 DF 80  JSR sub_80DF
 C - - - - - 0x0160F7 05:A0E7: 20 F4 A0  JSR sub_A0F4
 bra_A0EA:
 C - - - - - 0x0160FA 05:A0EA: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x0160FD 05:A0ED: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x0160FD 05:A0ED: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x016100 05:A0F0: 34 A1     .word ofs_A134_00
 - D 1 - I - 0x016102 05:A0F2: 42 A1     .word ofs_A142_01
 
@@ -6166,9 +6171,9 @@ C - - - - - 0x016193 05:A183: 8D 97 06  STA ram_буфер_атрибутов + 
 C - - - - - 0x016196 05:A186: A9 02     LDA #$02
 C - - - - - 0x016198 05:A188: 8D 95 06  STA ram_счетчик_буфера_атрибутов
 C - - - - - 0x01619B 05:A18B: 8D B8 06  STA ram_счетчик_буфера_графики
-C - - - - - 0x01619E 05:A18E: A9 19     LDA #$19
+C - - - - - 0x01619E 05:A18E: A9 19     LDA #< $2219
 C - - - - - 0x0161A0 05:A190: 8D 94 06  STA ram_байт_2006_lo_атрибуты
-C - - - - - 0x0161A3 05:A193: A9 22     LDA #$22
+C - - - - - 0x0161A3 05:A193: A9 22     LDA #> $2219
 C - - - - - 0x0161A5 05:A195: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x0161A8 05:A198: AD 95 04  LDA ram_направление_молния_смерч
 C - - - - - 0x0161AB 05:A19B: 29 03     AND #$03
@@ -6178,9 +6183,9 @@ C - - - - - 0x0161AF 05:A19F: B9 4B A2  LDA tbl_A24B,Y
 C - - - - - 0x0161B2 05:A1A2: 8D B9 06  STA ram_буфер_графики
 C - - - - - 0x0161B5 05:A1A5: B9 4C A2  LDA tbl_A24C,Y
 C - - - - - 0x0161B8 05:A1A8: 8D BA 06  STA ram_буфер_графики + 1
-C - - - - - 0x0161BB 05:A1AB: A9 5A     LDA #$5A
+C - - - - - 0x0161BB 05:A1AB: A9 5A     LDA #< $225A
 C - - - - - 0x0161BD 05:A1AD: 8D B7 06  STA ram_байт_2006_lo_графика
-C - - - - - 0x0161C0 05:A1B0: A9 22     LDA #$22
+C - - - - - 0x0161C0 05:A1B0: A9 22     LDA #> $225A
 C - - - - - 0x0161C2 05:A1B2: 8D B6 06  STA ram_байт_2006_hi_графика
 C - - - - - 0x0161C5 05:A1B5: 20 6B C0  JSR sub_0x01EFBD_write_buffers_to_ppu
 C - - - - - 0x0161C8 05:A1B8: AD 94 04  LDA ram_опция_дождь_ветер
@@ -6349,7 +6354,7 @@ C - - - - - 0x016295 05:A285: 20 DF 80  JSR sub_80DF
 C - - - - - 0x016298 05:A288: 20 95 A2  JSR sub_A295
 bra_A28B:
 C - - - - - 0x01629B 05:A28B: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x01629E 05:A28E: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x01629E 05:A28E: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x0162A1 05:A291: C5 A2     .word ofs_A2C5_00
 - D 1 - I - 0x0162A3 05:A293: D0 A2     .word ofs_A2D0_01
 
@@ -6358,7 +6363,7 @@ C - - - - - 0x01629E 05:A28E: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_
 sub_A295:
 C - - - - - 0x0162A5 05:A295: A9 00     LDA #$00
 C - - - - - 0x0162A7 05:A297: 8D 2C 05  STA ram_номер_команды
-C - - - - - 0x0162AA 05:A29A: 20 38 BD  JSR sub_BD38
+C - - - - - 0x0162AA 05:A29A: 20 38 BD  JSR sub_BD38_рожи
 C - - - - - 0x0162AD 05:A29D: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x0162B0 05:A2A0: AD D1 05  LDA ram_05D1
 C - - - - - 0x0162B3 05:A2A3: 8D 5C 05  STA ram_лицо_игрока
@@ -6480,9 +6485,9 @@ C - - - - - 0x016381 05:A371: A9 02     LDA #$02
 C - - - - - 0x016383 05:A373: 8D 95 06  STA ram_счетчик_буфера_атрибутов
 C - - - - - 0x016386 05:A376: 8D B8 06  STA ram_счетчик_буфера_графики
 C - - - - - 0x016389 05:A379: 8D DB 06  STA ram_счетчик_буфера_палитры
-C - - - - - 0x01638C 05:A37C: A9 F9     LDA #$F9
+C - - - - - 0x01638C 05:A37C: A9 F9     LDA #< $20F9
 C - - - - - 0x01638E 05:A37E: 8D 94 06  STA ram_байт_2006_lo_атрибуты
-C - - - - - 0x016391 05:A381: A9 20     LDA #$20
+C - - - - - 0x016391 05:A381: A9 20     LDA #> $20F9
 C - - - - - 0x016393 05:A383: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x016396 05:A386: A9 39     LDA #$39
 C - - - - - 0x016398 05:A388: 8D B7 06  STA ram_байт_2006_lo_графика
@@ -6497,9 +6502,9 @@ C - - - - - 0x0163AD 05:A39D: B9 3F A4  LDA tbl_A43F,Y
 C - - - - - 0x0163B0 05:A3A0: 8D DC 06  STA ram_буфер_палитры
 C - - - - - 0x0163B3 05:A3A3: A9 01     LDA #$01
 C - - - - - 0x0163B5 05:A3A5: 8D DB 06  STA ram_счетчик_буфера_палитры
-C - - - - - 0x0163B8 05:A3A8: A9 B9     LDA #$B9
+C - - - - - 0x0163B8 05:A3A8: A9 B9     LDA #< $21B9
 C - - - - - 0x0163BA 05:A3AA: 8D DA 06  STA ram_байт_2006_lo_палитра
-C - - - - - 0x0163BD 05:A3AD: A9 21     LDA #$21
+C - - - - - 0x0163BD 05:A3AD: A9 21     LDA #> $21B9
 C - - - - - 0x0163BF 05:A3AF: 8D D9 06  STA ram_байт_2006_hi_палитра
 C - - - - - 0x0163C2 05:A3B2: AD D1 05  LDA ram_05D1
 C - - - - - 0x0163C5 05:A3B5: 20 FF B1  JSR sub_B1FF
@@ -6909,7 +6914,7 @@ C - - - - - 0x01658D 05:A57D: 20 8D A5  JSR sub_A58D
 bra_A580:
 C - - - - - 0x016590 05:A580: 20 70 A6  JSR sub_A670
 C - - - - - 0x016593 05:A583: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x016596 05:A586: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x016596 05:A586: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x016599 05:A589: D0 A5     .word ofs_A5D0_00_экран_выбора_музыки_рисуется
 - D 1 - I - 0x01659B 05:A58B: DE A5     .word ofs_A5DE_01_экран_выбора_музыки_отрисован
 
@@ -6987,8 +6992,8 @@ C - - - - - 0x016625 05:A615: AD 5A 05  LDA ram_music_id
 C - - - - - 0x016628 05:A618: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_A61B:
 C - - - - - 0x01662B 05:A61B: A2 02     LDX #$02
-C - - - - - 0x01662D 05:A61D: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x016630 05:A620: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x01662D 05:A61D: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x016630 05:A620: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x016633 05:A623: 57 A6     .word ofs_A657_00_nothing
 - D 1 - I - 0x016635 05:A625: 35 A6     .word ofs_A635_01_Start
 - - - - - - 0x016637 05:A627: 57 A6     .word ofs_A657_02_Select
@@ -7206,9 +7211,9 @@ bra_A715:
 loc_A72B:
 - - - - - - 0x01673B 05:A72B: A9 02     LDA #$02
 - - - - - - 0x01673D 05:A72D: 8D B8 06  STA ram_счетчик_буфера_графики
-- - - - - - 0x016740 05:A730: A9 E5     LDA #$E5
+- - - - - - 0x016740 05:A730: A9 E5     LDA #< $20E5
 - - - - - - 0x016742 05:A732: 8D B7 06  STA ram_байт_2006_lo_графика
-- - - - - - 0x016745 05:A735: A9 20     LDA #$20
+- - - - - - 0x016745 05:A735: A9 20     LDA #> $20E5
 - - - - - - 0x016747 05:A737: 8D B6 06  STA ram_байт_2006_hi_графика
 - - - - - - 0x01674A 05:A73A: 60        RTS
 bra_A73B:
@@ -7255,7 +7260,7 @@ C - - - - - 0x016792 05:A782: 20 87 AC  JSR sub_AC87
 bra_A785:
 C - - - - - 0x016795 05:A785: 20 EE AB  JSR sub_ABEE
 C - - - - - 0x016798 05:A788: AD C9 05  LDA ram_счетчик_опций
-C - - - - - 0x01679B 05:A78B: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x01679B 05:A78B: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x01679E 05:A78E: 4E A8     .word ofs_A84E_00
 - D 1 - I - 0x0167A0 05:A790: 61 A8     .word ofs_A861_01
 - D 1 - I - 0x0167A2 05:A792: ED A8     .word ofs_A8ED_02
@@ -7375,9 +7380,9 @@ C - - - - - 0x016873 05:A863: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x016876 05:A866: 10 03     BPL bra_A86B
 C - - - - - 0x016878 05:A868: 20 87 AC  JSR sub_AC87
 bra_A86B:
-C - - - - - 0x01687B 05:A86B: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x01687E 05:A86E: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-C - - - - - 0x016881 05:A871: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x01687B 05:A86B: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x01687E 05:A86E: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+C - - - - - 0x016881 05:A871: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x016884 05:A874: C5 A8     .word ofs_A8C5_00_nothing
 - - - - - - 0x016886 05:A876: 80 A8     .word ofs_A880_01_Start
 - - - - - - 0x016888 05:A878: C5 A8     .word ofs_A8C5_02_Select
@@ -7461,9 +7466,9 @@ C - - - - - 0x016902 05:A8F2: 10 06     BPL bra_A8FA
 C - - - - - 0x016904 05:A8F4: 20 29 AE  JSR sub_AE29
 C - - - - - 0x016907 05:A8F7: 20 19 AD  JSR sub_AD19
 bra_A8FA:
-C - - - - - 0x01690A 05:A8FA: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x01690D 05:A8FD: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-C - - - - - 0x016910 05:A900: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x01690A 05:A8FA: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x01690D 05:A8FD: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+C - - - - - 0x016910 05:A900: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x016913 05:A903: 7C A9     .word ofs_A97C_00_nothing
 - - - - - - 0x016915 05:A905: 80 A8     .word ofs_A880_01_Start
 - - - - - - 0x016917 05:A907: 7C A9     .word ofs_A97C_02_Select
@@ -7567,9 +7572,9 @@ C - - - - - 0x0169B0 05:A9A0: 10 06     BPL bra_A9A8
 C - - - - - 0x0169B2 05:A9A2: 20 29 AE  JSR sub_AE29
 C - - - - - 0x0169B5 05:A9A5: 20 19 AD  JSR sub_AD19
 bra_A9A8:
-C - - - - - 0x0169B8 05:A9A8: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x0169BB 05:A9AB: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-C - - - - - 0x0169BE 05:A9AE: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x0169B8 05:A9A8: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x0169BB 05:A9AB: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+C - - - - - 0x0169BE 05:A9AE: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x0169C1 05:A9B1: 7C A9     .word ofs_A97C_00_nothing
 - - - - - - 0x0169C3 05:A9B3: 80 A8     .word ofs_A880_01_Start
 - - - - - - 0x0169C5 05:A9B5: 7C A9     .word ofs_A97C_02_Select
@@ -7600,9 +7605,9 @@ C - - - - - 0x0169EB 05:A9DB: 8D CA 05  STA ram_номер_опции
 bra_A9DE:
 C - - - - - 0x0169EE 05:A9DE: 2C CA 05  BIT ram_номер_опции
 C - - - - - 0x0169F1 05:A9E1: 70 15     BVS bra_A9F8
-C - - - - - 0x0169F3 05:A9E3: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x0169F6 05:A9E6: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-C - - - - - 0x0169F9 05:A9E9: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x0169F3 05:A9E3: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x0169F6 05:A9E6: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+C - - - - - 0x0169F9 05:A9E9: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x0169FC 05:A9EC: C5 A8     .word ofs_A8C5_00_nothing
 - - - - - - 0x0169FE 05:A9EE: 80 A8     .word ofs_A880_01_Start
 - - - - - - 0x016A00 05:A9F0: C5 A8     .word ofs_A8C5_02_Select
@@ -7672,9 +7677,9 @@ C - - - - - 0x016A70 05:AA60: 10 06     BPL bra_AA68
 C - - - - - 0x016A72 05:AA62: 20 29 AE  JSR sub_AE29
 C - - - - - 0x016A75 05:AA65: 20 19 AD  JSR sub_AD19
 bra_AA68:
-C - - - - - 0x016A78 05:AA68: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x016A7B 05:AA6B: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-C - - - - - 0x016A7E 05:AA6E: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x016A78 05:AA68: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x016A7B 05:AA6B: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+C - - - - - 0x016A7E 05:AA6E: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x016A81 05:AA71: 7C A9     .word ofs_A97C_00_nothing
 - - - - - - 0x016A83 05:AA73: 80 A8     .word ofs_A880_01_Start
 - - - - - - 0x016A85 05:AA75: 7C A9     .word ofs_A97C_02_Select
@@ -7705,8 +7710,8 @@ C - - - - - 0x016AAA 05:AA9A: AD E1 05  LDA ram_05E1
 C - - - - - 0x016AAD 05:AA9D: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x016AB0 05:AAA0: 20 53 AD  JSR sub_AD53
 bra_AAA3:
-C - - - - - 0x016AB3 05:AAA3: 20 7E 81  JSR sub_817E_check_pressed_buttons
-C - - - - - 0x016AB6 05:AAA6: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x016AB3 05:AAA3: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+C - - - - - 0x016AB6 05:AAA6: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x016AB9 05:AAA9: 7C A9     .word ofs_A97C_00_nothing
 - - - - - - 0x016ABB 05:AAAB: 80 A8     .word ofs_A880_01_Start
 - - - - - - 0x016ABD 05:AAAD: 7C A9     .word ofs_A97C_02_Select
@@ -8133,9 +8138,9 @@ C - - - - - 0x016D02 05:ACF2: A5 33     LDA ram_0033
 C - - - - - 0x016D04 05:ACF4: 8D B7 06  STA ram_байт_2006_lo_графика
 C - - - - - 0x016D07 05:ACF7: A5 32     LDA ram_0032
 C - - - - - 0x016D09 05:ACF9: 8D B6 06  STA ram_байт_2006_hi_графика
-bra_ACFC:
+bra_ACFC_infinite_loop:
 C - - - - - 0x016D0C 05:ACFC: AD B6 06  LDA ram_байт_2006_hi_графика
-C D 1 - I - 0x016D0F 05:ACFF: 10 FB     BPL bra_ACFC
+C D 1 - I - 0x016D0F 05:ACFF: 10 FB     BPL bra_ACFC_infinite_loop
 C D 1 - I - 0x016D11 05:AD01: E8        INX
 C D 1 - I - 0x016D12 05:AD02: E0 07     CPX #$07
 C D 1 - I - 0x016D14 05:AD04: B0 12     BCS bra_AD18_RTS
@@ -8360,13 +8365,13 @@ C - - - - - 0x016E3F 05:AE2F: 60        RTS
 
 
 
-sub_AE30:
+sub_AE30:   ; bzk опт
 C - - - - - 0x016E40 05:AE30: A9 04     LDA #$04
 C - - - - - 0x016E42 05:AE32: 4C C0 AC  JMP loc_ACC0
 
 
 
-tbl_AE35:
+tbl_AE35:   ; bzk опт
 - D 1 - - - 0x016E45 05:AE35: 5F AE     .word tbl_AE5F
 
 tbl_AE37:
@@ -8686,7 +8691,7 @@ C - - - - - 0x016F82 05:AF72: 8D 06 06  STA ram_0606
 C - - - - - 0x016F85 05:AF75: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x016F88 05:AF78: C9 05     CMP #$05
 C - - - - - 0x016F8A 05:AF7A: B0 10     BCS bra_AF8C_RTS
-C - - - - - 0x016F8C 05:AF7C: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x016F8C 05:AF7C: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - - - - - - 0x016F8F 05:AF7F: 8D AF     .word ofs_AF8D_00
 - - - - - - 0x016F91 05:AF81: A1 AF     .word ofs_AFA1_01
 - - - - - - 0x016F93 05:AF83: B1 AF     .word ofs_AFB1_02
@@ -8746,7 +8751,7 @@ C - - - - - 0x016FCB 05:AFBB: D0 E8     BNE bra_AFA5
 
 sub_AFBD:
 C - - - - - 0x016FCD 05:AFBD: AD D0 05  LDA ram_05D0
-C - - - - - 0x016FD0 05:AFC0: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x016FD0 05:AFC0: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x016FD3 05:AFC3: CF AF     .word ofs_AFCF_00
 - D 1 - I - 0x016FD5 05:AFC5: D9 AF     .word ofs_AFD9_01
 - D 1 - I - 0x016FD7 05:AFC7: F7 AF     .word ofs_AFF7_02
@@ -9354,7 +9359,7 @@ bra_B2DD:
 bra_B2E3:
 - - - - - - 0x0172F3 05:B2E3: 20 A3 B3  JSR sub_B3A3
 - - - - - - 0x0172F6 05:B2E6: AD C9 05  LDA ram_счетчик_опций
-- - - - - - 0x0172F9 05:B2E9: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+- - - - - - 0x0172F9 05:B2E9: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - - - - - - 0x0172FC 05:B2EC: 2F B3     .word ofs_B32F_00
 - - - - - - 0x0172FE 05:B2EE: 45 B3     .word ofs_B345_01
 
@@ -9411,9 +9416,9 @@ ofs_B345_01:
 - - - - - - 0x01735E 05:B34E: 8D CA 05  STA ram_номер_опции
 - - - - - - 0x017361 05:B351: A2 00     LDX #$00
 bra_B353:
-- - - - - - 0x017363 05:B353: 20 7E 81  JSR sub_817E_check_pressed_buttons
-- - - - - - 0x017366 05:B356: 20 D3 81  JSR sub_81D3_convert_dpad_buttons
-- - - - - - 0x017369 05:B359: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+- - - - - - 0x017363 05:B353: 20 7E 81  JSR sub_817E_конвертация_нажатых_кнопок_в_индекс
+- - - - - - 0x017366 05:B356: 20 D3 81  JSR sub_81D3_конвертация_индексов_Dpad_в_05
+- - - - - - 0x017369 05:B359: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - - - - - - 0x01736C 05:B35C: 8D B3     .word ofs_B38D_00_nothing
 - - - - - - 0x01736E 05:B35E: 68 B3     .word ofs_B368_01_Start
 - - - - - - 0x017370 05:B360: 8D B3     .word ofs_B38D_02_Select
@@ -9627,7 +9632,7 @@ sub_B47C:
 - - - - - - 0x01749B 05:B48B: 20 02 C0  JSR sub_0x01C2F4_play_sound
 bra_B48E:
 - - - - - - 0x01749E 05:B48E: AD C9 05  LDA ram_счетчик_опций
-- - - - - - 0x0174A1 05:B491: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+- - - - - - 0x0174A1 05:B491: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - - - - - - 0x0174A4 05:B494: 98 B4     .word ofs_B498_00
 - - - - - - 0x0174A6 05:B496: AE B4     .word ofs_B4AE_01
 
@@ -9685,7 +9690,7 @@ sub_B4D6:
 - - - - - - 0x017507 05:B4F7: C9 04     CMP #$04
 - - - - - - 0x017509 05:B4F9: F0 0E     BEQ bra_B509_RTS
 - - - - - - 0x01750B 05:B4FB: AD 4A 05  LDA ram_054A
-- - - - - - 0x01750E 05:B4FE: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+- - - - - - 0x01750E 05:B4FE: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - - - - - - 0x017511 05:B501: 0A B5     .word ofs_B50A_00
 - - - - - - 0x017513 05:B503: 35 B5     .word ofs_B535_01
 - - - - - - 0x017515 05:B505: 54 B5     .word ofs_B554_02
@@ -10963,7 +10968,7 @@ C D 1 - - - 0x017B57 05:BB47: A9 00     LDA #$00
 C - - - - - 0x017B59 05:BB49: 8D F1 05  STA ram_набор_луж
 C - - - - - 0x017B5C 05:BB4C: 8D 2E 05  STA ram_счет_команды
 C - - - - - 0x017B5F 05:BB4F: 8D 2F 05  STA ram_счет_команды + 1
-C - - - - - 0x017B62 05:BB52: 8D 59 05  STA ram_0559
+C - - - - - 0x017B62 05:BB52: 8D 59 05  STA ram_номер_тайма
 C - - - - - 0x017B65 05:BB55: 8D 2A 05  STA ram_флаг_владения_мячом_ком
 C - - - - - 0x017B68 05:BB58: 8D 2B 05  STA ram_флаг_владения_мячом_ком + 1
 C - - - - - 0x017B6B 05:BB5B: A5 57     LDA ram_option_mode_difficulty
@@ -11001,8 +11006,8 @@ tbl_BB7A:
 
 loc_BB84:
 sub_BB84:
-C D 1 - - - 0x017B94 05:BB84: AD 59 05  LDA ram_0559
-C - - - - - 0x017B97 05:BB87: F0 32     BEQ bra_BBBB
+C D 1 - - - 0x017B94 05:BB84: AD 59 05  LDA ram_номер_тайма
+C - - - - - 0x017B97 05:BB87: F0 32     BEQ bra_BBBB    ; если первый тайм
 C - - - - - 0x017B99 05:BB89: AD FB 05  LDA ram_опция_поверхность_влажность
 C - - - - - 0x017B9C 05:BB8C: 29 03     AND #$03
 C - - - - - 0x017B9E 05:BB8E: C9 02     CMP #$02
@@ -11091,12 +11096,12 @@ C - - - - - 0x017C46 05:BC36: A9 80     LDA #$80
 C - - - - - 0x017C48 05:BC38: 85 1C     STA ram_001C
 loc_BC3A:
 C D 1 - - - 0x017C4A 05:BC3A: A2 0B     LDX #$0B
-bra_BC3C:
+bra_BC3C_loop:
 C - - - - - 0x017C4C 05:BC3C: BD 50 06  LDA ram_позиция_управление,X
 C - - - - - 0x017C4F 05:BC3F: 05 1C     ORA ram_001C
 C - - - - - 0x017C51 05:BC41: 9D 50 06  STA ram_позиция_управление,X
 C - - - - - 0x017C54 05:BC44: CA        DEX
-C - - - - - 0x017C55 05:BC45: 10 F5     BPL bra_BC3C
+C - - - - - 0x017C55 05:BC45: 10 F5     BPL bra_BC3C_loop
 C - - - - - 0x017C57 05:BC47: A0 00     LDY #$00
 C - - - - - 0x017C59 05:BC49: A5 57     LDA ram_option_mode_difficulty
 C - - - - - 0x017C5B 05:BC4B: 29 F0     AND #$F0
@@ -11121,10 +11126,10 @@ C - - - - - 0x017C7D 05:BC6D: 90 F0     BCC bra_BC5F
 bra_BC6F_demo:
 C - - - - - 0x017C7F 05:BC6F: AD 5A 06  LDA ram_позиция_управление + 10
 C - - - - - 0x017C82 05:BC72: 29 80     AND #$80
-C - - - - - 0x017C84 05:BC74: 8D 8C 06  STA ram_управление_кипером
+C - - - - - 0x017C84 05:BC74: 8D 8C 06  STA ram_флаг_бота_кипера
 C - - - - - 0x017C87 05:BC77: AD 5B 06  LDA ram_позиция_управление + 11
 C - - - - - 0x017C8A 05:BC7A: 29 80     AND #$80
-C - - - - - 0x017C8C 05:BC7C: 8D 8D 06  STA ram_068D
+C - - - - - 0x017C8C 05:BC7C: 8D 8D 06  STA ram_флаг_бота_кипера + 1
 C - - - - - 0x017C8F 05:BC7F: A2 01     LDX #$01
 bra_BC81:
 C - - - - - 0x017C91 05:BC81: BD 2C 05  LDA ram_номер_команды,X
@@ -11299,8 +11304,8 @@ tbl_BD19:
 
 
 
-loc_BD38:
-sub_BD38:
+loc_BD38_рожи:
+sub_BD38_рожи:
 C D 1 - - - 0x017D48 05:BD38: A2 00     LDX #$00
 C - - - - - 0x017D4A 05:BD3A: 86 1C     STX ram_001C
 C - - - - - 0x017D4C 05:BD3C: E8        INX
@@ -11351,7 +11356,7 @@ C - - - - - 0x017DA0 05:BD90: 85 2E     STA ram_002E
 C - - - - - 0x017DA2 05:BD92: B9 17 BE  LDA tbl_BE16 + 1,Y
 C - - - - - 0x017DA5 05:BD95: 85 2F     STA ram_002F
 C - - - - - 0x017DA7 05:BD97: A2 00     LDX #$00
-bra_BD99:
+bra_BD99_loop:
 C - - - - - 0x017DA9 05:BD99: BC 32 05  LDY ram_player_id,X
 C - - - - - 0x017DAC 05:BD9C: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x017DAE 05:BD9E: 9D 5C 05  STA ram_лицо_игрока,X
@@ -11361,7 +11366,7 @@ C - - - - - 0x017DB5 05:BDA5: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x017DB7 05:BDA7: 9D 5C 05  STA ram_лицо_игрока,X
 C - - - - - 0x017DBA 05:BDAA: E8        INX
 C - - - - - 0x017DBB 05:BDAB: E0 0C     CPX #$0C
-C - - - - - 0x017DBD 05:BDAD: 90 EA     BCC bra_BD99
+C - - - - - 0x017DBD 05:BDAD: 90 EA     BCC bra_BD99_loop
 C - - - - - 0x017DBF 05:BDAF: 60        RTS
 
 
@@ -11503,7 +11508,7 @@ off_BE28_02:
 
 
 
-sub_BE34:
+sub_BE34_скопировать_из_ppu_и_сразу_записать_в_ppu:
 C - - - - - 0x017E44 05:BE34: A0 00     LDY #$00
 C - - - - - 0x017E46 05:BE36: A2 74     LDX #$74
 C - - - - - 0x017E48 05:BE38: 8C 00 80  STY $8000
@@ -11513,32 +11518,32 @@ C - - - - - 0x017E4F 05:BE3F: 8C 00 80  STY $8000
 C - - - - - 0x017E52 05:BE42: E8        INX
 C - - - - - 0x017E53 05:BE43: 8E 01 80  STX $8001
 C - - - - - 0x017E56 05:BE46: A2 00     LDX #$00
-bra_BE48:
+bra_BE48_main_loop:
 C - - - - - 0x017E58 05:BE48: A0 00     LDY #$00
-C - - - - - 0x017E5A 05:BE4A: AD 02 20  LDA $2002
+C - - - - - 0x017E5A 05:BE4A: AD 02 20  LDA $2002   ; bzk опт, достаточно одного в самом начале
 C - - - - - 0x017E5D 05:BE4D: A5 2D     LDA ram_002D
 C - - - - - 0x017E5F 05:BE4F: 8D 06 20  STA $2006
 C - - - - - 0x017E62 05:BE52: A5 2C     LDA ram_002C
 C - - - - - 0x017E64 05:BE54: 8D 06 20  STA $2006
 C - - - - - 0x017E67 05:BE57: AD 07 20  LDA $2007
-bra_BE5A:
+bra_BE5A_loop:
 C - - - - - 0x017E6A 05:BE5A: AD 07 20  LDA $2007
 C - - - - - 0x017E6D 05:BE5D: 99 96 06  STA ram_буфер_атрибутов,Y
 C - - - - - 0x017E70 05:BE60: C8        INY
 C - - - - - 0x017E71 05:BE61: C4 30     CPY ram_0030
-C - - - - - 0x017E73 05:BE63: 90 F5     BCC bra_BE5A
+C - - - - - 0x017E73 05:BE63: 90 F5     BCC bra_BE5A_loop
 C - - - - - 0x017E75 05:BE65: A0 00     LDY #$00
-C - - - - - 0x017E77 05:BE67: AD 02 20  LDA $2002
+C - - - - - 0x017E77 05:BE67: AD 02 20  LDA $2002   ; bzk опт, лишнее
 C - - - - - 0x017E7A 05:BE6A: A5 2F     LDA ram_002F
 C - - - - - 0x017E7C 05:BE6C: 8D 06 20  STA $2006
 C - - - - - 0x017E7F 05:BE6F: A5 2E     LDA ram_002E
 C - - - - - 0x017E81 05:BE71: 8D 06 20  STA $2006
-bra_BE74:
+bra_BE74_loop:
 C - - - - - 0x017E84 05:BE74: B9 96 06  LDA ram_буфер_атрибутов,Y
 C - - - - - 0x017E87 05:BE77: 8D 07 20  STA $2007
 C - - - - - 0x017E8A 05:BE7A: C8        INY
 C - - - - - 0x017E8B 05:BE7B: C4 30     CPY ram_0030
-C - - - - - 0x017E8D 05:BE7D: 90 F5     BCC bra_BE74
+C - - - - - 0x017E8D 05:BE7D: 90 F5     BCC bra_BE74_loop
 C - - - - - 0x017E8F 05:BE7F: A5 2C     LDA ram_002C
 C - - - - - 0x017E91 05:BE81: 18        CLC
 C - - - - - 0x017E92 05:BE82: 65 30     ADC ram_0030
@@ -11555,7 +11560,7 @@ C - - - - - 0x017EA5 05:BE95: 69 00     ADC #$00
 C - - - - - 0x017EA7 05:BE97: 85 2F     STA ram_002F
 C - - - - - 0x017EA9 05:BE99: E8        INX
 C - - - - - 0x017EAA 05:BE9A: E4 31     CPX ram_0031
-C - - - - - 0x017EAC 05:BE9C: 90 AA     BCC bra_BE48
+C - - - - - 0x017EAC 05:BE9C: 90 AA     BCC bra_BE48_main_loop
 C - - - - - 0x017EAE 05:BE9E: 60        RTS
 
 
@@ -11580,11 +11585,11 @@ C - - - - - 0x017EC9 05:BEB9: B9 D6 BE  LDA tbl_BED6,Y
 C - - - - - 0x017ECC 05:BEBC: 85 2E     STA ram_002E
 C - - - - - 0x017ECE 05:BEBE: B9 D7 BE  LDA tbl_BED7,Y
 C - - - - - 0x017ED1 05:BEC1: 85 2F     STA ram_002F
-C - - - - - 0x017ED3 05:BEC3: A9 07     LDA #$07
+C - - - - - 0x017ED3 05:BEC3: A9 07     LDA #$07    ; размер буфера
 C - - - - - 0x017ED5 05:BEC5: 85 30     STA ram_0030
-C - - - - - 0x017ED7 05:BEC7: A9 09     LDA #$09
+C - - - - - 0x017ED7 05:BEC7: A9 09     LDA #$09    ; счетчик главного цикла
 C - - - - - 0x017ED9 05:BEC9: 85 31     STA ram_0031
-C - - - - - 0x017EDB 05:BECB: 20 34 BE  JSR sub_BE34
+C - - - - - 0x017EDB 05:BECB: 20 34 BE  JSR sub_BE34_скопировать_из_ppu_и_сразу_записать_в_ppu
 C - - - - - 0x017EDE 05:BECE: C6 2B     DEC ram_002B
 C - - - - - 0x017EE0 05:BED0: 10 D1     BPL bra_BEA3
 C - - - - - 0x017EE2 05:BED2: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
@@ -11646,15 +11651,15 @@ C - - - - - 0x017F0F 05:BEFF: B9 20 BF  LDA tbl_BF20,Y
 C - - - - - 0x017F12 05:BF02: 85 2C     STA ram_002C
 C - - - - - 0x017F14 05:BF04: B9 21 BF  LDA tbl_BF21,Y
 C - - - - - 0x017F17 05:BF07: 85 2D     STA ram_002D
-C - - - - - 0x017F19 05:BF09: A9 44     LDA #$44
+C - - - - - 0x017F19 05:BF09: A9 44     LDA #< $2044
 C - - - - - 0x017F1B 05:BF0B: 85 2E     STA ram_002E
-C - - - - - 0x017F1D 05:BF0D: A9 20     LDA #$20
+C - - - - - 0x017F1D 05:BF0D: A9 20     LDA #> $2044
 C - - - - - 0x017F1F 05:BF0F: 85 2F     STA ram_002F
-C - - - - - 0x017F21 05:BF11: A9 18     LDA #$18
+C - - - - - 0x017F21 05:BF11: A9 18     LDA #$18    ; размер буфера
 C - - - - - 0x017F23 05:BF13: 85 30     STA ram_0030
-C - - - - - 0x017F25 05:BF15: A9 02     LDA #$02
+C - - - - - 0x017F25 05:BF15: A9 02     LDA #$02    ; счетчик главного цикла
 C - - - - - 0x017F27 05:BF17: 85 31     STA ram_0031
-C - - - - - 0x017F29 05:BF19: 20 34 BE  JSR sub_BE34
+C - - - - - 0x017F29 05:BF19: 20 34 BE  JSR sub_BE34_скопировать_из_ppu_и_сразу_записать_в_ppu
 C - - - - - 0x017F2C 05:BF1C: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x017F2F 05:BF1F: 60        RTS
 
@@ -11685,15 +11690,15 @@ C - - - - - 0x017F44 05:BF34: B9 55 BF  LDA tbl_BF55,Y
 C - - - - - 0x017F47 05:BF37: 85 2C     STA ram_002C
 C - - - - - 0x017F49 05:BF39: B9 56 BF  LDA tbl_BF56,Y
 C - - - - - 0x017F4C 05:BF3C: 85 2D     STA ram_002D
-C - - - - - 0x017F4E 05:BF3E: A9 27     LDA #$27
+C - - - - - 0x017F4E 05:BF3E: A9 27     LDA #< $2127
 C - - - - - 0x017F50 05:BF40: 85 2E     STA ram_002E
-C - - - - - 0x017F52 05:BF42: A9 21     LDA #$21
+C - - - - - 0x017F52 05:BF42: A9 21     LDA #> $2127
 C - - - - - 0x017F54 05:BF44: 85 2F     STA ram_002F
-C - - - - - 0x017F56 05:BF46: A9 12     LDA #$12
+C - - - - - 0x017F56 05:BF46: A9 12     LDA #$12    ; размер буфера
 C - - - - - 0x017F58 05:BF48: 85 30     STA ram_0030
-C - - - - - 0x017F5A 05:BF4A: A9 03     LDA #$03
+C - - - - - 0x017F5A 05:BF4A: A9 03     LDA #$03    ; счетчик главного цикла
 C - - - - - 0x017F5C 05:BF4C: 85 31     STA ram_0031
-C - - - - - 0x017F5E 05:BF4E: 20 34 BE  JSR sub_BE34
+C - - - - - 0x017F5E 05:BF4E: 20 34 BE  JSR sub_BE34_скопировать_из_ppu_и_сразу_записать_в_ppu
 C - - - - - 0x017F61 05:BF51: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x017F64 05:BF54: 60        RTS
 
@@ -11742,15 +11747,15 @@ C - - - - - 0x017F91 05:BF81: B9 A2 BF  LDA tbl_BFA2,Y
 C - - - - - 0x017F94 05:BF84: 85 2C     STA ram_002C
 C - - - - - 0x017F96 05:BF86: B9 A3 BF  LDA tbl_BFA3,Y
 C - - - - - 0x017F99 05:BF89: 85 2D     STA ram_002D
-C - - - - - 0x017F9B 05:BF8B: A9 AA     LDA #$AA
+C - - - - - 0x017F9B 05:BF8B: A9 AA     LDA #< $20AA
 C - - - - - 0x017F9D 05:BF8D: 85 2E     STA ram_002E
-C - - - - - 0x017F9F 05:BF8F: A9 20     LDA #$20
+C - - - - - 0x017F9F 05:BF8F: A9 20     LDA #> $20AA
 C - - - - - 0x017FA1 05:BF91: 85 2F     STA ram_002F
-C - - - - - 0x017FA3 05:BF93: A9 0E     LDA #$0E
+C - - - - - 0x017FA3 05:BF93: A9 0E     LDA #$0E    ; размер буфера
 C - - - - - 0x017FA5 05:BF95: 85 30     STA ram_0030
-C - - - - - 0x017FA7 05:BF97: A9 02     LDA #$02
+C - - - - - 0x017FA7 05:BF97: A9 02     LDA #$02    ; счетчик главного цикла
 C - - - - - 0x017FA9 05:BF99: 85 31     STA ram_0031
-C - - - - - 0x017FAB 05:BF9B: 20 34 BE  JSR sub_BE34
+C - - - - - 0x017FAB 05:BF9B: 20 34 BE  JSR sub_BE34_скопировать_из_ppu_и_сразу_записать_в_ppu
 C - - - - - 0x017FAE 05:BF9E: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x017FB1 05:BFA1: 60        RTS
 

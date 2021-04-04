@@ -217,16 +217,16 @@ sub_8166:
 C - - - - - 0x000176 00:8166: A9 00     LDA #$00
 C - - - - - 0x000178 00:8168: 8D 15 40  STA $4015
 C - - - - - 0x00017B 00:816B: A2 E7     LDX #$E7
-bra_816D:
-C - - - - - 0x00017D 00:816D: 9D FF 06  STA ram_06FF,X
+bra_816D_loop:  ; bzk опт, предположительно 06FF обнулять не нужно
+C - - - - - 0x00017D 00:816D: 9D FF 06  STA ram_0700 - 1,X
 C - - - - - 0x000180 00:8170: CA        DEX
-C - - - - - 0x000181 00:8171: D0 FA     BNE bra_816D
-C - - - - - 0x000183 00:8173: A9 8D     LDA #$8D
-C - - - - - 0x000185 00:8175: 8D E1 07  STA ram_07E1
-C - - - - - 0x000188 00:8178: A9 40     LDA #$40
-C - - - - - 0x00018A 00:817A: 8D E3 07  STA ram_07E3
-C - - - - - 0x00018D 00:817D: A9 60     LDA #$60
-C - - - - - 0x00018F 00:817F: 8D E4 07  STA ram_07E4
+C - - - - - 0x000181 00:8171: D0 FA     BNE bra_816D_loop
+C - - - - - 0x000183 00:8173: A9 8D     LDA #$8D    ; STA
+C - - - - - 0x000185 00:8175: 8D E1 07  STA ram_STA_40xx_RTS
+C - - - - - 0x000188 00:8178: A9 40     LDA #$40    ; 40xx
+C - - - - - 0x00018A 00:817A: 8D E3 07  STA ram_STA_40xx_RTS + 2
+C - - - - - 0x00018D 00:817D: A9 60     LDA #$60    ; RTS
+C - - - - - 0x00018F 00:817F: 8D E4 07  STA ram_STA_40xx_RTS + 3
 C - - - - - 0x000192 00:8182: 60        RTS
 
 
@@ -1469,15 +1469,15 @@ C - - - - - 0x0008CE 00:88BE: E0 04     CPX #$04
 C - - - - - 0x0008D0 00:88C0: B0 0A     BCS bra_88CC
 C - - - - - 0x0008D2 00:88C2: BD 19 07  LDA ram_0719,X
 C - - - - - 0x0008D5 00:88C5: D0 11     BNE bra_88D8_RTS
-C - - - - - 0x0008D7 00:88C7: 8C E2 07  STY ram_07E2
+C - - - - - 0x0008D7 00:88C7: 8C E2 07  STY ram_STA_40xx_RTS + 1
 C - - - - - 0x0008DA 00:88CA: F0 06     BEQ bra_88D2
 bra_88CC:
 C - - - - - 0x0008DC 00:88CC: 98        TYA
 C - - - - - 0x0008DD 00:88CD: 29 0F     AND #$0F
-C - - - - - 0x0008DF 00:88CF: 8D E2 07  STA ram_07E2
+C - - - - - 0x0008DF 00:88CF: 8D E2 07  STA ram_STA_40xx_RTS + 1
 bra_88D2:
 C - - - - - 0x0008E2 00:88D2: B9 C1 07  LDA ram_07C1,Y
-C - - - - - 0x0008E5 00:88D5: 4C E1 07  JMP ram_07E1
+C - - - - - 0x0008E5 00:88D5: 4C E1 07  JMP ram_STA_40xx_RTS
 bra_88D8_RTS:
 C - - - - - 0x0008E8 00:88D8: 60        RTS
 
@@ -11470,9 +11470,9 @@ bra_AED0:
 C - - - - - 0x002EE0 00:AED0: 8C 96 06  STY ram_буфер_атрибутов
 C - - - - - 0x002EE3 00:AED3: A9 01     LDA #$01
 C - - - - - 0x002EE5 00:AED5: 8D 95 06  STA ram_счетчик_буфера_атрибутов
-C - - - - - 0x002EE8 00:AED8: A9 90     LDA #$90
+C - - - - - 0x002EE8 00:AED8: A9 90     LDA #< $2390
 C - - - - - 0x002EEA 00:AEDA: 8D 94 06  STA ram_байт_2006_lo_атрибуты
-C - - - - - 0x002EED 00:AEDD: A9 23     LDA #$23
+C - - - - - 0x002EED 00:AEDD: A9 23     LDA #> $2390
 C - - - - - 0x002EEF 00:AEDF: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x002EF2 00:AEE2: 60        RTS
 bra_AEE3:
@@ -11676,7 +11676,7 @@ C - - - - - 0x003068 00:B058: 60        RTS
 loc_B059:
 C D 1 - - - 0x003069 00:B059: 38        SEC
 C - - - - - 0x00306A 00:B05A: E9 F0     SBC #$F0
-C - - - - - 0x00306C 00:B05C: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x00306C 00:B05C: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x00306F 00:B05F: 73 B0     .word ofs_B073_F0
 - D 1 - I - 0x003071 00:B061: 7E B0     .word ofs_B07E_F1
 - D 1 - I - 0x003073 00:B063: 89 B0     .word ofs_B089_F2
@@ -14728,7 +14728,7 @@ C - - - - - 0x003CA0 00:BC90: 85 2E     STA ram_002E
 C - - - - - 0x003CA2 00:BC92: AD F9 BD  LDA tbl_BDF8 + 1
 C - - - - - 0x003CA5 00:BC95: 85 2F     STA ram_002F
 C - - - - - 0x003CA7 00:BC97: A9 00     LDA #$00
-C - - - - - 0x003CA9 00:BC99: 8D 59 05  STA ram_0559
+C - - - - - 0x003CA9 00:BC99: 8D 59 05  STA ram_номер_тайма
 C - - - - - 0x003CAC 00:BC9C: 8D BE 05  STA ram_timer_0_00_x
 C - - - - - 0x003CAF 00:BC9F: 8D C0 05  STA ram_timer_0_x0_0
 C - - - - - 0x003CB2 00:BCA2: 8D C1 05  STA ram_timer_x_00_0
@@ -14843,18 +14843,18 @@ C - - - - - 0x003D88 00:BD78: 8D AD 03  STA ram_camera_aim
 C - - - - - 0x003D8B 00:BD7B: A0 10     LDY #$10
 bra_BD7D:
 C - - - - - 0x003D8D 00:BD7D: B9 A7 BD  LDA tbl_BDA7,Y
-C - - - - - 0x003D90 00:BD80: 9D EC 00  STA ram_pos_X_lo_camera,X
-C - - - - - 0x003D93 00:BD83: 9D F0 00  STA ram_copy_pos_X_lo_camera,X
+C - - - - - 0x003D90 00:BD80: 9D EC 00  STA ram_pos_X_lo_scroll,X
+C - - - - - 0x003D93 00:BD83: 9D F0 00  STA ram_pos_X_lo_camera,X
 C - - - - - 0x003D96 00:BD86: C8        INY
 C - - - - - 0x003D97 00:BD87: E8        INX
 C - - - - - 0x003D98 00:BD88: E0 02     CPX #$02
 C - - - - - 0x003D9A 00:BD8A: 90 F1     BCC bra_BD7D
 C - - - - - 0x003D9C 00:BD8C: A9 48     LDA #$48
-C - - - - - 0x003D9E 00:BD8E: 8D EE 00  STA ram_pos_Y_lo_camera
-C - - - - - 0x003DA1 00:BD91: 8D F2 00  STA ram_copy_pos_Y_lo_camera
+C - - - - - 0x003D9E 00:BD8E: 8D EE 00  STA ram_pos_Y_lo_scroll
+C - - - - - 0x003DA1 00:BD91: 8D F2 00  STA ram_pos_Y_lo_camera
 C - - - - - 0x003DA4 00:BD94: A9 00     LDA #$00
-C - - - - - 0x003DA6 00:BD96: 8D EF 00  STA ram_pos_Y_hi_camera
-C - - - - - 0x003DA9 00:BD99: 8D F3 00  STA ram_copy_pos_Y_hi_camera
+C - - - - - 0x003DA6 00:BD96: 8D EF 00  STA ram_pos_Y_hi_scroll
+C - - - - - 0x003DA9 00:BD99: 8D F3 00  STA ram_pos_Y_hi_camera
 C - - - - - 0x003DAC 00:BD9C: A0 1B     LDY #$1B
 C - - - - - 0x003DAE 00:BD9E: A9 00     LDA #$00
 bra_BDA0_loop:
@@ -15281,7 +15281,7 @@ C - - - - - 0x003F1B 00:BF0B: 29 0F     AND #$0F
 C - - - - - 0x003F1D 00:BF0D: 85 1C     STA ram_001C
 C - - - - - 0x003F1F 00:BF0F: BD 1F BF  LDA tbl_BF1F,X
 C - - - - - 0x003F22 00:BF12: 29 03     AND #$03
-C - - - - - 0x003F24 00:BF14: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_afetr_JSR
+C - - - - - 0x003F24 00:BF14: 20 53 C0  JSR sub_0x01EC9F_jump_to_pointers_after_JSR
 - D 1 - I - 0x003F27 00:BF17: 39 BF     .word ofs_BF39_00
 - D 1 - I - 0x003F29 00:BF19: 45 BF     .word ofs_BF45_01
 - D 1 - I - 0x003F2B 00:BF1B: 54 BF     .word ofs_BF54_02
