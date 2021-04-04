@@ -7003,10 +7003,9 @@ C - - - - - 0x01E7B1 07:E7A1: F0 0B     BEQ bra_E7AE
 - - - - - - 0x01E7B6 07:E7A6: 29 0F     AND #$0F
 - - - - - - 0x01E7B8 07:E7A8: 18        CLC
 - - - - - - 0x01E7B9 07:E7A9: 69 01     ADC #$01
-- - - - - - 0x01E7BB 07:E7AB: 4C B0 E7  JMP loc_E7B0
+- - - - - - 0x01E7BB 07:E7AB: 4C B0 E7  JMP loc_E7D1_запись_surface
 bra_E7AE:
 C - - - - - 0x01E7BE 07:E7AE: A9 00     LDA #con_НА_ТРАВЕ
-loc_E7B0:   ; bzk опт
 C - - - - - 0x01E7C0 07:E7B0: 4C D1 E7  JMP loc_E7D1_запись_surface
 bra_E7B3:
 C - - - - - 0x01E7C3 07:E7B3: A9 03     LDA #con_НА_ПЕСКЕ
