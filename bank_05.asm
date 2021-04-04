@@ -60,12 +60,6 @@ C - - - - - 0x014098 05:8088: 4C 7A 80  RTS
 
 
 
-ofs_8097_03_экран_VS:
-C - - J - - 0x0140A7 05:8097: 20 BC 8D  JSR sub_8DBC
-C - - - - - 0x0140AA 05:809A: 4C 7A 80  RTS
-
-
-
 ofs_809D_04_раздевалка:
 C - - J - - 0x0140AD 05:809D: 20 F9 8F  JSR sub_8FF9
 C - - - - - 0x0140B0 05:80A0: 4C 7A 80  RTS
@@ -2368,7 +2362,7 @@ off_8DA9_04:
 
 
 
-sub_8DBC:
+ofs_8097_03_экран_VS:
 C - - - - - 0x014DCC 05:8DBC: A5 59     LDA ram_subscript
 C - - - - - 0x014DCE 05:8DBE: 30 06     BMI bra_8DC6
 C - - - - - 0x014DD0 05:8DC0: 20 DF 80  JSR sub_80DF
