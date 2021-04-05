@@ -1086,7 +1086,6 @@ C - - - - - 0x01C57E 07:C56E: 8D 85 06  STA ram_0685
 C - - - - - 0x01C581 07:C571: 20 6A BD  JSR sub_0x01BD7A
 C - - - - - 0x01C584 07:C574: 20 CC BE  JSR sub_0x01BEDC
 C - - - - - 0x01C587 07:C577: 20 9E C2  JSR sub_C29E
-bra_C57A_RTS:   ; bzk опт, переместить ссылку вниз
 C - - - - - 0x01C58A 07:C57A: 4C 98 C6  RTS
 
 
@@ -1099,7 +1098,7 @@ C - - - - - 0x01C596 07:C586: 20 A5 F3  JSR sub_F3A5
 C - - - - - 0x01C599 07:C589: 20 9E C2  JSR sub_C29E
 C - - - - - 0x01C59C 07:C58C: 20 73 D0  JSR sub_D073
 C - - - - - 0x01C59F 07:C58F: AD B2 05  LDA ram_флаг_яркости
-C - - - - - 0x01C5A2 07:C592: 10 E6     BPL bra_C57A_RTS
+C - - - - - 0x01C5A2 07:C592: 10 E6     BPL bra_C612_RTS
 C - - - - - 0x01C5A4 07:C594: AD FA 05  LDA ram_05FA
 C - - - - - 0x01C5A7 07:C597: 10 17     BPL bra_C5B0
 C - - - - - 0x01C5A9 07:C599: AD F8 05  LDA ram_содержимое_hud
