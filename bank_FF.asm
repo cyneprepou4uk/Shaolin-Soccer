@@ -4553,8 +4553,7 @@ bra_D91E:
 C D 2 - - - 0x01D92E 07:D91E: C9 77     CMP #$77
 C D 2 - - - 0x01D930 07:D920: B0 25     BCS bra_D947
 C D 2 - - - 0x01D932 07:D922: EE E4 05  INC ram_05E4
-C D 2 - - - 0x01D935 07:D925: AD E4 05  LDA ram_05E4    ; bzk опт, LDX
-C D 2 - - - 0x01D938 07:D928: AA        TAX
+C D 2 - - - 0x01D935 07:D925: AD E4 05  LDX ram_05E4
 C D 2 - - - 0x01D939 07:D929: BD 91 D8  LDA tbl_D891,X
 C D 2 - - - 0x01D93C 07:D92C: 29 3C     AND #$3C
 C D 2 - - - 0x01D93E 07:D92E: C9 2F     CMP #$2F
