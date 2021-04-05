@@ -13987,11 +13987,10 @@ bra_BC27:
 - - - - - - 0x00BC46 02:BC36: 38        SEC
 - - - - - - 0x00BC47 02:BC37: E9 38     SBC #$38
 - - - - - - 0x00BC49 02:BC39: 9D 4D 03  STA ram_pos_Y_lo_игрок,X
-- - - - - - 0x00BC4C 02:BC3C: A2 0C     LDX #$0C
-- - - - - - 0x00BC4E 02:BC3E: BD 4D 03  LDA ram_pos_Y_lo_игрок,X
+- - - - - - 0x00BC4E 02:BC3E: BD 4D 03  LDA ram_pos_Y_lo_мяч
 - - - - - - 0x00BC51 02:BC41: 38        SEC
 - - - - - - 0x00BC52 02:BC42: E9 38     SBC #$38
-- - - - - - 0x00BC54 02:BC44: 9D 4D 03  STA ram_pos_Y_lo_игрок,X
+- - - - - - 0x00BC54 02:BC44: 9D 4D 03  STA ram_pos_Y_lo_мяч
 - - - - - - 0x00BC57 02:BC47: A9 00     LDA #$00
 - - - - - - 0x00BC59 02:BC49: 8D 27 03  STA ram_pos_X_hi_игрок
 - - - - - - 0x00BC5C 02:BC4C: 8D 28 03  STA ram_pos_X_hi_игрок + 1
