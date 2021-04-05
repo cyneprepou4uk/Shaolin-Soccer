@@ -957,7 +957,7 @@ C - - - - - 0x01C48C 07:C47C: 20 A8 C2  JSR sub_C2A8
 C - - - - - 0x01C48F 07:C47F: 20 A0 CE  JSR sub_CEA0_поставить_и_снять_паузу_на_Select
 C - - - - - 0x01C492 07:C482: A5 59     LDA ram_subscript
 C - - - - - 0x01C494 07:C484: 85 5A     STA ram_copy_subscript
-C - - - - - 0x01C496 07:C486: EE 00 03  INC ram_frame_cnt
+C - - - - - 0x01C496 07:C486: EE 00 03  INC ram_счетчик_кадров
 C - - - - - 0x01C499 07:C489: 20 8A C2  JSR sub_C28A
 C - - - - - 0x01C49C 07:C48C: 20 35 EE  JSR sub_EE35_вращение_рандома
 C - - - - - 0x01C49F 07:C48F: 20 CD ED  JSR sub_EDCD_опрос_регистров_джойстиков
@@ -1209,7 +1209,7 @@ C D 2 - - - 0x01C6A8 07:C698: 60        RTS
 
 
 loc_C647_моргание_счета_на_паузе:
-C D 2 - - - 0x01C657 07:C647: AD 00 03  LDA ram_frame_cnt
+C D 2 - - - 0x01C657 07:C647: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x01C65A 07:C64A: 29 01     AND #$01
 C - - - - - 0x01C65C 07:C64C: D0 06     BNE bra_C654_затереть_счет_на_нечетном_кадре
 C - - - - - 0x01C65E 07:C64E: 20 07 CB  JSR sub_CB07
@@ -2155,11 +2155,11 @@ C - - - - - 0x01CD3F 07:CD2F: BD 99 03  LDA ram_pos_Z_hi_игрок,X
 C - - - - - 0x01CD42 07:CD32: 30 03     BMI bra_CD37
 C - - - - - 0x01CD44 07:CD34: 4C C6 CD  RTS
 bra_CD37:
-C - - - - - 0x01CD47 07:CD37: BD 30 01  LDA ram_surface_игрок,X
+C - - - - - 0x01CD47 07:CD37: BD 30 01  LDA ram_на_чем_стоит_игрок,X
 C - - - - - 0x01CD4A 07:CD3A: D0 03     BNE bra_CD3F_не_на_траве
 C - - - - - 0x01CD4C 07:CD3C: 20 F0 E6  JSR sub_E6F0_вычислить_surface
 bra_CD3F_не_на_траве:
-C - - - - - 0x01CD4F 07:CD3F: BD 30 01  LDA ram_surface_игрок,X
+C - - - - - 0x01CD4F 07:CD3F: BD 30 01  LDA ram_на_чем_стоит_игрок,X
 C - - - - - 0x01CD52 07:CD42: F0 06     BEQ bra_CD4A_на_траве
 C - - - - - 0x01CD54 07:CD44: C9 02     CMP #$02
 C - - - - - 0x01CD56 07:CD46: B0 1E     BCS bra_CD66_на_грязи_или_песке
@@ -2177,7 +2177,7 @@ C - - - - - 0x01CD6D 07:CD5D: 9D 86 03  STA ram_pos_Z_lo_игрок,X
 C - - - - - 0x01CD70 07:CD60: 9D 73 03  STA ram_pos_Z_sub_игрок,X
 C - - - - - 0x01CD73 07:CD63: 4C C6 CD  RTS
 bra_CD66_на_грязи_или_песке:
-C - - - - - 0x01CD76 07:CD66: BC 30 01  LDY ram_surface_игрок,X
+C - - - - - 0x01CD76 07:CD66: BC 30 01  LDY ram_на_чем_стоит_игрок,X
 C - - - - - 0x01CD79 07:CD69: 88        DEY
 C - - - - - 0x01CD7A 07:CD6A: 88        DEY
 C - - - - - 0x01CD7B 07:CD6B: BD 86 03  LDA ram_pos_Z_lo_игрок,X
@@ -2186,7 +2186,7 @@ C - - - - - 0x01CD81 07:CD71: B0 06     BCS bra_CD79
 - - - - - - 0x01CD83 07:CD73: B9 C9 CD  LDA tbl_CDC9,Y
 - - - - - - 0x01CD86 07:CD76: 9D 86 03  STA ram_pos_Z_lo_игрок,X
 bra_CD79:
-C - - - - - 0x01CD89 07:CD79: BD 30 01  LDA ram_surface_игрок,X
+C - - - - - 0x01CD89 07:CD79: BD 30 01  LDA ram_на_чем_стоит_игрок,X
 C - - - - - 0x01CD8C 07:CD7C: C9 02     CMP #con_на_грязи
 C - - - - - 0x01CD8E 07:CD7E: D0 46     BNE bra_CDC6_RTS
 - - - - - - 0x01CD90 07:CD80: BD F6 03  LDA ram_spd_X_hi_игрок,X
@@ -2195,11 +2195,11 @@ C - - - - - 0x01CD8E 07:CD7E: D0 46     BNE bra_CDC6_RTS
 - - - - - - 0x01CD99 07:CD89: 1D 04 04  ORA ram_spd_Y_lo_игрок,X
 - - - - - - 0x01CD9C 07:CD8C: F0 38     BEQ bra_CDC6_RTS
 - - - - - - 0x01CD9E 07:CD8E: 20 F0 E6  JSR sub_E6F0_вычислить_surface
-- - - - - - 0x01CDA1 07:CD91: BD 30 01  LDA ram_surface_игрок,X
+- - - - - - 0x01CDA1 07:CD91: BD 30 01  LDA ram_на_чем_стоит_игрок,X
 - - - - - - 0x01CDA4 07:CD94: C9 02     CMP #con_на_грязи
 - - - - - - 0x01CDA6 07:CD96: F0 2E     BEQ bra_CDC6_RTS
 - - - - - - 0x01CDA8 07:CD98: A9 02     LDA #con_на_грязи
-- - - - - - 0x01CDAA 07:CD9A: 9D 30 01  STA ram_surface_игрок,X
+- - - - - - 0x01CDAA 07:CD9A: 9D 30 01  STA ram_на_чем_стоит_игрок,X
 - - - - - - 0x01CDAD 07:CD9D: AD 13 05  LDA ram_0513
 - - - - - - 0x01CDB0 07:CDA0: 9D 14 03  STA ram_pos_X_lo_игрок,X
 - - - - - - 0x01CDB3 07:CDA3: AD 14 05  LDA ram_0514
@@ -2241,7 +2241,7 @@ C - - - - - 0x01CDEA 07:CDDA: A9 00     LDA #$00
 C - - - - - 0x01CDEC 07:CDDC: 9D 4A 04  STA ram_gravity_hi_игрок,X
 C - - - - - 0x01CDEF 07:CDDF: 4C 2F CE  RTS
 bra_CDE2:
-C - - - - - 0x01CDF2 07:CDE2: BD 30 01  LDA ram_surface_игрок,X
+C - - - - - 0x01CDF2 07:CDE2: BD 30 01  LDA ram_на_чем_стоит_игрок,X
 C - - - - - 0x01CDF5 07:CDE5: C9 02     CMP #$02
 C - - - - - 0x01CDF7 07:CDE7: B0 0E     BCS bra_CDF7_на_грязи_или_песке
 C - - - - - 0x01CDF9 07:CDE9: A9 00     LDA #$00
@@ -2253,7 +2253,7 @@ bra_CDF7_на_грязи_или_песке:
 C - - - - - 0x01CE07 07:CDF7: BD 59 04  LDA ram_movement_id_игрок,X
 C - - - - - 0x01CE0A 07:CDFA: 0A        ASL
 C - - - - - 0x01CE0B 07:CDFB: A8        TAY
-C - - - - - 0x01CE0C 07:CDFC: BD 30 01  LDA ram_surface_игрок,X
+C - - - - - 0x01CE0C 07:CDFC: BD 30 01  LDA ram_на_чем_стоит_игрок,X
 C - - - - - 0x01CE0F 07:CDFF: 29 01     AND #$01
 C - - - - - 0x01CE11 07:CE01: F0 01     BEQ bra_CE04_на_траве_или_грязи
 C - - - - - 0x01CE13 07:CE03: C8        INY
@@ -4335,7 +4335,7 @@ C - - - - - 0x01D791 07:D781: 29 7F     AND #$7F
 C - - - - - 0x01D793 07:D783: C9 01     CMP #con_погода_lightning
 C - - - - - 0x01D795 07:D785: D0 08     BNE bra_D78F_сейчас_молния
 - - - - - - 0x01D797 07:D787: A9 50     LDA #$50
-- - - - - - 0x01D799 07:D789: 8D 3F 01  STA ram_timer_погода
+- - - - - - 0x01D799 07:D789: 8D 3F 01  STA ram_таймер_погоды
 - - - - - - 0x01D79C 07:D78C: 4C 94 D7  JMP loc_D794
 bra_D78F_сейчас_молния:
 C - - - - - 0x01D79F 07:D78F: A9 00     LDA #con_погода_none
@@ -4424,7 +4424,7 @@ bra_D831_RTS:
 C - - - - - 0x01D841 07:D831: 4C 90 D8  RTS
 loc_D834:
 C D 2 - - - 0x01D844 07:D834: 8A        TXA
-C - - - - - 0x01D845 07:D835: 4D 00 03  EOR ram_frame_cnt
+C - - - - - 0x01D845 07:D835: 4D 00 03  EOR ram_счетчик_кадров
 C - - - - - 0x01D848 07:D838: 29 01     AND #$01
 C - - - - - 0x01D84A 07:D83A: F0 F5     BEQ bra_D831_RTS
 C - - - - - 0x01D84C 07:D83C: 86 43     STX ram_0043
@@ -5137,14 +5137,14 @@ C - - - - - 0x01DD22 07:DD12: A9 06     LDA #con_погода_teared_net_left
 C - - - - - 0x01DD24 07:DD14: 8D 66 04  STA ram_погода_id
 loc_DD17:
 C D 2 - - - 0x01DD27 07:DD17: A9 00     LDA #$00
-C - - - - - 0x01DD29 07:DD19: 8D 3F 01  STA ram_timer_погода
+C - - - - - 0x01DD29 07:DD19: 8D 3F 01  STA ram_таймер_погоды
 bra_DD1C_это_обработанная_рваная_сетка:
 C - - - - - 0x01DD2C 07:DD1C: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01DD2E 07:DD1E: 10 03     BPL bra_DD23_не_пауза
 - - - - - - 0x01DD30 07:DD20: 4C 91 DD  JMP loc_DD91
 bra_DD23_не_пауза:
-C - - - - - 0x01DD33 07:DD23: EE 3F 01  INC ram_timer_погода
-C - - - - - 0x01DD36 07:DD26: AD 3F 01  LDA ram_timer_погода
+C - - - - - 0x01DD33 07:DD23: EE 3F 01  INC ram_таймер_погоды
+C - - - - - 0x01DD36 07:DD26: AD 3F 01  LDA ram_таймер_погоды
 C - - - - - 0x01DD39 07:DD29: 29 03     AND #$03
 C - - - - - 0x01DD3B 07:DD2B: 85 0C     STA ram_000C
 C - - - - - 0x01DD3D 07:DD2D: A0 00     LDY #$00
@@ -5230,7 +5230,7 @@ C - - - - - 0x01DDD5 07:DDC5: E8        INX
 C - - - - - 0x01DDD9 07:DDC9: C8        INY
 C - - - - - 0x01DDDA 07:DDCA: C0 0C     CPY #$0C
 C - - - - - 0x01DDDC 07:DDCC: D0 C7     BNE bra_DD95_loop
-C - - - - - 0x01DDDE 07:DDCE: AD 3F 01  LDA ram_timer_погода
+C - - - - - 0x01DDDE 07:DDCE: AD 3F 01  LDA ram_таймер_погоды
 C - - - - - 0x01DDE1 07:DDD1: C9 38     CMP #$38
 C - - - - - 0x01DDE3 07:DDD3: 90 05     BCC bra_DDDA_RTS
 C - - - - - 0x01DDE5 07:DDD5: A9 00     LDA #con_погода_none
@@ -7018,7 +7018,7 @@ C - - - - - 0x01E7DC 07:E7CC: 29 0F     AND #$0F
 C - - - - - 0x01E7DE 07:E7CE: 18        CLC
 C - - - - - 0x01E7DF 07:E7CF: 69 01     ADC #$01
 bra_E7D1_запись_surface:
-C D 3 - - - 0x01E7E1 07:E7D1: 9D 30 01  STA ram_surface_игрок,X
+C D 3 - - - 0x01E7E1 07:E7D1: 9D 30 01  STA ram_на_чем_стоит_игрок,X
 C - - - - - 0x01E7E4 07:E7D4: 68        PLA
 C - - - - - 0x01E7E5 07:E7D5: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01E7E8 07:E7D8: 60        RTS
@@ -8791,7 +8791,7 @@ C - - - - - 0x01F3E0 07:F3D0: EE FA 05  INC ram_05FA
 bra_F3D3_RTS:
 C - - - - - 0x01F3E3 07:F3D3: 60        RTS
 bra_F3D4:
-C - - - - - 0x01F3E4 07:F3D4: AD 00 03  LDA ram_frame_cnt
+C - - - - - 0x01F3E4 07:F3D4: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x01F3E7 07:F3D7: 29 01     AND #$01
 C - - - - - 0x01F3E9 07:F3D9: D0 03     BNE bra_F3DE
 C - - - - - 0x01F3EB 07:F3DB: EE F7 05  INC ram_задержка_перелив_надп

@@ -44,7 +44,7 @@ sub_0x000000_RESET_init:
                                         STA ram_флаг_nmi
                                         LDA #$00    ; vertical mirroring
                                         STA $A000
-                                        LDX ram_frame_cnt
+                                        LDX ram_счетчик_кадров
                                         LDA ram_0700,X
                                         ORA #$25
                                         STA ram_рандом

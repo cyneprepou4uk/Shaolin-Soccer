@@ -3767,7 +3767,7 @@ C - - - - - 0x00D712 03:9702: 29 30     AND #$30
 C - - - - - 0x00D714 03:9704: F0 20     BEQ bra_9726
 C - - - - - 0x00D716 03:9706: C9 20     CMP #$20
 C - - - - - 0x00D718 03:9708: F0 19     BEQ bra_9723
-C - - - - - 0x00D71A 03:970A: AD 00 03  LDA ram_frame_cnt
+C - - - - - 0x00D71A 03:970A: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x00D71D 03:970D: 29 30     AND #$30
 C - - - - - 0x00D71F 03:970F: C9 30     CMP #$30
 C - - - - - 0x00D721 03:9711: F0 13     BEQ bra_9726
@@ -4533,7 +4533,7 @@ C - - - - - 0x00DBF3 03:9BE3: 60        RTS
 
 sub_9BE4:
 C - - - - - 0x00DBF4 03:9BE4: 8A        TXA
-C - - - - - 0x00DBF5 03:9BE5: 4D 00 03  EOR ram_frame_cnt
+C - - - - - 0x00DBF5 03:9BE5: 4D 00 03  EOR ram_счетчик_кадров
 C - - - - - 0x00DBF8 03:9BE8: 29 01     AND #$01
 C - - - - - 0x00DBFA 03:9BEA: F0 0A     BEQ bra_9BF6
 C - - - - - 0x00DBFC 03:9BEC: BD 70 05  LDA ram_0570_кнопки,X
@@ -5986,7 +5986,7 @@ C - - - - - 0x00E4EE 03:A4DE: BD D3 05  LDA ram_05D3,X
 C - - - - - 0x00E4F1 03:A4E1: 29 30     AND #$30
 C - - - - - 0x00E4F3 03:A4E3: C9 20     CMP #$20
 C - - - - - 0x00E4F5 03:A4E5: F0 0E     BEQ bra_A4F5
-C - - - - - 0x00E4F7 03:A4E7: AD 00 03  LDA ram_frame_cnt
+C - - - - - 0x00E4F7 03:A4E7: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x00E4FA 03:A4EA: 29 60     AND #$60
 C - - - - - 0x00E4FC 03:A4EC: C9 60     CMP #$60
 C - - - - - 0x00E4FE 03:A4EE: D0 05     BNE bra_A4F5
@@ -11625,7 +11625,7 @@ tbl_BF1B:
 
 
 loc_BF23:
-C D 1 - - - 0x00FF33 03:BF23: AD 00 03  LDA ram_frame_cnt
+C D 1 - - - 0x00FF33 03:BF23: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x00FF36 03:BF26: 4A        LSR
 C - - - - - 0x00FF37 03:BF27: 90 01     BCC bra_BF2A
 bra_BF29:

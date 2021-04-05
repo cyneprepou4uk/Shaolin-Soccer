@@ -14288,7 +14288,7 @@ tbl_B9F6:
 ofs_BA05_01_молния:
 C - - J - - 0x007A15 01:BA05: A9 00     LDA #$00
 C - - - - - 0x007A17 01:BA07: 8D FD 05  STA ram_сила_ветра
-C - - - - - 0x007A1A 01:BA0A: 8D 3F 01  STA ram_timer_погода
+C - - - - - 0x007A1A 01:BA0A: 8D 3F 01  STA ram_таймер_погоды
 C - - - - - 0x007A1D 01:BA0D: A9 45     LDA #con_sfx_молния
 C - - - - - 0x007A1F 01:BA0F: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x007A22 01:BA12: AD 45 00  LDA ram_рандом
@@ -14343,7 +14343,7 @@ C - - - - - 0x007A66 01:BA56: AD EF 00  LDA ram_pos_Y_hi_скролл
 C - - - - - 0x007A69 01:BA59: 69 00     ADC #$00
 C - - - - - 0x007A6B 01:BA5B: 8D 6D 03  STA ram_pos_Y_hi_погода
 C - - - - - 0x007A6E 01:BA5E: A9 00     LDA #$00
-C - - - - - 0x007A70 01:BA60: 8D 3F 01  STA ram_timer_погода
+C - - - - - 0x007A70 01:BA60: 8D 3F 01  STA ram_таймер_погоды
 C - - - - - 0x007A73 01:BA63: 8D F5 03  STA ram_spd_X_lo_погода
 C - - - - - 0x007A76 01:BA66: 8D 11 04  STA ram_spd_Y_lo_погода
 C - - - - - 0x007A79 01:BA69: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
@@ -14391,8 +14391,8 @@ C - - - - - 0x007AC8 01:BAB8: 8D 6D 03  STA ram_pos_Y_hi_погода
 C - - - - - 0x007ACB 01:BABB: 20 CB BB  JSR sub_BBCB
 C - - - - - 0x007ACE 01:BABE: A9 01     LDA #$01
 C - - - - - 0x007AD0 01:BAC0: 8D E6 00  STA ram_флаг_видимости_погоды
-C - - - - - 0x007AD3 01:BAC3: EE 3F 01  INC ram_timer_погода
-C - - - - - 0x007AD6 01:BAC6: AD 3F 01  LDA ram_timer_погода
+C - - - - - 0x007AD3 01:BAC3: EE 3F 01  INC ram_таймер_погоды
+C - - - - - 0x007AD6 01:BAC6: AD 3F 01  LDA ram_таймер_погоды
 C - - - - - 0x007AD9 01:BAC9: C9 14     CMP #$14
 C - - - - - 0x007ADB 01:BACB: 90 1B     BCC bra_BAE8
 C - - - - - 0x007ADD 01:BACD: 20 B2 BF  JSR sub_0x01C2EF
@@ -14508,8 +14508,8 @@ C - - - - - 0x007B95 01:BB85: 69 00     ADC #$00
 C - - - - - 0x007B97 01:BB87: 8D 1F 04  STA ram_spd_Y_hi_погода
 bra_BB8A:
 loc_BB8A:
-C - - - - - 0x007B9A 01:BB8A: EE 3F 01  INC ram_timer_погода
-C - - - - - 0x007B9D 01:BB8D: AD 3F 01  LDA ram_timer_погода
+C - - - - - 0x007B9A 01:BB8A: EE 3F 01  INC ram_таймер_погоды
+C - - - - - 0x007B9D 01:BB8D: AD 3F 01  LDA ram_таймер_погоды
 C - - - - - 0x007BA0 01:BB90: C9 FF     CMP #$FF
 C - - - - - 0x007BA2 01:BB92: F0 26     BEQ bra_BBBA    ; если таймер погоды закончился
 C - - - - - 0x007BA4 01:BB94: AD 34 03  LDA ram_pos_X_hi_погода
@@ -15278,7 +15278,7 @@ C - - - - - 0x007F7B 01:BF6B: 29 7F     AND #$7F
 C - - - - - 0x007F7D 01:BF6D: C9 01     CMP #con_погода_lightning
 C - - - - - 0x007F7F 01:BF6F: D0 07     BNE bra_BF78
 - - - - - - 0x007F81 01:BF71: A9 60     LDA #$60
-- - - - - - 0x007F83 01:BF73: 8D 3F 01  STA ram_timer_погода
+- - - - - - 0x007F83 01:BF73: 8D 3F 01  STA ram_таймер_погоды
 - - - - - - 0x007F86 01:BF76: D0 05     BNE bra_BF7D_RTS
 bra_BF78:
 C - - - - - 0x007F88 01:BF78: A9 00     LDA #con_погода_none

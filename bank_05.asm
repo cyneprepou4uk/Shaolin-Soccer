@@ -317,7 +317,7 @@ C - - - - - 0x0142A2 05:8292: A8        TAY
 C - - - - - 0x0142A3 05:8293: B9 CA 05  LDA ram_номер_опции,Y
 C - - - - - 0x0142A6 05:8296: 0A        ASL
 C - - - - - 0x0142A7 05:8297: 30 11     BMI bra_82AA
-C - - - - - 0x0142A9 05:8299: AD 00 03  LDA ram_frame_cnt
+C - - - - - 0x0142A9 05:8299: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x0142AC 05:829C: 29 03     AND #$03
 C - - - - - 0x0142AE 05:829E: F0 0A     BEQ bra_82AA
 C - - - - - 0x0142B0 05:82A0: A5 1C     LDA ram_001C
@@ -2357,7 +2357,7 @@ bra_8E20:
 C - - - - - 0x014E30 05:8E20: 20 44 C0  JSR sub_0x01D057
 C - - - - - 0x014E33 05:8E23: 4C 32 8E  JMP loc_8E32
 bra_8E26:
-C - - - - - 0x014E36 05:8E26: AD 00 03  LDA ram_frame_cnt
+C - - - - - 0x014E36 05:8E26: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x014E39 05:8E29: 29 0F     AND #$0F
 C - - - - - 0x014E3B 05:8E2B: D0 05     BNE bra_8E32
 C - - - - - 0x014E3D 05:8E2D: CE D2 05  DEC ram_05D2
@@ -5385,7 +5385,7 @@ C - - - - - 0x015E1C 05:9E0C: 8A        TXA
 C - - - - - 0x015E1D 05:9E0D: 4A        LSR
 C - - - - - 0x015E1E 05:9E0E: CD CB 05  CMP ram_номер_опции + 1
 C - - - - - 0x015E21 05:9E11: D0 4C     BNE bra_9E5F_RTS
-C - - - - - 0x015E23 05:9E13: AD 00 03  LDA ram_frame_cnt
+C - - - - - 0x015E23 05:9E13: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x015E26 05:9E16: 29 03     AND #$03
 C - - - - - 0x015E28 05:9E18: D0 45     BNE bra_9E5F_RTS
 C - - - - - 0x015E2A 05:9E1A: A9 7F     LDA #$7F
@@ -7359,7 +7359,7 @@ C - - - - - 0x016922 05:A912: 20 77 B0  JSR sub_B077
 C - - - - - 0x016925 05:A915: 20 A8 B0  JSR sub_B0A8
 C - - - - - 0x016928 05:A918: AD 32 05  LDA ram_номер_игрока
 C - - - - - 0x01692B 05:A91B: 20 33 B2  JSR sub_B233
-C - - - - - 0x01692E 05:A91E: AD 00 03  LDA ram_frame_cnt
+C - - - - - 0x01692E 05:A91E: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x016931 05:A921: 29 03     AND #$03
 C - - - - - 0x016933 05:A923: A8        TAY
 C - - - - - 0x016934 05:A924: B9 3C A9  LDA tbl_A93C,Y
@@ -7707,7 +7707,7 @@ C - - - - - 0x016B79 05:AB69: 6D D1 05  ADC ram_05D1
 C - - - - - 0x016B7C 05:AB6C: D0 0C     BNE bra_AB7A
 bra_AB6E:
 C - - - - - 0x016B7E 05:AB6E: 8D 06 06  STA ram_0606
-C - - - - - 0x016B81 05:AB71: AD 00 03  LDA ram_frame_cnt
+C - - - - - 0x016B81 05:AB71: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x016B84 05:AB74: 29 01     AND #$01
 C - - - - - 0x016B86 05:AB76: 18        CLC
 C - - - - - 0x016B87 05:AB77: 6D 06 06  ADC ram_0606
@@ -7737,7 +7737,7 @@ C - - - - - 0x016BA5 05:AB95: AD 05 06  LDA ram_0605
 C - - - - - 0x016BA8 05:AB98: 10 1B     BPL bra_ABB5
 C - - - - - 0x016BAA 05:AB9A: 29 20     AND #$20
 C - - - - - 0x016BAC 05:AB9C: F0 94     BEQ bra_AB32
-C - - - - - 0x016BAE 05:AB9E: AD 00 03  LDA ram_frame_cnt
+C - - - - - 0x016BAE 05:AB9E: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x016BB1 05:ABA1: 29 7F     AND #$7F
 C - - - - - 0x016BB3 05:ABA3: D0 8D     BNE bra_AB32
 C - - - - - 0x016BB5 05:ABA5: AD CA 05  LDA ram_номер_опции
@@ -8636,7 +8636,7 @@ C - - - - - 0x016FDE 05:AFCE: 60        RTS
 
 
 ofs_AFCF_00:
-C - - J - - 0x016FDF 05:AFCF: AD 00 03  LDA ram_frame_cnt
+C - - J - - 0x016FDF 05:AFCF: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x016FE2 05:AFD2: 29 03     AND #$03
 C - - - - - 0x016FE4 05:AFD4: 18        CLC
 C - - - - - 0x016FE5 05:AFD5: 69 28     ADC #$28
@@ -8673,7 +8673,7 @@ C - - - - - 0x01700D 05:AFFD: D0 CC     BNE bra_AFCB
 
 
 ofs_AFFF_03:
-C - - J - - 0x01700F 05:AFFF: AD 00 03  LDA ram_frame_cnt
+C - - J - - 0x01700F 05:AFFF: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x017012 05:B002: 29 01     AND #$01
 C - - - - - 0x017014 05:B004: 18        CLC
 C - - - - - 0x017015 05:B005: 69 34     ADC #$34
@@ -9666,7 +9666,7 @@ bra_B5BC:
 - - - - - - 0x0175CC 05:B5BC: A9 00     LDA #$00
 - - - - - - 0x0175CE 05:B5BE: F0 13     BEQ bra_B5D3_RTS
 bra_B5C0:
-- - - - - - 0x0175D0 05:B5C0: AD 00 03  LDA ram_frame_cnt
+- - - - - - 0x0175D0 05:B5C0: AD 00 03  LDA ram_счетчик_кадров
 - - - - - - 0x0175D3 05:B5C3: 29 01     AND #$01
 - - - - - - 0x0175D5 05:B5C5: F0 02     BEQ bra_B5C9
 - - - - - - 0x0175D7 05:B5C7: 98        TYA
@@ -10887,7 +10887,7 @@ C - - - - - 0x017BA5 05:BB95: AD 94 04  LDA ram_опция_дождь_ветер
 C - - - - - 0x017BA8 05:BB98: 29 07     AND #$07
 C - - - - - 0x017BAA 05:BB9A: 0A        ASL
 C - - - - - 0x017BAB 05:BB9B: A8        TAY
-C - - - - - 0x017BAC 05:BB9C: AD 00 03  LDA ram_frame_cnt
+C - - - - - 0x017BAC 05:BB9C: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x017BAF 05:BB9F: 29 01     AND #$01
 C - - - - - 0x017BB1 05:BBA1: F0 01     BEQ bra_BBA4
 C - - - - - 0x017BB3 05:BBA3: C8        INY
