@@ -7165,6 +7165,7 @@ C - - - - - 0x01E950 07:E940: 60        RTS
 sub_E941_распаковка_сжатого_экрана:
 C - - - - - 0x01E951 07:E941: A9 00     LDA #$00    ; vertical mirroring
 C - - - - - 0x01E953 07:E943: 8D 00 A0  STA $A000
+                                        BIT $2002
 loc_E946_следующий_управляемый_байт:
 C D 3 - - - 0x01E956 07:E946: 20 D2 E9  JSR sub_E9D2_чтение_байта_из_ppu
 C - - - - - 0x01E959 07:E949: A5 1C     LDA ram_001C
@@ -7261,7 +7262,6 @@ C - - - - - 0x01E9DF 07:E9CF: 4C 46 E9  JMP loc_E946_следующий_упра
 
 sub_E9D2_чтение_байта_из_ppu:
 ; можно юзать Y
-C - - - - - 0x01E9EA 07:E9DA: AD 02 20  LDA $2002
 C - - - - - 0x01E9ED 07:E9DD: A5 2D     LDA ram_002D
 C - - - - - 0x01E9F2 07:E9E2: 8D 06 20  STA $2006
 C - - - - - 0x01E9F5 07:E9E5: A5 2C     LDA ram_002C
@@ -7278,7 +7278,6 @@ C - - - - - 0x01EA08 07:E9F8: 60        RTS
 
 
 sub_E9F9_запись_байта_в_ppu:
-C - - - - - 0x01EA09 07:E9F9: AD 02 20  LDA $2002
 C - - - - - 0x01EA0C 07:E9FC: A5 2F     LDA ram_002F
 C - - - - - 0x01EA0E 07:E9FE: 8D 06 20  STA $2006
 C - - - - - 0x01EA11 07:EA01: A5 2E     LDA ram_002E
