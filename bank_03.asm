@@ -11036,7 +11036,7 @@ C - - - - - 0x00FB0B 03:BAFB: 29 40     AND #$40
 C - - - - - 0x00FB0D 03:BAFD: D0 0C     BNE bra_BB0B_RTS
 C - - - - - 0x00FB0F 03:BAFF: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FB12 03:BB02: 29 7F     AND #$7F
-C - - - - - 0x00FB14 03:BB04: C9 01     CMP #con_погода_lightning
+C - - - - - 0x00FB14 03:BB04: C9 01     CMP #con_погода_молния
 C - - - - - 0x00FB16 03:BB06: F0 03     BEQ bra_BB0B_RTS
 C - - - - - 0x00FB18 03:BB08: 4C 0C BB  JMP loc_BB0C
 bra_BB0B_RTS:
@@ -11045,9 +11045,9 @@ loc_BB0C:
 C D 1 - - - 0x00FB1C 03:BB0C: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FB1F 03:BB0F: 29 7F     AND #$7F
 C - - - - - 0x00FB21 03:BB11: F0 0B     BEQ bra_BB1E    ; если нету погоды
-C - - - - - 0x00FB23 03:BB13: C9 04     CMP #con_погода_wind
+C - - - - - 0x00FB23 03:BB13: C9 04     CMP #con_погода_ветер
 C - - - - - 0x00FB25 03:BB15: F0 07     BEQ bra_BB1E
-C - - - - - 0x00FB27 03:BB17: C9 02     CMP #con_погода_rain
+C - - - - - 0x00FB27 03:BB17: C9 02     CMP #con_погода_дождь
 C - - - - - 0x00FB29 03:BB19: F0 36     BEQ bra_BB51
 bra_BB1B:
 C - - - - - 0x00FB2B 03:BB1B: 4C 94 BB  JMP loc_BB94
@@ -11068,7 +11068,7 @@ C - - - - - 0x00FB46 03:BB36: 85 1C     STA ram_001C
 C - - - - - 0x00FB48 03:BB38: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x00FB4B 03:BB3B: C5 1C     CMP ram_001C
 C - - - - - 0x00FB4D 03:BB3D: B0 DC     BCS bra_BB1B
-C - - - - - 0x00FB4F 03:BB3F: A9 82     LDA #con_погода_rain + $80
+C - - - - - 0x00FB4F 03:BB3F: A9 82     LDA #con_погода_дождь + $80
 C - - - - - 0x00FB51 03:BB41: 8D 66 04  STA ram_погодный_эффект
 C - - - - - 0x00FB54 03:BB44: AD 94 04  LDA ram_опция_дождя_и_ветра
 C - - - - - 0x00FB57 03:BB47: 29 0F     AND #$0F
@@ -11087,7 +11087,7 @@ C - - - - - 0x00FB6B 03:BB5B: 85 1C     STA ram_001C
 C - - - - - 0x00FB6D 03:BB5D: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x00FB70 03:BB60: C5 1C     CMP ram_001C
 C - - - - - 0x00FB72 03:BB62: 90 30     BCC bra_BB94
-C - - - - - 0x00FB74 03:BB64: A9 00     LDA #con_погода_none
+C - - - - - 0x00FB74 03:BB64: A9 00     LDA #con_погода_выкл
 C - - - - - 0x00FB76 03:BB66: 8D 66 04  STA ram_погодный_эффект
 C - - - - - 0x00FB79 03:BB69: A9 0C     LDA #$0C
 C - - - - - 0x00FB7B 03:BB6B: 8D AC 03  STA ram_объем_дождя
@@ -11096,14 +11096,14 @@ bra_BB71:
 - - - - - - 0x00FB81 03:BB71: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 - - - - - - 0x00FB84 03:BB74: C9 A0     CMP #$A0
 - - - - - - 0x00FB86 03:BB76: B0 1C     BCS bra_BB94
-- - - - - - 0x00FB88 03:BB78: A9 82     LDA #con_погода_rain + $80
+- - - - - - 0x00FB88 03:BB78: A9 82     LDA #con_погода_дождь + $80
 - - - - - - 0x00FB8A 03:BB7A: 8D 66 04  STA ram_погодный_эффект
 - - - - - - 0x00FB8D 03:BB7D: A9 0C     LDA #$0C
 - - - - - - 0x00FB8F 03:BB7F: 8D AC 03  STA ram_объем_дождя
 - - - - - - 0x00FB92 03:BB82: 4C 94 BB  JMP loc_BB94
 - - - - - - 0x00FB95 03:BB85: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 - - - - - - 0x00FB98 03:BB88: 30 0A     BMI bra_BB94
-- - - - - - 0x00FB9A 03:BB8A: A9 00     LDA #con_погода_none
+- - - - - - 0x00FB9A 03:BB8A: A9 00     LDA #con_погода_выкл
 - - - - - - 0x00FB9C 03:BB8C: 8D 66 04  STA ram_погодный_эффект
 - - - - - - 0x00FB9F 03:BB8F: A9 0C     LDA #$0C
 - - - - - - 0x00FBA1 03:BB91: 8D AC 03  STA ram_объем_дождя
@@ -11158,23 +11158,23 @@ C - - - - - 0x00FBF9 03:BBE9: 8D FE 05  STA ram_угол_ветра
 bra_BBEC:
 C - - - - - 0x00FBFC 03:BBEC: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FBFF 03:BBEF: 29 7F     AND #$7F
-C - - - - - 0x00FC01 03:BBF1: C9 02     CMP #con_погода_rain
+C - - - - - 0x00FC01 03:BBF1: C9 02     CMP #con_погода_дождь
 C - - - - - 0x00FC03 03:BBF3: F0 10     BEQ bra_BC05
 C - - - - - 0x00FC05 03:BBF5: AD FD 05  LDA ram_сила_ветра
 C - - - - - 0x00FC08 03:BBF8: F0 0E     BEQ bra_BC08
 C - - - - - 0x00FC0A 03:BBFA: 18        CLC
 C - - - - - 0x00FC0B 03:BBFB: 69 05     ADC #$05
 C - - - - - 0x00FC0D 03:BBFD: 8D AC 03  STA ram_объем_дождя
-C - - - - - 0x00FC10 03:BC00: A9 84     LDA #con_погода_wind + $80
+C - - - - - 0x00FC10 03:BC00: A9 84     LDA #con_погода_ветер + $80
 C - - - - - 0x00FC12 03:BC02: 8D 66 04  STA ram_погодный_эффект
 bra_BC05:
 C - - - - - 0x00FC15 03:BC05: 4C 40 BC  JMP loc_BC40
 bra_BC08:
 C - - - - - 0x00FC18 03:BC08: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FC1B 03:BC0B: 29 7F     AND #$7F
-C - - - - - 0x00FC1D 03:BC0D: C9 04     CMP #con_погода_wind
+C - - - - - 0x00FC1D 03:BC0D: C9 04     CMP #con_погода_ветер
 C - - - - - 0x00FC1F 03:BC0F: D0 F4     BNE bra_BC05
-C - - - - - 0x00FC21 03:BC11: A9 00     LDA #con_погода_none
+C - - - - - 0x00FC21 03:BC11: A9 00     LDA #con_погода_выкл
 C - - - - - 0x00FC23 03:BC13: 8D 66 04  STA ram_погодный_эффект
 C - - - - - 0x00FC26 03:BC16: 4C 40 BC  JMP loc_BC40
 
@@ -11203,7 +11203,7 @@ loc_BC40:
 bra_BC40:
 C D 1 - - - 0x00FC50 03:BC40: 20 84 BC  JSR sub_BC84
 C - - - - - 0x00FC53 03:BC43: AD 66 04  LDA ram_погодный_эффект
-C - - - - - 0x00FC56 03:BC46: C9 84     CMP #con_погода_wind + $80
+C - - - - - 0x00FC56 03:BC46: C9 84     CMP #con_погода_ветер + $80
 C - - - - - 0x00FC58 03:BC48: D0 05     BNE bra_BC4F
 C - - - - - 0x00FC5A 03:BC4A: A9 41     LDA #con_sfx_ветер
 C - - - - - 0x00FC5C 03:BC4C: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
@@ -11219,7 +11219,7 @@ C - - - - - 0x00FC6A 03:BC5A: A8        TAY
 C - - - - - 0x00FC6B 03:BC5B: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x00FC6E 03:BC5E: D9 80 BC  CMP tbl_BC80,Y
 C - - - - - 0x00FC71 03:BC61: 90 05     BCC bra_BC68
-C - - - - - 0x00FC73 03:BC63: A9 83     LDA #con_погода_tornado + $80
+C - - - - - 0x00FC73 03:BC63: A9 83     LDA #con_погода_смерч + $80
 C - - - - - 0x00FC75 03:BC65: 8D 66 04  STA ram_погодный_эффект
 bra_BC68:
 C - - - - - 0x00FC78 03:BC68: AD 95 04  LDA ram_направление_молния_смерч
@@ -11231,7 +11231,7 @@ C - - - - - 0x00FC81 03:BC71: A8        TAY
 C - - - - - 0x00FC82 03:BC72: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x00FC85 03:BC75: D9 80 BC  CMP tbl_BC80,Y
 C - - - - - 0x00FC88 03:BC78: 90 05     BCC bra_BC7F_RTS
-C - - - - - 0x00FC8A 03:BC7A: A9 81     LDA #con_погода_lightning + $80
+C - - - - - 0x00FC8A 03:BC7A: A9 81     LDA #con_погода_молния + $80
 C - - - - - 0x00FC8C 03:BC7C: 8D 66 04  STA ram_погодный_эффект
 bra_BC7F_RTS:
 C - - - - - 0x00FC8F 03:BC7F: 60        RTS
@@ -11581,7 +11581,7 @@ bra_BEF2:
 C - - - - - 0x00FF02 03:BEF2: A0 00     LDY #$00
 C - - - - - 0x00FF04 03:BEF4: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FF07 03:BEF7: 29 7F     AND #$7F
-C - - - - - 0x00FF09 03:BEF9: C9 01     CMP #con_погода_lightning
+C - - - - - 0x00FF09 03:BEF9: C9 01     CMP #con_погода_молния
 C - - - - - 0x00FF0B 03:BEFB: F0 0D     BEQ bra_BF0A
 C - - - - - 0x00FF0D 03:BEFD: AD 80 00  LDA ram_animation_id_мяч
 C - - - - - 0x00FF10 03:BF00: 29 7F     AND #$7F

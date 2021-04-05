@@ -360,7 +360,7 @@ bra_8238:
 C - - - - - 0x018248 06:8238: 20 A7 A5  JSR sub_A5A7_воспроизвести_анимацию
 C - - - - - 0x01824B 06:823B: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x01824E 06:823E: 29 7F     AND #$7F
-C - - - - - 0x018250 06:8240: C9 01     CMP #con_погода_lightning
+C - - - - - 0x018250 06:8240: C9 01     CMP #con_погода_молния
 C - - - - - 0x018252 06:8242: F0 12     BEQ bra_8256
 C - - - - - 0x018254 06:8244: AD 25 05  LDA ram_таймер_электр_мяча
 C - - - - - 0x018257 06:8247: D0 06     BNE bra_824F
@@ -6850,7 +6850,7 @@ C - - - - - 0x01AA30 06:AA20: B9 66 AC  LDA tbl_AC65 + 1,Y
 C - - - - - 0x01AA33 06:AA23: 85 2D     STA ram_002D
 C - - - - - 0x01AA35 06:AA25: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x01AA38 06:AA28: 29 7F     AND #$7F
-C - - - - - 0x01AA3A 06:AA2A: C9 01     CMP #con_погода_lightning
+C - - - - - 0x01AA3A 06:AA2A: C9 01     CMP #con_погода_молния
 C - - - - - 0x01AA3C 06:AA2C: D0 19     BNE bra_AA47
 C - - - - - 0x01AA3E 06:AA2E: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x01AA41 06:AA31: 30 14     BMI bra_AA47    ; если в воздухе
@@ -6993,7 +6993,7 @@ C - - - - - 0x01AB1A 06:AB0A: 60        RTS
 sub_AB0B:
 C - - - - - 0x01AB1B 06:AB0B: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x01AB1E 06:AB0E: 29 7F     AND #$7F
-C - - - - - 0x01AB20 06:AB10: C9 01     CMP #con_погода_lightning
+C - - - - - 0x01AB20 06:AB10: C9 01     CMP #con_погода_молния
 C - - - - - 0x01AB22 06:AB12: D0 16     BNE bra_AB2A
 C - - - - - 0x01AB24 06:AB14: 20 56 98  JSR sub_9856
 C - - - - - 0x01AB27 06:AB17: AD 92 04  LDA ram_состояние_мяча
@@ -9705,13 +9705,13 @@ C - - - - - 0x01BA4F 06:BA3F: A9 00     LDA #$00
 C - - - - - 0x01BA51 06:BA41: 8D 80 00  STA ram_animation_id_мяч
 C - - - - - 0x01BA54 06:BA44: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x01BA57 06:BA47: 29 7F     AND #$7F
-C - - - - - 0x01BA59 06:BA49: C9 01     CMP #con_погода_lightning
+C - - - - - 0x01BA59 06:BA49: C9 01     CMP #con_погода_молния
 C - - - - - 0x01BA5B 06:BA4B: D0 07     BNE bra_BA54
 - - - - - - 0x01BA5D 06:BA4D: A9 60     LDA #$60
 - - - - - - 0x01BA5F 06:BA4F: 8D 3F 01  STA ram_таймер_погоды
 - - - - - - 0x01BA62 06:BA52: D0 05     BNE bra_BA59
 bra_BA54:
-C - - - - - 0x01BA64 06:BA54: A9 00     LDA #con_погода_none
+C - - - - - 0x01BA64 06:BA54: A9 00     LDA #con_погода_выкл
 C - - - - - 0x01BA66 06:BA56: 8D 66 04  STA ram_погодный_эффект
 bra_BA59:
 C - - - - - 0x01BA69 06:BA59: 24 5C     BIT ram_flag_gameplay
@@ -10196,8 +10196,8 @@ bra_BD52_RTS:
 C - - - - - 0x01BD62 06:BD52: 60        RTS
 
 tbl_BD53_погода:
-- D 1 - - - 0x01BD63 06:BD53: 86        .byte con_погода_teared_net_left + $80    ; 
-- D 1 - - - 0x01BD64 06:BD54: 85        .byte con_погода_teared_net_right + $80   ; 
+- D 1 - - - 0x01BD63 06:BD53: 86        .byte con_погода_рваная_сетка_слева + $80    ; 
+- D 1 - - - 0x01BD64 06:BD54: 85        .byte con_погода_рваная_сетка_справа + $80   ; 
 
 
 

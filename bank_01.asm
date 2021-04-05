@@ -14398,7 +14398,7 @@ C - - - - - 0x007ADB 01:BACB: 90 1B     BCC bra_BAE8
 C - - - - - 0x007ADD 01:BACD: 20 B2 BF  JSR sub_0x01C2EF
 C - - - - - 0x007AE0 01:BAD0: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x007AE3 01:BAD3: 8D AC 05  STA ram_номер_палитры_фона
-C - - - - - 0x007AE6 01:BAD6: A9 00     LDA #con_погода_none
+C - - - - - 0x007AE6 01:BAD6: A9 00     LDA #con_погода_выкл
 C - - - - - 0x007AE8 01:BAD8: 8D 66 04  STA ram_погодный_эффект
 C - - - - - 0x007AEB 01:BADB: A9 0C     LDA #$0C
 C - - - - - 0x007AED 01:BADD: 8D AC 03  STA ram_объем_дождя
@@ -14530,7 +14530,7 @@ bra_BBAF:
 - - - - - - 0x007BC6 01:BBB6: 8D E6 00  STA ram_флаг_видимости_погоды
 C D 1 - - - 0x007BC9 01:BBB9: 60        RTS
 bra_BBBA:
-- - - - - - 0x007BCA 01:BBBA: A9 00     LDA #con_погода_none
+- - - - - - 0x007BCA 01:BBBA: A9 00     LDA #con_погода_выкл
 - - - - - - 0x007BCC 01:BBBC: 8D 66 04  STA ram_погодный_эффект
 - - - - - - 0x007BCF 01:BBBF: A9 0C     LDA #$0C
 - - - - - - 0x007BD1 01:BBC1: 8D AC 03  STA ram_объем_дождя
@@ -15275,13 +15275,13 @@ C - - - - - 0x007F73 01:BF63: A9 00     LDA #$00
 C - - - - - 0x007F75 01:BF65: 8D FD 05  STA ram_сила_ветра
 C - - - - - 0x007F78 01:BF68: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x007F7B 01:BF6B: 29 7F     AND #$7F
-C - - - - - 0x007F7D 01:BF6D: C9 01     CMP #con_погода_lightning
+C - - - - - 0x007F7D 01:BF6D: C9 01     CMP #con_погода_молния
 C - - - - - 0x007F7F 01:BF6F: D0 07     BNE bra_BF78
 - - - - - - 0x007F81 01:BF71: A9 60     LDA #$60
 - - - - - - 0x007F83 01:BF73: 8D 3F 01  STA ram_таймер_погоды
 - - - - - - 0x007F86 01:BF76: D0 05     BNE bra_BF7D_RTS
 bra_BF78:
-C - - - - - 0x007F88 01:BF78: A9 00     LDA #con_погода_none
+C - - - - - 0x007F88 01:BF78: A9 00     LDA #con_погода_выкл
 C - - - - - 0x007F8A 01:BF7A: 8D 66 04  STA ram_погодный_эффект
 bra_BF7D_RTS:
 C - - - - - 0x007F8D 01:BF7D: 60        RTS
