@@ -2152,7 +2152,7 @@ C - - - - - 0x00CD2C 03:8D1C: 90 0E     BCC bra_8D2C
 C - - - - - 0x00CD2E 03:8D1E: 8A        TXA
 C - - - - - 0x00CD2F 03:8D1F: 29 01     AND #$01
 C - - - - - 0x00CD31 03:8D21: A8        TAY
-C - - - - - 0x00CD32 03:8D22: B9 D3 05  LDA ram_05D3,Y
+C - - - - - 0x00CD32 03:8D22: B9 D3 05  LDA ram_опции_тактики,Y
 C - - - - - 0x00CD35 03:8D25: 29 03     AND #$03
 C - - - - - 0x00CD37 03:8D27: D0 03     BNE bra_8D2C
 C - - - - - 0x00CD39 03:8D29: 4C BB 8F  JMP loc_8FBB
@@ -2247,7 +2247,7 @@ bra_8DCF:
 C - - - - - 0x00CDDF 03:8DCF: 8A        TXA
 C - - - - - 0x00CDE0 03:8DD0: 29 01     AND #$01
 C - - - - - 0x00CDE2 03:8DD2: A8        TAY
-C - - - - - 0x00CDE3 03:8DD3: B9 D3 05  LDA ram_05D3,Y
+C - - - - - 0x00CDE3 03:8DD3: B9 D3 05  LDA ram_опции_тактики,Y
 C - - - - - 0x00CDE6 03:8DD6: 29 03     AND #$03
 C - - - - - 0x00CDE8 03:8DD8: D0 03     BNE bra_8DDD
 C - - - - - 0x00CDEA 03:8DDA: 4C B8 8E  JMP loc_8EB8
@@ -2422,7 +2422,7 @@ ofs_8EB8_0D:
 ofs_8EB8_0E:
 C D 0 J - - 0x00CEC8 03:8EB8: 8A        TXA
 C - - - - - 0x00CEC9 03:8EB9: 29 01     AND #$01
-C - - - - - 0x00CECB 03:8EBB: B9 D3 05  LDA ram_05D3,Y
+C - - - - - 0x00CECB 03:8EBB: B9 D3 05  LDA ram_опции_тактики,Y
 C - - - - - 0x00CECE 03:8EBE: 29 03     AND #$03
 C - - - - - 0x00CED0 03:8EC0: C9 02     CMP #$02
 C - - - - - 0x00CED2 03:8EC2: F0 F1     BEQ bra_8EB5
@@ -2446,7 +2446,7 @@ ofs_8EC7_01:
 ofs_8EC7_0E:
 C - - J - - 0x00CED7 03:8EC7: 8A        TXA
 C - - - - - 0x00CED8 03:8EC8: 29 01     AND #$01
-C - - - - - 0x00CEDA 03:8ECA: B9 D3 05  LDA ram_05D3,Y
+C - - - - - 0x00CEDA 03:8ECA: B9 D3 05  LDA ram_опции_тактики,Y
 C - - - - - 0x00CEDD 03:8ECD: 29 0C     AND #$0C
 C - - - - - 0x00CEDF 03:8ECF: C9 08     CMP #$08
 C - - - - - 0x00CEE1 03:8ED1: F0 E2     BEQ bra_8EB5
@@ -2563,7 +2563,7 @@ ofs_8F3A_09:
 ofs_8F3A_0A:
 - - - - - - 0x00CF4A 03:8F3A: 8A        TXA
 - - - - - - 0x00CF4B 03:8F3B: 29 01     AND #$01
-- - - - - - 0x00CF4D 03:8F3D: B9 D3 05  LDA ram_05D3,Y
+- - - - - - 0x00CF4D 03:8F3D: B9 D3 05  LDA ram_опции_тактики,Y
 - - - - - - 0x00CF50 03:8F40: 29 03     AND #$03
 - - - - - - 0x00CF52 03:8F42: C9 02     CMP #$02
 - - - - - - 0x00CF54 03:8F44: D0 03     BNE bra_8F49
@@ -2780,7 +2780,7 @@ bra_9094:
 C - - - - - 0x00D0A4 03:9094: 8A        TXA
 C - - - - - 0x00D0A5 03:9095: 29 01     AND #$01
 C - - - - - 0x00D0A7 03:9097: A8        TAY
-C - - - - - 0x00D0A8 03:9098: B9 D3 05  LDA ram_05D3,Y
+C - - - - - 0x00D0A8 03:9098: B9 D3 05  LDA ram_опции_тактики,Y
 C - - - - - 0x00D0AB 03:909B: 29 0C     AND #$0C
 C - - - - - 0x00D0AD 03:909D: C9 08     CMP #$08
 C - - - - - 0x00D0AF 03:909F: D0 03     BNE bra_90A4
@@ -3758,7 +3758,7 @@ C - - - - - 0x00D709 03:96F9: B0 E7     BCS bra_96E2
 C - - - - - 0x00D70B 03:96FB: 8A        TXA
 C - - - - - 0x00D70C 03:96FC: 29 01     AND #$01
 C - - - - - 0x00D70E 03:96FE: A8        TAY
-C - - - - - 0x00D70F 03:96FF: B9 D3 05  LDA ram_05D3,Y
+C - - - - - 0x00D70F 03:96FF: B9 D3 05  LDA ram_опции_тактики,Y
 C - - - - - 0x00D712 03:9702: 29 30     AND #$30
 C - - - - - 0x00D714 03:9704: F0 20     BEQ bra_9726
 C - - - - - 0x00D716 03:9706: C9 20     CMP #$20
@@ -5582,7 +5582,7 @@ C - - - - - 0x00E248 03:A238: 8A        TXA
 C - - - - - 0x00E249 03:A239: A8        TAY
 C - - - - - 0x00E24A 03:A23A: 20 2D B1  JSR sub_B12D
 loc_A23D:
-C D 1 - - - 0x00E24D 03:A23D: BD D3 05  LDA ram_05D3,X
+C D 1 - - - 0x00E24D 03:A23D: BD D3 05  LDA ram_опции_тактики,X
 C - - - - - 0x00E250 03:A240: 29 0C     AND #$0C
 C - - - - - 0x00E252 03:A242: C9 08     CMP #$08
 C - - - - - 0x00E254 03:A244: F0 51     BEQ bra_A297
@@ -5634,7 +5634,7 @@ C - - - - - 0x00E2AE 03:A29E: A9 0A     LDA #con_ai_0A
 C - - - - - 0x00E2B0 03:A2A0: 9D 66 06  STA ram_интеллект_бота + 10,X
 C - - - - - 0x00E2B3 03:A2A3: 4C E1 A2  JMP loc_A2E1
 bra_A2A6_это_кипер:
-C - - - - - 0x00E2B6 03:A2A6: BD D3 05  LDA ram_05D3,X
+C - - - - - 0x00E2B6 03:A2A6: BD D3 05  LDA ram_опции_тактики,X
 C - - - - - 0x00E2B9 03:A2A9: 29 C0     AND #$C0
 C - - - - - 0x00E2BB 03:A2AB: F0 2C     BEQ bra_A2D9
 C - - - - - 0x00E2BD 03:A2AD: C9 80     CMP #$80
@@ -5952,7 +5952,7 @@ sub_A4A8:
 C - - - - - 0x00E4B8 03:A4A8: A5 2C     LDA ram_002C
 C - - - - - 0x00E4BA 03:A4AA: 29 01     AND #$01
 C - - - - - 0x00E4BC 03:A4AC: A8        TAY
-C - - - - - 0x00E4BD 03:A4AD: B9 D3 05  LDA ram_05D3,Y
+C - - - - - 0x00E4BD 03:A4AD: B9 D3 05  LDA ram_опции_тактики,Y
 C - - - - - 0x00E4C0 03:A4B0: 29 30     AND #$30
 C - - - - - 0x00E4C2 03:A4B2: F0 07     BEQ bra_A4BB
 C - - - - - 0x00E4C4 03:A4B4: C9 10     CMP #$10
@@ -5978,7 +5978,7 @@ C - - - - - 0x00E4E8 03:A4D8: F0 E1     BEQ bra_A4BB
 C - - - - - 0x00E4EA 03:A4DA: C9 C0     CMP #$C0
 C - - - - - 0x00E4EC 03:A4DC: F0 DD     BEQ bra_A4BB
 loc_A4DE:
-C - - - - - 0x00E4EE 03:A4DE: BD D3 05  LDA ram_05D3,X
+C - - - - - 0x00E4EE 03:A4DE: BD D3 05  LDA ram_опции_тактики,X
 C - - - - - 0x00E4F1 03:A4E1: 29 30     AND #$30
 C - - - - - 0x00E4F3 03:A4E3: C9 20     CMP #$20
 C - - - - - 0x00E4F5 03:A4E5: F0 0E     BEQ bra_A4F5
@@ -6002,7 +6002,7 @@ C - - - - - 0x00E518 03:A508: F0 05     BEQ bra_A50F
 C - - - - - 0x00E51A 03:A50A: A9 20     LDA #con_ai_20
 C - - - - - 0x00E51C 03:A50C: 4C 1A A5  JMP loc_A51A_запись_интеллекта
 bra_A50F:
-C - - - - - 0x00E51F 03:A50F: AD D3 05  LDA ram_05D3
+C - - - - - 0x00E51F 03:A50F: AD D3 05  LDA ram_опции_тактики
 C - - - - - 0x00E522 03:A512: 29 30     AND #$30
 C - - - - - 0x00E524 03:A514: C9 10     CMP #$10
 C - - - - - 0x00E526 03:A516: F0 D8     BEQ bra_A4F0
@@ -6146,7 +6146,7 @@ C - - - - - 0x00E604 03:A5F4: A5 1C     LDA ram_001C
 C - - - - - 0x00E606 03:A5F6: 8D D6 04  STA ram_игрок_с_мячом
 C - - - - - 0x00E609 03:A5F9: 20 01 A3  JSR sub_A301
 C - - - - - 0x00E60C 03:A5FC: 90 11     BCC bra_A60F
-C - - - - - 0x00E60E 03:A5FE: BD D3 05  LDA ram_05D3,X
+C - - - - - 0x00E60E 03:A5FE: BD D3 05  LDA ram_опции_тактики,X
 C - - - - - 0x00E611 03:A601: 29 0C     AND #$0C
 C - - - - - 0x00E613 03:A603: C9 08     CMP #$08
 C - - - - - 0x00E615 03:A605: F0 08     BEQ bra_A60F
