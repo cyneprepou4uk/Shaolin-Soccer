@@ -11033,10 +11033,11 @@ C - - - - - 0x00FB0D 03:BAFD: D0 0C     BNE bra_BB0B_RTS
 C - - - - - 0x00FB0F 03:BAFF: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FB12 03:BB02: 29 7F     AND #$7F
 C - - - - - 0x00FB14 03:BB04: C9 01     CMP #con_погода_молния
-C - - - - - 0x00FB16 03:BB06: F0 03     BNE bra_BB0C_это_молния
+C - - - - - 0x00FB16 03:BB06: F0 03     BEQ bra_BB0B_RTS
+C - - - - - 0x00FB18 03:BB08: 4C 0C BB  JMP loc_BB0C
 bra_BB0B_RTS:
 C - - - - - 0x00FB1B 03:BB0B: 60        RTS
-bra_BB0C_это_молния:
+loc_BB0C:
 C D 1 - - - 0x00FB1C 03:BB0C: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FB1F 03:BB0F: 29 7F     AND #$7F
 C - - - - - 0x00FB21 03:BB11: F0 0B     BEQ bra_BB1E    ; если нету погоды
