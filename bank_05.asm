@@ -4335,14 +4335,7 @@ C - - - - - 0x015809 05:97F9: 20 DF 80  JSR sub_80DF
 C - - - - - 0x01580C 05:97FC: 20 2C 98  JSR sub_982C
 bra_97FF:
 C - - - - - 0x01580F 05:97FF: 20 1D 9B  JSR sub_9B1D
-C - - - - - 0x015812 05:9802: AD F0 00  LDA ram_pos_X_lo_camera     ; bzk опт, подпрограмма 0x01CAFE
-C - - - - - 0x015815 05:9805: 8D EC 00  STA ram_pos_X_lo_scroll
-C - - - - - 0x015818 05:9808: AD F1 00  LDA ram_pos_X_hi_camera
-C - - - - - 0x01581B 05:980B: 8D ED 00  STA ram_pos_X_hi_scroll
-C - - - - - 0x01581E 05:980E: AD F2 00  LDA ram_pos_Y_lo_camera
-C - - - - - 0x015821 05:9811: 8D EE 00  STA ram_pos_Y_lo_scroll
-C - - - - - 0x015824 05:9814: AD F3 00  LDA ram_pos_Y_hi_camera
-C - - - - - 0x015827 05:9817: 8D EF 00  STA ram_pos_Y_hi_scroll
+C - - - - - 0x015812 05:9802: AD F0 00  JSR sub_0x01CAFE_скопировать_camera_pos_в_scroll_pos
 C - - - - - 0x01582A 05:981A: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x01582D 05:981D: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_поинтеры_после_JSR
 - D 0 - I - 0x015830 05:9820: B8 98     .word ofs_98B8_00
