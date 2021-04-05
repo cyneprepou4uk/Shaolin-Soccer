@@ -11003,17 +11003,17 @@ bra_BC5F:
 C - - - - - 0x017C6F 05:BC5F: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x017C71 05:BC61: AA        TAX
 C - - - - - 0x017C72 05:BC62: BD 50 06  LDA ram_позиция_управление,X
-C - - - - - 0x017C75 05:BC65: 29 7F     AND #$7F
+C - - - - - 0x017C75 05:BC65: 29 7F     AND #con_флаг_бота ^ $FF
 C - - - - - 0x017C77 05:BC67: 9D 50 06  STA ram_позиция_управление,X
 C - - - - - 0x017C7A 05:BC6A: C8        INY
 C - - - - - 0x017C7B 05:BC6B: C4 5D     CPY ram_колво_игроков
 C - - - - - 0x017C7D 05:BC6D: 90 F0     BCC bra_BC5F
 bra_BC6F_demo:
 C - - - - - 0x017C7F 05:BC6F: AD 5A 06  LDA ram_позиция_управление + 10
-C - - - - - 0x017C82 05:BC72: 29 80     AND #$80
+C - - - - - 0x017C82 05:BC72: 29 80     AND #con_флаг_бота
 C - - - - - 0x017C84 05:BC74: 8D 8C 06  STA ram_флаг_бота_кипера
 C - - - - - 0x017C87 05:BC77: AD 5B 06  LDA ram_позиция_управление + 11
-C - - - - - 0x017C8A 05:BC7A: 29 80     AND #$80
+C - - - - - 0x017C8A 05:BC7A: 29 80     AND #con_флаг_бота
 C - - - - - 0x017C8C 05:BC7C: 8D 8D 06  STA ram_флаг_бота_кипера + 1
 C - - - - - 0x017C8F 05:BC7F: A2 01     LDX #$01
 bra_BC81:
