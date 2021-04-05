@@ -1907,14 +1907,13 @@ C - - - - - 0x01CB81 07:CB71: D0 12     BNE bra_CB85_нажата_неправи
 - - - - - - 0x01CB8D 07:CB7D: A9 38     LDA #con_sfx_крутилка_гвинейская
 - - - - - - 0x01CB8F 07:CB7F: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
 bra_CB82:
-- - - - - - 0x01CB92 07:CB82: 4C 8F CB  JMP loc_CB8F    ; bzk опт
+- - - - - - 0x01CB92 07:CB82: 4C 8F CB  JMP loc_C647_моргание_счета_на_паузе
 bra_CB85_нажата_неправильная_кнопка:
 C - - - - - 0x01CB95 07:CB85: AD 08 00  LDA ram_btn_press
 C - - - - - 0x01CB98 07:CB88: F0 05     BEQ bra_CB8F    ; если ничего не нажато
 C - - - - - 0x01CB9A 07:CB8A: A9 00     LDA #$00
 C - - - - - 0x01CB9C 07:CB8C: 8D FD 06  STA ram_счетчик_комбы_на_паузе
 bra_CB8F:
-loc_CB8F:
 C - - - - - 0x01CB9F 07:CB8F: 4C 47 C6  JMP loc_C647_моргание_счета_на_паузе
 bra_CB92_комбинация_нажата_полностью:
 - - - - - - 0x01CBA2 07:CB92: A9 BC     LDA #$BC
