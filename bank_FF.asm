@@ -2574,7 +2574,7 @@ C - - - - - 0x01D003 07:CFF3: F0 0D     BEQ bra_D002
 C - - - - - 0x01D005 07:CFF5: A9 85     LDA #con_hud_freekick + $80
 C - - - - - 0x01D007 07:CFF7: D0 0B     BNE bra_D004
 bra_CFF9_пенальти:
-C - - - - - 0x01D009 07:CFF9: A9 0D     LDA #$0D
+C - - - - - 0x01D009 07:CFF9: A9 0D     LDA #con_music_пенальти
 C - - - - - 0x01D00B 07:CFFB: 8D 5A 05  STA ram_номер_музыки
 C - - - - - 0x01D00E 07:CFFE: A9 83     LDA #con_hud_pk + $80
 C - - - - - 0x01D010 07:D000: D0 02     BNE bra_D004
@@ -7094,11 +7094,14 @@ C - - - - - 0x01E88F 07:E87F: 20 E4 C2  JSR sub_C2E4_воспроизвести_
 C - - - - - 0x01E892 07:E882: 20 A9 EC  JSR sub_ECA9_выключить_NMI_при_следующем_вызове
 C - - - - - 0x01E895 07:E885: 20 71 EE  JSR sub_EE71_выключить_NMI
 C - - - - - 0x01E898 07:E888: 20 C1 EC  JSR sub_ECC1_скрыть_фон_и_спрайты_за_полоской_слева
-C - - - - - 0x01E8A5 07:E895: 20 E6 E8  JSR sub_E8E6
+C - - - - - 0x01E8A5 07:E895: 20 E6 E8  JSR sub_E8E6_отрисовать_экран
+; bzk экономичнее будет поменять в таблицах FF на 00 
+; и сразу писать в A000 без проверок
+; а то выглядит так, будто игра пытается сохранить предыдущий mirroring
 C - - - - - 0x01E8A8 07:E898: A5 2B     LDA ram_002B
-C - - - - - 0x01E8AA 07:E89A: 30 03     BMI bra_E89F
+C - - - - - 0x01E8AA 07:E89A: 30 03     BMI bra_E89F_не_записывать_mirroring
 C - - - - - 0x01E8AC 07:E89C: 8D 00 A0  STA $A000
-bra_E89F:
+bra_E89F_не_записывать_mirroring:
 C - - - - - 0x01E8AF 07:E89F: A5 26     LDA ram_0026
 C - - - - - 0x01E8B1 07:E8A1: 8D BC 05  STA ram_банк_фона
 C - - - - - 0x01E8B4 07:E8A4: A5 27     LDA ram_0027
@@ -7113,7 +7116,7 @@ C - - - - - 0x01E8C9 07:E8B9: 60        RTS
 
 
 
-sub_E8E6:
+sub_E8E6_отрисовать_экран:
 C - - - - - 0x01E8F6 07:E8E6: AD B8 05  LDA ram_банк_спрайтов
 C - - - - - 0x01E8F9 07:E8E9: 48        PHA
 C - - - - - 0x01E8FA 07:E8EA: AD B9 05  LDA ram_банк_спрайтов + 1

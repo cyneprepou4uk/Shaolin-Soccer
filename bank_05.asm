@@ -1180,7 +1180,7 @@ C - - J - - 0x0147A2 05:8792: 20 68 88  JSR sub_8868
 C - - - - - 0x0147A5 05:8795: 90 34     BCC bra_87CB
 C - - - - - 0x0147A7 05:8797: A9 33     LDA #con_sfx_yes
 C - - - - - 0x0147A9 05:8799: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x0147AC 05:879C: 20 4F 88  JSR sub_884F
+C - - - - - 0x0147AC 05:879C: 20 4F 88  JSR sub_884F_выбор_музыки
 C - - - - - 0x0147AF 05:879F: 20 85 88  JSR sub_8885
 C - - - - - 0x0147B2 05:87A2: 4C CB 87  JMP loc_87CB
 
@@ -1340,7 +1340,7 @@ C - - - - - 0x01485E 05:884E: 60        RTS
 
 
 
-sub_884F:
+sub_884F_выбор_музыки:
 C - - - - - 0x01485F 05:884F: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x014862 05:8852: 0A        ASL
 C - - - - - 0x014863 05:8853: A8        TAY
@@ -1351,7 +1351,7 @@ C - - - - - 0x01486C 05:885C: 29 0F     AND #$0F
 C - - - - - 0x01486E 05:885E: 4A        LSR
 C - - - - - 0x01486F 05:885F: 4A        LSR
 C - - - - - 0x014870 05:8860: A8        TAY
-C - - - - - 0x014871 05:8861: B9 D1 A6  LDA tbl_A6D1,Y
+C - - - - - 0x014871 05:8861: B9 D1 A6  LDA tbl_A6D1_музыка,Y
 C - - - - - 0x014874 05:8864: 8D 5A 05  STA ram_номер_музыки
 C - - - - - 0x014877 05:8867: 60        RTS
 
@@ -4316,7 +4316,7 @@ C - - - - - 0x0157E1 05:97D1: 20 47 BB  JSR sub_BB47
 C - - - - - 0x0157E4 05:97D4: 20 84 BB  JSR sub_BB84
 C - - - - - 0x0157E7 05:97D7: 20 0F 80  JSR sub_0x01C263_выставить_базовые_параметры_игроков
 C - - - - - 0x0157EA 05:97DA: AC 29 05  LDY ram_опция_материк
-C - - - - - 0x0157ED 05:97DD: B9 D1 A6  LDA tbl_A6D1,Y
+C - - - - - 0x0157ED 05:97DD: B9 D1 A6  LDA tbl_A6D1_музыка,Y
 C - - - - - 0x0157F0 05:97E0: 8D 5A 05  STA ram_номер_музыки
 C - - - - - 0x0157F3 05:97E3: A0 00     LDY #$00
 C - - - - - 0x0157F5 05:97E5: 24 57     BIT ram_опция_режим_и_сложность
@@ -6876,7 +6876,7 @@ C - - - - - 0x016618 05:A608: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x01661B 05:A60B: 10 0E     BPL bra_A61B
 C - - - - - 0x01661D 05:A60D: A9 07     LDA #$07
 C - - - - - 0x01661F 05:A60F: 8D CA 05  STA ram_номер_опции
-C - - - - - 0x016622 05:A612: 20 B1 A6  JSR sub_A6B1
+C - - - - - 0x016622 05:A612: 20 B1 A6  JSR sub_A6B1_выбор_музыки
 C - - - - - 0x016625 05:A615: AD 5A 05  LDA ram_номер_музыки
 C - - - - - 0x016628 05:A618: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 bra_A61B:
@@ -6899,7 +6899,7 @@ ofs_A635_01_Start:
 ofs_A635_03_A:
 C - - J - - 0x016645 05:A635: A9 33     LDA #con_sfx_yes
 C - - - - - 0x016647 05:A637: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x01664A 05:A63A: 20 B1 A6  JSR sub_A6B1
+C - - - - - 0x01664A 05:A63A: 20 B1 A6  JSR sub_A6B1_выбор_музыки
 C - - - - - 0x01664D 05:A63D: 20 D6 A6  JSR sub_A6D6
 C - - - - - 0x016650 05:A640: 4C 6F A6  RTS
 
@@ -6915,7 +6915,7 @@ C - - - - - 0x016658 05:A648: 4C 57 A6  JMP loc_A657
 ofs_A64B_05_Up:
 ofs_A64B_06_Down:
 C - - J - - 0x01665B 05:A64B: 20 DD 81  JSR sub_81DD
-C - - - - - 0x01665E 05:A64E: 20 B1 A6  JSR sub_A6B1
+C - - - - - 0x01665E 05:A64E: 20 B1 A6  JSR sub_A6B1_выбор_музыки
 C - - - - - 0x016661 05:A651: AD 5A 05  LDA ram_номер_музыки
 C - - - - - 0x016664 05:A654: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 loc_A657:
@@ -7007,40 +7007,40 @@ off_A69F_02:
 
 
 
-sub_A6B1:
+sub_A6B1_выбор_музыки:
 C - - - - - 0x0166C1 05:A6B1: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x0166C4 05:A6B4: 29 07     AND #$07
 C - - - - - 0x0166C6 05:A6B6: A8        TAY
-C - - - - - 0x0166C7 05:A6B7: B9 C9 A6  LDA tbl_A6C9,Y
+C - - - - - 0x0166C7 05:A6B7: B9 C9 A6  LDA tbl_A6C9_музыка,Y
 C - - - - - 0x0166CA 05:A6BA: 10 09     BPL bra_A6C5
 C - - - - - 0x0166CC 05:A6BC: AD 29 05  LDA ram_опция_материк
 C - - - - - 0x0166CF 05:A6BF: 29 03     AND #$03
 C - - - - - 0x0166D1 05:A6C1: A8        TAY
-C - - - - - 0x0166D2 05:A6C2: B9 D1 A6  LDA tbl_A6D1,Y
+C - - - - - 0x0166D2 05:A6C2: B9 D1 A6  LDA tbl_A6D1_музыка,Y
 bra_A6C5:
 C - - - - - 0x0166D5 05:A6C5: 8D 5A 05  STA ram_номер_музыки
 C - - - - - 0x0166D8 05:A6C8: 60        RTS
 
 
 
-tbl_A6C9:
-- D 1 - - - 0x0166D9 05:A6C9: 04        .byte $04   ; 
-- D 1 - - - 0x0166DA 05:A6CA: 06        .byte $06   ; 
-- D 1 - - - 0x0166DB 05:A6CB: 03        .byte $03   ; 
-- D 1 - - - 0x0166DC 05:A6CC: 05        .byte $05   ; 
-- D 1 - - - 0x0166DD 05:A6CD: 0D        .byte $0D   ; 
-- D 1 - - - 0x0166DE 05:A6CE: 01        .byte $01   ; 
-- D 1 - - - 0x0166DF 05:A6CF: 07        .byte $07   ; 
+tbl_A6C9_музыка:
+- D 1 - - - 0x0166D9 05:A6C9: 04        .byte con_music_поле_04   ; 
+- D 1 - - - 0x0166DA 05:A6CA: 06        .byte con_music_поле_06   ; 
+- D 1 - - - 0x0166DB 05:A6CB: 03        .byte con_music_поле_03   ; 
+- D 1 - - - 0x0166DC 05:A6CC: 05        .byte con_music_поле_05   ; 
+- D 1 - - - 0x0166DD 05:A6CD: 0D        .byte con_music_пенальти   ; 
+- D 1 - - - 0x0166DE 05:A6CE: 01        .byte con_music_логотип   ; 
+- D 1 - - - 0x0166DF 05:A6CF: 07        .byte con_music_поле_07   ; 
 - D 1 - - - 0x0166E0 05:A6D0: FF        .byte $FF   ; 
 
 
 
-tbl_A6D1:
-- D 1 - - - 0x0166E1 05:A6D1: 07        .byte $07   ; 
-- D 1 - - - 0x0166E2 05:A6D2: 03        .byte $03   ; 
-- D 1 - - - 0x0166E3 05:A6D3: 0D        .byte $0D   ; 
-- D 1 - - - 0x0166E4 05:A6D4: 05        .byte $05   ; 
-- - - - - - 0x0166E5 05:A6D5: 06        .byte $06   ; 
+tbl_A6D1_музыка:
+- D 1 - - - 0x0166E1 05:A6D1: 07        .byte con_music_поле_07   ; 
+- D 1 - - - 0x0166E2 05:A6D2: 03        .byte con_music_поле_03   ; 
+- D 1 - - - 0x0166E3 05:A6D3: 0D        .byte con_music_пенальти   ; 
+- D 1 - - - 0x0166E4 05:A6D4: 05        .byte con_music_поле_05   ; 
+- - - - - - 0x0166E5 05:A6D5: 06        .byte con_music_поле_06   ; 
 
 
 
@@ -9551,7 +9551,7 @@ ofs_B4AE_01:
 - - - - - - 0x0174D9 05:B4C9: 85 59     STA ram_subscript
 - - - - - - 0x0174DB 05:B4CB: A9 04     LDA #$04
 - - - - - - 0x0174DD 05:B4CD: 8D 29 05  STA ram_опция_материк
-- - - - - - 0x0174E0 05:B4D0: A9 06     LDA #$06
+- - - - - - 0x0174E0 05:B4D0: A9 06     LDA #con_music_поле_06
 - - - - - - 0x0174E2 05:B4D2: 8D 5A 05  STA ram_номер_музыки
 bra_B4D5_RTS:
 - - - - - - 0x0174E5 05:B4D5: 60        RTS
