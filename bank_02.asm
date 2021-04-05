@@ -14040,7 +14040,6 @@ bra_BC27:
 - - - - - - 0x00BCD5 02:BCC5: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 - - - - - - 0x00BCD8 02:BCC8: A9 80     LDA #$80
 - - - - - - 0x00BCDA 02:BCCA: 8D 8B 05  STA ram_флаг_демо
-bra_BCCD:
 - - - - - - 0x00BCDD 02:BCCD: E6 59     INC ram_subscript
 bra_BCCF_RTS:
 - - - - - - 0x00BCDF 02:BCCF: 60        RTS
@@ -14110,7 +14109,10 @@ ofs_BD00_03_фотки_в_титрах:
 - - - - - - 0x00BD24 02:BD14: EE 8C 05  INC ram_058C
 - - - - - - 0x00BD27 02:BD17: AD 8C 05  LDA ram_058C
 - - - - - - 0x00BD2A 02:BD1A: C9 07     CMP #$07
-- - - - - - 0x00BD2C 02:BD1C: B0 AF     BCS bra_BCCD
+- - - - - - 0x00BD2C 02:BD1C: B0 AF     BCC bra_BD1E
+                                        INC ram_subscript
+                                        RTS
+bra_BD1E:
 - - - - - - 0x00BD2E 02:BD1E: 69 1D     ADC #$1D    ; 1D-23, фотки в титрах
 - - - - - - 0x00BD30 02:BD20: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
 - - - - - - 0x00BD33 02:BD23: AD 8C 05  LDA ram_058C
