@@ -10417,7 +10417,7 @@ C - - - - - 0x01BEE7 06:BED7: C9 01     CMP #$01
 C - - - - - 0x01BEE9 06:BED9: D0 01     BNE bra_BEDC
 C - - - - - 0x01BEEB 06:BEDB: E8        INX
 bra_BEDC:
-C - - - - - 0x01BEEC 06:BEDC: 20 D6 CB  JSR sub_0x01CBE6_циферки
+C - - - - - 0x01BEEC 06:BEDC: 20 D6 CB  JSR sub_0x01CBE6_циферки_на_миникарте_и_над_игроком
 C - - - - - 0x01BEEF 06:BEDF: 20 8C EB  JSR sub_0x01EB9C
 C - - - - - 0x01BEF2 06:BEE2: E8        INX
 C - - - - - 0x01BEF3 06:BEE3: E0 13     CPX #$13
