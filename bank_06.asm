@@ -6949,13 +6949,11 @@ C - - - - - 0x01AAD0 06:AAC0: 4C B7 AA  JMP loc_AAB7
 sub_AAC3:
 loc_AAC3:
 C - - - - - 0x01AAD3 06:AAC3: A0 02     LDY #$02
-C - - - - - 0x01AAD5 06:AAC5: 4C CA AA  JMP loc_AACA    ; bzk опт
-
-
+C - - - - - 0x01AAD5 06:AAC5: 4C CA AA  BNE bra_AACA
 
 sub_AAC8:
 C - - - - - 0x01AAD8 06:AAC8: A0 00     LDY #$00
-loc_AACA:
+bra_AACA:
 C D 1 - - - 0x01AADA 06:AACA: B9 65 AC  LDA tbl_AC65,Y
 C - - - - - 0x01AADD 06:AACD: 85 2C     STA ram_002C
 C - - - - - 0x01AADF 06:AACF: B9 66 AC  LDA tbl_AC65 + 1,Y
