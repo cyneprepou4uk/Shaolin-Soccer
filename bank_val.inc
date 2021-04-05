@@ -70,8 +70,120 @@ con_на_песке                    = $03 ; оставляет следы
 
 
 
-; ram_подтип_действия           = $0459
-con_subact_00                   = $00 ; 
+; ram_действие_игрока           = $0459
+; ram_next_действие_игрока      = $0479
+con_action_00                   = $00 ; 
+con_action_01                   = $01 ; 
+con_action_02                   = $02 ; 
+con_action_03                   = $03 ; 
+con_action_04                   = $04 ; 
+con_action_05                   = $05 ; 
+con_action_06                   = $06 ; 
+con_action_07                   = $07 ; 
+con_action_08                   = $08 ; 
+con_action_09                   = $09 ; 
+con_action_0A                   = $0A ; 
+con_action_0B                   = $0B ; 
+con_action_0C                   = $0C ; 
+con_action_0D                   = $0D ; 
+con_action_0E                   = $0E ; 
+con_action_0F                   = $0F ; 
+con_action_10                   = $10 ; 
+con_action_11                   = $11 ; 
+con_action_12                   = $12 ; 
+con_action_13                   = $13 ; 
+con_action_14                   = $14 ; 
+con_action_15                   = $15 ; 
+con_action_16                   = $16 ; 
+con_action_17                   = $17 ; 
+con_action_18                   = $18 ; 
+con_action_19                   = $19 ; 
+con_action_1A                   = $1A ; 
+con_action_1B                   = $1B ; 
+con_action_1C                   = $1C ; 
+con_action_1D                   = $1D ; 
+con_action_1E                   = $1E ; 
+con_action_1F                   = $1F ; 
+con_action_20                   = $20 ; 
+con_action_21                   = $21 ; 
+con_action_22                   = $22 ; 
+con_action_23                   = $23 ; 
+con_action_24                   = $24 ; 
+con_action_25                   = $25 ; 
+con_action_26                   = $26 ; 
+con_action_27                   = $27 ; 
+con_action_28                   = $28 ; 
+con_action_29                   = $29 ; 
+con_action_2A                   = $2A ; 
+con_action_2B                   = $2B ; 
+con_action_2C                   = $2C ; 
+con_action_2D                   = $2D ; 
+con_action_2E                   = $2E ; 
+con_action_2F                   = $2F ; 
+con_action_30                   = $30 ; 
+con_action_31                   = $31 ; 
+con_action_32                   = $32 ; 
+con_action_33                   = $33 ; 
+con_action_34                   = $34 ; 
+con_action_35                   = $35 ; 
+con_action_36                   = $36 ; 
+con_action_37                   = $37 ; 
+con_action_38                   = $38 ; 
+con_action_39                   = $39 ; 
+con_action_3A                   = $3A ; 
+con_action_3B                   = $3B ; 
+con_action_3C                   = $3C ; 
+con_action_3D                   = $3D ; 
+con_action_3E                   = $3E ; 
+con_action_3F                   = $3F ; 
+con_action_40                   = $40 ; 
+con_action_41                   = $41 ; 
+con_action_42                   = $42 ; 
+con_action_43                   = $43 ; 
+con_action_44                   = $44 ; 
+con_action_45                   = $45 ; 
+con_action_46                   = $46 ; 
+con_action_47                   = $47 ; 
+con_action_48                   = $48 ; 
+con_action_49                   = $49 ; 
+con_action_4A                   = $4A ; 
+con_action_4B                   = $4B ; 
+con_action_4C                   = $4C ; 
+con_action_4D                   = $4D ; 
+con_action_4E                   = $4E ; 
+con_action_4F                   = $4F ; 
+con_action_50                   = $50 ; 
+con_action_51                   = $51 ; 
+con_action_52                   = $52 ; 
+con_action_53                   = $53 ; 
+con_action_54                   = $54 ; 
+con_action_55                   = $55 ; 
+con_action_56                   = $56 ; 
+con_action_57                   = $57 ; 
+con_action_58                   = $58 ; 
+con_action_59                   = $59 ; 
+con_action_5A                   = $5A ; 
+con_action_5B                   = $5B ; 
+con_action_5C                   = $5C ; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -83,11 +195,6 @@ con_погода_смерч                = $03 ;
 con_погода_ветер                = $04 ; 
 con_погода_рваная_сетка_справа  = $05 ; 
 con_погода_рваная_сетка_слева   = $06 ; 
-
-
-
-; ram_тип_действия              = $0479
-con_act_00                      = $00 ; 
 
 
 

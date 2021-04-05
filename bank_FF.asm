@@ -2249,7 +2249,7 @@ C - - - - - 0x01CDFE 07:CDEE: 9D 86 03  STA ram_pos_Z_lo_игрок,X
 C - - - - - 0x01CE01 07:CDF1: 9D 99 03  STA ram_pos_Z_hi_игрок,X
 C - - - - - 0x01CE04 07:CDF4: 4C 2F CE  RTS
 bra_CDF7_на_грязи_или_песке:
-C - - - - - 0x01CE07 07:CDF7: BD 59 04  LDA ram_подтип_действия,X
+C - - - - - 0x01CE07 07:CDF7: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x01CE0A 07:CDFA: 0A        ASL
 C - - - - - 0x01CE0B 07:CDFB: A8        TAY
 C - - - - - 0x01CE0C 07:CDFC: BD 30 01  LDA ram_на_чем_стоит_игрок,X
@@ -2416,7 +2416,7 @@ C - - - - - 0x01CECC 07:CEBC: 60        RTS
 
 
 sub_0x01CECD_вычислить_анимацию:
-; на вход подается номер движения 0459,X
+; на вход подается действие 0459,X
 C D 2 - - - 0x01CECD 07:CEBD: 0A        ASL
 C - - - - - 0x01CECE 07:CEBE: A8        TAY
 C - - - - - 0x01CECF 07:CEBF: B1 30     LDA (ram_0030),Y
@@ -2494,7 +2494,7 @@ C - - - - - 0x01CF53 07:CF43: BD 86 04  LDA ram_состояние_игрока,
 C - - - - - 0x01CF56 07:CF46: 29 40     AND #$40
 C - - - - - 0x01CF58 07:CF48: F0 05     BEQ bra_CF4F_не_владеет_мячом
 C - - - - - 0x01CF5A 07:CF4A: B1 2C     LDA (ram_002C),Y
-C - - - - - 0x01CF5C 07:CF4C: 8D 85 04  STA ram_тип_удара
+C - - - - - 0x01CF5C 07:CF4C: 8D 85 04  STA ram_next_действие_мяча
 bra_CF4F_не_владеет_мячом:
 C - - - - - 0x01CF5F 07:CF4F: FE 94 00  INC ram_кадр_анимации_игрока,X
 C - - - - - 0x01CF62 07:CF52: 4C E5 CE  JMP loc_CEE5_продолжить_чтение_байтов_анимации

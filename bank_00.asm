@@ -14620,7 +14620,7 @@ C - - - - - 0x003BCA 00:BBBA: A0 00     LDY #$00
 C - - - - - 0x003BCC 00:BBBC: A2 0E     LDX #$0E
 bra_BBBE_loop:
 C - - - - - 0x003BCE 00:BBBE: B9 E3 BD  LDA tbl_BDE3,Y
-C - - - - - 0x003BD1 00:BBC1: 9D 59 04  STA ram_подтип_действия,X
+C - - - - - 0x003BD1 00:BBC1: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x003BD4 00:BBC4: A9 03     LDA #$03
 C - - - - - 0x003BD6 00:BBC6: 9D 61 00  STA ram_0061,X
 C - - - - - 0x003BD9 00:BBC9: E8        INX
@@ -14632,7 +14632,7 @@ loc_BBD1_loop:
 C - - - - - 0x003BE1 00:BBD1: E0 04     CPX #$04
 C - - - - - 0x003BE3 00:BBD3: B0 09     BCS bra_BBDE
 - - - - - - 0x003BE5 00:BBD5: A9 00     LDA #$00
-- - - - - - 0x003BE7 00:BBD7: 9D 59 04  STA ram_подтип_действия,X
+- - - - - - 0x003BE7 00:BBD7: 9D 59 04  STA ram_действие_игрока,X
 - - - - - - 0x003BEA 00:BBDA: E8        INX
 - - - - - - 0x003BEB 00:BBDB: 4C D1 BB  JMP loc_BBD1_loop
 bra_BBDE:
@@ -14739,11 +14739,11 @@ C D 1 - - - 0x003CBA 00:BCAA: A2 00     LDX #$00
 loc_BCAC_loop:
 C D 1 - - - 0x003CBC 00:BCAC: A9 FF     LDA #$FF
 C - - - - - 0x003CBE 00:BCAE: 9D B0 04  STA ram_смена_угла_движения,X
-C - - - - - 0x003CC1 00:BCB1: 9D 79 04  STA ram_тип_действия,X
+C - - - - - 0x003CC1 00:BCB1: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x003CC4 00:BCB4: BD C9 BD  LDA tbl_BDC9,X
 C - - - - - 0x003CC7 00:BCB7: 9D 61 00  STA ram_0061,X
 C - - - - - 0x003CCA 00:BCBA: BD D6 BD  LDA tbl_BDD6,X
-C - - - - - 0x003CCD 00:BCBD: 9D 59 04  STA ram_подтип_действия,X
+C - - - - - 0x003CCD 00:BCBD: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x003CD0 00:BCC0: A9 7F     LDA #$7F
 C - - - - - 0x003CD2 00:BCC2: 9D 74 00  STA ram_анимация_игрока,X
 C - - - - - 0x003CD5 00:BCC5: A9 00     LDA #$00
