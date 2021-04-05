@@ -2517,11 +2517,11 @@ C - - - - - 0x01CF7F 07:CF6F: C8        INY
 C - - - - - 0x01CF80 07:CF70: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01CF82 07:CF72: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01CF84 07:CF74: AD 5A 06  LDA ram_позиция_управление + 10
-C - - - - - 0x01CF87 07:CF77: 29 7F     AND #$7F
+C - - - - - 0x01CF87 07:CF77: 29 7F     AND #con_flag_bot ^ $FF
 C - - - - - 0x01CF89 07:CF79: 0D 8C 06  ORA ram_флаг_бота_кипера
 C - - - - - 0x01CF8C 07:CF7C: 8D 5A 06  STA ram_позиция_управление + 10
 C - - - - - 0x01CF8F 07:CF7F: AD 5B 06  LDA ram_позиция_управление + 11
-C - - - - - 0x01CF92 07:CF82: 29 7F     AND #$7F
+C - - - - - 0x01CF92 07:CF82: 29 7F     AND #con_flag_bot ^ $FF
 C - - - - - 0x01CF94 07:CF84: 0D 8D 06  ORA ram_флаг_бота_кипера + 1
 C - - - - - 0x01CF97 07:CF87: 8D 5B 06  STA ram_позиция_управление + 11
 C - - - - - 0x01CF9A 07:CF8A: FE 94 00  INC ram_номер_кадра_анимации,X

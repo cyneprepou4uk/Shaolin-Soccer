@@ -73,7 +73,7 @@ con_погода_teared_net_left      = $06 ; рваная сетка слева
 
 
 
-; ram_на_чем_стоит_игрок             = $0130
+; ram_на_чем_стоит_игрок        = $0130
 con_на_траве                    = $00 ; трава или сухая земля, не тонет и не оставляет следов
 con_на_луже                     = $01 ; скользит и оставляет следы
 con_на_грязи                    = $02 ; тонет и оставляет следы
@@ -89,6 +89,62 @@ con_hud_pk                      = $03 ;
 con_hud_penalty                 = $04 ; 
 con_hud_freekick                = $05 ; 
 con_hud_миникарта               = $06 ; 
+
+
+
+; ram_позиция_управление        = $0650
+con_pos_FW                      = $00 ; 
+con_pos_MF                      = $10 ; 
+con_pos_DF                      = $20 ; 
+con_pos_GK                      = $30 ; 
+con_flag_bot                    = $80 ; 
+
+
+; ram_интеллект_бота            = $065C подпрограмма интеллекта бота, нужны комменты в 0x00C369
+con_ai_00                       = $00 ; 
+con_ai_01                       = $01 ; unused?
+con_ai_02                       = $02 ; 
+con_ai_03                       = $03 ; unused?
+con_ai_04                       = $04 ; 
+con_ai_05                       = $05 ; 
+con_ai_06                       = $06 ; 
+con_ai_07                       = $07 ; unused? запись существует
+con_ai_08                       = $08 ; 
+con_ai_09                       = $09 ; 
+con_ai_0A                       = $0A ; 
+con_ai_0B                       = $0B ; 
+con_ai_0C                       = $0C ; 
+con_ai_0D                       = $0D ; 
+con_ai_0E                       = $0E ; 
+con_ai_0F                       = $0F ; 
+con_ai_10                       = $10 ; unused?
+con_ai_11                       = $11 ; unused?
+con_ai_12                       = $12 ; unused?
+con_ai_13                       = $13 ; unused?
+con_ai_14                       = $14 ; unused?
+con_ai_15                       = $15 ; 
+con_ai_16                       = $16 ; 
+con_ai_17                       = $17 ; 
+con_ai_18                       = $18 ; 
+con_ai_19                       = $19 ; 
+con_ai_1A                       = $1A ; 
+con_ai_1B                       = $1B ; 
+con_ai_1C                       = $1C ; 
+con_ai_1D                       = $1D ; 
+con_ai_1E                       = $1E ; 
+con_ai_1F                       = $1F ; 
+con_ai_20                       = $20 ; 
+con_ai_21                       = $21 ; unused? существует проверка
+con_ai_22                       = $22 ; 
+con_ai_23                       = $23 ; 
+con_ai_24                       = $24 ; 
+con_ai_25                       = $25 ; 
+con_ai_26                       = $26 ; 
+con_ai_27                       = $27 ; 
+con_ai_28                       = $28 ; 
+con_ai_29                       = $29 ; 
+con_ai_2A                       = $2A ; 
+con_ai_2B                       = $2B ; 
 
 
 
