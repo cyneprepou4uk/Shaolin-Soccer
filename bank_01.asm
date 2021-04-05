@@ -14105,14 +14105,14 @@ C - - - - - 0x00792A 01:B91A: 29 0F     AND #$0F
 C - - - - - 0x00792C 01:B91C: 0A        ASL
 C - - - - - 0x00792D 01:B91D: 18        CLC
 C - - - - - 0x00792E 01:B91E: 69 3D     ADC #$3D
-C - - - - - 0x007930 01:B920: 8D AC 05  STA ram_palette_id_bg
+C - - - - - 0x007930 01:B920: 8D AC 05  STA ram_номер_палитры_фона
 C - - - - - 0x007933 01:B923: A9 0A     LDA #$0A
-C - - - - - 0x007935 01:B925: 8D AD 05  STA ram_palette_id_bg + 1
+C - - - - - 0x007935 01:B925: 8D AD 05  STA ram_номер_палитры_фона + 1
 C - - - - - 0x007938 01:B928: AD FB 05  LDA ram_опция_поверхность_влажность
 C - - - - - 0x00793B 01:B92B: 29 F0     AND #$F0
 C - - - - - 0x00793D 01:B92D: C9 30     CMP #$30
 C - - - - - 0x00793F 01:B92F: 90 03     BCC bra_B934_RTS
-- - - - - - 0x007941 01:B931: EE AC 05  INC ram_palette_id_bg
+- - - - - - 0x007941 01:B931: EE AC 05  INC ram_номер_палитры_фона
 bra_B934_RTS:
 C - - - - - 0x007944 01:B934: 60        RTS
 
@@ -14397,7 +14397,7 @@ C - - - - - 0x007AD9 01:BAC9: C9 14     CMP #$14
 C - - - - - 0x007ADB 01:BACB: 90 1B     BCC bra_BAE8
 C - - - - - 0x007ADD 01:BACD: 20 B2 BF  JSR sub_0x01C2EF
 C - - - - - 0x007AE0 01:BAD0: AD F4 05  LDA ram_цвет_поля
-C - - - - - 0x007AE3 01:BAD3: 8D AC 05  STA ram_palette_id_bg
+C - - - - - 0x007AE3 01:BAD3: 8D AC 05  STA ram_номер_палитры_фона
 C - - - - - 0x007AE6 01:BAD6: A9 00     LDA #con_погода_none
 C - - - - - 0x007AE8 01:BAD8: 8D 66 04  STA ram_погодный_эффект
 C - - - - - 0x007AEB 01:BADB: A9 0C     LDA #$0C
@@ -14417,18 +14417,18 @@ C - - - - - 0x007B05 01:BAF5: 68        PLA
 C - - - - - 0x007B06 01:BAF6: A8        TAY
 C - - - - - 0x007B07 01:BAF7: 4C 06 BB  JMP loc_BB06
 bra_BAFA:
-C - - - - - 0x007B0A 01:BAFA: 8D AE 05  STA ram_palette_id_spr
-C - - - - - 0x007B0D 01:BAFD: 8D AF 05  STA ram_palette_id_spr + 1
-C - - - - - 0x007B10 01:BB00: 8D B0 05  STA ram_palette_id_spr + 2
-C - - - - - 0x007B13 01:BB03: 8D B1 05  STA ram_palette_id_spr + 3
+C - - - - - 0x007B0A 01:BAFA: 8D AE 05  STA ram_номер_палитры_спрайтов
+C - - - - - 0x007B0D 01:BAFD: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
+C - - - - - 0x007B10 01:BB00: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
+C - - - - - 0x007B13 01:BB03: 8D B1 05  STA ram_номер_палитры_спрайтов + 3
 loc_BB06:
 C D 1 - - - 0x007B16 01:BB06: B9 35 BB  LDA tbl_BB35,Y
 C - - - - - 0x007B19 01:BB09: D0 09     BNE bra_BB14
 C - - - - - 0x007B1B 01:BB0B: AD F4 05  LDA ram_цвет_поля
-C - - - - - 0x007B1E 01:BB0E: 8D AC 05  STA ram_palette_id_bg
+C - - - - - 0x007B1E 01:BB0E: 8D AC 05  STA ram_номер_палитры_фона
 C - - - - - 0x007B21 01:BB11: 4C 17 BB  JMP loc_BB17
 bra_BB14:
-C - - - - - 0x007B24 01:BB14: 8D AC 05  STA ram_palette_id_bg
+C - - - - - 0x007B24 01:BB14: 8D AC 05  STA ram_номер_палитры_фона
 loc_BB17:
 C D 1 - - - 0x007B27 01:BB17: 20 6E C0  JSR sub_0x01D0E5_запись_палитры_в_буфер_с_учетом_яркости
 C - - - - - 0x007B2A 01:BB1A: A9 20     LDA #$20

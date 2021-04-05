@@ -11617,8 +11617,8 @@ C - - - - - 0x013012 04:B002: B9 86 03  LDA ram_pos_Z_lo_игрок,Y
 C - - - - - 0x013015 04:B005: 9D 86 03  STA ram_pos_Z_lo_игрок,X
 C - - - - - 0x013018 04:B008: B9 99 03  LDA ram_pos_Z_hi_игрок,Y
 C - - - - - 0x01301B 04:B00B: 9D 99 03  STA ram_pos_Z_hi_игрок,X
-C - - - - - 0x01301E 04:B00E: B9 A3 04  LDA ram_направление_движения,Y
-C - - - - - 0x013021 04:B011: 9D A3 04  STA ram_направление_движения,X
+C - - - - - 0x01301E 04:B00E: B9 A3 04  LDA ram_напр_движ_игрока,Y
+C - - - - - 0x013021 04:B011: 9D A3 04  STA ram_напр_движ_игрока,X
 C - - - - - 0x013024 04:B014: 10 02     BPL bra_B018
 C - - - - - 0x013026 04:B016: C6 1C     DEC ram_001C
 bra_B018:
@@ -13116,7 +13116,7 @@ C - - - - - 0x01392F 04:B91F: 10 2E     BPL bra_B94F
 C - - - - - 0x013931 04:B921: AD 1D 00  LDA ram_001D
 C - - - - - 0x013934 04:B924: 29 03     AND #$03
 C - - - - - 0x013936 04:B926: F0 16     BEQ bra_B93E
-C - - - - - 0x013938 04:B928: BD A3 04  LDA ram_направление_движения,X
+C - - - - - 0x013938 04:B928: BD A3 04  LDA ram_напр_движ_игрока,X
 C - - - - - 0x01393B 04:B92B: 2A        ROL
 C - - - - - 0x01393C 04:B92C: 2A        ROL
 C - - - - - 0x01393D 04:B92D: 4D 1D 00  EOR ram_001D
@@ -13288,8 +13288,8 @@ off_BA10_05:
 
 loc_BA1B:
 C D 1 - - - 0x013A2B 04:BA1B: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x013A2E 04:BA1E: B9 A3 04  LDA ram_направление_движения,Y
-C - - - - - 0x013A31 04:BA21: 9D A3 04  STA ram_направление_движения,X
+C - - - - - 0x013A2E 04:BA1E: B9 A3 04  LDA ram_напр_движ_игрока,Y
+C - - - - - 0x013A31 04:BA21: 9D A3 04  STA ram_напр_движ_игрока,X
 C - - - - - 0x013A34 04:BA24: B9 B0 04  LDA ram_смена_угла_движения,Y
 C - - - - - 0x013A37 04:BA27: 9D B0 04  STA ram_смена_угла_движения,X
 C - - - - - 0x013A3A 04:BA2A: A9 00     LDA #$00
@@ -13300,7 +13300,7 @@ C - - - - - 0x013A45 04:BA35: BD 14 03  LDA ram_pos_X_lo_игрок,X
 C - - - - - 0x013A48 04:BA38: 85 2C     STA ram_002C
 C - - - - - 0x013A4A 04:BA3A: BD 27 03  LDA ram_pos_X_hi_игрок,X
 C - - - - - 0x013A4D 04:BA3D: 85 2D     STA ram_002D
-C - - - - - 0x013A4F 04:BA3F: BD A3 04  LDA ram_направление_движения,X
+C - - - - - 0x013A4F 04:BA3F: BD A3 04  LDA ram_напр_движ_игрока,X
 C - - - - - 0x013A52 04:BA42: 10 0D     BPL bra_BA51
 C - - - - - 0x013A54 04:BA44: 18        CLC
 C - - - - - 0x013A55 04:BA45: A9 00     LDA #$00
@@ -13441,7 +13441,7 @@ tbl_BB16:
 
 loc_BB1E:
 C D 1 - - - 0x013B2E 04:BB1E: A0 00     LDY #$00
-C - - - - - 0x013B30 04:BB20: BD A3 04  LDA ram_направление_движения,X
+C - - - - - 0x013B30 04:BB20: BD A3 04  LDA ram_напр_движ_игрока,X
 C - - - - - 0x013B33 04:BB23: 10 02     BPL bra_BB27
 C - - - - - 0x013B35 04:BB25: A0 04     LDY #$04
 bra_BB27:
@@ -13481,7 +13481,7 @@ bra_BB69:
 C - - - - - 0x013B79 04:BB69: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x013B7C 04:BB6C: C9 FF     CMP #$FF
 C - - - - - 0x013B7E 04:BB6E: D0 08     BNE bra_BB78
-C - - - - - 0x013B80 04:BB70: BD A3 04  LDA ram_направление_движения,X
+C - - - - - 0x013B80 04:BB70: BD A3 04  LDA ram_напр_движ_игрока,X
 C - - - - - 0x013B83 04:BB73: 09 40     ORA #$40
 C - - - - - 0x013B85 04:BB75: 9D B0 04  STA ram_смена_угла_движения,X
 bra_BB78:
@@ -13687,7 +13687,7 @@ C - - - - - 0x013C92 04:BC82: 85 2C     STA ram_002C
 C - - - - - 0x013C94 04:BC84: AD 7E BC  LDA tbl_BC7D_таймер_полета_мяча + 1
 C - - - - - 0x013C97 04:BC87: 85 2D     STA ram_002D
 C - - - - - 0x013C99 04:BC89: A0 00     LDY #$00
-C - - - - - 0x013C9B 04:BC8B: BD A3 04  LDA ram_направление_движения,X
+C - - - - - 0x013C9B 04:BC8B: BD A3 04  LDA ram_напр_движ_игрока,X
 C - - - - - 0x013C9E 04:BC8E: 10 11     BPL bra_BCA1
 C - - - - - 0x013CA0 04:BC90: 18        CLC
 C - - - - - 0x013CA1 04:BC91: A5 2C     LDA ram_002C
@@ -13710,7 +13710,7 @@ C - - - - - 0x013CBE 04:BCAE: 85 2C     STA ram_002C
 C - - - - - 0x013CC0 04:BCB0: BD 27 03  LDA ram_pos_X_hi_игрок,X
 C - - - - - 0x013CC3 04:BCB3: E5 2D     SBC ram_002D
 C - - - - - 0x013CC5 04:BCB5: 85 2D     STA ram_002D
-C - - - - - 0x013CC7 04:BCB7: 5D A3 04  EOR ram_направление_движения,X
+C - - - - - 0x013CC7 04:BCB7: 5D A3 04  EOR ram_напр_движ_игрока,X
 C - - - - - 0x013CCA 04:BCBA: 30 06     BMI bra_BCC2
 C - - - - - 0x013CCC 04:BCBC: A9 00     LDA #$00
 C - - - - - 0x013CCE 04:BCBE: 85 2C     STA ram_002C

@@ -14769,7 +14769,7 @@ C - - - - - 0x003D08 00:BCF8: 6A        ROR
 C - - - - - 0x003D09 00:BCF9: 6A        ROR
 bra_BCFA_пенальти:
 C - - - - - 0x003D0A 00:BCFA: 29 80     AND #$80
-C - - - - - 0x003D0C 00:BCFC: 9D A3 04  STA ram_направление_движения,X
+C - - - - - 0x003D0C 00:BCFC: 9D A3 04  STA ram_напр_движ_игрока,X
 C - - - - - 0x003D0F 00:BCFF: 8A        TXA
 C - - - - - 0x003D10 00:BD00: 29 01     AND #$01
 C - - - - - 0x003D12 00:BD02: D0 2A     BNE bra_BD2E

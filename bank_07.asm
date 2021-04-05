@@ -67,13 +67,13 @@ sub_0x000000_RESET_init:
                                         STA ram_флаг_гола
                                         STA ram_054A
                                         LDA #$42
-                                        STA ram_palette_id_bg
-                                        STA ram_palette_id_bg + 1
+                                        STA ram_номер_палитры_фона
+                                        STA ram_номер_палитры_фона + 1
                                         LDA #$00
-                                        STA ram_palette_id_spr
-                                        STA ram_palette_id_spr + 1
-                                        STA ram_palette_id_spr + 2
-                                        STA ram_palette_id_spr + 3
+                                        STA ram_номер_палитры_спрайтов
+                                        STA ram_номер_палитры_спрайтов + 1
+                                        STA ram_номер_палитры_спрайтов + 2
+                                        STA ram_номер_палитры_спрайтов + 3
                                         JSR sub_0x01D046
                                         LDA #$22
                                         STA ram_0607

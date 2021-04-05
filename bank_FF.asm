@@ -1557,7 +1557,7 @@ C - - - - - 0x01C90B 07:C8FB: 8D F8 05  STA ram_содержимое_hud
 C - - - - - 0x01C90E 07:C8FE: A9 00     LDA #$00
 C - - - - - 0x01C910 07:C900: 8D F9 05  STA ram_flag_hud_ready
 C - - - - - 0x01C913 07:C903: A9 0F     LDA #$0F
-C - - - - - 0x01C915 07:C905: 8D AD 05  STA ram_palette_id_bg + 1
+C - - - - - 0x01C915 07:C905: 8D AD 05  STA ram_номер_палитры_фона + 1
 C - - - - - 0x01C918 07:C908: 20 D5 D0  JSR sub_D0D5_запись_палитры_в_буфер_с_учетом_яркости
 C - - - - - 0x01C91B 07:C90B: A9 3F     LDA #$3F
 C - - - - - 0x01C91D 07:C90D: 8D D9 06  STA ram_байт_2006_hi_палитра
@@ -2548,9 +2548,9 @@ C - - - - - 0x01CFBC 07:CFAC: 20 D9 E7  JSR sub_E7D9
 C - - - - - 0x01CFBF 07:CFAF: 20 26 C3  JSR sub_C326
 C - - - - - 0x01CFC2 07:CFB2: 20 9A EE  JSR sub_EE9A_базовые_банки_спрайтов
 C - - - - - 0x01CFC5 07:CFB5: AD F4 05  LDA ram_цвет_поля
-C - - - - - 0x01CFC8 07:CFB8: 8D AC 05  STA ram_palette_id_bg
+C - - - - - 0x01CFC8 07:CFB8: 8D AC 05  STA ram_номер_палитры_фона
 C - - - - - 0x01CFCB 07:CFBB: A9 0F     LDA #$0F
-C - - - - - 0x01CFCD 07:CFBD: 8D AD 05  STA ram_palette_id_bg + 1
+C - - - - - 0x01CFCD 07:CFBD: 8D AD 05  STA ram_номер_палитры_фона + 1
 C - - - - - 0x01CFD0 07:CFC0: A9 01     LDA #$01    ; horisontal mirroring
 C - - - - - 0x01CFD2 07:CFC2: 8D 00 A0  STA $A000
 C - - - - - 0x01CFD5 07:CFC5: AD F2 05  LDA ram_поле_банк_фона
@@ -2608,7 +2608,7 @@ C - - - - - 0x01D03C 07:D02C: 4A        LSR
 C - - - - - 0x01D03D 07:D02D: 05 1C     ORA ram_001C
 C - - - - - 0x01D03F 07:D02F: 18        CLC
 C - - - - - 0x01D040 07:D030: 69 29     ADC #$29
-C - - - - - 0x01D042 07:D032: 8D AD 05  STA ram_palette_id_bg + 1
+C - - - - - 0x01D042 07:D032: 8D AD 05  STA ram_номер_палитры_фона + 1
 C - - - - - 0x01D045 07:D035: 60        RTS
 
 
@@ -2736,7 +2736,7 @@ C - - - - - 0x01D0F5 07:D0E5: 4A        LSR
 C - - - - - 0x01D0F6 07:D0E6: 4A        LSR
 C - - - - - 0x01D0F7 07:D0E7: 29 01     AND #$01
 C - - - - - 0x01D0F9 07:D0E9: A8        TAY
-C - - - - - 0x01D0FA 07:D0EA: B9 AC 05  LDA ram_palette_id_bg,Y
+C - - - - - 0x01D0FA 07:D0EA: B9 AC 05  LDA ram_номер_палитры_фона,Y
 C - - - - - 0x01D0FD 07:D0ED: 0A        ASL
 C - - - - - 0x01D0FE 07:D0EE: A8        TAY
 C - - - - - 0x01D0FF 07:D0EF: B9 FB D2  LDA tbl_D2FB_палитра_фона,Y
@@ -2775,7 +2775,7 @@ C - - - - - 0x01D139 07:D129: 4A        LSR
 C - - - - - 0x01D13A 07:D12A: 4A        LSR
 C - - - - - 0x01D13B 07:D12B: 29 03     AND #$03
 C - - - - - 0x01D13D 07:D12D: A8        TAY
-C - - - - - 0x01D13E 07:D12E: B9 AE 05  LDA ram_palette_id_spr,Y
+C - - - - - 0x01D13E 07:D12E: B9 AE 05  LDA ram_номер_палитры_спрайтов,Y
 C - - - - - 0x01D141 07:D131: 0A        ASL
 C - - - - - 0x01D142 07:D132: A8        TAY
 C - - - - - 0x01D143 07:D133: B9 B7 D1  LDA tbl_D1B7_палитра_спрайтов,Y
@@ -4146,9 +4146,9 @@ C - - - - - 0x01D610 07:D600: 70 01     BVS bra_D603    ; если мяч нап
 C - - - - - 0x01D612 07:D602: C8        INY
 bra_D603:
 C - - - - - 0x01D613 07:D603: B9 17 D6  LDA tbl_D617_номер_палитры,Y
-C - - - - - 0x01D616 07:D606: CD AE 05  CMP ram_palette_id_spr
+C - - - - - 0x01D616 07:D606: CD AE 05  CMP ram_номер_палитры_спрайтов
 C - - - - - 0x01D619 07:D609: F0 0B     BEQ bra_D616_RTS
-C - - - - - 0x01D61B 07:D60B: 8D AE 05  STA ram_palette_id_spr
+C - - - - - 0x01D61B 07:D60B: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x01D61E 07:D60E: 20 D5 D0  JSR sub_D0D5_запись_палитры_в_буфер_с_учетом_яркости
 C - - - - - 0x01D621 07:D611: A9 3F     LDA #$3F
 C - - - - - 0x01D623 07:D613: 8D D9 06  STA ram_байт_2006_hi_палитра
@@ -7105,9 +7105,9 @@ C - - - - - 0x01E8B1 07:E8A1: 8D BC 05  STA ram_банк_фона
 C - - - - - 0x01E8B4 07:E8A4: A5 27     LDA ram_0027
 C - - - - - 0x01E8B6 07:E8A6: 8D BD 05  STA ram_банк_фона + 1
 C - - - - - 0x01E8B9 07:E8A9: A5 28     LDA ram_0028
-C - - - - - 0x01E8BB 07:E8AB: 8D AC 05  STA ram_palette_id_bg
+C - - - - - 0x01E8BB 07:E8AB: 8D AC 05  STA ram_номер_палитры_фона
 C - - - - - 0x01E8BE 07:E8AE: A5 29     LDA ram_0029
-C - - - - - 0x01E8C0 07:E8B0: 8D AD 05  STA ram_palette_id_bg + 1
+C - - - - - 0x01E8C0 07:E8B0: 8D AD 05  STA ram_номер_палитры_фона + 1
 C - - - - - 0x01E8C3 07:E8B3: 20 CB EC  JSR sub_ECCB_отобразить_фон_и_спрайты
 C - - - - - 0x01E8C6 07:E8B6: 20 65 EE  JSR sub_EE65_enable_NMI
 C - - - - - 0x01E8C9 07:E8B9: 60        RTS

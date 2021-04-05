@@ -11052,10 +11052,10 @@ C - - - - - 0x00FB29 03:BB19: F0 36     BEQ bra_BB51
 bra_BB1B:
 C - - - - - 0x00FB2B 03:BB1B: 4C 94 BB  JMP loc_BB94
 bra_BB1E:
-C - - - - - 0x00FB2E 03:BB1E: AD 94 04  LDA ram_опция_дождь_ветер
+C - - - - - 0x00FB2E 03:BB1E: AD 94 04  LDA ram_опция_дождя_и_ветра
 C - - - - - 0x00FB31 03:BB21: 29 0F     AND #$0F
 C - - - - - 0x00FB33 03:BB23: F0 F6     BEQ bra_BB1B
-C - - - - - 0x00FB35 03:BB25: AD 94 04  LDA ram_опция_дождь_ветер
+C - - - - - 0x00FB35 03:BB25: AD 94 04  LDA ram_опция_дождя_и_ветра
 C - - - - - 0x00FB38 03:BB28: 29 04     AND #$04
 C - - - - - 0x00FB3A 03:BB2A: D0 45     BNE bra_BB71
 C - - - - - 0x00FB3C 03:BB2C: AD 03 06  LDA ram_0603
@@ -11070,14 +11070,14 @@ C - - - - - 0x00FB4B 03:BB3B: C5 1C     CMP ram_001C
 C - - - - - 0x00FB4D 03:BB3D: B0 DC     BCS bra_BB1B
 C - - - - - 0x00FB4F 03:BB3F: A9 82     LDA #con_погода_rain + $80
 C - - - - - 0x00FB51 03:BB41: 8D 66 04  STA ram_погодный_эффект
-C - - - - - 0x00FB54 03:BB44: AD 94 04  LDA ram_опция_дождь_ветер
+C - - - - - 0x00FB54 03:BB44: AD 94 04  LDA ram_опция_дождя_и_ветра
 C - - - - - 0x00FB57 03:BB47: 29 0F     AND #$0F
 C - - - - - 0x00FB59 03:BB49: 0A        ASL
 C - - - - - 0x00FB5A 03:BB4A: 0A        ASL
 C - - - - - 0x00FB5B 03:BB4B: 8D AC 03  STA ram_объем_дождя
 C - - - - - 0x00FB5E 03:BB4E: 4C 94 BB  JMP loc_BB94
 bra_BB51:
-C - - - - - 0x00FB61 03:BB51: AD 94 04  LDA ram_опция_дождь_ветер
+C - - - - - 0x00FB61 03:BB51: AD 94 04  LDA ram_опция_дождя_и_ветра
 C - - - - - 0x00FB64 03:BB54: 29 03     AND #$03
 C - - - - - 0x00FB66 03:BB56: 0A        ASL
 C - - - - - 0x00FB67 03:BB57: 0A        ASL
@@ -11109,7 +11109,7 @@ bra_BB71:
 - - - - - - 0x00FBA1 03:BB91: 8D AC 03  STA ram_объем_дождя
 bra_BB94:
 loc_BB94:
-C D 1 - - - 0x00FBA4 03:BB94: AD 94 04  LDA ram_опция_дождь_ветер
+C D 1 - - - 0x00FBA4 03:BB94: AD 94 04  LDA ram_опция_дождя_и_ветра
 C - - - - - 0x00FBA7 03:BB97: C9 40     CMP #$40
 C - - - - - 0x00FBA9 03:BB99: B0 2F     BCS bra_BBCA
 C - - - - - 0x00FBAB 03:BB9B: 29 30     AND #$30
