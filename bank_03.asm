@@ -272,7 +272,7 @@ C - - - - - 0x00C1D2 03:81C2: E0 02     CPX #$02
 C - - - - - 0x00C1D4 03:81C4: 90 F8     BCC bra_81BE
 C - - - - - 0x00C1D6 03:81C6: 68        PLA
 C - - - - - 0x00C1D7 03:81C7: 8D D6 04  STA ram_игрок_с_мячом
-C - - - - - 0x00C1DA 03:81CA: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x00C1DA 03:81CA: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00C1DD 03:81CD: 29 20     AND #con_gm_пенальти
 C - - - - - 0x00C1DF 03:81CF: F0 0B     BEQ bra_81DC_RTS
 C - - - - - 0x00C1E1 03:81D1: AD CC 05  LDA ram_счетчик_смен
@@ -753,10 +753,10 @@ tbl_84CD:
 
 
 ofs_84D1_08:
-C - - J - - 0x00C4E1 03:84D1: AD 57 00  LDA ram_option_mode_difficulty
+C - - J - - 0x00C4E1 03:84D1: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00C4E4 03:84D4: 29 03     AND #$03
 C - - - - - 0x00C4E6 03:84D6: D0 16     BNE bra_84EE    ; если не легкая сложность
-- - - - - - 0x00C4E8 03:84D8: AD 57 00  LDA ram_option_mode_difficulty
+- - - - - - 0x00C4E8 03:84D8: AD 57 00  LDA ram_опция_режим_и_сложность
 - - - - - - 0x00C4EB 03:84DB: 29 80     AND #con_gm_прохождение
 - - - - - - 0x00C4ED 03:84DD: F0 0F     BEQ bra_84EE
 - - - - - - 0x00C4EF 03:84DF: 8A        TXA
@@ -807,10 +807,10 @@ tbl_8525:
 
 loc_8529:
 ofs_8529_09:
-C D 0 J - - 0x00C539 03:8529: AD 57 00  LDA ram_option_mode_difficulty
+C D 0 J - - 0x00C539 03:8529: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00C53C 03:852C: 29 03     AND #$03
 C - - - - - 0x00C53E 03:852E: D0 16     BNE bra_8546    ; если не легкая сложность
-- - - - - - 0x00C540 03:8530: AD 57 00  LDA ram_option_mode_difficulty
+- - - - - - 0x00C540 03:8530: AD 57 00  LDA ram_опция_режим_и_сложность
 - - - - - - 0x00C543 03:8533: 29 80     AND #con_gm_прохождение
 - - - - - - 0x00C545 03:8535: F0 0F     BEQ bra_8546
 - - - - - - 0x00C547 03:8537: 8A        TXA
@@ -1678,7 +1678,7 @@ tbl_89DB:
 ofs_89DD_0E:
 C - - J - - 0x00C9ED 03:89DD: 20 4C 9B  JSR sub_9B4C
 C - - - - - 0x00C9F0 03:89E0: B9 C4 8A  LDA tbl_8AC4,Y
-C - - - - - 0x00C9F3 03:89E3: CD 45 00  CMP ram_random
+C - - - - - 0x00C9F3 03:89E3: CD 45 00  CMP ram_рандом
 C - - - - - 0x00C9F6 03:89E6: B0 03     BCS bra_89EB
 C - - - - - 0x00C9F8 03:89E8: 4C CA 83  JMP loc_83CA
 bra_89EB:
@@ -1814,7 +1814,7 @@ tbl_8AC4:
 
 
 ofs_8AC8_0F:
-C - - J - - 0x00CAD8 03:8AC8: AD 57 00  LDA ram_option_mode_difficulty
+C - - J - - 0x00CAD8 03:8AC8: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00CADB 03:8ACB: 29 03     AND #$03
 C - - - - - 0x00CADD 03:8ACD: D0 16     BNE bra_8AE5    ; если не легкая сложность
 - - - - - - 0x00CADF 03:8ACF: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
@@ -2231,7 +2231,7 @@ C - - - - - 0x00CDB1 03:8DA1: 60        RTS
 
 
 loc_8DA2:
-C D 0 - - - 0x00CDB2 03:8DA2: AD 57 00  LDA ram_option_mode_difficulty
+C D 0 - - - 0x00CDB2 03:8DA2: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00CDB5 03:8DA5: 29 03     AND #$03
 C - - - - - 0x00CDB7 03:8DA7: D0 03     BNE bra_8DAC_не_easy_diff
 - - - - - - 0x00CDB9 03:8DA9: 4C CE 8B  JMP loc_8BCE
@@ -2687,7 +2687,7 @@ C - - - - - 0x00CFF8 03:8FE8: A9 80     LDA #$80
 C - - - - - 0x00CFFA 03:8FEA: 85 21     STA ram_0021
 C - - - - - 0x00CFFC 03:8FEC: 20 34 B0  JSR sub_B034
 C - - - - - 0x00CFFF 03:8FEF: A0 00     LDY #$00
-C - - - - - 0x00D001 03:8FF1: AD 45 00  LDA ram_random
+C - - - - - 0x00D001 03:8FF1: AD 45 00  LDA ram_рандом
 C - - - - - 0x00D004 03:8FF4: 10 03     BPL bra_8FF9
 C - - - - - 0x00D006 03:8FF6: C8        INY
 C - - - - - 0x00D007 03:8FF7: C8        INY
@@ -3158,7 +3158,7 @@ ofs_92AD_02:
 ofs_92AD_03:
 C D 0 - - - 0x00D2BD 03:92AD: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x00D2C0 03:92B0: 10 28     BPL bra_92DA_не_в_воздухе
-C - - - - - 0x00D2C2 03:92B2: AD 46 00  LDA ram_random + 1
+C - - - - - 0x00D2C2 03:92B2: AD 46 00  LDA ram_рандом + 1
 C - - - - - 0x00D2C5 03:92B5: 30 09     BMI bra_92C0
 C - - - - - 0x00D2C7 03:92B7: C9 40     CMP #$40
 C - - - - - 0x00D2C9 03:92B9: 90 0A     BCC bra_92C5
@@ -3372,7 +3372,7 @@ C - - - - - 0x00D438 03:9428: 10 3C     BPL bra_9466_не_в_воздухе
 C - - - - - 0x00D43A 03:942A: A0 0C     LDY #$0C
 C - - - - - 0x00D43C 03:942C: 20 BF AE  JSR sub_AEBF
 C - - - - - 0x00D43F 03:942F: 90 D0     BCC bra_9401
-C - - - - - 0x00D441 03:9431: AD 45 00  LDA ram_random
+C - - - - - 0x00D441 03:9431: AD 45 00  LDA ram_рандом
 C - - - - - 0x00D444 03:9434: 10 CB     BPL bra_9401
 C - - - - - 0x00D446 03:9436: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x00D449 03:9439: C9 A0     CMP #$A0
@@ -3930,7 +3930,7 @@ C - - - - - 0x00D828 03:9818: 4A        LSR
 C - - - - - 0x00D829 03:9819: 4A        LSR
 C - - - - - 0x00D82A 03:981A: 4A        LSR
 C - - - - - 0x00D82B 03:981B: 85 1F     STA ram_001F
-C - - - - - 0x00D82D 03:981D: AD 45 00  LDA ram_random
+C - - - - - 0x00D82D 03:981D: AD 45 00  LDA ram_рандом
 C - - - - - 0x00D830 03:9820: 29 07     AND #$07
 C - - - - - 0x00D832 03:9822: 38        SEC
 C - - - - - 0x00D833 03:9823: E9 04     SBC #$04
@@ -4358,7 +4358,7 @@ C - - - - - 0x00DAF3 03:9AE3: 60        RTS
 
 
 sub_9AE4:
-C - - - - - 0x00DAF4 03:9AE4: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x00DAF4 03:9AE4: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00DAF7 03:9AE7: 29 03     AND #$03
 C - - - - - 0x00DAF9 03:9AE9: D0 08     BNE bra_9AF3    ; если не легкая сложность
 - - - - - - 0x00DAFB 03:9AEB: 8A        TXA
@@ -4454,10 +4454,10 @@ C - - - - - 0x00DB84 03:9B74: 60        RTS
 
 
 sub_9B75:
-C - - - - - 0x00DB85 03:9B75: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x00DB85 03:9B75: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00DB88 03:9B78: 29 03     AND #$03
 C - - - - - 0x00DB8A 03:9B7A: D0 45     BNE bra_9BC1_RTS    ; если не легкая сложность
-- - - - - - 0x00DB8C 03:9B7C: AD 57 00  LDA ram_option_mode_difficulty
+- - - - - - 0x00DB8C 03:9B7C: AD 57 00  LDA ram_опция_режим_и_сложность
 - - - - - - 0x00DB8F 03:9B7F: 10 40     BPL bra_9BC1_RTS    ; если не режим прохождения
 - - - - - - 0x00DB91 03:9B81: 8A        TXA
 - - - - - - 0x00DB92 03:9B82: 29 01     AND #$01
@@ -4570,7 +4570,7 @@ loc_9C22:
 C D 0 - - - 0x00DC32 03:9C22: A4 2C     LDY ram_002C
 C - - - - - 0x00DC34 03:9C24: B9 50 06  LDA ram_позиция_управление,Y
 C - - - - - 0x00DC37 03:9C27: 10 1A     BPL bra_9C43    ; если это не бот
-C - - - - - 0x00DC39 03:9C29: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x00DC39 03:9C29: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00DC3C 03:9C2C: 29 F0     AND #$F0
 C - - - - - 0x00DC3E 03:9C2E: D0 06     BNE bra_9C36_не_demo
 C - - - - - 0x00DC40 03:9C30: A5 2C     LDA ram_002C
@@ -4886,7 +4886,7 @@ C - - - - - 0x00DE59 03:9E49: 60        RTS
 
 
 sub_9E4A:
-C - - - - - 0x00DE5A 03:9E4A: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x00DE5A 03:9E4A: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00DE5D 03:9E4D: 29 03     AND #$03
 C - - - - - 0x00DE5F 03:9E4F: D0 05     BNE bra_9E56    ; если не легкая сложность
 - - - - - - 0x00DE61 03:9E51: A9 00     LDA #$00
@@ -4951,7 +4951,7 @@ C - - - - - 0x00DEBC 03:9EAC: A8        TAY
 C - - - - - 0x00DEBD 03:9EAD: B9 03 A0  LDA tbl_A003,Y
 C - - - - - 0x00DEC0 03:9EB0: 4C FC 9E  JMP loc_9EFC
 bra_9EB3:
-C - - - - - 0x00DEC3 03:9EB3: AD 45 00  LDA ram_random
+C - - - - - 0x00DEC3 03:9EB3: AD 45 00  LDA ram_рандом
 C - - - - - 0x00DEC6 03:9EB6: 29 03     AND #$03
 C - - - - - 0x00DEC8 03:9EB8: 85 1E     STA ram_001E
 C - - - - - 0x00DECA 03:9EBA: A5 1C     LDA ram_001C
@@ -5021,7 +5021,7 @@ C - - - - - 0x00DF2A 03:9F1A: 4A        LSR
 C - - - - - 0x00DF2B 03:9F1B: 4A        LSR
 C - - - - - 0x00DF2C 03:9F1C: 05 1E     ORA ram_001E
 C - - - - - 0x00DF2E 03:9F1E: 85 1E     STA ram_001E
-C - - - - - 0x00DF30 03:9F20: AD 46 00  LDA ram_random + 1
+C - - - - - 0x00DF30 03:9F20: AD 46 00  LDA ram_рандом + 1
 C - - - - - 0x00DF33 03:9F23: 29 03     AND #$03
 C - - - - - 0x00DF35 03:9F25: 05 1E     ORA ram_001E
 C - - - - - 0x00DF37 03:9F27: A8        TAY
@@ -5775,13 +5775,13 @@ C - - - - - 0x00E376 03:A366: 69 01     ADC #$01
 C - - - - - 0x00E378 03:A368: 85 1C     STA ram_001C
 C - - - - - 0x00E37A 03:A36A: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x00E37D 03:A36D: 10 0A     BPL bra_A379_не_в_воздухе
-C - - - - - 0x00E37F 03:A36F: AD 45 00  LDA ram_random
+C - - - - - 0x00E37F 03:A36F: AD 45 00  LDA ram_рандом
 C - - - - - 0x00E382 03:A372: 0A        ASL
 C - - - - - 0x00E383 03:A373: 18        CLC
 C - - - - - 0x00E384 03:A374: A9 FF     LDA #$FF
 C - - - - - 0x00E386 03:A376: 4C 7C A3  JMP loc_A37C
 bra_A379_не_в_воздухе:
-C - - - - - 0x00E389 03:A379: AD 45 00  LDA ram_random
+C - - - - - 0x00E389 03:A379: AD 45 00  LDA ram_рандом
 loc_A37C:
 C D 1 - - - 0x00E38C 03:A37C: 85 1D     STA ram_001D
 C - - - - - 0x00E38E 03:A37E: B9 FD 04  LDA ram_защита_поведение,Y
@@ -6324,7 +6324,7 @@ C - - - - - 0x00E759 03:A749: 30 05     BMI bra_A750
 C - - - - - 0x00E75B 03:A74B: A0 01     LDY #$01
 C - - - - - 0x00E75D 03:A74D: 4C 56 A7  JMP loc_A756
 bra_A750:
-C - - - - - 0x00E760 03:A750: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x00E760 03:A750: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00E763 03:A753: 29 03     AND #$03
 C - - - - - 0x00E765 03:A755: A8        TAY
 loc_A756:
@@ -6343,7 +6343,7 @@ C - - - - - 0x00E77D 03:A76D: A9 0E     LDA #$0E
 C - - - - - 0x00E77F 03:A76F: 4C 90 A7  JMP loc_A790
 bra_A772:
 loc_A772:
-C D 1 - - - 0x00E782 03:A772: AD 57 00  LDA ram_option_mode_difficulty
+C D 1 - - - 0x00E782 03:A772: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00E785 03:A775: 29 03     AND #$03
 C - - - - - 0x00E787 03:A777: D0 10     BNE bra_A789    ; если не легкая сложность
 - - - - - - 0x00E789 03:A779: E0 01     CPX #$01
@@ -6385,7 +6385,7 @@ C - - - - - 0x00E7B3 03:A7A3: C9 01     CMP #$01
 C - - - - - 0x00E7B5 03:A7A5: F0 0E     BEQ bra_A7B5_RTS
 C - - - - - 0x00E7B7 03:A7A7: C9 03     CMP #$03
 C - - - - - 0x00E7B9 03:A7A9: F0 0A     BEQ bra_A7B5_RTS
-C - - - - - 0x00E7BB 03:A7AB: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x00E7BB 03:A7AB: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00E7BE 03:A7AE: 29 20     AND #con_gm_пенальти
 C - - - - - 0x00E7C0 03:A7B0: D0 03     BNE bra_A7B5_RTS
 C - - - - - 0x00E7C2 03:A7B2: 4C B6 A7  JMP loc_A7B6
@@ -6697,7 +6697,7 @@ C - - - - - 0x00E9B8 03:A9A8: 60        RTS
 
 sub_A9A9:
 C - - - - - 0x00E9B9 03:A9A9: 20 DC AA  JSR sub_AADC
-C - - - - - 0x00E9BC 03:A9AC: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x00E9BC 03:A9AC: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00E9BF 03:A9AF: 29 20     AND #con_gm_пенальти
 C - - - - - 0x00E9C1 03:A9B1: F0 17     BEQ bra_A9CA_не_пенальти
 C - - - - - 0x00E9C3 03:A9B3: 8A        TXA
@@ -6762,7 +6762,7 @@ C - - - - - 0x00EA3A 03:AA2A: A9 2A     LDA #$2A
 C - - - - - 0x00EA3C 03:AA2C: 8D 06 20  STA $2006
 C - - - - - 0x00EA3F 03:AA2F: BD 5B AB  LDA tbl_AB5B_ppu_lo,X
 C - - - - - 0x00EA42 03:AA32: 8D 06 20  STA $2006
-C - - - - - 0x00EA45 03:AA35: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x00EA45 03:AA35: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00EA48 03:AA38: 29 20     AND #con_gm_пенальти
 C - - - - - 0x00EA4A 03:AA3A: D0 0A     BNE bra_AA46_пенальти
 C - - - - - 0x00EA4C 03:AA3C: BD 2C 05  LDA ram_номер_команды,X
@@ -6796,7 +6796,7 @@ C - - - - - 0x00EA84 03:AA74: A9 2A     LDA #$2A
 C - - - - - 0x00EA86 03:AA76: 8D 06 20  STA $2006
 C - - - - - 0x00EA89 03:AA79: BD 5F AB  LDA tbl_AB5F_ppu_lo,X
 C - - - - - 0x00EA8C 03:AA7C: 8D 06 20  STA $2006
-C - - - - - 0x00EA8F 03:AA7F: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x00EA8F 03:AA7F: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00EA92 03:AA82: 29 20     AND #con_gm_пенальти
 C - - - - - 0x00EA94 03:AA84: F0 1B     BEQ bra_AAA1_не_пенальти
 C - - - - - 0x00EA96 03:AA86: 8A        TXA
@@ -6827,7 +6827,7 @@ C - - - - - 0x00EABD 03:AAAD: 8D 07 20  STA $2007
 C - - - - - 0x00EAC0 03:AAB0: C8        INY
 C - - - - - 0x00EAC1 03:AAB1: B9 80 AB  LDA tbl_AB80_tiles,Y
 C - - - - - 0x00EAC4 03:AAB4: 8D 07 20  STA $2007
-C - - - - - 0x00EAC7 03:AAB7: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x00EAC7 03:AAB7: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00EACA 03:AABA: 29 20     AND #con_gm_пенальти
 C - - - - - 0x00EACC 03:AABC: D0 05     BNE bra_AAC3_пенальти
 C - - - - - 0x00EACE 03:AABE: A9 DC     LDA #$DC
@@ -8334,7 +8334,7 @@ C - - - - - 0x00F0D1 03:B0C1: A9 00     LDA #$00
 C - - - - - 0x00F0D3 03:B0C3: 4C CE B0  JMP loc_B0CE
 bra_B0C6:
 loc_B0C6:
-C D 1 - - - 0x00F0D6 03:B0C6: A5 57     LDA ram_option_mode_difficulty
+C D 1 - - - 0x00F0D6 03:B0C6: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x00F0D8 03:B0C8: 29 20     AND #con_gm_пенальти
 C - - - - - 0x00F0DA 03:B0CA: D0 F5     BNE bra_B0C1
 C - - - - - 0x00F0DC 03:B0CC: A9 80     LDA #$80
@@ -10785,7 +10785,7 @@ off_B998_02:
 
 
 loc_B999:
-C D 1 - - - 0x00F9A9 03:B999: AD 57 00  LDA ram_option_mode_difficulty
+C D 1 - - - 0x00F9A9 03:B999: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00F9AC 03:B99C: 29 20     AND #con_gm_пенальти
 C - - - - - 0x00F9AE 03:B99E: D0 05     BNE bra_B9A5_пенальти
 C - - - - - 0x00F9B0 03:B9A0: BD 59 04  LDA ram_movement_id_игрок,X
@@ -10921,7 +10921,7 @@ C - - - - - 0x00FA9A 03:BA8A: B9 A1 BA  LDA tbl_BAA1,Y
 C - - - - - 0x00FA9D 03:BA8D: 85 2C     STA ram_002C
 C - - - - - 0x00FA9F 03:BA8F: B9 A2 BA  LDA tbl_BAA1 + 1,Y
 C - - - - - 0x00FAA2 03:BA92: 85 2D     STA ram_002D
-C - - - - - 0x00FAA4 03:BA94: AD 45 00  LDA ram_random
+C - - - - - 0x00FAA4 03:BA94: AD 45 00  LDA ram_рандом
 C - - - - - 0x00FAA7 03:BA97: 29 03     AND #$03
 C - - - - - 0x00FAA9 03:BA99: 05 1C     ORA ram_001C
 C - - - - - 0x00FAAB 03:BA9B: A8        TAY
@@ -11134,7 +11134,7 @@ C - - - - - 0x00FBC5 03:BBB5: 29 03     AND #$03
 C - - - - - 0x00FBC7 03:BBB7: F0 14     BEQ bra_BBCD
 C - - - - - 0x00FBC9 03:BBB9: C9 02     CMP #$02
 C - - - - - 0x00FBCB 03:BBBB: F0 05     BEQ bra_BBC2
-C - - - - - 0x00FBCD 03:BBBD: AD 45 00  LDA ram_random
+C - - - - - 0x00FBCD 03:BBBD: AD 45 00  LDA ram_рандом
 C - - - - - 0x00FBD0 03:BBC0: 10 0B     BPL bra_BBCD
 bra_BBC2:
 C - - - - - 0x00FBD2 03:BBC2: A9 40     LDA #$40

@@ -10660,8 +10660,8 @@ C - - - - - 0x00AA7D 02:AA6D: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_по�
 
 ofs_AA88_00_черный_экран_до_кунио:
 C - - J - - 0x00AA98 02:AA88: A9 80     LDA #con_nmi_irq_выкл
-C - - - - - 0x00AA9A 02:AA8A: 85 4F     STA ram_NMI_flag
-C - - - - - 0x00AA9C 02:AA8C: 20 49 AE  JSR sub_AE49
+C - - - - - 0x00AA9A 02:AA8A: 85 4F     STA ram_флаг_nmi
+C - - - - - 0x00AA9C 02:AA8C: 20 49 AE  JSR sub_AE49_очистить_0061_00F8___0300_068E
 C - - - - - 0x00AA9F 02:AA8F: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 C - - - - - 0x00AAA2 02:AA92: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 ofs_AA95_08:
@@ -10818,7 +10818,7 @@ tbl_AB48:
 
 ofs_AB78_02_черный_экран_после_кунио:
 C - - J - - 0x00AB88 02:AB78: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
-C - - - - - 0x00AB8B 02:AB7B: 20 49 AE  JSR sub_AE49
+C - - - - - 0x00AB8B 02:AB7B: 20 49 AE  JSR sub_AE49_очистить_0061_00F8___0300_068E
 C - - - - - 0x00AB8E 02:AB7E: A9 0E     LDA #$0E    ; текст с мисако
 C - - - - - 0x00AB90 02:AB80: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
 C - - - - - 0x00AB93 02:AB83: A9 59     LDA #$59
@@ -10890,7 +10890,7 @@ C - - - - - 0x00AC0D 02:ABFD: 60        RTS
 
 ofs_ABFE_04:
 C - - J - - 0x00AC0E 02:ABFE: A9 01     LDA #$01    ; средняя сложность
-C - - - - - 0x00AC10 02:AC00: 8D 57 00  STA ram_option_mode_difficulty
+C - - - - - 0x00AC10 02:AC00: 8D 57 00  STA ram_опция_режим_и_сложность
 C - - - - - 0x00AC13 02:AC03: A9 00     LDA #$00    ; con_script_игра_на_поле
 C - - - - - 0x00AC15 02:AC05: 85 58     STA ram_script
 C - - - - - 0x00AC17 02:AC07: 85 59     STA ram_subscript
@@ -10919,7 +10919,7 @@ C - - - - - 0x00AC45 02:AC35: 20 25 AA  JSR sub_0x01C26A
 C - - - - - 0x00AC48 02:AC38: 20 2A AA  JSR sub_0x01C26B
 C - - - - - 0x00AC4B 02:AC3B: 20 11 AA  JSR sub_0x01C263_выставить_базовые_параметры_игроков
 C - - - - - 0x00AC4E 02:AC3E: A9 C0     LDA #con_nmi_irq_вкл
-C - - - - - 0x00AC50 02:AC40: 85 4F     STA ram_NMI_flag
+C - - - - - 0x00AC50 02:AC40: 85 4F     STA ram_флаг_nmi
 C - - - - - 0x00AC52 02:AC42: 60        RTS
 
 
@@ -10927,7 +10927,7 @@ C - - - - - 0x00AC52 02:AC42: 60        RTS
 ofs_AC43_05:
 ofs_AC43_08:
 C - - J - - 0x00AC53 02:AC43: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
-C - - - - - 0x00AC56 02:AC46: 20 49 AE  JSR sub_AE49
+C - - - - - 0x00AC56 02:AC46: 20 49 AE  JSR sub_AE49_очистить_0061_00F8___0300_068E
 C - - - - - 0x00AC59 02:AC49: A9 00     LDA #$00
 C - - - - - 0x00AC5B 02:AC4B: 8D 00 03  STA ram_frame_cnt
 C - - - - - 0x00AC5E 02:AC4E: A9 02     LDA #$02
@@ -11231,9 +11231,9 @@ tbl_AE29:
 sub_AE3D_задержка_8_игровых_кадров:
 C - - - - - 0x00AE4D 02:AE3D: A2 08     LDX #$08
 bra_AE3F_loop:
-C - - - - - 0x00AE4F 02:AE3F: A5 51     LDA ram_frame_delay
+C - - - - - 0x00AE4F 02:AE3F: A5 51     LDA ram_задержка_кадра
 bra_AE41_loop:
-C - - - - - 0x00AE51 02:AE41: C5 51     CMP ram_frame_delay
+C - - - - - 0x00AE51 02:AE41: C5 51     CMP ram_задержка_кадра
 C - - - - - 0x00AE53 02:AE43: F0 FC     BEQ bra_AE41_loop
 C - - - - - 0x00AE55 02:AE45: CA        DEX
 C - - - - - 0x00AE56 02:AE46: D0 F7     BNE bra_AE3F_loop
@@ -11241,8 +11241,8 @@ C - - - - - 0x00AE58 02:AE48: 60        RTS
 
 
 
-sub_AE49:
-C - - - - - 0x00AE5B 02:AE4B: 20 77 C0  JSR sub_0x01EF1A_clear_0061_00F8
+sub_AE49_очистить_0061_00F8___0300_068E:
+C - - - - - 0x00AE5B 02:AE4B: 20 77 C0  JSR sub_0x01EF1A_очистить_0061_00F8
                                         LDA #con_gp_игра
 C - - - - - 0x00AE5E 02:AE4E: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x00AE60 02:AE50: A0 06     LDY #$06
@@ -11310,7 +11310,7 @@ C - - - - - 0x00AEB8 02:AEA8: 85 1C     STA ram_001C
 bra_AEAA:
 C - - - - - 0x00AEBA 02:AEAA: A2 00     LDX #$00
 C - - - - - 0x00AEBC 02:AEAC: A0 00     LDY #$00
-bra_AEAE:
+bra_AEAE_loop:
 C - - - - - 0x00AEBE 02:AEAE: AD 00 03  LDA ram_frame_cnt
 C - - - - - 0x00AEC1 02:AEB1: 29 04     AND #$04
 C - - - - - 0x00AEC3 02:AEB3: F0 04     BEQ bra_AEB9
@@ -11323,7 +11323,7 @@ C - - - - - 0x00AECC 02:AEBC: 9D 96 06  STA ram_буфер_атрибутов,X
 C - - - - - 0x00AECF 02:AEBF: C8        INY
 C - - - - - 0x00AED0 02:AEC0: E8        INX
 C - - - - - 0x00AED1 02:AEC1: E0 12     CPX #$12
-C - - - - - 0x00AED3 02:AEC3: 90 E9     BCC bra_AEAE
+C - - - - - 0x00AED3 02:AEC3: 90 E9     BCC bra_AEAE_loop
 C - - - - - 0x00AED5 02:AEC5: A5 1C     LDA ram_001C
 C - - - - - 0x00AED7 02:AEC7: 8D B9 06  STA ram_буфер_графики
 C - - - - - 0x00AEDA 02:AECA: 8E 95 06  STX ram_счетчик_буфера_атрибутов
@@ -13844,9 +13844,9 @@ loc_BB5D_credits_script:
 ofs_BB78_00:
 - - - - - - 0x00BB88 02:BB78: 20 62 C0  JSR sub_0x01EF64_убрать_полоску_слева_на_экране
 - - - - - - 0x00BB8B 02:BB7B: A9 F0     LDA #$F0
-- - - - - - 0x00BB8D 02:BB7D: 8D 56 00  STA ram_limit_spr_Y
+- - - - - - 0x00BB8D 02:BB7D: 8D 56 00  STA ram_ограничитель_Y_спрайтов
 - - - - - - 0x00BB90 02:BB80: A9 80     LDA #con_nmi_irq_выкл
-- - - - - - 0x00BB92 02:BB82: 85 4F     STA ram_NMI_flag
+- - - - - - 0x00BB92 02:BB82: 85 4F     STA ram_флаг_nmi
 - - - - - - 0x00BB94 02:BB84: A9 03     LDA #$03
 - - - - - - 0x00BB96 02:BB86: 8D E6 05  STA ram_скорость_игры
 - - - - - - 0x00BB99 02:BB89: A9 00     LDA #$00

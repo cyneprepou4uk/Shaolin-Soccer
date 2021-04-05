@@ -64,8 +64,8 @@
 .export sub_0x01EE75_enable_NMI
 .export sub_0x01EE81_disable_NMI
 .export sub_0x01EEAA_базовые_банки_спрайтов
-.export sub_0x01EF1A_clear_0057_00F8
-.export sub_0x01EF1A_clear_0061_00F8
+.export sub_0x01EF1A_очистить_0057_00F8
+.export sub_0x01EF1A_очистить_0061_00F8
 .export sub_0x01EF64_убрать_полоску_слева_на_экране
 .export sub_0x01EFBD_write_buffers_to_ppu
 .export sub_0x01F479
@@ -951,7 +951,7 @@ C - - - - - 0x01C40A 07:C3FA: 20 E4 C2  JSR sub_C2E4_play_sound
                                         CLI
 loc_C478_главный_игровой_скрипт:
 C D 2 - - - 0x01C488 07:C478: A9 00     LDA #$00
-C - - - - - 0x01C48A 07:C47A: 85 51     STA ram_frame_delay
+C - - - - - 0x01C48A 07:C47A: 85 51     STA ram_задержка_кадра
 C - - - - - 0x01C48C 07:C47C: 20 A8 C2  JSR sub_C2A8
 C - - - - - 0x01C48F 07:C47F: 20 A0 CE  JSR sub_CEA0_поставить_и_снять_паузу_на_Select
 C - - - - - 0x01C492 07:C482: A5 59     LDA ram_subscript
@@ -969,11 +969,11 @@ C - - - - - 0x01C4AB 07:C49B: B9 A4 C4  LDA tbl_C4A3 + 1,Y
 C - - - - - 0x01C4AE 07:C49E: 85 2D     STA ram_002D
                                         JSR sub_C4A0_непрямой_прыжок
 bra_C4C3_бесконечный_loop:
-C D 2 - - - 0x01C4D3 07:C4C3: A5 51     LDA ram_frame_delay
+C D 2 - - - 0x01C4D3 07:C4C3: A5 51     LDA ram_задержка_кадра
 bra_C4C5_бесконечный_loop:
-C - - - - - 0x01C4D5 07:C4C5: C5 51     CMP ram_frame_delay
+C - - - - - 0x01C4D5 07:C4C5: C5 51     CMP ram_задержка_кадра
 C - - - - - 0x01C4D7 07:C4C7: F0 FC     BEQ bra_C4C5_бесконечный_loop
-C - - - - - 0x01C4D9 07:C4C9: A5 51     LDA ram_frame_delay
+C - - - - - 0x01C4D9 07:C4C9: A5 51     LDA ram_задержка_кадра
 C - - - - - 0x01C4DB 07:C4CB: CD E6 05  CMP ram_скорость_игры
 C - - - - - 0x01C4DE 07:C4CE: 90 F3     BCC bra_C4C3_бесконечный_loop
 C - - - - - 0x01C4E8 07:C4D8: 4C 78 C4  JMP loc_C478_главный_игровой_скрипт
@@ -1021,7 +1021,7 @@ C - - - - - 0x01C504 07:C4F4: 20 62 D0  JSR sub_D062
 C - - - - - 0x01C507 07:C4F7: A5 2B     LDA ram_002B
 C - - - - - 0x01C509 07:C4F9: 85 59     STA ram_subscript
 C - - - - - 0x01C50B 07:C4FB: A9 80     LDA #con_nmi_irq_выкл
-C - - - - - 0x01C50D 07:C4FD: 85 4F     STA ram_NMI_flag
+C - - - - - 0x01C50D 07:C4FD: 85 4F     STA ram_флаг_nmi
 C - - - - - 0x01C50F 07:C4FF: A9 01     LDA #con_script_логотип
 C - - - - - 0x01C511 07:C501: 85 58     STA ram_script
 C - - - - - 0x01C513 07:C503: 68        PLA
@@ -1064,7 +1064,7 @@ tbl_C51F:
 
 ofs_C539_00:
 C - - J - - 0x01C549 07:C539: A9 C0     LDA #con_nmi_irq_вкл
-C - - - - - 0x01C54B 07:C53B: 8D 4F 00  STA ram_NMI_flag
+C - - - - - 0x01C54B 07:C53B: 8D 4F 00  STA ram_флаг_nmi
 C - - - - - 0x01C54E 07:C53E: 20 5A EF  JSR sub_EF5A_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x01C551 07:C541: 20 93 CF  JSR sub_CF93
 C - - - - - 0x01C554 07:C544: 20 0B DE  JSR sub_DE0B
@@ -1513,7 +1513,7 @@ C - - - - - 0x01C8B8 07:C8A8: 29 0F     AND #$0F
 C - - - - - 0x01C8BA 07:C8AA: F0 1C     BEQ bra_C8C8
 C - - - - - 0x01C8BC 07:C8AC: 29 02     AND #$02
 C - - - - - 0x01C8BE 07:C8AE: D0 49     BNE bra_C8F9
-C - - - - - 0x01C8C0 07:C8B0: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01C8C0 07:C8B0: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01C8C2 07:C8B2: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01C8C4 07:C8B4: F0 07     BEQ bra_C8BD_не_пенальти
 C - - - - - 0x01C8C6 07:C8B6: A9 03     LDA #$03
@@ -1593,15 +1593,15 @@ C - - - - - 0x01C954 07:C944: C9 0A     CMP #$0A
 C - - - - - 0x01C956 07:C946: F0 65     BEQ bra_C9AD
 - - - - - - 0x01C958 07:C948: C9 0C     CMP #$0C
 - - - - - - 0x01C95A 07:C94A: D0 03     BNE bra_C94F_RTS
-- - - - - - 0x01CA24 07:CA14: A5 57     LDA ram_option_mode_difficulty
+- - - - - - 0x01CA24 07:CA14: A5 57     LDA ram_опция_режим_и_сложность
 - - - - - - 0x01CA26 07:CA16: 09 20     ORA #con_gm_пенальти
-- - - - - - 0x01CA28 07:CA18: 85 57     STA ram_option_mode_difficulty
+- - - - - - 0x01CA28 07:CA18: 85 57     STA ram_опция_режим_и_сложность
 - - - - - - 0x01CA2A 07:CA1A: A9 00     LDA #$00
 - - - - - - 0x01CA2C 07:CA1C: 85 59     STA ram_subscript                             
 bra_C94F_RTS:
 - - - - - - 0x01C95F 07:C94F: 4C 1E CA  RTS
 bra_C952:
-C - - - - - 0x01C962 07:C952: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01C962 07:C952: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01C964 07:C954: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01C966 07:C956: F0 10     BEQ bra_C968_не_пенальти
 C - - - - - 0x01C968 07:C958: EE CC 05  INC ram_счетчик_смен
@@ -1652,7 +1652,7 @@ C - - - - - 0x01C9B5 07:C9A5: 85 59     STA ram_subscript
 C - - - - - 0x01C9B7 07:C9A7: EE 59 05  INC ram_номер_тайма
 C - - - - - 0x01C9BA 07:C9AA: 4C FA C9  JMP loc_C9FA
 bra_C9AD:
-C - - - - - 0x01C9BD 07:C9AD: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01C9BD 07:C9AD: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01C9BF 07:C9AF: 30 0B     BMI bra_C9BC_прохождение
 C - - - - - 0x01C9C1 07:C9B1: A9 02     LDA #con_script_меню
 C - - - - - 0x01C9C3 07:C9B3: 85 58     STA ram_script
@@ -1694,7 +1694,7 @@ C - - - - - 0x01CA04 07:C9F4: 85 59     STA ram_subscript
 C - - - - - 0x01CA06 07:C9F6: A9 03     LDA #$03
 C - - - - - 0x01CA08 07:C9F8: 85 5B     STA ram_for_0059
 loc_C9FA:
-C D 2 - - - 0x01CA0A 07:C9FA: A5 57     LDA ram_option_mode_difficulty
+C D 2 - - - 0x01CA0A 07:C9FA: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01CA0C 07:C9FC: 10 20     BPL bra_CA11_RTS    ; если режим прохождения
 C - - - - - 0x01CA0E 07:C9FE: A2 00     LDX #$00
 bra_CA00_loop:
@@ -1713,7 +1713,7 @@ C - - - - - 0x01CA21 07:CA11: 4C 1E CA  RTS
 
 sub_CA1F:
 C - - - - - 0x01CA2F 07:CA1F: A9 F0     LDA #$F0
-C - - - - - 0x01CA31 07:CA21: 85 56     STA ram_limit_spr_Y
+C - - - - - 0x01CA31 07:CA21: 85 56     STA ram_ограничитель_Y_спрайтов
 C - - - - - 0x01CA33 07:CA23: A9 64     LDA #$64
 C - - - - - 0x01CA35 07:CA25: 8D BC 05  STA ram_банк_фона
 C - - - - - 0x01CA38 07:CA28: A9 66     LDA #$66
@@ -1767,7 +1767,7 @@ bra_CA87:
 - - - - - - 0x01CA9F 07:CA8F: AD 2F 05  LDA ram_счет_команды + 1
 - - - - - - 0x01CAA2 07:CA92: 85 1D     STA ram_001D
 loc_CA94:
-C D 2 - - - 0x01CAA4 07:CA94: AD 57 00  LDA ram_option_mode_difficulty
+C D 2 - - - 0x01CAA4 07:CA94: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x01CAA7 07:CA97: 10 27     BPL bra_CAC0    ; если не режим прохождения
 C - - - - - 0x01CAA9 07:CA99: AD 2A 05  LDA ram_флаг_владения_мячом_ком
 C - - - - - 0x01CAAC 07:CA9C: 29 01     AND #$01
@@ -1892,7 +1892,7 @@ C - - - - - 0x01CB6E 07:CB5E: 60        RTS
 
 
 loc_CB5F:
-C D 2 - - - 0x01CB6F 07:CB5F: AD 57 00  LDA ram_option_mode_difficulty
+C D 2 - - - 0x01CB6F 07:CB5F: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x01CB72 07:CB62: 10 2B     BPL bra_CB8F    ; если не режим прохождения
 C - - - - - 0x01CB74 07:CB64: AC FD 06  LDY ram_счетчик_комбы_на_паузе
 C - - - - - 0x01CB77 07:CB67: C0 0F     CPY #$0F
@@ -2016,7 +2016,7 @@ C - - - - - 0x01CC3E 07:CC2E: 85 44     STA ram_0044
 C - - - - - 0x01CC40 07:CC30: A8        TAY
 C - - - - - 0x01CC41 07:CC31: B9 50 06  LDA ram_позиция_управление,Y
 C - - - - - 0x01CC44 07:CC34: 30 0B     BMI bra_CC41    ; если это бот
-C - - - - - 0x01CC46 07:CC36: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01CC46 07:CC36: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01CC48 07:CC38: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01CC4A 07:CC3A: F0 0E     BEQ bra_CC4A
 C - - - - - 0x01CC4C 07:CC3C: B9 D9 00  LDA ram_flag_visible_игрок,Y
@@ -2401,16 +2401,16 @@ C - - - - - 0x01CEB0 07:CEA0: A5 0A     LDA ram_btn_press + 2
 C - - - - - 0x01CEB2 07:CEA2: 29 20     AND #con_btn_Select
 C - - - - - 0x01CEB4 07:CEA4: F0 16     BEQ bra_CEBC_RTS    ; паузу не ставить
 bra_CEA6_пауза_не_снята:
-C - - - - - 0x01CEB6 07:CEA6: AD 51 00  LDA ram_frame_delay
+C - - - - - 0x01CEB6 07:CEA6: AD 51 00  LDA ram_задержка_кадра
 bra_CEA9_infinite_loop:
-C - - - - - 0x01CEB9 07:CEA9: CD 51 00  CMP ram_frame_delay
+C - - - - - 0x01CEB9 07:CEA9: CD 51 00  CMP ram_задержка_кадра
 C - - - - - 0x01CEBC 07:CEAC: F0 FB     BEQ bra_CEA9_infinite_loop
 C - - - - - 0x01CEBE 07:CEAE: 20 CD ED  JSR sub_EDCD_опрос_регистров_джойстиков
 C - - - - - 0x01CEC1 07:CEB1: A5 0A     LDA ram_btn_press + 2
 C - - - - - 0x01CEC3 07:CEB3: 29 20     AND #con_btn_Select
 C - - - - - 0x01CEC5 07:CEB5: F0 EF     BEQ bra_CEA6_пауза_не_снята
 C - - - - - 0x01CEC7 07:CEB7: A9 00     LDA #$00
-C - - - - - 0x01CEC9 07:CEB9: 8D 51 00  STA ram_frame_delay
+C - - - - - 0x01CEC9 07:CEB9: 8D 51 00  STA ram_задержка_кадра
 bra_CEBC_RTS:
 C - - - - - 0x01CECC 07:CEBC: 60        RTS
 
@@ -2561,13 +2561,13 @@ C - - - - - 0x01CFDF 07:CFCF: 69 04     ADC #$04
 C - - - - - 0x01CFE1 07:CFD1: 8D BD 05  STA ram_банк_фона + 1
 C - - - - - 0x01CFE4 07:CFD4: 20 7D EE  JSR sub_EE7D_базовые_банки_фона
 C - - - - - 0x01CFE7 07:CFD7: A9 B1     LDA #$B1
-C - - - - - 0x01CFE9 07:CFD9: 85 56     STA ram_limit_spr_Y
+C - - - - - 0x01CFE9 07:CFD9: 85 56     STA ram_ограничитель_Y_спрайтов
 C - - - - - 0x01CFEB 07:CFDB: 20 A9 EC  JSR sub_ECA9_выключить_NMI_при_следующем_вызове
 C - - - - - 0x01CFEE 07:CFDE: 20 71 EE  JSR sub_EE71_disable_NMI
 C - - - - - 0x01CFF1 07:CFE1: 20 C1 EC  JSR sub_ECC1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x01CFF4 07:CFE4: 20 D9 E3  JSR sub_E3D9
 C - - - - - 0x01CFF7 07:CFE7: 20 7B C2  JSR sub_C27B
-C - - - - - 0x01CFFA 07:CFEA: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01CFFA 07:CFEA: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01CFFC 07:CFEC: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01CFFE 07:CFEE: D0 09     BNE bra_CFF9_пенальти
 C - - - - - 0x01D000 07:CFF0: AD 5B 05  LDA ram_field_formation
@@ -2650,9 +2650,9 @@ sub_0x01D072:
 sub_D062:
 bra_D062_infinite_loop:
 C D 2 - - - 0x01D072 07:D062: 20 73 D0  JSR sub_D073
-C - - - - - 0x01D075 07:D065: AD 51 00  LDA ram_frame_delay
+C - - - - - 0x01D075 07:D065: AD 51 00  LDA ram_задержка_кадра
 bra_D068_infinite_loop:
-C - - - - - 0x01D078 07:D068: CD 51 00  CMP ram_frame_delay
+C - - - - - 0x01D078 07:D068: CD 51 00  CMP ram_задержка_кадра
 C - - - - - 0x01D07B 07:D06B: F0 FB     BEQ bra_D068_infinite_loop
 C - - - - - 0x01D07D 07:D06D: AD B2 05  LDA ram_флаг_яркости
 C - - - - - 0x01D080 07:D070: 10 F0     BPL bra_D062_infinite_loop
@@ -2846,9 +2846,9 @@ C - - - - - 0x01D1A8 07:D198: 8D B5 05  STA ram_таймер_яркости
 C - - - - - 0x01D1AB 07:D19B: AD B3 05  LDA ram_скорость_яркости
 C - - - - - 0x01D1AE 07:D19E: F0 11     BEQ bra_D1B1
 bra_D1A0_infinite_loop:
-C - - - - - 0x01D1B0 07:D1A0: A5 51     LDA ram_frame_delay
+C - - - - - 0x01D1B0 07:D1A0: A5 51     LDA ram_задержка_кадра
 bra_D1A2_infinite_loop:
-C - - - - - 0x01D1B2 07:D1A2: C5 51     CMP ram_frame_delay
+C - - - - - 0x01D1B2 07:D1A2: C5 51     CMP ram_задержка_кадра
 C - - - - - 0x01D1B4 07:D1A4: F0 FC     BEQ bra_D1A2_infinite_loop
 C - - - - - 0x01D1B6 07:D1A6: EE B5 05  INC ram_таймер_яркости
 C - - - - - 0x01D1B9 07:D1A9: AD B5 05  LDA ram_таймер_яркости
@@ -2856,7 +2856,7 @@ C - - - - - 0x01D1BC 07:D1AC: CD B3 05  CMP ram_скорость_яркости
 C - - - - - 0x01D1BF 07:D1AF: 90 EF     BCC bra_D1A0_infinite_loop
 bra_D1B1:
 C - - - - - 0x01D1C1 07:D1B1: A9 00     LDA #$00
-C - - - - - 0x01D1C3 07:D1B3: 8D 51 00  STA ram_frame_delay
+C - - - - - 0x01D1C3 07:D1B3: 8D 51 00  STA ram_задержка_кадра
 bra_D1B6_RTS:
 C - - - - - 0x01D1C6 07:D1B6: 60        RTS
 
@@ -4256,7 +4256,7 @@ C - - - - - 0x01D6F6 07:D6E6: 60        RTS
 
 
 sub_D6E7_игровой_таймер_и_выбор_погоды:
-C - - - - - 0x01D6F7 07:D6E7: AD 57 00  LDA ram_option_mode_difficulty
+C - - - - - 0x01D6F7 07:D6E7: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x01D6FA 07:D6EA: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01D6FC 07:D6EC: D0 1C     BNE bra_D70A
 C - - - - - 0x01D6FE 07:D6EE: A5 59     LDA ram_subscript
@@ -4796,11 +4796,11 @@ C - - - - - 0x01DA9A 07:DA8A: F0 45     BEQ bra_DAD1_это_обработанн
 C - - - - - 0x01DA9C 07:DA8C: 4C 77 DB  RTS
 bra_DA8F_это_необработанный_ветер:
 C - - - - - 0x01DA9F 07:DA8F: A0 0B     LDY #$0B
-C - - - - - 0x01DAA1 07:DA91: AD 45 00  LDA ram_random
+C - - - - - 0x01DAA1 07:DA91: AD 45 00  LDA ram_рандом
 C - - - - - 0x01DAA4 07:DA94: 85 0C     STA ram_000C
 C - - - - - 0x01DAA6 07:DA96: 29 07     AND #$07
 C - - - - - 0x01DAA8 07:DA98: AA        TAX
-C - - - - - 0x01DAA9 07:DA99: AD 46 00  LDA ram_random + 1
+C - - - - - 0x01DAA9 07:DA99: AD 46 00  LDA ram_рандом + 1
 C - - - - - 0x01DAAC 07:DA9C: 85 0D     STA ram_000D
 bra_DA9E:
 loc_DA9E:
@@ -4928,9 +4928,9 @@ C - - - - - 0x01DB94 07:DB84: A2 0B     LDX #$0B
 C - - - - - 0x01DB96 07:DB86: A9 80     LDA #$80
 C - - - - - 0x01DB98 07:DB88: 8D 3D 01  STA ram_013D
 C - - - - - 0x01DB9B 07:DB8B: 8D 3E 01  STA ram_013E
-C - - - - - 0x01DB9E 07:DB8E: AD 45 00  LDA ram_random
+C - - - - - 0x01DB9E 07:DB8E: AD 45 00  LDA ram_рандом
 C - - - - - 0x01DBA1 07:DB91: 85 0C     STA ram_000C
-C - - - - - 0x01DBA3 07:DB93: AD 46 00  LDA ram_random + 1
+C - - - - - 0x01DBA3 07:DB93: AD 46 00  LDA ram_рандом + 1
 C - - - - - 0x01DBA6 07:DB96: 85 0D     STA ram_000D
 bra_DB98:
 C - - - - - 0x01DBA8 07:DB98: A5 0C     LDA ram_000C
@@ -4962,7 +4962,7 @@ C - - - - - 0x01DBDB 07:DBCB: 90 17     BCC bra_DBE4
 C - - - - - 0x01DBDD 07:DBCD: A9 00     LDA #$00
 C - - - - - 0x01DBDF 07:DBCF: 9D 18 01  STA ram_0118,X
 C - - - - - 0x01DBE2 07:DBD2: 9D 24 01  STA ram_0124,X
-C - - - - - 0x01DBE5 07:DBD5: AD 45 00  LDA ram_random
+C - - - - - 0x01DBE5 07:DBD5: AD 45 00  LDA ram_рандом
 C - - - - - 0x01DBE8 07:DBD8: 29 1E     AND #$1E
 C - - - - - 0x01DBEA 07:DBDA: 38        SEC
 C - - - - - 0x01DBEB 07:DBDB: E9 0F     SBC #$0F
@@ -5045,7 +5045,7 @@ C D 2 - - - 0x01DC78 07:DC68: CC AC 03  CPY ram_объем_дождя
 C - - - - - 0x01DC7B 07:DC6B: F0 0C     BEQ bra_DC79
 C - - - - - 0x01DC7D 07:DC6D: B0 0A     BCS bra_DC79
 - - - - - - 0x01DC7F 07:DC6F: B9 0C 01  LDA ram_010C,Y
-- - - - - - 0x01DC82 07:DC72: C5 56     CMP ram_limit_spr_Y
+- - - - - - 0x01DC82 07:DC72: C5 56     CMP ram_ограничитель_Y_спрайтов
 - - - - - - 0x01DC84 07:DC74: B0 03     BCS bra_DC79
 - - - - - - 0x01DC86 07:DC76: 4C 7B DC  JMP loc_DC7B
 bra_DC79:
@@ -7895,10 +7895,10 @@ C - - - - - 0x01ECB6 07:ECA6: 6C 0C 00  JMP (ram_000C)
 sub_0x01ECB9:
 sub_ECA9_выключить_NMI_при_следующем_вызове:
 C D 3 - - - 0x01ECB9 07:ECA9: 48        PHA
-C - - - - - 0x01ECBA 07:ECAA: A5 4F     LDA ram_NMI_flag
+C - - - - - 0x01ECBA 07:ECAA: A5 4F     LDA ram_флаг_nmi
 C - - - - - 0x01ECBC 07:ECAC: 48        PHA
 C - - - - - 0x01ECBD 07:ECAD: A9 00     LDA #con_nmi_выкл
-C - - - - - 0x01ECBF 07:ECAF: 85 4F     STA ram_NMI_flag
+C - - - - - 0x01ECBF 07:ECAF: 85 4F     STA ram_флаг_nmi
 C - - - - - 0x01ECC1 07:ECB1: A5 4C     LDA ram_for_2000
 C - - - - - 0x01ECC3 07:ECB3: 09 80     ORA #$80
 C - - - - - 0x01ECC5 07:ECB5: 85 4C     STA ram_for_2000
@@ -7971,19 +7971,19 @@ C - - - - - 0x01EE37 07:EE27: 60        RTS
 
 sub_EE35_вращение_рандома:
 sub_0x01EE45_вращение_рандома:
-C - - - - - 0x01EE4D 07:EE3D: B5 00     LDA ram_random
+C - - - - - 0x01EE4D 07:EE3D: B5 00     LDA ram_рандом
 C - - - - - 0x01EE4F 07:EE3F: 29 02     AND #$02
 C - - - - - 0x01EE51 07:EE41: 85 0C     STA ram_000C
-C - - - - - 0x01EE53 07:EE43: B5 01     LDA ram_random + 1
+C - - - - - 0x01EE53 07:EE43: B5 01     LDA ram_рандом + 1
 C - - - - - 0x01EE55 07:EE45: 29 02     AND #$02
 C - - - - - 0x01EE57 07:EE47: 45 0C     EOR ram_000C
 C - - - - - 0x01EE59 07:EE49: 18        CLC
 C - - - - - 0x01EE5A 07:EE4A: F0 01     BEQ bra_EE4D
 C - - - - - 0x01EE5C 07:EE4C: 38        SEC
 bra_EE4D:
-C - - - - - 0x01EE5D 07:EE4D: 76 00     ROR ram_random
-                                        ROR ram_random + 1
-C - - - - - 0x01EE67 07:EE57: A5 45     LDA ram_random
+C - - - - - 0x01EE5D 07:EE4D: 76 00     ROR ram_рандом
+                                        ROR ram_рандом + 1
+C - - - - - 0x01EE67 07:EE57: A5 45     LDA ram_рандом
 C - - - - - 0x01EE69 07:EE59: 60        RTS
 
 
@@ -8080,10 +8080,10 @@ C - - - - - 0x01EF11 07:EF01: 60        RTS
 
 
 
-sub_0x01EF1A_clear_0057_00F8:
+sub_0x01EF1A_очистить_0057_00F8:
                                         LDX #$57
                                         BNE bra_EF0A
-sub_0x01EF1A_clear_0061_00F8:
+sub_0x01EF1A_очистить_0061_00F8:
                                         LDX #$61
 bra_EF0A:
 C D 3 - - - 0x01EF1A 07:EF0A: A9 00     LDA #$00
@@ -8200,7 +8200,7 @@ C - - - - - 0x01EFDC 07:EFCC: AD E8 05  LDA ram_следы_hi_2006
 C - - - - - 0x01EFDF 07:EFCF: F0 14     BEQ bra_EFE5_write_3_buffers_to_ppu
 C - - - - - 0x01EFE1 07:EFD1: 4C 44 C2  JMP loc_C244
 bra_EFD4:
-C - - - - - 0x01EFE4 07:EFD4: A5 51     LDA ram_frame_delay
+C - - - - - 0x01EFE4 07:EFD4: A5 51     LDA ram_задержка_кадра
                                         BNE @выход
                                         JSR sub_EFE5_запись_3х_буферов_в_ppu
 C - - - - - 0x01EFE8 07:EFD8: 4C B4 F0  JSR sub_F0B4_отрисовка_поля_во_время_скроллинга
@@ -9931,7 +9931,7 @@ C D 3 - - - 0x01FBB8 07:FBA8: 60        RTS
 
 
 vec_FBBB_NMI:
-C D 3 - - - 0x01FBCB 07:FBBB: 24 4F     BIT ram_NMI_flag
+C D 3 - - - 0x01FBCB 07:FBBB: 24 4F     BIT ram_флаг_nmi
 C - - - - - 0x01FBCD 07:FBBD: 30 04     BPL bra_FBCB_NMI_отключено
 C - - - - - 0x01FBD5 07:FBC5: 4C DF FB  JMP loc_FBDF_NMI_включено
 bra_FBCB_NMI_отключено:
@@ -9944,7 +9944,7 @@ C - - - - - 0x01FBE7 07:FBD7: 28        PLP
 C - - - - - 0x01FBE8 07:FBD8: 68        PLA
 C - - - - - 0x01FBE9 07:FBD9: 68        PLA
 C - - - - - 0x01FBEA 07:FBDA: 68        PLA
-C - - - - - 0x01FBEB 07:FBDB: 85 4F     STA ram_NMI_flag
+C - - - - - 0x01FBEB 07:FBDB: 85 4F     STA ram_флаг_nmi
 C - - - - - 0x01FBED 07:FBDD: 68        PLA
 C - - - - - 0x01FBEE 07:FBDE: 60        RTS
 
@@ -9994,7 +9994,7 @@ C - - - - - 0x01FC3E 07:FC2E: 29 FC     AND #$FC
 C - - - - - 0x01FC40 07:FC30: 05 0C     ORA ram_000C
 C - - - - - 0x01FC42 07:FC32: 85 4C     STA ram_for_2000
 C - - - - - 0x01FC44 07:FC34: 8D 00 20  STA $2000
-                                        BIT ram_NMI_flag
+                                        BIT ram_флаг_nmi
                                         BVC bra_FC37_IRQ_отключен
 C - - - - - 0x01FC7A 07:FC6A: A2 05     LDX #$05
 C - - - - - 0x01FC7C 07:FC6C: 8E 00 80  STX $8000
@@ -10011,7 +10011,7 @@ C - - - - - 0x01FCC8 07:FCB8: 20 81 DA  JSR sub_DA81_ветер
 C - - - - - 0x01FCCB 07:FCBB: 20 B1 DC  JSR sub_DCB1_рваная_сетка
 bra_FC37_IRQ_отключен:
 C - - - - - 0x01FC47 07:FC37: 20 08 C3  JSR sub_C308
-C D 3 - - - 0x01FCD1 07:FCC1: E6 51     INC ram_frame_delay
+C D 3 - - - 0x01FCD1 07:FCC1: E6 51     INC ram_задержка_кадра
 loc_FCC3_выход_из_NMI_и_IRQ:
                                         LDA #$00
                                         STA $401C

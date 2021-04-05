@@ -41,18 +41,18 @@ sub_0x000000_RESET_init:
                                         LDA #$0F
                                         STA $4015
                                         LDA #con_nmi_irq_вкл
-                                        STA ram_NMI_flag
+                                        STA ram_флаг_nmi
                                         LDA #$00    ; vertical mirroring
                                         STA $A000
                                         LDX ram_frame_cnt
                                         LDA ram_0700,X
                                         ORA #$25
-                                        STA ram_random
+                                        STA ram_рандом
                                         LDA ram_0701,X
                                         ORA #$25
-                                        STA ram_random + 1
+                                        STA ram_рандом + 1
                                         JSR sub_0x01EF64_убрать_полоску_слева_на_экране
-                                        JSR sub_0x01EF1A_clear_0057_00F8
+                                        JSR sub_0x01EF1A_очистить_0057_00F8
                                         JSR sub_очистка_страниц_оперативки
                                         LDA #$8C
                                         STA ram_for_2000
@@ -92,7 +92,7 @@ sub_0x000000_RESET_init:
                                         LDA #$00
                                         STA ram_btn_press + 2   ; bzk оно надо?
                                         LDA #$F0
-                                        STA ram_limit_spr_Y
+                                        STA ram_ограничитель_Y_спрайтов
                                         LDA #$01
                                         STA ram_скорость_игры
                                         RTS

@@ -14291,7 +14291,7 @@ C - - - - - 0x007A17 01:BA07: 8D FD 05  STA ram_сила_ветра
 C - - - - - 0x007A1A 01:BA0A: 8D 3F 01  STA ram_timer_погода
 C - - - - - 0x007A1D 01:BA0D: A9 45     LDA #con_sfx_молния
 C - - - - - 0x007A1F 01:BA0F: 20 02 C0  JSR sub_0x01C2F4_play_sound
-C - - - - - 0x007A22 01:BA12: AD 45 00  LDA ram_random
+C - - - - - 0x007A22 01:BA12: AD 45 00  LDA ram_рандом
 C - - - - - 0x007A25 01:BA15: 29 07     AND #$07
 C - - - - - 0x007A27 01:BA17: 8D E4 05  STA ram_05E4
 C - - - - - 0x007A2A 01:BA1A: 4C 8B BA  JMP loc_BA8B
@@ -14327,7 +14327,7 @@ C - - J - - 0x007A3E 01:BA2E: A9 41     LDA #con_sfx_ветер
 C - - - - - 0x007A40 01:BA30: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x007A43 01:BA33: A9 00     LDA #$00
 C - - - - - 0x007A45 01:BA35: 8D FD 05  STA ram_сила_ветра
-C - - - - - 0x007A48 01:BA38: AD 45 00  LDA ram_random
+C - - - - - 0x007A48 01:BA38: AD 45 00  LDA ram_рандом
 C - - - - - 0x007A4B 01:BA3B: 29 BF     AND #$BF
 C - - - - - 0x007A4D 01:BA3D: 18        CLC
 C - - - - - 0x007A4E 01:BA3E: 6D EC 00  ADC ram_pos_X_lo_scroll
@@ -14337,7 +14337,7 @@ C - - - - - 0x007A57 01:BA47: 69 00     ADC #$00
 C - - - - - 0x007A59 01:BA49: 8D 34 03  STA ram_pos_X_hi_погода
 C - - - - - 0x007A5C 01:BA4C: AD EE 00  LDA ram_pos_Y_lo_scroll
 C - - - - - 0x007A5F 01:BA4F: 18        CLC
-C - - - - - 0x007A60 01:BA50: 6D 45 00  ADC ram_random
+C - - - - - 0x007A60 01:BA50: 6D 45 00  ADC ram_рандом
 C - - - - - 0x007A63 01:BA53: 8D 5A 03  STA ram_pos_Y_lo_погода
 C - - - - - 0x007A66 01:BA56: AD EF 00  LDA ram_pos_Y_hi_scroll
 C - - - - - 0x007A69 01:BA59: 69 00     ADC #$00
@@ -14601,7 +14601,7 @@ C - - - - - 0x007C3E 01:BC2E: 85 2D     STA ram_002D
 loc_BC30_loop:
 C D 1 - - - 0x007C40 01:BC30: A9 00     LDA #$00
 C - - - - - 0x007C42 01:BC32: 85 1C     STA ram_001C
-C - - - - - 0x007C44 01:BC34: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x007C44 01:BC34: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x007C46 01:BC36: 10 26     BPL bra_BC5E    ; если не режим прохождения
 C - - - - - 0x007C48 01:BC38: 8A        TXA
 C - - - - - 0x007C49 01:BC39: 4A        LSR

@@ -24,14 +24,14 @@ con_btns__ABSS                  = con_btn_A + con_btn_B + con_btn_Start + con_bt
 
 
 
-; ram_NMI_flag                  = $4F
+; ram_флаг_nmi                  = $4F
 con_nmi_выкл                    = $00 ; выключить NMI
 con_nmi_irq_выкл                = $80 ; выключить IRQ во время NMI
 con_nmi_irq_вкл                 = $C0 ; включить IRQ во время NMI
 
 
 
-; ram_option_mode_difficulty    = $57 ; game mode (режим игры)
+; ram_опция_режим_и_сложность    = $57 ; game mode (режим игры)
 con_gm_демо                     = $00 ; 
 con_gm_пенальти                 = $20 ; 
 con_gm_минибатл                 = $40 ; 

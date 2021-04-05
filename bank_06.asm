@@ -461,7 +461,7 @@ C - - - - - 0x018300 06:82F0: 9D 12 04  STA ram_spd_Y_hi_игрок,X
 C - - - - - 0x018303 06:82F3: AD 10 04  LDA ram_spd_Y_lo_мяч
 C - - - - - 0x018306 06:82F6: 9D 04 04  STA ram_spd_Y_lo_игрок,X
 bra_82F9:
-C - - - - - 0x018309 06:82F9: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x018309 06:82F9: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01830B 06:82FB: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01830D 06:82FD: F0 04     BEQ bra_8303_не_пенальти
 C - - - - - 0x01830F 06:82FF: A9 80     LDA #$80
@@ -4221,7 +4221,7 @@ C - - - - - 0x019D16 06:9D06: 6A        ROR
 C - - - - - 0x019D17 06:9D07: 6A        ROR
 C - - - - - 0x019D18 06:9D08: 29 80     AND #$80
 C - - - - - 0x019D1A 06:9D0A: 9D A3 04  STA ram_направление_движения,X
-C - - - - - 0x019D1D 06:9D0D: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x019D1D 06:9D0D: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x019D1F 06:9D0F: 29 20     AND #con_gm_пенальти
 C - - - - - 0x019D21 06:9D11: F0 05     BEQ bra_9D18_RTS
 C - - - - - 0x019D23 06:9D13: A9 80     LDA #$80
@@ -4657,7 +4657,7 @@ sub_A00C_вычислить_направление_движения:
 C - - - - - 0x01A01C 06:A00C: 8A        TXA
 C - - - - - 0x01A01D 06:A00D: 29 01     AND #$01
 C - - - - - 0x01A01F 06:A00F: A8        TAY
-C - - - - - 0x01A020 06:A010: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01A020 06:A010: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01A022 06:A012: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01A024 06:A014: F0 02     BEQ bra_A018_не_пенальти
 C - - - - - 0x01A026 06:A016: A0 00     LDY #$00
@@ -5158,7 +5158,7 @@ C - - - - - 0x01A326 06:A316: 29 01     AND #$01
 C - - - - - 0x01A328 06:A318: A8        TAY
 C - - - - - 0x01A329 06:A319: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x01A32C 06:A31C: 99 7E 06  STA ram_067E,Y
-C - - - - - 0x01A32F 06:A31F: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01A32F 06:A31F: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01A331 06:A321: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01A333 06:A323: D0 35     BNE bra_A35A_пенальти
 bra_A325_это_бот:
@@ -7637,7 +7637,7 @@ bra_AEE0:
 C - - - - - 0x01AEF0 06:AEE0: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x01AEF3 06:AEE3: 09 40     ORA #$40
 C - - - - - 0x01AEF5 06:AEE5: 8D 92 04  STA ram_состояние_мяча
-C - - - - - 0x01AEF8 06:AEE8: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01AEF8 06:AEE8: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01AEFA 06:AEEA: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01AEFC 06:AEEC: F0 04     BEQ bra_AEF2_не_пенальти
 C - - - - - 0x01AEFE 06:AEEE: A9 40     LDA #con_gp_время_вышло
@@ -9457,7 +9457,7 @@ C - - - - - 0x01B898 06:B888: 29 0C     AND #$0C
 C - - - - - 0x01B89A 06:B88A: F0 0F     BEQ bra_B89B_RTS
 C - - - - - 0x01B89C 06:B88C: EC D6 04  CPX ram_игрок_с_мячом
 C - - - - - 0x01B89F 06:B88F: D0 0A     BNE bra_B89B_RTS
-C - - - - - 0x01B8A1 06:B891: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01B8A1 06:B891: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01B8A3 06:B893: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01B8A5 06:B895: D0 04     BNE bra_B89B_RTS
 C - - - - - 0x01B8A7 06:B897: A9 00     LDA #$00
@@ -9532,7 +9532,7 @@ bra_B8D6:
 C - - - - - 0x01B8E6 06:B8D6: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01B8E8 06:B8D8: 29 0C     AND #$0C
 C - - - - - 0x01B8EA 06:B8DA: F0 09     BEQ bra_B8E5
-C - - - - - 0x01B8EC 06:B8DC: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01B8EC 06:B8DC: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01B8EE 06:B8DE: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01B8F0 06:B8E0: D0 03     BNE bra_B8E5
 C - - - - - 0x01B8F2 06:B8E2: 4C 30 BA  RTS
@@ -9721,7 +9721,7 @@ C - - - - - 0x01BA6F 06:BA5F: 20 55 BD  JSR sub_BD55
 C - - - - - 0x01BA72 06:BA62: AD CC 05  LDA ram_счетчик_смен
 C - - - - - 0x01BA75 06:BA65: 29 01     AND #$01
 C - - - - - 0x01BA77 06:BA67: A8        TAY
-C - - - - - 0x01BA78 06:BA68: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01BA78 06:BA68: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01BA7A 06:BA6A: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01BA7C 06:BA6C: F0 07     BEQ bra_BA75_не_пенальти
 C - - - - - 0x01BA7E 06:BA6E: BD 27 03  LDA ram_pos_X_hi_игрок,X
@@ -10221,7 +10221,7 @@ tbl_BD67:
 
 sub_0x01BD7A:
 C - - - - - 0x01BD7A 06:BD6A: 20 B3 AB  JSR sub_ABB3
-C - - - - - 0x01BD7D 06:BD6D: A5 57     LDA ram_option_mode_difficulty
+C - - - - - 0x01BD7D 06:BD6D: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01BD7F 06:BD6F: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01BD81 06:BD71: D0 50     BNE bra_BDC3_пенальти
 C - - - - - 0x01BD83 06:BD73: A2 00     LDX #$00
