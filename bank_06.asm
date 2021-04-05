@@ -6841,6 +6841,7 @@ sub_AA14:
 loc_AA14:
 C - - - - - 0x01AA24 06:AA14: A0 02     LDY #$02
 C - - - - - 0x01AA26 06:AA16: 4C 1B AA  BNE bra_AA1B
+
 sub_AA19:
 C - - - - - 0x01AA29 06:AA19: A0 00     LDY #$00
 bra_AA1B:
@@ -6948,7 +6949,7 @@ C - - - - - 0x01AAD0 06:AAC0: 4C B7 AA  JMP loc_AAB7
 sub_AAC3:
 loc_AAC3:
 C - - - - - 0x01AAD3 06:AAC3: A0 02     LDY #$02
-C - - - - - 0x01AAD5 06:AAC5: 4C CA AA  JMP loc_AACA
+C - - - - - 0x01AAD5 06:AAC5: 4C CA AA  JMP loc_AACA    ; bzk опт
 
 
 
