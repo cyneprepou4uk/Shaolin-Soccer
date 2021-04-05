@@ -60,18 +60,18 @@ con_gp_пауза                    = $80 ; пауза
 
 
 
-; ram_weather_id                = $0466
-con_weather_none                = $00 ; нет
-con_weather_lightning           = $01 ; молния
-con_weather_rain                = $02 ; дождь
-con_weather_tornado             = $03 ; смерч
-con_weather_wind                = $04 ; ветер
-con_weather_teared_net_right    = $05 ; рваная сетка справа
-con_weather_teared_net_left     = $06 ; рваная сетка слева
+; ram_погода_id                 = $0466
+con_погода_none                 = $00 ; нет
+con_погода_lightning            = $01 ; молния
+con_погода_rain                 = $02 ; дождь
+con_погода_tornado              = $03 ; смерч
+con_погода_wind                 = $04 ; ветер
+con_погода_teared_net_right     = $05 ; рваная сетка справа
+con_погода_teared_net_left      = $06 ; рваная сетка слева
 
 
 
-; ram_surface_player            = $0130
+; ram_surface_игрок             = $0130
 con_на_траве                    = $00 ; трава или сухая земля, не тонет и не оставляет следов
 con_на_луже                     = $01 ; скользит и оставляет следы
 con_на_грязи                    = $02 ; тонет и оставляет следы
@@ -79,7 +79,7 @@ con_на_песке                    = $03 ; оставляет следы
 
 
 
-; ram_hud_mode                  = $05F8
+; ram_содержимое_hud            = $05F8
 con_hud_kick_off                = $00 ; 
 con_hud_goal                    = $01 ; 
 con_hud_game_set                = $02 ; 
@@ -90,8 +90,9 @@ con_hud_миникарта               = $06 ;
 
 
 
-; ram_sound_id                      = $07FF
-con_music_выкл   				    = $00 ; 
+; ram_номер_музыки                  = $055A
+; ram_номер_звука                   = $07FF
+con_music_выкл                      = $00 ; 
 con_music_логотип                   = $01 ; 
 con_music_меню                      = $02 ; 
 con_music_поле_03                   = $03 ; 
@@ -102,10 +103,10 @@ con_music_поле_07                   = $07 ;
 con_music_экран_vs                  = $08 ; 
 con_music_экран_со_счетом           = $09 ; 
 con_music_прохождение               = $0A ; 
-con_music_кубок					    = $0B ; экран с кубком на башке
+con_music_кубок                     = $0B ; экран с кубком на башке
 con_music_зрители                   = $0C ; 
 con_music_пенальти                  = $0D ; 
-con_music_финал					    = $0E ; 
+con_music_финал                     = $0E ; 
 ; unused                            = $0F ; 
 ; unused                            = $10 ; 
 ; unused                            = $11 ; 
@@ -125,7 +126,7 @@ con_music_финал					    = $0E ;
 ; unused                            = $1F ; 
 con_sfx_пас_ногой                   = $20 ; 
 ; unused                            = $21 ; 
-con_sfx_пас_головой				    = $22 ; 
+con_sfx_пас_головой                 = $22 ; 
 con_sfx_принять_мяч                 = $23 ; на грудь или голову
 con_sfx_бег_с_мячои                 = $24 ; средний бег как у ботов
 ; unused                            = $25 ; 
@@ -161,7 +162,7 @@ con_sfx_ветер                       = $41 ;
 con_sfx_прыжок_на_мяч               = $43 ; 
 con_sfx_unk_44                      = $44 ; не помню откуда, наподобие змеи
 con_sfx_молния                      = $45 ; молния
-con_sfx_unk_46                      = $46 ; наподобие неправильного ответа, но не 2F	
+con_sfx_unk_46                      = $46 ; наподобие неправильного ответа, но не 2F    
 con_sfx_телефон_цифра_1             = $47 ; 
 con_sfx_телефон_цифра_2             = $48 ; 
 con_sfx_телефон_цифра_3             = $49 ; 
