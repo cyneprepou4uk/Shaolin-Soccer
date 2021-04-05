@@ -81,6 +81,19 @@ con_на_песке                    = $03 ; оставляет следы
 
 
 
+; ram_состояние_игрока          = $0486
+con_state_стоит_идет            = $00 ; 
+con_state_01                    = $01 ; 
+con_state_02                    = $02 ; 
+con_state_04                    = $04 ; 
+con_state_бег_спринт            = $08 ; 
+con_state_стоит_на_мяче         = $10 ; 
+con_state_20                    = $20 ; 
+con_state_владеет_мячом         = $40 ; 
+con_state_в_воздухе             = $80 ; 
+
+
+
 ; ram_содержимое_hud            = $05F8
 con_hud_kick_off                = $00 ; 
 con_hud_goal                    = $01 ; 
