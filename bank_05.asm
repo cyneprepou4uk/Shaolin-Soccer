@@ -11417,10 +11417,10 @@ C - - - - - 0x017E4E 05:BE3E: C8        INY
 C - - - - - 0x017E4F 05:BE3F: 8C 00 80  STY $8000
 C - - - - - 0x017E52 05:BE42: E8        INX
 C - - - - - 0x017E53 05:BE43: 8E 01 80  STX $8001
+                                        BIT $2002
 C - - - - - 0x017E56 05:BE46: A2 00     LDX #$00
 bra_BE48_main_loop:
 C - - - - - 0x017E58 05:BE48: A0 00     LDY #$00
-C - - - - - 0x017E5A 05:BE4A: AD 02 20  LDA $2002   ; bzk опт, достаточно одного в самом начале
 C - - - - - 0x017E5D 05:BE4D: A5 2D     LDA ram_002D
 C - - - - - 0x017E5F 05:BE4F: 8D 06 20  STA $2006
 C - - - - - 0x017E62 05:BE52: A5 2C     LDA ram_002C
@@ -11433,7 +11433,6 @@ C - - - - - 0x017E70 05:BE60: C8        INY
 C - - - - - 0x017E71 05:BE61: C4 30     CPY ram_0030
 C - - - - - 0x017E73 05:BE63: 90 F5     BCC bra_BE5A_loop
 C - - - - - 0x017E75 05:BE65: A0 00     LDY #$00
-C - - - - - 0x017E77 05:BE67: AD 02 20  LDA $2002   ; bzk опт, лишнее
 C - - - - - 0x017E7A 05:BE6A: A5 2F     LDA ram_002F
 C - - - - - 0x017E7C 05:BE6C: 8D 06 20  STA $2006
 C - - - - - 0x017E7F 05:BE6F: A5 2E     LDA ram_002E
