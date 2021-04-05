@@ -11016,21 +11016,21 @@ C - - - - - 0x017CA6 05:BC96: CA        DEX
 C - - - - - 0x017CA7 05:BC97: 10 E8     BPL bra_BC81
 C - - - - - 0x017CA9 05:BC99: A9 44     LDA #$44
 C - - - - - 0x017CAB 05:BC9B: 8D 68 06  STA ram_0668
-C - - - - - 0x017CAE 05:BC9E: 8D 6C 06  STA ram_066C
-C - - - - - 0x017CB1 05:BCA1: 8D 70 06  STA ram_0670
+C - - - - - 0x017CAE 05:BC9E: 8D 6C 06  STA ram_0668 + 4
+C - - - - - 0x017CB1 05:BCA1: 8D 70 06  STA ram_0668 + 8
 C - - - - - 0x017CB4 05:BCA4: A9 43     LDA #$43
-C - - - - - 0x017CB6 05:BCA6: 8D 69 06  STA ram_0669
-C - - - - - 0x017CB9 05:BCA9: 8D 6D 06  STA ram_066D
-C - - - - - 0x017CBC 05:BCAC: 8D 71 06  STA ram_0671
+C - - - - - 0x017CB6 05:BCA6: 8D 69 06  STA ram_0668 + 1
+C - - - - - 0x017CB9 05:BCA9: 8D 6D 06  STA ram_0668 + 5
+C - - - - - 0x017CBC 05:BCAC: 8D 71 06  STA ram_0668 + 9
 C - - - - - 0x017CBF 05:BCAF: A9 42     LDA #$42
-C - - - - - 0x017CC1 05:BCB1: 8D 6A 06  STA ram_066A
-C - - - - - 0x017CC4 05:BCB4: 8D 6E 06  STA ram_066E
+C - - - - - 0x017CC1 05:BCB1: 8D 6A 06  STA ram_0668 + 2
+C - - - - - 0x017CC4 05:BCB4: 8D 6E 06  STA ram_0668 + 6
 C - - - - - 0x017CC7 05:BCB7: A9 41     LDA #$41
-C - - - - - 0x017CC9 05:BCB9: 8D 6B 06  STA ram_066B
-C - - - - - 0x017CCC 05:BCBC: 8D 6F 06  STA ram_066F
+C - - - - - 0x017CC9 05:BCB9: 8D 6B 06  STA ram_0668 + 3
+C - - - - - 0x017CCC 05:BCBC: 8D 6F 06  STA ram_0668 + 7
 C - - - - - 0x017CCF 05:BCBF: A9 11     LDA #$11
-C - - - - - 0x017CD1 05:BCC1: 8D 72 06  STA ram_0672
-C - - - - - 0x017CD4 05:BCC4: 8D 73 06  STA ram_0673
+C - - - - - 0x017CD1 05:BCC1: 8D 72 06  STA ram_0668 + 10
+C - - - - - 0x017CD4 05:BCC4: 8D 73 06  STA ram_0668 + 11
 C - - - - - 0x017CD7 05:BCC7: 60        RTS
 
 

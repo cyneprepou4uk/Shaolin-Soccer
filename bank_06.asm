@@ -2222,7 +2222,7 @@ C - - - - - 0x018F3A 06:8F2A: 20 D3 B1  JSR sub_B1D3
 C - - - - - 0x018F3D 06:8F2D: AD C9 04  LDA ram_таймер_действия_мяча
 C - - - - - 0x018F40 06:8F30: D0 18     BNE bra_8F4A
 C - - - - - 0x018F42 06:8F32: 20 CB C2  JSR sub_0x01C2DB
-C - - - - - 0x018F45 06:8F35: AD F0 04  LDA ram_hp_мяч
+C - - - - - 0x018F45 06:8F35: AD F0 04  LDA ram_сила_мяча
 C - - - - - 0x018F48 06:8F38: 0D 10 05  ORA ram_подтип_супера
 C - - - - - 0x018F4B 06:8F3B: D0 0D     BNE bra_8F4A
 C - - - - - 0x018F4D 06:8F3D: BD 59 04  LDA ram_движение_игрока,X
@@ -2937,7 +2937,7 @@ C - - - - - 0x01948D 06:947D: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x019490 06:9480: 29 03     AND #$03
 C - - - - - 0x019492 06:9482: D0 17     BNE bra_949B_RTS
 C - - - - - 0x019494 06:9484: 38        SEC
-C - - - - - 0x019495 06:9485: AD F0 04  LDA ram_hp_мяч
+C - - - - - 0x019495 06:9485: AD F0 04  LDA ram_сила_мяча
 C - - - - - 0x019498 06:9488: E9 01     SBC #$01
 C - - - - - 0x01949A 06:948A: 90 06     BCC bra_9492
 C - - - - - 0x01949C 06:948C: C9 0A     CMP #$0A
@@ -2949,7 +2949,7 @@ C - - - - - 0x0194A4 06:9494: F0 02     BEQ bra_9498
 bra_9496:
 C - - - - - 0x0194A6 06:9496: A9 0A     LDA #$0A
 bra_9498:
-C - - - - - 0x0194A8 06:9498: 8D F0 04  STA ram_hp_мяч
+C - - - - - 0x0194A8 06:9498: 8D F0 04  STA ram_сила_мяча
 bra_949B_RTS:
 C - - - - - 0x0194AB 06:949B: 60        RTS
 
@@ -3527,7 +3527,7 @@ C - - - - - 0x019864 06:9854: 60        RTS
 
 sub_9856:
 C - - - - - 0x019866 06:9856: A9 00     LDA #$00
-C - - - - - 0x019868 06:9858: 8D F0 04  STA ram_hp_мяч
+C - - - - - 0x019868 06:9858: 8D F0 04  STA ram_сила_мяча
 C - - - - - 0x01986B 06:985B: 8D C9 04  STA ram_таймер_действия_мяча
 C - - - - - 0x01986E 06:985E: 8D 10 05  STA ram_подтип_супера
 C - - - - - 0x019871 06:9861: A9 80     LDA #$80
@@ -4286,7 +4286,7 @@ C - - - - - 0x019D7A 06:9D6A: 4C 6A 9E  RTS
 bra_9D6D:
 C - - - - - 0x019D7D 06:9D6D: 86 1C     STX ram_001C
 C - - - - - 0x019D7F 06:9D6F: 84 1D     STY ram_001D
-C - - - - - 0x019D81 06:9D71: B9 E4 04  LDA ram_hp_игрок,Y
+C - - - - - 0x019D81 06:9D71: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x019D84 06:9D74: C0 0A     CPY #$0A
 C - - - - - 0x019D86 06:9D76: 90 17     BCC bra_9D8F
 C - - - - - 0x019D88 06:9D78: 85 20     STA ram_0020
@@ -4327,7 +4327,7 @@ C - - - - - 0x019DC4 06:9DB4: 30 03     BMI bra_9DB9
 C - - - - - 0x019DC6 06:9DB6: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
 bra_9DB9:
 C - - - - - 0x019DC9 06:9DB9: 18        CLC
-C - - - - - 0x019DCA 06:9DBA: BD E4 04  LDA ram_hp_игрок,X
+C - - - - - 0x019DCA 06:9DBA: BD E4 04  LDA ram_сила_игрока,X
 C - - - - - 0x019DCD 06:9DBD: 79 9F 9E  ADC tbl_9E9D + 2,Y
 C - - - - - 0x019DD0 06:9DC0: 90 02     BCC bra_9DC4
 - - - - - - 0x019DD2 06:9DC2: A9 FF     LDA #$FF
@@ -4477,19 +4477,19 @@ tbl_9E9D:
 sub_9EA5:
 C - - - - - 0x019EB5 06:9EA5: 85 21     STA ram_0021
 C - - - - - 0x019EB7 06:9EA7: 38        SEC
-C - - - - - 0x019EB8 06:9EA8: B9 E4 04  LDA ram_hp_игрок,Y
+C - - - - - 0x019EB8 06:9EA8: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x019EBB 06:9EAB: E5 21     SBC ram_0021
 C - - - - - 0x019EBD 06:9EAD: B0 02     BCS bra_9EB1
 C - - - - - 0x019EBF 06:9EAF: A9 00     LDA #$00
 bra_9EB1:
-C - - - - - 0x019EC1 06:9EB1: 99 E4 04  STA ram_hp_игрок,Y
+C - - - - - 0x019EC1 06:9EB1: 99 E4 04  STA ram_сила_игрока,Y
 C - - - - - 0x019EC4 06:9EB4: 60        RTS
 
 
 
 sub_9EB5:
 C - - - - - 0x019EC5 06:9EB5: 18        CLC
-C - - - - - 0x019EC6 06:9EB6: 79 E4 04  ADC ram_hp_игрок,Y
+C - - - - - 0x019EC6 06:9EB6: 79 E4 04  ADC ram_сила_игрока,Y
 C - - - - - 0x019EC9 06:9EB9: 90 F6     BCC bra_9EB1
 - - - - - - 0x019ECB 06:9EBB: A9 FF     LDA #$FF
 - - - - - - 0x019ECD 06:9EBD: 30 F2     BMI bra_9EB1
@@ -7624,7 +7624,7 @@ C - - - - - 0x01AED0 06:AEC0: 20 E4 C2  JSR sub_0x01C2F4_воспроизвес�
 C - - - - - 0x01AED3 06:AEC3: A4 1D     LDY ram_001D
 C - - - - - 0x01AED5 06:AEC5: 8C D6 04  STY ram_игрок_с_мячом
 C - - - - - 0x01AED8 06:AEC8: 20 5D B0  JSR sub_B05D_толкнуть_игрока_мокрым_мячом
-C - - - - - 0x01AEDB 06:AECB: AD F0 04  LDA ram_hp_мяч
+C - - - - - 0x01AEDB 06:AECB: AD F0 04  LDA ram_сила_мяча
 C - - - - - 0x01AEDE 06:AECE: F0 10     BEQ bra_AEE0
 C - - - - - 0x01AEE0 06:AED0: A4 1D     LDY ram_001D
 C - - - - - 0x01AEE2 06:AED2: B9 FD 04  LDA ram_защита_поведение,Y
@@ -7715,13 +7715,13 @@ C - - - - - 0x01AF73 06:AF63: AD 25 05  LDA ram_таймер_электр_мяч
 C - - - - - 0x01AF76 06:AF66: F0 12     BEQ bra_AF7A    ; если не наэлектризован
 C - - - - - 0x01AF78 06:AF68: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x01AF7B 06:AF6B: 10 0D     BPL bra_AF7A
-C - - - - - 0x01AF7D 06:AF6D: AD F0 04  LDA ram_hp_мяч
+C - - - - - 0x01AF7D 06:AF6D: AD F0 04  LDA ram_сила_мяча
 C - - - - - 0x01AF80 06:AF70: 0D C9 04  ORA ram_таймер_действия_мяча
 C - - - - - 0x01AF83 06:AF73: D0 10     BNE bra_AF85
 C - - - - - 0x01AF85 06:AF75: A0 03     LDY #$03
 C - - - - - 0x01AF87 06:AF77: 4C 9C AF  JMP loc_AF9C
 bra_AF7A:
-C - - - - - 0x01AF8A 06:AF7A: AD F0 04  LDA ram_hp_мяч
+C - - - - - 0x01AF8A 06:AF7A: AD F0 04  LDA ram_сила_мяча
 C - - - - - 0x01AF8D 06:AF7D: 0D C9 04  ORA ram_таймер_действия_мяча
 C - - - - - 0x01AF90 06:AF80: D0 03     BNE bra_AF85
 C - - - - - 0x01AF92 06:AF82: 4C 2F B0  RTS
@@ -7765,7 +7765,7 @@ C - - - - - 0x01AFD2 06:AFC2: A9 08     LDA #$08
 C - - - - - 0x01AFD4 06:AFC4: A0 0C     LDY #$0C
 C - - - - - 0x01AFD6 06:AFC6: 20 A5 9E  JSR sub_9EA5
 C - - - - - 0x01AFD9 06:AFC9: A4 1D     LDY ram_001D
-C - - - - - 0x01AFDB 06:AFCB: B9 E4 04  LDA ram_hp_игрок,Y
+C - - - - - 0x01AFDB 06:AFCB: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x01AFDE 06:AFCE: C0 0A     CPY #$0A
 C - - - - - 0x01AFE0 06:AFD0: 90 22     BCC bra_AFF4
 C - - - - - 0x01AFE2 06:AFD2: B9 7C 06  LDA ram_067C,Y
@@ -7776,15 +7776,15 @@ C - - - - - 0x01AFEC 06:AFDC: A8        TAY
 C - - - - - 0x01AFED 06:AFDD: 18        CLC
 C - - - - - 0x01AFEE 06:AFDE: B9 3C B0  LDA tbl_B03C_defense,Y
 C - - - - - 0x01AFF1 06:AFE1: A4 1D     LDY ram_001D
-C - - - - - 0x01AFF3 06:AFE3: 79 E4 04  ADC ram_hp_игрок,Y
-C - - - - - 0x01AFF6 06:AFE6: CD F0 04  CMP ram_hp_мяч
+C - - - - - 0x01AFF3 06:AFE3: 79 E4 04  ADC ram_сила_игрока,Y
+C - - - - - 0x01AFF6 06:AFE6: CD F0 04  CMP ram_сила_мяча
 C - - - - - 0x01AFF9 06:AFE9: B0 44     BCS bra_B02C_RTS
 C - - - - - 0x01AFFB 06:AFEB: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x01AFFE 06:AFEE: 29 01     AND #$01
 C - - - - - 0x01B000 06:AFF0: F0 07     BEQ bra_AFF9
 C - - - - - 0x01B002 06:AFF2: D0 10     BNE bra_B004
 bra_AFF4:
-C - - - - - 0x01B004 06:AFF4: CD F0 04  CMP ram_hp_мяч
+C - - - - - 0x01B004 06:AFF4: CD F0 04  CMP ram_сила_мяча
 C - - - - - 0x01B007 06:AFF7: 90 0B     BCC bra_B004
 bra_AFF9:
 C - - - - - 0x01B009 06:AFF9: 20 56 98  JSR sub_9856
@@ -7801,7 +7801,7 @@ C - - - - - 0x01B021 06:B011: 20 7B B0  JSR sub_B07B
 C - - - - - 0x01B024 06:B014: B9 59 04  LDA ram_движение_игрока,Y
 C - - - - - 0x01B027 06:B017: C9 06     CMP #$06
 C - - - - - 0x01B029 06:B019: D0 0C     BNE bra_B027
-C - - - - - 0x01B02B 06:B01B: AD F0 04  LDA ram_hp_мяч
+C - - - - - 0x01B02B 06:B01B: AD F0 04  LDA ram_сила_мяча
 C - - - - - 0x01B02E 06:B01E: D0 0A     BNE bra_B02A
 C - - - - - 0x01B030 06:B020: A9 10     LDA #$10
 C - - - - - 0x01B032 06:B022: 8D 25 05  STA ram_таймер_электр_мяча
@@ -9547,7 +9547,7 @@ C - - - - - 0x01B903 06:B8F3: 4C BB B9  JMP loc_B9BB
 bra_B8F6:
 C - - - - - 0x01B906 06:B8F6: 20 99 BB  JSR sub_BB99
 C - - - - - 0x01B909 06:B8F9: 20 31 BA  JSR sub_BA31
-C - - - - - 0x01B90C 06:B8FC: AD F0 04  LDA ram_hp_мяч
+C - - - - - 0x01B90C 06:B8FC: AD F0 04  LDA ram_сила_мяча
 C - - - - - 0x01B90F 06:B8FF: F0 19     BEQ bra_B91A
 C - - - - - 0x01B911 06:B901: 20 C8 BC  JSR sub_BCC8
 C - - - - - 0x01B914 06:B904: A9 27     LDA #con_sfx_штанга
@@ -9557,7 +9557,7 @@ C - - - - - 0x01B91C 06:B90C: 4A        LSR
 C - - - - - 0x01B91D 06:B90D: 29 1F     AND #$1F
 C - - - - - 0x01B91F 06:B90F: 8D 23 05  STA ram_0523
 C - - - - - 0x01B922 06:B912: A9 00     LDA #$00
-C - - - - - 0x01B924 06:B914: 8D F0 04  STA ram_hp_мяч
+C - - - - - 0x01B924 06:B914: 8D F0 04  STA ram_сила_мяча
 C - - - - - 0x01B927 06:B917: 8D 10 05  STA ram_подтип_супера
 bra_B91A:
 C - - - - - 0x01B92A 06:B91A: AD C9 04  LDA ram_таймер_действия_мяча

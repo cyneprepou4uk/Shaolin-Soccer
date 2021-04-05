@@ -1080,8 +1080,8 @@ C - - - - - 0x01C56A 07:C55A: 8D F0 05  STA ram_счетчик_следов
 C - - - - - 0x01C56D 07:C55D: A9 FF     LDA #$FF
 C - - - - - 0x01C56F 07:C55F: 8D 78 06  STA ram_приказ_боту
 C - - - - - 0x01C572 07:C562: 8D 79 06  STA ram_приказ_боту + 1
-C - - - - - 0x01C575 07:C565: 8D 7A 06  STA ram_направление_паса_команды
-C - - - - - 0x01C578 07:C568: 8D 7B 06  STA ram_направление_паса_команды + 1
+C - - - - - 0x01C575 07:C565: 8D 7A 06  STA ram_напр_паса_команды
+C - - - - - 0x01C578 07:C568: 8D 7B 06  STA ram_напр_паса_команды + 1
 C - - - - - 0x01C57B 07:C56B: 8D 84 06  STA ram_0684
 C - - - - - 0x01C57E 07:C56E: 8D 85 06  STA ram_0685
 C - - - - - 0x01C581 07:C571: 20 6A BD  JSR sub_0x01BD7A
@@ -1819,7 +1819,7 @@ bra_CAE3:
 bra_CAE8:
 - - - - - - 0x01CAF8 07:CAE8: A9 82     LDA #$82
 loc_CAEA:
-C D 2 - - - 0x01CAFA 07:CAEA: 8D 30 06  STA ram_0630
+C D 2 - - - 0x01CAFA 07:CAEA: 8D 30 06  STA ram_062C + 4
 C - - - - - 0x01CAFD 07:CAED: 60        RTS
 
 
@@ -2542,7 +2542,7 @@ C - - - - - 0x01CFAB 07:CF9B: 8D FD 05  STA ram_сила_ветра
 C - - - - - 0x01CFAE 07:CF9E: A9 FF     LDA #$FF
 C - - - - - 0x01CFB0 07:CFA0: 8D FA 05  STA ram_05FA
 C - - - - - 0x01CFB3 07:CFA3: 8D 7C 06  STA ram_067C
-C - - - - - 0x01CFB6 07:CFA6: 8D 7D 06  STA ram_067D
+C - - - - - 0x01CFB6 07:CFA6: 8D 7D 06  STA ram_067C + 1
 C - - - - - 0x01CFB9 07:CFA9: 8D F5 05  STA ram_флаг_гола
 C - - - - - 0x01CFBC 07:CFAC: 20 D9 E7  JSR sub_E7D9
 C - - - - - 0x01CFBF 07:CFAF: 20 26 C3  JSR sub_C326

@@ -13104,7 +13104,7 @@ C - - - - - 0x00748B 01:B47B: AD EA 05  LDA ram_следы_hi_2006 + 2
 C - - - - - 0x00748E 01:B47E: 8D 06 20  STA $2006
 C - - - - - 0x007491 01:B481: BD 20 06  LDA ram_0620,X
 C - - - - - 0x007494 01:B484: 8D 07 20  STA $2007
-C - - - - - 0x007497 01:B487: BD 21 06  LDA ram_0621,X
+C - - - - - 0x007497 01:B487: BD 21 06  LDA ram_0620 + 1,X
 C - - - - - 0x00749A 01:B48A: 8D 07 20  STA $2007
 C - - - - - 0x00749D 01:B48D: AD EA 05  LDA ram_следы_hi_2006 + 2
 C - - - - - 0x0074A0 01:B490: 18        CLC
@@ -13115,9 +13115,9 @@ C - - - - - 0x0074A9 01:B499: AD EB 05  LDA ram_следы_hi_2006 + 3
 C - - - - - 0x0074AC 01:B49C: 8D 06 20  STA $2006
 C - - - - - 0x0074AF 01:B49F: AD EA 05  LDA ram_следы_hi_2006 + 2
 C - - - - - 0x0074B2 01:B4A2: 8D 06 20  STA $2006
-C - - - - - 0x0074B5 01:B4A5: BD 22 06  LDA ram_0622,X
+C - - - - - 0x0074B5 01:B4A5: BD 22 06  LDA ram_0620 + 2,X
 C - - - - - 0x0074B8 01:B4A8: 8D 07 20  STA $2007
-C - - - - - 0x0074BB 01:B4AB: BD 23 06  LDA ram_0623,X
+C - - - - - 0x0074BB 01:B4AB: BD 23 06  LDA ram_0620 + 3,X
 C - - - - - 0x0074BE 01:B4AE: 8D 07 20  STA $2007
 C - - - - - 0x0074C1 01:B4B1: C0 08     CPY #$08
 C - - - - - 0x0074C3 01:B4B3: 90 97     BCC bra_B44C
@@ -14056,7 +14056,7 @@ C - - - - - 0x0078C4 01:B8B4: A9 18     LDA #$18
 C - - - - - 0x0078C6 01:B8B6: 8D EA 05  STA ram_следы_hi_2006 + 2
 C - - - - - 0x0078C9 01:B8B9: A9 FF     LDA #$FF
 C - - - - - 0x0078CB 01:B8BB: 8D F5 05  STA ram_флаг_гола
-C - - - - - 0x0078CE 01:B8BE: AD 30 06  LDA ram_0630
+C - - - - - 0x0078CE 01:B8BE: AD 30 06  LDA ram_062C + 4
 C - - - - - 0x0078D1 01:B8C1: 29 03     AND #$03
 C - - - - - 0x0078D3 01:B8C3: 18        CLC
 C - - - - - 0x0078D4 01:B8C4: 69 10     ADC #$10    ; экран со зрителями, 10-12 (возможно 13 тоже)
@@ -14066,7 +14066,7 @@ C - - - - - 0x0078DC 01:B8CC: 20 17 C0  JSR sub_0x01EE81_disable_NMI
 C - - - - - 0x0078DF 01:B8CF: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x0078E2 01:B8D2: 20 5C B5  JSR sub_B55C
 C - - - - - 0x0078E5 01:B8D5: 20 55 B9  JSR sub_B955
-C - - - - - 0x0078E8 01:B8D8: AD 30 06  LDA ram_0630
+C - - - - - 0x0078E8 01:B8D8: AD 30 06  LDA ram_062C + 4
 C - - - - - 0x0078EB 01:B8DB: 10 3A     BPL bra_B917
 C - - - - - 0x0078ED 01:B8DD: 29 03     AND #$03
 C - - - - - 0x0078EF 01:B8DF: F0 07     BEQ bra_B8E8
@@ -14631,7 +14631,7 @@ C - - - - - 0x007C7B 01:BC6B: 0A        ASL
 C - - - - - 0x007C7C 01:BC6C: 0A        ASL
 C - - - - - 0x007C7D 01:BC6D: A8        TAY
 C - - - - - 0x007C7E 01:BC6E: B1 2C     LDA (ram_002C),Y
-C - - - - - 0x007C80 01:BC70: 9D E4 04  STA ram_hp_игрок,X
+C - - - - - 0x007C80 01:BC70: 9D E4 04  STA ram_сила_игрока,X
 C - - - - - 0x007C83 01:BC73: C8        INY
 C - - - - - 0x007C84 01:BC74: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x007C86 01:BC76: 9D D7 04  STA ram_тип_скорости,X
@@ -14680,9 +14680,9 @@ C - - - - - 0x007CCF 01:BCBF: 8A        TXA
 C - - - - - 0x007CD0 01:BCC0: 29 01     AND #$01
 C - - - - - 0x007CD2 01:BCC2: F0 09     BEQ bra_BCCD
 C - - - - - 0x007CD4 01:BCC4: 18        CLC
-C - - - - - 0x007CD5 01:BCC5: BD E4 04  LDA ram_hp_игрок,X
+C - - - - - 0x007CD5 01:BCC5: BD E4 04  LDA ram_сила_игрока,X
 C - - - - - 0x007CD8 01:BCC8: 69 10     ADC #$10
-C - - - - - 0x007CDA 01:BCCA: 9D E4 04  STA ram_hp_игрок,X
+C - - - - - 0x007CDA 01:BCCA: 9D E4 04  STA ram_сила_игрока,X
 bra_BCCD:
 C - - - - - 0x007CDD 01:BCCD: A5 1C     LDA ram_001C
 C - - - - - 0x007CDF 01:BCCF: F0 2A     BEQ bra_BCFB_RTS
@@ -14706,9 +14706,9 @@ bra_BCE8:
 - - - - - - 0x007CFE 01:BCEE: 29 03     AND #$03
 - - - - - - 0x007D00 01:BCF0: A8        TAY
 - - - - - - 0x007D01 01:BCF1: 18        CLC
-- - - - - - 0x007D02 01:BCF2: BD E4 04  LDA ram_hp_игрок,X
+- - - - - - 0x007D02 01:BCF2: BD E4 04  LDA ram_сила_игрока,X
 - - - - - - 0x007D05 01:BCF5: 79 FC BC  ADC tbl_BCFC,Y
-- - - - - - 0x007D08 01:BCF8: 9D E4 04  STA ram_hp_игрок,X
+- - - - - - 0x007D08 01:BCF8: 9D E4 04  STA ram_сила_игрока,X
 bra_BCFB_RTS:
 C - - - - - 0x007D0B 01:BCFB: 60        RTS
 

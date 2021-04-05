@@ -12441,7 +12441,7 @@ bra_B529:
 C - - - - - 0x013539 04:B529: 8A        TXA
 C - - - - - 0x01353A 04:B52A: 29 01     AND #$01
 C - - - - - 0x01353C 04:B52C: A8        TAY
-C - - - - - 0x01353D 04:B52D: B9 7A 06  LDA ram_направление_паса_команды,Y
+C - - - - - 0x01353D 04:B52D: B9 7A 06  LDA ram_напр_паса_команды,Y
 C - - - - - 0x013540 04:B530: 29 0F     AND #$0F
 C - - - - - 0x013542 04:B532: C9 0F     CMP #$0F
 C - - - - - 0x013544 04:B534: F0 20     BEQ bra_B556
@@ -13378,7 +13378,7 @@ C - - - - - 0x013ADE 04:BACE: A9 7F     LDA #$7F
 C - - - - - 0x013AE0 04:BAD0: 8D 25 05  STA ram_таймер_электр_мяча
 bra_BAD3:
 C - - - - - 0x013AE3 04:BAD3: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x013AE6 04:BAD6: B9 E4 04  LDA ram_hp_игрок,Y
+C - - - - - 0x013AE6 04:BAD6: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x013AE9 04:BAD9: 20 02 BB  JSR sub_BB02
 C - - - - - 0x013AEC 04:BADC: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x013AEF 04:BADF: 4A        LSR
@@ -13405,11 +13405,11 @@ C - - - - - 0x013B11 04:BB01: 60        RTS
 
 sub_BB02:
 C - - - - - 0x013B12 04:BB02: 18        CLC
-C - - - - - 0x013B13 04:BB03: 6D F0 04  ADC ram_hp_мяч
+C - - - - - 0x013B13 04:BB03: 6D F0 04  ADC ram_сила_мяча
 C - - - - - 0x013B16 04:BB06: 90 02     BCC bra_BB0A
 - - - - - - 0x013B18 04:BB08: A9 FF     LDA #$FF
 bra_BB0A:
-C - - - - - 0x013B1A 04:BB0A: 8D F0 04  STA ram_hp_мяч
+C - - - - - 0x013B1A 04:BB0A: 8D F0 04  STA ram_сила_мяча
 C - - - - - 0x013B1D 04:BB0D: 60        RTS
 
 
@@ -13747,7 +13747,7 @@ C - - - - - 0x013CF7 04:BCE7: A8        TAY
 C - - - - - 0x013CF8 04:BCE8: B9 68 BD  LDA tbl_BD68,Y
 C - - - - - 0x013CFB 04:BCEB: D0 08     BNE bra_BCF5
 C - - - - - 0x013CFD 04:BCED: 8D 10 05  STA ram_подтип_супера
-C - - - - - 0x013D00 04:BCF0: 8D F0 04  STA ram_hp_мяч
+C - - - - - 0x013D00 04:BCF0: 8D F0 04  STA ram_сила_мяча
 C - - - - - 0x013D03 04:BCF3: F0 19     BEQ bra_BD0E_RTS
 bra_BCF5:
 C - - - - - 0x013D05 04:BCF5: 10 0C     BPL bra_BD03

@@ -10958,7 +10958,7 @@ C - - - - - 0x00AC94 02:AC84: 8D E6 05  STA ram_скорость_игры
 C - - - - - 0x00AC97 02:AC87: CE 69 05  DEC ram_номер_управляемого + 1
 C - - - - - 0x00AC9A 02:AC8A: CE 6A 05  DEC ram_номер_управляемого + 2
 C - - - - - 0x00AC9D 02:AC8D: CE 6B 05  DEC ram_номер_управляемого + 3
-C - - - - - 0x00ACA0 02:AC90: CE 7A 06  DEC ram_направление_паса_команды
+C - - - - - 0x00ACA0 02:AC90: CE 7A 06  DEC ram_напр_паса_команды
 C - - - - - 0x00ACA3 02:AC93: A2 00     LDX #$00
 C - - - - - 0x00ACA5 02:AC95: 20 A5 AD  JSR sub_ADA5
 C - - - - - 0x00ACA8 02:AC98: A2 0C     LDX #$0C
