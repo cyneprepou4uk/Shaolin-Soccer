@@ -2344,7 +2344,8 @@ ofs_8E08_01:
 C - - J - - 0x014E18 05:8E08: 2C B2 05  BIT ram_флаг_яркости
 C - - - - - 0x014E1B 05:8E0B: 10 25     BPL bra_8E32
 C - - - - - 0x014E1D 05:8E0D: 50 06     BVC bra_8E15
-C - - - - - 0x014E1F 05:8E0F: 20 73 8F  JSR sub_8F73
+C - - - - - 0x014E1F 05:8E0F: 20 73 8F  LDA #$04
+                                        STA ram_subscript
 C - - - - - 0x014E22 05:8E12: 4C 3B 8E  RTS
 bra_8E15:
 C - - - - - 0x014E25 05:8E15: A5 08     LDA ram_btn_press
@@ -2591,13 +2592,6 @@ tbl_8F6D_spd_X:
 - D 0 - - - 0x014F7D 05:8F6D: 80 FF     .word $FF80
 - D 0 - - - 0x014F7F 05:8F6F: A0 FF     .word $FFA0
 - D 0 - - - 0x014F81 05:8F71: C0 FF     .word $FFC0
-
-
-
-sub_8F73:   ; bzk опт
-C - - - - - 0x014F83 05:8F73: A9 04     LDA #$04
-C - - - - - 0x014F85 05:8F75: 8D 59 00  STA ram_subscript
-C - - - - - 0x014F88 05:8F78: 60        RTS
 
 
 
