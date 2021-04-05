@@ -13881,7 +13881,7 @@ loc_BB5D_скрипт_титров:
 - - - - - - 0x00BB78 02:BB68: 00 BD     .word ofs_BD00_03_фотки_в_титрах
 - - - - - - 0x00BB7A 02:BB6A: C0 BD     .word ofs_BDC0_04_последняя_фотка_в_титрах
 - - - - - - 0x00BB7C 02:BB6C: 42 BE     .word ofs_BE42_05
-- - - - - - 0x00BB7E 02:BB6E: 59 BE     .word ofs_BE59_06
+- - - - - - 0x00BB7E 02:BB6E: 59 BE     .word ofs_BE59_06_звонок_по_мобиле
 - - - - - - 0x00BB80 02:BB70: 76 BE     .word ofs_BE76_07
 - - - - - - 0x00BB82 02:BB72: 95 AA     .word ofs_AA95_08
 - - - - - - 0x00BB84 02:BB74: D9 AA     .word ofs_AAD9_09
@@ -14262,9 +14262,9 @@ ofs_BE42_05:
 
 
 
-ofs_BE59_06:
+ofs_BE59_06_звонок_по_мобиле:
 - - - - - - 0x00BE69 02:BE59: 20 C8 BE  JSR sub_BEC8
-- - - - - - 0x00BE6C 02:BE5C: 20 9B BE  JSR sub_BE9B
+- - - - - - 0x00BE6C 02:BE5C: 20 9B BE  JSR sub_BE9B_звонок_по_мобиле
 - - - - - - 0x00BE6F 02:BE5F: 90 E0     BCC bra_BE41_RTS
 - - - - - - 0x00BE71 02:BE61: AD 1F 06  LDA ram_061F
 - - - - - - 0x00BE74 02:BE64: 18        CLC
@@ -14303,7 +14303,7 @@ ofs_BE95_0A:
 
 
 
-sub_BE9B:
+sub_BE9B_звонок_по_мобиле:
 - - - - - - 0x00BEAB 02:BE9B: 20 7C AE  JSR sub_AE7C
 - - - - - - 0x00BEAE 02:BE9E: 18        CLC
 - - - - - - 0x00BEAF 02:BE9F: 50 1D     BVC bra_BEBE_RTS
