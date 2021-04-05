@@ -7409,7 +7409,7 @@ tbl_A93C:
 loc_A940:
 C D 1 - - - 0x016950 05:A940: A9 33     LDA #con_sfx_yes
 C - - - - - 0x016952 05:A942: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x016955 05:A945: 20 30 AE  JSR sub_AE30
+C - - - - - 0x016955 05:A945: 20 30 AE  JSR sub_ACBC
 loc_A948:
 C D 1 - - - 0x016958 05:A948: AC C9 05  LDY ram_счетчик_опций
 C - - - - - 0x01695B 05:A94B: B9 59 A9  LDA tbl_A959,Y
@@ -7436,7 +7436,7 @@ tbl_A959:
 ofs_A964_04_B:
 C - - J - - 0x016974 05:A964: A9 34     LDA #con_sfx_no
 C - - - - - 0x016976 05:A966: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x016979 05:A969: 20 30 AE  JSR sub_AE30
+C - - - - - 0x016979 05:A969: 20 30 AE  JSR sub_ACBC
 C - - - - - 0x01697C 05:A96C: 4C 48 A9  JMP loc_A948
 
 
@@ -8003,9 +8003,13 @@ C - - - - - 0x016CC2 05:ACB2: 60        RTS
 
 
 
+sub_ACBC:
+                                        LDA #$04
+                                        BNE bra_ACC0
+
 sub_ACBD:
 C - - - - - 0x016CCD 05:ACBD: AD CA 05  LDA ram_номер_опции
-loc_ACC0:
+bra_ACC0:
 C D 1 - - - 0x016CD0 05:ACC0: 0A        ASL
 C - - - - - 0x016CD1 05:ACC1: 0A        ASL
 C - - - - - 0x016CD2 05:ACC2: 0A        ASL
@@ -8262,12 +8266,6 @@ sub_AE29:
 C - - - - - 0x016E39 05:AE29: AD D1 05  LDA ram_05D1
 C - - - - - 0x016E3C 05:AE2C: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x016E3F 05:AE2F: 60        RTS
-
-
-
-sub_AE30:   ; bzk опт
-C - - - - - 0x016E40 05:AE30: A9 04     LDA #$04
-C - - - - - 0x016E42 05:AE32: 4C C0 AC  JMP loc_ACC0
 
 
 
