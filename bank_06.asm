@@ -4288,7 +4288,7 @@ C - - - - - 0x019D7D 06:9D6D: 86 1C     STX ram_001C
 C - - - - - 0x019D7F 06:9D6F: 84 1D     STY ram_001D
 C - - - - - 0x019D81 06:9D71: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x019D84 06:9D74: C0 0A     CPY #$0A
-C - - - - - 0x019D86 06:9D76: 90 17     BCC bra_9D8F
+C - - - - - 0x019D86 06:9D76: 90 17     BCC bra_9D8F    ; если это не кипер
 C - - - - - 0x019D88 06:9D78: 85 20     STA ram_0020
 C - - - - - 0x019D8A 06:9D7A: B9 7C 06  LDA ram_067C,Y
 C - - - - - 0x019D8D 06:9D7D: 30 12     BMI bra_9D91
@@ -4357,7 +4357,7 @@ C - - - - - 0x019E02 06:9DF2: 20 7C 9E  JSR sub_9E7C_запись_движени
 C - - - - - 0x019E05 06:9DF5: 4C 62 9E  JMP loc_9E62
 loc_9DF8:
 C D 0 - - - 0x019E08 06:9DF8: E0 0A     CPX #$0A
-C - - - - - 0x019E0A 06:9DFA: B0 4E     BCS bra_9E4A
+C - - - - - 0x019E0A 06:9DFA: B0 4E     BCS bra_9E4A    ; если это кипер
 C - - - - - 0x019E0C 06:9DFC: A5 1D     LDA ram_001D
 C - - - - - 0x019E0E 06:9DFE: 29 01     AND #$01
 C - - - - - 0x019E10 06:9E00: 85 1E     STA ram_001E
@@ -4405,7 +4405,7 @@ C - - - - - 0x019E64 06:9E54: A4 1C     LDY ram_001C
 C - - - - - 0x019E66 06:9E56: 20 71 9E  JSR sub_9E71
 C - - - - - 0x019E69 06:9E59: A4 1D     LDY ram_001D
 C - - - - - 0x019E6B 06:9E5B: C0 0A     CPY #$0A
-C - - - - - 0x019E6D 06:9E5D: B0 0B     BCS bra_9E6A_RTS
+C - - - - - 0x019E6D 06:9E5D: B0 0B     BCS bra_9E6A_RTS    ; если это кипер
 C - - - - - 0x019E6F 06:9E5F: 20 71 9E  JSR sub_9E71
 loc_9E62:
 C D 0 - - - 0x019E72 06:9E62: 20 8B 9E  JSR sub_9E8B
@@ -4500,7 +4500,7 @@ sub_9EBF:
 C - - - - - 0x019ECF 06:9EBF: 24 5C     BIT ram_flag_gameplay
 C - - - - - 0x019ED1 06:9EC1: 70 1F     BVS bra_9EE2_RTS
 C - - - - - 0x019ED3 06:9EC3: E0 0A     CPX #$0A
-C - - - - - 0x019ED5 06:9EC5: B0 1B     BCS bra_9EE2_RTS
+C - - - - - 0x019ED5 06:9EC5: B0 1B     BCS bra_9EE2_RTS    ; если это кипер
 C - - - - - 0x019ED7 06:9EC7: BD 50 06  LDA ram_позиция_управление,X
 C - - - - - 0x019EDA 06:9ECA: 30 16     BMI bra_9EE2_RTS    ; если это бот
 C - - - - - 0x019EDC 06:9ECC: BD 2E 04  LDA ram_spd_Z_hi_игрок,X
@@ -4516,13 +4516,13 @@ bra_9EE2_RTS:
 C - - - - - 0x019EF2 06:9EE2: 4C 6F 9F  RTS
 bra_9EE5:
 C - - - - - 0x019EF5 06:9EE5: C0 0A     CPY #$0A
-C - - - - - 0x019EF7 06:9EE7: B0 09     BCS bra_9EF2
+C - - - - - 0x019EF7 06:9EE7: B0 09     BCS bra_9EF2_это_кипер
 C - - - - - 0x019EF9 06:9EE9: 86 1C     STX ram_001C
 C - - - - - 0x019EFB 06:9EEB: 98        TYA
 C - - - - - 0x019EFC 06:9EEC: 45 1C     EOR ram_001C
 C - - - - - 0x019EFE 06:9EEE: 29 01     AND #$01
 C - - - - - 0x019F00 06:9EF0: F0 03     BEQ bra_9EF5
-bra_9EF2:
+bra_9EF2_это_кипер:
 - - - - - - 0x019F02 06:9EF2: 4C 3C 9F  JMP loc_9F3C
 bra_9EF5:
 C - - - - - 0x019F05 06:9EF5: B9 50 06  LDA ram_позиция_управление,Y
@@ -4846,10 +4846,10 @@ C - - - - - 0x01A12E 06:A11E: 24 5C     BIT ram_flag_gameplay
 C - - - - - 0x01A130 06:A120: 70 F1     BVS bra_A113
 C - - - - - 0x01A132 06:A122: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x01A135 06:A125: C0 0A     CPY #$0A
-C - - - - - 0x01A137 06:A127: 90 05     BCC bra_A12E
+C - - - - - 0x01A137 06:A127: 90 05     BCC bra_A12E_это_не_кипер
 C - - - - - 0x01A139 06:A129: B9 90 06  LDA ram_бит_для_2000_атрибуты,Y
 C - - - - - 0x01A13C 06:A12C: 10 E5     BPL bra_A113
-bra_A12E:
+bra_A12E_это_не_кипер:
 C - - - - - 0x01A13E 06:A12E: A9 5B     LDA #$5B    ; гвинейская крутилка
 C - - - - - 0x01A140 06:A130: 4C 7B A0  JMP loc_A07B_запись_номера_движения
 
@@ -5025,7 +5025,7 @@ tbl_A242_тип_анимации_плача:
 
 bra_A248:
 C - - - - - 0x01A258 06:A248: E0 0A     CPX #$0A
-C - - - - - 0x01A25A 06:A24A: 90 0E     BCC bra_A25A
+C - - - - - 0x01A25A 06:A24A: 90 0E     BCC bra_A25A    ; если это не кипер
 C - - - - - 0x01A25C 06:A24C: BD 7C 06  LDA ram_067C,X
 C - - - - - 0x01A25F 06:A24F: 30 09     BMI bra_A25A
 C - - - - - 0x01A261 06:A251: 24 5C     BIT ram_flag_gameplay
@@ -7113,7 +7113,7 @@ C - - - - - 0x01ABF8 06:ABE8: E8        INX
 C - - - - - 0x01ABF9 06:ABE9: E0 0C     CPX #$0C
 C - - - - - 0x01ABFB 06:ABEB: 90 F3     BCC bra_ABE0_loop
 C - - - - - 0x01ABFD 06:ABED: A2 00     LDX #$00
-bra_ABEF:
+bra_ABEF_loop:
 C - - - - - 0x01ABFF 06:ABEF: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x01AC02 06:ABF2: 29 7F     AND #$7F
 C - - - - - 0x01AC04 06:ABF4: C9 14     CMP #$14
@@ -7149,7 +7149,7 @@ C - - - - - 0x01AC54 06:AC44: 9D 12 04  STA ram_spd_Y_hi_игрок,X
 bra_AC47:
 C - - - - - 0x01AC57 06:AC47: E8        INX
 C - - - - - 0x01AC58 06:AC48: E0 0C     CPX #$0C
-C - - - - - 0x01AC5A 06:AC4A: 90 A3     BCC bra_ABEF
+C - - - - - 0x01AC5A 06:AC4A: 90 A3     BCC bra_ABEF_loop
 C - - - - - 0x01AC5C 06:AC4C: 60        RTS
 
 
@@ -7415,7 +7415,7 @@ C - - - - - 0x01AD51 06:AD41: 84 1D     STY ram_001D
 C - - - - - 0x01AD53 06:AD43: A9 00     LDA #$00
 C - - - - - 0x01AD55 06:AD45: 85 1C     STA ram_001C
 C - - - - - 0x01AD57 06:AD47: C0 0A     CPY #$0A
-C - - - - - 0x01AD59 06:AD49: 90 07     BCC bra_AD52
+C - - - - - 0x01AD59 06:AD49: 90 07     BCC bra_AD52    ; если это не кипер
 C - - - - - 0x01AD5B 06:AD4B: B9 7C 06  LDA ram_067C,Y
 C - - - - - 0x01AD5E 06:AD4E: 30 02     BMI bra_AD52
 C - - - - - 0x01AD60 06:AD50: E6 1C     INC ram_001C
@@ -7767,7 +7767,7 @@ C - - - - - 0x01AFD6 06:AFC6: 20 A5 9E  JSR sub_9EA5
 C - - - - - 0x01AFD9 06:AFC9: A4 1D     LDY ram_001D
 C - - - - - 0x01AFDB 06:AFCB: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x01AFDE 06:AFCE: C0 0A     CPY #$0A
-C - - - - - 0x01AFE0 06:AFD0: 90 22     BCC bra_AFF4
+C - - - - - 0x01AFE0 06:AFD0: 90 22     BCC bra_AFF4    ; если это не кипер
 C - - - - - 0x01AFE2 06:AFD2: B9 7C 06  LDA ram_067C,Y
 C - - - - - 0x01AFE5 06:AFD5: 30 1D     BMI bra_AFF4
 C - - - - - 0x01AFE7 06:AFD7: B9 FD 04  LDA ram_защита_поведение,Y
@@ -8659,7 +8659,7 @@ C - - - - - 0x01B517 06:B507: 60        RTS
 
 sub_B508:
 C - - - - - 0x01B518 06:B508: C0 0A     CPY #$0A
-C - - - - - 0x01B51A 06:B50A: 90 0A     BCC bra_B516
+C - - - - - 0x01B51A 06:B50A: 90 0A     BCC bra_B516    ; если это не кипер
 C - - - - - 0x01B51C 06:B50C: B9 7C 06  LDA ram_067C,Y
 C - - - - - 0x01B51F 06:B50F: 30 05     BMI bra_B516
 C - - - - - 0x01B521 06:B511: A0 09     LDY #$09

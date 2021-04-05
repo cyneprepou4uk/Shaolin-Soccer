@@ -433,10 +433,10 @@ C - - - - - 0x00C2C6 03:82B6: 49 01     EOR #$01
 C - - - - - 0x00C2C8 03:82B8: A8        TAY
 bra_82B9_loop:
 C - - - - - 0x00C2C9 03:82B9: C0 0A     CPY #$0A
-C - - - - - 0x00C2CB 03:82BB: 90 05     BCC bra_82C2
+C - - - - - 0x00C2CB 03:82BB: 90 05     BCC bra_82C2_это_не_кипер
 C - - - - - 0x00C2CD 03:82BD: A9 0A     LDA #$0A
 C - - - - - 0x00C2CF 03:82BF: 4C C4 82  JMP loc_82C4
-bra_82C2:
+bra_82C2_это_не_кипер:
 C - - - - - 0x00C2D2 03:82C2: A9 29     LDA #$29
 loc_82C4:
 C D 0 - - - 0x00C2D4 03:82C4: 99 5C 06  STA ram_bot_ai,Y
@@ -641,7 +641,7 @@ C - - - - - 0x00C41C 03:840C: 60        RTS
 
 sub_840D:
 C - - - - - 0x00C41D 03:840D: E0 0A     CPX #$0A
-C - - - - - 0x00C41F 03:840F: D0 2B     BNE bra_843C
+C - - - - - 0x00C41F 03:840F: D0 2B     BNE bra_843C_это_не_кипер_слева
 C - - - - - 0x00C421 03:8411: AD 20 03  LDA ram_pos_X_lo_мяч
 C - - - - - 0x00C424 03:8414: 38        SEC
 C - - - - - 0x00C425 03:8415: FD 14 03  SBC ram_pos_X_lo_игрок,X
@@ -661,7 +661,7 @@ C - - - - - 0x00C443 03:8433: A5 2D     LDA ram_002D
 C - - - - - 0x00C445 03:8435: 69 00     ADC #$00
 C - - - - - 0x00C447 03:8437: 85 2D     STA ram_002D
 C - - - - - 0x00C449 03:8439: 4C 57 84  JMP loc_8457
-bra_843C:
+bra_843C_это_не_кипер_слева:
 C - - - - - 0x00C44C 03:843C: BD 14 03  LDA ram_pos_X_lo_игрок,X
 C - - - - - 0x00C44F 03:843F: 38        SEC
 C - - - - - 0x00C450 03:8440: ED 20 03  SBC ram_pos_X_lo_мяч
@@ -1346,13 +1346,13 @@ C - - - - - 0x00C8A0 03:8890: 9D 27 03  STA ram_pos_X_hi_игрок,X
 C - - - - - 0x00C8A3 03:8893: 68        PLA
 C - - - - - 0x00C8A4 03:8894: 9D 14 03  STA ram_pos_X_lo_игрок,X
 C - - - - - 0x00C8A7 03:8897: E0 0A     CPX #$0A
-C - - - - - 0x00C8A9 03:8899: F0 09     BEQ bra_88A4
+C - - - - - 0x00C8A9 03:8899: F0 09     BEQ bra_88A4_это_кипер_слева
 C - - - - - 0x00C8AB 03:889B: A5 1C     LDA ram_001C
 C - - - - - 0x00C8AD 03:889D: 49 FF     EOR #$FF
 C - - - - - 0x00C8AF 03:889F: 18        CLC
 C - - - - - 0x00C8B0 03:88A0: 69 01     ADC #$01
 C - - - - - 0x00C8B2 03:88A2: 85 1C     STA ram_001C
-bra_88A4:
+bra_88A4_это_кипер_слева:
 C - - - - - 0x00C8B4 03:88A4: A5 1C     LDA ram_001C
 C - - - - - 0x00C8B6 03:88A6: 10 02     BPL bra_88AA
 C - - - - - 0x00C8B8 03:88A8: A9 7F     LDA #$7F
@@ -4553,7 +4553,7 @@ C - - - - - 0x00DC18 03:9C08: 4C 22 9C  JMP loc_9C22
 bra_9C0B:
 C - - - - - 0x00DC1B 03:9C0B: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x00DC1E 03:9C0E: C0 0A     CPY #$0A
-C - - - - - 0x00DC20 03:9C10: 90 08     BCC bra_9C1A
+C - - - - - 0x00DC20 03:9C10: 90 08     BCC bra_9C1A    ; если это не кипер
 C - - - - - 0x00DC22 03:9C12: B9 7C 06  LDA ram_067C,Y
 C - - - - - 0x00DC25 03:9C15: 30 03     BMI bra_9C1A
 C - - - - - 0x00DC27 03:9C17: 4C 43 9C  JMP loc_9C43
@@ -5633,11 +5633,11 @@ C - - - - - 0x00E2A6 03:A296: AA        TAX
 bra_A297:
 C - - - - - 0x00E2A7 03:A297: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x00E2AA 03:A29A: C0 0A     CPY #$0A
-C - - - - - 0x00E2AC 03:A29C: B0 08     BCS bra_A2A6
+C - - - - - 0x00E2AC 03:A29C: B0 08     BCS bra_A2A6_это_кипер
 C - - - - - 0x00E2AE 03:A29E: A9 0A     LDA #$0A
 C - - - - - 0x00E2B0 03:A2A0: 9D 66 06  STA ram_bot_ai + 10,X
 C - - - - - 0x00E2B3 03:A2A3: 4C E1 A2  JMP loc_A2E1
-bra_A2A6:
+bra_A2A6_это_кипер:
 C - - - - - 0x00E2B6 03:A2A6: BD D3 05  LDA ram_05D3,X
 C - - - - - 0x00E2B9 03:A2A9: 29 C0     AND #$C0
 C - - - - - 0x00E2BB 03:A2AB: F0 2C     BEQ bra_A2D9
@@ -5809,7 +5809,7 @@ C - - - - - 0x00E3AB 03:A39B: 60        RTS
 sub_A39C:
 C - - - - - 0x00E3AC 03:A39C: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x00E3AF 03:A39F: C0 0A     CPY #$0A
-C - - - - - 0x00E3B1 03:A3A1: 90 08     BCC bra_A3AB
+C - - - - - 0x00E3B1 03:A3A1: 90 08     BCC bra_A3AB    ; если это не кипер
 C - - - - - 0x00E3B3 03:A3A3: B9 7C 06  LDA ram_067C,Y
 C - - - - - 0x00E3B6 03:A3A6: 30 03     BMI bra_A3AB
 C - - - - - 0x00E3B8 03:A3A8: 4C 89 A5  JMP loc_A589
@@ -5892,7 +5892,7 @@ C - - - - - 0x00E449 03:A439: 99 5C 06  STA ram_bot_ai,Y
 bra_A43C:
 C - - - - - 0x00E44C 03:A43C: C8        INY
 C - - - - - 0x00E44D 03:A43D: C8        INY
-C - - - - - 0x00E44E 03:A43E: C0 0A     CPY #$0A
+C - - - - - 0x00E44E 03:A43E: C0 0A     CPY #$0A    ; киперы не входят в цикл
 C - - - - - 0x00E450 03:A440: 90 E7     BCC bra_A429_loop
 C - - - - - 0x00E452 03:A442: BD 30 05  LDA ram_расстановка_команды,X
 C - - - - - 0x00E455 03:A445: 29 03     AND #$03
@@ -6086,7 +6086,7 @@ bra_A58D_loop:
 C - - - - - 0x00E59D 03:A58D: 99 5C 06  STA ram_bot_ai,Y
 C - - - - - 0x00E5A0 03:A590: C8        INY
 C - - - - - 0x00E5A1 03:A591: C8        INY
-C - - - - - 0x00E5A2 03:A592: C0 0A     CPY #$0A
+C - - - - - 0x00E5A2 03:A592: C0 0A     CPY #$0A    ; киперы не входят в цикл
 C - - - - - 0x00E5A4 03:A594: 90 F7     BCC bra_A58D_loop
 C - - - - - 0x00E5A6 03:A596: 60        RTS
 

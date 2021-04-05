@@ -68,7 +68,7 @@
 .export sub_0x01EF1A_очистить_0057_00F8
 .export sub_0x01EF1A_очистить_0061_00F8
 .export sub_0x01EF64_убрать_полоску_слева_на_экране
-.export sub_0x01EFBD_write_buffers_to_ppu
+.export sub_0x01EFBD_запись_буферов_в_ppu
 .export sub_0x01F479
 .export sub_0x01F4D1
 .export sub_0x01F574
@@ -4263,7 +4263,7 @@ C - - - - - 0x01D700 07:D6F0: C9 06     CMP #$06
 C - - - - - 0x01D702 07:D6F2: F0 13     BEQ bra_D707
 C - - - - - 0x01D704 07:D6F4: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x01D707 07:D6F7: C0 0A     CPY #$0A
-C - - - - - 0x01D709 07:D6F9: 90 0F     BCC bra_D70A
+C - - - - - 0x01D709 07:D6F9: 90 0F     BCC bra_D70A    ; если это не кипер
 C - - - - - 0x01D70B 07:D6FB: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x01D70E 07:D6FE: 29 40     AND #$40
 C - - - - - 0x01D710 07:D700: F0 08     BEQ bra_D70A
@@ -8176,7 +8176,7 @@ C - - - - - 0x01EE74 07:EE64: 60        RTS
 
 
 
-sub_0x01EFBD_write_buffers_to_ppu:
+sub_0x01EFBD_запись_буферов_в_ppu:
 sub_EFAD_write_buffers_to_ppu:
 C D 3 - - - 0x01EFBD 07:EFAD: A5 58     LDA ram_script
 C - - - - - 0x01EFBF 07:EFAF: D0 34     BNE bra_EFE5_write_3_buffers_to_ppu ; если не игра на поле
