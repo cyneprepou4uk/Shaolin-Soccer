@@ -289,7 +289,7 @@ sub_81DD:
 C - - - - - 0x00C1ED 03:81DD: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x00C1F0 03:81E0: 29 40     AND #$40
 C - - - - - 0x00C1F2 03:81E2: D0 22     BNE bra_8206
-C - - - - - 0x00C1F4 03:81E4: AD 65 04  LDA ram_movement_id_мяч
+C - - - - - 0x00C1F4 03:81E4: AD 65 04  LDA ram_движение_мяча
 C - - - - - 0x00C1F7 03:81E7: 29 7F     AND #$7F
 C - - - - - 0x00C1F9 03:81E9: C9 04     CMP #$04
 C - - - - - 0x00C1FB 03:81EB: F0 0E     BEQ bra_81FB
@@ -331,7 +331,7 @@ C - - - - - 0x00C231 03:8221: A2 00     LDX #$00
 bra_8223:
 C - - - - - 0x00C233 03:8223: B5 2C     LDA ram_002C,X
 C - - - - - 0x00C235 03:8225: A8        TAY
-C - - - - - 0x00C236 03:8226: B9 59 04  LDA ram_movement_id_игрок,Y
+C - - - - - 0x00C236 03:8226: B9 59 04  LDA ram_движение_игрока,Y
 C - - - - - 0x00C239 03:8229: 29 7F     AND #$7F
 C - - - - - 0x00C23B 03:822B: C9 04     CMP #$04
 C - - - - - 0x00C23D 03:822D: F0 13     BEQ bra_8242
@@ -354,7 +354,7 @@ C - - - - - 0x00C256 03:8246: 90 DB     BCC bra_8223
 
 
 loc_824B:
-C D 0 - - - 0x00C25B 03:824B: AD 65 04  LDA ram_movement_id_мяч
+C D 0 - - - 0x00C25B 03:824B: AD 65 04  LDA ram_движение_мяча
 C - - - - - 0x00C25E 03:824E: 29 7F     AND #$7F
 C - - - - - 0x00C260 03:8250: C9 05     CMP #$05
 C - - - - - 0x00C262 03:8252: D0 05     BNE bra_8259
@@ -585,7 +585,7 @@ tbl_8359:
 
 loc_83B1:
 ofs_83B1_00:
-C D 0 J - - 0x00C3C1 03:83B1: BD 59 04  LDA ram_movement_id_игрок,X
+C D 0 J - - 0x00C3C1 03:83B1: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x00C3C4 03:83B4: 29 7F     AND #$7F
 C - - - - - 0x00C3C6 03:83B6: C9 21     CMP #$21
 C - - - - - 0x00C3C8 03:83B8: D0 05     BNE bra_83BF
@@ -2189,7 +2189,7 @@ C - - - - - 0x00CD6B 03:8D5B: 9D B0 04  STA ram_смена_угла_движен
 loc_8D5E:
 C - - - - - 0x00CD6E 03:8D5E: 29 60     AND #$60
 C - - - - - 0x00CD70 03:8D60: D0 27     BNE bra_8D89
-C - - - - - 0x00CD72 03:8D62: BD 59 04  LDA ram_movement_id_игрок,X
+C - - - - - 0x00CD72 03:8D62: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x00CD75 03:8D65: 29 7F     AND #$7F
 C - - - - - 0x00CD77 03:8D67: C9 21     CMP #$21
 C - - - - - 0x00CD79 03:8D69: D0 05     BNE bra_8D70
@@ -2694,7 +2694,7 @@ C D 0 - - - 0x00D009 03:8FF9: B9 2C 00  LDA ram_002C,Y
 C - - - - - 0x00D00C 03:8FFC: 30 27     BMI bra_9025
 C - - - - - 0x00D00E 03:8FFE: 84 44     STY ram_0044
 C - - - - - 0x00D010 03:9000: A8        TAY
-C - - - - - 0x00D011 03:9001: B9 59 04  LDA ram_movement_id_игрок,Y
+C - - - - - 0x00D011 03:9001: B9 59 04  LDA ram_движение_игрока,Y
 C - - - - - 0x00D014 03:9004: A4 44     LDY ram_0044
 C - - - - - 0x00D016 03:9006: 29 7F     AND #$7F
 C - - - - - 0x00D018 03:9008: C9 04     CMP #$04
@@ -3116,7 +3116,7 @@ ofs_926B_01:
 C - - J - - 0x00D27B 03:926B: BD F1 04  LDA ram_скилл,X
 C - - - - - 0x00D27E 03:926E: 29 04     AND #$04
 C - - - - - 0x00D280 03:9270: F0 0C     BEQ bra_927E
-C - - - - - 0x00D282 03:9272: BD 59 04  LDA ram_movement_id_игрок,X
+C - - - - - 0x00D282 03:9272: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x00D285 03:9275: 29 7F     AND #$7F
 C - - - - - 0x00D287 03:9277: C9 21     CMP #$21
 C - - - - - 0x00D289 03:9279: D0 03     BNE bra_927E
@@ -3468,7 +3468,7 @@ C - - - - - 0x00D4E5 03:94D5: D0 41     BNE bra_9518
 C - - - - - 0x00D4E7 03:94D7: 8A        TXA
 C - - - - - 0x00D4E8 03:94D8: 29 01     AND #$01
 C - - - - - 0x00D4EA 03:94DA: A8        TAY
-C - - - - - 0x00D4EB 03:94DB: B9 59 04  LDA ram_movement_id_игрок,Y
+C - - - - - 0x00D4EB 03:94DB: B9 59 04  LDA ram_движение_игрока,Y
 C - - - - - 0x00D4EE 03:94DE: 29 7F     AND #$7F
 C - - - - - 0x00D4F0 03:94E0: C9 04     CMP #$04
 C - - - - - 0x00D4F2 03:94E2: F0 2E     BEQ bra_9512
@@ -3878,7 +3878,7 @@ bra_97CB:
 - - - - - - 0x00D7DB 03:97CB: A9 0F     LDA #$0F
 - - - - - - 0x00D7DD 03:97CD: 4C DB 97  JMP loc_97DB
 bra_97D0:
-C - - - - - 0x00D7E0 03:97D0: BD 59 04  LDA ram_movement_id_игрок,X
+C - - - - - 0x00D7E0 03:97D0: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x00D7E3 03:97D3: 29 7F     AND #$7F
 C - - - - - 0x00D7E5 03:97D5: C9 21     CMP #$21
 C - - - - - 0x00D7E7 03:97D7: D0 F2     BNE bra_97CB
@@ -3993,7 +3993,7 @@ C D 0 - I - 0x00D876 03:9866: A8        TAY
 C - - - - - 0x00D877 03:9867: B9 C2 9B  LDA tbl_9BC2,Y
 C - - - - - 0x00D87A 03:986A: 85 1E     STA ram_001E
 C - - - - - 0x00D87C 03:986C: 85 1F     STA ram_001F
-C - - - - - 0x00D87E 03:986E: BD 59 04  LDA ram_movement_id_игрок,X
+C - - - - - 0x00D87E 03:986E: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x00D881 03:9871: 29 7F     AND #$7F
 C - - - - - 0x00D883 03:9873: C9 21     CMP #$21
 C - - - - - 0x00D885 03:9875: F0 02     BEQ bra_9879
@@ -4003,7 +4003,7 @@ C - - - - - 0x00D889 03:9879: 20 75 B1  JSR sub_B175
 C - - - - - 0x00D88C 03:987C: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x00D88F 03:987F: C9 FF     CMP #$FF
 C - - - - - 0x00D891 03:9881: D0 13     BNE bra_9896
-C - - - - - 0x00D893 03:9883: BD 59 04  LDA ram_movement_id_игрок,X
+C - - - - - 0x00D893 03:9883: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x00D896 03:9886: 29 7F     AND #$7F
 C - - - - - 0x00D898 03:9888: C9 21     CMP #$21
 C - - - - - 0x00D89A 03:988A: D0 05     BNE bra_9891
@@ -4020,7 +4020,7 @@ C - - - - - 0x00D8A9 03:9899: 29 7F     AND #$7F
 C - - - - - 0x00D8AB 03:989B: F0 24     BEQ bra_98C1
 C - - - - - 0x00D8AD 03:989D: A5 29     LDA ram_0029
 C - - - - - 0x00D8AF 03:989F: 30 20     BMI bra_98C1
-C - - - - - 0x00D8B1 03:98A1: BD 59 04  LDA ram_movement_id_игрок,X
+C - - - - - 0x00D8B1 03:98A1: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x00D8B4 03:98A4: 29 7F     AND #$7F
 C - - - - - 0x00D8B6 03:98A6: C9 21     CMP #$21
 C - - - - - 0x00D8B8 03:98A8: F0 0E     BEQ bra_98B8
@@ -4038,7 +4038,7 @@ C - - - - - 0x00D8CC 03:98BC: B0 F5     BCS bra_98B3
 C - - - - - 0x00D8CE 03:98BE: 4C 8C 98  JMP loc_988C
 bra_98C1:
 loc_98C1:
-C D 0 - - - 0x00D8D1 03:98C1: BD 59 04  LDA ram_movement_id_игрок,X
+C D 0 - - - 0x00D8D1 03:98C1: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x00D8D4 03:98C4: 29 7F     AND #$7F
 C - - - - - 0x00D8D6 03:98C6: C9 21     CMP #$21
 C - - - - - 0x00D8D8 03:98C8: F0 C2     BEQ bra_988C
@@ -6168,7 +6168,7 @@ C - - - - - 0x00E62A 03:A61A: 84 44     STY ram_0044
 C - - - - - 0x00E62C 03:A61C: A8        TAY
 C - - - - - 0x00E62D 03:A61D: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x00E630 03:A620: 10 47     BPL bra_A669    ; если не в воздухе
-C - - - - - 0x00E632 03:A622: B9 59 04  LDA ram_movement_id_игрок,Y
+C - - - - - 0x00E632 03:A622: B9 59 04  LDA ram_движение_игрока,Y
 C - - - - - 0x00E635 03:A625: 29 7F     AND #$7F
 C - - - - - 0x00E637 03:A627: C9 32     CMP #$32
 C - - - - - 0x00E639 03:A629: F0 1A     BEQ bra_A645
@@ -6203,7 +6203,7 @@ C - - - - - 0x00E672 03:A662: B0 05     BCS bra_A669
 C - - - - - 0x00E674 03:A664: A9 28     LDA #$28
 C - - - - - 0x00E676 03:A666: 4C 90 A7  JMP loc_A790_запись_интеллекта
 bra_A669:
-C - - - - - 0x00E679 03:A669: AD 65 04  LDA ram_movement_id_мяч
+C - - - - - 0x00E679 03:A669: AD 65 04  LDA ram_движение_мяча
 C - - - - - 0x00E67C 03:A66C: 29 7F     AND #$7F
 C - - - - - 0x00E67E 03:A66E: C9 05     CMP #$05
 C - - - - - 0x00E680 03:A670: F0 6E     BEQ bra_A6E0
@@ -10785,7 +10785,7 @@ loc_B999:
 C D 1 - - - 0x00F9A9 03:B999: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00F9AC 03:B99C: 29 20     AND #con_gm_пенальти
 C - - - - - 0x00F9AE 03:B99E: D0 05     BNE bra_B9A5_пенальти
-C - - - - - 0x00F9B0 03:B9A0: BD 59 04  LDA ram_movement_id_игрок,X
+C - - - - - 0x00F9B0 03:B9A0: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x00F9B3 03:B9A3: 10 01     BPL bra_B9A6
 bra_B9A5_пенальти:
 C - - - - - 0x00F9B5 03:B9A5: 60        RTS
@@ -10830,7 +10830,7 @@ C D 1 - - - 0x00F9FD 03:B9ED: 60        RTS
 
 
 sub_B9EE:
-C - - - - - 0x00F9FE 03:B9EE: BD 59 04  LDA ram_movement_id_игрок,X
+C - - - - - 0x00F9FE 03:B9EE: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x00FA01 03:B9F1: 10 03     BPL bra_B9F6
 - - - - - - 0x00FA03 03:B9F3: A9 00     LDA #$00
 - - - - - - 0x00FA05 03:B9F5: 60        RTS
@@ -11034,7 +11034,7 @@ loc_BAF9_выбрать_погоду:
 C D 1 - - - 0x00FB09 03:BAF9: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x00FB0B 03:BAFB: 29 40     AND #$40
 C - - - - - 0x00FB0D 03:BAFD: D0 0C     BNE bra_BB0B_RTS
-C - - - - - 0x00FB0F 03:BAFF: AD 66 04  LDA ram_погода_id
+C - - - - - 0x00FB0F 03:BAFF: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FB12 03:BB02: 29 7F     AND #$7F
 C - - - - - 0x00FB14 03:BB04: C9 01     CMP #con_погода_lightning
 C - - - - - 0x00FB16 03:BB06: F0 03     BEQ bra_BB0B_RTS
@@ -11042,7 +11042,7 @@ C - - - - - 0x00FB18 03:BB08: 4C 0C BB  JMP loc_BB0C
 bra_BB0B_RTS:
 C - - - - - 0x00FB1B 03:BB0B: 60        RTS
 loc_BB0C:
-C D 1 - - - 0x00FB1C 03:BB0C: AD 66 04  LDA ram_погода_id
+C D 1 - - - 0x00FB1C 03:BB0C: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FB1F 03:BB0F: 29 7F     AND #$7F
 C - - - - - 0x00FB21 03:BB11: F0 0B     BEQ bra_BB1E    ; если нету погоды
 C - - - - - 0x00FB23 03:BB13: C9 04     CMP #con_погода_wind
@@ -11069,7 +11069,7 @@ C - - - - - 0x00FB48 03:BB38: 20 05 C0  JSR sub_0x01EE45_вращение_ран
 C - - - - - 0x00FB4B 03:BB3B: C5 1C     CMP ram_001C
 C - - - - - 0x00FB4D 03:BB3D: B0 DC     BCS bra_BB1B
 C - - - - - 0x00FB4F 03:BB3F: A9 82     LDA #con_погода_rain + $80
-C - - - - - 0x00FB51 03:BB41: 8D 66 04  STA ram_погода_id
+C - - - - - 0x00FB51 03:BB41: 8D 66 04  STA ram_погодный_эффект
 C - - - - - 0x00FB54 03:BB44: AD 94 04  LDA ram_опция_дождь_ветер
 C - - - - - 0x00FB57 03:BB47: 29 0F     AND #$0F
 C - - - - - 0x00FB59 03:BB49: 0A        ASL
@@ -11088,7 +11088,7 @@ C - - - - - 0x00FB6D 03:BB5D: 20 05 C0  JSR sub_0x01EE45_вращение_ран
 C - - - - - 0x00FB70 03:BB60: C5 1C     CMP ram_001C
 C - - - - - 0x00FB72 03:BB62: 90 30     BCC bra_BB94
 C - - - - - 0x00FB74 03:BB64: A9 00     LDA #con_погода_none
-C - - - - - 0x00FB76 03:BB66: 8D 66 04  STA ram_погода_id
+C - - - - - 0x00FB76 03:BB66: 8D 66 04  STA ram_погодный_эффект
 C - - - - - 0x00FB79 03:BB69: A9 0C     LDA #$0C
 C - - - - - 0x00FB7B 03:BB6B: 8D AC 03  STA ram_объем_дождя
 C - - - - - 0x00FB7E 03:BB6E: 4C 94 BB  JMP loc_BB94
@@ -11097,14 +11097,14 @@ bra_BB71:
 - - - - - - 0x00FB84 03:BB74: C9 A0     CMP #$A0
 - - - - - - 0x00FB86 03:BB76: B0 1C     BCS bra_BB94
 - - - - - - 0x00FB88 03:BB78: A9 82     LDA #con_погода_rain + $80
-- - - - - - 0x00FB8A 03:BB7A: 8D 66 04  STA ram_погода_id
+- - - - - - 0x00FB8A 03:BB7A: 8D 66 04  STA ram_погодный_эффект
 - - - - - - 0x00FB8D 03:BB7D: A9 0C     LDA #$0C
 - - - - - - 0x00FB8F 03:BB7F: 8D AC 03  STA ram_объем_дождя
 - - - - - - 0x00FB92 03:BB82: 4C 94 BB  JMP loc_BB94
 - - - - - - 0x00FB95 03:BB85: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 - - - - - - 0x00FB98 03:BB88: 30 0A     BMI bra_BB94
 - - - - - - 0x00FB9A 03:BB8A: A9 00     LDA #con_погода_none
-- - - - - - 0x00FB9C 03:BB8C: 8D 66 04  STA ram_погода_id
+- - - - - - 0x00FB9C 03:BB8C: 8D 66 04  STA ram_погодный_эффект
 - - - - - - 0x00FB9F 03:BB8F: A9 0C     LDA #$0C
 - - - - - - 0x00FBA1 03:BB91: 8D AC 03  STA ram_объем_дождя
 bra_BB94:
@@ -11156,7 +11156,7 @@ C - - - - - 0x00FBF7 03:BBE7: A5 1C     LDA ram_001C
 bra_BBE9:
 C - - - - - 0x00FBF9 03:BBE9: 8D FE 05  STA ram_угол_ветра
 bra_BBEC:
-C - - - - - 0x00FBFC 03:BBEC: AD 66 04  LDA ram_погода_id
+C - - - - - 0x00FBFC 03:BBEC: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FBFF 03:BBEF: 29 7F     AND #$7F
 C - - - - - 0x00FC01 03:BBF1: C9 02     CMP #con_погода_rain
 C - - - - - 0x00FC03 03:BBF3: F0 10     BEQ bra_BC05
@@ -11166,16 +11166,16 @@ C - - - - - 0x00FC0A 03:BBFA: 18        CLC
 C - - - - - 0x00FC0B 03:BBFB: 69 05     ADC #$05
 C - - - - - 0x00FC0D 03:BBFD: 8D AC 03  STA ram_объем_дождя
 C - - - - - 0x00FC10 03:BC00: A9 84     LDA #con_погода_wind + $80
-C - - - - - 0x00FC12 03:BC02: 8D 66 04  STA ram_погода_id
+C - - - - - 0x00FC12 03:BC02: 8D 66 04  STA ram_погодный_эффект
 bra_BC05:
 C - - - - - 0x00FC15 03:BC05: 4C 40 BC  JMP loc_BC40
 bra_BC08:
-C - - - - - 0x00FC18 03:BC08: AD 66 04  LDA ram_погода_id
+C - - - - - 0x00FC18 03:BC08: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FC1B 03:BC0B: 29 7F     AND #$7F
 C - - - - - 0x00FC1D 03:BC0D: C9 04     CMP #con_погода_wind
 C - - - - - 0x00FC1F 03:BC0F: D0 F4     BNE bra_BC05
 C - - - - - 0x00FC21 03:BC11: A9 00     LDA #con_погода_none
-C - - - - - 0x00FC23 03:BC13: 8D 66 04  STA ram_погода_id
+C - - - - - 0x00FC23 03:BC13: 8D 66 04  STA ram_погодный_эффект
 C - - - - - 0x00FC26 03:BC16: 4C 40 BC  JMP loc_BC40
 
 
@@ -11202,7 +11202,7 @@ bra_BC33:
 loc_BC40:
 bra_BC40:
 C D 1 - - - 0x00FC50 03:BC40: 20 84 BC  JSR sub_BC84
-C - - - - - 0x00FC53 03:BC43: AD 66 04  LDA ram_погода_id
+C - - - - - 0x00FC53 03:BC43: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FC56 03:BC46: C9 84     CMP #con_погода_wind + $80
 C - - - - - 0x00FC58 03:BC48: D0 05     BNE bra_BC4F
 C - - - - - 0x00FC5A 03:BC4A: A9 41     LDA #con_sfx_ветер
@@ -11220,7 +11220,7 @@ C - - - - - 0x00FC6B 03:BC5B: 20 05 C0  JSR sub_0x01EE45_вращение_ран
 C - - - - - 0x00FC6E 03:BC5E: D9 80 BC  CMP tbl_BC80,Y
 C - - - - - 0x00FC71 03:BC61: 90 05     BCC bra_BC68
 C - - - - - 0x00FC73 03:BC63: A9 83     LDA #con_погода_tornado + $80
-C - - - - - 0x00FC75 03:BC65: 8D 66 04  STA ram_погода_id
+C - - - - - 0x00FC75 03:BC65: 8D 66 04  STA ram_погодный_эффект
 bra_BC68:
 C - - - - - 0x00FC78 03:BC68: AD 95 04  LDA ram_направление_молния_смерч
 C - - - - - 0x00FC7B 03:BC6B: 29 0C     AND #$0C
@@ -11232,7 +11232,7 @@ C - - - - - 0x00FC82 03:BC72: 20 05 C0  JSR sub_0x01EE45_вращение_ран
 C - - - - - 0x00FC85 03:BC75: D9 80 BC  CMP tbl_BC80,Y
 C - - - - - 0x00FC88 03:BC78: 90 05     BCC bra_BC7F_RTS
 C - - - - - 0x00FC8A 03:BC7A: A9 81     LDA #con_погода_lightning + $80
-C - - - - - 0x00FC8C 03:BC7C: 8D 66 04  STA ram_погода_id
+C - - - - - 0x00FC8C 03:BC7C: 8D 66 04  STA ram_погодный_эффект
 bra_BC7F_RTS:
 C - - - - - 0x00FC8F 03:BC7F: 60        RTS
 
@@ -11579,7 +11579,7 @@ C - - - - - 0x00FEFD 03:BEED: A9 11     LDA #$11
 C - - - - - 0x00FEFF 03:BEEF: 4C 0F BF  JMP loc_BF0F
 bra_BEF2:
 C - - - - - 0x00FF02 03:BEF2: A0 00     LDY #$00
-C - - - - - 0x00FF04 03:BEF4: AD 66 04  LDA ram_погода_id
+C - - - - - 0x00FF04 03:BEF4: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FF07 03:BEF7: 29 7F     AND #$7F
 C - - - - - 0x00FF09 03:BEF9: C9 01     CMP #con_погода_lightning
 C - - - - - 0x00FF0B 03:BEFB: F0 0D     BEQ bra_BF0A

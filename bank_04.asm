@@ -254,7 +254,7 @@ C - - - - - 0x010198 04:8188: 4C 44 80  JMP loc_8044
 
 
 loc_818B:
-C D 0 - - - 0x01019B 04:818B: AD 66 04  LDA ram_погода_id
+C D 0 - - - 0x01019B 04:818B: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x01019E 04:818E: D0 10     BNE bra_81A0_какаято_погода_включена
 C - - - - - 0x0101A0 04:8190: A9 F8     LDA #$F8
 bra_8192_loop:
@@ -11569,7 +11569,7 @@ C - - - - - 0x012FA1 04:AF91: 4C B9 AF  JMP loc_AFB9
 
 loc_AF94_положение_мяча_относительно_игрока:
 C D 1 - - - 0x012FA4 04:AF94: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x012FA7 04:AF97: B9 59 04  LDA ram_movement_id_игрок,Y
+C - - - - - 0x012FA7 04:AF97: B9 59 04  LDA ram_движение_игрока,Y
 C - - - - - 0x012FAA 04:AF9A: 29 7F     AND #$7F
 C - - - - - 0x012FAC 04:AF9C: A8        TAY
 C - - - - - 0x012FAD 04:AF9D: B9 7C B0  LDA tbl_B07C_индекс,Y
@@ -11581,7 +11581,7 @@ C - - - - - 0x012FB7 04:AFA7: 85 2C     STA ram_002C
 C - - - - - 0x012FB9 04:AFA9: B9 D9 B0  LDA tbl_B0D8_второй_индекс + 1,Y
 C - - - - - 0x012FBC 04:AFAC: 85 2D     STA ram_002D
 C - - - - - 0x012FBE 04:AFAE: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x012FC1 04:AFB1: B9 6C 04  LDA ram_animation_type_игрок,Y
+C - - - - - 0x012FC1 04:AFB1: B9 6C 04  LDA ram_тип_анимации_игрока,Y
 C - - - - - 0x012FC4 04:AFB4: A8        TAY
 C - - - - - 0x012FC5 04:AFB5: B1 2C     LDA (ram_002C),Y
 bra_AFB7:
@@ -12153,7 +12153,7 @@ C - - - - - 0x0133A2 04:B392: A5 1C     LDA ram_001C
 C - - - - - 0x0133A4 04:B394: D0 C8     BNE bra_B35E_loop
 bra_B396_ветер_не_дует:
 C - - - - - 0x0133A6 04:B396: A2 00     LDX #$00
-C - - - - - 0x0133A8 04:B398: AD 66 04  LDA ram_погода_id
+C - - - - - 0x0133A8 04:B398: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x0133AB 04:B39B: C9 03     CMP #con_погода_tornado
 C - - - - - 0x0133AD 04:B39D: F0 03     BEQ bra_B3A2_нету_смерча
 C - - - - - 0x0133AF 04:B39F: 4C 4D B4  RTS
@@ -12514,7 +12514,7 @@ C - - - - - 0x0135C0 04:B5B0: BD 86 04  LDA ram_состояние_игрока,
 C - - - - - 0x0135C3 04:B5B3: 10 21     BPL bra_B5D6_не_в_воздухе
 C - - - - - 0x0135C5 04:B5B5: BD BD 04  LDA ram_таймер_действия_игрока,X
 C - - - - - 0x0135C8 04:B5B8: F0 15     BEQ bra_B5CF
-C - - - - - 0x0135CA 04:B5BA: BD 59 04  LDA ram_movement_id_игрок,X
+C - - - - - 0x0135CA 04:B5BA: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x0135CD 04:B5BD: 29 7F     AND #$7F
 C - - - - - 0x0135CF 04:B5BF: C9 58     CMP #$58
 C - - - - - 0x0135D1 04:B5C1: F0 0C     BEQ bra_B5CF
@@ -12562,7 +12562,7 @@ bra_B614:
 loc_B614:
 C D 1 - - - 0x013624 04:B614: 0A        ASL
 C - - - - - 0x013625 04:B615: 10 30     BPL bra_B647
-C - - - - - 0x013627 04:B617: AD 65 04  LDA ram_movement_id_мяч
+C - - - - - 0x013627 04:B617: AD 65 04  LDA ram_движение_мяча
 C - - - - - 0x01362A 04:B61A: 29 7F     AND #$7F
 C - - - - - 0x01362C 04:B61C: C9 0A     CMP #$0A
 C - - - - - 0x01362E 04:B61E: D0 0E     BNE bra_B62E
@@ -12588,7 +12588,7 @@ C - - - - - 0x013654 04:B644: 4C 21 B7  JMP loc_B721
 bra_B647:
 C - - - - - 0x013657 04:B647: 0A        ASL
 C - - - - - 0x013658 04:B648: 10 4C     BPL bra_B696
-C - - - - - 0x01365A 04:B64A: BD 59 04  LDA ram_movement_id_игрок,X
+C - - - - - 0x01365A 04:B64A: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x01365D 04:B64D: 29 7F     AND #$7F
 C - - - - - 0x01365F 04:B64F: C9 02     CMP #$02
 C - - - - - 0x013661 04:B651: D0 09     BNE bra_B65C
@@ -12629,7 +12629,7 @@ C - - - - - 0x0136A3 04:B693: 4C 21 B7  JMP loc_B721
 bra_B696:
 C - - - - - 0x0136A6 04:B696: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x0136A9 04:B699: 30 77     BMI bra_B712    ; если в воздухе
-C - - - - - 0x0136AB 04:B69B: BD 59 04  LDA ram_movement_id_игрок,X
+C - - - - - 0x0136AB 04:B69B: BD 59 04  LDA ram_движение_игрока,X
 C - - - - - 0x0136AE 04:B69E: 29 7F     AND #$7F
 C - - - - - 0x0136B0 04:B6A0: C9 03     CMP #$03
 C - - - - - 0x0136B2 04:B6A2: D0 18     BNE bra_B6BC
@@ -13331,7 +13331,7 @@ C - - - - - 0x013A7B 04:BA6B: 84 1C     STY ram_001C
 C - - - - - 0x013A7D 04:BA6D: BD 99 03  LDA ram_pos_Z_hi_игрок,X
 C - - - - - 0x013A80 04:BA70: D0 61     BNE bra_BAD3
 C - - - - - 0x013A82 04:BA72: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x013A85 04:BA75: B9 59 04  LDA ram_movement_id_игрок,Y
+C - - - - - 0x013A85 04:BA75: B9 59 04  LDA ram_движение_игрока,Y
 C - - - - - 0x013A88 04:BA78: 29 7F     AND #$7F
 C - - - - - 0x013A8A 04:BA7A: C9 33     CMP #$33
 C - - - - - 0x013A8C 04:BA7C: F0 04     BEQ bra_BA82
@@ -13383,7 +13383,7 @@ C - - - - - 0x013AE9 04:BAD9: 20 02 BB  JSR sub_BB02
 C - - - - - 0x013AEC 04:BADC: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x013AEF 04:BADF: 4A        LSR
 C - - - - - 0x013AF0 04:BAE0: B0 0D     BCS bra_BAEF
-C - - - - - 0x013AF2 04:BAE2: B9 59 04  LDA ram_movement_id_игрок,Y
+C - - - - - 0x013AF2 04:BAE2: B9 59 04  LDA ram_движение_игрока,Y
 C - - - - - 0x013AF5 04:BAE5: 29 7F     AND #$7F
 C - - - - - 0x013AF7 04:BAE7: C9 43     CMP #$43
 C - - - - - 0x013AF9 04:BAE9: F0 04     BEQ bra_BAEF

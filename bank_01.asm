@@ -14239,7 +14239,7 @@ off_B9BA_02:
 
 
 loc_B9C0:
-C D 1 - - - 0x0079D0 01:B9C0: AD 66 04  LDA ram_погода_id
+C D 1 - - - 0x0079D0 01:B9C0: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x0079D3 01:B9C3: F0 22     BEQ bra_B9E7_RTS    ; если нет погоды
 C - - - - - 0x0079D5 01:B9C5: 30 0F     BMI bra_B9D6_погода_еще_не_обработана
 C - - - - - 0x0079D7 01:B9C7: 0A        ASL
@@ -14399,7 +14399,7 @@ C - - - - - 0x007ADD 01:BACD: 20 B2 BF  JSR sub_0x01C2EF
 C - - - - - 0x007AE0 01:BAD0: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x007AE3 01:BAD3: 8D AC 05  STA ram_palette_id_bg
 C - - - - - 0x007AE6 01:BAD6: A9 00     LDA #con_погода_none
-C - - - - - 0x007AE8 01:BAD8: 8D 66 04  STA ram_погода_id
+C - - - - - 0x007AE8 01:BAD8: 8D 66 04  STA ram_погодный_эффект
 C - - - - - 0x007AEB 01:BADB: A9 0C     LDA #$0C
 C - - - - - 0x007AED 01:BADD: 8D AC 03  STA ram_объем_дождя
 C - - - - - 0x007AF0 01:BAE0: A9 00     LDA #$00
@@ -14531,7 +14531,7 @@ bra_BBAF:
 C D 1 - - - 0x007BC9 01:BBB9: 60        RTS
 bra_BBBA:
 - - - - - - 0x007BCA 01:BBBA: A9 00     LDA #con_погода_none
-- - - - - - 0x007BCC 01:BBBC: 8D 66 04  STA ram_погода_id
+- - - - - - 0x007BCC 01:BBBC: 8D 66 04  STA ram_погодный_эффект
 - - - - - - 0x007BCF 01:BBBF: A9 0C     LDA #$0C
 - - - - - - 0x007BD1 01:BBC1: 8D AC 03  STA ram_объем_дождя
 - - - - - - 0x007BD4 01:BBC4: A9 00     LDA #$00
@@ -15273,7 +15273,7 @@ C - - - - - 0x007F6E 01:BF5E: A9 8C     LDA #$8C
 C - - - - - 0x007F70 01:BF60: 8D AD 03  STA ram_объект_камеры
 C - - - - - 0x007F73 01:BF63: A9 00     LDA #$00
 C - - - - - 0x007F75 01:BF65: 8D FD 05  STA ram_сила_ветра
-C - - - - - 0x007F78 01:BF68: AD 66 04  LDA ram_погода_id
+C - - - - - 0x007F78 01:BF68: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x007F7B 01:BF6B: 29 7F     AND #$7F
 C - - - - - 0x007F7D 01:BF6D: C9 01     CMP #con_погода_lightning
 C - - - - - 0x007F7F 01:BF6F: D0 07     BNE bra_BF78
@@ -15282,7 +15282,7 @@ C - - - - - 0x007F7F 01:BF6F: D0 07     BNE bra_BF78
 - - - - - - 0x007F86 01:BF76: D0 05     BNE bra_BF7D_RTS
 bra_BF78:
 C - - - - - 0x007F88 01:BF78: A9 00     LDA #con_погода_none
-C - - - - - 0x007F8A 01:BF7A: 8D 66 04  STA ram_погода_id
+C - - - - - 0x007F8A 01:BF7A: 8D 66 04  STA ram_погодный_эффект
 bra_BF7D_RTS:
 C - - - - - 0x007F8D 01:BF7D: 60        RTS
 
