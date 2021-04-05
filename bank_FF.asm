@@ -1174,7 +1174,7 @@ C - - - - - 0x01C630 07:C620: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C632 07:C622: 30 09     BMI bra_C62D_пауза_выставлена
 C - - - - - 0x01C634 07:C624: AD 5A 05  LDA ram_номер_музыки    ; если не выставлена, включить музыку на поле
 C - - - - - 0x01C637 07:C627: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
-C - - - - - 0x01C63A 07:C62A: 4C 3A C6  JMP loc_C63A
+C - - - - - 0x01C63A 07:C62A: 4C 3A C6  JMP loc_C66B
 bra_C62D_пауза_выставлена:
 C - - - - - 0x01C63D 07:C62D: A9 00     LDA #$00   ; con_music_выкл
 C - - - - - 0x01C63F 07:C62F: 8D FD 06  STA ram_счетчик_комбы_на_паузе
@@ -1182,13 +1182,13 @@ C - - - - - 0x01C642 07:C632: 20 E4 C2  JSR sub_C2E4_воспроизвести_
 C - - - - - 0x01C645 07:C635: A9 2D     LDA #con_sfx_нарушение
 C - - - - - 0x01C647 07:C637: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
 bra_C63A_Start_не_нажата:
-loc_C63A:   ; bzk опт, лишняя проверка паузы, прыгать ниже
 C D 2 - - - 0x01C64A 07:C63A: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C64C 07:C63C: 10 2D     BPL bra_C66B_не_пауза
 C - - - - - 0x01C64E 07:C63E: 20 47 DE  JSR sub_DE47
 C - - - - - 0x01C651 07:C641: 20 EE CA  JSR sub_CAEE_скопировать_camera_pos_в_scroll_pos
 C - - - - - 0x01C654 07:C644: 4C 5F CB  JMP loc_CB5F
 bra_C66B_не_пауза:
+loc_C66B:
 C - - - - - 0x01C67B 07:C66B: 20 0B DE  JSR sub_DE0B
 C - - - - - 0x01C67E 07:C66E: 20 E7 D6  JSR sub_D6E7_игровой_таймер_и_выбор_погоды
 C - - - - - 0x01C681 07:C671: 20 47 DE  JSR sub_DE47
