@@ -64,7 +64,7 @@
 .export sub_0x01EE45_вращение_рандома
 .export sub_0x01EE75_включить_NMI
 .export sub_0x01EE81_выключить_NMI
-.export sub_0x01EEAA_базовые_банки_спрайтов
+.export sub_0x01EEAA_запись_банков_спрайтов
 .export sub_0x01EF1A_очистить_0057_00F8
 .export sub_0x01EF1A_очистить_0061_00F8
 .export sub_0x01EF64_убрать_полоску_слева_на_экране
@@ -2545,7 +2545,7 @@ C - - - - - 0x01CFB6 07:CFA6: 8D 7D 06  STA ram_067C + 1
 C - - - - - 0x01CFB9 07:CFA9: 8D F5 05  STA ram_флаг_гола
 C - - - - - 0x01CFBC 07:CFAC: 20 D9 E7  JSR sub_E7D9
 C - - - - - 0x01CFBF 07:CFAF: 20 26 C3  JSR sub_C326
-C - - - - - 0x01CFC2 07:CFB2: 20 9A EE  JSR sub_EE9A_базовые_банки_спрайтов
+C - - - - - 0x01CFC2 07:CFB2: 20 9A EE  JSR sub_EE9A_запись_банков_спрайтов
 C - - - - - 0x01CFC5 07:CFB5: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x01CFC8 07:CFB8: 8D AC 05  STA ram_номер_палитры_фона
 C - - - - - 0x01CFCB 07:CFBB: A9 0F     LDA #$0F
@@ -2558,7 +2558,7 @@ C - - - - - 0x01CFDB 07:CFCB: AD F2 05  LDA ram_поле_банк_фона
 C - - - - - 0x01CFDE 07:CFCE: 18        CLC
 C - - - - - 0x01CFDF 07:CFCF: 69 04     ADC #$04
 C - - - - - 0x01CFE1 07:CFD1: 8D BD 05  STA ram_банк_фона + 1
-C - - - - - 0x01CFE4 07:CFD4: 20 7D EE  JSR sub_EE7D_базовые_банки_фона
+C - - - - - 0x01CFE4 07:CFD4: 20 7D EE  JSR sub_EE7D_запись_банков_фона
 C - - - - - 0x01CFE7 07:CFD7: A9 B1     LDA #$B1
 C - - - - - 0x01CFE9 07:CFD9: 85 56     STA ram_ограничитель_Y_спрайтов
 C - - - - - 0x01CFEB 07:CFDB: 20 A9 EC  JSR sub_ECA9_выключить_NMI_при_следующем_вызове
@@ -5330,7 +5330,7 @@ C - - - - - 0x01DE4D 07:DE3D: 18        CLC
 C - - - - - 0x01DE4E 07:DE3E: 69 02     ADC #$02
 C - - - - - 0x01DE50 07:DE40: 8D BD 05  STA ram_банк_фона + 1
 loc_DE43:
-C D 2 - - - 0x01DE53 07:DE43: 20 7D EE  JSR sub_EE7D_базовые_банки_фона
+C D 2 - - - 0x01DE53 07:DE43: 20 7D EE  JSR sub_EE7D_запись_банков_фона
 bra_DE46_RTS:
 C - - - - - 0x01DE56 07:DE46: 60        RTS
 
@@ -7146,8 +7146,8 @@ C - - - - - 0x01E92B 07:E91B: B9 43 EB  LDA tbl_EB43,Y
 C - - - - - 0x01E92E 07:E91E: 85 2D     STA ram_002D
 C - - - - - 0x01E930 07:E920: A9 00     LDA #$00
 C - - - - - 0x01E932 07:E922: 85 2A     STA ram_002A
-C - - - - - 0x01E934 07:E924: 20 9A EE  JSR sub_EE9A_базовые_банки_спрайтов
-C - - - - - 0x01E937 07:E927: 20 7D EE  JSR sub_EE7D_базовые_банки_фона
+C - - - - - 0x01E934 07:E924: 20 9A EE  JSR sub_EE9A_запись_банков_спрайтов
+C - - - - - 0x01E937 07:E927: 20 7D EE  JSR sub_EE7D_запись_банков_фона
 C - - - - - 0x01E93A 07:E92A: 20 41 E9  JSR sub_E941_распаковка_сжатого_экрана
 C - - - - - 0x01E93D 07:E92D: 68        PLA
 C - - - - - 0x01E93E 07:E92E: 8D BB 05  STA ram_банк_спрайтов + 3
@@ -7157,7 +7157,7 @@ C - - - - - 0x01E945 07:E935: 68        PLA
 C - - - - - 0x01E946 07:E936: 8D B9 05  STA ram_банк_спрайтов + 1
 C - - - - - 0x01E949 07:E939: 68        PLA
 C - - - - - 0x01E94A 07:E93A: 8D B8 05  STA ram_банк_спрайтов
-C - - - - - 0x01E94D 07:E93D: 20 9A EE  JSR sub_EE9A_базовые_банки_спрайтов
+C - - - - - 0x01E94D 07:E93D: 20 9A EE  JSR sub_EE9A_запись_банков_спрайтов
 C - - - - - 0x01E950 07:E940: 60        RTS
 
 
@@ -8009,7 +8009,7 @@ C - - - - - 0x01EE8C 07:EE7C: 60        RTS
 
 
 
-sub_EE7D_базовые_банки_фона:
+sub_EE7D_запись_банков_фона:
 C - - - - - 0x01EE8D 07:EE7D: A9 00     LDA #$00
 C - - - - - 0x01EE8F 07:EE7F: 8D 4E 00  STA ram_для_8000
 C - - - - - 0x01EE92 07:EE82: 8D 00 80  STA $8000
@@ -8024,8 +8024,8 @@ C - - - - - 0x01EEA9 07:EE99: 60        RTS
 
 
 
-sub_0x01EEAA_базовые_банки_спрайтов:
-sub_EE9A_базовые_банки_спрайтов:
+sub_0x01EEAA_запись_банков_спрайтов:
+sub_EE9A_запись_банков_спрайтов:
 C D 3 - - - 0x01EEAA 07:EE9A: A9 02     LDA #$02
 C - - - - - 0x01EEAC 07:EE9C: 8D 4E 00  STA ram_для_8000
 C - - - - - 0x01EEAF 07:EE9F: 8D 00 80  STA $8000
