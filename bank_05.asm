@@ -8018,10 +8018,10 @@ C - - - - - 0x016CDD 05:ACCD: A2 00     LDX #$00
 loc_ACCF:
 C D 1 - - - 0x016CDF 05:ACCF: A4 26     LDY ram_0026
 C - - - - - 0x016CE1 05:ACD1: 18        CLC
-C - - - - - 0x016CE2 05:ACD2: AD 35 AE  LDA tbl_AE35
+C - - - - - 0x016CE2 05:ACD2: AD 35 AE  LDA #< tbl_AE5F
 C - - - - - 0x016CE5 05:ACD5: 79 37 AE  ADC tbl_AE37,Y
 C - - - - - 0x016CE8 05:ACD8: 85 34     STA ram_0034
-C - - - - - 0x016CEA 05:ACDA: AD 36 AE  LDA tbl_AE35 + 1
+C - - - - - 0x016CEA 05:ACDA: AD 36 AE  LDA #> tbl_AE5F
 C - - - - - 0x016CED 05:ACDD: 69 00     ADC #$00
 C - - - - - 0x016CEF 05:ACDF: 85 35     STA ram_0035
 C - - - - - 0x016CF1 05:ACE1: A0 00     LDY #$00
@@ -8270,9 +8270,6 @@ C - - - - - 0x016E40 05:AE30: A9 04     LDA #$04
 C - - - - - 0x016E42 05:AE32: 4C C0 AC  JMP loc_ACC0
 
 
-
-tbl_AE35:   ; bzk опт
-- D 1 - - - 0x016E45 05:AE35: 5F AE     .word tbl_AE5F
 
 tbl_AE37:
 - D 1 - - - 0x016E47 05:AE37: 00        .byte $00   ; 
