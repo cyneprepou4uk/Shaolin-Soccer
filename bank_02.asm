@@ -12117,9 +12117,9 @@ C - - - - - 0x00B360 02:B350: B9 6B B3  LDA tbl_B36B,Y
 C - - - - - 0x00B363 02:B353: 85 30     STA ram_0030
 C - - - - - 0x00B365 02:B355: B9 6C B3  LDA tbl_B36B + 1,Y
 C - - - - - 0x00B368 02:B358: 85 31     STA ram_0031
-C - - - - - 0x00B36A 02:B35A: AD 6F B3  LDA tbl_B36F
+C - - - - - 0x00B36A 02:B35A: AD 6F B3  LDA #< ofs_B24A
 C - - - - - 0x00B36D 02:B35D: 85 32     STA ram_0032
-C - - - - - 0x00B36F 02:B35F: AD 70 B3  LDA tbl_B36F + 1
+C - - - - - 0x00B36F 02:B35F: AD 70 B3  LDA #> ofs_B24A
 C - - - - - 0x00B372 02:B362: 85 33     STA ram_0033
 C - - - - - 0x00B374 02:B364: BD 59 04  LDA ram_movement_id_игрок,X
 C - - - - - 0x00B377 02:B367: 20 56 C0  JSR sub_0x01CECD_вычислить_анимацию
@@ -12130,11 +12130,6 @@ C - - - - - 0x00B37A 02:B36A: 60        RTS
 tbl_B36B:
 - D 1 - - - 0x00B37B 02:B36B: 71 B3     .word off_B371_00
 - - - - - - 0x00B37D 02:B36D: 8F B3     .word off_B38F_01
-
-
-
-tbl_B36F:
-- D 1 - - - 0x00B37F 02:B36F: 4A B2     .word ofs_B24A
 
 
 
