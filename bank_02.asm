@@ -13913,7 +13913,6 @@ ofs_BB78_00:
 - - - - - - 0x00BBB6 02:BBA6: 20 59 C0  JSR sub_0x01D05F
 - - - - - - 0x00BBB9 02:BBA9: A9 0B     LDA #con_music_кубок
 - - - - - - 0x00BBBB 02:BBAB: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-loc_BBAE:
 - - - - - - 0x00BBBE 02:BBAE: E6 59     INC ram_subscript
 bra_BBB0_RTS:
 - - - - - - 0x00BBC0 02:BBB0: 60        RTS
@@ -13931,7 +13930,8 @@ ofs_BBB1_01:
 - - - - - - 0x00BBD3 02:BBC3: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 - - - - - - 0x00BBD6 02:BBC6: A9 10     LDA #$10
 - - - - - - 0x00BBD8 02:BBC8: 20 BF BE  JSR sub_BEBF
-- - - - - - 0x00BBDB 02:BBCB: 4C AE BB  JMP loc_BBAE
+- - - - - - 0x00BBDB 02:BBCB: 4C AE BB  INC ram_subscript
+                                        RTS
 
 
 
@@ -13951,13 +13951,13 @@ ofs_BBCE_02_первая_фотка_в_титрах:
 - - - - - - 0x00BBFA 02:BBEA: 0A        ASL
 - - - - - - 0x00BBFB 02:BBEB: A8        TAY
 - - - - - - 0x00BBFC 02:BBEC: A2 00     LDX #$00
-bra_BBEE:
+bra_BBEE_loop:
 - - - - - - 0x00BBFE 02:BBEE: B9 D0 BC  LDA tbl_BCD0,Y
 - - - - - - 0x00BC01 02:BBF1: 9D 96 06  STA ram_буфер_атрибутов,X
 - - - - - - 0x00BC04 02:BBF4: C8        INY
 - - - - - - 0x00BC05 02:BBF5: E8        INX
 - - - - - - 0x00BC06 02:BBF6: E0 10     CPX #$10
-- - - - - - 0x00BC08 02:BBF8: 90 F4     BCC bra_BBEE
+- - - - - - 0x00BC08 02:BBF8: 90 F4     BCC bra_BBEE_loop
 - - - - - - 0x00BC0A 02:BBFA: 8E 95 06  STX ram_счетчик_буфера_атрибутов
 - - - - - - 0x00BC0D 02:BBFD: A9 A9     LDA #< $20A9
 - - - - - - 0x00BC0F 02:BBFF: 8D 94 06  STA ram_байт_2006_lo_атрибуты
