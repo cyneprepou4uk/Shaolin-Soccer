@@ -798,7 +798,7 @@ C - - - - - 0x01C307 07:C2F7: 48        PHA
 C - - - - - 0x01C308 07:C2F8: A9 00     LDA #con_prg_bank + $00
 C - - - - - 0x01C30A 07:C2FA: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01C30D 07:C2FD: AD FF 07  LDA ram_номер_звука
-C - - - - - 0x01C310 07:C300: 20 00 80  JSR sub_0x000016
+C - - - - - 0x01C310 07:C300: 20 00 80  JSR sub_0x000016_звуковой_движок
 C - - - - - 0x01C313 07:C303: 68        PLA
 C - - - - - 0x01C314 07:C304: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 bra_C307_RTS:
