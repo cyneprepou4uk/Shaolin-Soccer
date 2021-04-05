@@ -791,6 +791,7 @@ C - - - - - 0x01C2F9 07:C2E9: 10 04     BPL bra_C2EF
 C - - - - - 0x01C2FB 07:C2EB: C9 20     CMP #$20
 C - - - - - 0x01C2FD 07:C2ED: 90 18     BCC bra_C307_RTS
 bra_C2EF:
+C - - - - - 0x01C2FF 07:C2EF: 85 1B     STA ram_001B
 C - - - - - 0x01C301 07:C2F1: 8D FF 07  STA ram_номер_звука
 C - - - - - 0x01C304 07:C2F4: AD FF BF  LDA $BFFF
 C - - - - - 0x01C307 07:C2F7: 48        PHA
