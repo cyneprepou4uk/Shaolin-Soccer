@@ -7173,7 +7173,7 @@ C - - - - - 0x01E95D 07:E94D: 29 C0     AND #$C0
 C - - - - - 0x01E95F 07:E94F: 0A        ASL
 C - - - - - 0x01E960 07:E950: 2A        ROL
 C - - - - - 0x01E961 07:E951: 2A        ROL
-C - - - - - 0x01E962 07:E952: 20 8F EC  JSR sub_EC8F_jump_to_pointers_afetr_JSR
+C - - - - - 0x01E962 07:E952: 20 8F EC  JSR sub_EC8F_прыжок_на_поинтеры_после_JSR
 - D 3 - I - 0x01E965 07:E955: 5E E9     .word ofs_E95E_00
 - D 3 - I - 0x01E967 07:E957: 6F E9     .word ofs_E96F_01
 - D 3 - I - 0x01E969 07:E959: 80 E9     .word ofs_E980_02
@@ -7866,7 +7866,7 @@ tbl_EC8D:
 
 
 
-sub_EC8F_jump_to_pointers_afetr_JSR:
+sub_EC8F_прыжок_на_поинтеры_после_JSR:
 sub_0x01EC9F_прыжок_на_поинтеры_после_JSR:
 C D 3 - - - 0x01EC9F 07:EC8F: 0A        ASL
 C - - - - - 0x01ECA0 07:EC90: A8        TAY
