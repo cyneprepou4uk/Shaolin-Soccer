@@ -66,7 +66,7 @@ C - - - - - 0x00C054 03:8044: AD 59 03  LDA ram_pos_Y_lo_мяч
 C - - - - - 0x00C057 03:8047: 48        PHA
 C - - - - - 0x00C058 03:8048: AD 6C 03  LDA ram_pos_Y_hi_мяч
 C - - - - - 0x00C05B 03:804B: 48        PHA
-C - - - - - 0x00C05C 03:804C: 20 94 81  JSR sub_8194
+C - - - - - 0x00C05C 03:804C: 20 94 81  JSR sub_8194_записать_0032_0035_в_pos_мяча
 bra_804F:
 C - - - - - 0x00C05F 03:804F: A9 0C     LDA #$0C
 C - - - - - 0x00C061 03:8051: 85 22     STA ram_0022
@@ -239,7 +239,7 @@ C - - - - - 0x00C19E 03:818E: 60        RTS
 
 
 
-sub_8194:
+sub_8194_записать_0032_0035_в_pos_мяча:
 C - - - - - 0x00C1A4 03:8194: A5 32     LDA ram_0032
 C - - - - - 0x00C1A6 03:8196: 8D 20 03  STA ram_pos_X_lo_мяч
 C - - - - - 0x00C1A9 03:8199: A5 33     LDA ram_0033
@@ -6126,7 +6126,7 @@ C - - - - - 0x00E5CA 03:A5BA: AD 59 03  LDA ram_pos_Y_lo_мяч
 C - - - - - 0x00E5CD 03:A5BD: 48        PHA
 C - - - - - 0x00E5CE 03:A5BE: AD 6C 03  LDA ram_pos_Y_hi_мяч
 C - - - - - 0x00E5D1 03:A5C1: 48        PHA
-C - - - - - 0x00E5D2 03:A5C2: 20 94 81  JSR sub_8194
+C - - - - - 0x00E5D2 03:A5C2: 20 94 81  JSR sub_8194_записать_0032_0035_в_pos_мяча
 C - - - - - 0x00E5D5 03:A5C5: A9 0C     LDA #$0C
 C - - - - - 0x00E5D7 03:A5C7: 85 22     STA ram_0022
 C - - - - - 0x00E5D9 03:A5C9: 8A        TXA
@@ -6237,7 +6237,7 @@ C - - - - - 0x00E6AC 03:A69C: AD 59 03  LDA ram_pos_Y_lo_мяч
 C - - - - - 0x00E6AF 03:A69F: 48        PHA
 C - - - - - 0x00E6B0 03:A6A0: AD 6C 03  LDA ram_pos_Y_hi_мяч
 C - - - - - 0x00E6B3 03:A6A3: 48        PHA
-C - - - - - 0x00E6B4 03:A6A4: 20 94 81  JSR sub_8194
+C - - - - - 0x00E6B4 03:A6A4: 20 94 81  JSR sub_8194_записать_0032_0035_в_pos_мяча
 C - - - - - 0x00E6B7 03:A6A7: A0 0C     LDY #$0C
 C - - - - - 0x00E6B9 03:A6A9: 20 D7 B0  JSR sub_B0D7
 C - - - - - 0x00E6BC 03:A6AC: 85 1C     STA ram_001C
