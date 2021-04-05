@@ -651,7 +651,7 @@ sub_C299:
 C - - - - - 0x01C2A9 07:C299: A9 11     LDA #$11
 C - - - - - 0x01C2AB 07:C29B: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
-sub_C2DA_menu_script:
+sub_C2DA_скрипт_меню:
 C - - - - - 0x01C2EA 07:C2DA: A9 12     LDA #$12
 C - - - - - 0x01C2EC 07:C2DC: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
@@ -677,7 +677,7 @@ sub_0x01C2BD:
 C - - - - - 0x01C2BD 07:C2AD: A9 17     LDA #$17
 C - - - - - 0x01C2BF 07:C2AF: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
-sub_C25D_logo_script:
+sub_C25D_скрипт_лого:
 C - - - - - 0x01C26D 07:C25D: A9 18     LDA #$18
 C - - - - - 0x01C26F 07:C25F: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
@@ -769,7 +769,7 @@ sub_C267:
 C - - - - - 0x01C277 07:C267: A9 2E     LDA #$2E
 C - - - - - 0x01C279 07:C269: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
-sub_C26C_credits_script:
+sub_C26C_скрипт_титров:
 - - - - - - 0x01C27C 07:C26C: A9 2F     LDA #$2F
 - - - - - - 0x01C27E 07:C26E: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
@@ -894,13 +894,13 @@ tbl_C370_low_byte_addr_for_indirect_jump:
 - D 2 - - - 0x01C39E 07:C38E: 04        .byte con_prg_bank + $04, < loc_0x010028       ; 0F
 - D 2 - - - 0x01C3A0 07:C390: 02        .byte con_prg_bank + $02, < loc_0x008016       ; 10
 - D 2 - - - 0x01C3A2 07:C392: 03        .byte con_prg_bank + $03, < loc_0x00C022       ; 11
-- D 2 - - - 0x01C3A4 07:C394: 05        .byte con_prg_bank + $05, < loc_0x014010_menu_script       ; 12
+- D 2 - - - 0x01C3A4 07:C394: 05        .byte con_prg_bank + $05, < loc_0x014010_скрипт_меню       ; 12
 - D 2 - - - 0x01C3A6 07:C396: 03        .byte con_prg_bank + $03, < loc_0x00C019_выбрать_погоду       ; 13
 - D 2 - - - 0x01C3A8 07:C398: 04        .byte con_prg_bank + $04, < loc_0x01001C       ; 14
 - D 2 - - - 0x01C3AA 07:C39A: 04        .byte con_prg_bank + $04, < loc_0x01001F       ; 15
 - D 2 - - - 0x01C3AC 07:C39C: 03        .byte con_prg_bank + $03, < loc_0x00C01F       ; 16
 - D 2 - - - 0x01C3AE 07:C39E: 04        .byte con_prg_bank + $04, < loc_0x010025       ; 17
-- D 2 - - - 0x01C3B0 07:C3A0: 02        .byte con_prg_bank + $02, < loc_0x008010_logo_script       ; 18
+- D 2 - - - 0x01C3B0 07:C3A0: 02        .byte con_prg_bank + $02, < loc_0x008010_скрипт_лого       ; 18
 - D 2 - - - 0x01C3B2 07:C3A2: 05        .byte con_prg_bank + $05, < loc_0x014013       ; 19
 - D 2 - - - 0x01C3B4 07:C3A4: 05        .byte con_prg_bank + $05, < loc_0x014016       ; 1A
 - D 2 - - - 0x01C3B6 07:C3A6: 03        .byte con_prg_bank + $03, < loc_0x00C01C       ; 1B
@@ -923,7 +923,7 @@ tbl_C370_low_byte_addr_for_indirect_jump:
 - D 2 - - - 0x01C3D8 07:C3C8: 05        .byte con_prg_bank + $05, < loc_0x01401C       ; 2C
 - D 2 - - - 0x01C3DA 07:C3CA: 02        .byte con_prg_bank + $02, < loc_0x008019       ; 2D
 - D 2 - - - 0x01C3DC 07:C3CC: 02        .byte con_prg_bank + $02, < loc_0x00801C       ; 2E
-- - - - - - 0x01C3DE 07:C3CE: 02        .byte con_prg_bank + $02, < loc_0x00801F_credits_script       ; 2F
+- - - - - - 0x01C3DE 07:C3CE: 02        .byte con_prg_bank + $02, < loc_0x00801F_скрипт_титров       ; 2F
 - - - - - - 0x01C3E0 07:C3D0: 06        .byte con_prg_bank + $06, < loc_0x018037       ; 30
 - - - - - - 0x01C3E2 07:C3D2: 06        .byte con_prg_bank + $06, < loc_0x01803A       ; 31
 
@@ -983,24 +983,24 @@ sub_C4A0_непрямой_прыжок:
 C - - - - - 0x01C4B0 07:C4A0: 6C 2C 00  JMP (ram_002C)
 
 tbl_C4A3:
-- D 2 - - - 0x01C4B3 07:C4A3: AB C4     .word ofs_C4AB_00_gameplay
-- D 2 - - - 0x01C4B5 07:C4A5: B1 C4     .word ofs_C4B1_01_logo
-- D 2 - - - 0x01C4B7 07:C4A7: B7 C4     .word ofs_C4B7_02_menu
-- - - - - - 0x01C4B9 07:C4A9: BD C4     .word ofs_C4BD_03_credits
+- D 2 - - - 0x01C4B3 07:C4A3: AB C4     .word ofs_C4AB_00_геймплей
+- D 2 - - - 0x01C4B5 07:C4A5: B1 C4     .word ofs_C4B1_01_лого
+- D 2 - - - 0x01C4B7 07:C4A7: B7 C4     .word ofs_C4B7_02_меню
+- - - - - - 0x01C4B9 07:C4A9: BD C4     .word ofs_C4BD_03_титры
 
 
 
-ofs_C4AB_00_gameplay:
-C - - J - - 0x01C4BB 07:C4AB: 20 06 C5  JSR sub_C506_gameplay_script
+ofs_C4AB_00_геймплей:
+C - - J - - 0x01C4BB 07:C4AB: 20 06 C5  JSR sub_C506_скрипт_геймплея
                                         RTS
-ofs_C4B1_01_logo:
-C - - J - - 0x01C4C1 07:C4B1: 20 5D C2  JSR sub_C25D_logo_script
+ofs_C4B1_01_лого:
+C - - J - - 0x01C4C1 07:C4B1: 20 5D C2  JSR sub_C25D_скрипт_лого
                                         RTS
-ofs_C4B7_02_menu:
-C - - J - - 0x01C4C7 07:C4B7: 20 DA C2  JSR sub_C2DA_menu_script
+ofs_C4B7_02_меню:
+C - - J - - 0x01C4C7 07:C4B7: 20 DA C2  JSR sub_C2DA_скрипт_меню
                                         RTS
-ofs_C4BD_03_credits:
-- - - - - - 0x01C4CD 07:C4BD: 20 6C C2  JSR sub_C26C_credits_script
+ofs_C4BD_03_титры:
+- - - - - - 0x01C4CD 07:C4BD: 20 6C C2  JSR sub_C26C_скрипт_титров
                                         RTS
 
 
@@ -1032,7 +1032,7 @@ C - - - - - 0x01C515 07:C505: 60        RTS
 
 
 
-sub_C506_gameplay_script:
+sub_C506_скрипт_геймплея:
 C - - - - - 0x01C516 07:C506: AD 8B 05  LDA ram_флаг_демо
 C - - - - - 0x01C519 07:C509: 10 03     BPL bra_C50E
 C - - - - - 0x01C51B 07:C50B: 20 DB C4  JSR sub_C4DB

@@ -5,12 +5,12 @@
 
 
 
-.export loc_0x008010_logo_script
+.export loc_0x008010_скрипт_лого
 .export loc_0x008013
 .export loc_0x008016
 .export loc_0x008019
 .export loc_0x00801C
-.export loc_0x00801F_credits_script
+.export loc_0x00801F_скрипт_титров
 
 
 
@@ -28,8 +28,8 @@
 
 ; не перемещать начальные прыжки, они должны быть в пределах 8000-80FF
 ; при удалении/добавлении прыжков корректировать начальный адрес таблицы ниже
-loc_0x008010_logo_script:
-C D 0 J - - 0x008010 02:8000: 4C 6B AA  JMP loc_AA6B_logo_script
+loc_0x008010_скрипт_лого:
+C D 0 J - - 0x008010 02:8000: 4C 6B AA  JMP loc_AA6B_скрипт_лого
 
 loc_0x008013:
 C - - J - - 0x008013 02:8003: 4C 8B B0  JMP loc_B08B
@@ -43,8 +43,8 @@ C - - J - - 0x008019 02:8009: 4C 3D B5  JMP loc_B53D
 loc_0x00801C:
 C - - J - - 0x00801C 02:800C: 4C CE B6  JMP loc_B6CE
 
-loc_0x00801F_credits_script:
-- - - - - - 0x00801F 02:800F: 4C 5D BB  JMP loc_BB5D_credits_script
+loc_0x00801F_скрипт_титров:
+- - - - - - 0x00801F 02:800F: 4C 5D BB  JMP loc_BB5D_скрипт_титров
 
 
 
@@ -10640,7 +10640,7 @@ off_A9D1_07:
 
 
 
-loc_AA6B_logo_script:
+loc_AA6B_скрипт_лого:
 C D 1 - - - 0x00AA7B 02:AA6B: A5 59     LDA ram_subscript
 C - - - - - 0x00AA7D 02:AA6D: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_поинтеры_после_JSR
 - D 1 - I - 0x00AA80 02:AA70: 88 AA     .word ofs_AA88_00_черный_экран_до_кунио
@@ -13872,7 +13872,7 @@ sub_BB3C:
 
 
 
-loc_BB5D_credits_script:
+loc_BB5D_скрипт_титров:
 - - - - - - 0x00BB6D 02:BB5D: A5 59     LDA ram_subscript
 - - - - - - 0x00BB6F 02:BB5F: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_поинтеры_после_JSR
 - - - - - - 0x00BB72 02:BB62: 78 BB     .word ofs_BB78_00
