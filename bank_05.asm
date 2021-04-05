@@ -2665,18 +2665,13 @@ tbl_8FB0:
 
 
 sub_8FCF:
-C - - - - - 0x014FDF 05:8FCF: AD E0 8F  LDA tbl_8FE0
+C - - - - - 0x014FDF 05:8FCF: AD E0 8F  LDA #< tbl_8FE2
 C - - - - - 0x014FE2 05:8FD2: 85 30     STA ram_0030
-C - - - - - 0x014FE4 05:8FD4: AD E1 8F  LDA tbl_8FE0 + 1
+C - - - - - 0x014FE4 05:8FD4: AD E1 8F  LDA #> tbl_8FE2
 C - - - - - 0x014FE7 05:8FD7: 85 31     STA ram_0031
 C - - - - - 0x014FE9 05:8FD9: BD 59 04  LDA ram_movement_id_игрок,X
 C - - - - - 0x014FEC 05:8FDC: 20 56 C0  JSR sub_0x01CECD_вычислить_анимацию
 C - - - - - 0x014FEF 05:8FDF: 60        RTS
-
-
-
-tbl_8FE0:   ; bzk опт
-- D 0 - - - 0x014FF0 05:8FE0: E2 8F     .word tbl_8FE2
 
 tbl_8FE2:
 - - - - - - 0x014FF2 05:8FE2: EC 8F     .word off_8FEC_00
