@@ -4646,7 +4646,7 @@ C - - - - - 0x01D9E4 07:D9D4: 8D 66 04  STA ram_погодный_эффект
 C - - - - - 0x01D9E7 07:D9D7: 60        RTS
 bra_D9D8_это_обработанная_молния:
 C - - - - - 0x01D9E8 07:D9D8: A2 00     LDX #$00
-bra_D9DA:
+bra_D9DA_loop:
 C - - - - - 0x01D9EA 07:D9DA: EE AE 03  INC ram_03AE
 C - - - - - 0x01D9ED 07:D9DD: AD AE 03  LDA ram_03AE
 C - - - - - 0x01D9F0 07:D9E0: C9 0B     CMP #$0B
@@ -4681,7 +4681,7 @@ C - - - - - 0x01DA1F 07:DA0F: 79 76 DA  ADC tbl_DA76,Y
 C - - - - - 0x01DA22 07:DA12: 9D 00 01  STA ram_0100,X
 C - - - - - 0x01DA25 07:DA15: E8        INX
 C - - - - - 0x01DA26 07:DA16: E0 0C     CPX #$0C
-C - - - - - 0x01DA28 07:DA18: D0 C0     BNE bra_D9DA
+C - - - - - 0x01DA28 07:DA18: D0 C0     BNE bra_D9DA_loop
 C - - - - - 0x01DA2A 07:DA1A: A9 00     LDA #$00
 C - - - - - 0x01DA2C 07:DA1C: AA        TAX
 C - - - - - 0x01DA2D 07:DA1D: A8        TAY
