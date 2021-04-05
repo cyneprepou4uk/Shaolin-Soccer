@@ -1714,9 +1714,9 @@ C - - - - - 0x01CA21 07:CA11: 4C 1E CA  RTS
 sub_CA1F:
 C - - - - - 0x01CA2F 07:CA1F: A9 F0     LDA #$F0
 C - - - - - 0x01CA31 07:CA21: 85 56     STA ram_ограничитель_Y_спрайтов
-C - - - - - 0x01CA33 07:CA23: A9 64     LDA #$64
+C - - - - - 0x01CA33 07:CA23: A9 64     LDA #con_chr_bank + $64
 C - - - - - 0x01CA35 07:CA25: 8D BC 05  STA ram_банк_фона
-C - - - - - 0x01CA38 07:CA28: A9 66     LDA #$66
+C - - - - - 0x01CA38 07:CA28: A9 66     LDA #con_chr_bank + $66
 C - - - - - 0x01CA3A 07:CA2A: 8D BD 05  STA ram_банк_фона + 1
 C - - - - - 0x01CA3D 07:CA2D: A9 00     LDA #$00
 C - - - - - 0x01CA3F 07:CA2F: 8D EC 00  STA ram_pos_X_lo_скролл
@@ -4262,7 +4262,7 @@ C - - - - - 0x01D6FE 07:D6EE: A5 59     LDA ram_subscript
 C - - - - - 0x01D700 07:D6F0: C9 06     CMP #$06
 C - - - - - 0x01D702 07:D6F2: F0 13     BEQ bra_D707
 C - - - - - 0x01D704 07:D6F4: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x01D707 07:D6F7: C0 0A     CPY #$0A
+C - - - - - 0x01D707 07:D6F7: C0 0A     CPY #con_индекс_кипера
 C - - - - - 0x01D709 07:D6F9: 90 0F     BCC bra_D70A    ; если это не кипер
 C - - - - - 0x01D70B 07:D6FB: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x01D70E 07:D6FE: 29 40     AND #$40
@@ -9601,7 +9601,7 @@ C - - - - - 0x01F97C 07:F96C: 85 3C     STA ram_003C
 C - - - - - 0x01F97E 07:F96E: 85 3E     STA ram_003E
 C - - - - - 0x01F980 07:F970: A9 7F     LDA #$7F
 C - - - - - 0x01F982 07:F972: 85 3D     STA ram_003D
-loc_F974:
+loc_F974_loop:
 C D 3 - - - 0x01F984 07:F974: CC D6 04  CPY ram_игрок_с_мячом
 C - - - - - 0x01F987 07:F977: D0 03     BNE bra_F97C
 C - - - - - 0x01F989 07:F979: 4C CD F9  JMP loc_F9CD
@@ -9661,7 +9661,7 @@ C - - - - - 0x01F9E7 07:F9D7: A4 3E     LDY ram_003E
 C - - - - - 0x01F9E9 07:F9D9: 60        RTS
 bra_F9DA:
 C - - - - - 0x01F9EA 07:F9DA: A8        TAY
-C - - - - - 0x01F9EB 07:F9DB: 4C 74 F9  JMP loc_F974
+C - - - - - 0x01F9EB 07:F9DB: 4C 74 F9  JMP loc_F974_loop
 
 
 

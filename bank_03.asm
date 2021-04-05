@@ -41,7 +41,7 @@ C - - J - - 0x00C022 03:8012: 4C 23 BF  JMP loc_BF23
 
 
 loc_8015:
-C D 0 - - - 0x00C025 03:8015: 20 AE B0  JSR sub_B0AE
+C D 0 - - - 0x00C025 03:8015: 20 AE B0  JSR sub_B0AE_вычислить_флаг_кипера_в_штрафной
 C - - - - - 0x00C028 03:8018: 20 D2 9B  JSR sub_9BD2
 C - - - - - 0x00C02B 03:801B: A2 0B     LDX #$0B
 bra_801D:
@@ -56,7 +56,7 @@ C - - - - - 0x00C03D 03:802D: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x00C040 03:8030: 10 1D     BPL bra_804F
 C - - - - - 0x00C042 03:8032: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00C045 03:8035: 85 1C     STA ram_001C
-C - - - - - 0x00C047 03:8037: A0 0C     LDY #$0C
+C - - - - - 0x00C047 03:8037: A0 0C     LDY #con_индекс_мяча
 C - - - - - 0x00C049 03:8039: 20 D0 98  JSR sub_98D0
 C - - - - - 0x00C04C 03:803C: AD 20 03  LDA ram_pos_X_lo_мяч
 C - - - - - 0x00C04F 03:803F: 48        PHA
@@ -3188,7 +3188,7 @@ C D 0 - - - 0x00D2F8 03:92E8: 9D 79 04  STA ram_action_id_игрок,X
 C - - - - - 0x00D2FB 03:92EB: 60        RTS
 loc_92EC:
 ofs_92EC_24:
-C D 0 J - - 0x00D2FC 03:92EC: A0 0C     LDY #$0C
+C D 0 J - - 0x00D2FC 03:92EC: A0 0C     LDY #con_индекс_мяча
 C - - - - - 0x00D2FE 03:92EE: B9 99 03  LDA ram_pos_Z_hi_игрок,Y
 C - - - - - 0x00D301 03:92F1: 30 0A     BMI bra_92FD
 C - - - - - 0x00D303 03:92F3: 19 86 03  ORA ram_pos_Z_lo_игрок,Y
@@ -3219,7 +3219,7 @@ C - - - - - 0x00D332 03:9322: 10 02     BPL bra_9326
 C - - - - - 0x00D334 03:9324: A9 00     LDA #$00
 bra_9326:
 C - - - - - 0x00D336 03:9326: 85 1C     STA ram_001C
-C - - - - - 0x00D338 03:9328: A0 0C     LDY #$0C
+C - - - - - 0x00D338 03:9328: A0 0C     LDY #con_индекс_мяча
 C - - - - - 0x00D33A 03:932A: 20 D0 98  JSR sub_98D0
 C - - - - - 0x00D33D 03:932D: 20 75 9B  JSR sub_9B75
 C - - - - - 0x00D340 03:9330: 20 4B AE  JSR sub_AE4B
@@ -3352,7 +3352,7 @@ C - - - - - 0x00D417 03:9407: 10 02     BPL bra_940B
 C - - - - - 0x00D419 03:9409: A9 00     LDA #$00
 bra_940B:
 C - - - - - 0x00D41B 03:940B: 85 1C     STA ram_001C
-C - - - - - 0x00D41D 03:940D: A0 0C     LDY #$0C
+C - - - - - 0x00D41D 03:940D: A0 0C     LDY #con_индекс_мяча
 C - - - - - 0x00D41F 03:940F: 20 D0 98  JSR sub_98D0
 C - - - - - 0x00D422 03:9412: 20 75 9B  JSR sub_9B75
 C - - - - - 0x00D425 03:9415: 20 4B AE  JSR sub_AE4B
@@ -4552,7 +4552,7 @@ C - - - - - 0x00DC15 03:9C05: 20 03 9E  JSR sub_9E03
 C - - - - - 0x00DC18 03:9C08: 4C 22 9C  JMP loc_9C22
 bra_9C0B:
 C - - - - - 0x00DC1B 03:9C0B: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x00DC1E 03:9C0E: C0 0A     CPY #$0A
+C - - - - - 0x00DC1E 03:9C0E: C0 0A     CPY #con_индекс_кипера
 C - - - - - 0x00DC20 03:9C10: 90 08     BCC bra_9C1A    ; если это не кипер
 C - - - - - 0x00DC22 03:9C12: B9 7C 06  LDA ram_067C,Y
 C - - - - - 0x00DC25 03:9C15: 30 03     BMI bra_9C1A
@@ -4778,7 +4778,7 @@ C - - - - - 0x00DDA2 03:9D92: AD 6C 03  LDA ram_pos_Y_hi_мяч
 C - - - - - 0x00DDA5 03:9D95: 48        PHA
 C - - - - - 0x00DDA6 03:9D96: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00DDA9 03:9D99: F0 1E     BEQ bra_9DB9
-C - - - - - 0x00DDAB 03:9D9B: A0 0C     LDY #$0C
+C - - - - - 0x00DDAB 03:9D9B: A0 0C     LDY #con_индекс_мяча
 C - - - - - 0x00DDAD 03:9D9D: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00DDB0 03:9DA0: 85 1C     STA ram_001C
 C - - - - - 0x00DDB2 03:9DA2: 20 D0 98  JSR sub_98D0
@@ -4810,10 +4810,10 @@ C - - - - - 0x00DDE3 03:9DD3: A9 0C     LDA #$0C
 C - - - - - 0x00DDE5 03:9DD5: 85 22     STA ram_0022
 C - - - - - 0x00DDE7 03:9DD7: 86 23     STX ram_0023
 C - - - - - 0x00DDE9 03:9DD9: BD 86 06  LDA ram_флаг_кипера_в_штрафной,X
-C - - - - - 0x00DDEC 03:9DDC: 10 05     BPL bra_9DE3
+C - - - - - 0x00DDEC 03:9DDC: 10 05     BPL bra_9DE3_кипер_в_штрафной
 C - - - - - 0x00DDEE 03:9DDE: A9 06     LDA #$06
 C - - - - - 0x00DDF0 03:9DE0: 4C E5 9D  JMP loc_9DE5
-bra_9DE3:
+bra_9DE3_кипер_в_штрафной:
 C - - - - - 0x00DDF3 03:9DE3: A9 05     LDA #$05
 loc_9DE5:
 C D 0 - - - 0x00DDF5 03:9DE5: 85 27     STA ram_0027
@@ -4855,10 +4855,10 @@ C - - - - - 0x00DE2C 03:9E1C: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x00DE2F 03:9E1F: 85 22     STA ram_0022
 C - - - - - 0x00DE31 03:9E21: 86 23     STX ram_0023
 C - - - - - 0x00DE33 03:9E23: BD 86 06  LDA ram_флаг_кипера_в_штрафной,X
-C - - - - - 0x00DE36 03:9E26: 10 05     BPL bra_9E2D
+C - - - - - 0x00DE36 03:9E26: 10 05     BPL bra_9E2D_кипер_в_штрафной
 C - - - - - 0x00DE38 03:9E28: A9 06     LDA #$06
 C - - - - - 0x00DE3A 03:9E2A: 4C 2F 9E  JMP loc_9E2F
-bra_9E2D:
+bra_9E2D_кипер_в_штрафной:
 C - - - - - 0x00DE3D 03:9E2D: A9 05     LDA #$05
 loc_9E2F:
 C D 0 - - - 0x00DE3F 03:9E2F: 85 27     STA ram_0027
@@ -5283,13 +5283,13 @@ C - - - - - 0x00E032 03:A022: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x00E035 03:A025: 29 40     AND #$40
 C - - - - - 0x00E037 03:A027: F0 15     BEQ bra_A03E
 C - - - - - 0x00E039 03:A029: AD D6 04  LDA ram_игрок_с_мячом
-C - - - - - 0x00E03C 03:A02C: C9 0A     CMP #$0A
-C - - - - - 0x00E03E 03:A02E: 90 0E     BCC bra_A03E
+C - - - - - 0x00E03C 03:A02C: C9 0A     CMP #con_индекс_кипера
+C - - - - - 0x00E03E 03:A02E: 90 0E     BCC bra_A03E    ; если это не кипер
 C - - - - - 0x00E040 03:A030: 8A        TXA
 C - - - - - 0x00E041 03:A031: 49 01     EOR #$01
 C - - - - - 0x00E043 03:A033: A8        TAY
 C - - - - - 0x00E044 03:A034: AD 86 06  LDA ram_флаг_кипера_в_штрафной
-C - - - - - 0x00E047 03:A037: 30 05     BMI bra_A03E
+C - - - - - 0x00E047 03:A037: 30 05     BMI bra_A03E    ; если не в штрафной
 C - - - - - 0x00E049 03:A039: A9 FF     LDA #$FF
 C - - - - - 0x00E04B 03:A03B: 9D 78 06  STA ram_приказ_боту,X
 bra_A03E:
@@ -5632,7 +5632,7 @@ C - - - - - 0x00E2A5 03:A295: 68        PLA
 C - - - - - 0x00E2A6 03:A296: AA        TAX
 bra_A297:
 C - - - - - 0x00E2A7 03:A297: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x00E2AA 03:A29A: C0 0A     CPY #$0A
+C - - - - - 0x00E2AA 03:A29A: C0 0A     CPY #con_индекс_кипера
 C - - - - - 0x00E2AC 03:A29C: B0 08     BCS bra_A2A6_это_кипер
 C - - - - - 0x00E2AE 03:A29E: A9 0A     LDA #$0A
 C - - - - - 0x00E2B0 03:A2A0: 9D 66 06  STA ram_bot_ai + 10,X
@@ -5808,7 +5808,7 @@ C - - - - - 0x00E3AB 03:A39B: 60        RTS
 
 sub_A39C:
 C - - - - - 0x00E3AC 03:A39C: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x00E3AF 03:A39F: C0 0A     CPY #$0A
+C - - - - - 0x00E3AF 03:A39F: C0 0A     CPY #con_индекс_кипера
 C - - - - - 0x00E3B1 03:A3A1: 90 08     BCC bra_A3AB    ; если это не кипер
 C - - - - - 0x00E3B3 03:A3A3: B9 7C 06  LDA ram_067C,Y
 C - - - - - 0x00E3B6 03:A3A6: 30 03     BMI bra_A3AB
@@ -6110,7 +6110,7 @@ C - - - - - 0x00E5B2 03:A5A2: C8        INY
 C - - - - - 0x00E5B3 03:A5A3: C8        INY
 C - - - - - 0x00E5B4 03:A5A4: C0 0C     CPY #$0C
 C - - - - - 0x00E5B6 03:A5A6: 90 F7     BCC bra_A59F_loop
-C - - - - - 0x00E5B8 03:A5A8: A0 0C     LDY #$0C
+C - - - - - 0x00E5B8 03:A5A8: A0 0C     LDY #con_индекс_мяча
 C - - - - - 0x00E5BA 03:A5AA: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00E5BD 03:A5AD: 85 1C     STA ram_001C
 C - - - - - 0x00E5BF 03:A5AF: 20 D0 98  JSR sub_98D0
@@ -6223,7 +6223,7 @@ bra_A68B:
 C - - - - - 0x00E69B 03:A68B: A9 00     LDA #$00
 loc_A68D:
 C D 1 - - - 0x00E69D 03:A68D: 85 1C     STA ram_001C
-C - - - - - 0x00E69F 03:A68F: A0 0C     LDY #$0C
+C - - - - - 0x00E69F 03:A68F: A0 0C     LDY #con_индекс_мяча
 C - - - - - 0x00E6A1 03:A691: 20 D0 98  JSR sub_98D0
 C - - - - - 0x00E6A4 03:A694: AD 20 03  LDA ram_pos_X_lo_мяч
 C - - - - - 0x00E6A7 03:A697: 48        PHA
@@ -6234,7 +6234,7 @@ C - - - - - 0x00E6AF 03:A69F: 48        PHA
 C - - - - - 0x00E6B0 03:A6A0: AD 6C 03  LDA ram_pos_Y_hi_мяч
 C - - - - - 0x00E6B3 03:A6A3: 48        PHA
 C - - - - - 0x00E6B4 03:A6A4: 20 94 81  JSR sub_8194_записать_0032_0035_в_pos_мяча
-C - - - - - 0x00E6B7 03:A6A7: A0 0C     LDY #$0C
+C - - - - - 0x00E6B7 03:A6A7: A0 0C     LDY #con_индекс_мяча
 C - - - - - 0x00E6B9 03:A6A9: 20 D7 B0  JSR sub_B0D7
 C - - - - - 0x00E6BC 03:A6AC: 85 1C     STA ram_001C
 C - - - - - 0x00E6BE 03:A6AE: E4 1C     CPX ram_001C
@@ -6334,7 +6334,7 @@ C - - - - - 0x00E773 03:A763: 90 03     BCC bra_A768
 C - - - - - 0x00E775 03:A765: 4C 72 A7  JMP loc_A772
 bra_A768:
 C - - - - - 0x00E778 03:A768: BD 86 06  LDA ram_флаг_кипера_в_штрафной,X
-C - - - - - 0x00E77B 03:A76B: 30 21     BMI bra_A78E
+C - - - - - 0x00E77B 03:A76B: 30 21     BMI bra_A78E_кипер_не_в_штрафной
 C - - - - - 0x00E77D 03:A76D: A9 0E     LDA #$0E
 C - - - - - 0x00E77F 03:A76F: 4C 90 A7  BNE bra_A790_запись_интеллекта
 bra_A772:
@@ -6352,7 +6352,7 @@ C - - - - - 0x00E787 03:A777: D0 10     BNE bra_A789    ; если не легк
 bra_A789:
 C - - - - - 0x00E799 03:A789: A9 05     LDA #$05
 C - - - - - 0x00E79B 03:A78B: 4C 90 A7  BNE bra_A790_запись_интеллекта
-bra_A78E:
+bra_A78E_кипер_не_в_штрафной:
 loc_A78E:
 C D 1 - - - 0x00E79E 03:A78E: A9 26     LDA #$26
 loc_A790_запись_интеллекта:
@@ -8315,9 +8315,9 @@ C - - - - - 0x00F0BD 03:B0AD: 60        RTS
 
 
 
-sub_B0AE:
-C - - - - - 0x00F0BE 03:B0AE: A0 0A     LDY #$0A
-bra_B0B0:
+sub_B0AE_вычислить_флаг_кипера_в_штрафной:
+C - - - - - 0x00F0BE 03:B0AE: A0 0A     LDY #con_индекс_кипера
+bra_B0B0_loop:
 C - - - - - 0x00F0C0 03:B0B0: 20 D7 B0  JSR sub_B0D7
 C - - - - - 0x00F0C3 03:B0B3: 30 11     BMI bra_B0C6
 C - - - - - 0x00F0C5 03:B0B5: 85 1C     STA ram_001C
@@ -8333,13 +8333,13 @@ bra_B0C6:
 loc_B0C6:
 C D 1 - - - 0x00F0D6 03:B0C6: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x00F0D8 03:B0C8: 29 20     AND #con_gm_пенальти
-C - - - - - 0x00F0DA 03:B0CA: D0 F5     BNE bra_B0C1
+C - - - - - 0x00F0DA 03:B0CA: D0 F5     BNE bra_B0C1    ; если это пенальти
 C - - - - - 0x00F0DC 03:B0CC: A9 80     LDA #$80
 loc_B0CE:
-C D 1 - - - 0x00F0DE 03:B0CE: 99 7C 06  STA ram_067C,Y
+C D 1 - - - 0x00F0DE 03:B0CE: 99 7C 06  STA ram_флаг_кипера_в_штрафной - 10,Y
 C - - - - - 0x00F0E1 03:B0D1: C8        INY
 C - - - - - 0x00F0E2 03:B0D2: C0 0C     CPY #$0C
-C - - - - - 0x00F0E4 03:B0D4: 90 DA     BCC bra_B0B0
+C - - - - - 0x00F0E4 03:B0D4: 90 DA     BCC bra_B0B0_loop
 C - - - - - 0x00F0E6 03:B0D6: 60        RTS
 
 
@@ -11613,13 +11613,13 @@ tbl_BF13:
 
 
 tbl_BF1B:
-- D 1 - - - 0x00FF2B 03:BF1B: 0A        .byte $0A   ; 
-- D 1 - - - 0x00FF2C 03:BF1C: 09        .byte $09   ; 
-- D 1 - - - 0x00FF2D 03:BF1D: 0A        .byte $0A   ; 
-- D 1 - - - 0x00FF2E 03:BF1E: 0B        .byte $0B   ; 
-- D 1 - - - 0x00FF2F 03:BF1F: 0C        .byte $0C   ; 
-- D 1 - - - 0x00FF30 03:BF20: 0D        .byte $0D   ; 
-- D 1 - - - 0x00FF31 03:BF21: 0E        .byte $0E   ; 
+- D 1 - - - 0x00FF2B 03:BF1B: 0A        .byte con_chr_bank + $0A   ; 
+- D 1 - - - 0x00FF2C 03:BF1C: 09        .byte con_chr_bank + $09   ; 
+- D 1 - - - 0x00FF2D 03:BF1D: 0A        .byte con_chr_bank + $0A   ; 
+- D 1 - - - 0x00FF2E 03:BF1E: 0B        .byte con_chr_bank + $0B   ; 
+- D 1 - - - 0x00FF2F 03:BF1F: 0C        .byte con_chr_bank + $0C   ; 
+- D 1 - - - 0x00FF30 03:BF20: 0D        .byte con_chr_bank + $0D   ; 
+- D 1 - - - 0x00FF31 03:BF21: 0E        .byte con_chr_bank + $0E   ; 
 - D 1 - - - 0x00FF32 03:BF22: FF        .byte $FF   ; 
 
 

@@ -10683,9 +10683,9 @@ C - - - - - 0x00AAC8 02:AAB8: A9 1F     LDA #$1F
 C - - - - - 0x00AACA 02:AABA: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 C - - - - - 0x00AACD 02:AABD: A9 21     LDA #$21
 C - - - - - 0x00AACF 02:AABF: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
-C - - - - - 0x00AAD2 02:AAC2: A2 70     LDX #$70
+C - - - - - 0x00AAD2 02:AAC2: A2 70     LDX #con_chr_bank + $70
 C - - - - - 0x00AAD4 02:AAC4: 8E B8 05  STX ram_банк_спрайтов
-C - - - - - 0x00AAD7 02:AAC7: E8        INX
+C - - - - - 0x00AAD7 02:AAC7: E8        INX ; con_chr_bank + $71
 C - - - - - 0x00AAD8 02:AAC8: 8E B9 05  STX ram_банк_спрайтов + 1
 C - - - - - 0x00AADB 02:AACB: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x00AADE 02:AACE: 20 59 C0  JSR sub_0x01D05F
@@ -10821,7 +10821,7 @@ C - - J - - 0x00AB88 02:AB78: 20 3D AE  JSR sub_AE3D_задержка_8_игро
 C - - - - - 0x00AB8B 02:AB7B: 20 49 AE  JSR sub_AE49_очистить_0061_00F8___0300_068E
 C - - - - - 0x00AB8E 02:AB7E: A9 0E     LDA #$0E    ; текст с мисако
 C - - - - - 0x00AB90 02:AB80: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
-C - - - - - 0x00AB93 02:AB83: A9 59     LDA #$59
+C - - - - - 0x00AB93 02:AB83: A9 59     LDA #con_chr_bank + $59
 C - - - - - 0x00AB95 02:AB85: 8D B8 05  STA ram_банк_спрайтов
 C - - - - - 0x00AB98 02:AB88: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x00AB9B 02:AB8B: A9 09     LDA #$09
@@ -10941,13 +10941,13 @@ bra_AC5D:
 C - - - - - 0x00AC6D 02:AC5D: 8C 8B 05  STY ram_флаг_демо
 C - - - - - 0x00AC70 02:AC60: A9 01     LDA #$01    ; экран "жми старт"
 C - - - - - 0x00AC72 02:AC62: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
-C - - - - - 0x00AC75 02:AC65: A2 08     LDX #$08
+C - - - - - 0x00AC75 02:AC65: A2 08     LDX #con_chr_bank + $08
 C - - - - - 0x00AC77 02:AC67: 8E B8 05  STX ram_банк_спрайтов
-C - - - - - 0x00AC7A 02:AC6A: E8        INX
+C - - - - - 0x00AC7A 02:AC6A: E8        INX ; con_chr_bank + $09
 C - - - - - 0x00AC7B 02:AC6B: 8E BB 05  STX ram_банк_спрайтов + 3
-C - - - - - 0x00AC7E 02:AC6E: A2 1F     LDX #$1F
+C - - - - - 0x00AC7E 02:AC6E: A2 1F     LDX #con_chr_bank + $1F
 C - - - - - 0x00AC80 02:AC70: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x00AC83 02:AC73: E8        INX
+C - - - - - 0x00AC83 02:AC73: E8        INX ; con_chr_bank + $20
 C - - - - - 0x00AC84 02:AC74: 8E BA 05  STX ram_банк_спрайтов + 2
 C - - - - - 0x00AC87 02:AC77: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 C - - - - - 0x00AC8A 02:AC7A: A9 01     LDA #$01
@@ -12379,13 +12379,13 @@ off_B424_0E:
 
 
 loc_B429:
-C D 1 - - - 0x00B439 02:B429: A2 2C     LDX #$2C
+C D 1 - - - 0x00B439 02:B429: A2 2C     LDX #con_chr_bank + $2C
 C - - - - - 0x00B43B 02:B42B: 8E B8 05  STX ram_банк_спрайтов
-C - - - - - 0x00B43E 02:B42E: E8        INX
+C - - - - - 0x00B43E 02:B42E: E8        INX ; con_chr_bank + $2D
 C - - - - - 0x00B43F 02:B42F: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x00B442 02:B432: E8        INX
+C - - - - - 0x00B442 02:B432: E8        INX ; con_chr_bank + $2E
 C - - - - - 0x00B443 02:B433: 8E BA 05  STX ram_банк_спрайтов + 2
-C - - - - - 0x00B446 02:B436: E8        INX
+C - - - - - 0x00B446 02:B436: E8        INX ; con_chr_bank + $2F
 C - - - - - 0x00B447 02:B437: 8E BB 05  STX ram_банк_спрайтов + 3
 C - - - - - 0x00B44A 02:B43A: A2 12     LDX #$12
 bra_B43C:
@@ -12484,8 +12484,8 @@ C - - - - - 0x00B50E 02:B4FE: 60        RTS
 
 
 tbl_B4FF:
-- D 1 - - - 0x00B50F 02:B4FF: 2E        .byte $2E   ; 
-- D 1 - - - 0x00B510 02:B500: 31        .byte $31   ; 
+- D 1 - - - 0x00B50F 02:B4FF: 2E        .byte con_chr_bank + $2E   ; 
+- D 1 - - - 0x00B510 02:B500: 31        .byte con_chr_bank + $31   ; 
 
 
 
@@ -12574,7 +12574,7 @@ tbl_B530:
 
 loc_B53D:
 C D 1 - - - 0x00B54D 02:B53D: A2 12     LDX #$12
-bra_B53F:
+bra_B53F_loop:
 C - - - - - 0x00B54F 02:B53F: A9 7F     LDA #$7F
 C - - - - - 0x00B551 02:B541: 9D 74 00  STA ram_animation_id_игрок,X
 C - - - - - 0x00B554 02:B544: A9 00     LDA #$00
@@ -12594,7 +12594,7 @@ C - - - - - 0x00B579 02:B569: 9D 27 03  STA ram_pos_X_hi_игрок,X
 C - - - - - 0x00B57C 02:B56C: A9 07     LDA #$07
 C - - - - - 0x00B57E 02:B56E: 9D 61 00  STA ram_0061,X
 C - - - - - 0x00B581 02:B571: CA        DEX
-C - - - - - 0x00B582 02:B572: 10 CB     BPL bra_B53F
+C - - - - - 0x00B582 02:B572: 10 CB     BPL bra_B53F_loop
 C - - - - - 0x00B584 02:B574: A9 00     LDA #$00
 C - - - - - 0x00B586 02:B576: 8D EC 00  STA ram_pos_X_lo_скролл
 C - - - - - 0x00B589 02:B579: 8D EE 00  STA ram_pos_Y_lo_скролл
@@ -12640,27 +12640,27 @@ C - - - - - 0x00B5D3 02:B5C3: E5 1E     SBC ram_001E
 C - - - - - 0x00B5D5 02:B5C5: A8        TAY
 C - - - - - 0x00B5D6 02:B5C6: B9 3F B6  LDA tbl_B63F,Y
 C - - - - - 0x00B5D9 02:B5C9: 8D B8 05  STA ram_банк_спрайтов
-C - - - - - 0x00B5DC 02:B5CC: B9 40 B6  LDA tbl_B640,Y
+C - - - - - 0x00B5DC 02:B5CC: B9 40 B6  LDA tbl_B63F + 1,Y
 C - - - - - 0x00B5DF 02:B5CF: 30 03     BMI bra_B5D4
 C - - - - - 0x00B5E1 02:B5D1: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
 bra_B5D4:
-C - - - - - 0x00B5E4 02:B5D4: B9 41 B6  LDA tbl_B641,Y
+C - - - - - 0x00B5E4 02:B5D4: B9 41 B6  LDA tbl_B63F + 2,Y
 C - - - - - 0x00B5E7 02:B5D7: 30 03     BMI bra_B5DC
 C - - - - - 0x00B5E9 02:B5D9: 8D B1 05  STA ram_номер_палитры_спрайтов + 3
 bra_B5DC:
 C - - - - - 0x00B5EC 02:B5DC: A2 01     LDX #$01
-bra_B5DE:
-C - - - - - 0x00B5EE 02:B5DE: B9 42 B6  LDA tbl_B642,Y
+bra_B5DE_loop:
+C - - - - - 0x00B5EE 02:B5DE: B9 42 B6  LDA tbl_B63F + 3,Y
 C - - - - - 0x00B5F1 02:B5E1: 9D 5C 05  STA ram_лицо_игрока,X
-C - - - - - 0x00B5F4 02:B5E4: B9 43 B6  LDA tbl_B643,Y
+C - - - - - 0x00B5F4 02:B5E4: B9 43 B6  LDA tbl_B63F + 4,Y
 C - - - - - 0x00B5F7 02:B5E7: 29 7F     AND #$7F
 C - - - - - 0x00B5F9 02:B5E9: 9D 59 04  STA ram_движение_игрока,X
-C - - - - - 0x00B5FC 02:B5EC: B9 43 B6  LDA tbl_B643,Y
+C - - - - - 0x00B5FC 02:B5EC: B9 43 B6  LDA tbl_B63F + 4,Y
 C - - - - - 0x00B5FF 02:B5EF: 29 80     AND #$80
 C - - - - - 0x00B601 02:B5F1: 9D A3 04  STA ram_напр_движ_игрока,X
-C - - - - - 0x00B604 02:B5F4: B9 44 B6  LDA tbl_B644,Y
+C - - - - - 0x00B604 02:B5F4: B9 44 B6  LDA tbl_B63F + 5,Y
 C - - - - - 0x00B607 02:B5F7: 9D 14 03  STA ram_pos_X_lo_игрок,X
-C - - - - - 0x00B60A 02:B5FA: B9 45 B6  LDA tbl_B645,Y
+C - - - - - 0x00B60A 02:B5FA: B9 45 B6  LDA tbl_B63F + 6,Y
 C - - - - - 0x00B60D 02:B5FD: 9D 4D 03  STA ram_pos_Y_lo_игрок,X
 C - - - - - 0x00B610 02:B600: E8        INX
 C - - - - - 0x00B611 02:B601: E8        INX
@@ -12669,7 +12669,7 @@ C - - - - - 0x00B613 02:B603: C8        INY
 C - - - - - 0x00B614 02:B604: C8        INY
 C - - - - - 0x00B615 02:B605: C8        INY
 C - - - - - 0x00B616 02:B606: E0 04     CPX #$04
-C - - - - - 0x00B618 02:B608: 90 D4     BCC bra_B5DE
+C - - - - - 0x00B618 02:B608: 90 D4     BCC bra_B5DE_loop
 C - - - - - 0x00B61A 02:B60A: AC B8 05  LDY ram_банк_спрайтов
 C - - - - - 0x00B61D 02:B60D: C8        INY
 C - - - - - 0x00B61E 02:B60E: 8C B9 05  STY ram_банк_спрайтов + 1
@@ -12679,7 +12679,7 @@ C - - - - - 0x00B625 02:B615: C8        INY
 C - - - - - 0x00B626 02:B616: 8C BB 05  STY ram_банк_спрайтов + 3
 C - - - - - 0x00B629 02:B619: C0 37     CPY #$37
 C - - - - - 0x00B62B 02:B61B: D0 05     BNE bra_B622
-C - - - - - 0x00B62D 02:B61D: A9 2E     LDA #$2E
+C - - - - - 0x00B62D 02:B61D: A9 2E     LDA #con_chr_bank + $2E
 C - - - - - 0x00B62F 02:B61F: 8D BA 05  STA ram_банк_спрайтов + 2
 bra_B622:
 C - - - - - 0x00B632 02:B622: A5 1C     LDA ram_001C
@@ -12698,153 +12698,210 @@ bra_B63E_RTS:
 C - - - - - 0x00B64E 02:B63E: 60        RTS
 
 
-; по 11 байтов
+
 tbl_B63F:
-- D 1 - - - 0x00B64F 02:B63F: 34        .byte $34   ; 
-tbl_B640:
+; 00
+- D 1 - - - 0x00B64F 02:B63F: 34        .byte con_chr_bank + $34   ; 
 - D 1 - - - 0x00B650 02:B640: FF        .byte $FF   ; 
-tbl_B641:
 - D 1 - - - 0x00B651 02:B641: FF        .byte $FF   ; 
-tbl_B642:
+
 - D 1 - - - 0x00B652 02:B642: 00        .byte $00   ; 
-tbl_B643:
 - D 1 - - - 0x00B653 02:B643: 01        .byte $01   ; 
-tbl_B644:
 - D 1 - - - 0x00B654 02:B644: 68        .byte $68   ; 
-tbl_B645:
 - D 1 - - - 0x00B655 02:B645: D8        .byte $D8   ; 
+
 - D 1 - - - 0x00B656 02:B646: 00        .byte $00   ; 
 - D 1 - - - 0x00B657 02:B647: 81        .byte $81   ; 
 - D 1 - - - 0x00B658 02:B648: 98        .byte $98   ; 
 - D 1 - - - 0x00B659 02:B649: D8        .byte $D8   ; 
-- - - - - - 0x00B65A 02:B64A: 38        .byte $38   ; 
+
+
+; 01
+- - - - - - 0x00B65A 02:B64A: 38        .byte con_chr_bank + $38   ; 
 - - - - - - 0x00B65B 02:B64B: FF        .byte $FF   ; 
 - - - - - - 0x00B65C 02:B64C: FF        .byte $FF   ; 
+
 - - - - - - 0x00B65D 02:B64D: 00        .byte $00   ; 
 - - - - - - 0x00B65E 02:B64E: 0D        .byte $0D   ; 
 - - - - - - 0x00B65F 02:B64F: 71        .byte $71   ; 
 - - - - - - 0x00B660 02:B650: D8        .byte $D8   ; 
+
 - - - - - - 0x00B661 02:B651: 00        .byte $00   ; 
 - - - - - - 0x00B662 02:B652: 0A        .byte $0A   ; 
 - - - - - - 0x00B663 02:B653: 80        .byte $80   ; 
 - - - - - - 0x00B664 02:B654: D8        .byte $D8   ; 
-- - - - - - 0x00B665 02:B655: 3C        .byte $3C   ; 
+
+
+; 02
+- - - - - - 0x00B665 02:B655: 3C        .byte con_chr_bank + $3C   ; 
 - - - - - - 0x00B666 02:B656: FF        .byte $FF   ; 
 - - - - - - 0x00B667 02:B657: FF        .byte $FF   ; 
+
 - - - - - - 0x00B668 02:B658: 00        .byte $00   ; 
 - - - - - - 0x00B669 02:B659: 1A        .byte $1A   ; 
 - - - - - - 0x00B66A 02:B65A: 80        .byte $80   ; 
 - - - - - - 0x00B66B 02:B65B: C8        .byte $C8   ; 
+
 - - - - - - 0x00B66C 02:B65C: 00        .byte $00   ; 
 - - - - - - 0x00B66D 02:B65D: 1B        .byte $1B   ; 
 - - - - - - 0x00B66E 02:B65E: 80        .byte $80   ; 
 - - - - - - 0x00B66F 02:B65F: C8        .byte $C8   ; 
-- - - - - - 0x00B670 02:B660: 38        .byte $38   ; 
+
+
+; 03
+- - - - - - 0x00B670 02:B660: 38        .byte con_chr_bank + $38   ; 
 - - - - - - 0x00B671 02:B661: FF        .byte $FF   ; 
 - - - - - - 0x00B672 02:B662: FF        .byte $FF   ; 
+
 - - - - - - 0x00B673 02:B663: 24        .byte $24   ; 
 - - - - - - 0x00B674 02:B664: 1E        .byte $1E   ; 
 - - - - - - 0x00B675 02:B665: 20        .byte $20   ; 
 - - - - - - 0x00B676 02:B666: D8        .byte $D8   ; 
+
 - - - - - - 0x00B677 02:B667: 28        .byte $28   ; 
 - - - - - - 0x00B678 02:B668: 21        .byte $21   ; 
 - - - - - - 0x00B679 02:B669: 60        .byte $60   ; 
 - - - - - - 0x00B67A 02:B66A: D8        .byte $D8   ; 
-- - - - - - 0x00B67B 02:B66B: 34        .byte $34   ; 
+
+
+; 04
+- - - - - - 0x00B67B 02:B66B: 34        .byte con_chr_bank + $34   ; 
 - - - - - - 0x00B67C 02:B66C: FF        .byte $FF   ; 
 - - - - - - 0x00B67D 02:B66D: FF        .byte $FF   ; 
+
 - - - - - - 0x00B67E 02:B66E: 00        .byte $00   ; 
 - - - - - - 0x00B67F 02:B66F: 05        .byte $05   ; 
 - - - - - - 0x00B680 02:B670: 80        .byte $80   ; 
 - - - - - - 0x00B681 02:B671: D8        .byte $D8   ; 
+
 - - - - - - 0x00B682 02:B672: 00        .byte $00   ; 
 - - - - - - 0x00B683 02:B673: 00        .byte $00   ; 
 - - - - - - 0x00B684 02:B674: 80        .byte $80   ; 
 - - - - - - 0x00B685 02:B675: D8        .byte $D8   ; 
-- - - - - - 0x00B686 02:B676: 34        .byte $34   ; 
+
+
+; 05
+- - - - - - 0x00B686 02:B676: 34        .byte con_chr_bank + $34   ; 
 - - - - - - 0x00B687 02:B677: FF        .byte $FF   ; 
 - - - - - - 0x00B688 02:B678: FF        .byte $FF   ; 
+
 - - - - - - 0x00B689 02:B679: 25        .byte $25   ; 
 - - - - - - 0x00B68A 02:B67A: 06        .byte $06   ; 
 - - - - - - 0x00B68B 02:B67B: 70        .byte $70   ; 
 - - - - - - 0x00B68C 02:B67C: D8        .byte $D8   ; 
+
 - - - - - - 0x00B68D 02:B67D: 27        .byte $27   ; 
 - - - - - - 0x00B68E 02:B67E: 86        .byte $86   ; 
 - - - - - - 0x00B68F 02:B67F: 90        .byte $90   ; 
 - - - - - - 0x00B690 02:B680: D8        .byte $D8   ; 
-- - - - - - 0x00B691 02:B681: 3C        .byte $3C   ; 
+
+
+; 06
+- - - - - - 0x00B691 02:B681: 3C        .byte con_chr_bank + $3C   ; 
 - - - - - - 0x00B692 02:B682: 07        .byte $07   ; 
 - - - - - - 0x00B693 02:B683: FF        .byte $FF   ; 
+
 - - - - - - 0x00B694 02:B684: 00        .byte $00   ; 
 - - - - - - 0x00B695 02:B685: 1C        .byte $1C   ; 
 - - - - - - 0x00B696 02:B686: 80        .byte $80   ; 
 - - - - - - 0x00B697 02:B687: C8        .byte $C8   ; 
+
 - - - - - - 0x00B698 02:B688: 00        .byte $00   ; 
 - - - - - - 0x00B699 02:B689: 1D        .byte $1D   ; 
 - - - - - - 0x00B69A 02:B68A: 80        .byte $80   ; 
 - - - - - - 0x00B69B 02:B68B: C8        .byte $C8   ; 
-- - - - - - 0x00B69C 02:B68C: 38        .byte $38   ; 
+
+
+; 07
+- - - - - - 0x00B69C 02:B68C: 38        .byte con_chr_bank + $38   ; 
 - - - - - - 0x00B69D 02:B68D: FF        .byte $FF   ; 
 - - - - - - 0x00B69E 02:B68E: FF        .byte $FF   ; 
+
 - - - - - - 0x00B69F 02:B68F: 26        .byte $26   ; 
 - - - - - - 0x00B6A0 02:B690: 10        .byte $10   ; 
 - - - - - - 0x00B6A1 02:B691: 68        .byte $68   ; 
 - - - - - - 0x00B6A2 02:B692: D8        .byte $D8   ; 
+
 - - - - - - 0x00B6A3 02:B693: 26        .byte $26   ; 
 - - - - - - 0x00B6A4 02:B694: 11        .byte $11   ; 
 - - - - - - 0x00B6A5 02:B695: 98        .byte $98   ; 
 - - - - - - 0x00B6A6 02:B696: D8        .byte $D8   ; 
-- - - - - - 0x00B6A7 02:B697: 38        .byte $38   ; 
+
+
+; 08
+- - - - - - 0x00B6A7 02:B697: 38        .byte con_chr_bank + $38   ; 
 - - - - - - 0x00B6A8 02:B698: FF        .byte $FF   ; 
 - - - - - - 0x00B6A9 02:B699: FF        .byte $FF   ; 
+
 - - - - - - 0x00B6AA 02:B69A: 00        .byte $00   ; 
 - - - - - - 0x00B6AB 02:B69B: 13        .byte $13   ; 
 - - - - - - 0x00B6AC 02:B69C: 68        .byte $68   ; 
 - - - - - - 0x00B6AD 02:B69D: D8        .byte $D8   ; 
+
 - - - - - - 0x00B6AE 02:B69E: 00        .byte $00   ; 
 - - - - - - 0x00B6AF 02:B69F: 14        .byte $14   ; 
 - - - - - - 0x00B6B0 02:B6A0: 98        .byte $98   ; 
 - - - - - - 0x00B6B1 02:B6A1: D8        .byte $D8   ; 
-- D 1 - - - 0x00B6B2 02:B6A2: 3C        .byte $3C   ; 
+
+
+; 09
+- D 1 - - - 0x00B6B2 02:B6A2: 3C        .byte con_chr_bank + $3C   ; 
 - D 1 - - - 0x00B6B3 02:B6A3: FF        .byte $FF   ; 
 - D 1 - - - 0x00B6B4 02:B6A4: FF        .byte $FF   ; 
+
 - D 1 - - - 0x00B6B5 02:B6A5: 00        .byte $00   ; 
 - D 1 - - - 0x00B6B6 02:B6A6: 18        .byte $18   ; 
 - D 1 - - - 0x00B6B7 02:B6A7: 94        .byte $94   ; 
 - D 1 - - - 0x00B6B8 02:B6A8: D1        .byte $D1   ; 
+
 - D 1 - - - 0x00B6B9 02:B6A9: 00        .byte $00   ; 
 - D 1 - - - 0x00B6BA 02:B6AA: 19        .byte $19   ; 
 - D 1 - - - 0x00B6BB 02:B6AB: 80        .byte $80   ; 
 - D 1 - - - 0x00B6BC 02:B6AC: C8        .byte $C8   ; 
-- D 1 - - - 0x00B6BD 02:B6AD: 3C        .byte $3C   ; 
+
+
+; 0A
+- D 1 - - - 0x00B6BD 02:B6AD: 3C        .byte con_chr_bank + $3C   ; 
 - D 1 - - - 0x00B6BE 02:B6AE: 07        .byte $07   ; 
 - D 1 - - - 0x00B6BF 02:B6AF: 26        .byte $26   ; 
+
 - D 1 - - - 0x00B6C0 02:B6B0: 00        .byte $00   ; 
 - D 1 - - - 0x00B6C1 02:B6B1: 17        .byte $17   ; 
 - D 1 - - - 0x00B6C2 02:B6B2: 60        .byte $60   ; 
 - D 1 - - - 0x00B6C3 02:B6B3: D8        .byte $D8   ; 
+
 - D 1 - - - 0x00B6C4 02:B6B4: 00        .byte $00   ; 
 - D 1 - - - 0x00B6C5 02:B6B5: 97        .byte $97   ; 
 - D 1 - - - 0x00B6C6 02:B6B6: A0        .byte $A0   ; 
 - D 1 - - - 0x00B6C7 02:B6B7: D8        .byte $D8   ; 
-- D 1 - - - 0x00B6C8 02:B6B8: 38        .byte $38   ; 
+
+
+; 0B
+- D 1 - - - 0x00B6C8 02:B6B8: 38        .byte con_chr_bank + $38   ; 
 - D 1 - - - 0x00B6C9 02:B6B9: FF        .byte $FF   ; 
 - D 1 - - - 0x00B6CA 02:B6BA: FF        .byte $FF   ; 
+
 - D 1 - - - 0x00B6CB 02:B6BB: 25        .byte $25   ; 
 - D 1 - - - 0x00B6CC 02:B6BC: 12        .byte $12   ; 
 - D 1 - - - 0x00B6CD 02:B6BD: 70        .byte $70   ; 
 - D 1 - - - 0x00B6CE 02:B6BE: D8        .byte $D8   ; 
+
 - D 1 - - - 0x00B6CF 02:B6BF: 27        .byte $27   ; 
 - D 1 - - - 0x00B6D0 02:B6C0: 92        .byte $92   ; 
 - D 1 - - - 0x00B6D1 02:B6C1: 90        .byte $90   ; 
 - D 1 - - - 0x00B6D2 02:B6C2: D8        .byte $D8   ; 
-- - - - - - 0x00B6D3 02:B6C3: 3C        .byte $3C   ; 
+
+
+; 0C
+- - - - - - 0x00B6D3 02:B6C3: 3C        .byte con_chr_bank + $3C   ; 
 - - - - - - 0x00B6D4 02:B6C4: 07        .byte $07   ; 
 - - - - - - 0x00B6D5 02:B6C5: 26        .byte $26   ; 
+
 - - - - - - 0x00B6D6 02:B6C6: 00        .byte $00   ; 
 - - - - - - 0x00B6D7 02:B6C7: 95        .byte $95   ; 
 - - - - - - 0x00B6D8 02:B6C8: 70        .byte $70   ; 
 - - - - - - 0x00B6D9 02:B6C9: D8        .byte $D8   ; 
+
 - - - - - - 0x00B6DA 02:B6CA: 00        .byte $00   ; 
 - - - - - - 0x00B6DB 02:B6CB: 96        .byte $96   ; 
 - - - - - - 0x00B6DC 02:B6CC: 90        .byte $90   ; 
@@ -12854,13 +12911,13 @@ tbl_B645:
 
 loc_B6CE:
 C D 1 - - - 0x00B6DE 02:B6CE: A2 01     LDX #$01
-bra_B6D0:
+bra_B6D0_loop:
 C - - - - - 0x00B6E0 02:B6D0: 20 DD B6  JSR sub_B6DD
 C - - - - - 0x00B6E3 02:B6D3: 20 65 C0  JSR sub_0x01EB9C
 C - - - - - 0x00B6E6 02:B6D6: E8        INX
 C - - - - - 0x00B6E7 02:B6D7: E8        INX
 C - - - - - 0x00B6E8 02:B6D8: E0 04     CPX #$04
-C - - - - - 0x00B6EA 02:B6DA: 90 F4     BCC bra_B6D0
+C - - - - - 0x00B6EA 02:B6DA: 90 F4     BCC bra_B6D0_loop
 C - - - - - 0x00B6EC 02:B6DC: 60        RTS
 
 
@@ -13687,13 +13744,13 @@ sub_BA66:
 - - - - - - 0x00BA86 02:BA76: 8D 61 00  STA ram_0061
 - - - - - - 0x00BA89 02:BA79: 8D 62 00  STA ram_0062
 - - - - - - 0x00BA8C 02:BA7C: 8D 6D 00  STA ram_006D
-- - - - - - 0x00BA8F 02:BA7F: A2 2C     LDX #$2C
+- - - - - - 0x00BA8F 02:BA7F: A2 2C     LDX #con_chr_bank + $2C
 - - - - - - 0x00BA91 02:BA81: 8E B8 05  STX ram_банк_спрайтов
-- - - - - - 0x00BA94 02:BA84: E8        INX
+- - - - - - 0x00BA94 02:BA84: E8        INX ; con_chr_bank + $2D
 - - - - - - 0x00BA95 02:BA85: 8E B9 05  STX ram_банк_спрайтов + 1
-- - - - - - 0x00BA98 02:BA88: E8        INX
+- - - - - - 0x00BA98 02:BA88: E8        INX ; con_chr_bank + $2E
 - - - - - - 0x00BA99 02:BA89: 8E BA 05  STX ram_банк_спрайтов + 2
-- - - - - - 0x00BA9C 02:BA8C: E8        INX
+- - - - - - 0x00BA9C 02:BA8C: E8        INX ; con_chr_bank + $2F
 - - - - - - 0x00BA9D 02:BA8D: 8E BB 05  STX ram_банк_спрайтов + 3
 - - - - - - 0x00BAA0 02:BA90: 20 0B C0  JSR sub_0x01EEAA_базовые_банки_спрайтов
 - - - - - - 0x00BAA3 02:BA93: A2 00     LDX #$00
@@ -14072,12 +14129,12 @@ ofs_BD00_03_фотки_в_титрах:
 - - - - - - 0x00BD4E 02:BD3E: B0 03     BCS bra_BD43
 - - - - - - 0x00BD50 02:BD40: EE 8A 05  INC ram_таймер_демо_hi
 bra_BD43:
-- - - - - - 0x00BD53 02:BD43: A9 08     LDA #$08
+- - - - - - 0x00BD53 02:BD43: A9 08     LDA #con_chr_bank + $08
 - - - - - - 0x00BD55 02:BD45: 8D B8 05  STA ram_банк_спрайтов
 - - - - - - 0x00BD58 02:BD48: C8        INY
 - - - - - - 0x00BD59 02:BD49: B1 2C     LDA (ram_002C),Y
 - - - - - - 0x00BD5B 02:BD4B: 8D B9 05  STA ram_банк_спрайтов + 1
-- - - - - - 0x00BD5E 02:BD4E: A9 20     LDA #$20
+- - - - - - 0x00BD5E 02:BD4E: A9 20     LDA #con_chr_bank + $20
 - - - - - - 0x00BD60 02:BD50: 8D BA 05  STA ram_банк_спрайтов + 2
 - - - - - - 0x00BD63 02:BD53: C8        INY
 - - - - - - 0x00BD64 02:BD54: B1 2C     LDA (ram_002C),Y
@@ -14090,7 +14147,7 @@ bra_BD43:
 - - - - - - 0x00BD73 02:BD63: B1 2C     LDA (ram_002C),Y
 - - - - - - 0x00BD75 02:BD65: 8D B1 05  STA ram_номер_палитры_спрайтов + 3
 - - - - - - 0x00BD78 02:BD68: A2 00     LDX #$00
-bra_BD6A:
+bra_BD6A_loop:
 - - - - - - 0x00BD7A 02:BD6A: A9 FF     LDA #$FF
 - - - - - - 0x00BD7C 02:BD6C: 9D 99 03  STA ram_pos_Z_hi_игрок,X
 - - - - - - 0x00BD7F 02:BD6F: A9 00     LDA #$00
@@ -14124,11 +14181,11 @@ bra_BDA3:
 bra_BDA9:
 - - - - - - 0x00BDB9 02:BDA9: E8        INX
 - - - - - - 0x00BDBA 02:BDAA: E0 04     CPX #$04
-- - - - - - 0x00BDBC 02:BDAC: 90 BC     BCC bra_BD6A
+- - - - - - 0x00BDBC 02:BDAC: 90 BC     BCC bra_BD6A_loop
 - - - - - - 0x00BDBE 02:BDAE: E0 0D     CPX #$0D
 - - - - - - 0x00BDC0 02:BDB0: F0 04     BEQ bra_BDB6
 - - - - - - 0x00BDC2 02:BDB2: A2 0C     LDX #$0C
-- - - - - - 0x00BDC4 02:BDB4: D0 B4     BNE bra_BD6A
+- - - - - - 0x00BDC4 02:BDB4: D0 B4     BNE bra_BD6A_loop
 bra_BDB6:
 - - - - - - 0x00BDC6 02:BDB6: EE 6D 00  INC ram_006D
 - - - - - - 0x00BDC9 02:BDB9: 20 D4 BE  JSR sub_BED4
@@ -14312,8 +14369,8 @@ tbl_BEEC:
 
 off_BEFA_00:
 - - - - - - 0x00BF0A 02:BEFA: C8        .byte $C8   ; 
-- - - - - - 0x00BF0B 02:BEFB: 14        .byte $14   ; 
-- - - - - - 0x00BF0C 02:BEFC: 09        .byte $09   ; 
+- - - - - - 0x00BF0B 02:BEFB: 14        .byte con_chr_bank + $14   ; 
+- - - - - - 0x00BF0C 02:BEFC: 09        .byte con_chr_bank + $09   ; 
 - - - - - - 0x00BF0D 02:BEFD: 2C        .byte $2C   ; 
 - - - - - - 0x00BF0E 02:BEFE: 2C        .byte $2C   ; 
 - - - - - - 0x00BF0F 02:BEFF: 9B        .byte $9B   ; 
@@ -14337,8 +14394,8 @@ off_BEFA_00:
 
 off_BF0F_01:
 - - - - - - 0x00BF1F 02:BF0F: C6        .byte $C6   ; 
-- - - - - - 0x00BF20 02:BF10: 19        .byte $19   ; 
-- - - - - - 0x00BF21 02:BF11: 09        .byte $09   ; 
+- - - - - - 0x00BF20 02:BF10: 19        .byte con_chr_bank + $19   ; 
+- - - - - - 0x00BF21 02:BF11: 09        .byte con_chr_bank + $09   ; 
 - - - - - - 0x00BF22 02:BF12: 2E        .byte $2E   ; 
 - - - - - - 0x00BF23 02:BF13: 2F        .byte $2F   ; 
 - - - - - - 0x00BF24 02:BF14: 15        .byte $15   ; 
@@ -14366,8 +14423,8 @@ off_BF0F_01:
 
 off_BF28_02:
 - - - - - - 0x00BF38 02:BF28: F8        .byte $F8   ; 
-- - - - - - 0x00BF39 02:BF29: 16        .byte $16   ; 
-- - - - - - 0x00BF3A 02:BF2A: 09        .byte $09   ; 
+- - - - - - 0x00BF39 02:BF29: 16        .byte con_chr_bank + $16   ; 
+- - - - - - 0x00BF3A 02:BF2A: 09        .byte con_chr_bank + $09   ; 
 - - - - - - 0x00BF3B 02:BF2B: 34        .byte $34   ; 
 - - - - - - 0x00BF3C 02:BF2C: 2D        .byte $2D   ; 
 - - - - - - 0x00BF3D 02:BF2D: 0F        .byte $0F   ; 
@@ -14395,8 +14452,8 @@ off_BF28_02:
 
 off_BF41_03:
 - - - - - - 0x00BF51 02:BF41: C8        .byte $C8   ; 
-- - - - - - 0x00BF52 02:BF42: 1D        .byte $1D   ; 
-- - - - - - 0x00BF53 02:BF43: 0C        .byte $0C   ; 
+- - - - - - 0x00BF52 02:BF42: 1D        .byte con_chr_bank + $1D   ; 
+- - - - - - 0x00BF53 02:BF43: 0C        .byte con_chr_bank + $0C   ; 
 - - - - - - 0x00BF54 02:BF44: 30        .byte $30   ; 
 - - - - - - 0x00BF55 02:BF45: 31        .byte $31   ; 
 - - - - - - 0x00BF56 02:BF46: 12        .byte $12   ; 
@@ -14424,8 +14481,8 @@ off_BF41_03:
 
 off_BF5A_04:
 - - - - - - 0x00BF6A 02:BF5A: 2C        .byte $2C   ; 
-- - - - - - 0x00BF6B 02:BF5B: 1F        .byte $1F   ; 
-- - - - - - 0x00BF6C 02:BF5C: 0A        .byte $0A   ; 
+- - - - - - 0x00BF6B 02:BF5B: 1F        .byte con_chr_bank + $1F   ; 
+- - - - - - 0x00BF6C 02:BF5C: 0A        .byte con_chr_bank + $0A   ; 
 - - - - - - 0x00BF6D 02:BF5D: 2E        .byte $2E   ; 
 - - - - - - 0x00BF6E 02:BF5E: 35        .byte $35   ; 
 - - - - - - 0x00BF6F 02:BF5F: 88        .byte $88   ; 
@@ -14457,8 +14514,8 @@ off_BF5A_04:
 
 off_BF77_05:
 - - - - - - 0x00BF87 02:BF77: C8        .byte $C8   ; 
-- - - - - - 0x00BF88 02:BF78: 1A        .byte $1A   ; 
-- - - - - - 0x00BF89 02:BF79: 09        .byte $09   ; 
+- - - - - - 0x00BF88 02:BF78: 1A        .byte con_chr_bank + $1A   ; 
+- - - - - - 0x00BF89 02:BF79: 09        .byte con_chr_bank + $09   ; 
 - - - - - - 0x00BF8A 02:BF7A: 32        .byte $32   ; 
 - - - - - - 0x00BF8B 02:BF7B: 33        .byte $33   ; 
 - - - - - - 0x00BF8C 02:BF7C: 22        .byte $22   ; 
@@ -14486,8 +14543,8 @@ off_BF77_05:
 
 off_BF90_06:
 - - - - - - 0x00BFA0 02:BF90: C8        .byte $C8   ; 
-- - - - - - 0x00BFA1 02:BF91: 1C        .byte $1C   ; 
-- - - - - - 0x00BFA2 02:BF92: 11        .byte $11   ; 
+- - - - - - 0x00BFA1 02:BF91: 1C        .byte con_chr_bank + $1C   ; 
+- - - - - - 0x00BFA2 02:BF92: 11        .byte con_chr_bank + $11   ; 
 - - - - - - 0x00BFA3 02:BF93: 32        .byte $32   ; 
 - - - - - - 0x00BFA4 02:BF94: 33        .byte $33   ; 
 - - - - - - 0x00BFA5 02:BF95: C2        .byte $C2   ; 

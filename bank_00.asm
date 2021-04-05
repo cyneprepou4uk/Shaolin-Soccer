@@ -14560,9 +14560,9 @@ C - - - - - 0x003B4B 00:BB3B: C8        INY
 C - - - - - 0x003B4C 00:BB3C: E8        INX
 C - - - - - 0x003B4D 00:BB3D: E4 5D     CPX ram_колво_игроков
 C - - - - - 0x003B4F 00:BB3F: 90 F4     BCC bra_BB35
-C - - - - - 0x003B51 00:BB41: A0 08     LDY #$08
+C - - - - - 0x003B51 00:BB41: A0 08     LDY #con_chr_bank + $08
 C - - - - - 0x003B53 00:BB43: 8C B8 05  STY ram_банк_спрайтов
-C - - - - - 0x003B56 00:BB46: C8        INY
+C - - - - - 0x003B56 00:BB46: C8        INY ; con_chr_bank + $09
 C - - - - - 0x003B57 00:BB47: 8C BB 05  STY ram_банк_спрайтов + 3
 C - - - - - 0x003B5A 00:BB4A: AD 2D 05  LDA ram_номер_команды + 1
 C - - - - - 0x003B5D 00:BB4D: 29 0F     AND #$0F
