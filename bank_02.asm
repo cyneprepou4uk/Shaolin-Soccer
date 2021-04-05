@@ -12596,15 +12596,15 @@ C - - - - - 0x00B57E 02:B56E: 9D 61 00  STA ram_0061,X
 C - - - - - 0x00B581 02:B571: CA        DEX
 C - - - - - 0x00B582 02:B572: 10 CB     BPL bra_B53F
 C - - - - - 0x00B584 02:B574: A9 00     LDA #$00
-C - - - - - 0x00B586 02:B576: 8D EC 00  STA ram_pos_X_lo_scroll
-C - - - - - 0x00B589 02:B579: 8D EE 00  STA ram_pos_Y_lo_scroll
-C - - - - - 0x00B58C 02:B57C: 8D EF 00  STA ram_pos_Y_hi_scroll
-C - - - - - 0x00B58F 02:B57F: 8D F0 00  STA ram_pos_X_lo_camera
-C - - - - - 0x00B592 02:B582: 8D F2 00  STA ram_pos_Y_lo_camera
-C - - - - - 0x00B595 02:B585: 8D F3 00  STA ram_pos_Y_hi_camera
+C - - - - - 0x00B586 02:B576: 8D EC 00  STA ram_pos_X_lo_скролл
+C - - - - - 0x00B589 02:B579: 8D EE 00  STA ram_pos_Y_lo_скролл
+C - - - - - 0x00B58C 02:B57C: 8D EF 00  STA ram_pos_Y_hi_скролл
+C - - - - - 0x00B58F 02:B57F: 8D F0 00  STA ram_pos_X_lo_камера
+C - - - - - 0x00B592 02:B582: 8D F2 00  STA ram_pos_Y_lo_камера
+C - - - - - 0x00B595 02:B585: 8D F3 00  STA ram_pos_Y_hi_камера
 C - - - - - 0x00B598 02:B588: A9 01     LDA #$01
-C - - - - - 0x00B59A 02:B58A: 8D ED 00  STA ram_pos_X_hi_scroll
-C - - - - - 0x00B59D 02:B58D: 8D F1 00  STA ram_pos_X_hi_camera
+C - - - - - 0x00B59A 02:B58A: 8D ED 00  STA ram_pos_X_hi_скролл
+C - - - - - 0x00B59D 02:B58D: 8D F1 00  STA ram_pos_X_hi_камера
 C - - - - - 0x00B5A0 02:B590: A2 01     LDX #$01
 bra_B592:
 C - - - - - 0x00B5A2 02:B592: BD 2A 05  LDA ram_флаг_владения_мячом_ком,X
@@ -13841,15 +13841,15 @@ ofs_BB78_00:
 - - - - - - 0x00BB94 02:BB84: A9 03     LDA #$03
 - - - - - - 0x00BB96 02:BB86: 8D E6 05  STA ram_скорость_игры
 - - - - - - 0x00BB99 02:BB89: A9 00     LDA #$00
-- - - - - - 0x00BB9B 02:BB8B: 85 EC     STA ram_pos_X_lo_scroll
-- - - - - - 0x00BB9D 02:BB8D: 85 EE     STA ram_pos_Y_lo_scroll
-- - - - - - 0x00BB9F 02:BB8F: 85 EF     STA ram_pos_Y_hi_scroll
-- - - - - - 0x00BBA1 02:BB91: 85 F0     STA ram_pos_X_lo_camera
-- - - - - - 0x00BBA3 02:BB93: 85 F2     STA ram_pos_Y_lo_camera
-- - - - - - 0x00BBA5 02:BB95: 85 F3     STA ram_pos_Y_hi_camera
+- - - - - - 0x00BB9B 02:BB8B: 85 EC     STA ram_pos_X_lo_скролл
+- - - - - - 0x00BB9D 02:BB8D: 85 EE     STA ram_pos_Y_lo_скролл
+- - - - - - 0x00BB9F 02:BB8F: 85 EF     STA ram_pos_Y_hi_скролл
+- - - - - - 0x00BBA1 02:BB91: 85 F0     STA ram_pos_X_lo_камера
+- - - - - - 0x00BBA3 02:BB93: 85 F2     STA ram_pos_Y_lo_камера
+- - - - - - 0x00BBA5 02:BB95: 85 F3     STA ram_pos_Y_hi_камера
 - - - - - - 0x00BBA7 02:BB97: A9 01     LDA #$01
-- - - - - - 0x00BBA9 02:BB99: 85 ED     STA ram_pos_X_hi_scroll
-- - - - - - 0x00BBAB 02:BB9B: 85 F1     STA ram_pos_X_hi_camera
+- - - - - - 0x00BBA9 02:BB99: 85 ED     STA ram_pos_X_hi_скролл
+- - - - - - 0x00BBAB 02:BB9B: 85 F1     STA ram_pos_X_hi_камера
 - - - - - - 0x00BBAD 02:BB9D: 20 66 BA  JSR sub_BA66
 - - - - - - 0x00BBB0 02:BBA0: 20 3C BB  JSR sub_BB3C
 - - - - - - 0x00BBB3 02:BBA3: 20 1B AA  JSR sub_0x01C2AE
@@ -13939,8 +13939,8 @@ bra_BC27:
 - - - - - - 0x00BC59 02:BC49: 8D 27 03  STA ram_pos_X_hi_игрок
 - - - - - - 0x00BC5C 02:BC4C: 8D 28 03  STA ram_pos_X_hi_игрок + 1
 - - - - - - 0x00BC5F 02:BC4F: 8D 33 03  STA ram_pos_X_hi_мяч
-- - - - - - 0x00BC62 02:BC52: 8D F1 00  STA ram_pos_X_hi_camera
-- - - - - - 0x00BC65 02:BC55: 8D ED 00  STA ram_pos_X_hi_scroll
+- - - - - - 0x00BC62 02:BC52: 8D F1 00  STA ram_pos_X_hi_камера
+- - - - - - 0x00BC65 02:BC55: 8D ED 00  STA ram_pos_X_hi_скролл
 - - - - - - 0x00BC68 02:BC58: A9 1D     LDA #$1D
 - - - - - - 0x00BC6A 02:BC5A: 8D AE 05  STA ram_palette_id_spr
 - - - - - - 0x00BC6D 02:BC5D: A9 2B     LDA #$2B

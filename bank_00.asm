@@ -14843,18 +14843,18 @@ C - - - - - 0x003D88 00:BD78: 8D AD 03  STA ram_объект_камеры
 C - - - - - 0x003D8B 00:BD7B: A0 10     LDY #$10
 bra_BD7D:
 C - - - - - 0x003D8D 00:BD7D: B9 A7 BD  LDA tbl_BDA7,Y
-C - - - - - 0x003D90 00:BD80: 9D EC 00  STA ram_pos_X_lo_scroll,X
-C - - - - - 0x003D93 00:BD83: 9D F0 00  STA ram_pos_X_lo_camera,X
+C - - - - - 0x003D90 00:BD80: 9D EC 00  STA ram_pos_X_lo_скролл,X
+C - - - - - 0x003D93 00:BD83: 9D F0 00  STA ram_pos_X_lo_камера,X
 C - - - - - 0x003D96 00:BD86: C8        INY
 C - - - - - 0x003D97 00:BD87: E8        INX
 C - - - - - 0x003D98 00:BD88: E0 02     CPX #$02
 C - - - - - 0x003D9A 00:BD8A: 90 F1     BCC bra_BD7D
 C - - - - - 0x003D9C 00:BD8C: A9 48     LDA #$48
-C - - - - - 0x003D9E 00:BD8E: 8D EE 00  STA ram_pos_Y_lo_scroll
-C - - - - - 0x003DA1 00:BD91: 8D F2 00  STA ram_pos_Y_lo_camera
+C - - - - - 0x003D9E 00:BD8E: 8D EE 00  STA ram_pos_Y_lo_скролл
+C - - - - - 0x003DA1 00:BD91: 8D F2 00  STA ram_pos_Y_lo_камера
 C - - - - - 0x003DA4 00:BD94: A9 00     LDA #$00
-C - - - - - 0x003DA6 00:BD96: 8D EF 00  STA ram_pos_Y_hi_scroll
-C - - - - - 0x003DA9 00:BD99: 8D F3 00  STA ram_pos_Y_hi_camera
+C - - - - - 0x003DA6 00:BD96: 8D EF 00  STA ram_pos_Y_hi_скролл
+C - - - - - 0x003DA9 00:BD99: 8D F3 00  STA ram_pos_Y_hi_камера
 C - - - - - 0x003DAC 00:BD9C: A0 1B     LDY #$1B
 C - - - - - 0x003DAE 00:BD9E: A9 00     LDA #$00
 bra_BDA0_loop:

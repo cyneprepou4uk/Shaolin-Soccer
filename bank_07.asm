@@ -31,10 +31,10 @@ sub_0x000000_RESET_init:
                                         JSR sub_0x01EF74_очистка_фона_и_спрайтов
 ;                                        JSR sub_подготовка_палитры_vt03
                                         LDA #$00
-                                        STA ram_pos_X_lo_scroll
-                                        STA ram_pos_X_hi_scroll
-                                        STA ram_pos_Y_lo_scroll
-                                        STA ram_pos_Y_hi_scroll
+                                        STA ram_pos_X_lo_скролл
+                                        STA ram_pos_X_hi_скролл
+                                        STA ram_pos_Y_lo_скролл
+                                        STA ram_pos_Y_hi_скролл
                                         STA $4016
                                         LDA #$40
                                         STA $4017

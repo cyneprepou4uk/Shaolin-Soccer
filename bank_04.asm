@@ -77,7 +77,7 @@ C - - - - - 0x010056 04:8046: 10 03     BPL bra_804B
 C - - - - - 0x010058 04:8048: 4C 8B 81  JMP loc_818B
 bra_804B:
 C - - - - - 0x01005B 04:804B: A4 F4     LDY ram_00F4
-C - - - - - 0x01005D 04:804D: B9 A1 00  LDA ram_animation_priority,Y
+C - - - - - 0x01005D 04:804D: B9 A1 00  LDA ram_приоритет_анимации,Y
 C - - - - - 0x010060 04:8050: 29 1F     AND #$1F
 C - - - - - 0x010062 04:8052: A8        TAY
 C - - - - - 0x010063 04:8053: B9 AF 03  LDA ram_03AF,Y
@@ -89,7 +89,7 @@ C - - - - - 0x010070 04:8060: 85 1E     STA ram_001E
 C - - - - - 0x010072 04:8062: A9 00     LDA #$00
 C - - - - - 0x010074 04:8064: 85 25     STA ram_0025
 C - - - - - 0x010076 04:8066: A4 F4     LDY ram_00F4
-C - - - - - 0x010078 04:8068: B9 A1 00  LDA ram_animation_priority,Y
+C - - - - - 0x010078 04:8068: B9 A1 00  LDA ram_приоритет_анимации,Y
 C - - - - - 0x01007B 04:806B: C9 20     CMP #$20
 C - - - - - 0x01007D 04:806D: 90 19     BCC bra_8088
 C - - - - - 0x01007F 04:806F: 29 E0     AND #$E0
@@ -103,7 +103,7 @@ C - - - - - 0x01008C 04:807C: 4C 40 82  JMP loc_8240
 bra_807F:
 C - - - - - 0x01008F 04:807F: A9 20     LDA #$20
 C - - - - - 0x010091 04:8081: 85 25     STA ram_0025
-C - - - - - 0x010093 04:8083: B9 A1 00  LDA ram_animation_priority,Y
+C - - - - - 0x010093 04:8083: B9 A1 00  LDA ram_приоритет_анимации,Y
 C - - - - - 0x010096 04:8086: 29 1F     AND #$1F
 bra_8088:
 C - - - - - 0x010098 04:8088: A8        TAY
@@ -286,7 +286,7 @@ C - - - - - 0x0101CF 04:81BF: A6 F4     LDX ram_00F4
 C - - - - - 0x0101D1 04:81C1: A9 FC     LDA #$FC
 C - - - - - 0x0101D3 04:81C3: 85 1C     STA ram_001C
 bra_81C5:
-C - - - - - 0x0101D5 04:81C5: BD A1 00  LDA ram_animation_priority,X
+C - - - - - 0x0101D5 04:81C5: BD A1 00  LDA ram_приоритет_анимации,X
 C - - - - - 0x0101D8 04:81C8: C9 0E     CMP #$0E
 C - - - - - 0x0101DA 04:81CA: 90 40     BCC bra_820C
 C - - - - - 0x0101DC 04:81CC: 29 1F     AND #$1F
@@ -11948,12 +11948,12 @@ C - - - - - 0x013217 04:B207: 4C 0D B2  JMP loc_B20D
 loc_B20D:
 C D 1 - - - 0x01321D 04:B20D: A2 00     LDX #$00
 bra_B20F:
-C - - - - - 0x01321F 04:B20F: BD A1 00  LDA ram_animation_priority,X
+C - - - - - 0x01321F 04:B20F: BD A1 00  LDA ram_приоритет_анимации,X
 C - - - - - 0x013222 04:B212: 29 1F     AND #$1F
 C - - - - - 0x013224 04:B214: A8        TAY
 C - - - - - 0x013225 04:B215: 38        SEC
 C - - - - - 0x013226 04:B216: B9 4D 03  LDA ram_pos_Y_lo_игрок,Y
-C - - - - - 0x013229 04:B219: ED EE 00  SBC ram_pos_Y_lo_scroll
+C - - - - - 0x013229 04:B219: ED EE 00  SBC ram_pos_Y_lo_скролл
 C - - - - - 0x01322C 04:B21C: 9D C1 00  STA ram_разница_координат_и_камеры,X
 C - - - - - 0x01322F 04:B21F: E8        INX
 C - - - - - 0x013230 04:B220: E4 F4     CPX ram_00F4
@@ -11971,12 +11971,12 @@ bra_B235:
 C - - - - - 0x013245 04:B235: BD C1 00  LDA ram_разница_координат_и_камеры,X
 C - - - - - 0x013248 04:B238: DD C2 00  CMP ram_00C2,X
 C - - - - - 0x01324B 04:B23B: B0 22     BCS bra_B25F
-C - - - - - 0x01324D 04:B23D: BD A2 00  LDA ram_animation_priority + 1,X
+C - - - - - 0x01324D 04:B23D: BD A2 00  LDA ram_приоритет_анимации + 1,X
 C - - - - - 0x013250 04:B240: 85 1F     STA ram_001F
-C - - - - - 0x013252 04:B242: BD A1 00  LDA ram_animation_priority,X
-C - - - - - 0x013255 04:B245: 9D A2 00  STA ram_animation_priority + 1,X
+C - - - - - 0x013252 04:B242: BD A1 00  LDA ram_приоритет_анимации,X
+C - - - - - 0x013255 04:B245: 9D A2 00  STA ram_приоритет_анимации + 1,X
 C - - - - - 0x013258 04:B248: A5 1F     LDA ram_001F
-C - - - - - 0x01325A 04:B24A: 9D A1 00  STA ram_animation_priority,X
+C - - - - - 0x01325A 04:B24A: 9D A1 00  STA ram_приоритет_анимации,X
 C - - - - - 0x01325D 04:B24D: BD C2 00  LDA ram_00C2,X
 C - - - - - 0x013260 04:B250: 85 1F     STA ram_001F
 C - - - - - 0x013262 04:B252: BD C1 00  LDA ram_разница_координат_и_камеры,X
@@ -12001,10 +12001,10 @@ sub_B26E:
 C - - - - - 0x01327E 04:B26E: A2 12     LDX #$12
 C - - - - - 0x013280 04:B270: A9 00     LDA #$00    ; очистить флаг видимости на экране
 bra_B272_loop:
-C - - - - - 0x013282 04:B272: 95 D9     STA ram_flag_visible_игрок,X
+C - - - - - 0x013282 04:B272: 95 D9     STA ram_флаг_видимости_игрока,X
 C - - - - - 0x013284 04:B274: CA        DEX
 C - - - - - 0x013285 04:B275: 10 FB     BPL bra_B272_loop
-C - - - - - 0x013287 04:B277: AD F3 00  LDA ram_pos_Y_hi_camera
+C - - - - - 0x013287 04:B277: AD F3 00  LDA ram_pos_Y_hi_камера
 C - - - - - 0x01328A 04:B27A: F0 02     BEQ bra_B27E
 C - - - - - 0x01328C 04:B27C: A9 10     LDA #$10
 bra_B27E:
@@ -12015,15 +12015,15 @@ C - - - - - 0x013295 04:B285: 4C 15 B3  RTS
 bra_B288:
 C - - - - - 0x013298 04:B288: A2 00     LDX #$00
 loc_B28A:
-C D 1 - - - 0x01329A 04:B28A: BD A1 00  LDA ram_animation_priority,X
+C D 1 - - - 0x01329A 04:B28A: BD A1 00  LDA ram_приоритет_анимации,X
 C - - - - - 0x01329D 04:B28D: 29 1F     AND #$1F
 C - - - - - 0x01329F 04:B28F: A8        TAY
 C - - - - - 0x0132A0 04:B290: B9 14 03  LDA ram_pos_X_lo_игрок,Y
 C - - - - - 0x0132A3 04:B293: 38        SEC
-C - - - - - 0x0132A4 04:B294: E5 F0     SBC ram_pos_X_lo_camera
+C - - - - - 0x0132A4 04:B294: E5 F0     SBC ram_pos_X_lo_камера
 C - - - - - 0x0132A6 04:B296: 99 AF 03  STA ram_03AF,Y
 C - - - - - 0x0132A9 04:B299: B9 27 03  LDA ram_pos_X_hi_игрок,Y
-C - - - - - 0x0132AC 04:B29C: E5 F1     SBC ram_pos_X_hi_camera
+C - - - - - 0x0132AC 04:B29C: E5 F1     SBC ram_pos_X_hi_камера
 C - - - - - 0x0132AE 04:B29E: D0 5B     BNE bra_B2FB
 C - - - - - 0x0132B0 04:B2A0: B9 AF 03  LDA ram_03AF,Y
 C - - - - - 0x0132B3 04:B2A3: C9 08     CMP #$08
@@ -12037,11 +12037,11 @@ C - - - - - 0x0132C2 04:B2B2: 69 00     ADC #$00
 C - - - - - 0x0132C4 04:B2B4: 85 2D     STA ram_002D
 C - - - - - 0x0132C6 04:B2B6: 38        SEC
 C - - - - - 0x0132C7 04:B2B7: A5 2C     LDA ram_002C
-C - - - - - 0x0132C9 04:B2B9: E5 F2     SBC ram_pos_Y_lo_camera
+C - - - - - 0x0132C9 04:B2B9: E5 F2     SBC ram_pos_Y_lo_камера
 C - - - - - 0x0132CB 04:B2BB: 85 2C     STA ram_002C
 C - - - - - 0x0132CD 04:B2BD: 99 D5 03  STA ram_03D5,Y
 C - - - - - 0x0132D0 04:B2C0: A5 2D     LDA ram_002D
-C - - - - - 0x0132D2 04:B2C2: E5 F3     SBC ram_pos_Y_hi_camera
+C - - - - - 0x0132D2 04:B2C2: E5 F3     SBC ram_pos_Y_hi_камера
 C - - - - - 0x0132D4 04:B2C4: 85 2D     STA ram_002D
 C - - - - - 0x0132D6 04:B2C6: 38        SEC
 C - - - - - 0x0132D7 04:B2C7: A5 2C     LDA ram_002C
@@ -12056,12 +12056,12 @@ C - - - - - 0x0132EA 04:B2DA: A9 FF     LDA #$FF
 C - - - - - 0x0132EC 04:B2DC: 99 D5 03  STA ram_03D5,Y
 bra_B2DF:
 C - - - - - 0x0132EF 04:B2DF: A9 01     LDA #$01    ; выставить флаг видимости на экране
-C - - - - - 0x0132F1 04:B2E1: 99 D9 00  STA ram_flag_visible_игрок,Y
-C - - - - - 0x0132F4 04:B2E4: BD A1 00  LDA ram_animation_priority,X
+C - - - - - 0x0132F1 04:B2E1: 99 D9 00  STA ram_флаг_видимости_игрока,Y
+C - - - - - 0x0132F4 04:B2E4: BD A1 00  LDA ram_приоритет_анимации,X
 C - - - - - 0x0132F7 04:B2E7: 29 20     AND #$20
 C - - - - - 0x0132F9 04:B2E9: F0 22     BEQ bra_B30D
 bra_B2EB:
-C - - - - - 0x0132FB 04:B2EB: BD A1 00  LDA ram_animation_priority,X
+C - - - - - 0x0132FB 04:B2EB: BD A1 00  LDA ram_приоритет_анимации,X
 C - - - - - 0x0132FE 04:B2EE: 29 20     AND #$20
 C - - - - - 0x013300 04:B2F0: F0 09     BEQ bra_B2FB
 C - - - - - 0x013302 04:B2F2: A5 2D     LDA ram_002D
@@ -12074,8 +12074,8 @@ C - - - - - 0x01330C 04:B2FC: A8        TAY
 C - - - - - 0x01330D 04:B2FD: CA        DEX
 C - - - - - 0x01330E 04:B2FE: CE F4 00  DEC ram_00F4
 bra_B301:
-C - - - - - 0x013311 04:B301: B9 A2 00  LDA ram_animation_priority + 1,Y
-C - - - - - 0x013314 04:B304: 99 A1 00  STA ram_animation_priority,Y
+C - - - - - 0x013311 04:B301: B9 A2 00  LDA ram_приоритет_анимации + 1,Y
+C - - - - - 0x013314 04:B304: 99 A1 00  STA ram_приоритет_анимации,Y
 C - - - - - 0x013317 04:B307: C8        INY
 C - - - - - 0x013318 04:B308: CC F4 00  CPY ram_00F4
 C - - - - - 0x01331B 04:B30B: 90 F4     BCC bra_B301

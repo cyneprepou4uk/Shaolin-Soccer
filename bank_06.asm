@@ -3386,7 +3386,7 @@ C - - - - - 0x01978A 06:977A: 60        RTS
 
 
 sub_977B:
-C - - - - - 0x01978B 06:977B: BD D9 00  LDA ram_flag_visible_игрок,X
+C - - - - - 0x01978B 06:977B: BD D9 00  LDA ram_флаг_видимости_игрока,X
 C - - - - - 0x01978E 06:977E: D0 07     BNE bra_9787_visible
 C - - - - - 0x019790 06:9780: A9 00     LDA #$00
 C - - - - - 0x019792 06:9782: 9D 30 01  STA ram_surface_игрок,X
@@ -4677,7 +4677,7 @@ C - - - - - 0x01A031 06:A021: A9 00     LDA #con_на_траве
 C - - - - - 0x01A033 06:A023: 9D 30 01  STA ram_surface_игрок,X
 C - - - - - 0x01A036 06:A026: A5 58     LDA ram_script
 C - - - - - 0x01A038 06:A028: D0 14     BNE bra_A03E_RTS    ; если не игра на поле
-C - - - - - 0x01A03A 06:A02A: B5 D9     LDA ram_flag_visible_игрок,X
+C - - - - - 0x01A03A 06:A02A: B5 D9     LDA ram_флаг_видимости_игрока,X
 C - - - - - 0x01A03C 06:A02C: F0 03     BEQ bra_A031_не_на_экране
 C - - - - - 0x01A03E 06:A02E: 20 F0 E6  JSR sub_0x01E700_вычислить_surface
 bra_A031_не_на_экране:
@@ -8467,9 +8467,9 @@ C - - - - - 0x01B3B2 06:B3A2: A4 44     LDY ram_0044
 C - - - - - 0x01B3B4 06:B3A4: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01B3B6 06:B3A6: 29 0C     AND #$0C
 C - - - - - 0x01B3B8 06:B3A8: D0 0C     BNE bra_B3B6
-C - - - - - 0x01B3BA 06:B3AA: B5 D9     LDA ram_flag_visible_игрок,X
+C - - - - - 0x01B3BA 06:B3AA: B5 D9     LDA ram_флаг_видимости_игрока,X
 C - - - - - 0x01B3BC 06:B3AC: F0 05     BEQ bra_B3B3_не_на_экране
-C - - - - - 0x01B3BE 06:B3AE: B9 D9 00  LDA ram_flag_visible_игрок,Y
+C - - - - - 0x01B3BE 06:B3AE: B9 D9 00  LDA ram_флаг_видимости_игрока,Y
 C - - - - - 0x01B3C1 06:B3B1: D0 03     BNE bra_B3B6    ; если на экране
 bra_B3B3_не_на_экране:
 C - - - - - 0x01B3C3 06:B3B3: 4C E7 B4  JMP loc_B4E7
@@ -10132,7 +10132,7 @@ C - - - - - 0x01BCF6 06:BCE6: AD 23 05  LDA ram_0523
 C - - - - - 0x01BCF9 06:BCE9: D0 0A     BNE bra_BCF5_RTS
 bra_BCEB:
 loc_BCEB:
-C D 1 - - - 0x01BCFB 06:BCEB: AD E5 00  LDA ram_flag_visible_мяч
+C D 1 - - - 0x01BCFB 06:BCEB: AD E5 00  LDA ram_флаг_видимости_мяча
 C - - - - - 0x01BCFE 06:BCEE: F0 05     BEQ bra_BCF5_RTS
 C - - - - - 0x01BD00 06:BCF0: A5 1D     LDA ram_001D
 C - - - - - 0x01BD02 06:BCF2: 8D F5 05  STA ram_флаг_гола
@@ -10150,9 +10150,9 @@ C - - - - - 0x01BD0F 06:BCFF: AD 23 05  LDA ram_0523
 C - - - - - 0x01BD12 06:BD02: F0 03     BEQ bra_BD07
 C - - - - - 0x01BD14 06:BD04: CE 23 05  DEC ram_0523
 bra_BD07:
-C - - - - - 0x01BD17 06:BD07: AD ED 00  LDA ram_pos_X_hi_scroll
+C - - - - - 0x01BD17 06:BD07: AD ED 00  LDA ram_pos_X_hi_скролл
 C - - - - - 0x01BD1A 06:BD0A: D0 0B     BNE bra_BD17
-C - - - - - 0x01BD1C 06:BD0C: AD EC 00  LDA ram_pos_X_lo_scroll
+C - - - - - 0x01BD1C 06:BD0C: AD EC 00  LDA ram_pos_X_lo_скролл
 C - - - - - 0x01BD1F 06:BD0F: C9 48     CMP #$48
 C - - - - - 0x01BD21 06:BD11: B0 13     BCS bra_BD26
 C - - - - - 0x01BD23 06:BD13: A9 80     LDA #$80
@@ -10160,7 +10160,7 @@ C - - - - - 0x01BD25 06:BD15: D0 11     BNE bra_BD28
 bra_BD17:
 C - - - - - 0x01BD27 06:BD17: C9 02     CMP #$02
 C - - - - - 0x01BD29 06:BD19: D0 0B     BNE bra_BD26
-C - - - - - 0x01BD2B 06:BD1B: AD EC 00  LDA ram_pos_X_lo_scroll
+C - - - - - 0x01BD2B 06:BD1B: AD EC 00  LDA ram_pos_X_lo_скролл
 C - - - - - 0x01BD2E 06:BD1E: C9 B8     CMP #$B8
 C - - - - - 0x01BD30 06:BD20: 90 04     BCC bra_BD26
 C - - - - - 0x01BD32 06:BD22: A9 00     LDA #$00

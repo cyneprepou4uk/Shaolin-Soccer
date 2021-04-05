@@ -14330,16 +14330,16 @@ C - - - - - 0x007A45 01:BA35: 8D FD 05  STA ram_сила_ветра
 C - - - - - 0x007A48 01:BA38: AD 45 00  LDA ram_рандом
 C - - - - - 0x007A4B 01:BA3B: 29 BF     AND #$BF
 C - - - - - 0x007A4D 01:BA3D: 18        CLC
-C - - - - - 0x007A4E 01:BA3E: 6D EC 00  ADC ram_pos_X_lo_scroll
+C - - - - - 0x007A4E 01:BA3E: 6D EC 00  ADC ram_pos_X_lo_скролл
 C - - - - - 0x007A51 01:BA41: 8D 21 03  STA ram_pos_X_lo_погода
-C - - - - - 0x007A54 01:BA44: AD ED 00  LDA ram_pos_X_hi_scroll
+C - - - - - 0x007A54 01:BA44: AD ED 00  LDA ram_pos_X_hi_скролл
 C - - - - - 0x007A57 01:BA47: 69 00     ADC #$00
 C - - - - - 0x007A59 01:BA49: 8D 34 03  STA ram_pos_X_hi_погода
-C - - - - - 0x007A5C 01:BA4C: AD EE 00  LDA ram_pos_Y_lo_scroll
+C - - - - - 0x007A5C 01:BA4C: AD EE 00  LDA ram_pos_Y_lo_скролл
 C - - - - - 0x007A5F 01:BA4F: 18        CLC
 C - - - - - 0x007A60 01:BA50: 6D 45 00  ADC ram_рандом
 C - - - - - 0x007A63 01:BA53: 8D 5A 03  STA ram_pos_Y_lo_погода
-C - - - - - 0x007A66 01:BA56: AD EF 00  LDA ram_pos_Y_hi_scroll
+C - - - - - 0x007A66 01:BA56: AD EF 00  LDA ram_pos_Y_hi_скролл
 C - - - - - 0x007A69 01:BA59: 69 00     ADC #$00
 C - - - - - 0x007A6B 01:BA5B: 8D 6D 03  STA ram_pos_Y_hi_погода
 C - - - - - 0x007A6E 01:BA5E: A9 00     LDA #$00
@@ -14374,23 +14374,23 @@ C - - - - - 0x007A9F 01:BA8F: B9 1D BA  LDA tbl_BA1D,Y
 C - - - - - 0x007AA2 01:BA92: 85 1C     STA ram_001C
 C - - - - - 0x007AA4 01:BA94: B9 25 BA  LDA tbl_BA25,Y
 C - - - - - 0x007AA7 01:BA97: 85 1D     STA ram_001D
-C - - - - - 0x007AA9 01:BA99: AD EC 00  LDA ram_pos_X_lo_scroll
+C - - - - - 0x007AA9 01:BA99: AD EC 00  LDA ram_pos_X_lo_скролл
 C - - - - - 0x007AAC 01:BA9C: 18        CLC
 C - - - - - 0x007AAD 01:BA9D: 65 1C     ADC ram_001C
 C - - - - - 0x007AAF 01:BA9F: 8D 21 03  STA ram_pos_X_lo_погода
-C - - - - - 0x007AB2 01:BAA2: AD ED 00  LDA ram_pos_X_hi_scroll
+C - - - - - 0x007AB2 01:BAA2: AD ED 00  LDA ram_pos_X_hi_скролл
 C - - - - - 0x007AB5 01:BAA5: 69 00     ADC #$00
 C - - - - - 0x007AB7 01:BAA7: 8D 34 03  STA ram_pos_X_hi_погода
-C - - - - - 0x007ABA 01:BAAA: AD EE 00  LDA ram_pos_Y_lo_scroll
+C - - - - - 0x007ABA 01:BAAA: AD EE 00  LDA ram_pos_Y_lo_скролл
 C - - - - - 0x007ABD 01:BAAD: 18        CLC
 C - - - - - 0x007ABE 01:BAAE: 65 1D     ADC ram_001D
 C - - - - - 0x007AC0 01:BAB0: 8D 5A 03  STA ram_pos_Y_lo_погода
-C - - - - - 0x007AC3 01:BAB3: AD EF 00  LDA ram_pos_Y_hi_scroll
+C - - - - - 0x007AC3 01:BAB3: AD EF 00  LDA ram_pos_Y_hi_скролл
 C - - - - - 0x007AC6 01:BAB6: 69 00     ADC #$00
 C - - - - - 0x007AC8 01:BAB8: 8D 6D 03  STA ram_pos_Y_hi_погода
 C - - - - - 0x007ACB 01:BABB: 20 CB BB  JSR sub_BBCB
 C - - - - - 0x007ACE 01:BABE: A9 01     LDA #$01
-C - - - - - 0x007AD0 01:BAC0: 8D E6 00  STA ram_00E6
+C - - - - - 0x007AD0 01:BAC0: 8D E6 00  STA ram_флаг_видимости_погоды
 C - - - - - 0x007AD3 01:BAC3: EE 3F 01  INC ram_timer_погода
 C - - - - - 0x007AD6 01:BAC6: AD 3F 01  LDA ram_timer_погода
 C - - - - - 0x007AD9 01:BAC9: C9 14     CMP #$14
@@ -14403,7 +14403,7 @@ C - - - - - 0x007AE8 01:BAD8: 8D 66 04  STA ram_погода_id
 C - - - - - 0x007AEB 01:BADB: A9 0C     LDA #$0C
 C - - - - - 0x007AED 01:BADD: 8D AC 03  STA ram_объем_дождя
 C - - - - - 0x007AF0 01:BAE0: A9 00     LDA #$00
-C - - - - - 0x007AF2 01:BAE2: 8D E6 00  STA ram_00E6
+C - - - - - 0x007AF2 01:BAE2: 8D E6 00  STA ram_флаг_видимости_погоды
 C - - - - - 0x007AF5 01:BAE5: 4C 17 BB  JMP loc_BB17
 bra_BAE8:
 C - - - - - 0x007AF8 01:BAE8: 29 07     AND #$07
@@ -14521,13 +14521,13 @@ C - - - - - 0x007BB0 01:BBA0: A5 1C     LDA ram_001C
 C - - - - - 0x007BB2 01:BBA2: D0 0B     BNE bra_BBAF
 C - - - - - 0x007BB4 01:BBA4: A9 00     LDA #$00
 C - - - - - 0x007BB6 01:BBA6: 8D AC 03  STA ram_объем_дождя
-C - - - - - 0x007BB9 01:BBA9: 8D E6 00  STA ram_00E6
+C - - - - - 0x007BB9 01:BBA9: 8D E6 00  STA ram_флаг_видимости_погоды
 C - - - - - 0x007BBC 01:BBAC: 4C B9 BB  RTS
 bra_BBAF:
 - - - - - - 0x007BBF 01:BBAF: A9 0C     LDA #$0C
 - - - - - - 0x007BC1 01:BBB1: 8D AC 03  STA ram_объем_дождя
 - - - - - - 0x007BC4 01:BBB4: A9 01     LDA #$01
-- - - - - - 0x007BC6 01:BBB6: 8D E6 00  STA ram_00E6
+- - - - - - 0x007BC6 01:BBB6: 8D E6 00  STA ram_флаг_видимости_погоды
 C D 1 - - - 0x007BC9 01:BBB9: 60        RTS
 bra_BBBA:
 - - - - - - 0x007BCA 01:BBBA: A9 00     LDA #con_погода_none
@@ -14535,7 +14535,7 @@ bra_BBBA:
 - - - - - - 0x007BCF 01:BBBF: A9 0C     LDA #$0C
 - - - - - - 0x007BD1 01:BBC1: 8D AC 03  STA ram_объем_дождя
 - - - - - - 0x007BD4 01:BBC4: A9 00     LDA #$00
-- - - - - - 0x007BD6 01:BBC6: 8D E6 00  STA ram_00E6    ; bzk опт, бесполезный адрес, удалить везде
+- - - - - - 0x007BD6 01:BBC6: 8D E6 00  STA ram_флаг_видимости_погоды
 - - - - - - 0x007BD9 01:BBC9: 60        RTS
 
 
@@ -14543,16 +14543,16 @@ bra_BBBA:
 sub_BBCB:
 C - - - - - 0x007BDB 01:BBCB: AD 21 03  LDA ram_pos_X_lo_погода
 C - - - - - 0x007BDE 01:BBCE: 38        SEC
-C - - - - - 0x007BDF 01:BBCF: ED EC 00  SBC ram_pos_X_lo_scroll
+C - - - - - 0x007BDF 01:BBCF: ED EC 00  SBC ram_pos_X_lo_скролл
 C - - - - - 0x007BE2 01:BBD2: AD 34 03  LDA ram_pos_X_hi_погода
-C - - - - - 0x007BE5 01:BBD5: ED ED 00  SBC ram_pos_X_hi_scroll
+C - - - - - 0x007BE5 01:BBD5: ED ED 00  SBC ram_pos_X_hi_скролл
 C - - - - - 0x007BE8 01:BBD8: D0 1C     BNE bra_BBF6
 C - - - - - 0x007BEA 01:BBDA: AD 5A 03  LDA ram_pos_Y_lo_погода
 C - - - - - 0x007BED 01:BBDD: 38        SEC
-C - - - - - 0x007BEE 01:BBDE: ED EE 00  SBC ram_pos_Y_lo_scroll
+C - - - - - 0x007BEE 01:BBDE: ED EE 00  SBC ram_pos_Y_lo_скролл
 C - - - - - 0x007BF1 01:BBE1: 85 1D     STA ram_001D
 C - - - - - 0x007BF3 01:BBE3: AD 6D 03  LDA ram_pos_Y_hi_погода
-C - - - - - 0x007BF6 01:BBE6: ED EF 00  SBC ram_pos_Y_hi_scroll
+C - - - - - 0x007BF6 01:BBE6: ED EF 00  SBC ram_pos_Y_hi_скролл
 C - - - - - 0x007BF9 01:BBE9: D0 0B     BNE bra_BBF6
 C - - - - - 0x007BFB 01:BBEB: A5 1D     LDA ram_001D
 C - - - - - 0x007BFD 01:BBED: C9 F0     CMP #$F0
@@ -14565,11 +14565,11 @@ loc_BBF8:
 C D 1 - - - 0x007C08 01:BBF8: 85 1C     STA ram_001C
 C - - - - - 0x007C0A 01:BBFA: AD 21 03  LDA ram_pos_X_lo_погода
 C - - - - - 0x007C0D 01:BBFD: 38        SEC
-C - - - - - 0x007C0E 01:BBFE: ED EC 00  SBC ram_pos_X_lo_scroll
+C - - - - - 0x007C0E 01:BBFE: ED EC 00  SBC ram_pos_X_lo_скролл
 C - - - - - 0x007C11 01:BC01: 8D 3D 01  STA ram_013D
 C - - - - - 0x007C14 01:BC04: AD 5A 03  LDA ram_pos_Y_lo_погода
 C - - - - - 0x007C17 01:BC07: 38        SEC
-C - - - - - 0x007C18 01:BC08: ED EE 00  SBC ram_pos_Y_lo_scroll
+C - - - - - 0x007C18 01:BC08: ED EE 00  SBC ram_pos_Y_lo_скролл
 C - - - - - 0x007C1B 01:BC0B: 38        SEC
 C - - - - - 0x007C1C 01:BC0C: E9 08     SBC #$08
 C - - - - - 0x007C1E 01:BC0E: 8D 3E 01  STA ram_013E

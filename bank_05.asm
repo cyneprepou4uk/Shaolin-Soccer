@@ -64,14 +64,14 @@ sub_80DF:
 C - - - - - 0x0140EF 05:80DF: A9 80     LDA #con_nmi_irq_выкл
 C - - - - - 0x0140F1 05:80E1: 85 4F     STA ram_флаг_nmi
 C - - - - - 0x0140F3 05:80E3: A9 00     LDA #$00
-C - - - - - 0x0140F5 05:80E5: 8D EC 00  STA ram_pos_X_lo_scroll     ; bzk опт, общая подпрограмма очистки скролла, найти остальные места
-C - - - - - 0x0140F8 05:80E8: 8D ED 00  STA ram_pos_X_hi_scroll
-C - - - - - 0x0140FB 05:80EB: 8D EE 00  STA ram_pos_Y_lo_scroll
-C - - - - - 0x0140FE 05:80EE: 8D EF 00  STA ram_pos_Y_hi_scroll
-C - - - - - 0x014101 05:80F1: 8D F0 00  STA ram_pos_X_lo_camera
-C - - - - - 0x014104 05:80F4: 8D F1 00  STA ram_pos_X_hi_camera
-C - - - - - 0x014107 05:80F7: 8D F2 00  STA ram_pos_Y_lo_camera
-C - - - - - 0x01410A 05:80FA: 8D F3 00  STA ram_pos_Y_hi_camera
+C - - - - - 0x0140F5 05:80E5: 8D EC 00  STA ram_pos_X_lo_скролл     ; bzk опт, общая подпрограмма очистки скролла, найти остальные места
+C - - - - - 0x0140F8 05:80E8: 8D ED 00  STA ram_pos_X_hi_скролл
+C - - - - - 0x0140FB 05:80EB: 8D EE 00  STA ram_pos_Y_lo_скролл
+C - - - - - 0x0140FE 05:80EE: 8D EF 00  STA ram_pos_Y_hi_скролл
+C - - - - - 0x014101 05:80F1: 8D F0 00  STA ram_pos_X_lo_камера
+C - - - - - 0x014104 05:80F4: 8D F1 00  STA ram_pos_X_hi_камера
+C - - - - - 0x014107 05:80F7: 8D F2 00  STA ram_pos_Y_lo_камера
+C - - - - - 0x01410A 05:80FA: 8D F3 00  STA ram_pos_Y_hi_камера
 C - - - - - 0x01410D 05:80FD: 8D E6 05  STA ram_скорость_игры
 C - - - - - 0x014110 05:8100: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x014113 05:8103: 8D CE 05  STA ram_05CE
@@ -2729,14 +2729,14 @@ C - - - - - 0x015033 05:9023: 8D 61 00  STA ram_0061
 C - - - - - 0x015036 05:9026: 8D 62 00  STA ram_0062
 C - - - - - 0x015039 05:9029: 8D 64 00  STA ram_0064
 C - - - - - 0x01503C 05:902C: A9 00     LDA #$00
-C - - - - - 0x01503E 05:902E: 8D EC 00  STA ram_pos_X_lo_scroll
-C - - - - - 0x015041 05:9031: 8D ED 00  STA ram_pos_X_hi_scroll
-C - - - - - 0x015044 05:9034: 8D EE 00  STA ram_pos_Y_lo_scroll
-C - - - - - 0x015047 05:9037: 8D EF 00  STA ram_pos_Y_hi_scroll
-C - - - - - 0x01504A 05:903A: 8D F0 00  STA ram_pos_X_lo_camera
-C - - - - - 0x01504D 05:903D: 8D F1 00  STA ram_pos_X_hi_camera
-C - - - - - 0x015050 05:9040: 8D F2 00  STA ram_pos_Y_lo_camera
-C - - - - - 0x015053 05:9043: 8D F3 00  STA ram_pos_Y_hi_camera
+C - - - - - 0x01503E 05:902E: 8D EC 00  STA ram_pos_X_lo_скролл
+C - - - - - 0x015041 05:9031: 8D ED 00  STA ram_pos_X_hi_скролл
+C - - - - - 0x015044 05:9034: 8D EE 00  STA ram_pos_Y_lo_скролл
+C - - - - - 0x015047 05:9037: 8D EF 00  STA ram_pos_Y_hi_скролл
+C - - - - - 0x01504A 05:903A: 8D F0 00  STA ram_pos_X_lo_камера
+C - - - - - 0x01504D 05:903D: 8D F1 00  STA ram_pos_X_hi_камера
+C - - - - - 0x015050 05:9040: 8D F2 00  STA ram_pos_Y_lo_камера
+C - - - - - 0x015053 05:9043: 8D F3 00  STA ram_pos_Y_hi_камера
 C - - - - - 0x015056 05:9046: 20 02 91  JSR sub_9102
 C - - - - - 0x015059 05:9049: A2 26     LDX #$26
 C - - - - - 0x01505B 05:904B: 8E B8 05  STX ram_банк_спрайтов
@@ -3385,7 +3385,7 @@ C - - - - - 0x01536B 05:935B: 20 DF 80  JSR sub_80DF
 C - - - - - 0x01536E 05:935E: 20 96 93  JSR sub_9396
 bra_9361:
 C - - - - - 0x015371 05:9361: 20 C2 94  JSR sub_94C2
-C - - - - - 0x015374 05:9364: AD F0 00  JSR sub_0x01CAFE_скопировать_camera_pos_в_scroll_pos
+C - - - - - 0x015374 05:9364: AD F0 00  JSR sub_0x01CAFE_скопировать_pos_камеры_в_pos_скролла
 C - - - - - 0x01538C 05:937C: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x01538F 05:937F: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_поинтеры_после_JSR
 - D 0 - I - 0x015392 05:9382: 03 94     .word ofs_9403_00
@@ -4324,7 +4324,7 @@ C - - - - - 0x015809 05:97F9: 20 DF 80  JSR sub_80DF
 C - - - - - 0x01580C 05:97FC: 20 2C 98  JSR sub_982C
 bra_97FF:
 C - - - - - 0x01580F 05:97FF: 20 1D 9B  JSR sub_9B1D
-C - - - - - 0x015812 05:9802: AD F0 00  JSR sub_0x01CAFE_скопировать_camera_pos_в_scroll_pos
+C - - - - - 0x015812 05:9802: AD F0 00  JSR sub_0x01CAFE_скопировать_pos_камеры_в_pos_скролла
 C - - - - - 0x01582A 05:981A: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x01582D 05:981D: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_поинтеры_после_JSR
 - D 0 - I - 0x015830 05:9820: B8 98     .word ofs_98B8_00
@@ -5025,51 +5025,51 @@ sub_9C05:
 C - - - - - 0x015C15 05:9C05: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x015C18 05:9C08: C9 05     CMP #$05
 C - - - - - 0x015C1A 05:9C0A: 90 26     BCC bra_9C32
-C - - - - - 0x015C1C 05:9C0C: AD F2 00  LDA ram_pos_Y_lo_camera
+C - - - - - 0x015C1C 05:9C0C: AD F2 00  LDA ram_pos_Y_lo_камера
 C - - - - - 0x015C1F 05:9C0F: D0 07     BNE bra_9C18
-C - - - - - 0x015C21 05:9C11: AD F3 00  LDA ram_pos_Y_hi_camera
+C - - - - - 0x015C21 05:9C11: AD F3 00  LDA ram_pos_Y_hi_камера
 C - - - - - 0x015C24 05:9C14: C9 01     CMP #$01
 C - - - - - 0x015C26 05:9C16: F0 53     BEQ bra_9C6B_RTS
 bra_9C18:
 C - - - - - 0x015C28 05:9C18: 18        CLC
-C - - - - - 0x015C29 05:9C19: AD F2 00  LDA ram_pos_Y_lo_camera
+C - - - - - 0x015C29 05:9C19: AD F2 00  LDA ram_pos_Y_lo_камера
 C - - - - - 0x015C2C 05:9C1C: 69 04     ADC #$04
-C - - - - - 0x015C2E 05:9C1E: 8D F2 00  STA ram_pos_Y_lo_camera
+C - - - - - 0x015C2E 05:9C1E: 8D F2 00  STA ram_pos_Y_lo_камера
 C - - - - - 0x015C31 05:9C21: C9 F0     CMP #$F0
 C - - - - - 0x015C33 05:9C23: 90 46     BCC bra_9C6B_RTS
 C - - - - - 0x015C35 05:9C25: A9 00     LDA #$00
-C - - - - - 0x015C37 05:9C27: 8D F2 00  STA ram_pos_Y_lo_camera
+C - - - - - 0x015C37 05:9C27: 8D F2 00  STA ram_pos_Y_lo_камера
 C - - - - - 0x015C3A 05:9C2A: A9 01     LDA #$01
-C - - - - - 0x015C3C 05:9C2C: 8D F3 00  STA ram_pos_Y_hi_camera
+C - - - - - 0x015C3C 05:9C2C: 8D F3 00  STA ram_pos_Y_hi_камера
 C - - - - - 0x015C3F 05:9C2F: 4C 6B 9C  RTS
 bra_9C32:
-C - - - - - 0x015C42 05:9C32: AD F2 00  LDA ram_pos_Y_lo_camera
+C - - - - - 0x015C42 05:9C32: AD F2 00  LDA ram_pos_Y_lo_камера
 C - - - - - 0x015C45 05:9C35: D0 05     BNE bra_9C3C
-C - - - - - 0x015C47 05:9C37: AD F3 00  LDA ram_pos_Y_hi_camera
+C - - - - - 0x015C47 05:9C37: AD F3 00  LDA ram_pos_Y_hi_камера
 C - - - - - 0x015C4A 05:9C3A: F0 2F     BEQ bra_9C6B_RTS
 bra_9C3C:
 C - - - - - 0x015C4C 05:9C3C: 38        SEC
-C - - - - - 0x015C4D 05:9C3D: AD F2 00  LDA ram_pos_Y_lo_camera
+C - - - - - 0x015C4D 05:9C3D: AD F2 00  LDA ram_pos_Y_lo_камера
 C - - - - - 0x015C50 05:9C40: E9 04     SBC #$04
-C - - - - - 0x015C52 05:9C42: 8D F2 00  STA ram_pos_Y_lo_camera
+C - - - - - 0x015C52 05:9C42: 8D F2 00  STA ram_pos_Y_lo_камера
 C - - - - - 0x015C55 05:9C45: C9 F0     CMP #$F0
 C - - - - - 0x015C57 05:9C47: 90 0E     BCC bra_9C57
 C - - - - - 0x015C59 05:9C49: E9 10     SBC #$10
-C - - - - - 0x015C5B 05:9C4B: 8D F2 00  STA ram_pos_Y_lo_camera
+C - - - - - 0x015C5B 05:9C4B: 8D F2 00  STA ram_pos_Y_lo_камера
 C - - - - - 0x015C5E 05:9C4E: 38        SEC
-C - - - - - 0x015C5F 05:9C4F: AD F3 00  LDA ram_pos_Y_hi_camera
+C - - - - - 0x015C5F 05:9C4F: AD F3 00  LDA ram_pos_Y_hi_камера
 C - - - - - 0x015C62 05:9C52: E9 01     SBC #$01
-C - - - - - 0x015C64 05:9C54: 8D F3 00  STA ram_pos_Y_hi_camera
+C - - - - - 0x015C64 05:9C54: 8D F3 00  STA ram_pos_Y_hi_камера
 bra_9C57:
-C - - - - - 0x015C67 05:9C57: AD F3 00  LDA ram_pos_Y_hi_camera
+C - - - - - 0x015C67 05:9C57: AD F3 00  LDA ram_pos_Y_hi_камера
 C - - - - - 0x015C6A 05:9C5A: 30 07     BMI bra_9C63
 C - - - - - 0x015C6C 05:9C5C: D0 0D     BNE bra_9C6B_RTS
-C - - - - - 0x015C6E 05:9C5E: AD F2 00  LDA ram_pos_Y_lo_camera
+C - - - - - 0x015C6E 05:9C5E: AD F2 00  LDA ram_pos_Y_lo_камера
 C - - - - - 0x015C71 05:9C61: D0 08     BNE bra_9C6B_RTS
 bra_9C63:
 C - - - - - 0x015C73 05:9C63: A9 00     LDA #$00
-C - - - - - 0x015C75 05:9C65: 8D F2 00  STA ram_pos_Y_lo_camera
-C - - - - - 0x015C78 05:9C68: 8D F3 00  STA ram_pos_Y_hi_camera
+C - - - - - 0x015C75 05:9C65: 8D F2 00  STA ram_pos_Y_lo_камера
+C - - - - - 0x015C78 05:9C68: 8D F3 00  STA ram_pos_Y_hi_камера
 bra_9C6B_RTS:
 C D 0 - - - 0x015C7B 05:9C6B: 60        RTS
 
