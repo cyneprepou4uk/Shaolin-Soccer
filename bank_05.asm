@@ -1528,7 +1528,7 @@ tbl_893F:
 
 sub_8947:
 - - - - - - 0x014957 05:8947: 20 11 C0  JSR sub_0x01ECB9
-- - - - - - 0x01495A 05:894A: 20 17 C0  JSR sub_0x01EE81_disable_NMI
+- - - - - - 0x01495A 05:894A: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 - - - - - - 0x01495D 05:894D: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 - - - - - - 0x014960 05:8950: 4C 9E 89  JMP loc_899E
 
@@ -1536,7 +1536,7 @@ sub_8947:
 
 sub_8953:
 C - - - - - 0x014963 05:8953: 20 11 C0  JSR sub_0x01ECB9
-C - - - - - 0x014966 05:8956: 20 17 C0  JSR sub_0x01EE81_disable_NMI
+C - - - - - 0x014966 05:8956: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x014969 05:8959: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x01496C 05:895C: A2 00     LDX #$00
 bra_895E_loop:
@@ -1600,7 +1600,7 @@ C - - - - - 0x0149E2 05:89D2: A9 23     LDA #> $236B
 C - - - - - 0x0149E4 05:89D4: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x0149E7 05:89D7: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
 C - - - - - 0x0149EA 05:89DA: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
-C - - - - - 0x0149ED 05:89DD: 20 14 C0  JSR sub_0x01EE75_enable_NMI
+C - - - - - 0x0149ED 05:89DD: 20 14 C0  JSR sub_0x01EE75_включить_NMI
 C - - - - - 0x0149F0 05:89E0: 60        RTS
 
 
@@ -2137,7 +2137,7 @@ tbl_8CFE:
 
 sub_8D0A:
 C - - - - - 0x014D1A 05:8D0A: 20 11 C0  JSR sub_0x01ECB9
-C - - - - - 0x014D1D 05:8D0D: 20 17 C0  JSR sub_0x01EE81_disable_NMI
+C - - - - - 0x014D1D 05:8D0D: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x014D20 05:8D10: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x014D23 05:8D13: 24 57     BIT ram_опция_режим_и_сложность
 C - - - - - 0x014D25 05:8D15: 70 0B     BVS bra_8D22_minibattle
@@ -2176,7 +2176,7 @@ C - - - - - 0x014D5F 05:8D4F: 88        DEY
 C - - - - - 0x014D60 05:8D50: 10 F8     BPL bra_8D4A_loop
 C - - - - - 0x014D62 05:8D52: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
 C - - - - - 0x014D65 05:8D55: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
-C - - - - - 0x014D68 05:8D58: 20 14 C0  JSR sub_0x01EE75_enable_NMI
+C - - - - - 0x014D68 05:8D58: 20 14 C0  JSR sub_0x01EE75_включить_NMI
 C - - - - - 0x014D6B 05:8D5B: A9 02     LDA #con_music_меню
 C - - - - - 0x014D6D 05:8D5D: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x014D70 05:8D60: 60        RTS
@@ -2597,7 +2597,7 @@ tbl_8F6D_spd_X:
 
 sub_8F79:
 C - - - - - 0x014F89 05:8F79: 20 11 C0  JSR sub_0x01ECB9
-C - - - - - 0x014F8C 05:8F7C: 20 17 C0  JSR sub_0x01EE81_disable_NMI
+C - - - - - 0x014F8C 05:8F7C: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x014F8F 05:8F7F: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x014F92 05:8F82: A2 00     LDX #$00
 C - - - - - 0x014F94 05:8F84: 86 1C     STX ram_001C
@@ -2616,7 +2616,7 @@ C - - - - - 0x014FAC 05:8F9C: 90 E8     BCC bra_8F86_loop
 C - - - - - 0x014FAE 05:8F9E: 20 9F BE  JSR sub_BE9F
 C - - - - - 0x014FB1 05:8FA1: 20 FA BE  JSR sub_BEFA
 C - - - - - 0x014FB4 05:8FA4: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
-C - - - - - 0x014FB7 05:8FA7: 20 14 C0  JSR sub_0x01EE75_enable_NMI
+C - - - - - 0x014FB7 05:8FA7: 20 14 C0  JSR sub_0x01EE75_включить_NMI
 C - - - - - 0x014FBA 05:8FAA: 60        RTS
 
 
@@ -3440,7 +3440,7 @@ C - - - - - 0x0153D8 05:93C8: 20 0B C0  JSR sub_0x01EEAA_базовые_банк
 C - - - - - 0x0153DB 05:93CB: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x0153DE 05:93CE: 48        PHA
 C - - - - - 0x0153DF 05:93CF: 20 11 C0  JSR sub_0x01ECB9
-C - - - - - 0x0153E2 05:93D2: 20 17 C0  JSR sub_0x01EE81_disable_NMI
+C - - - - - 0x0153E2 05:93D2: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x0153E5 05:93D5: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x0153E8 05:93D8: A9 02     LDA #$02
 C - - - - - 0x0153EA 05:93DA: 8D C9 05  STA ram_счетчик_опций
@@ -3453,7 +3453,7 @@ C - - - - - 0x0153F9 05:93E9: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x0153FC 05:93EC: C9 0A     CMP #$0A
 C - - - - - 0x0153FE 05:93EE: 90 ED     BCC bra_93DD
 C - - - - - 0x015400 05:93F0: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
-C - - - - - 0x015403 05:93F3: 20 14 C0  JSR sub_0x01EE75_enable_NMI
+C - - - - - 0x015403 05:93F3: 20 14 C0  JSR sub_0x01EE75_включить_NMI
 C - - - - - 0x015406 05:93F6: 68        PLA
 C - - - - - 0x015407 05:93F7: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x01540A 05:93FA: 20 5D 95  JSR sub_955D_опции_погоды
@@ -5823,7 +5823,7 @@ sub_9FEB:
 C - - - - - 0x015FFB 05:9FEB: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x015FFE 05:9FEE: 48        PHA
 C - - - - - 0x015FFF 05:9FEF: 20 11 C0  JSR sub_0x01ECB9
-C - - - - - 0x016002 05:9FF2: 20 17 C0  JSR sub_0x01EE81_disable_NMI
+C - - - - - 0x016002 05:9FF2: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x016005 05:9FF5: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x016008 05:9FF8: 20 A0 A0  JSR sub_A0A0
 C - - - - - 0x01600B 05:9FFB: A9 03     LDA #$03
@@ -5858,7 +5858,7 @@ C - - - - - 0x01604E 05:A03E: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x016051 05:A041: C9 04     CMP #$04
 C - - - - - 0x016053 05:A043: 90 E4     BCC bra_A029
 C - - - - - 0x016055 05:A045: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
-C - - - - - 0x016058 05:A048: 20 14 C0  JSR sub_0x01EE75_enable_NMI
+C - - - - - 0x016058 05:A048: 20 14 C0  JSR sub_0x01EE75_включить_NMI
 C - - - - - 0x01605B 05:A04B: 68        PLA
 C - - - - - 0x01605C 05:A04C: 8D C9 05  STA ram_счетчик_опций
 C - - - - - 0x01605F 05:A04F: 60        RTS
@@ -5995,11 +5995,11 @@ C - - - - - 0x016124 05:A114: 8D 14 03  STA ram_pos_X_lo_игрок
 C - - - - - 0x016127 05:A117: A9 B8     LDA #$B8
 C - - - - - 0x016129 05:A119: 8D 4D 03  STA ram_pos_Y_lo_игрок
 C - - - - - 0x01612C 05:A11C: 20 11 C0  JSR sub_0x01ECB9
-C - - - - - 0x01612F 05:A11F: 20 17 C0  JSR sub_0x01EE81_disable_NMI
+C - - - - - 0x01612F 05:A11F: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x016132 05:A122: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x016135 05:A125: 20 6A A1  JSR sub_A16A
 C - - - - - 0x016138 05:A128: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
-C - - - - - 0x01613B 05:A12B: 20 14 C0  JSR sub_0x01EE75_enable_NMI
+C - - - - - 0x01613B 05:A12B: 20 14 C0  JSR sub_0x01EE75_включить_NMI
 C - - - - - 0x01613E 05:A12E: A9 02     LDA #con_music_меню
 C - - - - - 0x016140 05:A130: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x016143 05:A133: 60        RTS
@@ -6336,7 +6336,7 @@ C - - - - - 0x01632E 05:A31E: 60        RTS
 
 sub_A31F:
 C - - - - - 0x01632F 05:A31F: 20 11 C0  JSR sub_0x01ECB9
-C - - - - - 0x016332 05:A322: 20 17 C0  JSR sub_0x01EE81_disable_NMI
+C - - - - - 0x016332 05:A322: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x016335 05:A325: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x016338 05:A328: AD D1 05  LDA ram_05D1
 C - - - - - 0x01633B 05:A32B: 0A        ASL
@@ -6438,7 +6438,7 @@ C - - - - - 0x016412 05:A402: C6 2A     DEC ram_002A
 C - - - - - 0x016414 05:A404: 10 CD     BPL bra_A3D3
 bra_A406:
 C - - - - - 0x016416 05:A406: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
-C - - - - - 0x016419 05:A409: 20 14 C0  JSR sub_0x01EE75_enable_NMI
+C - - - - - 0x016419 05:A409: 20 14 C0  JSR sub_0x01EE75_включить_NMI
 C - - - - - 0x01641C 05:A40C: 60        RTS
 
 
@@ -7210,7 +7210,7 @@ C - - - - - 0x01680A 05:A7FA: 90 E7     BCC bra_A7E3
 C - - - - - 0x01680C 05:A7FC: AD D1 05  LDA ram_05D1
 C - - - - - 0x01680F 05:A7FF: 48        PHA
 C - - - - - 0x016810 05:A800: 20 11 C0  JSR sub_0x01ECB9
-C - - - - - 0x016813 05:A803: 20 17 C0  JSR sub_0x01EE81_disable_NMI
+C - - - - - 0x016813 05:A803: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x016816 05:A806: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x016819 05:A809: A0 00     LDY #$00
 bra_A80B:
@@ -7234,7 +7234,7 @@ C - - - - - 0x016842 05:A832: E9 0C     SBC #$0C
 C - - - - - 0x016844 05:A834: 8D B7 06  STA ram_байт_2006_lo_графика
 C - - - - - 0x016847 05:A837: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
 C - - - - - 0x01684A 05:A83A: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
-C - - - - - 0x01684D 05:A83D: 20 14 C0  JSR sub_0x01EE75_enable_NMI
+C - - - - - 0x01684D 05:A83D: 20 14 C0  JSR sub_0x01EE75_включить_NMI
 C - - - - - 0x016850 05:A840: 68        PLA
 C - - - - - 0x016851 05:A841: 8D D1 05  STA ram_05D1
 C - - - - - 0x016854 05:A844: A9 FF     LDA #$FF
@@ -9720,7 +9720,7 @@ tbl_B5D4:
 
 sub_B5E6:
 - - - - - - 0x0175F6 05:B5E6: 20 11 C0  JSR sub_0x01ECB9
-- - - - - - 0x0175F9 05:B5E9: 20 17 C0  JSR sub_0x01EE81_disable_NMI
+- - - - - - 0x0175F9 05:B5E9: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 - - - - - - 0x0175FC 05:B5EC: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 - - - - - - 0x0175FF 05:B5EF: A2 00     LDX #$00
 - - - - - - 0x017601 05:B5F1: A9 25     LDA #$25
@@ -9821,7 +9821,7 @@ bra_B695:
 - - - - - - 0x0176BB 05:B6AB: 4C 79 B6  JMP loc_B679
 bra_B6AE:
 - - - - - - 0x0176BE 05:B6AE: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
-- - - - - - 0x0176C1 05:B6B1: 20 14 C0  JSR sub_0x01EE75_enable_NMI
+- - - - - - 0x0176C1 05:B6B1: 20 14 C0  JSR sub_0x01EE75_включить_NMI
 - - - - - - 0x0176C4 05:B6B4: 60        RTS
 
 

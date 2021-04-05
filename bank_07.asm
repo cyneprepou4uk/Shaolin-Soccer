@@ -27,7 +27,7 @@ sub_0x000000_RESET_init:
                                         STA $2001
                                         STA ram_для_2001
                                         JSR sub_скопировать_на_батарейку
-                                        JSR sub_0x01EE81_disable_NMI
+                                        JSR sub_0x01EE81_выключить_NMI
                                         JSR sub_0x01EF74_очистка_фона_и_спрайтов
 ;                                        JSR sub_подготовка_палитры_vt03
                                         LDA #$00
