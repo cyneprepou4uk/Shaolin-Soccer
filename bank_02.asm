@@ -13231,17 +13231,15 @@ C - - - - - 0x00B8F5 02:B8E5: AD 00 B9  LDA tbl_B900
 C - - - - - 0x00B8F8 02:B8E8: 85 30     STA ram_0030
 C - - - - - 0x00B8FA 02:B8EA: AD 01 B9  LDA tbl_B900 + 1
 C - - - - - 0x00B8FD 02:B8ED: 85 31     STA ram_0031
-C - - - - - 0x00B8FF 02:B8EF: AD 02 B9  LDA tbl_B902
+C - - - - - 0x00B8FF 02:B8EF: AD 02 B9  LDA #< ofs_B86B
 C - - - - - 0x00B902 02:B8F2: 85 32     STA ram_0032
-C - - - - - 0x00B904 02:B8F4: AD 03 B9  LDA tbl_B902 + 1
+C - - - - - 0x00B904 02:B8F4: AD 03 B9  LDA #> ofs_B86B
 C - - - - - 0x00B907 02:B8F7: 85 33     STA ram_0033
 C - - - - - 0x00B909 02:B8F9: BD 59 04  LDA ram_movement_id_игрок,X
 C - - - - - 0x00B90C 02:B8FC: 20 56 C0  JSR sub_0x01CECD_вычислить_анимацию
 C - - - - - 0x00B90F 02:B8FF: 60        RTS
 tbl_B900:
 - D 1 - - - 0x00B910 02:B900: 04 B9     .word off_B904
-tbl_B902:
-- D 1 - - - 0x00B912 02:B902: 6B B8     .word ofs_B86B
 
 
 
