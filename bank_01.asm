@@ -12165,9 +12165,9 @@ C - - - - - 0x0070D6 01:B0C6: 4C 30 B4  JMP loc_B430
 bra_B0C9_RTS:
 - - - - - - 0x0070D9 01:B0C9: 60        RTS
 bra_B0CA:
-C - - - - - 0x0070DA 01:B0CA: A5 4C     LDA ram_for_2000
+C - - - - - 0x0070DA 01:B0CA: A5 4C     LDA ram_для_2000
 C - - - - - 0x0070DC 01:B0CC: 09 04     ORA #$04
-C - - - - - 0x0070DE 01:B0CE: 85 4C     STA ram_for_2000
+C - - - - - 0x0070DE 01:B0CE: 85 4C     STA ram_для_2000
 C - - - - - 0x0070E0 01:B0D0: 8D 00 20  STA $2000
 bra_B0D3:
 C - - - - - 0x0070E3 01:B0D3: AD ED 05  LDA ram_следы_lo_2006 + 1
@@ -13059,9 +13059,9 @@ off_B41E_11:
 
 
 loc_B430:
-C D 1 - - - 0x007440 01:B430: A5 4C     LDA ram_for_2000
+C D 1 - - - 0x007440 01:B430: A5 4C     LDA ram_для_2000
 C - - - - - 0x007442 01:B432: 29 FB     AND #$FB
-C - - - - - 0x007444 01:B434: 85 4C     STA ram_for_2000
+C - - - - - 0x007444 01:B434: 85 4C     STA ram_для_2000
 C - - - - - 0x007446 01:B436: 8D 00 20  STA $2000
 C - - - - - 0x007449 01:B439: AD E9 05  LDA ram_следы_hi_2006 + 1
 C - - - - - 0x00744C 01:B43C: 29 7F     AND #$7F
@@ -13414,9 +13414,9 @@ C - - - - - 0x007605 01:B5F5: C9 07     CMP #$07
 C - - - - - 0x007607 01:B5F7: D0 03     BNE bra_B5FC
 C - - - - - 0x007609 01:B5F9: 4C 58 B8  JMP loc_B858
 bra_B5FC:
-C - - - - - 0x00760C 01:B5FC: A5 4C     LDA ram_for_2000
+C - - - - - 0x00760C 01:B5FC: A5 4C     LDA ram_для_2000
 C - - - - - 0x00760E 01:B5FE: 29 FB     AND #$FB
-C - - - - - 0x007610 01:B600: 85 4C     STA ram_for_2000
+C - - - - - 0x007610 01:B600: 85 4C     STA ram_для_2000
 C - - - - - 0x007612 01:B602: 8D 00 20  STA $2000
 C - - - - - 0x007615 01:B605: A5 1C     LDA ram_001C
 C - - - - - 0x007617 01:B607: 0A        ASL
@@ -13640,9 +13640,9 @@ off_B6D0_09:
 
 
 sub_B6D8:
-C - - - - - 0x0076E8 01:B6D8: A5 4C     LDA ram_for_2000
+C - - - - - 0x0076E8 01:B6D8: A5 4C     LDA ram_для_2000
 C - - - - - 0x0076EA 01:B6DA: 09 04     ORA #$04
-C - - - - - 0x0076EC 01:B6DC: 85 4C     STA ram_for_2000
+C - - - - - 0x0076EC 01:B6DC: 85 4C     STA ram_для_2000
 C - - - - - 0x0076EE 01:B6DE: 8D 00 20  STA $2000
 C - - - - - 0x0076F1 01:B6E1: A5 1C     LDA ram_001C
 C - - - - - 0x0076F3 01:B6E3: 0A        ASL
@@ -13998,9 +13998,9 @@ off_B840_09:
 
 
 loc_B858:
-C D 1 - - - 0x007868 01:B858: A5 4C     LDA ram_for_2000
+C D 1 - - - 0x007868 01:B858: A5 4C     LDA ram_для_2000
 C - - - - - 0x00786A 01:B85A: 29 FB     AND #$FB
-C - - - - - 0x00786C 01:B85C: 85 4C     STA ram_for_2000
+C - - - - - 0x00786C 01:B85C: 85 4C     STA ram_для_2000
 C - - - - - 0x00786E 01:B85E: 8D 00 20  STA $2000
 C - - - - - 0x007871 01:B861: AD 02 20  LDA $2002
 C - - - - - 0x007874 01:B864: A9 24     LDA #> $24CC
@@ -14182,9 +14182,9 @@ C - - - - - 0x00798C 01:B97C: 60        RTS
 
 
 sub_B97D:
-C - - - - - 0x00798D 01:B97D: A5 4C     LDA ram_for_2000
+C - - - - - 0x00798D 01:B97D: A5 4C     LDA ram_для_2000
 C - - - - - 0x00798F 01:B97F: 09 04     ORA #$04
-C - - - - - 0x007991 01:B981: 85 4C     STA ram_for_2000
+C - - - - - 0x007991 01:B981: 85 4C     STA ram_для_2000
 C - - - - - 0x007993 01:B983: 8D 00 20  STA $2000
 bra_B986:
 C - - - - - 0x007996 01:B986: AD 02 20  LDA $2002

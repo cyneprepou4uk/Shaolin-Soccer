@@ -22,10 +22,10 @@
 sub_0x000000_RESET_init:
                                         LDA #$08    ; спрайты в 1000-1FFF, выключить NMI
                                         STA $2000
-                                        STA ram_for_2000
+                                        STA ram_для_2000
                                         LDA #$06    ; отобразить фон и спрайты слева
                                         STA $2001
-                                        STA ram_for_2001
+                                        STA ram_для_2001
                                         JSR sub_скопировать_на_батарейку
                                         JSR sub_0x01EE81_disable_NMI
                                         JSR sub_0x01EF74_очистка_фона_и_спрайтов
@@ -55,10 +55,10 @@ sub_0x000000_RESET_init:
                                         JSR sub_0x01EF1A_очистить_0057_00F8
                                         JSR sub_очистка_страниц_оперативки
                                         LDA #$8C
-                                        STA ram_for_2000
+                                        STA ram_для_2000
                                         STA $2000
                                         LDA #$18
-                                        STA ram_for_2001
+                                        STA ram_для_2001
                                         STA $2001
                                         LDA #$FF
                                         STA ram_байт_2006_hi_атрибуты

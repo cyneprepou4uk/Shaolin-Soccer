@@ -6674,9 +6674,9 @@ C - - - - - 0x00E9A4 03:A994: 60        RTS
 
 
 loc_A995:
-C D 1 - - - 0x00E9A5 03:A995: A5 4C     LDA ram_for_2000
+C D 1 - - - 0x00E9A5 03:A995: A5 4C     LDA ram_для_2000
 C - - - - - 0x00E9A7 03:A997: 29 FB     AND #$FB
-C - - - - - 0x00E9A9 03:A999: 85 4C     STA ram_for_2000
+C - - - - - 0x00E9A9 03:A999: 85 4C     STA ram_для_2000
 C - - - - - 0x00E9AB 03:A99B: 8D 00 20  STA $2000
 C - - - - - 0x00E9AE 03:A99E: A2 00     LDX #$00
 bra_A9A0:

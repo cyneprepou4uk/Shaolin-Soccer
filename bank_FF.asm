@@ -857,7 +857,7 @@ C - - - - - 0x01C35D 07:C34D: A5 F7     LDA ram_00F7
 C - - - - - 0x01C35F 07:C34F: 48        PHA
 C - - - - - 0x01C360 07:C350: B9 70 C3  LDA tbl_C370_prg_bank,Y
 C - - - - - 0x01C363 07:C353: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01C366 07:C356: B9 71 C3  LDA tbl_C370_low_byte_addr_for_indirect_jump + 1,Y
+C - - - - - 0x01C366 07:C356: B9 71 C3  LDA tbl_C370_low_byte_addr_для_indirect_jump + 1,Y
 C - - - - - 0x01C369 07:C359: 85 F6     STA ram_00F6
 C - - - - - 0x01C36B 07:C35B: A9 80     LDA #$80
 C - - - - - 0x01C36D 07:C35D: 85 F7     STA ram_00F7
@@ -875,7 +875,7 @@ sub_C36D_непрямой_прыжок:
 C - - - - - 0x01C37D 07:C36D: 6C F6 00  JMP (ram_00F6)
 
 tbl_C370_prg_bank:
-tbl_C370_low_byte_addr_for_indirect_jump:
+tbl_C370_low_byte_addr_для_indirect_jump:
 - D 2 - - - 0x01C380 07:C370: 03        .byte con_prg_bank + $03, < loc_0x00C010       ; 00
 - D 2 - - - 0x01C382 07:C372: 04        .byte con_prg_bank + $04, < loc_0x010010       ; 01
 - D 2 - - - 0x01C384 07:C374: 03        .byte con_prg_bank + $03, < loc_0x00C013       ; 02
@@ -1692,7 +1692,7 @@ C - - - - - 0x01CA00 07:C9F0: 85 58     STA ram_script
 C - - - - - 0x01CA02 07:C9F2: A9 0E     LDA #$0E
 C - - - - - 0x01CA04 07:C9F4: 85 59     STA ram_subscript
 C - - - - - 0x01CA06 07:C9F6: A9 03     LDA #$03
-C - - - - - 0x01CA08 07:C9F8: 85 5B     STA ram_for_0059
+C - - - - - 0x01CA08 07:C9F8: 85 5B     STA ram_для_0059
 loc_C9FA:
 C D 2 - - - 0x01CA0A 07:C9FA: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01CA0C 07:C9FC: 10 20     BPL bra_CA11_RTS    ; если режим прохождения
@@ -4173,9 +4173,9 @@ C - - - - - 0x01D636 07:D626: F0 01     BEQ bra_D629
 bra_D628_RTS:
 C - - - - - 0x01D638 07:D628: 60        RTS
 bra_D629:
-C - - - - - 0x01D639 07:D629: A5 4C     LDA ram_for_2000
+C - - - - - 0x01D639 07:D629: A5 4C     LDA ram_для_2000
 C - - - - - 0x01D63B 07:D62B: 29 FB     AND #$FB
-C - - - - - 0x01D63D 07:D62D: 85 4C     STA ram_for_2000
+C - - - - - 0x01D63D 07:D62D: 85 4C     STA ram_для_2000
 C - - - - - 0x01D63F 07:D62F: 8D 00 20  STA $2000
 C - - - - - 0x01D642 07:D632: AD AB 05  LDA ram_флаг_обновл_тайлов_экр
 C - - - - - 0x01D645 07:D635: 29 20     AND #$20
@@ -5791,9 +5791,9 @@ C D 3 - - - 0x01E180 07:E170: AD F8 05  LDA ram_содержимое_hud
 C - - - - - 0x01E183 07:E173: 30 01     BMI bra_E176
 - - - - - - 0x01E185 07:E175: 60        RTS
 bra_E176:
-C - - - - - 0x01E186 07:E176: A5 4C     LDA ram_for_2000
+C - - - - - 0x01E186 07:E176: A5 4C     LDA ram_для_2000
 C - - - - - 0x01E188 07:E178: 29 FB     AND #$FB
-C - - - - - 0x01E18A 07:E17A: 85 4C     STA ram_for_2000
+C - - - - - 0x01E18A 07:E17A: 85 4C     STA ram_для_2000
 C - - - - - 0x01E18C 07:E17C: 8D 00 20  STA $2000
 C - - - - - 0x01E18F 07:E17F: AD F9 05  LDA ram_flag_hud_ready
 C - - - - - 0x01E192 07:E182: F0 74     BEQ bra_E1F8_hud_не_готов
@@ -6345,9 +6345,9 @@ C - - - - - 0x01E3E9 07:E3D9: AD FF BF  LDA $BFFF
 C - - - - - 0x01E3EC 07:E3DC: 48        PHA
 C - - - - - 0x01E3ED 07:E3DD: AD F3 05  LDA ram_номер_prg_банка
 C - - - - - 0x01E3F0 07:E3E0: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01E3F3 07:E3E3: A5 4C     LDA ram_for_2000
+C - - - - - 0x01E3F3 07:E3E3: A5 4C     LDA ram_для_2000
 C - - - - - 0x01E3F5 07:E3E5: 29 FB     AND #$FB
-C - - - - - 0x01E3F7 07:E3E7: 85 4C     STA ram_for_2000
+C - - - - - 0x01E3F7 07:E3E7: 85 4C     STA ram_для_2000
 C - - - - - 0x01E3F9 07:E3E9: 8D 00 20  STA $2000
 C - - - - - 0x01E3FC 07:E3EC: AD E5 05  LDA ram_покрытие_поля_лужами
 C - - - - - 0x01E3FF 07:E3EF: 0A        ASL
@@ -7897,9 +7897,9 @@ C - - - - - 0x01ECBA 07:ECAA: A5 4F     LDA ram_флаг_nmi
 C - - - - - 0x01ECBC 07:ECAC: 48        PHA
 C - - - - - 0x01ECBD 07:ECAD: A9 00     LDA #con_nmi_выкл
 C - - - - - 0x01ECBF 07:ECAF: 85 4F     STA ram_флаг_nmi
-C - - - - - 0x01ECC1 07:ECB1: A5 4C     LDA ram_for_2000
+C - - - - - 0x01ECC1 07:ECB1: A5 4C     LDA ram_для_2000
 C - - - - - 0x01ECC3 07:ECB3: 09 80     ORA #$80
-C - - - - - 0x01ECC5 07:ECB5: 85 4C     STA ram_for_2000
+C - - - - - 0x01ECC5 07:ECB5: 85 4C     STA ram_для_2000
 C - - - - - 0x01ECC7 07:ECB7: 8D 00 20  STA $2000
 C - - - - - 0x01ECCA 07:ECBA: A9 0F     LDA #$0F
 C - - - - - 0x01ECCC 07:ECBC: 8D 15 40  STA $4015
@@ -7989,9 +7989,9 @@ C - - - - - 0x01EE69 07:EE59: 60        RTS
 sub_0x01EE75_enable_NMI:
 sub_EE65_enable_NMI:
 C D 3 - - - 0x01EE75 07:EE65: 48        PHA
-C - - - - - 0x01EE76 07:EE66: A5 4C     LDA ram_for_2000
+C - - - - - 0x01EE76 07:EE66: A5 4C     LDA ram_для_2000
 C - - - - - 0x01EE78 07:EE68: 09 80     ORA #$80
-C - - - - - 0x01EE7A 07:EE6A: 85 4C     STA ram_for_2000
+C - - - - - 0x01EE7A 07:EE6A: 85 4C     STA ram_для_2000
 C - - - - - 0x01EE7C 07:EE6C: 8D 00 20  STA $2000
 C - - - - - 0x01EE7F 07:EE6F: 68        PLA
 C - - - - - 0x01EE80 07:EE70: 60        RTS
@@ -8001,9 +8001,9 @@ C - - - - - 0x01EE80 07:EE70: 60        RTS
 sub_0x01EE81_disable_NMI:
 sub_EE71_disable_NMI:
 C D 3 - - - 0x01EE81 07:EE71: 48        PHA
-C - - - - - 0x01EE82 07:EE72: A5 4C     LDA ram_for_2000
+C - - - - - 0x01EE82 07:EE72: A5 4C     LDA ram_для_2000
 C - - - - - 0x01EE84 07:EE74: 29 7F     AND #$7F
-C - - - - - 0x01EE86 07:EE76: 85 4C     STA ram_for_2000
+C - - - - - 0x01EE86 07:EE76: 85 4C     STA ram_для_2000
 C - - - - - 0x01EE88 07:EE78: 8D 00 20  STA $2000
 C - - - - - 0x01EE8B 07:EE7B: 68        PLA
 C - - - - - 0x01EE8C 07:EE7C: 60        RTS
@@ -8012,12 +8012,12 @@ C - - - - - 0x01EE8C 07:EE7C: 60        RTS
 
 sub_EE7D_базовые_банки_фона:
 C - - - - - 0x01EE8D 07:EE7D: A9 00     LDA #$00
-C - - - - - 0x01EE8F 07:EE7F: 8D 4E 00  STA ram_for_8000
+C - - - - - 0x01EE8F 07:EE7F: 8D 4E 00  STA ram_для_8000
 C - - - - - 0x01EE92 07:EE82: 8D 00 80  STA $8000
 C - - - - - 0x01EE95 07:EE85: AD BC 05  LDA ram_банк_фона
 C - - - - - 0x01EE98 07:EE88: 8D 01 80  STA $8001
 C - - - - - 0x01EE9B 07:EE8B: A9 01     LDA #$01
-C - - - - - 0x01EE9D 07:EE8D: 8D 4E 00  STA ram_for_8000
+C - - - - - 0x01EE9D 07:EE8D: 8D 4E 00  STA ram_для_8000
 C - - - - - 0x01EEA0 07:EE90: 8D 00 80  STA $8000
 C - - - - - 0x01EEA3 07:EE93: AD BD 05  LDA ram_банк_фона + 1
 C - - - - - 0x01EEA6 07:EE96: 8D 01 80  STA $8001
@@ -8028,22 +8028,22 @@ C - - - - - 0x01EEA9 07:EE99: 60        RTS
 sub_0x01EEAA_базовые_банки_спрайтов:
 sub_EE9A_базовые_банки_спрайтов:
 C D 3 - - - 0x01EEAA 07:EE9A: A9 02     LDA #$02
-C - - - - - 0x01EEAC 07:EE9C: 8D 4E 00  STA ram_for_8000
+C - - - - - 0x01EEAC 07:EE9C: 8D 4E 00  STA ram_для_8000
 C - - - - - 0x01EEAF 07:EE9F: 8D 00 80  STA $8000
 C - - - - - 0x01EEB2 07:EEA2: AD B8 05  LDA ram_банк_спрайтов
 C - - - - - 0x01EEB5 07:EEA5: 8D 01 80  STA $8001
 C - - - - - 0x01EEB8 07:EEA8: A9 03     LDA #$03
-C - - - - - 0x01EEBA 07:EEAA: 8D 4E 00  STA ram_for_8000
+C - - - - - 0x01EEBA 07:EEAA: 8D 4E 00  STA ram_для_8000
 C - - - - - 0x01EEBD 07:EEAD: 8D 00 80  STA $8000
 C - - - - - 0x01EEC0 07:EEB0: AD B9 05  LDA ram_банк_спрайтов + 1
 C - - - - - 0x01EEC3 07:EEB3: 8D 01 80  STA $8001
 C - - - - - 0x01EEC6 07:EEB6: A9 04     LDA #$04
-C - - - - - 0x01EEC8 07:EEB8: 8D 4E 00  STA ram_for_8000
+C - - - - - 0x01EEC8 07:EEB8: 8D 4E 00  STA ram_для_8000
 C - - - - - 0x01EECB 07:EEBB: 8D 00 80  STA $8000
 C - - - - - 0x01EECE 07:EEBE: AD BA 05  LDA ram_банк_спрайтов + 2
 C - - - - - 0x01EED1 07:EEC1: 8D 01 80  STA $8001
 C - - - - - 0x01EED4 07:EEC4: A9 05     LDA #$05
-C - - - - - 0x01EED6 07:EEC6: 8D 4E 00  STA ram_for_8000
+C - - - - - 0x01EED6 07:EEC6: 8D 4E 00  STA ram_для_8000
 C - - - - - 0x01EED9 07:EEC9: 8D 00 80  STA $8000
 C - - - - - 0x01EEDC 07:EECC: AD BB 05  LDA ram_банк_спрайтов + 3
 C - - - - - 0x01EEDF 07:EECF: 8D 01 80  STA $8001
@@ -8057,7 +8057,7 @@ C - - - - - 0x01EEE4 07:EED4: 48        PHA
 C - - - - - 0x01EEE5 07:EED5: 8A        TXA
 C - - - - - 0x01EEE6 07:EED6: 48        PHA
 C - - - - - 0x01EEE7 07:EED7: A9 07     LDA #$07
-C - - - - - 0x01EEE9 07:EED9: 8D 4E 00  STA ram_for_8000
+C - - - - - 0x01EEE9 07:EED9: 8D 4E 00  STA ram_для_8000
 C - - - - - 0x01EEEC 07:EEDC: 8D 00 80  STA $8000
 C - - - - - 0x01EEEF 07:EEDF: BA        TSX
 C - - - - - 0x01EEF0 07:EEE0: BD 02 01  LDA ram_0102,X
@@ -8065,7 +8065,7 @@ C - - - - - 0x01EEF3 07:EEE3: 0A        ASL
 C - - - - - 0x01EEF4 07:EEE4: 09 01     ORA #$01
 C - - - - - 0x01EEF6 07:EEE6: 8D 01 80  STA $8001
 C - - - - - 0x01EEF9 07:EEE9: A9 06     LDA #$06
-C - - - - - 0x01EEFB 07:EEEB: 8D 4E 00  STA ram_for_8000
+C - - - - - 0x01EEFB 07:EEEB: 8D 4E 00  STA ram_для_8000
 C - - - - - 0x01EEFE 07:EEEE: 8D 00 80  STA $8000
 C - - - - - 0x01EF01 07:EEF1: BD 02 01  LDA ram_0102,X
 C - - - - - 0x01EF04 07:EEF4: 0A        ASL
@@ -8107,10 +8107,10 @@ bra_EF18_loop:
 
 sub_EF27_очистить_ppu_2000_2FFF:
 C - - - - - 0x01EF37 07:EF27: A9 20     BIT $2002
-                                        LDA ram_for_2000
+                                        LDA ram_для_2000
                                         AND #$FB    ; увеличивать адрес на 1
                                         STA $2000
-                                        STA ram_for_2000
+                                        STA ram_для_2000
                                         LDA #> $2000
                                         STA $2006
                                         LDA #< $2000
@@ -8129,18 +8129,18 @@ C - - - - - 0x01EF37 07:EF27: A9 20     BIT $2002
 
 
 sub_EF5A_скрыть_фон_и_спрайты_за_полоской_слева:
-C - - - - - 0x01EF6A 07:EF5A: A5 4D     LDA ram_for_2001
+C - - - - - 0x01EF6A 07:EF5A: A5 4D     LDA ram_для_2001
 C - - - - - 0x01EF6C 07:EF5C: 29 F9     AND #$F9
 loc_EF5E_запись_в_2001:
 bra_EF5E_запись_в_2001:
-C - - - - - 0x01EF6E 07:EF5E: 85 4D     STA ram_for_2001
+C - - - - - 0x01EF6E 07:EF5E: 85 4D     STA ram_для_2001
 C - - - - - 0x01EF70 07:EF60: 8D 01 20  STA $2001
 C - - - - - 0x01EF73 07:EF63: 60        RTS
 
 
 
 sub_0x01EF64_убрать_полоску_слева_на_экране:
-C D 3 - - - 0x01EF64 07:EF54: A5 4D     LDA ram_for_2001
+C D 3 - - - 0x01EF64 07:EF54: A5 4D     LDA ram_для_2001
 C - - - - - 0x01EF66 07:EF56: 09 02     ORA #$02
 C - - - - - 0x01EF68 07:EF58: D0 04     BNE bra_EF5E_запись_в_2001
 
@@ -8148,7 +8148,7 @@ C - - - - - 0x01EF68 07:EF58: D0 04     BNE bra_EF5E_запись_в_2001
 
 sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева:
 sub_ECC1_скрыть_фон_и_спрайты_за_полоской_слева:
-C D 3 - - - 0x01ECD1 07:ECC1: A5 4D     LDA ram_for_2001
+C D 3 - - - 0x01ECD1 07:ECC1: A5 4D     LDA ram_для_2001
 C - - - - - 0x01ECD3 07:ECC3: 29 E7     AND #$E7
                                         JMP loc_EF5E_запись_в_2001
 
@@ -8156,7 +8156,7 @@ C - - - - - 0x01ECD3 07:ECC3: 29 E7     AND #$E7
 
 sub_0x01ECDB_отобразить_фон_и_спрайты:
 sub_ECCB_отобразить_фон_и_спрайты:
-C D 3 - - - 0x01ECDB 07:ECCB: A5 4D     LDA ram_for_2001
+C D 3 - - - 0x01ECDB 07:ECCB: A5 4D     LDA ram_для_2001
 C - - - - - 0x01ECDD 07:ECCD: 09 18     ORA #$18
 C - - - - - 0x01ECDF 07:ECCF: D0 F4     BNE bra_EF5E_запись_в_2001
 
@@ -8213,10 +8213,10 @@ loc_EFE5_write_3_buffers_to_ppu:
 sub_EFE5_запись_3х_буферов_в_ppu:
 C D 3 - - - 0x01EFF5 07:EFE5: AD 93 06  LDA ram_байт_2006_hi_атрибуты
 C - - - - - 0x01EFF8 07:EFE8: 30 38     BMI bra_F022_skip_attr_buffer
-C - - - - - 0x01EFFA 07:EFEA: A5 4C     LDA ram_for_2000
+C - - - - - 0x01EFFA 07:EFEA: A5 4C     LDA ram_для_2000
 C - - - - - 0x01EFFC 07:EFEC: 29 FB     AND #$FB
 C - - - - - 0x01EFFE 07:EFEE: 0D 90 06  ORA ram_бит_для_2000_атрибуты
-C - - - - - 0x01F001 07:EFF1: 85 4C     STA ram_for_2000
+C - - - - - 0x01F001 07:EFF1: 85 4C     STA ram_для_2000
 C - - - - - 0x01F003 07:EFF3: 8D 00 20  STA $2000
 bra_EFF6_loop:
 C - - - - - 0x01F006 07:EFF6: A9 00     LDA #$00
@@ -8241,10 +8241,10 @@ C - - - - - 0x01F02F 07:F01F: 8D 93 06  STA ram_байт_2006_hi_атрибут�
 bra_F022_skip_attr_buffer:
 C - - - - - 0x01F032 07:F022: AD B6 06  LDA ram_байт_2006_hi_графика
 C - - - - - 0x01F035 07:F025: 30 38     BMI bra_F022_skip_nmt_buffer
-C - - - - - 0x01F037 07:F027: A5 4C     LDA ram_for_2000
+C - - - - - 0x01F037 07:F027: A5 4C     LDA ram_для_2000
 C - - - - - 0x01F039 07:F029: 29 FB     AND #$FB
 C - - - - - 0x01F03B 07:F02B: 0D 91 06  ORA ram_бит_для_2000_графика
-C - - - - - 0x01F03E 07:F02E: 85 4C     STA ram_for_2000
+C - - - - - 0x01F03E 07:F02E: 85 4C     STA ram_для_2000
 C - - - - - 0x01F040 07:F030: 8D 00 20  STA $2000
 bra_F033_loop:
 C - - - - - 0x01F043 07:F033: A9 00     LDA #$00
@@ -8269,10 +8269,10 @@ C - - - - - 0x01F06C 07:F05C: 8D B6 06  STA ram_байт_2006_hi_графика
 bra_F022_skip_nmt_buffer:
 C - - - - - 0x01F06F 07:F05F: AD D9 06  LDA ram_байт_2006_hi_палитра
 C - - - - - 0x01F072 07:F062: 30 4F     BMI bra_F0B3_RTS
-C - - - - - 0x01F074 07:F064: A5 4C     LDA ram_for_2000
+C - - - - - 0x01F074 07:F064: A5 4C     LDA ram_для_2000
 C - - - - - 0x01F076 07:F066: 29 FB     AND #$FB
 C - - - - - 0x01F078 07:F068: 0D 92 06  ORA ram_бит_для_2000_палитра
-C - - - - - 0x01F07B 07:F06B: 85 4C     STA ram_for_2000
+C - - - - - 0x01F07B 07:F06B: 85 4C     STA ram_для_2000
 C - - - - - 0x01F07D 07:F06D: 8D 00 20  STA $2000
 bra_F070_loop:
 C - - - - - 0x01F080 07:F070: A9 00     LDA #$00
@@ -8315,9 +8315,9 @@ C - - - - - 0x01F0C7 07:F0B7: 29 80     AND #$80
 C - - - - - 0x01F0C9 07:F0B9: D0 13     BNE bra_F0CE
 C - - - - - 0x01F0DD 07:F0CD: 60        RTS
 bra_F0CE:
-C - - - - - 0x01F0DE 07:F0CE: A5 4C     LDA ram_for_2000
+C - - - - - 0x01F0DE 07:F0CE: A5 4C     LDA ram_для_2000
 C - - - - - 0x01F0E0 07:F0D0: 09 04     ORA #$04
-C - - - - - 0x01F0E2 07:F0D2: 85 4C     STA ram_for_2000
+C - - - - - 0x01F0E2 07:F0D2: 85 4C     STA ram_для_2000
 C - - - - - 0x01F0E4 07:F0D4: 8D 00 20  STA $2000
 C - - - - - 0x01F0E7 07:F0D7: AD 02 20  LDA $2002
 C - - - - - 0x01F0EA 07:F0DA: A9 20     LDA #$20
@@ -8412,9 +8412,9 @@ C - - - - - 0x01F196 07:F186: B9 48 F2  LDA tbl_F248,Y
 C - - - - - 0x01F199 07:F189: 85 0C     STA ram_000C
 C - - - - - 0x01F19B 07:F18B: B9 49 F2  LDA tbl_F248 + 1,Y
 C - - - - - 0x01F19E 07:F18E: 85 0D     STA ram_000D
-C - - - - - 0x01F1A0 07:F190: A5 4C     LDA ram_for_2000
+C - - - - - 0x01F1A0 07:F190: A5 4C     LDA ram_для_2000
 C - - - - - 0x01F1A2 07:F192: 09 04     ORA #$04
-C - - - - - 0x01F1A4 07:F194: 85 4C     STA ram_for_2000
+C - - - - - 0x01F1A4 07:F194: 85 4C     STA ram_для_2000
 C - - - - - 0x01F1A6 07:F196: 8D 00 20  STA $2000
 C - - - - - 0x01F1A9 07:F199: AD 02 20  LDA $2002
 C - - - - - 0x01F1AC 07:F19C: A9 22     LDA #> $228B
@@ -8464,9 +8464,9 @@ C - - - - - 0x01F1F8 07:F1E8: B9 4C F2  LDA tbl_F24C,Y
 C - - - - - 0x01F1FB 07:F1EB: 85 0C     STA ram_000C
 C - - - - - 0x01F1FD 07:F1ED: B9 4D F2  LDA tbl_F24C + 1,Y
 C - - - - - 0x01F200 07:F1F0: 85 0D     STA ram_000D
-C - - - - - 0x01F202 07:F1F2: A5 4C     LDA ram_for_2000
+C - - - - - 0x01F202 07:F1F2: A5 4C     LDA ram_для_2000
 C - - - - - 0x01F204 07:F1F4: 09 04     ORA #$04
-C - - - - - 0x01F206 07:F1F6: 85 4C     STA ram_for_2000
+C - - - - - 0x01F206 07:F1F6: 85 4C     STA ram_для_2000
 C - - - - - 0x01F208 07:F1F8: 8D 00 20  STA $2000
 C - - - - - 0x01F20B 07:F1FB: AD 02 20  LDA $2002
 C - - - - - 0x01F20E 07:F1FE: A9 22     LDA #> $2294
@@ -8626,9 +8626,9 @@ off_F295_01:
 
 
 loc_F2AC:
-C D 3 - - - 0x01F2BC 07:F2AC: A5 4C     LDA ram_for_2000
+C D 3 - - - 0x01F2BC 07:F2AC: A5 4C     LDA ram_для_2000
 C - - - - - 0x01F2BE 07:F2AE: 09 04     ORA #$04
-C - - - - - 0x01F2C0 07:F2B0: 85 4C     STA ram_for_2000
+C - - - - - 0x01F2C0 07:F2B0: 85 4C     STA ram_для_2000
 C - - - - - 0x01F2C2 07:F2B2: 8D 00 20  STA $2000
 C - - - - - 0x01F2C5 07:F2B5: AD 02 20  LDA $2002
 C - - - - - 0x01F2C8 07:F2B8: A9 21     LDA #> $21D1
@@ -8658,9 +8658,9 @@ C - - - - - 0x01F2F7 07:F2E7: 4C 3A F3  JMP loc_F33A_запись_флага_г�
 
 
 loc_F2EA_сетка_справа:
-C D 3 - - - 0x01F2FA 07:F2EA: A5 4C     LDA ram_for_2000
+C D 3 - - - 0x01F2FA 07:F2EA: A5 4C     LDA ram_для_2000
 C - - - - - 0x01F2FC 07:F2EC: 09 04     ORA #$04
-C - - - - - 0x01F2FE 07:F2EE: 85 4C     STA ram_for_2000
+C - - - - - 0x01F2FE 07:F2EE: 85 4C     STA ram_для_2000
 C - - - - - 0x01F300 07:F2F0: 8D 00 20  STA $2000
 C - - - - - 0x01F303 07:F2F3: AD 02 20  LDA $2002
 C - - - - - 0x01F306 07:F2F6: A9 21     LDA #> $21CE
@@ -8732,9 +8732,9 @@ C - - - - - 0x01F36A 07:F35A: C9 06     CMP #$06
 C - - - - - 0x01F36C 07:F35C: F0 03     BEQ bra_F361_нарисовать_таймер
 C - - - - - 0x01F36E 07:F35E: 4C 82 F3  JMP loc_F382_нарисовать_следы
 bra_F361_нарисовать_таймер:
-C - - - - - 0x01F371 07:F361: A5 4C     LDA ram_for_2000
+C - - - - - 0x01F371 07:F361: A5 4C     LDA ram_для_2000
 C - - - - - 0x01F373 07:F363: 29 FB     AND #$FB
-C - - - - - 0x01F375 07:F365: 85 4C     STA ram_for_2000
+C - - - - - 0x01F375 07:F365: 85 4C     STA ram_для_2000
 C - - - - - 0x01F377 07:F367: 8D 00 20  STA $2000
 C - - - - - 0x01F37A 07:F36A: AD 02 20  LDA $2002
 C - - - - - 0x01F37D 07:F36D: A9 2A     LDA #> $2A2D
@@ -9933,9 +9933,9 @@ C D 3 - - - 0x01FBCB 07:FBBB: 24 4F     BIT ram_флаг_nmi
 C - - - - - 0x01FBCD 07:FBBD: 30 04     BPL bra_FBCB_NMI_отключено
 C - - - - - 0x01FBD5 07:FBC5: 4C DF FB  JMP loc_FBDF_NMI_включено
 bra_FBCB_NMI_отключено:
-C - - - - - 0x01FBDB 07:FBCB: A5 4C     LDA ram_for_2000
+C - - - - - 0x01FBDB 07:FBCB: A5 4C     LDA ram_для_2000
 C - - - - - 0x01FBDD 07:FBCD: 29 7F     AND #$7F
-C - - - - - 0x01FBDF 07:FBCF: 85 4C     STA ram_for_2000
+C - - - - - 0x01FBDF 07:FBCF: 85 4C     STA ram_для_2000
 C - - - - - 0x01FBE1 07:FBD1: 8D 00 20  STA $2000
 C - - - - - 0x01FBE4 07:FBD4: AD 02 20  LDA $2002
 C - - - - - 0x01FBE7 07:FBD7: 28        PLP
@@ -9956,7 +9956,7 @@ C - - - - - 0x01FBF2 07:FBE2: 98        TYA
 C - - - - - 0x01FBF3 07:FBE3: 48        PHA
                                         LDA #$01
                                         STA $401C
-C - - - - - 0x01FBF4 07:FBE4: A5 4E     LDA ram_for_8000
+C - - - - - 0x01FBF4 07:FBE4: A5 4E     LDA ram_для_8000
 C - - - - - 0x01FBF6 07:FBE6: 48        PHA
 C - - - - - 0x01FBF7 07:FBE7: AD FF BF  LDA $BFFF
 C - - - - - 0x01FBFA 07:FBEA: 48        PHA
@@ -9987,10 +9987,10 @@ C - - - - - 0x01FC35 07:FC25: 29 01     AND #$01
 C - - - - - 0x01FC37 07:FC27: 0A        ASL
 C - - - - - 0x01FC38 07:FC28: 05 0C     ORA ram_000C
 C - - - - - 0x01FC3A 07:FC2A: 85 0C     STA ram_000C
-C - - - - - 0x01FC3C 07:FC2C: A5 4C     LDA ram_for_2000
+C - - - - - 0x01FC3C 07:FC2C: A5 4C     LDA ram_для_2000
 C - - - - - 0x01FC3E 07:FC2E: 29 FC     AND #$FC
 C - - - - - 0x01FC40 07:FC30: 05 0C     ORA ram_000C
-C - - - - - 0x01FC42 07:FC32: 85 4C     STA ram_for_2000
+C - - - - - 0x01FC42 07:FC32: 85 4C     STA ram_для_2000
 C - - - - - 0x01FC44 07:FC34: 8D 00 20  STA $2000
                                         BIT ram_флаг_nmi
                                         BVC bra_FC37_IRQ_отключен
@@ -10020,7 +10020,7 @@ C - - - - - 0x01FCD7 07:FCC7: 85 0C     STA ram_000C
 C - - - - - 0x01FCD9 07:FCC9: 68        PLA
 C - - - - - 0x01FCDA 07:FCCA: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01FCDD 07:FCCD: 68        PLA
-C - - - - - 0x01FCDE 07:FCCE: 85 4E     STA ram_for_8000
+C - - - - - 0x01FCDE 07:FCCE: 85 4E     STA ram_для_8000
 C - - - - - 0x01FCE0 07:FCD0: 8D 00 80  STA $8000
 C - - - - - 0x01FCE3 07:FCD3: 68        PLA
 C - - - - - 0x01FCE4 07:FCD4: A8        TAY
@@ -10041,7 +10041,7 @@ C - - - - - 0x01FCEE 07:FCDE: 8D 00 E0  STA $E000
 C - - - - - 0x01FCF1 07:FCE1: 8D 01 E0  STA $E001
                                         LDA #$01
                                         STA $401C
-C - - - - - 0x01FCF4 07:FCE4: A5 4E     LDA ram_for_8000
+C - - - - - 0x01FCF4 07:FCE4: A5 4E     LDA ram_для_8000
 C - - - - - 0x01FCF6 07:FCE6: 48        PHA
 C - - - - - 0x01FCF7 07:FCE7: AD FF BF  LDA $BFFF
 C - - - - - 0x01FCFA 07:FCEA: 48        PHA
@@ -10070,10 +10070,10 @@ C - - - - - 0x01FD27 07:FD17: AD 02 20  LDA $2002
 C - - - - - 0x01FD2A 07:FD1A: A2 00     LDX #$00
 C - - - - - 0x01FD2C 07:FD1C: 8E 05 20  STX $2005
 C - - - - - 0x01FD2F 07:FD1F: 8E 05 20  STX $2005
-C - - - - - 0x01FD32 07:FD22: A5 4C     LDA ram_for_2000
+C - - - - - 0x01FD32 07:FD22: A5 4C     LDA ram_для_2000
 C - - - - - 0x01FD34 07:FD24: 29 FC     AND #$FC
 C - - - - - 0x01FD36 07:FD26: 09 02     ORA #$02
-C - - - - - 0x01FD38 07:FD28: 85 4C     STA ram_for_2000
+C - - - - - 0x01FD38 07:FD28: 85 4C     STA ram_для_2000
 C - - - - - 0x01FD3A 07:FD2A: 8D 00 20  STA $2000
 C - - - - - 0x01FD3D 07:FD2D: AD 02 20  LDA $2002
 C - - - - - 0x01FD40 07:FD30: A9 2A     LDA #> $2AE0
@@ -10098,9 +10098,9 @@ C - - - - - 0x01FD64 07:FD54: AD 02 20  LDA $2002
 C - - - - - 0x01FD67 07:FD57: A2 00     LDX #$00
 C - - - - - 0x01FD69 07:FD59: 8E 05 20  STX $2005
 C - - - - - 0x01FD6C 07:FD5C: 8E 05 20  STX $2005
-C - - - - - 0x01FD6F 07:FD5F: A5 4C     LDA ram_for_2000
+C - - - - - 0x01FD6F 07:FD5F: A5 4C     LDA ram_для_2000
 C - - - - - 0x01FD71 07:FD61: 29 FC     AND #$FC
-C - - - - - 0x01FD73 07:FD63: 85 4C     STA ram_for_2000
+C - - - - - 0x01FD73 07:FD63: 85 4C     STA ram_для_2000
 C - - - - - 0x01FD75 07:FD65: 8D 00 20  STA $2000
 C - - - - - 0x01FD78 07:FD68: AD 02 20  LDA $2002
 C - - - - - 0x01FD7B 07:FD6B: A9 2A     LDA #> $2A00
