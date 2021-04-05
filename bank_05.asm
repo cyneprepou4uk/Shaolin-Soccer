@@ -3396,14 +3396,7 @@ C - - - - - 0x01536B 05:935B: 20 DF 80  JSR sub_80DF
 C - - - - - 0x01536E 05:935E: 20 96 93  JSR sub_9396
 bra_9361:
 C - - - - - 0x015371 05:9361: 20 C2 94  JSR sub_94C2
-C - - - - - 0x015374 05:9364: AD F0 00  LDA ram_pos_X_lo_camera     ; bzk опт, подпрограмма 0x01CAFE
-C - - - - - 0x015377 05:9367: 8D EC 00  STA ram_pos_X_lo_scroll
-C - - - - - 0x01537A 05:936A: AD F1 00  LDA ram_pos_X_hi_camera
-C - - - - - 0x01537D 05:936D: 8D ED 00  STA ram_pos_X_hi_scroll
-C - - - - - 0x015380 05:9370: AD F2 00  LDA ram_pos_Y_lo_camera
-C - - - - - 0x015383 05:9373: 8D EE 00  STA ram_pos_Y_lo_scroll
-C - - - - - 0x015386 05:9376: AD F3 00  LDA ram_pos_Y_hi_camera
-C - - - - - 0x015389 05:9379: 8D EF 00  STA ram_pos_Y_hi_scroll
+C - - - - - 0x015374 05:9364: AD F0 00  JSR sub_0x01CAFE_скопировать_camera_pos_в_scroll_pos
 C - - - - - 0x01538C 05:937C: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x01538F 05:937F: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_поинтеры_после_JSR
 - D 0 - I - 0x015392 05:9382: 03 94     .word ofs_9403_00

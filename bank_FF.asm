@@ -41,6 +41,7 @@
 .export sub_0x01C2F4_воспроизвести_звук
 .export sub_0x01C327
 .export sub_0x01C345
+.export sub_0x01CAFE_скопировать_camera_pos_в_scroll_pos
 .export sub_0x01CBE6_циферки
 .export sub_0x01CD3F
 .export sub_0x01CDDB
@@ -1824,6 +1825,7 @@ C - - - - - 0x01CAFD 07:CAED: 60        RTS
 
 
 sub_CAEE_скопировать_camera_pos_в_scroll_pos:
+sub_0x01CAFE_скопировать_camera_pos_в_scroll_pos:
 C - - - - - 0x01CAFE 07:CAEE: AD F0 00  LDA ram_pos_X_lo_camera
 C - - - - - 0x01CB01 07:CAF1: 8D EC 00  STA ram_pos_X_lo_scroll
 C - - - - - 0x01CB04 07:CAF4: AD F1 00  LDA ram_pos_X_hi_camera
