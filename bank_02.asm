@@ -14242,7 +14242,6 @@ ofs_BDC0_04_последняя_фотка_в_титрах:
 - - - - - - 0x00BE46 02:BE36: EE 8A 05  INC ram_таймер_демо_hi
 - - - - - - 0x00BE49 02:BE39: EE 8A 05  INC ram_таймер_демо_hi
 - - - - - - 0x00BE4C 02:BE3C: 20 59 C0  JSR sub_0x01D05F
-bra_BE3F:
 - - - - - - 0x00BE4F 02:BE3F: E6 59     INC ram_subscript
 bra_BE41_RTS:
 - - - - - - 0x00BE51 02:BE41: 60        RTS
@@ -14258,7 +14257,8 @@ ofs_BE42_05:
 - - - - - - 0x00BE5F 02:BE4F: 20 BF BE  JSR sub_BEBF
 - - - - - - 0x00BE62 02:BE52: A9 00     LDA #$00
 - - - - - - 0x00BE64 02:BE54: 8D 8C 05  STA ram_058C
-- - - - - - 0x00BE67 02:BE57: F0 E6     BEQ bra_BE3F
+- - - - - - 0x00BE67 02:BE57: F0 E6     INC ram_subscript
+                                        RTS
 
 
 
@@ -14274,7 +14274,8 @@ ofs_BE59_06:
 - - - - - - 0x00BE7C 02:BE6C: 8D 04 06  STA ram_0604
 - - - - - - 0x00BE7F 02:BE6F: A9 02     LDA #$02
 - - - - - - 0x00BE81 02:BE71: 8D E6 05  STA ram_скорость_игры
-- - - - - - 0x00BE84 02:BE74: D0 C9     BNE bra_BE3F
+- - - - - - 0x00BE84 02:BE74: D0 C9     INC ram_subscript
+                                        RTS
 
 
 
