@@ -11700,10 +11700,10 @@ tbl_B09D:
 ofs_B0BC_01:
 ofs_B0BC_0C:
 C - - J - - 0x00B0CC 02:B0BC: BD 59 04  LDA ram_movement_id_игрок,X
-C - - - - - 0x00B0CF 02:B0BF: 30 06     BMI bra_B0C7
+C - - - - - 0x00B0CF 02:B0BF: 30 06     BMI bra_B0C7_уже_обработано
 C - - - - - 0x00B0D1 02:B0C1: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B0D4 02:B0C4: 20 39 AA  JSR sub_0x01C25D
-bra_B0C7:
+bra_B0C7_уже_обработано:
 C - - - - - 0x00B0D7 02:B0C7: A9 04     LDA #$04
 loc_B0C9:
 C D 1 - - - 0x00B0D9 02:B0C9: 20 9A B2  JSR sub_B29A
@@ -11717,10 +11717,10 @@ C - - - - - 0x00B0E8 02:B0D8: 60        RTS
 
 ofs_B0D9_02:
 C - - J - - 0x00B0E9 02:B0D9: BD 59 04  LDA ram_movement_id_игрок,X
-C - - - - - 0x00B0EC 02:B0DC: 30 06     BMI bra_B0E4
+C - - - - - 0x00B0EC 02:B0DC: 30 06     BMI bra_B0E4_уже_обработано
 C - - - - - 0x00B0EE 02:B0DE: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B0F1 02:B0E1: 20 39 AA  JSR sub_0x01C25D
-bra_B0E4:
+bra_B0E4_уже_обработано:
 C - - - - - 0x00B0F4 02:B0E4: A9 03     LDA #$03
 C - - - - - 0x00B0F6 02:B0E6: 4C C9 B0  JMP loc_B0C9
 
@@ -11730,11 +11730,11 @@ ofs_B0E9_04:
 ofs_B0E9_05:
 ofs_B0E9_0D:
 C - - J - - 0x00B0F9 02:B0E9: BD 59 04  LDA ram_movement_id_игрок,X
-C - - - - - 0x00B0FC 02:B0EC: 30 09     BMI bra_B0F7
+C - - - - - 0x00B0FC 02:B0EC: 30 09     BMI bra_B0F7_уже_обработано
 C - - - - - 0x00B0FE 02:B0EE: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B101 02:B0F1: 20 39 AA  JSR sub_0x01C25D
 C - - - - - 0x00B104 02:B0F4: 20 48 AA  JSR sub_0x01C260
-bra_B0F7:
+bra_B0F7_уже_обработано:
 C - - - - - 0x00B107 02:B0F7: A9 03     LDA #$03
 C - - - - - 0x00B109 02:B0F9: 4C C9 B0  JMP loc_B0C9
 
@@ -11742,9 +11742,9 @@ C - - - - - 0x00B109 02:B0F9: 4C C9 B0  JMP loc_B0C9
 
 ofs_B0FC_06:
 C - - J - - 0x00B10C 02:B0FC: BD 59 04  LDA ram_movement_id_игрок,X
-C - - - - - 0x00B10F 02:B0FF: 30 03     BMI bra_B104
+C - - - - - 0x00B10F 02:B0FF: 30 03     BMI bra_B104_уже_обработано
 C - - - - - 0x00B111 02:B101: 20 82 B2  JSR sub_B282
-bra_B104:
+bra_B104_уже_обработано:
 C - - - - - 0x00B114 02:B104: 20 48 AA  JSR sub_0x01C260
 C - - - - - 0x00B117 02:B107: 20 4D AA  JSR sub_0x01C261
 C - - - - - 0x00B11A 02:B10A: A9 03     LDA #$03
@@ -11760,10 +11760,10 @@ C D 1 - - - 0x00B12B 02:B11B: 60        RTS
 
 ofs_B11C_07:
 C - - J - - 0x00B12C 02:B11C: BD 59 04  LDA ram_movement_id_игрок,X
-C - - - - - 0x00B12F 02:B11F: 30 06     BMI bra_B127
+C - - - - - 0x00B12F 02:B11F: 30 06     BMI bra_B127_уже_обработано
 C - - - - - 0x00B131 02:B121: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B134 02:B124: 20 48 AA  JSR sub_0x01C260
-bra_B127:
+bra_B127_уже_обработано:
 C - - - - - 0x00B137 02:B127: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x00B13A 02:B12A: C9 FF     CMP #$FF
 C - - - - - 0x00B13C 02:B12C: D0 0B     BNE bra_B139
@@ -11819,10 +11819,10 @@ tbl_B164:
 
 ofs_B174_03:
 C - - J - - 0x00B184 02:B174: BD 59 04  LDA ram_movement_id_игрок,X
-C - - - - - 0x00B187 02:B177: 30 06     BMI bra_B17F
+C - - - - - 0x00B187 02:B177: 30 06     BMI bra_B17F_уже_обработано
 C - - - - - 0x00B189 02:B179: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B18C 02:B17C: 20 39 AA  JSR sub_0x01C25D
-bra_B17F:
+bra_B17F_уже_обработано:
 C - - - - - 0x00B18F 02:B17F: A9 02     LDA #$02
 C - - - - - 0x00B191 02:B181: 20 9A B2  JSR sub_B29A
 C - - - - - 0x00B194 02:B184: 20 A8 B2  JSR sub_B2A8
@@ -11832,7 +11832,7 @@ C - - - - - 0x00B197 02:B187: 4C 0F B1  JMP loc_B10F
 
 ofs_B18A_08:
 C - - J - - 0x00B19A 02:B18A: BD 59 04  LDA ram_movement_id_игрок,X
-C - - - - - 0x00B19D 02:B18D: 30 15     BMI bra_B1A4
+C - - - - - 0x00B19D 02:B18D: 30 15     BMI bra_B1A4_уже_обработано
 C - - - - - 0x00B19F 02:B18F: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B1A2 02:B192: BD A3 04  LDA ram_направление_движения,X
 C - - - - - 0x00B1A5 02:B195: 09 40     ORA #$40
@@ -11842,7 +11842,7 @@ C D 1 - - - 0x00B1AA 02:B19A: A9 2B     LDA #con_sfx_прыжок
 C - - - - - 0x00B1AC 02:B19C: 20 02 C0  JSR sub_0x01C2F4_play_sound
 C - - - - - 0x00B1AF 02:B19F: A9 0A     LDA #$0A
 C - - - - - 0x00B1B1 02:B1A1: 20 A1 B2  JSR sub_B2A1
-bra_B1A4:
+bra_B1A4_уже_обработано:
 loc_B1A4:
 C D 1 - - - 0x00B1B4 02:B1A4: 20 34 AA  JSR sub_0x01C25C
 C - - - - - 0x00B1B7 02:B1A7: 20 3F B3  JSR sub_B33F
@@ -11867,7 +11867,7 @@ C - - - - - 0x00B1DD 02:B1CD: 60        RTS
 
 ofs_B1CE_09:
 C - - J - - 0x00B1DE 02:B1CE: BD 59 04  LDA ram_movement_id_игрок,X
-C - - - - - 0x00B1E1 02:B1D1: 30 D1     BMI bra_B1A4
+C - - - - - 0x00B1E1 02:B1D1: 30 D1     BMI bra_B1A4_уже_обработано
 C - - - - - 0x00B1E3 02:B1D3: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B1E6 02:B1D6: BD A3 04  LDA ram_направление_движения,X
 C - - - - - 0x00B1E9 02:B1D9: 09 40     ORA #$40
@@ -11881,7 +11881,7 @@ C - - - - - 0x00B1F3 02:B1E3: 4C 9A B1  JMP loc_B19A
 
 ofs_B1E6_0A:
 - - - - - - 0x00B1F6 02:B1E6: BD 59 04  LDA ram_movement_id_игрок,X
-- - - - - - 0x00B1F9 02:B1E9: 30 B9     BMI bra_B1A4
+- - - - - - 0x00B1F9 02:B1E9: 30 B9     BMI bra_B1A4_уже_обработано
 - - - - - - 0x00B1FB 02:B1EB: 20 82 B2  JSR sub_B282
 - - - - - - 0x00B1FE 02:B1EE: BD A3 04  LDA ram_направление_движения,X
 - - - - - - 0x00B201 02:B1F1: 09 40     ORA #$40
@@ -11894,7 +11894,7 @@ ofs_B1E6_0A:
 ofs_B1FB_0B:
 ofs_B1FB_0E:
 C - - J - - 0x00B20B 02:B1FB: BD 59 04  LDA ram_movement_id_игрок,X
-C - - - - - 0x00B20E 02:B1FE: 30 47     BMI bra_B247
+C - - - - - 0x00B20E 02:B1FE: 30 47     BMI bra_B247    ; если уже обработано
 C - - - - - 0x00B210 02:B200: 20 82 B2  JSR sub_B282
 C - - - - - 0x00B213 02:B203: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x00B216 02:B206: C9 FF     CMP #$FF
