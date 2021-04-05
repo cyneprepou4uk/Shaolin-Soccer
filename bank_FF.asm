@@ -19,8 +19,8 @@
 .export sub_0x01C2C2
 .export sub_0x01C2AE
 .export sub_0x01C2BD
-.export sub_0x01C270
-.export sub_0x01C2EF
+.export sub_0x01C270_рожи
+.export sub_0x01C2EF_выбор_палитры_командам
 .export sub_0x01C296
 .export sub_0x01C297
 .export sub_0x01C263_выставить_базовые_параметры_игроков
@@ -681,11 +681,11 @@ sub_C25D_скрипт_лого:
 C - - - - - 0x01C26D 07:C25D: A9 18     LDA #$18
 C - - - - - 0x01C26F 07:C25F: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
-sub_0x01C270:
+sub_0x01C270_рожи:
                                         LDA #$19
                                         JMP loc_C344_prg_bankswitch_80xx
                                         
-sub_0x01C2EF:
+sub_0x01C2EF_выбор_палитры_командам:
 - - - - - - 0x01C2EF 07:C2DF: A9 1A     LDA #$1A
 - - - - - - 0x01C2F1 07:C2E1: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
@@ -900,8 +900,8 @@ tbl_C370_low_byte_addr_для_indirect_jump:
 - D 2 - - - 0x01C3AC 07:C39C: 03        .byte con_prg_bank + $03, < loc_0x00C01F       ; 16
 - D 2 - - - 0x01C3AE 07:C39E: 04        .byte con_prg_bank + $04, < loc_0x010025       ; 17
 - D 2 - - - 0x01C3B0 07:C3A0: 02        .byte con_prg_bank + $02, < loc_0x008010_скрипт_лого       ; 18
-- D 2 - - - 0x01C3B2 07:C3A2: 05        .byte con_prg_bank + $05, < loc_0x014013       ; 19
-- D 2 - - - 0x01C3B4 07:C3A4: 05        .byte con_prg_bank + $05, < loc_0x014016       ; 1A
+- D 2 - - - 0x01C3B2 07:C3A2: 05        .byte con_prg_bank + $05, < loc_0x014013_рожи       ; 19
+- D 2 - - - 0x01C3B4 07:C3A4: 05        .byte con_prg_bank + $05, < loc_0x014016_выбор_палитры_командам       ; 1A
 - D 2 - - - 0x01C3B6 07:C3A6: 03        .byte con_prg_bank + $03, < loc_0x00C01C       ; 1B
 - D 2 - - - 0x01C3B8 07:C3A8: 06        .byte con_prg_bank + $06, < loc_0x018022       ; 1C
 - D 2 - - - 0x01C3BA 07:C3AA: 06        .byte con_prg_bank + $06, < loc_0x018025       ; 1D

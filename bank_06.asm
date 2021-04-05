@@ -10236,7 +10236,7 @@ C - - - - - 0x01BD8F 06:BD7F: 20 C8 AA  JSR sub_AAC8
 C - - - - - 0x01BD92 06:BD82: E8        INX
 C - - - - - 0x01BD93 06:BD83: E0 0C     CPX #$0C
 C - - - - - 0x01BD95 06:BD85: 90 F8     BCC bra_BD7F_loop
-C - - - - - 0x01BD97 06:BD87: A2 0C     LDX #$0C
+C - - - - - 0x01BD97 06:BD87: A2 0C     LDX #con_индекс_мяча
 C - - - - - 0x01BD99 06:BD89: 20 0B AB  JSR sub_AB0B
 C - - - - - 0x01BD9C 06:BD8C: 20 9D 8C  JSR sub_8C9D_обработка_движения_мяча
 C - - - - - 0x01BD9F 06:BD8F: 20 09 96  JSR sub_9609
@@ -10285,7 +10285,7 @@ C - - - - - 0x01BDF1 06:BDE1: 20 19 AA  JSR sub_AA19
 C - - - - - 0x01BDF4 06:BDE4: 20 2D 80  JSR sub_802D_обработка_движения_игрока
 C - - - - - 0x01BDF7 06:BDE7: 20 8C EB  JSR sub_0x01EB9C
 C - - - - - 0x01BDFA 06:BDEA: 20 C8 AA  JSR sub_AAC8
-C - - - - - 0x01BDFD 06:BDED: A2 0C     LDX #$0C
+C - - - - - 0x01BDFD 06:BDED: A2 0C     LDX #con_индекс_мяча
 C - - - - - 0x01BDFF 06:BDEF: 20 0B AB  JSR sub_AB0B
 C - - - - - 0x01BE02 06:BDF2: 20 9D 8C  JSR sub_8C9D_обработка_движения_мяча
 C - - - - - 0x01BE05 06:BDF5: 20 52 AB  JSR sub_AB52
@@ -10308,7 +10308,7 @@ bra_BE11:
 C - - - - - 0x01BE21 06:BE11: 20 8C EB  JSR sub_0x01EB9C
 C - - - - - 0x01BE24 06:BE14: CA        DEX
 C - - - - - 0x01BE25 06:BE15: 10 EA     BPL bra_BE01_loop
-C - - - - - 0x01BE27 06:BE17: A2 0C     LDX #$0C
+C - - - - - 0x01BE27 06:BE17: A2 0C     LDX #con_индекс_мяча
 C - - - - - 0x01BE29 06:BE19: AD E2 05  LDA ram_таймер_катсцены
 C - - - - - 0x01BE2C 06:BE1C: C9 04     CMP #$04
 C - - - - - 0x01BE2E 06:BE1E: 90 0E     BCC bra_BE2E

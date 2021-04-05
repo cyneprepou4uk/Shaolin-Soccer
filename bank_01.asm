@@ -14395,7 +14395,7 @@ C - - - - - 0x007AD3 01:BAC3: EE 3F 01  INC ram_таймер_погоды
 C - - - - - 0x007AD6 01:BAC6: AD 3F 01  LDA ram_таймер_погоды
 C - - - - - 0x007AD9 01:BAC9: C9 14     CMP #$14
 C - - - - - 0x007ADB 01:BACB: 90 1B     BCC bra_BAE8
-C - - - - - 0x007ADD 01:BACD: 20 B2 BF  JSR sub_0x01C2EF
+C - - - - - 0x007ADD 01:BACD: 20 B2 BF  JSR sub_0x01C2EF_выбор_палитры_командам
 C - - - - - 0x007AE0 01:BAD0: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x007AE3 01:BAD3: 8D AC 05  STA ram_номер_палитры_фона
 C - - - - - 0x007AE6 01:BAD6: A9 00     LDA #con_погода_выкл
@@ -14412,7 +14412,7 @@ C - - - - - 0x007AFB 01:BAEB: B9 2D BB  LDA tbl_BB2D,Y
 C - - - - - 0x007AFE 01:BAEE: F0 0A     BEQ bra_BAFA
 C - - - - - 0x007B00 01:BAF0: 98        TYA
 C - - - - - 0x007B01 01:BAF1: 48        PHA
-C - - - - - 0x007B02 01:BAF2: 20 B2 BF  JSR sub_0x01C2EF
+C - - - - - 0x007B02 01:BAF2: 20 B2 BF  JSR sub_0x01C2EF_выбор_палитры_командам
 C - - - - - 0x007B05 01:BAF5: 68        PLA
 C - - - - - 0x007B06 01:BAF6: A8        TAY
 C - - - - - 0x007B07 01:BAF7: 4C 06 BB  JMP loc_BB06

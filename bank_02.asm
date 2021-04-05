@@ -13865,7 +13865,7 @@ sub_BB3C:
 - - - - - - 0x00BB5D 02:BB4D: E8        INX
 - - - - - - 0x00BB5E 02:BB4E: 20 DD B6  JSR sub_B6DD
 - - - - - - 0x00BB61 02:BB51: 20 65 C0  JSR sub_0x01EB9C
-- - - - - - 0x00BB64 02:BB54: A2 0C     LDX #$0C
+- - - - - - 0x00BB64 02:BB54: A2 0C     LDX #con_индекс_мяча
 - - - - - - 0x00BB66 02:BB56: 20 DD B6  JSR sub_B6DD
 - - - - - - 0x00BB69 02:BB59: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x00BB6C 02:BB5C: 60        RTS
@@ -14295,7 +14295,7 @@ bra_BE94_RTS:
 
 
 ofs_BE95_0A:
-- - - - - - 0x00BEA5 02:BE95: A2 0C     LDX #$0C
+- - - - - - 0x00BEA5 02:BE95: A2 0C     LDX #con_индекс_мяча
 - - - - - - 0x00BEA7 02:BE97: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x00BEAA 02:BE9A: 60        RTS
 

@@ -14570,8 +14570,8 @@ C - - - - - 0x003B5F 00:BB4F: A8        TAY
 C - - - - - 0x003B60 00:BB50: B9 F6 BE  LDA tbl_BEF6,Y
 C - - - - - 0x003B63 00:BB53: 0D 2D 05  ORA ram_номер_команды + 1
 C - - - - - 0x003B66 00:BB56: 8D 2D 05  STA ram_номер_команды + 1
-C - - - - - 0x003B69 00:BB59: 20 F8 BF  JSR sub_0x01C2EF
-C - - - - - 0x003B6C 00:BB5C: 20 F3 BF  JSR sub_0x01C270
+C - - - - - 0x003B69 00:BB59: 20 F8 BF  JSR sub_0x01C2EF_выбор_палитры_командам
+C - - - - - 0x003B6C 00:BB5C: 20 F3 BF  JSR sub_0x01C270_рожи
 C - - - - - 0x003B6F 00:BB5F: AD 2A 05  LDA ram_флаг_владения_мячом_ком
 C - - - - - 0x003B72 00:BB62: 0D 2B 05  ORA ram_флаг_владения_мячом_ком + 1
 C - - - - - 0x003B75 00:BB65: 29 01     AND #$01

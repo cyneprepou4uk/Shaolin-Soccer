@@ -11668,7 +11668,7 @@ C - - - - - 0x00FF75 03:BF65: ED A5 03  SBC ram_pos_Z_hi_мяч
 C - - - - - 0x00FF78 03:BF68: 85 20     STA ram_0020
 C - - - - - 0x00FF7A 03:BF6A: A2 0C     LDX #$0C
 C - - - - - 0x00FF7C 03:BF6C: A0 00     LDY #$00
-bra_BF6E:
+bra_BF6E_loop:
 C - - - - - 0x00FF7E 03:BF6E: BD D9 00  LDA ram_флаг_видимости_игрока,X
 C - - - - - 0x00FF81 03:BF71: 4A        LSR     ; bzk опт, зачем тут LSR, надо BEQ/BNE?
 C - - - - - 0x00FF82 03:BF72: 90 1E     BCC bra_BF92
@@ -11689,7 +11689,7 @@ C - - - - - 0x00FF9E 03:BF8E: C0 06     CPY #$06
 C - - - - - 0x00FFA0 03:BF90: F0 03     BEQ bra_BF95
 bra_BF92:
 C - - - - - 0x00FFA2 03:BF92: CA        DEX
-C - - - - - 0x00FFA3 03:BF93: 10 D9     BPL bra_BF6E
+C - - - - - 0x00FFA3 03:BF93: 10 D9     BPL bra_BF6E_loop
 bra_BF95:
 C - - - - - 0x00FFA5 03:BF95: C0 04     CPY #$04
 C - - - - - 0x00FFA7 03:BF97: 90 90     BCC bra_BF29
