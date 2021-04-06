@@ -5216,7 +5216,7 @@ C - - - - - 0x01A39E 06:A38E: 4C 02 A4  JMP loc_A402
 bra_A391:
 loc_A391:
 C D 1 - - - 0x01A3A1 06:A391: A9 22     LDA #$22
-C - - - - - 0x01A3A3 06:A393: 99 68 06  STA ram_0668,Y
+C - - - - - 0x01A3A3 06:A393: 99 68 06  STA ram_счетчик_поведения_ботов ,Y
 C - - - - - 0x01A3A6 06:A396: B9 14 03  LDA ram_pos_X_lo_игрок,Y
 C - - - - - 0x01A3A9 06:A399: 85 2E     STA ram_002E
 C - - - - - 0x01A3AB 06:A39B: B9 27 03  LDA ram_pos_X_hi_игрок,Y
