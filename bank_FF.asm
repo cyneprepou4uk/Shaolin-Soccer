@@ -7,12 +7,12 @@
 
 .export tbl_0x01C090
 .export sub_0x01C286
-.export sub_0x01C25C
-.export sub_0x01C25D
-.export sub_0x01C25E
-.export sub_0x01C25F
-.export sub_0x01C260
-.export sub_0x01C261
+.export sub_0x01C25C_сдвинуть_объект
+.export sub_0x01C25D_очистить_Y_Z_гравитацию
+.export sub_0x01C25E_очистить_X_Y_Z_гравитацию
+.export sub_0x01C25F_вычислить_флаг_зеркала_анимации
+.export sub_0x01C260_задать_направление_движения
+.export sub_0x01C261_угол_движения_во_время_спринта
 .export sub_0x01C29F_положение_мяча_относительно_игрока
 .export sub_0x01C2A4
 .export sub_0x01C2E0
@@ -603,27 +603,27 @@ sub_C249:
 C - - - - - 0x01C259 07:C249: A9 05     LDA #$05
 C - - - - - 0x01C25B 07:C24B: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
-sub_0x01C25C:
+sub_0x01C25C_сдвинуть_объект:
                                         LDA #$06
                                         JMP loc_C344_prg_bankswitch_80xx
                                         
-sub_0x01C25D:
+sub_0x01C25D_очистить_Y_Z_гравитацию:
                                         LDA #$07
                                         JMP loc_C344_prg_bankswitch_80xx
                                         
-sub_0x01C25E:
+sub_0x01C25E_очистить_X_Y_Z_гравитацию:
                                         LDA #$08
                                         JMP loc_C344_prg_bankswitch_80xx
                                         
-sub_0x01C25F:
+sub_0x01C25F_вычислить_флаг_зеркала_анимации:
                                         LDA #$09
                                         JMP loc_C344_prg_bankswitch_80xx
                                         
-sub_0x01C260:
+sub_0x01C260_задать_направление_движения:
                                         LDA #$0A
                                         JMP loc_C344_prg_bankswitch_80xx
                                         
-sub_0x01C261:
+sub_0x01C261_угол_движения_во_время_спринта:
                                         LDA #$0B
                                         JMP loc_C344_prg_bankswitch_80xx
                                         
@@ -881,12 +881,12 @@ tbl_C370_low_byte_addr_для_indirect_jump:
 - D 2 - - - 0x01C386 07:C376: 03        .byte con_prg_bank + $03, < loc_0x00C016       ; 03
 - D 2 - - - 0x01C388 07:C378: 01        .byte con_prg_bank + $01, < loc_0x004010       ; 04
 - D 2 - - - 0x01C38A 07:C37A: 01        .byte con_prg_bank + $01, < loc_0x004013       ; 05
-- D 2 - - - 0x01C38C 07:C37C: 06        .byte con_prg_bank + $06, < loc_0x018010       ; 06
-- D 2 - - - 0x01C38E 07:C37E: 06        .byte con_prg_bank + $06, < loc_0x018013       ; 07
-- D 2 - - - 0x01C390 07:C380: 06        .byte con_prg_bank + $06, < loc_0x018016       ; 08
-- D 2 - - - 0x01C392 07:C382: 06        .byte con_prg_bank + $06, < loc_0x018019       ; 09
-- D 2 - - - 0x01C394 07:C384: 06        .byte con_prg_bank + $06, < loc_0x01801C       ; 0A
-- D 2 - - - 0x01C396 07:C386: 06        .byte con_prg_bank + $06, < loc_0x01801F       ; 0B
+- D 2 - - - 0x01C38C 07:C37C: 06        .byte con_prg_bank + $06, < loc_0x018010_сдвинуть_объект       ; 06
+- D 2 - - - 0x01C38E 07:C37E: 06        .byte con_prg_bank + $06, < loc_0x018013_очистить_Y_Z_гравитацию       ; 07
+- D 2 - - - 0x01C390 07:C380: 06        .byte con_prg_bank + $06, < loc_0x018016_очистить_X_Y_Z_гравитацию       ; 08
+- D 2 - - - 0x01C392 07:C382: 06        .byte con_prg_bank + $06, < loc_0x018019_вычислить_флаг_зеркала_анимации       ; 09
+- D 2 - - - 0x01C394 07:C384: 06        .byte con_prg_bank + $06, < loc_0x01801C_задать_направление_движения       ; 0A
+- D 2 - - - 0x01C396 07:C386: 06        .byte con_prg_bank + $06, < loc_0x01801F_угол_движения_во_время_спринта       ; 0B
 - D 2 - - - 0x01C398 07:C388: 04        .byte con_prg_bank + $04, < loc_0x010013_положение_мяча_относительно_игрока       ; 0C
 - D 2 - - - 0x01C39A 07:C38A: 04        .byte con_prg_bank + $04, < loc_0x010016       ; 0D
 - D 2 - - - 0x01C39C 07:C38C: 02        .byte con_prg_bank + $02, < loc_0x008013       ; 0E
@@ -1356,8 +1356,8 @@ C - - - - - 0x01C7A7 07:C797: 4C CD C7  RTS
 bra_C79A:
 C - - - - - 0x01C7AA 07:C79A: AD E2 05  LDA ram_таймер_катсцены
 C - - - - - 0x01C7AD 07:C79D: D0 06     BNE bra_C7A5
-C - - - - - 0x01C7AF 07:C79F: AD EC 05  LDA ram_следы_lo_2006
-C - - - - - 0x01C7B2 07:C7A2: 8D E8 05  STA ram_следы_hi_2006
+C - - - - - 0x01C7AF 07:C79F: AD EC 05  LDA ram_следы_2006_lo
+C - - - - - 0x01C7B2 07:C7A2: 8D E8 05  STA ram_следы_2006_hi
 bra_C7A5:
 C - - - - - 0x01C7B5 07:C7A5: EE E2 05  INC ram_таймер_катсцены
 C - - - - - 0x01C7B8 07:C7A8: AD 08 00  LDA ram_btn_press
@@ -1376,7 +1376,7 @@ C - - - - - 0x01C7D0 07:C7C0: 90 0B     BCC bra_C7CD_RTS
 bra_C7C2:
 C - - - - - 0x01C7D2 07:C7C2: 20 47 D0  JSR sub_D047
 C - - - - - 0x01C7D5 07:C7C5: A9 00     LDA #$00    ; con_music_выкл
-C - - - - - 0x01C7D7 07:C7C7: 8D E8 05  STA ram_следы_hi_2006
+C - - - - - 0x01C7D7 07:C7C7: 8D E8 05  STA ram_следы_2006_hi
 C - - - - - 0x01C7DA 07:C7CA: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
 bra_C7CD_RTS:
 C D 2 - - - 0x01C7DD 07:C7CD: 4C 98 C6  RTS
@@ -4446,11 +4446,11 @@ C - - - - - 0x01D86B 07:D85B: A5 1E     LDA ram_001E
 C - - - - - 0x01D86D 07:D85D: C9 F0     CMP #$F0
 C - - - - - 0x01D86F 07:D85F: B0 08     BCS bra_D869
 C - - - - - 0x01D871 07:D861: A9 08     LDA #$08
-C - - - - - 0x01D873 07:D863: 9D E8 05  STA ram_следы_hi_2006,X
+C - - - - - 0x01D873 07:D863: 9D E8 05  STA ram_следы_2006_hi,X
 C - - - - - 0x01D876 07:D866: 4C 75 D8  JMP loc_D875
 bra_D869:
 C - - - - - 0x01D879 07:D869: A9 0A     LDA #$0A
-C - - - - - 0x01D87B 07:D86B: 9D E8 05  STA ram_следы_hi_2006,X
+C - - - - - 0x01D87B 07:D86B: 9D E8 05  STA ram_следы_2006_hi,X
 C - - - - - 0x01D87E 07:D86E: A5 1E     LDA ram_001E
 C - - - - - 0x01D880 07:D870: 38        SEC
 C - - - - - 0x01D881 07:D871: E9 F0     SBC #$F0
@@ -4459,13 +4459,13 @@ loc_D875:
 C D 2 - - - 0x01D885 07:D875: A5 1E     LDA ram_001E
 C - - - - - 0x01D887 07:D877: 85 1D     STA ram_001D
 C - - - - - 0x01D889 07:D879: 06 1D     ASL ram_001D
-C - - - - - 0x01D88B 07:D87B: 3E E8 05  ROL ram_следы_hi_2006,X
+C - - - - - 0x01D88B 07:D87B: 3E E8 05  ROL ram_следы_2006_hi,X
 C - - - - - 0x01D88E 07:D87E: 06 1D     ASL ram_001D
-C - - - - - 0x01D890 07:D880: 3E E8 05  ROL ram_следы_hi_2006,X
+C - - - - - 0x01D890 07:D880: 3E E8 05  ROL ram_следы_2006_hi,X
 C - - - - - 0x01D893 07:D883: A5 1D     LDA ram_001D
 C - - - - - 0x01D895 07:D885: 18        CLC
 C - - - - - 0x01D896 07:D886: 65 1C     ADC ram_001C
-C - - - - - 0x01D898 07:D888: 9D EC 05  STA ram_следы_lo_2006,X
+C - - - - - 0x01D898 07:D888: 9D EC 05  STA ram_следы_2006_lo,X
 C - - - - - 0x01D89B 07:D88B: EE F0 05  INC ram_счетчик_следов
 C - - - - - 0x01D89E 07:D88E: A6 43     LDX ram_0043
 C D 2 - - - 0x01D8A0 07:D890: 60        RTS
@@ -8195,7 +8195,7 @@ C - - - - - 0x01EFD5 07:EFC5: C9 0A     CMP #$0A
 C - - - - - 0x01EFD7 07:EFC7: F0 03     BEQ bra_EFCC
 C - - - - - 0x01EFD9 07:EFC9: 4C E5 EF  JMP loc_EFE5_write_3_buffers_to_ppu
 bra_EFCC:
-C - - - - - 0x01EFDC 07:EFCC: AD E8 05  LDA ram_следы_hi_2006
+C - - - - - 0x01EFDC 07:EFCC: AD E8 05  LDA ram_следы_2006_hi
 C - - - - - 0x01EFDF 07:EFCF: F0 14     BEQ bra_EFE5_write_3_buffers_to_ppu
 C - - - - - 0x01EFE1 07:EFD1: 4C 44 C2  JMP loc_C244
 bra_EFD4:
@@ -8754,9 +8754,9 @@ C - - - - - 0x01F395 07:F385: F0 1D     BEQ bra_F3A4_RTS
 C - - - - - 0x01F397 07:F387: CA        DEX
 bra_F388_loop:
 C - - - - - 0x01F398 07:F388: AD 02 20  LDA $2002
-C - - - - - 0x01F39B 07:F38B: BD E8 05  LDA ram_следы_hi_2006,X
+C - - - - - 0x01F39B 07:F38B: BD E8 05  LDA ram_следы_2006_hi,X
 C - - - - - 0x01F39E 07:F38E: 8D 06 20  STA $2006
-C - - - - - 0x01F3A1 07:F391: BD EC 05  LDA ram_следы_lo_2006,X
+C - - - - - 0x01F3A1 07:F391: BD EC 05  LDA ram_следы_2006_lo,X
 C - - - - - 0x01F3A4 07:F394: 8D 06 20  STA $2006
 C - - - - - 0x01F3A7 07:F397: A9 FF     LDA #$FF
 C - - - - - 0x01F3A9 07:F399: 8D 07 20  STA $2007

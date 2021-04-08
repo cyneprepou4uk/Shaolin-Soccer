@@ -12157,7 +12157,7 @@ loc_B0B9:
 C D 1 - - - 0x0070C9 01:B0B9: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x0070CB 01:B0BB: 30 0C     BMI bra_B0C9_RTS    ; если пауза
 ; bzk такая проверка на hi = 00 уже есть чтобы попасть сюда
-C - - - - - 0x0070CD 01:B0BD: AD E8 05  LDA ram_следы_hi_2006
+C - - - - - 0x0070CD 01:B0BD: AD E8 05  LDA ram_следы_2006_hi
 C - - - - - 0x0070D0 01:B0C0: F0 07     BEQ bra_B0C9_RTS
 C - - - - - 0x0070D2 01:B0C2: C9 01     CMP #$01
 C - - - - - 0x0070D4 01:B0C4: F0 04     BEQ bra_B0CA
@@ -12170,7 +12170,7 @@ C - - - - - 0x0070DC 01:B0CC: 09 04     ORA #$04
 C - - - - - 0x0070DE 01:B0CE: 85 4C     STA ram_для_2000
 C - - - - - 0x0070E0 01:B0D0: 8D 00 20  STA $2000
 bra_B0D3:
-C - - - - - 0x0070E3 01:B0D3: AD ED 05  LDA ram_следы_lo_2006 + 1
+C - - - - - 0x0070E3 01:B0D3: AD ED 05  LDA ram_следы_2006_lo + 1
 C - - - - - 0x0070E6 01:B0D6: 29 01     AND #$01
 C - - - - - 0x0070E8 01:B0D8: 0A        ASL
 C - - - - - 0x0070E9 01:B0D9: A8        TAY
@@ -12178,7 +12178,7 @@ C - - - - - 0x0070EA 01:B0DA: B9 80 B1  LDA tbl_B180,Y
 C - - - - - 0x0070ED 01:B0DD: 85 40     STA ram_0040
 C - - - - - 0x0070EF 01:B0DF: B9 81 B1  LDA tbl_B180 + 1,Y
 C - - - - - 0x0070F2 01:B0E2: 85 41     STA ram_0041
-C - - - - - 0x0070F4 01:B0E4: AD E9 05  LDA ram_следы_hi_2006 + 1
+C - - - - - 0x0070F4 01:B0E4: AD E9 05  LDA ram_следы_2006_hi + 1
 C - - - - - 0x0070F7 01:B0E7: 0A        ASL
 C - - - - - 0x0070F8 01:B0E8: A8        TAY
 C - - - - - 0x0070F9 01:B0E9: B1 40     LDA (ram_0040),Y
@@ -12187,10 +12187,10 @@ C - - - - - 0x0070FD 01:B0ED: C8        INY
 C - - - - - 0x0070FE 01:B0EE: B1 40     LDA (ram_0040),Y
 C - - - - - 0x007100 01:B0F0: 85 0D     STA ram_000D
 C - - - - - 0x007102 01:B0F2: A2 11     LDX #$11
-C - - - - - 0x007104 01:B0F4: AD EB 05  LDA ram_следы_hi_2006 + 3
+C - - - - - 0x007104 01:B0F4: AD EB 05  LDA ram_следы_2006_hi + 3
 C - - - - - 0x007107 01:B0F7: C9 24     CMP #$24
 C - - - - - 0x007109 01:B0F9: D0 0D     BNE bra_B108
-C - - - - - 0x00710B 01:B0FB: AD EA 05  LDA ram_следы_hi_2006 + 2
+C - - - - - 0x00710B 01:B0FB: AD EA 05  LDA ram_следы_2006_hi + 2
 C - - - - - 0x00710E 01:B0FE: C9 04     CMP #$04
 C - - - - - 0x007110 01:B100: 90 06     BCC bra_B108
 C - - - - - 0x007112 01:B102: C9 1C     CMP #$1C
@@ -12198,9 +12198,9 @@ C - - - - - 0x007114 01:B104: B0 02     BCS bra_B108
 C - - - - - 0x007116 01:B106: A2 03     LDX #$03
 bra_B108:
 C - - - - - 0x007118 01:B108: AD 02 20  LDA $2002
-C - - - - - 0x00711B 01:B10B: AD EB 05  LDA ram_следы_hi_2006 + 3
+C - - - - - 0x00711B 01:B10B: AD EB 05  LDA ram_следы_2006_hi + 3
 C - - - - - 0x00711E 01:B10E: 8D 06 20  STA $2006
-C - - - - - 0x007121 01:B111: AD EA 05  LDA ram_следы_hi_2006 + 2
+C - - - - - 0x007121 01:B111: AD EA 05  LDA ram_следы_2006_hi + 2
 C - - - - - 0x007124 01:B114: 8D 06 20  STA $2006
 C - - - - - 0x007127 01:B117: A0 00     LDY #$00
 bra_B119:
@@ -12209,17 +12209,17 @@ C - - - - - 0x00712B 01:B11B: 8D 07 20  STA $2007
 C - - - - - 0x00712E 01:B11E: C8        INY
 C - - - - - 0x00712F 01:B11F: CA        DEX
 C - - - - - 0x007130 01:B120: 10 F7     BPL bra_B119
-C - - - - - 0x007132 01:B122: EE E9 05  INC ram_следы_hi_2006 + 1
-C - - - - - 0x007135 01:B125: EE EA 05  INC ram_следы_hi_2006 + 2
-C - - - - - 0x007138 01:B128: AD EA 05  LDA ram_следы_hi_2006 + 2
+C - - - - - 0x007132 01:B122: EE E9 05  INC ram_следы_2006_hi + 1
+C - - - - - 0x007135 01:B125: EE EA 05  INC ram_следы_2006_hi + 2
+C - - - - - 0x007138 01:B128: AD EA 05  LDA ram_следы_2006_hi + 2
 C - - - - - 0x00713B 01:B12B: 29 01     AND #$01
 C - - - - - 0x00713D 01:B12D: D0 A4     BNE bra_B0D3
-C - - - - - 0x00713F 01:B12F: AD EA 05  LDA ram_следы_hi_2006 + 2
+C - - - - - 0x00713F 01:B12F: AD EA 05  LDA ram_следы_2006_hi + 2
 C - - - - - 0x007142 01:B132: C9 20     CMP #$20
 C - - - - - 0x007144 01:B134: 90 16     BCC bra_B14C
 C - - - - - 0x007146 01:B136: A9 00     LDA #$00
-C - - - - - 0x007148 01:B138: 8D EA 05  STA ram_следы_hi_2006 + 2
-C - - - - - 0x00714B 01:B13B: AD EB 05  LDA ram_следы_hi_2006 + 3
+C - - - - - 0x007148 01:B138: 8D EA 05  STA ram_следы_2006_hi + 2
+C - - - - - 0x00714B 01:B13B: AD EB 05  LDA ram_следы_2006_hi + 3
 C - - - - - 0x00714E 01:B13E: C9 20     CMP #$20
 C - - - - - 0x007150 01:B140: F0 05     BEQ bra_B147
 C - - - - - 0x007152 01:B142: A9 20     LDA #$20
@@ -12227,32 +12227,32 @@ C - - - - - 0x007154 01:B144: 4C 49 B1  JMP loc_B149
 bra_B147:
 C - - - - - 0x007157 01:B147: A9 24     LDA #$24
 loc_B149:
-C D 1 - - - 0x007159 01:B149: 8D EB 05  STA ram_следы_hi_2006 + 3
+C D 1 - - - 0x007159 01:B149: 8D EB 05  STA ram_следы_2006_hi + 3
 bra_B14C:
-C - - - - - 0x00715C 01:B14C: AD E9 05  LDA ram_следы_hi_2006 + 1
+C - - - - - 0x00715C 01:B14C: AD E9 05  LDA ram_следы_2006_hi + 1
 C - - - - - 0x00715F 01:B14F: C9 12     CMP #$12
 C - - - - - 0x007161 01:B151: 90 2C     BCC bra_B17F_RTS
 C - - - - - 0x007163 01:B153: A9 00     LDA #$00
-C - - - - - 0x007165 01:B155: 8D E9 05  STA ram_следы_hi_2006 + 1
-C - - - - - 0x007168 01:B158: EE ED 05  INC ram_следы_lo_2006 + 1
-C - - - - - 0x00716B 01:B15B: AD EA 05  LDA ram_следы_hi_2006 + 2
+C - - - - - 0x007165 01:B155: 8D E9 05  STA ram_следы_2006_hi + 1
+C - - - - - 0x007168 01:B158: EE ED 05  INC ram_следы_2006_lo + 1
+C - - - - - 0x00716B 01:B15B: AD EA 05  LDA ram_следы_2006_hi + 2
 C - - - - - 0x00716E 01:B15E: 38        SEC
 C - - - - - 0x00716F 01:B15F: E9 14     SBC #$14
 C - - - - - 0x007171 01:B161: B0 11     BCS bra_B174
 C - - - - - 0x007173 01:B163: 29 1F     AND #$1F
-C - - - - - 0x007175 01:B165: 8D EA 05  STA ram_следы_hi_2006 + 2
-C - - - - - 0x007178 01:B168: AD EB 05  LDA ram_следы_hi_2006 + 3
+C - - - - - 0x007175 01:B165: 8D EA 05  STA ram_следы_2006_hi + 2
+C - - - - - 0x007178 01:B168: AD EB 05  LDA ram_следы_2006_hi + 3
 C - - - - - 0x00717B 01:B16B: C9 20     CMP #$20
 C - - - - - 0x00717D 01:B16D: F0 0B     BEQ bra_B17A
 C - - - - - 0x00717F 01:B16F: A9 20     LDA #$20
 C - - - - - 0x007181 01:B171: 4C 7C B1  JMP loc_B17C
 bra_B174:
-C - - - - - 0x007184 01:B174: 8D EA 05  STA ram_следы_hi_2006 + 2
+C - - - - - 0x007184 01:B174: 8D EA 05  STA ram_следы_2006_hi + 2
 C - - - - - 0x007187 01:B177: 4C 7F B1  RTS
 bra_B17A:
 C - - - - - 0x00718A 01:B17A: A9 24     LDA #$24
 loc_B17C:
-C D 1 - - - 0x00718C 01:B17C: 8D EB 05  STA ram_следы_hi_2006 + 3
+C D 1 - - - 0x00718C 01:B17C: 8D EB 05  STA ram_следы_2006_hi + 3
 bra_B17F_RTS:
 C D 1 - - - 0x00718F 01:B17F: 60        RTS
 
@@ -13063,7 +13063,7 @@ C D 1 - - - 0x007440 01:B430: A5 4C     LDA ram_для_2000
 C - - - - - 0x007442 01:B432: 29 FB     AND #$FB
 C - - - - - 0x007444 01:B434: 85 4C     STA ram_для_2000
 C - - - - - 0x007446 01:B436: 8D 00 20  STA $2000
-C - - - - - 0x007449 01:B439: AD E9 05  LDA ram_следы_hi_2006 + 1
+C - - - - - 0x007449 01:B439: AD E9 05  LDA ram_следы_2006_hi + 1
 C - - - - - 0x00744C 01:B43C: 29 7F     AND #$7F
 C - - - - - 0x00744E 01:B43E: 0A        ASL
 C - - - - - 0x00744F 01:B43F: A8        TAY
@@ -13074,12 +13074,12 @@ C - - - - - 0x007458 01:B448: 85 0D     STA ram_000D
 C - - - - - 0x00745A 01:B44A: A0 00     LDY #$00
 bra_B44C:
 C - - - - - 0x00745C 01:B44C: A2 00     LDX #$00
-C - - - - - 0x00745E 01:B44E: AD E9 05  LDA ram_следы_hi_2006 + 1
+C - - - - - 0x00745E 01:B44E: AD E9 05  LDA ram_следы_2006_hi + 1
 C - - - - - 0x007461 01:B451: 10 02     BPL bra_B455
 C - - - - - 0x007463 01:B453: A2 08     LDX #$08
 bra_B455:
 C - - - - - 0x007465 01:B455: B9 EC B4  LDA tbl_B4EC,Y
-C - - - - - 0x007468 01:B458: 8D EB 05  STA ram_следы_hi_2006 + 3
+C - - - - - 0x007468 01:B458: 8D EB 05  STA ram_следы_2006_hi + 3
 C - - - - - 0x00746B 01:B45B: B1 0C     LDA (ram_000C),Y
 C - - - - - 0x00746D 01:B45D: 4A        LSR
 C - - - - - 0x00746E 01:B45E: 4A        LSR
@@ -13095,25 +13095,25 @@ C - - - - - 0x00747A 01:B46A: E8        INX
 C - - - - - 0x00747B 01:B46B: E8        INX
 bra_B46C:
 C - - - - - 0x00747C 01:B46C: B1 0C     LDA (ram_000C),Y
-C - - - - - 0x00747E 01:B46E: 8D EA 05  STA ram_следы_hi_2006 + 2
+C - - - - - 0x00747E 01:B46E: 8D EA 05  STA ram_следы_2006_hi + 2
 C - - - - - 0x007481 01:B471: C8        INY
 C - - - - - 0x007482 01:B472: AD 02 20  LDA $2002
-C - - - - - 0x007485 01:B475: AD EB 05  LDA ram_следы_hi_2006 + 3
+C - - - - - 0x007485 01:B475: AD EB 05  LDA ram_следы_2006_hi + 3
 C - - - - - 0x007488 01:B478: 8D 06 20  STA $2006
-C - - - - - 0x00748B 01:B47B: AD EA 05  LDA ram_следы_hi_2006 + 2
+C - - - - - 0x00748B 01:B47B: AD EA 05  LDA ram_следы_2006_hi + 2
 C - - - - - 0x00748E 01:B47E: 8D 06 20  STA $2006
 C - - - - - 0x007491 01:B481: BD 20 06  LDA ram_0620,X
 C - - - - - 0x007494 01:B484: 8D 07 20  STA $2007
 C - - - - - 0x007497 01:B487: BD 21 06  LDA ram_0620 + 1,X
 C - - - - - 0x00749A 01:B48A: 8D 07 20  STA $2007
-C - - - - - 0x00749D 01:B48D: AD EA 05  LDA ram_следы_hi_2006 + 2
+C - - - - - 0x00749D 01:B48D: AD EA 05  LDA ram_следы_2006_hi + 2
 C - - - - - 0x0074A0 01:B490: 18        CLC
 C - - - - - 0x0074A1 01:B491: 69 20     ADC #$20
-C - - - - - 0x0074A3 01:B493: 8D EA 05  STA ram_следы_hi_2006 + 2
+C - - - - - 0x0074A3 01:B493: 8D EA 05  STA ram_следы_2006_hi + 2
 C - - - - - 0x0074A6 01:B496: AD 02 20  LDA $2002
-C - - - - - 0x0074A9 01:B499: AD EB 05  LDA ram_следы_hi_2006 + 3
+C - - - - - 0x0074A9 01:B499: AD EB 05  LDA ram_следы_2006_hi + 3
 C - - - - - 0x0074AC 01:B49C: 8D 06 20  STA $2006
-C - - - - - 0x0074AF 01:B49F: AD EA 05  LDA ram_следы_hi_2006 + 2
+C - - - - - 0x0074AF 01:B49F: AD EA 05  LDA ram_следы_2006_hi + 2
 C - - - - - 0x0074B2 01:B4A2: 8D 06 20  STA $2006
 C - - - - - 0x0074B5 01:B4A5: BD 22 06  LDA ram_0620 + 2,X
 C - - - - - 0x0074B8 01:B4A8: 8D 07 20  STA $2007
@@ -13121,18 +13121,18 @@ C - - - - - 0x0074BB 01:B4AB: BD 23 06  LDA ram_0620 + 3,X
 C - - - - - 0x0074BE 01:B4AE: 8D 07 20  STA $2007
 C - - - - - 0x0074C1 01:B4B1: C0 08     CPY #$08
 C - - - - - 0x0074C3 01:B4B3: 90 97     BCC bra_B44C
-C - - - - - 0x0074C5 01:B4B5: EE E9 05  INC ram_следы_hi_2006 + 1
-C - - - - - 0x0074C8 01:B4B8: AD E9 05  LDA ram_следы_hi_2006 + 1
+C - - - - - 0x0074C5 01:B4B5: EE E9 05  INC ram_следы_2006_hi + 1
+C - - - - - 0x0074C8 01:B4B8: AD E9 05  LDA ram_следы_2006_hi + 1
 C - - - - - 0x0074CB 01:B4BB: 29 7F     AND #$7F
 C - - - - - 0x0074CD 01:B4BD: C9 0D     CMP #$0D
 C - - - - - 0x0074CF 01:B4BF: 90 08     BCC bra_B4C9
-C - - - - - 0x0074D1 01:B4C1: AD E9 05  LDA ram_следы_hi_2006 + 1
+C - - - - - 0x0074D1 01:B4C1: AD E9 05  LDA ram_следы_2006_hi + 1
 C - - - - - 0x0074D4 01:B4C4: 29 80     AND #$80
-C - - - - - 0x0074D6 01:B4C6: 8D E9 05  STA ram_следы_hi_2006 + 1
+C - - - - - 0x0074D6 01:B4C6: 8D E9 05  STA ram_следы_2006_hi + 1
 bra_B4C9:
-C - - - - - 0x0074D9 01:B4C9: AD E9 05  LDA ram_следы_hi_2006 + 1
+C - - - - - 0x0074D9 01:B4C9: AD E9 05  LDA ram_следы_2006_hi + 1
 C - - - - - 0x0074DC 01:B4CC: 49 80     EOR #$80
-C - - - - - 0x0074DE 01:B4CE: 8D E9 05  STA ram_следы_hi_2006 + 1
+C - - - - - 0x0074DE 01:B4CE: 8D E9 05  STA ram_следы_2006_hi + 1
 C - - - - - 0x0074E1 01:B4D1: 60        RTS
 
 
@@ -13322,13 +13322,17 @@ off_B554_0C:
 
 
 
-sub_B55C:
+sub_B55C_нарисовать_имя_команд_и_счет_на_табло:
+.scope
+ram_tmp_2006_hi = ram_002C
+ram_tmp_2006_lo = ram_002D
+
 C - - - - - 0x00756C 01:B55C: A2 00     LDX #$00
 bra_B55E_loop:
 C D 1 - - - 0x00756E 01:B55E: A9 24     LDA #$24
-C - - - - - 0x007570 01:B560: 85 2C     STA ram_002C
+C - - - - - 0x007570 01:B560: 85 2C     STA ram_tmp_2006_hi
 C - - - - - 0x007572 01:B562: BD EB B5  LDA tbl_B5EB,X
-C - - - - - 0x007575 01:B565: 85 2D     STA ram_002D
+C - - - - - 0x007575 01:B565: 85 2D     STA ram_tmp_2006_lo
 C - - - - - 0x007577 01:B567: BD 2C 05  LDA ram_номер_команды,X
 C - - - - - 0x00757A 01:B56A: 29 0F     AND #$0F
 C - - - - - 0x00757C 01:B56C: 85 1C     STA ram_001C
@@ -13337,18 +13341,18 @@ C - - - - - 0x007581 01:B571: BD 2E 05  LDA ram_счет_команды,X
 C - - - - - 0x007584 01:B574: 29 F0     AND #$F0
 C - - - - - 0x007586 01:B576: D0 14     BNE bra_B58C
 C - - - - - 0x007588 01:B578: A9 25     LDA #$25
-C - - - - - 0x00758A 01:B57A: 85 2C     STA ram_002C
+C - - - - - 0x00758A 01:B57A: 85 2C     STA ram_tmp_2006_hi
 C - - - - - 0x00758C 01:B57C: BD ED B5  LDA tbl_B5ED,X
-C - - - - - 0x00758F 01:B57F: 85 2D     STA ram_002D
+C - - - - - 0x00758F 01:B57F: 85 2D     STA ram_tmp_2006_lo
 C - - - - - 0x007591 01:B581: BD 2E 05  LDA ram_счет_команды,X
 C - - - - - 0x007594 01:B584: 85 1C     STA ram_001C
 C - - - - - 0x007596 01:B586: 20 D8 B6  JSR sub_B6D8
 C - - - - - 0x007599 01:B589: 4C B4 B5  JMP loc_B5B4
 bra_B58C:
 - - - - - - 0x00759C 01:B58C: A9 25     LDA #$25
-- - - - - - 0x00759E 01:B58E: 85 2C     STA ram_002C
+- - - - - - 0x00759E 01:B58E: 85 2C     STA ram_tmp_2006_hi
 - - - - - - 0x0075A0 01:B590: BD EF B5  LDA tbl_B5EF,X
-- - - - - - 0x0075A3 01:B593: 85 2D     STA ram_002D
+- - - - - - 0x0075A3 01:B593: 85 2D     STA ram_tmp_2006_lo
 - - - - - - 0x0075A5 01:B595: BD 2E 05  LDA ram_счет_команды,X
 - - - - - - 0x0075A8 01:B598: 4A        LSR
 - - - - - - 0x0075A9 01:B599: 4A        LSR
@@ -13357,9 +13361,9 @@ bra_B58C:
 - - - - - - 0x0075AC 01:B59C: 85 1C     STA ram_001C
 - - - - - - 0x0075AE 01:B59E: 20 D8 B6  JSR sub_B6D8
 - - - - - - 0x0075B1 01:B5A1: A9 25     LDA #$25
-- - - - - - 0x0075B3 01:B5A3: 85 2C     STA ram_002C
+- - - - - - 0x0075B3 01:B5A3: 85 2C     STA ram_tmp_2006_hi
 - - - - - - 0x0075B5 01:B5A5: BD F1 B5  LDA tbl_B5F1,X
-- - - - - - 0x0075B8 01:B5A8: 85 2D     STA ram_002D
+- - - - - - 0x0075B8 01:B5A8: 85 2D     STA ram_tmp_2006_lo
 - - - - - - 0x0075BA 01:B5AA: BD 2E 05  LDA ram_счет_команды,X
 - - - - - - 0x0075BD 01:B5AD: 29 0F     AND #$0F
 - - - - - - 0x0075BF 01:B5AF: 85 1C     STA ram_001C
@@ -13387,7 +13391,7 @@ C - - - - - 0x0075F2 01:B5E2: 8D 07 20  STA $2007
 C - - - - - 0x0075F5 01:B5E5: A9 46     LDA #$46
 C - - - - - 0x0075F7 01:B5E7: 8D 07 20  STA $2007
 C - - - - - 0x0075FA 01:B5EA: 60        RTS
-
+.endscope
 
 
 tbl_B5EB:
@@ -13640,6 +13644,7 @@ off_B6D0_09:
 
 
 sub_B6D8:
+; bzk опр, переместить повыше для scope
 C - - - - - 0x0076E8 01:B6D8: A5 4C     LDA ram_для_2000
 C - - - - - 0x0076EA 01:B6DA: 09 04     ORA #$04
 C - - - - - 0x0076EC 01:B6DC: 85 4C     STA ram_для_2000
@@ -13647,9 +13652,9 @@ C - - - - - 0x0076EE 01:B6DE: 8D 00 20  STA $2000
 C - - - - - 0x0076F1 01:B6E1: A5 1C     LDA ram_001C
 C - - - - - 0x0076F3 01:B6E3: 0A        ASL
 C - - - - - 0x0076F4 01:B6E4: A8        TAY
-C - - - - - 0x0076F5 01:B6E5: B9 54 B7  LDA tbl_B754_tiles,Y
+C - - - - - 0x0076F5 01:B6E5: B9 54 B7  LDA tbl_B754_тайлы,Y
 C - - - - - 0x0076F8 01:B6E8: 85 2E     STA ram_002E
-C - - - - - 0x0076FA 01:B6EA: B9 55 B7  LDA tbl_B754_tiles + 1,Y
+C - - - - - 0x0076FA 01:B6EA: B9 55 B7  LDA tbl_B754_тайлы + 1,Y
 C - - - - - 0x0076FD 01:B6ED: 85 2F     STA ram_002F
 C - - - - - 0x0076FF 01:B6EF: A0 00     LDY #$00
 C - - - - - 0x007701 01:B6F1: AD 02 20  LDA $2002
@@ -13703,7 +13708,7 @@ C - - - - - 0x007763 01:B753: 60        RTS
 
 
 
-tbl_B754_tiles:
+tbl_B754_тайлы:
 - D 1 - - - 0x007764 01:B754: 68 B7     .word off_B768_00
 - D 1 - - - 0x007766 01:B756: 80 B7     .word off_B780_01
 - D 1 - - - 0x007768 01:B758: 98 B7     .word off_B798_02
@@ -14046,14 +14051,14 @@ tbl_B899_tiles:
 
 loc_B8A1:
 C D 1 - - - 0x0078B1 01:B8A1: A9 00     LDA #$00
-C - - - - - 0x0078B3 01:B8A3: 8D E8 05  STA ram_следы_hi_2006
-C - - - - - 0x0078B6 01:B8A6: 8D EC 05  STA ram_следы_lo_2006
-C - - - - - 0x0078B9 01:B8A9: 8D E9 05  STA ram_следы_hi_2006 + 1
-C - - - - - 0x0078BC 01:B8AC: 8D ED 05  STA ram_следы_lo_2006 + 1
+C - - - - - 0x0078B3 01:B8A3: 8D E8 05  STA ram_следы_2006_hi
+C - - - - - 0x0078B6 01:B8A6: 8D EC 05  STA ram_следы_2006_lo
+C - - - - - 0x0078B9 01:B8A9: 8D E9 05  STA ram_следы_2006_hi + 1
+C - - - - - 0x0078BC 01:B8AC: 8D ED 05  STA ram_следы_2006_lo + 1
 C - - - - - 0x0078BF 01:B8AF: A9 24     LDA #$24
-C - - - - - 0x0078C1 01:B8B1: 8D EB 05  STA ram_следы_hi_2006 + 3
+C - - - - - 0x0078C1 01:B8B1: 8D EB 05  STA ram_следы_2006_hi + 3
 C - - - - - 0x0078C4 01:B8B4: A9 18     LDA #$18
-C - - - - - 0x0078C6 01:B8B6: 8D EA 05  STA ram_следы_hi_2006 + 2
+C - - - - - 0x0078C6 01:B8B6: 8D EA 05  STA ram_следы_2006_hi + 2
 C - - - - - 0x0078C9 01:B8B9: A9 FF     LDA #$FF
 C - - - - - 0x0078CB 01:B8BB: 8D F5 05  STA ram_флаг_гола
 C - - - - - 0x0078CE 01:B8BE: AD 30 06  LDA ram_062C + 4
@@ -14064,7 +14069,7 @@ C - - - - - 0x0078D6 01:B8C6: 20 68 C0  JSR sub_0x01E838_отрисовать_с
 C - - - - - 0x0078D9 01:B8C9: 20 11 C0  JSR sub_0x01ECB9
 C - - - - - 0x0078DC 01:B8CC: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x0078DF 01:B8CF: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
-C - - - - - 0x0078E2 01:B8D2: 20 5C B5  JSR sub_B55C
+C - - - - - 0x0078E2 01:B8D2: 20 5C B5  JSR sub_B55C_нарисовать_имя_команд_и_счет_на_табло
 C - - - - - 0x0078E5 01:B8D5: 20 55 B9  JSR sub_B955
 C - - - - - 0x0078E8 01:B8D8: AD 30 06  LDA ram_062C + 4
 C - - - - - 0x0078EB 01:B8DB: 10 3A     BPL bra_B917
@@ -14075,11 +14080,11 @@ C - - - - - 0x0078F3 01:B8E3: F0 0B     BEQ bra_B8F0
 - - - - - - 0x0078F5 01:B8E5: 4C 05 B9  JMP loc_B905
 bra_B8E8:
 C - - - - - 0x0078F8 01:B8E8: A9 01     LDA #$01
-C - - - - - 0x0078FA 01:B8EA: 8D EC 05  STA ram_следы_lo_2006
+C - - - - - 0x0078FA 01:B8EA: 8D EC 05  STA ram_следы_2006_lo
 C - - - - - 0x0078FD 01:B8ED: 4C 17 B9  JMP loc_B917
 bra_B8F0:
 C - - - - - 0x007900 01:B8F0: A9 02     LDA #$02
-C - - - - - 0x007902 01:B8F2: 8D EC 05  STA ram_следы_lo_2006
+C - - - - - 0x007902 01:B8F2: 8D EC 05  STA ram_следы_2006_lo
 C - - - - - 0x007905 01:B8F5: A2 00     LDX #$00
 bra_B8F7_loop:
 C - - - - - 0x007907 01:B8F7: BD 35 B9  LDA tbl_B935,X
@@ -14090,7 +14095,7 @@ C - - - - - 0x007910 01:B900: 90 F5     BCC bra_B8F7_loop
 C - - - - - 0x007912 01:B902: 4C 17 B9  JMP loc_B917
 loc_B905:
 - - - - - - 0x007915 01:B905: A9 03     LDA #$03
-- - - - - - 0x007917 01:B907: 8D EC 05  STA ram_следы_lo_2006
+- - - - - - 0x007917 01:B907: 8D EC 05  STA ram_следы_2006_lo
 - - - - - - 0x00791A 01:B90A: A2 00     LDX #$00
 bra_B90C_loop:
 - - - - - - 0x00791C 01:B90C: BD 45 B9  LDA tbl_B945,X
@@ -14469,7 +14474,7 @@ tbl_BB35:
 loc_BB3E:
 ofs_BB3E_03_смерч:
 C D 1 - - - 0x007B4E 01:BB3E: A2 0D     LDX #$0D
-C - - - - - 0x007B50 01:BB40: 20 BC BF  JSR sub_0x01C25C
+C - - - - - 0x007B50 01:BB40: 20 BC BF  JSR sub_0x01C25C_сдвинуть_объект
 C - - - - - 0x007B53 01:BB43: AD 6D 03  LDA ram_pos_Y_hi_погода
 C - - - - - 0x007B56 01:BB46: C9 01     CMP #$01
 C - - - - - 0x007B58 01:BB48: F0 0A     BEQ bra_BB54
@@ -14594,18 +14599,18 @@ C - - - - - 0x007C2F 01:BC1F: BD 2C 05  LDA ram_номер_команды,X
 C - - - - - 0x007C32 01:BC22: 29 0F     AND #$0F
 C - - - - - 0x007C34 01:BC24: 0A        ASL
 C - - - - - 0x007C35 01:BC25: A8        TAY
-C - - - - - 0x007C36 01:BC26: B9 18 BD  LDA tbl_BD18,Y
+C - - - - - 0x007C36 01:BC26: B9 18 BD  LDA tbl_BD18_данные_игроков_команд,Y
 C - - - - - 0x007C39 01:BC29: 85 2C     STA ram_002C
-C - - - - - 0x007C3B 01:BC2B: B9 19 BD  LDA tbl_BD18 + 1,Y
+C - - - - - 0x007C3B 01:BC2B: B9 19 BD  LDA tbl_BD18_данные_игроков_команд + 1,Y
 C - - - - - 0x007C3E 01:BC2E: 85 2D     STA ram_002D
 loc_BC30_loop:
 C D 1 - - - 0x007C40 01:BC30: A9 00     LDA #$00
-C - - - - - 0x007C42 01:BC32: 85 1C     STA ram_001C
+C - - - - - 0x007C42 01:BC32: 85 1C     STA ram_001C    ; bzk запись выглядит бесполезной
 C - - - - - 0x007C44 01:BC34: A5 57     LDA ram_опция_режим_и_сложность
-C - - - - - 0x007C46 01:BC36: 10 26     BPL bra_BC5E    ; если не режим прохождения
+C - - - - - 0x007C46 01:BC36: 10 26     BPL bra_BC5E    ; если это не режим прохождения
 C - - - - - 0x007C48 01:BC38: 8A        TXA
 C - - - - - 0x007C49 01:BC39: 4A        LSR
-C - - - - - 0x007C4A 01:BC3A: B0 22     BCS bra_BC5E
+C - - - - - 0x007C4A 01:BC3A: B0 22     BCS bra_BC5E    ; если это игрок команды справа
 C - - - - - 0x007C4C 01:BC3C: AD 2C 05  LDA ram_номер_команды
 C - - - - - 0x007C4F 01:BC3F: 29 0F     AND #$0F
 C - - - - - 0x007C51 01:BC41: D0 1B     BNE bra_BC5E
@@ -14646,7 +14651,7 @@ C - - - - - 0x007C98 01:BC88: E8        INX
 C - - - - - 0x007C99 01:BC89: E8        INX
 C - - - - - 0x007C9A 01:BC8A: E0 0C     CPX #$0C
 C - - - - - 0x007C9C 01:BC8C: B0 03     BCS bra_BC91
-C - - - - - 0x007C9E 01:BC8E: 4C 30 BC  JMP loc_BC30_loop
+C - - - - - 0x007C9E 01:BC8E: 4C 30 BC  JMP loc_BC30_loop    ; bzk опт
 bra_BC91:
 C - - - - - 0x007CA1 01:BC91: A6 43     LDX ram_0043
 C - - - - - 0x007CA3 01:BC93: BD 30 05  LDA ram_расстановка_команды,X
@@ -14759,7 +14764,7 @@ off_BD12_02:
 
 
 
-tbl_BD18:
+tbl_BD18_данные_игроков_команд:
 - D 1 - - - 0x007D28 01:BD18: 38 BD     .word off_BD38_00
 - D 1 - - - 0x007D2A 01:BD1A: 68 BD     .word off_BD68_01
 - - - - - - 0x007D2C 01:BD1C: 80 BD     .word off_BD80_02

@@ -12405,7 +12405,7 @@ C - - - - - 0x0134E4 04:B4D4: 30 05     BMI bra_B4DB    ; если это бот
 C - - - - - 0x0134E6 04:B4D6: BD 79 04  LDA ram_next_действие_игрока,X
 C - - - - - 0x0134E9 04:B4D9: 30 03     BMI bra_B4DE
 bra_B4DB:
-C - - - - - 0x0134EB 04:B4DB: 4C 24 B7  JMP loc_B724
+C - - - - - 0x0134EB 04:B4DB: 4C 24 B7  JMP loc_B724_выход
 bra_B4DE:
 C - - - - - 0x0134EE 04:B4DE: A6 43     LDX ram_0043
 C - - - - - 0x0134F0 04:B4E0: 20 7A C0  JSR sub_0x01FAFE
@@ -12521,8 +12521,8 @@ C - - - - - 0x0135D1 04:B5C1: F0 0C     BEQ bra_B5CF
 C - - - - - 0x0135D3 04:B5C3: AD 1E 00  LDA ram_001E
 C - - - - - 0x0135D6 04:B5C6: 29 C0     AND #$C0
 C - - - - - 0x0135D8 04:B5C8: F0 05     BEQ bra_B5CF
-- - - - - - 0x0135DA 04:B5CA: A9 45     LDA #$45
-- - - - - - 0x0135DC 04:B5CC: 4C 21 B7  JMP loc_B721
+- - - - - - 0x0135DA 04:B5CA: A9 45     LDA #con_action_45
+- - - - - - 0x0135DC 04:B5CC: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B5CF:
 C - - - - - 0x0135DF 04:B5CF: AD 1E 00  LDA ram_001E
 C - - - - - 0x0135E2 04:B5D2: 4A        LSR
@@ -12536,7 +12536,7 @@ C - - - - - 0x0135F0 04:B5E0: F0 09     BEQ bra_B5EB
 C - - - - - 0x0135F2 04:B5E2: A0 01     LDY #$01
 C - - - - - 0x0135F4 04:B5E4: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x0135F6 04:B5E6: 30 03     BMI bra_B5EB
-C - - - - - 0x0135F8 04:B5E8: 4C 21 B7  JMP loc_B721
+C - - - - - 0x0135F8 04:B5E8: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B5EB:
 C - - - - - 0x0135FB 04:B5EB: AD 1D 00  LDA ram_001D
 C - - - - - 0x0135FE 04:B5EE: 29 03     AND #$03
@@ -12544,7 +12544,7 @@ C - - - - - 0x013600 04:B5F0: F0 09     BEQ bra_B5FB
 C - - - - - 0x013602 04:B5F2: A0 00     LDY #$00
 C - - - - - 0x013604 04:B5F4: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013606 04:B5F6: 30 F3     BMI bra_B5EB
-C - - - - - 0x013608 04:B5F8: 4C 21 B7  JMP loc_B721
+C - - - - - 0x013608 04:B5F8: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B5FB:
 C - - - - - 0x01360B 04:B5FB: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x01360E 04:B5FE: 29 08     AND #$08
@@ -12552,12 +12552,12 @@ C - - - - - 0x013610 04:B600: F0 09     BEQ bra_B60B    ; если не бег/�
 C - - - - - 0x013612 04:B602: A0 02     LDY #$02
 C - - - - - 0x013614 04:B604: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013616 04:B606: 30 03     BMI bra_B60B
-C - - - - - 0x013618 04:B608: 4C 21 B7  JMP loc_B721
+C - - - - - 0x013618 04:B608: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B60B:
 C - - - - - 0x01361B 04:B60B: A0 03     LDY #$03
 C - - - - - 0x01361D 04:B60D: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01361F 04:B60F: 30 03     BMI bra_B614
-C - - - - - 0x013621 04:B611: 4C 21 B7  JMP loc_B721
+C - - - - - 0x013621 04:B611: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B614:
 loc_B614:
 C D 1 - - - 0x013624 04:B614: 0A        ASL
@@ -12571,7 +12571,7 @@ C - - - - - 0x013633 04:B623: D0 09     BNE bra_B62E
 C - - - - - 0x013635 04:B625: A0 04     LDY #$04
 C - - - - - 0x013637 04:B627: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013639 04:B629: 30 03     BMI bra_B62E
-C - - - - - 0x01363B 04:B62B: 4C 21 B7  JMP loc_B721
+C - - - - - 0x01363B 04:B62B: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B62E:
 C - - - - - 0x01363E 04:B62E: AD 1D 00  LDA ram_001D
 C - - - - - 0x013641 04:B631: 29 0C     AND #$0C
@@ -12579,12 +12579,12 @@ C - - - - - 0x013643 04:B633: F0 09     BEQ bra_B63E
 C - - - - - 0x013645 04:B635: A0 05     LDY #$05
 C - - - - - 0x013647 04:B637: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013649 04:B639: 30 03     BMI bra_B63E
-C - - - - - 0x01364B 04:B63B: 4C 21 B7  JMP loc_B721
+C - - - - - 0x01364B 04:B63B: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B63E:
 C - - - - - 0x01364E 04:B63E: A0 06     LDY #$06
 C - - - - - 0x013650 04:B640: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013652 04:B642: 30 03     BMI bra_B647
-C - - - - - 0x013654 04:B644: 4C 21 B7  JMP loc_B721
+C - - - - - 0x013654 04:B644: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B647:
 C - - - - - 0x013657 04:B647: 0A        ASL
 C - - - - - 0x013658 04:B648: 10 4C     BPL bra_B696
@@ -12595,7 +12595,7 @@ C - - - - - 0x013661 04:B651: D0 09     BNE bra_B65C
 C - - - - - 0x013663 04:B653: A0 0B     LDY #$0B
 C - - - - - 0x013665 04:B655: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013667 04:B657: 30 03     BMI bra_B65C
-C - - - - - 0x013669 04:B659: 4C 21 B7  JMP loc_B721
+C - - - - - 0x013669 04:B659: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B65C:
 C - - - - - 0x01366C 04:B65C: AD 1D 00  LDA ram_001D
 C - - - - - 0x01366F 04:B65F: 29 0F     AND #$0F
@@ -12603,7 +12603,7 @@ C - - - - - 0x013671 04:B661: D0 09     BNE bra_B66C
 C - - - - - 0x013673 04:B663: A0 07     LDY #$07
 C - - - - - 0x013675 04:B665: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013677 04:B667: 30 03     BMI bra_B66C
-C - - - - - 0x013679 04:B669: 4C 21 B7  JMP loc_B721
+C - - - - - 0x013679 04:B669: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B66C:
 C - - - - - 0x01367C 04:B66C: AD 1D 00  LDA ram_001D
 C - - - - - 0x01367F 04:B66F: 29 0C     AND #$0C
@@ -12611,7 +12611,7 @@ C - - - - - 0x013681 04:B671: F0 09     BEQ bra_B67C
 C - - - - - 0x013683 04:B673: A0 08     LDY #$08
 C - - - - - 0x013685 04:B675: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013687 04:B677: 30 03     BMI bra_B67C
-C - - - - - 0x013689 04:B679: 4C 21 B7  JMP loc_B721
+C - - - - - 0x013689 04:B679: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B67C:
 C - - - - - 0x01368C 04:B67C: 8A        TXA
 C - - - - - 0x01368D 04:B67D: 4D 1D 00  EOR ram_001D
@@ -12620,12 +12620,12 @@ C - - - - - 0x013692 04:B682: D0 09     BNE bra_B68D
 C - - - - - 0x013694 04:B684: A0 09     LDY #$09
 C - - - - - 0x013696 04:B686: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013698 04:B688: 30 03     BMI bra_B68D
-C - - - - - 0x01369A 04:B68A: 4C 21 B7  JMP loc_B721
+C - - - - - 0x01369A 04:B68A: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B68D:
 C - - - - - 0x01369D 04:B68D: A0 0A     LDY #$0A
 C - - - - - 0x01369F 04:B68F: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x0136A1 04:B691: 30 03     BMI bra_B696
-C - - - - - 0x0136A3 04:B693: 4C 21 B7  JMP loc_B721
+C - - - - - 0x0136A3 04:B693: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B696:
 C - - - - - 0x0136A6 04:B696: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x0136A9 04:B699: 30 77     BMI bra_B712    ; если в воздухе
@@ -12639,11 +12639,11 @@ C - - - - - 0x0136B9 04:B6A9: D0 0C     BNE bra_B6B7
 C - - - - - 0x0136BB 04:B6AB: AD 1D 00  LDA ram_001D
 C - - - - - 0x0136BE 04:B6AE: 29 0C     AND #$0C
 C - - - - - 0x0136C0 04:B6B0: F0 0A     BEQ bra_B6BC
-C - - - - - 0x0136C2 04:B6B2: A9 27     LDA #$27
-C - - - - - 0x0136C4 04:B6B4: 4C 0F B7  JMP loc_B70F
+C - - - - - 0x0136C2 04:B6B2: A9 27     LDA #con_action_27
+C - - - - - 0x0136C4 04:B6B4: 4C 0F B7  JMP loc_B70F_запись_действия
 bra_B6B7:
-C - - - - - 0x0136C7 04:B6B7: A9 2A     LDA #$2A
-C - - - - - 0x0136C9 04:B6B9: 4C 0F B7  JMP loc_B70F
+C - - - - - 0x0136C7 04:B6B7: A9 2A     LDA #con_action_2A
+C - - - - - 0x0136C9 04:B6B9: 4C 0F B7  JMP loc_B70F_запись_действия
 bra_B6BC:
 C - - - - - 0x0136CC 04:B6BC: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x0136CF 04:B6BF: 29 08     AND #$08
@@ -12656,14 +12656,14 @@ C - - - - - 0x0136DC 04:B6CC: D0 0C     BNE bra_B6DA
 C - - - - - 0x0136DE 04:B6CE: AD 21 00  LDA ram_0021
 C - - - - - 0x0136E1 04:B6D1: 29 0C     AND #$0C
 C - - - - - 0x0136E3 04:B6D3: F0 29     BEQ bra_B6FE
-C - - - - - 0x0136E5 04:B6D5: A9 24     LDA #$24
-C - - - - - 0x0136E7 04:B6D7: 4C 0F B7  JMP loc_B70F
+C - - - - - 0x0136E5 04:B6D5: A9 24     LDA #con_action_24
+C - - - - - 0x0136E7 04:B6D7: 4C 0F B7  JMP loc_B70F_запись_действия
 bra_B6DA:
 C - - - - - 0x0136EA 04:B6DA: AD 21 00  LDA ram_0021
 C - - - - - 0x0136ED 04:B6DD: 29 0C     AND #$0C
 C - - - - - 0x0136EF 04:B6DF: F0 1D     BEQ bra_B6FE
-C - - - - - 0x0136F1 04:B6E1: A9 25     LDA #$25
-C - - - - - 0x0136F3 04:B6E3: 4C 0F B7  JMP loc_B70F
+C - - - - - 0x0136F1 04:B6E1: A9 25     LDA #con_action_25
+C - - - - - 0x0136F3 04:B6E3: 4C 0F B7  JMP loc_B70F_запись_действия
 bra_B6E6_не_бежит:
 C - - - - - 0x0136F6 04:B6E6: AD 21 00  LDA ram_0021
 C - - - - - 0x0136F9 04:B6E9: 29 0F     AND #$0F
@@ -12671,20 +12671,20 @@ C - - - - - 0x0136FB 04:B6EB: D0 1D     BNE bra_B70A
 C - - - - - 0x0136FD 04:B6ED: AD 1D 00  LDA ram_001D
 C - - - - - 0x013700 04:B6F0: 29 0F     AND #$0F
 C - - - - - 0x013702 04:B6F2: D0 05     BNE bra_B6F9
-C - - - - - 0x013704 04:B6F4: A9 01     LDA #$01
-C - - - - - 0x013706 04:B6F6: 4C 0F B7  JMP loc_B70F
+C - - - - - 0x013704 04:B6F4: A9 01     LDA #con_action_01
+C - - - - - 0x013706 04:B6F6: 4C 0F B7  JMP loc_B70F_запись_действия
 bra_B6F9:
-C - - - - - 0x013709 04:B6F9: A9 20     LDA #$20
-C - - - - - 0x01370B 04:B6FB: 4C 0F B7  JMP loc_B70F
+C - - - - - 0x013709 04:B6F9: A9 20     LDA #con_action_20
+C - - - - - 0x01370B 04:B6FB: 4C 0F B7  JMP loc_B70F_запись_действия
 bra_B6FE:
 C - - - - - 0x01370E 04:B6FE: AD 21 00  LDA ram_0021
 C - - - - - 0x013711 04:B701: 29 0F     AND #$0F
 C - - - - - 0x013713 04:B703: F0 0D     BEQ bra_B712
-C - - - - - 0x013715 04:B705: A9 1D     LDA #$1D
-C - - - - - 0x013717 04:B707: 4C 0F B7  JMP loc_B70F
+C - - - - - 0x013715 04:B705: A9 1D     LDA #con_action_1D
+C - - - - - 0x013717 04:B707: 4C 0F B7  JMP loc_B70F_запись_действия
 bra_B70A:
-C - - - - - 0x01371A 04:B70A: A9 21     LDA #$21
-loc_B70F:
+C - - - - - 0x01371A 04:B70A: A9 21     LDA #con_action_21
+loc_B70F_запись_действия:   ; bzk опт
 C D 1 - - - 0x01371F 04:B70F: 9D 79 04  STA ram_next_действие_игрока,X
 bra_B712:
 C - - - - - 0x013722 04:B712: AD 1D 00  LDA ram_001D
@@ -12692,10 +12692,10 @@ C - - - - - 0x013725 04:B715: 29 0F     AND #$0F
 C - - - - - 0x013727 04:B717: A8        TAY
 C - - - - - 0x013728 04:B718: B9 27 B7  LDA tbl_B727,Y
 C - - - - - 0x01372B 04:B71B: 9D B0 04  STA ram_смена_угла_движения,X
-C - - - - - 0x01372E 04:B71E: 4C 24 B7  JMP loc_B724
-loc_B721:
+C - - - - - 0x01372E 04:B71E: 4C 24 B7  JMP loc_B724_выход
+loc_B721_запись_действия:
 C D 1 - - - 0x013731 04:B721: 9D 79 04  STA ram_next_действие_игрока,X
-loc_B724:
+loc_B724_выход:
 C D 1 - - - 0x013734 04:B724: A6 43     LDX ram_0043
 C - - - - - 0x013736 04:B726: 60        RTS
 
@@ -12729,273 +12729,305 @@ tbl_B737:
 - D 1 - - - 0x01374F 04:B73F: 6D B7     .word off_B76D_04
 - D 1 - - - 0x013751 04:B741: 65 B7     .word off_B765_05
 - - - - - - 0x013753 04:B743: 75 B7     .word off_B775_06
+
 off_B745_00:
-- D 1 - I - 0x013755 04:B745: 7D B7     .word off_B77D_00
-- D 1 - I - 0x013757 04:B747: 89 B7     .word off_B789_01
-- - - - - - 0x013759 04:B749: 95 B7     .word off_B795_02
-- - - - - - 0x01375B 04:B74B: 01 B8     .word off_B801_03
+- D 1 - I - 0x013755 04:B745: 7D B7     .word off_B77D_00_00
+- D 1 - I - 0x013757 04:B747: 89 B7     .word off_B789_00_01
+- - - - - - 0x013759 04:B749: 95 B7     .word off_B795_00_02
+- - - - - - 0x01375B 04:B74B: 01 B8     .word off_B801_00_03
+
 off_B74D_01:
-- D 1 - I - 0x01375D 04:B74D: D1 B7     .word off_B7D1_00
-- D 1 - I - 0x01375F 04:B74F: DD B7     .word off_B7DD_01
-- - - - - - 0x013761 04:B751: C5 B7     .word off_B7C5_02
-- - - - - - 0x013763 04:B753: 01 B8     .word off_B801_03
+- D 1 - I - 0x01375D 04:B74D: D1 B7     .word off_B7D1_01_00
+- D 1 - I - 0x01375F 04:B74F: DD B7     .word off_B7DD_01_01
+- - - - - - 0x013761 04:B751: C5 B7     .word off_B7C5_01_02
+- - - - - - 0x013763 04:B753: 01 B8     .word off_B801_01_03
+
 off_B755_02:
-- D 1 - I - 0x013765 04:B755: AD B7     .word off_B7AD_00
-- D 1 - I - 0x013767 04:B757: B9 B7     .word off_B7B9_01
-- - - - - - 0x013769 04:B759: A1 B7     .word off_B7A1_02
-- D 1 - I - 0x01376B 04:B75B: 01 B8     .word off_B801_03
+- D 1 - I - 0x013765 04:B755: AD B7     .word off_B7AD_02_00
+- D 1 - I - 0x013767 04:B757: B9 B7     .word off_B7B9_02_01
+- - - - - - 0x013769 04:B759: A1 B7     .word off_B7A1_02_02
+- D 1 - I - 0x01376B 04:B75B: 01 B8     .word off_B801_02_03
+
 off_B75D_03:
-- D 1 - I - 0x01376D 04:B75D: E9 B7     .word off_B7E9_00
-- D 1 - I - 0x01376F 04:B75F: F5 B7     .word off_B7F5_01
-- - - - - - 0x013771 04:B761: E9 B7     .word off_B7E9_02
-- - - - - - 0x013773 04:B763: 01 B8     .word off_B801_03
+- D 1 - I - 0x01376D 04:B75D: E9 B7     .word off_B7E9_03_00
+- D 1 - I - 0x01376F 04:B75F: F5 B7     .word off_B7F5_03_01
+- - - - - - 0x013771 04:B761: E9 B7     .word off_B7E9_03_02
+- - - - - - 0x013773 04:B763: 01 B8     .word off_B801_03_03
+
 off_B765_05:
-- D 1 - I - 0x013775 04:B765: 0D B8     .word off_B80D_00
-- D 1 - I - 0x013777 04:B767: 19 B8     .word off_B819_01
-- - - - - - 0x013779 04:B769: 25 B8     .word off_B825_02
-- - - - - - 0x01377B 04:B76B: 01 B8     .word off_B801_03
+- D 1 - I - 0x013775 04:B765: 0D B8     .word off_B80D_05_00
+- D 1 - I - 0x013777 04:B767: 19 B8     .word off_B819_05_01
+- - - - - - 0x013779 04:B769: 25 B8     .word off_B825_05_02
+- - - - - - 0x01377B 04:B76B: 01 B8     .word off_B801_05_03
+
 off_B76D_04:
-- D 1 - I - 0x01377D 04:B76D: 31 B8     .word off_B831_00
-- D 1 - I - 0x01377F 04:B76F: B9 B7     .word off_B7B9_01
-- - - - - - 0x013781 04:B771: 31 B8     .word off_B831_02
-- - - - - - 0x013783 04:B773: 01 B8     .word off_B801_03
+- D 1 - I - 0x01377D 04:B76D: 31 B8     .word off_B831_04_00
+- D 1 - I - 0x01377F 04:B76F: B9 B7     .word off_B7B9_04_01
+- - - - - - 0x013781 04:B771: 31 B8     .word off_B831_04_02
+- - - - - - 0x013783 04:B773: 01 B8     .word off_B801_04_03
+
 off_B775_06:
-- - - - - - 0x013785 04:B775: 3D B8     .word off_B83D_00
-- - - - - - 0x013787 04:B777: 44 B8     .word off_B844_01
-- - - - - - 0x013789 04:B779: 3D B8     .word off_B83D_02
-- - - - - - 0x01378B 04:B77B: 01 B8     .word off_B801_03
-off_B77D_00:
-- D 1 - I - 0x01378D 04:B77D: 30        .byte $30   ; 
-- D 1 - I - 0x01378E 04:B77E: 30        .byte $30   ; 
-- D 1 - I - 0x01378F 04:B77F: 30        .byte $30   ; 
-- D 1 - I - 0x013790 04:B780: 30        .byte $30   ; 
-- D 1 - I - 0x013791 04:B781: 0D        .byte $0D   ; 
-- D 1 - I - 0x013792 04:B782: 08        .byte $08   ; 
-- D 1 - I - 0x013793 04:B783: 08        .byte $08   ; 
-- D 1 - I - 0x013794 04:B784: 07        .byte $07   ; 
-- D 1 - I - 0x013795 04:B785: 07        .byte $07   ; 
-- D 1 - I - 0x013796 04:B786: 31        .byte $31   ; 
-- D 1 - I - 0x013797 04:B787: 31        .byte $31   ; 
-- D 1 - I - 0x013798 04:B788: 31        .byte $31   ; 
-off_B789_01:
-- - - - - - 0x013799 04:B789: FF        .byte $FF   ; 
-- - - - - - 0x01379A 04:B78A: FF        .byte $FF   ; 
-- - - - - - 0x01379B 04:B78B: FF        .byte $FF   ; 
-- - - - - - 0x01379C 04:B78C: FF        .byte $FF   ; 
-- D 1 - I - 0x01379D 04:B78D: 35        .byte $35   ; 
-- - - - - - 0x01379E 04:B78E: 35        .byte $35   ; 
-- D 1 - I - 0x01379F 04:B78F: 35        .byte $35   ; 
-- D 1 - I - 0x0137A0 04:B790: 33        .byte $33   ; 
-- D 1 - I - 0x0137A1 04:B791: 34        .byte $34   ; 
-- D 1 - I - 0x0137A2 04:B792: 32        .byte $32   ; 
-- D 1 - I - 0x0137A3 04:B793: 34        .byte $34   ; 
-- - - - - - 0x0137A4 04:B794: 34        .byte $34   ; 
-off_B795_02:
-- - - - - - 0x0137A5 04:B795: 44        .byte $44   ; 
-- - - - - - 0x0137A6 04:B796: 44        .byte $44   ; 
-- - - - - - 0x0137A7 04:B797: 44        .byte $44   ; 
-- - - - - - 0x0137A8 04:B798: 44        .byte $44   ; 
-- - - - - - 0x0137A9 04:B799: 08        .byte $08   ; 
-- - - - - - 0x0137AA 04:B79A: 08        .byte $08   ; 
-- - - - - - 0x0137AB 04:B79B: 08        .byte $08   ; 
-- - - - - - 0x0137AC 04:B79C: 07        .byte $07   ; 
-- - - - - - 0x0137AD 04:B79D: 07        .byte $07   ; 
-- - - - - - 0x0137AE 04:B79E: 07        .byte $07   ; 
-- - - - - - 0x0137AF 04:B79F: 07        .byte $07   ; 
-- - - - - - 0x0137B0 04:B7A0: 07        .byte $07   ; 
-off_B7A1_02:
-- - - - - - 0x0137B1 04:B7A1: 44        .byte $44   ; 
-- - - - - - 0x0137B2 04:B7A2: 44        .byte $44   ; 
-- - - - - - 0x0137B3 04:B7A3: 44        .byte $44   ; 
-- - - - - - 0x0137B4 04:B7A4: 44        .byte $44   ; 
-- - - - - - 0x0137B5 04:B7A5: 0A        .byte $0A   ; 
-- - - - - - 0x0137B6 04:B7A6: 0A        .byte $0A   ; 
-- - - - - - 0x0137B7 04:B7A7: 0A        .byte $0A   ; 
-- - - - - - 0x0137B8 04:B7A8: 09        .byte $09   ; 
-- - - - - - 0x0137B9 04:B7A9: 09        .byte $09   ; 
-- - - - - - 0x0137BA 04:B7AA: 09        .byte $09   ; 
-- - - - - - 0x0137BB 04:B7AB: 09        .byte $09   ; 
-- - - - - - 0x0137BC 04:B7AC: 09        .byte $09   ; 
-off_B7AD_00:
-- D 1 - I - 0x0137BD 04:B7AD: 10        .byte $10   ; 
-- D 1 - I - 0x0137BE 04:B7AE: 30        .byte $30   ; 
-- D 1 - I - 0x0137BF 04:B7AF: 30        .byte $30   ; 
-- D 1 - I - 0x0137C0 04:B7B0: 0E        .byte $0E   ; 
-- - - - - - 0x0137C1 04:B7B1: 0D        .byte $0D   ; 
-- D 1 - I - 0x0137C2 04:B7B2: 0A        .byte $0A   ; 
-- D 1 - I - 0x0137C3 04:B7B3: 0A        .byte $0A   ; 
-- D 1 - I - 0x0137C4 04:B7B4: 09        .byte $09   ; 
-- - - - - - 0x0137C5 04:B7B5: 09        .byte $09   ; 
-- D 1 - I - 0x0137C6 04:B7B6: 09        .byte $09   ; 
-- D 1 - I - 0x0137C7 04:B7B7: 09        .byte $09   ; 
-- D 1 - I - 0x0137C8 04:B7B8: 09        .byte $09   ; 
-off_B7B9_01:
-- - - - - - 0x0137C9 04:B7B9: FF        .byte $FF   ; 
-- - - - - - 0x0137CA 04:B7BA: FF        .byte $FF   ; 
-- - - - - - 0x0137CB 04:B7BB: FF        .byte $FF   ; 
-- - - - - - 0x0137CC 04:B7BC: FF        .byte $FF   ; 
-- - - - - - 0x0137CD 04:B7BD: 39        .byte $39   ; 
-- - - - - - 0x0137CE 04:B7BE: 39        .byte $39   ; 
-- D 1 - I - 0x0137CF 04:B7BF: 39        .byte $39   ; 
-- D 1 - I - 0x0137D0 04:B7C0: 37        .byte $37   ; 
-- D 1 - I - 0x0137D1 04:B7C1: 38        .byte $38   ; 
-- D 1 - I - 0x0137D2 04:B7C2: 46        .byte $46   ; 
-- D 1 - I - 0x0137D3 04:B7C3: 38        .byte $38   ; 
-- - - - - - 0x0137D4 04:B7C4: 38        .byte $38   ; 
-off_B7C5_02:
-- - - - - - 0x0137D5 04:B7C5: 44        .byte $44   ; 
-- - - - - - 0x0137D6 04:B7C6: 44        .byte $44   ; 
-- - - - - - 0x0137D7 04:B7C7: 44        .byte $44   ; 
-- - - - - - 0x0137D8 04:B7C8: 44        .byte $44   ; 
-- - - - - - 0x0137D9 04:B7C9: 23        .byte $23   ; 
-- - - - - - 0x0137DA 04:B7CA: 23        .byte $23   ; 
-- - - - - - 0x0137DB 04:B7CB: 23        .byte $23   ; 
-- - - - - - 0x0137DC 04:B7CC: 22        .byte $22   ; 
-- - - - - - 0x0137DD 04:B7CD: 22        .byte $22   ; 
-- - - - - - 0x0137DE 04:B7CE: 22        .byte $22   ; 
-- - - - - - 0x0137DF 04:B7CF: 22        .byte $22   ; 
-- - - - - - 0x0137E0 04:B7D0: 19        .byte $19   ; 
-off_B7D1_00:
-- D 1 - I - 0x0137E1 04:B7D1: 30        .byte $30   ; 
-- D 1 - I - 0x0137E2 04:B7D2: 30        .byte $30   ; 
-- - - - - - 0x0137E3 04:B7D3: 30        .byte $30   ; 
-- D 1 - I - 0x0137E4 04:B7D4: 30        .byte $30   ; 
-- - - - - - 0x0137E5 04:B7D5: 23        .byte $23   ; 
-- - - - - - 0x0137E6 04:B7D6: 23        .byte $23   ; 
-- D 1 - I - 0x0137E7 04:B7D7: 23        .byte $23   ; 
-- D 1 - I - 0x0137E8 04:B7D8: 22        .byte $22   ; 
-- D 1 - I - 0x0137E9 04:B7D9: 22        .byte $22   ; 
-- D 1 - I - 0x0137EA 04:B7DA: 22        .byte $22   ; 
-- D 1 - I - 0x0137EB 04:B7DB: 22        .byte $22   ; 
-- D 1 - I - 0x0137EC 04:B7DC: 19        .byte $19   ; 
-off_B7DD_01:
-- - - - - - 0x0137ED 04:B7DD: FF        .byte $FF   ; 
-- - - - - - 0x0137EE 04:B7DE: FF        .byte $FF   ; 
-- - - - - - 0x0137EF 04:B7DF: FF        .byte $FF   ; 
-- - - - - - 0x0137F0 04:B7E0: FF        .byte $FF   ; 
-- - - - - - 0x0137F1 04:B7E1: 42        .byte $42   ; 
-- - - - - - 0x0137F2 04:B7E2: 42        .byte $42   ; 
-- D 1 - I - 0x0137F3 04:B7E3: 42        .byte $42   ; 
-- D 1 - I - 0x0137F4 04:B7E4: 3B        .byte $3B   ; 
-- D 1 - I - 0x0137F5 04:B7E5: 3B        .byte $3B   ; 
-- D 1 - I - 0x0137F6 04:B7E6: 3B        .byte $3B   ; 
-- - - - - - 0x0137F7 04:B7E7: 3B        .byte $3B   ; 
-- - - - - - 0x0137F8 04:B7E8: 3B        .byte $3B   ; 
-off_B7E9_00:
-off_B7E9_02:
-- D 1 - I - 0x0137F9 04:B7E9: 30        .byte $30   ; 
-- D 1 - I - 0x0137FA 04:B7EA: 30        .byte $30   ; 
-- D 1 - I - 0x0137FB 04:B7EB: 30        .byte $30   ; 
-- D 1 - I - 0x0137FC 04:B7EC: 30        .byte $30   ; 
-- - - - - - 0x0137FD 04:B7ED: 11        .byte $11   ; 
-- D 1 - I - 0x0137FE 04:B7EE: 11        .byte $11   ; 
-- D 1 - I - 0x0137FF 04:B7EF: 11        .byte $11   ; 
-- D 1 - I - 0x013800 04:B7F0: 11        .byte $11   ; 
-- D 1 - I - 0x013801 04:B7F1: 11        .byte $11   ; 
-- D 1 - I - 0x013802 04:B7F2: 11        .byte $11   ; 
-- D 1 - I - 0x013803 04:B7F3: 11        .byte $11   ; 
-- D 1 - I - 0x013804 04:B7F4: 11        .byte $11   ; 
-off_B7F5_01:
-- - - - - - 0x013805 04:B7F5: 30        .byte $30   ; 
-- - - - - - 0x013806 04:B7F6: 30        .byte $30   ; 
-- - - - - - 0x013807 04:B7F7: 30        .byte $30   ; 
-- - - - - - 0x013808 04:B7F8: 30        .byte $30   ; 
-- - - - - - 0x013809 04:B7F9: 30        .byte $30   ; 
-- D 1 - I - 0x01380A 04:B7FA: 30        .byte $30   ; 
-- D 1 - I - 0x01380B 04:B7FB: 30        .byte $30   ; 
-- D 1 - I - 0x01380C 04:B7FC: 30        .byte $30   ; 
-- D 1 - I - 0x01380D 04:B7FD: 30        .byte $30   ; 
-- - - - - - 0x01380E 04:B7FE: 30        .byte $30   ; 
-- - - - - - 0x01380F 04:B7FF: 30        .byte $30   ; 
-- - - - - - 0x013810 04:B800: 30        .byte $30   ; 
-off_B801_03:
-- - - - - - 0x013811 04:B801: 10        .byte $10   ; 
-- D 1 - I - 0x013812 04:B802: 30        .byte $30   ; 
-- - - - - - 0x013813 04:B803: 30        .byte $30   ; 
-- D 1 - I - 0x013814 04:B804: 30        .byte $30   ; 
-- - - - - - 0x013815 04:B805: FF        .byte $FF   ; 
-- - - - - - 0x013816 04:B806: FF        .byte $FF   ; 
-- D 1 - I - 0x013817 04:B807: FF        .byte $FF   ; 
-- D 1 - I - 0x013818 04:B808: FF        .byte $FF   ; 
-- D 1 - I - 0x013819 04:B809: FF        .byte $FF   ; 
-- D 1 - I - 0x01381A 04:B80A: FF        .byte $FF   ; 
-- D 1 - I - 0x01381B 04:B80B: FF        .byte $FF   ; 
-- - - - - - 0x01381C 04:B80C: FF        .byte $FF   ; 
-off_B80D_00:
-- - - - - - 0x01381D 04:B80D: 52        .byte $52   ; 
-- D 1 - I - 0x01381E 04:B80E: 3E        .byte $3E   ; 
-- - - - - - 0x01381F 04:B80F: 52        .byte $52   ; 
-- D 1 - I - 0x013820 04:B810: 52        .byte $52   ; 
-- - - - - - 0x013821 04:B811: 22        .byte $22   ; 
-- D 1 - I - 0x013822 04:B812: 29        .byte $29   ; 
-- D 1 - I - 0x013823 04:B813: 22        .byte $22   ; 
-- D 1 - I - 0x013824 04:B814: 22        .byte $22   ; 
-- D 1 - I - 0x013825 04:B815: 28        .byte $28   ; 
-- D 1 - I - 0x013826 04:B816: 41        .byte $41   ; 
-- D 1 - I - 0x013827 04:B817: 41        .byte $41   ; 
-- D 1 - I - 0x013828 04:B818: 41        .byte $41   ; 
-off_B819_01:
-- - - - - - 0x013829 04:B819: FF        .byte $FF   ; 
-- - - - - - 0x01382A 04:B81A: FF        .byte $FF   ; 
-- - - - - - 0x01382B 04:B81B: FF        .byte $FF   ; 
-- - - - - - 0x01382C 04:B81C: FF        .byte $FF   ; 
-- - - - - - 0x01382D 04:B81D: 54        .byte $54   ; 
-- - - - - - 0x01382E 04:B81E: 54        .byte $54   ; 
-- D 1 - I - 0x01382F 04:B81F: 54        .byte $54   ; 
-- D 1 - I - 0x013830 04:B820: 54        .byte $54   ; 
-- - - - - - 0x013831 04:B821: 54        .byte $54   ; 
-- - - - - - 0x013832 04:B822: 54        .byte $54   ; 
-- - - - - - 0x013833 04:B823: 54        .byte $54   ; 
-- - - - - - 0x013834 04:B824: 54        .byte $54   ; 
-off_B825_02:
-- - - - - - 0x013835 04:B825: 52        .byte $52   ; 
-- - - - - - 0x013836 04:B826: 3E        .byte $3E   ; 
-- - - - - - 0x013837 04:B827: 52        .byte $52   ; 
-- - - - - - 0x013838 04:B828: 52        .byte $52   ; 
-- - - - - - 0x013839 04:B829: 22        .byte $22   ; 
-- - - - - - 0x01383A 04:B82A: 29        .byte $29   ; 
-- - - - - - 0x01383B 04:B82B: 22        .byte $22   ; 
-- - - - - - 0x01383C 04:B82C: 22        .byte $22   ; 
-- - - - - - 0x01383D 04:B82D: 28        .byte $28   ; 
-- - - - - - 0x01383E 04:B82E: 41        .byte $41   ; 
-- - - - - - 0x01383F 04:B82F: 41        .byte $41   ; 
-- - - - - - 0x013840 04:B830: 41        .byte $41   ; 
-off_B831_00:
-off_B831_02:
-- - - - - - 0x013841 04:B831: 30        .byte $30   ; 
-- D 1 - I - 0x013842 04:B832: 30        .byte $30   ; 
-- - - - - - 0x013843 04:B833: 30        .byte $30   ; 
-- D 1 - I - 0x013844 04:B834: 30        .byte $30   ; 
-- - - - - - 0x013845 04:B835: 0A        .byte $0A   ; 
-- - - - - - 0x013846 04:B836: 0A        .byte $0A   ; 
-- D 1 - I - 0x013847 04:B837: 0A        .byte $0A   ; 
-- D 1 - I - 0x013848 04:B838: 09        .byte $09   ; 
-- - - - - - 0x013849 04:B839: 09        .byte $09   ; 
-- - - - - - 0x01384A 04:B83A: 09        .byte $09   ; 
-- - - - - - 0x01384B 04:B83B: 09        .byte $09   ; 
-- - - - - - 0x01384C 04:B83C: 09        .byte $09   ; 
-off_B83D_00:
-off_B83D_02:
-- - - - - - 0x01384D 04:B83D: 30        .byte $30   ; 
-- - - - - - 0x01384E 04:B83E: 30        .byte $30   ; 
-- - - - - - 0x01384F 04:B83F: 30        .byte $30   ; 
-- - - - - - 0x013850 04:B840: 30        .byte $30   ; 
-- - - - - - 0x013851 04:B841: 17        .byte $17   ; 
-- - - - - - 0x013852 04:B842: 17        .byte $17   ; 
-- - - - - - 0x013853 04:B843: 17        .byte $17   ; 
-off_B844_01:
-- - - - - - 0x013854 04:B844: 30        .byte $30   ; 
-- - - - - - 0x013855 04:B845: 30        .byte $30   ; 
-- - - - - - 0x013856 04:B846: 30        .byte $30   ; 
-- - - - - - 0x013857 04:B847: 30        .byte $30   ; 
-- - - - - - 0x013858 04:B848: 30        .byte $30   ; 
-- - - - - - 0x013859 04:B849: 30        .byte $30   ; 
-- - - - - - 0x01385A 04:B84A: 30        .byte $30   ; 
-- - - - - - 0x01385B 04:B84B: 30        .byte $30   ; 
-- - - - - - 0x01385C 04:B84C: 30        .byte $30   ; 
-- - - - - - 0x01385D 04:B84D: 30        .byte $30   ; 
-- - - - - - 0x01385E 04:B84E: 30        .byte $30   ; 
-- - - - - - 0x01385F 04:B84F: 30        .byte $30   ;
+- - - - - - 0x013785 04:B775: 3D B8     .word off_B83D_06_00
+- - - - - - 0x013787 04:B777: 44 B8     .word off_B844_06_01
+- - - - - - 0x013789 04:B779: 3D B8     .word off_B83D_06_02
+- - - - - - 0x01378B 04:B77B: 01 B8     .word off_B801_06_03
+
+off_B77D_00_00:
+- D 1 - I - 0x01378D 04:B77D: 30        .byte con_action_30   ; 00
+- D 1 - I - 0x01378E 04:B77E: 30        .byte con_action_30   ; 01
+- D 1 - I - 0x01378F 04:B77F: 30        .byte con_action_30   ; 02
+- D 1 - I - 0x013790 04:B780: 30        .byte con_action_30   ; 03
+- D 1 - I - 0x013791 04:B781: 0D        .byte con_action_0D   ; 04
+- D 1 - I - 0x013792 04:B782: 08        .byte con_action_08   ; 05
+- D 1 - I - 0x013793 04:B783: 08        .byte con_action_08   ; 06
+- D 1 - I - 0x013794 04:B784: 07        .byte con_action_07   ; 07
+- D 1 - I - 0x013795 04:B785: 07        .byte con_action_07   ; 08
+- D 1 - I - 0x013796 04:B786: 31        .byte con_action_31   ; 09
+- D 1 - I - 0x013797 04:B787: 31        .byte con_action_31   ; 0A
+- D 1 - I - 0x013798 04:B788: 31        .byte con_action_31   ; 0B
+
+off_B789_00_01:
+- - - - - - 0x013799 04:B789: FF        .byte $FF   ; 00
+- - - - - - 0x01379A 04:B78A: FF        .byte $FF   ; 01
+- - - - - - 0x01379B 04:B78B: FF        .byte $FF   ; 02
+- - - - - - 0x01379C 04:B78C: FF        .byte $FF   ; 03
+- D 1 - I - 0x01379D 04:B78D: 35        .byte con_action_35   ; 04
+- - - - - - 0x01379E 04:B78E: 35        .byte con_action_35   ; 05
+- D 1 - I - 0x01379F 04:B78F: 35        .byte con_action_35   ; 06
+- D 1 - I - 0x0137A0 04:B790: 33        .byte con_action_33   ; 07
+- D 1 - I - 0x0137A1 04:B791: 34        .byte con_action_34   ; 08
+- D 1 - I - 0x0137A2 04:B792: 32        .byte con_action_32   ; 09
+- D 1 - I - 0x0137A3 04:B793: 34        .byte con_action_34   ; 0A
+- - - - - - 0x0137A4 04:B794: 34        .byte con_action_34   ; 0B
+
+off_B795_00_02:
+- - - - - - 0x0137A5 04:B795: 44        .byte con_action_44   ; 00
+- - - - - - 0x0137A6 04:B796: 44        .byte con_action_44   ; 01
+- - - - - - 0x0137A7 04:B797: 44        .byte con_action_44   ; 02
+- - - - - - 0x0137A8 04:B798: 44        .byte con_action_44   ; 03
+- - - - - - 0x0137A9 04:B799: 08        .byte con_action_08   ; 04
+- - - - - - 0x0137AA 04:B79A: 08        .byte con_action_08   ; 05
+- - - - - - 0x0137AB 04:B79B: 08        .byte con_action_08   ; 06
+- - - - - - 0x0137AC 04:B79C: 07        .byte con_action_07   ; 07
+- - - - - - 0x0137AD 04:B79D: 07        .byte con_action_07   ; 08
+- - - - - - 0x0137AE 04:B79E: 07        .byte con_action_07   ; 09
+- - - - - - 0x0137AF 04:B79F: 07        .byte con_action_07   ; 0A
+- - - - - - 0x0137B0 04:B7A0: 07        .byte con_action_07   ; 0B
+
+off_B7A1_02_02:
+- - - - - - 0x0137B1 04:B7A1: 44        .byte con_action_44   ; 00
+- - - - - - 0x0137B2 04:B7A2: 44        .byte con_action_44   ; 01
+- - - - - - 0x0137B3 04:B7A3: 44        .byte con_action_44   ; 02
+- - - - - - 0x0137B4 04:B7A4: 44        .byte con_action_44   ; 03
+- - - - - - 0x0137B5 04:B7A5: 0A        .byte con_action_0A   ; 04
+- - - - - - 0x0137B6 04:B7A6: 0A        .byte con_action_0A   ; 05
+- - - - - - 0x0137B7 04:B7A7: 0A        .byte con_action_0A   ; 06
+- - - - - - 0x0137B8 04:B7A8: 09        .byte con_action_09   ; 07
+- - - - - - 0x0137B9 04:B7A9: 09        .byte con_action_09   ; 08
+- - - - - - 0x0137BA 04:B7AA: 09        .byte con_action_09   ; 09
+- - - - - - 0x0137BB 04:B7AB: 09        .byte con_action_09   ; 0A
+- - - - - - 0x0137BC 04:B7AC: 09        .byte con_action_09   ; 0B
+
+off_B7AD_02_00:
+- D 1 - I - 0x0137BD 04:B7AD: 10        .byte con_action_10   ; 00
+- D 1 - I - 0x0137BE 04:B7AE: 30        .byte con_action_30   ; 01
+- D 1 - I - 0x0137BF 04:B7AF: 30        .byte con_action_30   ; 02
+- D 1 - I - 0x0137C0 04:B7B0: 0E        .byte con_action_0E   ; 03
+- - - - - - 0x0137C1 04:B7B1: 0D        .byte con_action_0D   ; 04
+- D 1 - I - 0x0137C2 04:B7B2: 0A        .byte con_action_0A   ; 05
+- D 1 - I - 0x0137C3 04:B7B3: 0A        .byte con_action_0A   ; 06
+- D 1 - I - 0x0137C4 04:B7B4: 09        .byte con_action_09   ; 07
+- - - - - - 0x0137C5 04:B7B5: 09        .byte con_action_09   ; 08
+- D 1 - I - 0x0137C6 04:B7B6: 09        .byte con_action_09   ; 09
+- D 1 - I - 0x0137C7 04:B7B7: 09        .byte con_action_09   ; 0A
+- D 1 - I - 0x0137C8 04:B7B8: 09        .byte con_action_09   ; 0B
+
+off_B7B9_02_01:
+off_B7B9_04_01:
+- - - - - - 0x0137C9 04:B7B9: FF        .byte $FF   ; 00
+- - - - - - 0x0137CA 04:B7BA: FF        .byte $FF   ; 01
+- - - - - - 0x0137CB 04:B7BB: FF        .byte $FF   ; 02
+- - - - - - 0x0137CC 04:B7BC: FF        .byte $FF   ; 03
+- - - - - - 0x0137CD 04:B7BD: 39        .byte con_action_39   ; 04
+- - - - - - 0x0137CE 04:B7BE: 39        .byte con_action_39   ; 05
+- D 1 - I - 0x0137CF 04:B7BF: 39        .byte con_action_39   ; 06
+- D 1 - I - 0x0137D0 04:B7C0: 37        .byte con_action_37   ; 07
+- D 1 - I - 0x0137D1 04:B7C1: 38        .byte con_action_38   ; 08
+- D 1 - I - 0x0137D2 04:B7C2: 46        .byte con_action_46   ; 09
+- D 1 - I - 0x0137D3 04:B7C3: 38        .byte con_action_38   ; 0A
+- - - - - - 0x0137D4 04:B7C4: 38        .byte con_action_38   ; 0B
+
+off_B7C5_01_02:
+- - - - - - 0x0137D5 04:B7C5: 44        .byte con_action_44   ; 00
+- - - - - - 0x0137D6 04:B7C6: 44        .byte con_action_44   ; 01
+- - - - - - 0x0137D7 04:B7C7: 44        .byte con_action_44   ; 02
+- - - - - - 0x0137D8 04:B7C8: 44        .byte con_action_44   ; 03
+- - - - - - 0x0137D9 04:B7C9: 23        .byte con_action_23   ; 04
+- - - - - - 0x0137DA 04:B7CA: 23        .byte con_action_23   ; 05
+- - - - - - 0x0137DB 04:B7CB: 23        .byte con_action_23   ; 06
+- - - - - - 0x0137DC 04:B7CC: 22        .byte con_action_22   ; 07
+- - - - - - 0x0137DD 04:B7CD: 22        .byte con_action_22   ; 08
+- - - - - - 0x0137DE 04:B7CE: 22        .byte con_action_22   ; 09
+- - - - - - 0x0137DF 04:B7CF: 22        .byte con_action_22   ; 0A
+- - - - - - 0x0137E0 04:B7D0: 19        .byte con_action_19   ; 0B
+
+off_B7D1_01_00:
+- D 1 - I - 0x0137E1 04:B7D1: 30        .byte con_action_30   ; 00
+- D 1 - I - 0x0137E2 04:B7D2: 30        .byte con_action_30   ; 01
+- - - - - - 0x0137E3 04:B7D3: 30        .byte con_action_30   ; 02
+- D 1 - I - 0x0137E4 04:B7D4: 30        .byte con_action_30   ; 03
+- - - - - - 0x0137E5 04:B7D5: 23        .byte con_action_23   ; 04
+- - - - - - 0x0137E6 04:B7D6: 23        .byte con_action_23   ; 05
+- D 1 - I - 0x0137E7 04:B7D7: 23        .byte con_action_23   ; 06
+- D 1 - I - 0x0137E8 04:B7D8: 22        .byte con_action_22   ; 07
+- D 1 - I - 0x0137E9 04:B7D9: 22        .byte con_action_22   ; 08
+- D 1 - I - 0x0137EA 04:B7DA: 22        .byte con_action_22   ; 09
+- D 1 - I - 0x0137EB 04:B7DB: 22        .byte con_action_22   ; 0A
+- D 1 - I - 0x0137EC 04:B7DC: 19        .byte con_action_19   ; 0B
+
+off_B7DD_01_01:
+- - - - - - 0x0137ED 04:B7DD: FF        .byte $FF   ; 00
+- - - - - - 0x0137EE 04:B7DE: FF        .byte $FF   ; 01
+- - - - - - 0x0137EF 04:B7DF: FF        .byte $FF   ; 02
+- - - - - - 0x0137F0 04:B7E0: FF        .byte $FF   ; 03
+- - - - - - 0x0137F1 04:B7E1: 42        .byte con_action_42   ; 04
+- - - - - - 0x0137F2 04:B7E2: 42        .byte con_action_42   ; 05
+- D 1 - I - 0x0137F3 04:B7E3: 42        .byte con_action_42   ; 06
+- D 1 - I - 0x0137F4 04:B7E4: 3B        .byte con_action_3B   ; 07
+- D 1 - I - 0x0137F5 04:B7E5: 3B        .byte con_action_3B   ; 08
+- D 1 - I - 0x0137F6 04:B7E6: 3B        .byte con_action_3B   ; 09
+- - - - - - 0x0137F7 04:B7E7: 3B        .byte con_action_3B   ; 0A
+- - - - - - 0x0137F8 04:B7E8: 3B        .byte con_action_3B   ; 0B
+
+off_B7E9_03_00:
+off_B7E9_03_02:
+- D 1 - I - 0x0137F9 04:B7E9: 30        .byte con_action_30   ; 00
+- D 1 - I - 0x0137FA 04:B7EA: 30        .byte con_action_30   ; 01
+- D 1 - I - 0x0137FB 04:B7EB: 30        .byte con_action_30   ; 02
+- D 1 - I - 0x0137FC 04:B7EC: 30        .byte con_action_30   ; 03
+- - - - - - 0x0137FD 04:B7ED: 11        .byte con_action_11   ; 04
+- D 1 - I - 0x0137FE 04:B7EE: 11        .byte con_action_11   ; 05
+- D 1 - I - 0x0137FF 04:B7EF: 11        .byte con_action_11   ; 06
+- D 1 - I - 0x013800 04:B7F0: 11        .byte con_action_11   ; 07
+- D 1 - I - 0x013801 04:B7F1: 11        .byte con_action_11   ; 08
+- D 1 - I - 0x013802 04:B7F2: 11        .byte con_action_11   ; 09
+- D 1 - I - 0x013803 04:B7F3: 11        .byte con_action_11   ; 0A
+- D 1 - I - 0x013804 04:B7F4: 11        .byte con_action_11   ; 0B
+
+off_B7F5_03_01:
+- - - - - - 0x013805 04:B7F5: 30        .byte con_action_30   ; 00
+- - - - - - 0x013806 04:B7F6: 30        .byte con_action_30   ; 01
+- - - - - - 0x013807 04:B7F7: 30        .byte con_action_30   ; 02
+- - - - - - 0x013808 04:B7F8: 30        .byte con_action_30   ; 03
+- - - - - - 0x013809 04:B7F9: 30        .byte con_action_30   ; 04
+- D 1 - I - 0x01380A 04:B7FA: 30        .byte con_action_30   ; 05
+- D 1 - I - 0x01380B 04:B7FB: 30        .byte con_action_30   ; 06
+- D 1 - I - 0x01380C 04:B7FC: 30        .byte con_action_30   ; 07
+- D 1 - I - 0x01380D 04:B7FD: 30        .byte con_action_30   ; 08
+- - - - - - 0x01380E 04:B7FE: 30        .byte con_action_30   ; 09
+- - - - - - 0x01380F 04:B7FF: 30        .byte con_action_30   ; 0A
+- - - - - - 0x013810 04:B800: 30        .byte con_action_30   ; 0B
+
+off_B801_00_03:
+off_B801_01_03:
+off_B801_02_03:
+off_B801_03_03:
+off_B801_04_03:
+off_B801_05_03:
+off_B801_06_03:
+- - - - - - 0x013811 04:B801: 10        .byte con_action_10   ; 00
+- D 1 - I - 0x013812 04:B802: 30        .byte con_action_30   ; 01
+- - - - - - 0x013813 04:B803: 30        .byte con_action_30   ; 02
+- D 1 - I - 0x013814 04:B804: 30        .byte con_action_30   ; 03
+- - - - - - 0x013815 04:B805: FF        .byte $FF   ; 04
+- - - - - - 0x013816 04:B806: FF        .byte $FF   ; 05
+- D 1 - I - 0x013817 04:B807: FF        .byte $FF   ; 06
+- D 1 - I - 0x013818 04:B808: FF        .byte $FF   ; 07
+- D 1 - I - 0x013819 04:B809: FF        .byte $FF   ; 08
+- D 1 - I - 0x01381A 04:B80A: FF        .byte $FF   ; 09
+- D 1 - I - 0x01381B 04:B80B: FF        .byte $FF   ; 0A
+- - - - - - 0x01381C 04:B80C: FF        .byte $FF   ; 0B
+
+off_B80D_05_00:
+- - - - - - 0x01381D 04:B80D: 52        .byte con_action_52   ; 00
+- D 1 - I - 0x01381E 04:B80E: 3E        .byte con_action_3E   ; 01
+- - - - - - 0x01381F 04:B80F: 52        .byte con_action_52   ; 02
+- D 1 - I - 0x013820 04:B810: 52        .byte con_action_52   ; 03
+- - - - - - 0x013821 04:B811: 22        .byte con_action_22   ; 04
+- D 1 - I - 0x013822 04:B812: 29        .byte con_action_29   ; 05
+- D 1 - I - 0x013823 04:B813: 22        .byte con_action_22   ; 06
+- D 1 - I - 0x013824 04:B814: 22        .byte con_action_22   ; 07
+- D 1 - I - 0x013825 04:B815: 28        .byte con_action_28   ; 08
+- D 1 - I - 0x013826 04:B816: 41        .byte con_action_41   ; 09
+- D 1 - I - 0x013827 04:B817: 41        .byte con_action_41   ; 0A
+- D 1 - I - 0x013828 04:B818: 41        .byte con_action_41   ; 0B
+
+off_B819_05_01:
+- - - - - - 0x013829 04:B819: FF        .byte $FF   ; 00
+- - - - - - 0x01382A 04:B81A: FF        .byte $FF   ; 01
+- - - - - - 0x01382B 04:B81B: FF        .byte $FF   ; 02
+- - - - - - 0x01382C 04:B81C: FF        .byte $FF   ; 03
+- - - - - - 0x01382D 04:B81D: 54        .byte con_action_54   ; 04
+- - - - - - 0x01382E 04:B81E: 54        .byte con_action_54   ; 05
+- D 1 - I - 0x01382F 04:B81F: 54        .byte con_action_54   ; 06
+- D 1 - I - 0x013830 04:B820: 54        .byte con_action_54   ; 07
+- - - - - - 0x013831 04:B821: 54        .byte con_action_54   ; 08
+- - - - - - 0x013832 04:B822: 54        .byte con_action_54   ; 09
+- - - - - - 0x013833 04:B823: 54        .byte con_action_54   ; 0A
+- - - - - - 0x013834 04:B824: 54        .byte con_action_54   ; 0B
+
+off_B825_05_02:
+- - - - - - 0x013835 04:B825: 52        .byte con_action_52   ; 00
+- - - - - - 0x013836 04:B826: 3E        .byte con_action_3E   ; 01
+- - - - - - 0x013837 04:B827: 52        .byte con_action_52   ; 02
+- - - - - - 0x013838 04:B828: 52        .byte con_action_52   ; 03
+- - - - - - 0x013839 04:B829: 22        .byte con_action_22   ; 04
+- - - - - - 0x01383A 04:B82A: 29        .byte con_action_29   ; 05
+- - - - - - 0x01383B 04:B82B: 22        .byte con_action_22   ; 06
+- - - - - - 0x01383C 04:B82C: 22        .byte con_action_22   ; 07
+- - - - - - 0x01383D 04:B82D: 28        .byte con_action_28   ; 08
+- - - - - - 0x01383E 04:B82E: 41        .byte con_action_41   ; 09
+- - - - - - 0x01383F 04:B82F: 41        .byte con_action_41   ; 0A
+- - - - - - 0x013840 04:B830: 41        .byte con_action_41   ; 0B
+
+off_B831_04_00:
+off_B831_04_02:
+- - - - - - 0x013841 04:B831: 30        .byte con_action_30   ; 00
+- D 1 - I - 0x013842 04:B832: 30        .byte con_action_30   ; 01
+- - - - - - 0x013843 04:B833: 30        .byte con_action_30   ; 02
+- D 1 - I - 0x013844 04:B834: 30        .byte con_action_30   ; 03
+- - - - - - 0x013845 04:B835: 0A        .byte con_action_0A   ; 04
+- - - - - - 0x013846 04:B836: 0A        .byte con_action_0A   ; 05
+- D 1 - I - 0x013847 04:B837: 0A        .byte con_action_0A   ; 06
+- D 1 - I - 0x013848 04:B838: 09        .byte con_action_09   ; 07
+- - - - - - 0x013849 04:B839: 09        .byte con_action_09   ; 08
+- - - - - - 0x01384A 04:B83A: 09        .byte con_action_09   ; 09
+- - - - - - 0x01384B 04:B83B: 09        .byte con_action_09   ; 0A
+- - - - - - 0x01384C 04:B83C: 09        .byte con_action_09   ; 0B
+
+off_B83D_06_00:
+off_B83D_06_02:    ; bzk unused? должно быть по 12 байтов
+- - - - - - 0x01384D 04:B83D: 30        .byte $30   ; 00
+- - - - - - 0x01384E 04:B83E: 30        .byte $30   ; 01
+- - - - - - 0x01384F 04:B83F: 30        .byte $30   ; 02
+- - - - - - 0x013850 04:B840: 30        .byte $30   ; 03
+- - - - - - 0x013851 04:B841: 17        .byte $17   ; 04
+- - - - - - 0x013852 04:B842: 17        .byte $17   ; 05
+- - - - - - 0x013853 04:B843: 17        .byte $17   ; 06
+
+off_B844_06_01:
+- - - - - - 0x013854 04:B844: 30        .byte con_action_30   ; 00
+- - - - - - 0x013855 04:B845: 30        .byte con_action_30   ; 01
+- - - - - - 0x013856 04:B846: 30        .byte con_action_30   ; 02
+- - - - - - 0x013857 04:B847: 30        .byte con_action_30   ; 03
+- - - - - - 0x013858 04:B848: 30        .byte con_action_30   ; 04
+- - - - - - 0x013859 04:B849: 30        .byte con_action_30   ; 05
+- - - - - - 0x01385A 04:B84A: 30        .byte con_action_30   ; 06
+- - - - - - 0x01385B 04:B84B: 30        .byte con_action_30   ; 07
+- - - - - - 0x01385C 04:B84C: 30        .byte con_action_30   ; 08
+- - - - - - 0x01385D 04:B84D: 30        .byte con_action_30   ; 09
+- - - - - - 0x01385E 04:B84E: 30        .byte con_action_30   ; 0A
+- - - - - - 0x01385F 04:B84F: 30        .byte con_action_30   ; 0B
 
 
  
@@ -13039,12 +13071,12 @@ C - - - - - 0x0138A5 04:B895: B9 A8 B8  LDA tbl_B8A8,Y
 C - - - - - 0x0138A8 04:B898: 9D B0 04  STA ram_смена_угла_движения,X
 C - - - - - 0x0138AB 04:B89B: 4C A7 B8  RTS
 bra_B89E:
-C - - - - - 0x0138AE 04:B89E: A9 09     LDA #$09
-C - - - - - 0x0138B0 04:B8A0: D0 02     BNE bra_B8A4
+C - - - - - 0x0138AE 04:B89E: A9 09     LDA #con_action_09
+C - - - - - 0x0138B0 04:B8A0: D0 02     BNE bra_B8A4_запись_действия
 bra_B8A2:
 loc_B8A2:
-C D 1 - - - 0x0138B2 04:B8A2: A9 0A     LDA #$0A
-bra_B8A4:
+C D 1 - - - 0x0138B2 04:B8A2: A9 0A     LDA #con_action_0A
+bra_B8A4_запись_действия:
 C - - - - - 0x0138B4 04:B8A4: 9D 79 04  STA ram_next_действие_игрока,X
 bra_B8A7_RTS:
 C D 1 - - - 0x0138B7 04:B8A7: 60        RTS
@@ -13065,9 +13097,9 @@ C - - - - - 0x0138C0 04:B8B0: AA        TAX
 C - - - - - 0x0138C1 04:B8B1: BD 50 06  LDA ram_позиция_управление,X
 C - - - - - 0x0138C4 04:B8B4: 30 05     BMI bra_B8BB_это_бот
 C - - - - - 0x0138C6 04:B8B6: BD 79 04  LDA ram_next_действие_игрока,X
-C - - - - - 0x0138C9 04:B8B9: 30 03     BMI bra_B8BE
+C - - - - - 0x0138C9 04:B8B9: 30 03     BMI bra_B8BE    ; bzk опт, разве next действие может быть записано +80?
 bra_B8BB_это_бот:
-C - - - - - 0x0138CB 04:B8BB: 4C E2 B9  JMP loc_B9E2
+C - - - - - 0x0138CB 04:B8BB: 4C E2 B9  JMP loc_B9E2_выход
 bra_B8BE:
 C - - - - - 0x0138CE 04:B8BE: A6 43     LDX ram_0043
 C - - - - - 0x0138D0 04:B8C0: 20 7A C0  JSR sub_0x01FAFE
@@ -13122,20 +13154,20 @@ C - - - - - 0x01393C 04:B92C: 2A        ROL
 C - - - - - 0x01393D 04:B92D: 4D 1D 00  EOR ram_001D
 C - - - - - 0x013940 04:B930: 29 01     AND #$01
 C - - - - - 0x013942 04:B932: F0 05     BEQ bra_B939
-C - - - - - 0x013944 04:B934: A9 09     LDA #$09
-C - - - - - 0x013946 04:B936: 4C DF B9  JMP loc_B9DF
+C - - - - - 0x013944 04:B934: A9 09     LDA #con_action_09
+C - - - - - 0x013946 04:B936: 4C DF B9  JMP loc_B9DF_запись_действия
 bra_B939:
-- - - - - - 0x013949 04:B939: A9 0A     LDA #$0A
-- - - - - - 0x01394B 04:B93B: 4C DF B9  JMP loc_B9DF
+- - - - - - 0x013949 04:B939: A9 0A     LDA #con_action_0A
+- - - - - - 0x01394B 04:B93B: 4C DF B9  JMP loc_B9DF_запись_действия
 bra_B93E:
 C - - - - - 0x01394E 04:B93E: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x013951 04:B941: 29 08     AND #$08
 C - - - - - 0x013953 04:B943: F0 05     BEQ bra_B94A_не_бежит
-C - - - - - 0x013955 04:B945: A9 09     LDA #$09
-C - - - - - 0x013957 04:B947: 4C DF B9  JMP loc_B9DF
+C - - - - - 0x013955 04:B945: A9 09     LDA #con_action_09
+C - - - - - 0x013957 04:B947: 4C DF B9  JMP loc_B9DF_запись_действия
 bra_B94A_не_бежит:
-C - - - - - 0x01395A 04:B94A: A9 08     LDA #$08
-C - - - - - 0x01395C 04:B94C: 4C DF B9  JMP loc_B9DF
+C - - - - - 0x01395A 04:B94A: A9 08     LDA #con_action_08
+C - - - - - 0x01395C 04:B94C: 4C DF B9  JMP loc_B9DF_запись_действия
 bra_B94F:
 loc_B94F:
 C D 1 - - - 0x01395F 04:B94F: 0A        ASL
@@ -13146,12 +13178,12 @@ C - - - - - 0x013967 04:B957: F0 09     BEQ bra_B962
 C - - - - - 0x013969 04:B959: A0 05     LDY #$05
 C - - - - - 0x01396B 04:B95B: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01396D 04:B95D: 30 03     BMI bra_B962
-C - - - - - 0x01396F 04:B95F: 4C DF B9  JMP loc_B9DF
+C - - - - - 0x01396F 04:B95F: 4C DF B9  JMP loc_B9DF_запись_действия
 bra_B962:
 C - - - - - 0x013972 04:B962: A0 06     LDY #$06
 C - - - - - 0x013974 04:B964: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013976 04:B966: 30 03     BMI bra_B96B
-C - - - - - 0x013978 04:B968: 4C DF B9  JMP loc_B9DF
+C - - - - - 0x013978 04:B968: 4C DF B9  JMP loc_B9DF_запись_действия
 bra_B96B:
 C - - - - - 0x01397B 04:B96B: 0A        ASL
 C - - - - - 0x01397C 04:B96C: 10 3A     BPL bra_B9A8
@@ -13161,7 +13193,7 @@ C - - - - - 0x013983 04:B973: D0 09     BNE bra_B97E
 C - - - - - 0x013985 04:B975: A0 07     LDY #$07
 C - - - - - 0x013987 04:B977: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013989 04:B979: 30 03     BMI bra_B97E
-C - - - - - 0x01398B 04:B97B: 4C DF B9  JMP loc_B9DF
+C - - - - - 0x01398B 04:B97B: 4C DF B9  JMP loc_B9DF_запись_действия
 bra_B97E:
 C - - - - - 0x01398E 04:B97E: AD 1D 00  LDA ram_001D
 C - - - - - 0x013991 04:B981: 29 0C     AND #$0C
@@ -13169,7 +13201,7 @@ C - - - - - 0x013993 04:B983: F0 09     BEQ bra_B98E
 C - - - - - 0x013995 04:B985: A0 08     LDY #$08
 C - - - - - 0x013997 04:B987: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013999 04:B989: 30 03     BMI bra_B98E
-C - - - - - 0x01399B 04:B98B: 4C DF B9  JMP loc_B9DF
+C - - - - - 0x01399B 04:B98B: 4C DF B9  JMP loc_B9DF_запись_действия
 bra_B98E:
 C - - - - - 0x01399E 04:B98E: 8A        TXA
 C - - - - - 0x01399F 04:B98F: 4D 1D 00  EOR ram_001D
@@ -13178,12 +13210,12 @@ C - - - - - 0x0139A4 04:B994: D0 09     BNE bra_B99F
 C - - - - - 0x0139A6 04:B996: A0 09     LDY #$09
 C - - - - - 0x0139A8 04:B998: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x0139AA 04:B99A: 30 03     BMI bra_B99F
-C - - - - - 0x0139AC 04:B99C: 4C DF B9  JMP loc_B9DF
+C - - - - - 0x0139AC 04:B99C: 4C DF B9  JMP loc_B9DF_запись_действия
 bra_B99F:
 C - - - - - 0x0139AF 04:B99F: A0 0A     LDY #$0A
 C - - - - - 0x0139B1 04:B9A1: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x0139B3 04:B9A3: 30 03     BMI bra_B9A8
-C - - - - - 0x0139B5 04:B9A5: 4C DF B9  JMP loc_B9DF
+C - - - - - 0x0139B5 04:B9A5: 4C DF B9  JMP loc_B9DF_запись_действия
 bra_B9A8:
 C - - - - - 0x0139B8 04:B9A8: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x0139BB 04:B9AB: 30 23     BMI bra_B9D0_в_воздухе
@@ -13193,19 +13225,19 @@ C - - - - - 0x0139C2 04:B9B2: D0 0F     BNE bra_B9C3
 C - - - - - 0x0139C4 04:B9B4: AD 1D 00  LDA ram_001D
 C - - - - - 0x0139C7 04:B9B7: 29 0F     AND #$0F
 C - - - - - 0x0139C9 04:B9B9: D0 04     BNE bra_B9BF
-C - - - - - 0x0139CB 04:B9BB: A9 01     LDA #$01
-C - - - - - 0x0139CD 04:B9BD: D0 0E     BNE bra_B9CD
+C - - - - - 0x0139CB 04:B9BB: A9 01     LDA #con_action_01
+C - - - - - 0x0139CD 04:B9BD: D0 0E     BNE bra_B9CD_запись_действия
 bra_B9BF:
-C - - - - - 0x0139CF 04:B9BF: A9 06     LDA #$06
-C - - - - - 0x0139D1 04:B9C1: D0 0A     BNE bra_B9CD
+C - - - - - 0x0139CF 04:B9BF: A9 06     LDA #con_action_06
+C - - - - - 0x0139D1 04:B9C1: D0 0A     BNE bra_B9CD_запись_действия
 bra_B9C3:
 C - - - - - 0x0139D3 04:B9C3: 29 03     AND #$03
 C - - - - - 0x0139D5 04:B9C5: D0 04     BNE bra_B9CB
-C - - - - - 0x0139D7 04:B9C7: A9 0D     LDA #$0D
-C - - - - - 0x0139D9 04:B9C9: D0 02     BNE bra_B9CD
+C - - - - - 0x0139D7 04:B9C7: A9 0D     LDA #con_action_0D
+C - - - - - 0x0139D9 04:B9C9: D0 02     BNE bra_B9CD_запись_действия
 bra_B9CB:
-C - - - - - 0x0139DB 04:B9CB: A9 07     LDA #$07
-bra_B9CD:
+C - - - - - 0x0139DB 04:B9CB: A9 07     LDA #con_action_07
+bra_B9CD_запись_действия:
 C - - - - - 0x0139DD 04:B9CD: 9D 79 04  STA ram_next_действие_игрока,X
 bra_B9D0_в_воздухе:
 C - - - - - 0x0139E0 04:B9D0: AD 1D 00  LDA ram_001D
@@ -13213,10 +13245,10 @@ C - - - - - 0x0139E3 04:B9D3: 29 0F     AND #$0F
 C - - - - - 0x0139E5 04:B9D5: A8        TAY
 C - - - - - 0x0139E6 04:B9D6: B9 E5 B9  LDA tbl_B9E5,Y
 C - - - - - 0x0139E9 04:B9D9: 9D B0 04  STA ram_смена_угла_движения,X
-C - - - - - 0x0139EC 04:B9DC: 4C E2 B9  JMP loc_B9E2
-loc_B9DF:
+C - - - - - 0x0139EC 04:B9DC: 4C E2 B9  JMP loc_B9E2_выход
+loc_B9DF_запись_действия:
 C D 1 - - - 0x0139EF 04:B9DF: 9D 79 04  STA ram_next_действие_игрока,X
-loc_B9E2:
+loc_B9E2_выход:
 C D 1 - - - 0x0139F2 04:B9E2: A6 43     LDX ram_0043
 C - - - - - 0x0139F4 04:B9E4: 60        RTS
 
@@ -13243,6 +13275,7 @@ tbl_B9E5:
 
 
 tbl_B9F5:
+; bzk оптимизировать таблицу, первые 5 байтов не используются, 
 - D 1 - - - 0x013A05 04:B9F5: 05 BA     .word off_BA05_00
 - D 1 - - - 0x013A07 04:B9F7: 05 BA     .word off_BA05_01
 - - - - - - 0x013A09 04:B9F9: 05 BA     .word off_BA05_02
@@ -13264,12 +13297,12 @@ off_BA05_07:
 - - - - - - 0x013A17 04:BA07: 09        .byte $09   ; 
 - - - - - - 0x013A18 04:BA08: 08        .byte $08   ; 
 - - - - - - 0x013A19 04:BA09: 04        .byte $04   ; 
-- D 1 - I - 0x013A1A 04:BA0A: 04        .byte $04   ; 
-- D 1 - I - 0x013A1B 04:BA0B: 04        .byte $04   ; 
-- D 1 - I - 0x013A1C 04:BA0C: 05        .byte $05   ; 
-- D 1 - I - 0x013A1D 04:BA0D: 05        .byte $05   ; 
-- D 1 - I - 0x013A1E 04:BA0E: 05        .byte $05   ; 
-- D 1 - I - 0x013A1F 04:BA0F: 05        .byte $05   ; 
+- D 1 - I - 0x013A1A 04:BA0A: 04        .byte con_action_04   ; 
+- D 1 - I - 0x013A1B 04:BA0B: 04        .byte con_action_04   ; 
+- D 1 - I - 0x013A1C 04:BA0C: 05        .byte con_action_05   ; 
+- D 1 - I - 0x013A1D 04:BA0D: 05        .byte con_action_05   ; 
+- D 1 - I - 0x013A1E 04:BA0E: 05        .byte con_action_05   ; 
+- D 1 - I - 0x013A1F 04:BA0F: 05        .byte con_action_05   ; 
 
 off_BA10_05:
 - - - - - - 0x013A20 04:BA10: 08        .byte $08   ; 
@@ -13277,12 +13310,12 @@ off_BA10_05:
 - - - - - - 0x013A22 04:BA12: 08        .byte $08   ; 
 - - - - - - 0x013A23 04:BA13: 08        .byte $08   ; 
 - - - - - - 0x013A24 04:BA14: 08        .byte $08   ; 
-- - - - - - 0x013A25 04:BA15: 08        .byte $08   ; 
-- - - - - - 0x013A26 04:BA16: 08        .byte $08   ; 
-- - - - - - 0x013A27 04:BA17: 08        .byte $08   ; 
-- - - - - - 0x013A28 04:BA18: 08        .byte $08   ; 
-- - - - - - 0x013A29 04:BA19: 08        .byte $08   ; 
-- - - - - - 0x013A2A 04:BA1A: 08        .byte $08   ; 
+- - - - - - 0x013A25 04:BA15: 08        .byte con_action_08   ; 
+- - - - - - 0x013A26 04:BA16: 08        .byte con_action_08   ; 
+- - - - - - 0x013A27 04:BA17: 08        .byte con_action_08   ; 
+- - - - - - 0x013A28 04:BA18: 08        .byte con_action_08   ; 
+- - - - - - 0x013A29 04:BA19: 08        .byte con_action_08   ; 
+- - - - - - 0x013A2A 04:BA1A: 08        .byte con_action_08   ; 
 
 
 
@@ -13633,8 +13666,8 @@ bra_BC31:
 C - - - - - 0x013C41 04:BC31: B9 5F BC  LDA tbl_BC5F_sound,Y
 C - - - - - 0x013C44 04:BC34: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 ; bzk 2 одинаковых прыжка
-C - - - - - 0x013C47 04:BC37: 20 27 80  JSR sub_0x01C25C
-C - - - - - 0x013C4A 04:BC3A: 20 27 80  JSR sub_0x01C25C
+C - - - - - 0x013C47 04:BC37: 20 27 80  JSR sub_0x01C25C_сдвинуть_объект
+C - - - - - 0x013C4A 04:BC3A: 20 27 80  JSR sub_0x01C25C_сдвинуть_объект
 bra_BC3D:
 C - - - - - 0x013C4D 04:BC3D: BD 99 03  LDA ram_pos_Z_hi_игрок,X
 C - - - - - 0x013C50 04:BC40: 10 0B     BPL bra_BC4D
