@@ -12516,7 +12516,7 @@ C - - - - - 0x0135C5 04:B5B5: BD BD 04  LDA ram_таймер_действия_и
 C - - - - - 0x0135C8 04:B5B8: F0 15     BEQ bra_B5CF
 C - - - - - 0x0135CA 04:B5BA: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x0135CD 04:B5BD: 29 7F     AND #$7F
-C - - - - - 0x0135CF 04:B5BF: C9 58     CMP #$58
+C - - - - - 0x0135CF 04:B5BF: C9 58     CMP #con_action_58
 C - - - - - 0x0135D1 04:B5C1: F0 0C     BEQ bra_B5CF
 C - - - - - 0x0135D3 04:B5C3: AD 1E 00  LDA ram_001E
 C - - - - - 0x0135D6 04:B5C6: 29 C0     AND #$C0
@@ -12590,7 +12590,7 @@ C - - - - - 0x013657 04:B647: 0A        ASL
 C - - - - - 0x013658 04:B648: 10 4C     BPL bra_B696
 C - - - - - 0x01365A 04:B64A: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x01365D 04:B64D: 29 7F     AND #$7F
-C - - - - - 0x01365F 04:B64F: C9 02     CMP #$02
+C - - - - - 0x01365F 04:B64F: C9 02     CMP #con_action_02
 C - - - - - 0x013661 04:B651: D0 09     BNE bra_B65C
 C - - - - - 0x013663 04:B653: A0 0B     LDY #$0B
 C - - - - - 0x013665 04:B655: B1 2C     LDA (ram_002C),Y
@@ -12631,7 +12631,7 @@ C - - - - - 0x0136A6 04:B696: BD 86 04  LDA ram_состояние_игрока,
 C - - - - - 0x0136A9 04:B699: 30 77     BMI bra_B712    ; если в воздухе
 C - - - - - 0x0136AB 04:B69B: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x0136AE 04:B69E: 29 7F     AND #$7F
-C - - - - - 0x0136B0 04:B6A0: C9 03     CMP #$03
+C - - - - - 0x0136B0 04:B6A0: C9 03     CMP #con_action_03
 C - - - - - 0x0136B2 04:B6A2: D0 18     BNE bra_B6BC
 C - - - - - 0x0136B4 04:B6A4: AD 1D 00  LDA ram_001D
 C - - - - - 0x0136B7 04:B6A7: 29 03     AND #$03
@@ -13366,9 +13366,9 @@ C - - - - - 0x013A80 04:BA70: D0 61     BNE bra_BAD3
 C - - - - - 0x013A82 04:BA72: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x013A85 04:BA75: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x013A88 04:BA78: 29 7F     AND #$7F
-C - - - - - 0x013A8A 04:BA7A: C9 33     CMP #$33
+C - - - - - 0x013A8A 04:BA7A: C9 33     CMP #con_action_33
 C - - - - - 0x013A8C 04:BA7C: F0 04     BEQ bra_BA82
-C - - - - - 0x013A8E 04:BA7E: C9 37     CMP #$37
+C - - - - - 0x013A8E 04:BA7E: C9 37     CMP #con_action_37
 C - - - - - 0x013A90 04:BA80: D0 10     BNE bra_BA92
 bra_BA82:
 C - - - - - 0x013A92 04:BA82: 20 C0 BD  JSR sub_BDC0
@@ -13418,9 +13418,9 @@ C - - - - - 0x013AEF 04:BADF: 4A        LSR
 C - - - - - 0x013AF0 04:BAE0: B0 0D     BCS bra_BAEF
 C - - - - - 0x013AF2 04:BAE2: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x013AF5 04:BAE5: 29 7F     AND #$7F
-C - - - - - 0x013AF7 04:BAE7: C9 43     CMP #$43
+C - - - - - 0x013AF7 04:BAE7: C9 43     CMP #con_action_43
 C - - - - - 0x013AF9 04:BAE9: F0 04     BEQ bra_BAEF
-C - - - - - 0x013AFB 04:BAEB: C9 47     CMP #$47
+C - - - - - 0x013AFB 04:BAEB: C9 47     CMP #con_action_47
 C - - - - - 0x013AFD 04:BAED: D0 05     BNE bra_BAF4
 bra_BAEF:
 - - - - - - 0x013AFF 04:BAEF: A9 28     LDA #$28

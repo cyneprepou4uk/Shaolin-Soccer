@@ -328,27 +328,27 @@ sub_821F:
 C - - - - - 0x00C22F 03:821F: 8A        TXA
 C - - - - - 0x00C230 03:8220: 48        PHA
 C - - - - - 0x00C231 03:8221: A2 00     LDX #$00
-bra_8223:
+bra_8223_loop:
 C - - - - - 0x00C233 03:8223: B5 2C     LDA ram_002C,X
 C - - - - - 0x00C235 03:8225: A8        TAY
 C - - - - - 0x00C236 03:8226: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x00C239 03:8229: 29 7F     AND #$7F
-C - - - - - 0x00C23B 03:822B: C9 04     CMP #$04
+C - - - - - 0x00C23B 03:822B: C9 04     CMP #con_action_04
 C - - - - - 0x00C23D 03:822D: F0 13     BEQ bra_8242
-C - - - - - 0x00C23F 03:822F: C9 05     CMP #$05
+C - - - - - 0x00C23F 03:822F: C9 05     CMP #con_action_05
 C - - - - - 0x00C241 03:8231: F0 0F     BEQ bra_8242
-C - - - - - 0x00C243 03:8233: C9 2D     CMP #$2D
+C - - - - - 0x00C243 03:8233: C9 2D     CMP #con_action_2D
 C - - - - - 0x00C245 03:8235: F0 0B     BEQ bra_8242
-C - - - - - 0x00C247 03:8237: C9 2E     CMP #$2E
+C - - - - - 0x00C247 03:8237: C9 2E     CMP #con_action_2E
 C - - - - - 0x00C249 03:8239: F0 07     BEQ bra_8242
-C - - - - - 0x00C24B 03:823B: C9 3C     CMP #$3C
+C - - - - - 0x00C24B 03:823B: C9 3C     CMP #con_action_3C
 C - - - - - 0x00C24D 03:823D: F0 03     BEQ bra_8242
 C - - - - - 0x00C24F 03:823F: 4C 4B 82  JMP loc_824B
 bra_8242:
 C - - - - - 0x00C252 03:8242: E8        INX
 C - - - - - 0x00C253 03:8243: E8        INX
 C - - - - - 0x00C254 03:8244: E0 0C     CPX #$0C
-C - - - - - 0x00C256 03:8246: 90 DB     BCC bra_8223
+C - - - - - 0x00C256 03:8246: 90 DB     BCC bra_8223_loop
 - - - - - - 0x00C258 03:8248: 4C 5E 82  JMP loc_825E
 
 
@@ -587,7 +587,7 @@ loc_83B1:
 ofs_83B1_00:
 C D 0 J - - 0x00C3C1 03:83B1: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00C3C4 03:83B4: 29 7F     AND #$7F
-C - - - - - 0x00C3C6 03:83B6: C9 21     CMP #$21
+C - - - - - 0x00C3C6 03:83B6: C9 21     CMP #con_action_21
 C - - - - - 0x00C3C8 03:83B8: D0 05     BNE bra_83BF
 C - - - - - 0x00C3CA 03:83BA: A9 0F     LDA #con_action_0F
 C - - - - - 0x00C3CC 03:83BC: 4C C1 83  JMP loc_83C1_запись_действия
@@ -2187,7 +2187,7 @@ C - - - - - 0x00CD6E 03:8D5E: 29 60     AND #$60
 C - - - - - 0x00CD70 03:8D60: D0 27     BNE bra_8D89
 C - - - - - 0x00CD72 03:8D62: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00CD75 03:8D65: 29 7F     AND #$7F
-C - - - - - 0x00CD77 03:8D67: C9 21     CMP #$21
+C - - - - - 0x00CD77 03:8D67: C9 21     CMP #con_action_21
 C - - - - - 0x00CD79 03:8D69: D0 05     BNE bra_8D70
 C - - - - - 0x00CD7B 03:8D6B: A9 0F     LDA #con_action_0F
 C - - - - - 0x00CD7D 03:8D6D: 4C 85 8D  JMP loc_8D85_запись_действия
@@ -2693,15 +2693,15 @@ C - - - - - 0x00D010 03:9000: A8        TAY
 C - - - - - 0x00D011 03:9001: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x00D014 03:9004: A4 44     LDY ram_0044
 C - - - - - 0x00D016 03:9006: 29 7F     AND #$7F
-C - - - - - 0x00D018 03:9008: C9 04     CMP #$04
+C - - - - - 0x00D018 03:9008: C9 04     CMP #con_action_04
 C - - - - - 0x00D01A 03:900A: F0 13     BEQ bra_901F
-C - - - - - 0x00D01C 03:900C: C9 05     CMP #$05
+C - - - - - 0x00D01C 03:900C: C9 05     CMP #con_action_05
 C - - - - - 0x00D01E 03:900E: F0 0F     BEQ bra_901F
-C - - - - - 0x00D020 03:9010: C9 2D     CMP #$2D
+C - - - - - 0x00D020 03:9010: C9 2D     CMP #con_action_2D
 C - - - - - 0x00D022 03:9012: F0 0B     BEQ bra_901F
-C - - - - - 0x00D024 03:9014: C9 2E     CMP #$2E
+C - - - - - 0x00D024 03:9014: C9 2E     CMP #con_action_2E
 C - - - - - 0x00D026 03:9016: F0 07     BEQ bra_901F
-C - - - - - 0x00D028 03:9018: C9 3C     CMP #$3C
+C - - - - - 0x00D028 03:9018: C9 3C     CMP #con_action_3C
 C - - - - - 0x00D02A 03:901A: F0 03     BEQ bra_901F
 C - - - - - 0x00D02C 03:901C: 4C 28 90  JMP loc_9028
 bra_901F:
@@ -3114,7 +3114,7 @@ C - - - - - 0x00D27E 03:926E: 29 04     AND #$04
 C - - - - - 0x00D280 03:9270: F0 0C     BEQ bra_927E
 C - - - - - 0x00D282 03:9272: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D285 03:9275: 29 7F     AND #$7F
-C - - - - - 0x00D287 03:9277: C9 21     CMP #$21
+C - - - - - 0x00D287 03:9277: C9 21     CMP #con_action_21
 C - - - - - 0x00D289 03:9279: D0 03     BNE bra_927E
 C - - - - - 0x00D28B 03:927B: 4C AD 92  JMP loc_92AD
 bra_927E:
@@ -3876,7 +3876,7 @@ bra_97CB:
 bra_97D0:
 C - - - - - 0x00D7E0 03:97D0: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D7E3 03:97D3: 29 7F     AND #$7F
-C - - - - - 0x00D7E5 03:97D5: C9 21     CMP #$21
+C - - - - - 0x00D7E5 03:97D5: C9 21     CMP #con_action_21
 C - - - - - 0x00D7E7 03:97D7: D0 F2     BNE bra_97CB
 C - - - - - 0x00D7E9 03:97D9: A9 20     LDA #con_action_20
 loc_97DB_запись_действия:   ; bzk опт
@@ -3991,7 +3991,7 @@ C - - - - - 0x00D87A 03:986A: 85 1E     STA ram_001E
 C - - - - - 0x00D87C 03:986C: 85 1F     STA ram_001F
 C - - - - - 0x00D87E 03:986E: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D881 03:9871: 29 7F     AND #$7F
-C - - - - - 0x00D883 03:9873: C9 21     CMP #$21
+C - - - - - 0x00D883 03:9873: C9 21     CMP #con_action_21
 C - - - - - 0x00D885 03:9875: F0 02     BEQ bra_9879
 C - - - - - 0x00D887 03:9877: 46 1F     LSR ram_001F
 bra_9879:
@@ -4001,7 +4001,7 @@ C - - - - - 0x00D88F 03:987F: C9 FF     CMP #$FF
 C - - - - - 0x00D891 03:9881: D0 13     BNE bra_9896
 C - - - - - 0x00D893 03:9883: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D896 03:9886: 29 7F     AND #$7F
-C - - - - - 0x00D898 03:9888: C9 21     CMP #$21
+C - - - - - 0x00D898 03:9888: C9 21     CMP #con_action_21
 C - - - - - 0x00D89A 03:988A: D0 05     BNE bra_9891
 bra_988C:
 loc_988C:
@@ -4018,7 +4018,7 @@ C - - - - - 0x00D8AD 03:989D: A5 29     LDA ram_0029
 C - - - - - 0x00D8AF 03:989F: 30 20     BMI bra_98C1
 C - - - - - 0x00D8B1 03:98A1: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D8B4 03:98A4: 29 7F     AND #$7F
-C - - - - - 0x00D8B6 03:98A6: C9 21     CMP #$21
+C - - - - - 0x00D8B6 03:98A6: C9 21     CMP #con_action_21
 C - - - - - 0x00D8B8 03:98A8: F0 0E     BEQ bra_98B8
 C - - - - - 0x00D8BA 03:98AA: A5 2A     LDA ram_002A
 C - - - - - 0x00D8BC 03:98AC: C9 20     CMP #$20
@@ -4036,7 +4036,7 @@ bra_98C1:
 loc_98C1:
 C D 0 - - - 0x00D8D1 03:98C1: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D8D4 03:98C4: 29 7F     AND #$7F
-C - - - - - 0x00D8D6 03:98C6: C9 21     CMP #$21
+C - - - - - 0x00D8D6 03:98C6: C9 21     CMP #con_action_21
 C - - - - - 0x00D8D8 03:98C8: F0 C2     BEQ bra_988C
 C - - - - - 0x00D8DA 03:98CA: A9 20     LDA #con_action_20
 loc_98CC_запись_действия:   ; bzk опт
@@ -6166,11 +6166,11 @@ C - - - - - 0x00E62D 03:A61D: B9 86 04  LDA ram_состояние_игрока,
 C - - - - - 0x00E630 03:A620: 10 47     BPL bra_A669    ; если не в воздухе
 C - - - - - 0x00E632 03:A622: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x00E635 03:A625: 29 7F     AND #$7F
-C - - - - - 0x00E637 03:A627: C9 32     CMP #$32
+C - - - - - 0x00E637 03:A627: C9 32     CMP #con_action_32
 C - - - - - 0x00E639 03:A629: F0 1A     BEQ bra_A645
-C - - - - - 0x00E63B 03:A62B: C9 33     CMP #$33
+C - - - - - 0x00E63B 03:A62B: C9 33     CMP #con_action_33
 C - - - - - 0x00E63D 03:A62D: F0 16     BEQ bra_A645
-C - - - - - 0x00E63F 03:A62F: C9 34     CMP #$34
+C - - - - - 0x00E63F 03:A62F: C9 34     CMP #con_action_34
 C - - - - - 0x00E641 03:A631: F0 12     BEQ bra_A645
 C - - - - - 0x00E643 03:A633: A4 44     LDY ram_0044
 C - - - - - 0x00E645 03:A635: B9 76 06  LDA ram_дистанция_ближайшего,Y
@@ -10831,62 +10831,62 @@ C - - - - - 0x00FA01 03:B9F1: 10 03     BPL bra_B9F6
 - - - - - - 0x00FA03 03:B9F3: A9 00     LDA #$00
 - - - - - - 0x00FA05 03:B9F5: 60        RTS
 bra_B9F6:
-C - - - - - 0x00FA06 03:B9F6: C9 09     CMP #$09
+C - - - - - 0x00FA06 03:B9F6: C9 09     CMP #con_action_09
 C - - - - - 0x00FA08 03:B9F8: F0 71     BEQ bra_BA6B
-C - - - - - 0x00FA0A 03:B9FA: C9 07     CMP #$07
+C - - - - - 0x00FA0A 03:B9FA: C9 07     CMP #con_action_07
 C - - - - - 0x00FA0C 03:B9FC: F0 6D     BEQ bra_BA6B
-C - - - - - 0x00FA0E 03:B9FE: C9 31     CMP #$31
+C - - - - - 0x00FA0E 03:B9FE: C9 31     CMP #con_action_31
 C - - - - - 0x00FA10 03:BA00: F0 69     BEQ bra_BA6B
-C - - - - - 0x00FA12 03:BA02: C9 32     CMP #$32
+C - - - - - 0x00FA12 03:BA02: C9 32     CMP #con_action_32
 C - - - - - 0x00FA14 03:BA04: F0 65     BEQ bra_BA6B
-C - - - - - 0x00FA16 03:BA06: C9 46     CMP #$46
+C - - - - - 0x00FA16 03:BA06: C9 46     CMP #con_action_46
 C - - - - - 0x00FA18 03:BA08: F0 61     BEQ bra_BA6B
-C - - - - - 0x00FA1A 03:BA0A: C9 33     CMP #$33
+C - - - - - 0x00FA1A 03:BA0A: C9 33     CMP #con_action_33
 C - - - - - 0x00FA1C 03:BA0C: F0 5D     BEQ bra_BA6B
-C - - - - - 0x00FA1E 03:BA0E: C9 34     CMP #$34
+C - - - - - 0x00FA1E 03:BA0E: C9 34     CMP #con_action_34
 C - - - - - 0x00FA20 03:BA10: F0 59     BEQ bra_BA6B
-C - - - - - 0x00FA22 03:BA12: C9 37     CMP #$37
+C - - - - - 0x00FA22 03:BA12: C9 37     CMP #con_action_37
 C - - - - - 0x00FA24 03:BA14: F0 55     BEQ bra_BA6B
-C - - - - - 0x00FA26 03:BA16: C9 38     CMP #$38
+C - - - - - 0x00FA26 03:BA16: C9 38     CMP #con_action_38
 C - - - - - 0x00FA28 03:BA18: F0 51     BEQ bra_BA6B
-C - - - - - 0x00FA2A 03:BA1A: C9 49     CMP #$49
+C - - - - - 0x00FA2A 03:BA1A: C9 49     CMP #con_action_49
 C - - - - - 0x00FA2C 03:BA1C: F0 4D     BEQ bra_BA6B
-C - - - - - 0x00FA2E 03:BA1E: C9 4B     CMP #$4B
+C - - - - - 0x00FA2E 03:BA1E: C9 4B     CMP #con_action_4B
 C - - - - - 0x00FA30 03:BA20: F0 49     BEQ bra_BA6B
-C - - - - - 0x00FA32 03:BA22: C9 4D     CMP #$4D
+C - - - - - 0x00FA32 03:BA22: C9 4D     CMP #con_action_4D
 C - - - - - 0x00FA34 03:BA24: F0 45     BEQ bra_BA6B
-C - - - - - 0x00FA36 03:BA26: C9 4F     CMP #$4F
+C - - - - - 0x00FA36 03:BA26: C9 4F     CMP #con_action_4F
 C - - - - - 0x00FA38 03:BA28: F0 41     BEQ bra_BA6B
-C - - - - - 0x00FA3A 03:BA2A: C9 0A     CMP #$0A
+C - - - - - 0x00FA3A 03:BA2A: C9 0A     CMP #con_action_0A
 C - - - - - 0x00FA3C 03:BA2C: F0 42     BEQ bra_BA70
-C - - - - - 0x00FA3E 03:BA2E: C9 08     CMP #$08
+C - - - - - 0x00FA3E 03:BA2E: C9 08     CMP #con_action_08
 C - - - - - 0x00FA40 03:BA30: F0 3E     BEQ bra_BA70
-C - - - - - 0x00FA42 03:BA32: C9 35     CMP #$35
+C - - - - - 0x00FA42 03:BA32: C9 35     CMP #con_action_35
 C - - - - - 0x00FA44 03:BA34: F0 3A     BEQ bra_BA70
-C - - - - - 0x00FA46 03:BA36: C9 39     CMP #$39
+C - - - - - 0x00FA46 03:BA36: C9 39     CMP #con_action_39
 C - - - - - 0x00FA48 03:BA38: F0 36     BEQ bra_BA70
-C - - - - - 0x00FA4A 03:BA3A: C9 36     CMP #$36
+C - - - - - 0x00FA4A 03:BA3A: C9 36     CMP #con_action_36
 C - - - - - 0x00FA4C 03:BA3C: F0 32     BEQ bra_BA70
-C - - - - - 0x00FA4E 03:BA3E: C9 3A     CMP #$3A    ; bzk мусор
-C - - - - - 0x00FA50 03:BA40: C9 22     CMP #$22
+C - - - - - 0x00FA4E 03:BA3E: C9 3A     CMP #con_action_3A    ; bzk мусор
+C - - - - - 0x00FA50 03:BA40: C9 22     CMP #con_action_22
 C - - - - - 0x00FA52 03:BA42: F0 31     BEQ bra_BA75
-C - - - - - 0x00FA54 03:BA44: C9 3B     CMP #$3B
+C - - - - - 0x00FA54 03:BA44: C9 3B     CMP #con_action_3B
 C - - - - - 0x00FA56 03:BA46: F0 2D     BEQ bra_BA75
-C - - - - - 0x00FA58 03:BA48: C9 23     CMP #$23
+C - - - - - 0x00FA58 03:BA48: C9 23     CMP #con_action_23
 C - - - - - 0x00FA5A 03:BA4A: F0 2E     BEQ bra_BA7A
-C - - - - - 0x00FA5C 03:BA4C: C9 42     CMP #$42
+C - - - - - 0x00FA5C 03:BA4C: C9 42     CMP #con_action_42
 C - - - - - 0x00FA5E 03:BA4E: F0 2A     BEQ bra_BA7A
-C - - - - - 0x00FA60 03:BA50: C9 2D     CMP #$2D
+C - - - - - 0x00FA60 03:BA50: C9 2D     CMP #con_action_2D
 C - - - - - 0x00FA62 03:BA52: F0 2B     BEQ bra_BA7F
-C - - - - - 0x00FA64 03:BA54: C9 2E     CMP #$2E
+C - - - - - 0x00FA64 03:BA54: C9 2E     CMP #con_action_2E
 C - - - - - 0x00FA66 03:BA56: F0 27     BEQ bra_BA7F
-C - - - - - 0x00FA68 03:BA58: C9 3C     CMP #$3C
+C - - - - - 0x00FA68 03:BA58: C9 3C     CMP #con_action_3C
 C - - - - - 0x00FA6A 03:BA5A: F0 23     BEQ bra_BA7F
-C - - - - - 0x00FA6C 03:BA5C: C9 3D     CMP #$3D
+C - - - - - 0x00FA6C 03:BA5C: C9 3D     CMP #con_action_3D
 C - - - - - 0x00FA6E 03:BA5E: F0 1F     BEQ bra_BA7F
-C - - - - - 0x00FA70 03:BA60: C9 59     CMP #$59
+C - - - - - 0x00FA70 03:BA60: C9 59     CMP #con_action_59
 C - - - - - 0x00FA72 03:BA62: F0 1B     BEQ bra_BA7F
-C - - - - - 0x00FA74 03:BA64: C9 5A     CMP #$5A
+C - - - - - 0x00FA74 03:BA64: C9 5A     CMP #con_action_5A
 C - - - - - 0x00FA76 03:BA66: F0 17     BEQ bra_BA7F
 C - - - - - 0x00FA78 03:BA68: A9 00     LDA #$00
 C - - - - - 0x00FA7A 03:BA6A: 60        RTS

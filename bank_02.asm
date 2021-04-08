@@ -11053,7 +11053,7 @@ C - - - - - 0x00AD3A 02:AD2A: D0 0C     BNE bra_AD38
 C - - - - - 0x00AD3C 02:AD2C: AD 14 03  LDA ram_pos_X_lo_игрок
 C - - - - - 0x00AD3F 02:AD2F: C9 70     CMP #$70
 C - - - - - 0x00AD41 02:AD31: 90 07     BCC bra_AD3A_RTS
-C - - - - - 0x00AD43 02:AD33: A9 01     LDA #$01
+C - - - - - 0x00AD43 02:AD33: A9 01     LDA #con_action_01
 C - - - - - 0x00AD45 02:AD35: 8D 59 04  STA ram_действие_игрока
 bra_AD38:
 C - - - - - 0x00AD48 02:AD38: E6 95     INC ram_кадр_анимации_игрока + 1
@@ -11074,9 +11074,9 @@ bra_AD4A:
 C - - - - - 0x00AD5A 02:AD4A: 8C 14 03  STY ram_pos_X_lo_игрок
 C - - - - - 0x00AD5D 02:AD4D: AD 59 04  LDA ram_действие_игрока
 C - - - - - 0x00AD60 02:AD50: 29 7F     AND #$7F
-C - - - - - 0x00AD62 02:AD52: C9 21     CMP #$21
+C - - - - - 0x00AD62 02:AD52: C9 21     CMP #con_action_21
 C - - - - - 0x00AD64 02:AD54: D0 05     BNE bra_AD5B
-C - - - - - 0x00AD66 02:AD56: A9 01     LDA #$01
+C - - - - - 0x00AD66 02:AD56: A9 01     LDA #con_action_01
 C - - - - - 0x00AD68 02:AD58: 8D 59 04  STA ram_действие_игрока
 bra_AD5B:
 C - - - - - 0x00AD6B 02:AD5B: AD 92 04  LDA ram_состояние_мяча
@@ -11159,7 +11159,7 @@ C - - - - - 0x00ADF5 02:ADE5: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x00ADF8 02:ADE8: D0 12     BNE bra_ADFC_RTS
 bra_ADEA:
 C - - - - - 0x00ADFA 02:ADEA: FE 61 00  INC ram_0061,X
-C - - - - - 0x00ADFD 02:ADED: A9 01     LDA #$01
+C - - - - - 0x00ADFD 02:ADED: A9 01     LDA #con_action_01
 C - - - - - 0x00ADFF 02:ADEF: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x00AE02 02:ADF2: A5 9E     LDA ram_сценка_кунио
 C - - - - - 0x00AE04 02:ADF4: FE 27 03  INC ram_pos_X_hi_игрок,X
@@ -11171,10 +11171,10 @@ C - - - - - 0x00AE0C 02:ADFC: 60        RTS
 
 
 tbl_ADFD:
-- D 1 - - - 0x00AE0D 02:ADFD: 21        .byte $21   ; 
-- D 1 - - - 0x00AE0E 02:ADFE: 21        .byte $21   ; 
-- D 1 - - - 0x00AE0F 02:ADFF: 21        .byte $21   ; 
-- D 1 - - - 0x00AE10 02:AE00: 2A        .byte $2A   ; 
+- D 1 - - - 0x00AE0D 02:ADFD: 21        .byte con_action_21   ; 00
+- D 1 - - - 0x00AE0E 02:ADFE: 21        .byte con_action_21   ; 01
+- D 1 - - - 0x00AE0F 02:ADFF: 21        .byte con_action_21   ; 02
+- D 1 - - - 0x00AE10 02:AE00: 2A        .byte con_action_2A   ; 03
 
 
 
@@ -11392,7 +11392,7 @@ C - - - - - 0x00AF2A 02:AF1A: D0 0E     BNE bra_AF2A_RTS
 C - - - - - 0x00AF2C 02:AF1C: AD 14 03  LDA ram_pos_X_lo_игрок
 C - - - - - 0x00AF2F 02:AF1F: C9 82     CMP #$82
 C - - - - - 0x00AF31 02:AF21: 90 07     BCC bra_AF2A_RTS
-C - - - - - 0x00AF33 02:AF23: A9 01     LDA #$01
+C - - - - - 0x00AF33 02:AF23: A9 01     LDA #con_action_01
 C - - - - - 0x00AF35 02:AF25: 8D 59 04  STA ram_действие_игрока
 C D 1 - - - 0x00AF38 02:AF28: E6 95     INC ram_кадр_анимации_игрока + 1
 bra_AF2A_RTS:
@@ -11401,7 +11401,7 @@ C - - - - - 0x00AF3A 02:AF2A: 60        RTS
 
 
 ofs_AF2B_01:
-C - - J - - 0x00AF3B 02:AF2B: A9 0E     LDA #$0E
+C - - J - - 0x00AF3B 02:AF2B: A9 0E     LDA #con_action_0E
 C - - - - - 0x00AF3D 02:AF2D: 8D 59 04  STA ram_действие_игрока
                                         INC ram_кадр_анимации_игрока + 1
                                         RTS
@@ -11478,7 +11478,7 @@ C - - - - - 0x00AF94 02:AF84: 20 9A AD  JSR sub_AD9A
 ofs_AF8A_05:
 C - - J - - 0x00AF9A 02:AF8A: AD 33 03  LDA ram_pos_X_hi_мяч
 C - - - - - 0x00AF9D 02:AF8D: F0 9B     BEQ bra_AF2A_RTS
-C - - - - - 0x00AF9F 02:AF8F: A9 21     LDA #$21
+C - - - - - 0x00AF9F 02:AF8F: A9 21     LDA #con_action_21
 C - - - - - 0x00AFA1 02:AF91: 8D 59 04  STA ram_действие_игрока
                                         INC ram_кадр_анимации_игрока + 1
                                         RTS
@@ -11512,9 +11512,9 @@ C - - - - - 0x00AFC8 02:AFB8: 60        RTS
 
 ofs_AFB9_01:
 C - - J - - 0x00AFC9 02:AFB9: AD 59 04  LDA ram_действие_игрока
-C - - - - - 0x00AFCC 02:AFBC: C9 81     CMP #$81
+C - - - - - 0x00AFCC 02:AFBC: C9 81     CMP #con_action_01 + $80
 C - - - - - 0x00AFCE 02:AFBE: D0 F8     BNE bra_AFB8_RTS
-C - - - - - 0x00AFD0 02:AFC0: A9 21     LDA #$21
+C - - - - - 0x00AFD0 02:AFC0: A9 21     LDA #con_action_21
 C - - - - - 0x00AFD2 02:AFC2: 8D 59 04  STA ram_действие_игрока
                                         INC ram_кадр_анимации_игрока + 1
                                         RTS
@@ -11701,7 +11701,7 @@ ofs_B0BC_01:
 ofs_B0BC_0C:
 C - - J - - 0x00B0CC 02:B0BC: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B0CF 02:B0BF: 30 06     BMI bra_B0C7_уже_обработано
-C - - - - - 0x00B0D1 02:B0C1: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B0D1 02:B0C1: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B0D4 02:B0C4: 20 39 AA  JSR sub_0x01C25D_очистить_Y_Z_гравитацию
 bra_B0C7_уже_обработано:
 C - - - - - 0x00B0D7 02:B0C7: A9 04     LDA #$04
@@ -11718,7 +11718,7 @@ C - - - - - 0x00B0E8 02:B0D8: 60        RTS
 ofs_B0D9_02:
 C - - J - - 0x00B0E9 02:B0D9: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B0EC 02:B0DC: 30 06     BMI bra_B0E4_уже_обработано
-C - - - - - 0x00B0EE 02:B0DE: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B0EE 02:B0DE: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B0F1 02:B0E1: 20 39 AA  JSR sub_0x01C25D_очистить_Y_Z_гравитацию
 bra_B0E4_уже_обработано:
 C - - - - - 0x00B0F4 02:B0E4: A9 03     LDA #$03
@@ -11731,7 +11731,7 @@ ofs_B0E9_05:
 ofs_B0E9_0D:
 C - - J - - 0x00B0F9 02:B0E9: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B0FC 02:B0EC: 30 09     BMI bra_B0F7_уже_обработано
-C - - - - - 0x00B0FE 02:B0EE: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B0FE 02:B0EE: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B101 02:B0F1: 20 39 AA  JSR sub_0x01C25D_очистить_Y_Z_гравитацию
 C - - - - - 0x00B104 02:B0F4: 20 48 AA  JSR sub_0x01C260_задать_направление_движения
 bra_B0F7_уже_обработано:
@@ -11743,7 +11743,7 @@ C - - - - - 0x00B109 02:B0F9: 4C C9 B0  JMP loc_B0C9
 ofs_B0FC_06:
 C - - J - - 0x00B10C 02:B0FC: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B10F 02:B0FF: 30 03     BMI bra_B104_уже_обработано
-C - - - - - 0x00B111 02:B101: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B111 02:B101: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 bra_B104_уже_обработано:
 C - - - - - 0x00B114 02:B104: 20 48 AA  JSR sub_0x01C260_задать_направление_движения
 C - - - - - 0x00B117 02:B107: 20 4D AA  JSR sub_0x01C261_угол_движения_во_время_спринта
@@ -11761,7 +11761,7 @@ C D 1 - - - 0x00B12B 02:B11B: 60        RTS
 ofs_B11C_07:
 C - - J - - 0x00B12C 02:B11C: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B12F 02:B11F: 30 06     BMI bra_B127_уже_обработано
-C - - - - - 0x00B131 02:B121: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B131 02:B121: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B134 02:B124: 20 48 AA  JSR sub_0x01C260_задать_направление_движения
 bra_B127_уже_обработано:
 C - - - - - 0x00B137 02:B127: BD B0 04  LDA ram_смена_угла_движения,X
@@ -11786,7 +11786,7 @@ C - - - - - 0x00B159 02:B149: 9D 96 04  STA ram_угол_движения,X
 loc_B14C:
 C D 1 - - - 0x00B15C 02:B14C: 5D A3 04  EOR ram_напр_движ_игрока,X
 C - - - - - 0x00B15F 02:B14F: 10 08     BPL bra_B159
-C - - - - - 0x00B161 02:B151: A9 03     LDA #$03
+C - - - - - 0x00B161 02:B151: A9 03     LDA #con_action_03
 C - - - - - 0x00B163 02:B153: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x00B166 02:B156: 4C 1B B1  RTS
 bra_B159:
@@ -11798,29 +11798,29 @@ C - - - - - 0x00B171 02:B161: 4C 0F B1  JMP loc_B10F
 
 
 tbl_B164:
-- - - - - - 0x00B174 02:B164: 20        .byte $20   ; 
-- D 1 - - - 0x00B175 02:B165: 20        .byte $20   ; 
-- D 1 - - - 0x00B176 02:B166: 40        .byte $40   ; 
-- - - - - - 0x00B177 02:B167: 60        .byte $60   ; 
-- D 1 - - - 0x00B178 02:B168: 60        .byte $60   ; 
-- - - - - - 0x00B179 02:B169: A0        .byte $A0   ; 
-- D 1 - - - 0x00B17A 02:B16A: C0        .byte $C0   ; 
-- - - - - - 0x00B17B 02:B16B: E0        .byte $E0   ; 
-- D 1 - - - 0x00B17C 02:B16C: E0        .byte $E0   ; 
-- - - - - - 0x00B17D 02:B16D: 20        .byte $20   ; 
-- D 1 - - - 0x00B17E 02:B16E: 40        .byte $40   ; 
-- - - - - - 0x00B17F 02:B16F: 60        .byte $60   ; 
-- - - - - - 0x00B180 02:B170: A0        .byte $A0   ; 
-- - - - - - 0x00B181 02:B171: A0        .byte $A0   ; 
-- D 1 - - - 0x00B182 02:B172: C0        .byte $C0   ; 
-- D 1 - - - 0x00B183 02:B173: E0        .byte $E0   ; 
+- - - - - - 0x00B174 02:B164: 20        .byte $20   ; 00
+- D 1 - - - 0x00B175 02:B165: 20        .byte $20   ; 01
+- D 1 - - - 0x00B176 02:B166: 40        .byte $40   ; 02
+- - - - - - 0x00B177 02:B167: 60        .byte $60   ; 03
+- D 1 - - - 0x00B178 02:B168: 60        .byte $60   ; 04
+- - - - - - 0x00B179 02:B169: A0        .byte $A0   ; 05
+- D 1 - - - 0x00B17A 02:B16A: C0        .byte $C0   ; 06
+- - - - - - 0x00B17B 02:B16B: E0        .byte $E0   ; 07
+- D 1 - - - 0x00B17C 02:B16C: E0        .byte $E0   ; 08
+- - - - - - 0x00B17D 02:B16D: 20        .byte $20   ; 09
+- D 1 - - - 0x00B17E 02:B16E: 40        .byte $40   ; 0A
+- - - - - - 0x00B17F 02:B16F: 60        .byte $60   ; 0B
+- - - - - - 0x00B180 02:B170: A0        .byte $A0   ; 0C
+- - - - - - 0x00B181 02:B171: A0        .byte $A0   ; 0D
+- D 1 - - - 0x00B182 02:B172: C0        .byte $C0   ; 0E
+- D 1 - - - 0x00B183 02:B173: E0        .byte $E0   ; 0F
 
 
 
 ofs_B174_03:
 C - - J - - 0x00B184 02:B174: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B187 02:B177: 30 06     BMI bra_B17F_уже_обработано
-C - - - - - 0x00B189 02:B179: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B189 02:B179: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B18C 02:B17C: 20 39 AA  JSR sub_0x01C25D_очистить_Y_Z_гравитацию
 bra_B17F_уже_обработано:
 C - - - - - 0x00B18F 02:B17F: A9 02     LDA #$02
@@ -11833,7 +11833,7 @@ C - - - - - 0x00B197 02:B187: 4C 0F B1  JMP loc_B10F
 ofs_B18A_08:
 C - - J - - 0x00B19A 02:B18A: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B19D 02:B18D: 30 15     BMI bra_B1A4_уже_обработано
-C - - - - - 0x00B19F 02:B18F: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B19F 02:B18F: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B1A2 02:B192: BD A3 04  LDA ram_напр_движ_игрока,X
 C - - - - - 0x00B1A5 02:B195: 09 40     ORA #$40
 C - - - - - 0x00B1A7 02:B197: 9D 96 04  STA ram_угол_движения,X
@@ -11868,7 +11868,7 @@ C - - - - - 0x00B1DD 02:B1CD: 60        RTS
 ofs_B1CE_09:
 C - - J - - 0x00B1DE 02:B1CE: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B1E1 02:B1D1: 30 D1     BMI bra_B1A4_уже_обработано
-C - - - - - 0x00B1E3 02:B1D3: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B1E3 02:B1D3: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B1E6 02:B1D6: BD A3 04  LDA ram_напр_движ_игрока,X
 C - - - - - 0x00B1E9 02:B1D9: 09 40     ORA #$40
 C - - - - - 0x00B1EB 02:B1DB: 9D 96 04  STA ram_угол_движения,X
@@ -11882,7 +11882,7 @@ C - - - - - 0x00B1F3 02:B1E3: 4C 9A B1  JMP loc_B19A
 ofs_B1E6_0A:
 - - - - - - 0x00B1F6 02:B1E6: BD 59 04  LDA ram_действие_игрока,X
 - - - - - - 0x00B1F9 02:B1E9: 30 B9     BMI bra_B1A4_уже_обработано
-- - - - - - 0x00B1FB 02:B1EB: 20 82 B2  JSR sub_B282
+- - - - - - 0x00B1FB 02:B1EB: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 - - - - - - 0x00B1FE 02:B1EE: BD A3 04  LDA ram_напр_движ_игрока,X
 - - - - - - 0x00B201 02:B1F1: 09 40     ORA #$40
 - - - - - - 0x00B203 02:B1F3: 49 80     EOR #$80
@@ -11895,7 +11895,7 @@ ofs_B1FB_0B:
 ofs_B1FB_0E:
 C - - J - - 0x00B20B 02:B1FB: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B20E 02:B1FE: 30 47     BMI bra_B247    ; если уже обработано
-C - - - - - 0x00B210 02:B200: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B210 02:B200: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B213 02:B203: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x00B216 02:B206: C9 FF     CMP #$FF
 C - - - - - 0x00B218 02:B208: F0 05     BEQ bra_B20F
@@ -11923,7 +11923,7 @@ bra_B237:
 C - - - - - 0x00B247 02:B237: A9 00     LDA #$00
 C - - - - - 0x00B249 02:B239: 9D 2E 04  STA ram_spd_Z_hi_игрок,X
 C - - - - - 0x00B24C 02:B23C: 9D 20 04  STA ram_spd_Z_lo_игрок,X
-C - - - - - 0x00B24F 02:B23F: A9 02     LDA #$02
+C - - - - - 0x00B24F 02:B23F: A9 02     LDA #con_action_02
 C - - - - - 0x00B251 02:B241: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x00B254 02:B244: 4C 0F B1  JMP loc_B10F
 bra_B247:
@@ -11937,16 +11937,16 @@ C - - J - - 0x00B25A 02:B24A: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B25D 02:B24D: 29 7F     AND #$7F
 C - - - - - 0x00B25F 02:B24F: A8        TAY
 C - - - - - 0x00B260 02:B250: B9 72 B2  LDA tbl_B272,Y
-C - - - - - 0x00B263 02:B253: 10 0E     BPL bra_B263
+C - - - - - 0x00B263 02:B253: 10 0E     BPL bra_B263_запись_действия_и_очистка_адресов_анимации
 - - - - - - 0x00B265 02:B255: BD 86 04  LDA ram_состояние_игрока,X
 - - - - - - 0x00B268 02:B258: 29 08     AND #$08
 - - - - - - 0x00B26A 02:B25A: F0 05     BEQ bra_B261_не_бежит
-- - - - - - 0x00B26C 02:B25C: A9 21     LDA #$21
-- - - - - - 0x00B26E 02:B25E: 4C 63 B2  JMP loc_B263
+- - - - - - 0x00B26C 02:B25C: A9 21     LDA #con_action_21
+- - - - - - 0x00B26E 02:B25E: 4C 63 B2  JMP loc_B263_запись_действия_и_очистка_адресов_анимации
 bra_B261_не_бежит:
-- - - - - - 0x00B271 02:B261: A9 20     LDA #$20
-bra_B263:
-loc_B263:
+- - - - - - 0x00B271 02:B261: A9 20     LDA #con_action_20
+bra_B263_запись_действия_и_очистка_адресов_анимации:
+loc_B263_запись_действия_и_очистка_адресов_анимации:
 C - - - - - 0x00B273 02:B263: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x00B276 02:B266: A9 00     LDA #$00
 C - - - - - 0x00B278 02:B268: 9D 94 00  STA ram_кадр_анимации_игрока,X
@@ -11957,26 +11957,26 @@ C - - - - - 0x00B281 02:B271: 60        RTS
 
 
 tbl_B272:
-- - - - - - 0x00B282 02:B272: 00        .byte $00   ; 
-- - - - - - 0x00B283 02:B273: 01        .byte $01   ; 
-- D 1 - - - 0x00B284 02:B274: 01        .byte $01   ; 
-- D 1 - - - 0x00B285 02:B275: 01        .byte $01   ; 
-- D 1 - - - 0x00B286 02:B276: 01        .byte $01   ; 
-- D 1 - - - 0x00B287 02:B277: 01        .byte $01   ; 
-- - - - - - 0x00B288 02:B278: 01        .byte $01   ; 
-- - - - - - 0x00B289 02:B279: 01        .byte $01   ; 
-- D 1 - - - 0x00B28A 02:B27A: 02        .byte $02   ; 
-- D 1 - - - 0x00B28B 02:B27B: 0B        .byte $0B   ; 
-- - - - - - 0x00B28C 02:B27C: 0E        .byte $0E   ; 
-- D 1 - - - 0x00B28D 02:B27D: 0B        .byte $0B   ; 
-- - - - - - 0x00B28E 02:B27E: FF        .byte $FF   ; 
-- D 1 - - - 0x00B28F 02:B27F: 01        .byte $01   ; 
-- - - - - - 0x00B290 02:B280: 0E        .byte $0E   ; 
-- - - - - - 0x00B291 02:B281: 00        .byte $00   ; 
+- - - - - - 0x00B282 02:B272: 00        .byte con_action_00   ; 00
+- - - - - - 0x00B283 02:B273: 01        .byte con_action_01   ; 01
+- D 1 - - - 0x00B284 02:B274: 01        .byte con_action_01   ; 02
+- D 1 - - - 0x00B285 02:B275: 01        .byte con_action_01   ; 03
+- D 1 - - - 0x00B286 02:B276: 01        .byte con_action_01   ; 04
+- D 1 - - - 0x00B287 02:B277: 01        .byte con_action_01   ; 05
+- - - - - - 0x00B288 02:B278: 01        .byte con_action_01   ; 06
+- - - - - - 0x00B289 02:B279: 01        .byte con_action_01   ; 07
+- D 1 - - - 0x00B28A 02:B27A: 02        .byte con_action_02   ; 08
+- D 1 - - - 0x00B28B 02:B27B: 0B        .byte con_action_0B   ; 09
+- - - - - - 0x00B28C 02:B27C: 0E        .byte con_action_0E   ; 0A
+- D 1 - - - 0x00B28D 02:B27D: 0B        .byte con_action_0B   ; 0B
+- - - - - - 0x00B28E 02:B27E: FF        .byte $FF   ; 0C
+- D 1 - - - 0x00B28F 02:B27F: 01        .byte con_action_01   ; 0D
+- - - - - - 0x00B290 02:B280: 0E        .byte con_action_0E   ; 0E
+- - - - - - 0x00B291 02:B281: 00        .byte con_action_00   ; 0F
 
 
 
-sub_B282:
+sub_B282_запись_действия_и_очистка_адресов_анимации:
 C - - - - - 0x00B292 02:B282: 09 80     ORA #$80
 C - - - - - 0x00B294 02:B284: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x00B297 02:B287: A9 00     LDA #$00
@@ -12421,7 +12421,7 @@ C - - - - - 0x00B486 02:B476: F0 0B     BEQ bra_B483
 C - - - - - 0x00B488 02:B478: A5 59     LDA ram_subscript
 C - - - - - 0x00B48A 02:B47A: C9 04     CMP #$04
 C - - - - - 0x00B48C 02:B47C: F0 05     BEQ bra_B483
-C - - - - - 0x00B48E 02:B47E: A9 0C     LDA #$0C
+C - - - - - 0x00B48E 02:B47E: A9 0C     LDA #con_action_0C
 C - - - - - 0x00B490 02:B480: 9D 59 04  STA ram_действие_игрока,X
 bra_B483:
 C - - - - - 0x00B493 02:B483: A9 00     LDA #$00
@@ -12541,11 +12541,11 @@ tbl_B525:
 
 
 
-tbl_B529:
-- D 1 - - - 0x00B539 02:B529: 07        .byte $07   ; 
-- D 1 - - - 0x00B53A 02:B52A: 07        .byte $07   ; 
-- D 1 - - - 0x00B53B 02:B52B: 07        .byte $07   ; 
-- D 1 - - - 0x00B53C 02:B52C: 07        .byte $07   ; 
+tbl_B529:   ; bzk опт
+- D 1 - - - 0x00B539 02:B529: 07        .byte con_action_07   ; 
+- D 1 - - - 0x00B53A 02:B52A: 07        .byte con_action_07   ; 
+- D 1 - - - 0x00B53B 02:B52B: 07        .byte con_action_07   ; 
+- D 1 - - - 0x00B53C 02:B52C: 07        .byte con_action_07   ; 
 
 
 
@@ -12577,7 +12577,7 @@ C D 1 - - - 0x00B54D 02:B53D: A2 12     LDX #$12
 bra_B53F_loop:
 C - - - - - 0x00B54F 02:B53F: A9 7F     LDA #$7F
 C - - - - - 0x00B551 02:B541: 9D 74 00  STA ram_анимация_игрока,X
-C - - - - - 0x00B554 02:B544: A9 00     LDA #$00
+C - - - - - 0x00B554 02:B544: A9 00     LDA #$00    ; con_action_00
 C - - - - - 0x00B556 02:B546: 9D 60 03  STA ram_pos_Y_hi_игрок,X
 C - - - - - 0x00B559 02:B549: 9D 99 03  STA ram_pos_Z_hi_игрок,X
 C - - - - - 0x00B55C 02:B54C: 9D 86 03  STA ram_pos_Z_lo_игрок,X
@@ -12706,12 +12706,12 @@ tbl_B63F:
 - D 1 - - - 0x00B651 02:B641: FF        .byte $FF   ; 
 
 - D 1 - - - 0x00B652 02:B642: 00        .byte $00   ; 
-- D 1 - - - 0x00B653 02:B643: 01        .byte $01   ; 
+- D 1 - - - 0x00B653 02:B643: 01        .byte con_action_01 + $00   ; 
 - D 1 - - - 0x00B654 02:B644: 68        .byte $68   ; 
 - D 1 - - - 0x00B655 02:B645: D8        .byte $D8   ; 
 
 - D 1 - - - 0x00B656 02:B646: 00        .byte $00   ; 
-- D 1 - - - 0x00B657 02:B647: 81        .byte $81   ; 
+- D 1 - - - 0x00B657 02:B647: 81        .byte con_action_01 + $80   ; 
 - D 1 - - - 0x00B658 02:B648: 98        .byte $98   ; 
 - D 1 - - - 0x00B659 02:B649: D8        .byte $D8   ; 
 
@@ -12722,12 +12722,12 @@ tbl_B63F:
 - - - - - - 0x00B65C 02:B64C: FF        .byte $FF   ; 
 
 - - - - - - 0x00B65D 02:B64D: 00        .byte $00   ; 
-- - - - - - 0x00B65E 02:B64E: 0D        .byte $0D   ; 
+- - - - - - 0x00B65E 02:B64E: 0D        .byte con_action_0D + $00   ; 
 - - - - - - 0x00B65F 02:B64F: 71        .byte $71   ; 
 - - - - - - 0x00B660 02:B650: D8        .byte $D8   ; 
 
 - - - - - - 0x00B661 02:B651: 00        .byte $00   ; 
-- - - - - - 0x00B662 02:B652: 0A        .byte $0A   ; 
+- - - - - - 0x00B662 02:B652: 0A        .byte con_action_0A + $00   ; 
 - - - - - - 0x00B663 02:B653: 80        .byte $80   ; 
 - - - - - - 0x00B664 02:B654: D8        .byte $D8   ; 
 
@@ -12738,12 +12738,12 @@ tbl_B63F:
 - - - - - - 0x00B667 02:B657: FF        .byte $FF   ; 
 
 - - - - - - 0x00B668 02:B658: 00        .byte $00   ; 
-- - - - - - 0x00B669 02:B659: 1A        .byte $1A   ; 
+- - - - - - 0x00B669 02:B659: 1A        .byte con_action_1A + $00   ; 
 - - - - - - 0x00B66A 02:B65A: 80        .byte $80   ; 
 - - - - - - 0x00B66B 02:B65B: C8        .byte $C8   ; 
 
 - - - - - - 0x00B66C 02:B65C: 00        .byte $00   ; 
-- - - - - - 0x00B66D 02:B65D: 1B        .byte $1B   ; 
+- - - - - - 0x00B66D 02:B65D: 1B        .byte con_action_1B + $00   ; 
 - - - - - - 0x00B66E 02:B65E: 80        .byte $80   ; 
 - - - - - - 0x00B66F 02:B65F: C8        .byte $C8   ; 
 
@@ -12754,12 +12754,12 @@ tbl_B63F:
 - - - - - - 0x00B672 02:B662: FF        .byte $FF   ; 
 
 - - - - - - 0x00B673 02:B663: 24        .byte $24   ; 
-- - - - - - 0x00B674 02:B664: 1E        .byte $1E   ; 
+- - - - - - 0x00B674 02:B664: 1E        .byte con_action_1E + $00   ; 
 - - - - - - 0x00B675 02:B665: 20        .byte $20   ; 
 - - - - - - 0x00B676 02:B666: D8        .byte $D8   ; 
 
 - - - - - - 0x00B677 02:B667: 28        .byte $28   ; 
-- - - - - - 0x00B678 02:B668: 21        .byte $21   ; 
+- - - - - - 0x00B678 02:B668: 21        .byte con_action_21 + $00   ; 
 - - - - - - 0x00B679 02:B669: 60        .byte $60   ; 
 - - - - - - 0x00B67A 02:B66A: D8        .byte $D8   ; 
 
@@ -12770,7 +12770,7 @@ tbl_B63F:
 - - - - - - 0x00B67D 02:B66D: FF        .byte $FF   ; 
 
 - - - - - - 0x00B67E 02:B66E: 00        .byte $00   ; 
-- - - - - - 0x00B67F 02:B66F: 05        .byte $05   ; 
+- - - - - - 0x00B67F 02:B66F: 05        .byte con_action_05 + $00   ; 
 - - - - - - 0x00B680 02:B670: 80        .byte $80   ; 
 - - - - - - 0x00B681 02:B671: D8        .byte $D8   ; 
 
@@ -12786,12 +12786,12 @@ tbl_B63F:
 - - - - - - 0x00B688 02:B678: FF        .byte $FF   ; 
 
 - - - - - - 0x00B689 02:B679: 25        .byte $25   ; 
-- - - - - - 0x00B68A 02:B67A: 06        .byte $06   ; 
+- - - - - - 0x00B68A 02:B67A: 06        .byte con_action_06 + $00   ; 
 - - - - - - 0x00B68B 02:B67B: 70        .byte $70   ; 
 - - - - - - 0x00B68C 02:B67C: D8        .byte $D8   ; 
 
 - - - - - - 0x00B68D 02:B67D: 27        .byte $27   ; 
-- - - - - - 0x00B68E 02:B67E: 86        .byte $86   ; 
+- - - - - - 0x00B68E 02:B67E: 86        .byte con_action_06 + $80   ; 
 - - - - - - 0x00B68F 02:B67F: 90        .byte $90   ; 
 - - - - - - 0x00B690 02:B680: D8        .byte $D8   ; 
 
@@ -12802,12 +12802,12 @@ tbl_B63F:
 - - - - - - 0x00B693 02:B683: FF        .byte $FF   ; 
 
 - - - - - - 0x00B694 02:B684: 00        .byte $00   ; 
-- - - - - - 0x00B695 02:B685: 1C        .byte $1C   ; 
+- - - - - - 0x00B695 02:B685: 1C        .byte con_action_1C + $00   ; 
 - - - - - - 0x00B696 02:B686: 80        .byte $80   ; 
 - - - - - - 0x00B697 02:B687: C8        .byte $C8   ; 
 
 - - - - - - 0x00B698 02:B688: 00        .byte $00   ; 
-- - - - - - 0x00B699 02:B689: 1D        .byte $1D   ; 
+- - - - - - 0x00B699 02:B689: 1D        .byte con_action_1D + $00   ; 
 - - - - - - 0x00B69A 02:B68A: 80        .byte $80   ; 
 - - - - - - 0x00B69B 02:B68B: C8        .byte $C8   ; 
 
@@ -12818,12 +12818,12 @@ tbl_B63F:
 - - - - - - 0x00B69E 02:B68E: FF        .byte $FF   ; 
 
 - - - - - - 0x00B69F 02:B68F: 26        .byte $26   ; 
-- - - - - - 0x00B6A0 02:B690: 10        .byte $10   ; 
+- - - - - - 0x00B6A0 02:B690: 10        .byte con_action_10 + $00   ; 
 - - - - - - 0x00B6A1 02:B691: 68        .byte $68   ; 
 - - - - - - 0x00B6A2 02:B692: D8        .byte $D8   ; 
 
 - - - - - - 0x00B6A3 02:B693: 26        .byte $26   ; 
-- - - - - - 0x00B6A4 02:B694: 11        .byte $11   ; 
+- - - - - - 0x00B6A4 02:B694: 11        .byte con_action_11 + $00   ; 
 - - - - - - 0x00B6A5 02:B695: 98        .byte $98   ; 
 - - - - - - 0x00B6A6 02:B696: D8        .byte $D8   ; 
 
@@ -12834,12 +12834,12 @@ tbl_B63F:
 - - - - - - 0x00B6A9 02:B699: FF        .byte $FF   ; 
 
 - - - - - - 0x00B6AA 02:B69A: 00        .byte $00   ; 
-- - - - - - 0x00B6AB 02:B69B: 13        .byte $13   ; 
+- - - - - - 0x00B6AB 02:B69B: 13        .byte con_action_13 + $00   ; 
 - - - - - - 0x00B6AC 02:B69C: 68        .byte $68   ; 
 - - - - - - 0x00B6AD 02:B69D: D8        .byte $D8   ; 
 
 - - - - - - 0x00B6AE 02:B69E: 00        .byte $00   ; 
-- - - - - - 0x00B6AF 02:B69F: 14        .byte $14   ; 
+- - - - - - 0x00B6AF 02:B69F: 14        .byte con_action_14 + $00   ; 
 - - - - - - 0x00B6B0 02:B6A0: 98        .byte $98   ; 
 - - - - - - 0x00B6B1 02:B6A1: D8        .byte $D8   ; 
 
@@ -12850,12 +12850,12 @@ tbl_B63F:
 - D 1 - - - 0x00B6B4 02:B6A4: FF        .byte $FF   ; 
 
 - D 1 - - - 0x00B6B5 02:B6A5: 00        .byte $00   ; 
-- D 1 - - - 0x00B6B6 02:B6A6: 18        .byte $18   ; 
+- D 1 - - - 0x00B6B6 02:B6A6: 18        .byte con_action_18 + $00   ; 
 - D 1 - - - 0x00B6B7 02:B6A7: 94        .byte $94   ; 
 - D 1 - - - 0x00B6B8 02:B6A8: D1        .byte $D1   ; 
 
 - D 1 - - - 0x00B6B9 02:B6A9: 00        .byte $00   ; 
-- D 1 - - - 0x00B6BA 02:B6AA: 19        .byte $19   ; 
+- D 1 - - - 0x00B6BA 02:B6AA: 19        .byte con_action_19 + $00   ; 
 - D 1 - - - 0x00B6BB 02:B6AB: 80        .byte $80   ; 
 - D 1 - - - 0x00B6BC 02:B6AC: C8        .byte $C8   ; 
 
@@ -12866,12 +12866,12 @@ tbl_B63F:
 - D 1 - - - 0x00B6BF 02:B6AF: 26        .byte $26   ; 
 
 - D 1 - - - 0x00B6C0 02:B6B0: 00        .byte $00   ; 
-- D 1 - - - 0x00B6C1 02:B6B1: 17        .byte $17   ; 
+- D 1 - - - 0x00B6C1 02:B6B1: 17        .byte con_action_17 + $00   ; 
 - D 1 - - - 0x00B6C2 02:B6B2: 60        .byte $60   ; 
 - D 1 - - - 0x00B6C3 02:B6B3: D8        .byte $D8   ; 
 
 - D 1 - - - 0x00B6C4 02:B6B4: 00        .byte $00   ; 
-- D 1 - - - 0x00B6C5 02:B6B5: 97        .byte $97   ; 
+- D 1 - - - 0x00B6C5 02:B6B5: 97        .byte con_action_17 + $80   ; 
 - D 1 - - - 0x00B6C6 02:B6B6: A0        .byte $A0   ; 
 - D 1 - - - 0x00B6C7 02:B6B7: D8        .byte $D8   ; 
 
@@ -12882,12 +12882,12 @@ tbl_B63F:
 - D 1 - - - 0x00B6CA 02:B6BA: FF        .byte $FF   ; 
 
 - D 1 - - - 0x00B6CB 02:B6BB: 25        .byte $25   ; 
-- D 1 - - - 0x00B6CC 02:B6BC: 12        .byte $12   ; 
+- D 1 - - - 0x00B6CC 02:B6BC: 12        .byte con_action_12 + $00   ; 
 - D 1 - - - 0x00B6CD 02:B6BD: 70        .byte $70   ; 
 - D 1 - - - 0x00B6CE 02:B6BE: D8        .byte $D8   ; 
 
 - D 1 - - - 0x00B6CF 02:B6BF: 27        .byte $27   ; 
-- D 1 - - - 0x00B6D0 02:B6C0: 92        .byte $92   ; 
+- D 1 - - - 0x00B6D0 02:B6C0: 92        .byte con_action_12 + $80   ; 
 - D 1 - - - 0x00B6D1 02:B6C1: 90        .byte $90   ; 
 - D 1 - - - 0x00B6D2 02:B6C2: D8        .byte $D8   ; 
 
@@ -12898,12 +12898,12 @@ tbl_B63F:
 - - - - - - 0x00B6D5 02:B6C5: 26        .byte $26   ; 
 
 - - - - - - 0x00B6D6 02:B6C6: 00        .byte $00   ; 
-- - - - - - 0x00B6D7 02:B6C7: 95        .byte $95   ; 
+- - - - - - 0x00B6D7 02:B6C7: 95        .byte con_action_15 + $80   ; 
 - - - - - - 0x00B6D8 02:B6C8: 70        .byte $70   ; 
 - - - - - - 0x00B6D9 02:B6C9: D8        .byte $D8   ; 
 
 - - - - - - 0x00B6DA 02:B6CA: 00        .byte $00   ; 
-- - - - - - 0x00B6DB 02:B6CB: 96        .byte $96   ; 
+- - - - - - 0x00B6DB 02:B6CB: 96        .byte con_action_16 + $80   ; 
 - - - - - - 0x00B6DC 02:B6CC: 90        .byte $90   ; 
 - - - - - - 0x00B6DD 02:B6CD: D8        .byte $D8   ; 
 
@@ -13008,7 +13008,7 @@ ofs_B746_25:
 ofs_B746_29:
 C - - J - - 0x00B756 02:B746: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B759 02:B749: 30 06     BMI bra_B751
-C - - - - - 0x00B75B 02:B74B: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B75B 02:B74B: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B75E 02:B74E: 20 3E AA  JSR sub_0x01C25E_очистить_X_Y_Z_гравитацию
 bra_B751:
 C - - - - - 0x00B761 02:B751: 20 E5 B8  JSR sub_B8E5
@@ -13021,7 +13021,7 @@ ofs_B758_1B:
 ofs_B758_1D:
 - - - - - - 0x00B768 02:B758: BD 59 04  LDA ram_действие_игрока,X
 - - - - - - 0x00B76B 02:B75B: 30 06     BMI bra_B763
-- - - - - - 0x00B76D 02:B75D: 20 82 B2  JSR sub_B282
+- - - - - - 0x00B76D 02:B75D: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 - - - - - - 0x00B770 02:B760: 20 3E AA  JSR sub_0x01C25E_очистить_X_Y_Z_гравитацию
 bra_B763:
 - - - - - - 0x00B773 02:B763: 8A        TXA
@@ -13040,7 +13040,7 @@ ofs_B774_28:
 ofs_B774_2A:
 - - - - - - 0x00B784 02:B774: BD 59 04  LDA ram_действие_игрока,X
 - - - - - - 0x00B787 02:B777: 30 06     BMI bra_B77F
-- - - - - - 0x00B789 02:B779: 20 82 B2  JSR sub_B282
+- - - - - - 0x00B789 02:B779: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 - - - - - - 0x00B78C 02:B77C: 20 3E AA  JSR sub_0x01C25E_очистить_X_Y_Z_гравитацию
 bra_B77F:
 - - - - - - 0x00B78F 02:B77F: A0 01     LDY #$01
@@ -13065,7 +13065,7 @@ ofs_B79B_1E:
 - - - - - - 0x00B7AB 02:B79B: BD 59 04  LDA ram_действие_игрока,X
 - - - - - - 0x00B7AE 02:B79E: 30 0E     BMI bra_B7AE
 bra_B7A0:
-C - - - - - 0x00B7B0 02:B7A0: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B7B0 02:B7A0: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B7B3 02:B7A3: 20 3E AA  JSR sub_0x01C25E_очистить_X_Y_Z_гравитацию
 C - - - - - 0x00B7B6 02:B7A6: BD A3 04  LDA ram_напр_движ_игрока,X
 C - - - - - 0x00B7B9 02:B7A9: 09 40     ORA #$40
@@ -13083,7 +13083,7 @@ C - - - - - 0x00B7CC 02:B7BC: 60        RTS
 ofs_B7BD_18:
 C - - J - - 0x00B7CD 02:B7BD: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B7D0 02:B7C0: 30 16     BMI bra_B7D8
-C - - - - - 0x00B7D2 02:B7C2: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B7D2 02:B7C2: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B7D5 02:B7C5: 20 3E AA  JSR sub_0x01C25E_очистить_X_Y_Z_гравитацию
 C - - - - - 0x00B7D8 02:B7C8: BD A3 04  LDA ram_напр_движ_игрока,X
 C - - - - - 0x00B7DB 02:B7CB: 09 80     ORA #$80
@@ -13119,7 +13119,7 @@ C - - - - - 0x00B807 02:B7F7: 60        RTS
 ofs_B7F8_1F:
 - - - - - - 0x00B808 02:B7F8: BD 59 04  LDA ram_действие_игрока,X
 - - - - - - 0x00B80B 02:B7FB: 30 41     BMI bra_B83E
-- - - - - - 0x00B80D 02:B7FD: 20 82 B2  JSR sub_B282
+- - - - - - 0x00B80D 02:B7FD: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 - - - - - - 0x00B810 02:B800: BD A3 04  LDA ram_напр_движ_игрока,X
 - - - - - - 0x00B813 02:B803: 09 40     ORA #$40
 - - - - - - 0x00B815 02:B805: 9D 96 04  STA ram_угол_движения,X
@@ -13133,7 +13133,7 @@ ofs_B7F8_1F:
 ofs_B812_22:
 - - - - - - 0x00B822 02:B812: BD 59 04  LDA ram_действие_игрока,X
 - - - - - - 0x00B825 02:B815: 30 27     BMI bra_B83E
-- - - - - - 0x00B827 02:B817: 20 82 B2  JSR sub_B282
+- - - - - - 0x00B827 02:B817: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 - - - - - - 0x00B82A 02:B81A: BD A3 04  LDA ram_напр_движ_игрока,X
 - - - - - - 0x00B82D 02:B81D: 09 40     ORA #$40
 - - - - - - 0x00B82F 02:B81F: 9D 96 04  STA ram_угол_движения,X
@@ -13149,7 +13149,7 @@ ofs_B82C_08:
 ofs_B82C_26:
 C - - J - - 0x00B83C 02:B82C: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B83F 02:B82F: 30 0D     BMI bra_B83E
-C - - - - - 0x00B841 02:B831: 20 82 B2  JSR sub_B282
+C - - - - - 0x00B841 02:B831: 20 82 B2  JSR sub_B282_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x00B844 02:B834: A9 2B     LDA #con_sfx_прыжок
 C - - - - - 0x00B846 02:B836: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x00B849 02:B839: A9 00     LDA #$00
@@ -13185,7 +13185,9 @@ C - - J - - 0x00B87B 02:B86B: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00B87E 02:B86E: 29 7F     AND #$7F
 C - - - - - 0x00B880 02:B870: A8        TAY
 C - - - - - 0x00B881 02:B871: B9 B2 B8  LDA tbl_B8B2,Y
-C - - - - - 0x00B884 02:B874: 10 2D     BPL bra_B8A3
+C - - - - - 0x00B884 02:B874: 10 2D     BPL bra_B8A3_запись_действия_и_очистка_адресов_анимации
+; bzk мусор, бесполезная проверка на минус
+; в таблице нету ни одного байта 40-7F, чтобы при x2 получить 80-FF
 - - - - - - 0x00B886 02:B876: 0A        ASL
 - - - - - - 0x00B887 02:B877: 30 25     BMI bra_B89E
 - - - - - - 0x00B889 02:B879: B9 B2 B8  LDA tbl_B8B2,Y
@@ -13204,16 +13206,16 @@ bra_B88C_credits:
 - - - - - - 0x00B89F 02:B88F: AA        TAX
 bra_B890:
 - - - - - - 0x00B8A0 02:B890: B9 DE B8  LDA tbl_B8DE,Y
-- - - - - - 0x00B8A3 02:B893: 20 A3 B8  JSR sub_B8A3
+- - - - - - 0x00B8A3 02:B893: 20 A3 B8  JSR sub_B8A3_запись_действия_и_очистка_адресов_анимации
 - - - - - - 0x00B8A6 02:B896: A6 1C     LDX ram_001C
 - - - - - - 0x00B8A8 02:B898: B9 DD B8  LDA tbl_B8DD,Y
-- - - - - - 0x00B8AB 02:B89B: 4C A3 B8  JMP loc_B8A3
+- - - - - - 0x00B8AB 02:B89B: 4C A3 B8  JMP loc_B8A3_запись_действия_и_очистка_адресов_анимации
 bra_B89E:
 - - - - - - 0x00B8AE 02:B89E: BD 59 04  LDA ram_действие_игрока,X
 - - - - - - 0x00B8B1 02:B8A1: 29 7F     AND #$7F
-bra_B8A3:
-sub_B8A3:
-loc_B8A3:
+bra_B8A3_запись_действия_и_очистка_адресов_анимации:
+sub_B8A3_запись_действия_и_очистка_адресов_анимации:
+loc_B8A3_запись_действия_и_очистка_адресов_анимации:
 C - - - - - 0x00B8B3 02:B8A3: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x00B8B6 02:B8A6: A9 00     LDA #$00
 C - - - - - 0x00B8B8 02:B8A8: 9D 94 00  STA ram_кадр_анимации_игрока,X
@@ -13224,49 +13226,49 @@ C - - - - - 0x00B8C1 02:B8B1: 60        RTS
 
 
 tbl_B8B2:
-- - - - - - 0x00B8C2 02:B8B2: 00        .byte $00   ; 
-- D 1 - - - 0x00B8C3 02:B8B3: 02        .byte $02   ; 
-- D 1 - - - 0x00B8C4 02:B8B4: 03        .byte $03   ; 
-- D 1 - - - 0x00B8C5 02:B8B5: 04        .byte $04   ; 
-- D 1 - - - 0x00B8C6 02:B8B6: 01        .byte $01   ; 
-- - - - - - 0x00B8C7 02:B8B7: FF        .byte $FF   ; 
-- - - - - - 0x00B8C8 02:B8B8: 07        .byte $07   ; 
-- - - - - - 0x00B8C9 02:B8B9: 08        .byte $08   ; 
-- - - - - - 0x00B8CA 02:B8BA: 09        .byte $09   ; 
-- - - - - - 0x00B8CB 02:B8BB: 09        .byte $09   ; 
-- - - - - - 0x00B8CC 02:B8BC: FF        .byte $FF   ; 
-- - - - - - 0x00B8CD 02:B8BD: FF        .byte $FF   ; 
-- - - - - - 0x00B8CE 02:B8BE: FF        .byte $FF   ; 
-- - - - - - 0x00B8CF 02:B8BF: 80        .byte $80   ; 
-- - - - - - 0x00B8D0 02:B8C0: 81        .byte $81   ; 
-- - - - - - 0x00B8D1 02:B8C1: FF        .byte $FF   ; 
-- - - - - - 0x00B8D2 02:B8C2: FF        .byte $FF   ; 
-- - - - - - 0x00B8D3 02:B8C3: FF        .byte $FF   ; 
-- - - - - - 0x00B8D4 02:B8C4: FF        .byte $FF   ; 
-- - - - - - 0x00B8D5 02:B8C5: FF        .byte $FF   ; 
-- - - - - - 0x00B8D6 02:B8C6: FF        .byte $FF   ; 
-- - - - - - 0x00B8D7 02:B8C7: FF        .byte $FF   ; 
-- - - - - - 0x00B8D8 02:B8C8: FF        .byte $FF   ; 
-- - - - - - 0x00B8D9 02:B8C9: FF        .byte $FF   ; 
-- - - - - - 0x00B8DA 02:B8CA: FF        .byte $FF   ; 
-- - - - - - 0x00B8DB 02:B8CB: FF        .byte $FF   ; 
-- - - - - - 0x00B8DC 02:B8CC: FF        .byte $FF   ; 
-- - - - - - 0x00B8DD 02:B8CD: FF        .byte $FF   ; 
-- - - - - - 0x00B8DE 02:B8CE: FF        .byte $FF   ; 
-- - - - - - 0x00B8DF 02:B8CF: FF        .byte $FF   ; 
-- - - - - - 0x00B8E0 02:B8D0: 82        .byte $82   ; 
-- - - - - - 0x00B8E1 02:B8D1: 20        .byte $20   ; 
-- - - - - - 0x00B8E2 02:B8D2: 24        .byte $24   ; 
-- - - - - - 0x00B8E3 02:B8D3: FF        .byte $FF   ; 
-- - - - - - 0x00B8E4 02:B8D4: 23        .byte $23   ; 
-- - - - - - 0x00B8E5 02:B8D5: FF        .byte $FF   ; 
-- - - - - - 0x00B8E6 02:B8D6: FF        .byte $FF   ; 
-- - - - - - 0x00B8E7 02:B8D7: FF        .byte $FF   ; 
-- - - - - - 0x00B8E8 02:B8D8: 83        .byte $83   ; 
-- - - - - - 0x00B8E9 02:B8D9: FF        .byte $FF   ; 
-- - - - - - 0x00B8EA 02:B8DA: FF        .byte $FF   ; 
-- - - - - - 0x00B8EB 02:B8DB: FF        .byte $FF   ; 
-- - - - - - 0x00B8EC 02:B8DC: FF        .byte $FF   ; 
+- - - - - - 0x00B8C2 02:B8B2: 00        .byte con_action_00   ; 00
+- D 1 - - - 0x00B8C3 02:B8B3: 02        .byte con_action_02   ; 01
+- D 1 - - - 0x00B8C4 02:B8B4: 03        .byte con_action_03   ; 02
+- D 1 - - - 0x00B8C5 02:B8B5: 04        .byte con_action_04   ; 03
+- D 1 - - - 0x00B8C6 02:B8B6: 01        .byte con_action_01   ; 04
+- - - - - - 0x00B8C7 02:B8B7: FF        .byte $FF   ; 05
+- - - - - - 0x00B8C8 02:B8B8: 07        .byte con_action_07   ; 06
+- - - - - - 0x00B8C9 02:B8B9: 08        .byte con_action_08   ; 07
+- - - - - - 0x00B8CA 02:B8BA: 09        .byte con_action_09   ; 08
+- - - - - - 0x00B8CB 02:B8BB: 09        .byte con_action_09   ; 09
+- - - - - - 0x00B8CC 02:B8BC: FF        .byte $FF   ; 0A
+- - - - - - 0x00B8CD 02:B8BD: FF        .byte $FF   ; 0B
+- - - - - - 0x00B8CE 02:B8BE: FF        .byte $FF   ; 0C
+- - - - - - 0x00B8CF 02:B8BF: 80        .byte $80   ; 0D
+- - - - - - 0x00B8D0 02:B8C0: 81        .byte $81   ; 0E
+- - - - - - 0x00B8D1 02:B8C1: FF        .byte $FF   ; 0F
+- - - - - - 0x00B8D2 02:B8C2: FF        .byte $FF   ; 10
+- - - - - - 0x00B8D3 02:B8C3: FF        .byte $FF   ; 11
+- - - - - - 0x00B8D4 02:B8C4: FF        .byte $FF   ; 12
+- - - - - - 0x00B8D5 02:B8C5: FF        .byte $FF   ; 13
+- - - - - - 0x00B8D6 02:B8C6: FF        .byte $FF   ; 14
+- - - - - - 0x00B8D7 02:B8C7: FF        .byte $FF   ; 15
+- - - - - - 0x00B8D8 02:B8C8: FF        .byte $FF   ; 16
+- - - - - - 0x00B8D9 02:B8C9: FF        .byte $FF   ; 17
+- - - - - - 0x00B8DA 02:B8CA: FF        .byte $FF   ; 18
+- - - - - - 0x00B8DB 02:B8CB: FF        .byte $FF   ; 19
+- - - - - - 0x00B8DC 02:B8CC: FF        .byte $FF   ; 1A
+- - - - - - 0x00B8DD 02:B8CD: FF        .byte $FF   ; 1B
+- - - - - - 0x00B8DE 02:B8CE: FF        .byte $FF   ; 1C
+- - - - - - 0x00B8DF 02:B8CF: FF        .byte $FF   ; 1D
+- - - - - - 0x00B8E0 02:B8D0: 82        .byte $82   ; 1E
+- - - - - - 0x00B8E1 02:B8D1: 20        .byte con_action_20   ; 1F
+- - - - - - 0x00B8E2 02:B8D2: 24        .byte con_action_24   ; 20
+- - - - - - 0x00B8E3 02:B8D3: FF        .byte $FF   ; 21
+- - - - - - 0x00B8E4 02:B8D4: 23        .byte con_action_23   ; 22
+- - - - - - 0x00B8E5 02:B8D5: FF        .byte $FF   ; 23
+- - - - - - 0x00B8E6 02:B8D6: FF        .byte $FF   ; 24
+- - - - - - 0x00B8E7 02:B8D7: FF        .byte $FF   ; 25
+- - - - - - 0x00B8E8 02:B8D8: 83        .byte $83   ; 26
+- - - - - - 0x00B8E9 02:B8D9: FF        .byte $FF   ; 27
+- - - - - - 0x00B8EA 02:B8DA: FF        .byte $FF   ; 28
+- - - - - - 0x00B8EB 02:B8DB: FF        .byte $FF   ; 29
+- - - - - - 0x00B8EC 02:B8DC: FF        .byte $FF   ; 2A
 
 
 
@@ -13820,15 +13822,15 @@ tbl_BB1E:
 
 
 tbl_BB21:
-- - - - - - 0x00BB31 02:BB21: 07        .byte $07   ; 
-- - - - - - 0x00BB32 02:BB22: 25        .byte $25   ; 
-- - - - - - 0x00BB33 02:BB23: 26        .byte $26   ; 
-- - - - - - 0x00BB34 02:BB24: 07        .byte $07   ; 
-- - - - - - 0x00BB35 02:BB25: 27        .byte $27   ; 
-- - - - - - 0x00BB36 02:BB26: 28        .byte $28   ; 
-- - - - - - 0x00BB37 02:BB27: 07        .byte $07   ; 
-- - - - - - 0x00BB38 02:BB28: 29        .byte $29   ; 
-- - - - - - 0x00BB39 02:BB29: 2A        .byte $2A   ; 
+- - - - - - 0x00BB31 02:BB21: 07        .byte con_action_07   ; 
+- - - - - - 0x00BB32 02:BB22: 25        .byte con_action_25   ; 
+- - - - - - 0x00BB33 02:BB23: 26        .byte con_action_26   ; 
+- - - - - - 0x00BB34 02:BB24: 07        .byte con_action_07   ; 
+- - - - - - 0x00BB35 02:BB25: 27        .byte con_action_27   ; 
+- - - - - - 0x00BB36 02:BB26: 28        .byte con_action_28   ; 
+- - - - - - 0x00BB37 02:BB27: 07        .byte con_action_07   ; 
+- - - - - - 0x00BB38 02:BB28: 29        .byte con_action_29   ; 
+- - - - - - 0x00BB39 02:BB29: 2A        .byte con_action_2A   ; 
 
 
 

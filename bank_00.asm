@@ -14631,7 +14631,7 @@ C - - - - - 0x003BDF 00:BBCF: F0 ED     BEQ bra_BBBE_loop
 loc_BBD1_loop:
 C - - - - - 0x003BE1 00:BBD1: E0 04     CPX #$04
 C - - - - - 0x003BE3 00:BBD3: B0 09     BCS bra_BBDE
-- - - - - - 0x003BE5 00:BBD5: A9 00     LDA #$00
+- - - - - - 0x003BE5 00:BBD5: A9 00     LDA #con_action_00
 - - - - - - 0x003BE7 00:BBD7: 9D 59 04  STA ram_действие_игрока,X
 - - - - - - 0x003BEA 00:BBDA: E8        INX
 - - - - - - 0x003BEB 00:BBDB: 4C D1 BB  JMP loc_BBD1_loop
@@ -14924,29 +14924,29 @@ tbl_BDC9:
 
 
 
-tbl_BDD6:
-- D 1 - - - 0x003DE6 00:BDD6: 01        .byte $01   ; 
-- D 1 - - - 0x003DE7 00:BDD7: 01        .byte $01   ; 
-- D 1 - - - 0x003DE8 00:BDD8: 01        .byte $01   ; 
-- D 1 - - - 0x003DE9 00:BDD9: 01        .byte $01   ; 
-- D 1 - - - 0x003DEA 00:BDDA: 01        .byte $01   ; 
-- D 1 - - - 0x003DEB 00:BDDB: 01        .byte $01   ; 
-- D 1 - - - 0x003DEC 00:BDDC: 01        .byte $01   ; 
-- D 1 - - - 0x003DED 00:BDDD: 01        .byte $01   ; 
-- D 1 - - - 0x003DEE 00:BDDE: 01        .byte $01   ; 
-- D 1 - - - 0x003DEF 00:BDDF: 01        .byte $01   ; 
-- D 1 - - - 0x003DF0 00:BDE0: 01        .byte $01   ; 
-- D 1 - - - 0x003DF1 00:BDE1: 01        .byte $01   ; 
-- D 1 - - - 0x003DF2 00:BDE2: 01        .byte $01   ; 
+tbl_BDD6:   ; bzk опт
+- D 1 - - - 0x003DE6 00:BDD6: 01        .byte con_action_01   ; 00
+- D 1 - - - 0x003DE7 00:BDD7: 01        .byte con_action_01   ; 01
+- D 1 - - - 0x003DE8 00:BDD8: 01        .byte con_action_01   ; 02
+- D 1 - - - 0x003DE9 00:BDD9: 01        .byte con_action_01   ; 03
+- D 1 - - - 0x003DEA 00:BDDA: 01        .byte con_action_01   ; 04
+- D 1 - - - 0x003DEB 00:BDDB: 01        .byte con_action_01   ; 05
+- D 1 - - - 0x003DEC 00:BDDC: 01        .byte con_action_01   ; 06
+- D 1 - - - 0x003DED 00:BDDD: 01        .byte con_action_01   ; 07
+- D 1 - - - 0x003DEE 00:BDDE: 01        .byte con_action_01   ; 08
+- D 1 - - - 0x003DEF 00:BDDF: 01        .byte con_action_01   ; 09
+- D 1 - - - 0x003DF0 00:BDE0: 01        .byte con_action_01   ; 0A
+- D 1 - - - 0x003DF1 00:BDE1: 01        .byte con_action_01   ; 0B
+- D 1 - - - 0x003DF2 00:BDE2: 01        .byte con_action_01   ; 0C
 
 
 
 tbl_BDE3:
-- D 1 - - - 0x003DF3 00:BDE3: 01        .byte $01   ; 
-- D 1 - - - 0x003DF4 00:BDE4: 02        .byte $02   ; 
-- D 1 - - - 0x003DF5 00:BDE5: 03        .byte $03   ; 
-- D 1 - - - 0x003DF6 00:BDE6: 04        .byte $04   ; 
-- D 1 - - - 0x003DF7 00:BDE7: 05        .byte $05   ; 
+- D 1 - - - 0x003DF3 00:BDE3: 01        .byte con_action_01   ; 00
+- D 1 - - - 0x003DF4 00:BDE4: 02        .byte con_action_02   ; 01
+- D 1 - - - 0x003DF5 00:BDE5: 03        .byte con_action_03   ; 02
+- D 1 - - - 0x003DF6 00:BDE6: 04        .byte con_action_04   ; 03
+- D 1 - - - 0x003DF7 00:BDE7: 05        .byte con_action_05   ; 04
 
 
 
