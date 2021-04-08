@@ -12425,7 +12425,7 @@ C - - - - - 0x013515 04:B505: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x013517 04:B507: 29 40     AND #$40
 C - - - - - 0x013519 04:B509: D0 2B     BNE bra_B536
 C - - - - - 0x01351B 04:B50B: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x01351E 04:B50E: 29 01     AND #$01
+C - - - - - 0x01351E 04:B50E: 29 01     AND #con_state_01
 C - - - - - 0x013520 04:B510: D0 44     BNE bra_B556
 C - - - - - 0x013522 04:B512: E0 0A     CPX #con_индекс_кипера
 C - - - - - 0x013524 04:B514: B0 2B     BCS bra_B541_это_кипер
@@ -12457,7 +12457,7 @@ C - - - - - 0x013554 04:B544: 30 10     BMI bra_B556
 C - - - - - 0x013556 04:B546: A9 04     LDA #$04
 C - - - - - 0x013558 04:B548: 85 1C     STA ram_001C
 C - - - - - 0x01355A 04:B54A: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x01355D 04:B54D: 29 40     AND #$40
+C - - - - - 0x01355D 04:B54D: 29 40     AND #con_state_владеет_мячом
 C - - - - - 0x01355F 04:B54F: D0 27     BNE bra_B578    ; если владеет мячом
 C - - - - - 0x013561 04:B551: E6 1C     INC ram_001C
 C - - - - - 0x013563 04:B553: 4C 78 B5  JMP loc_B578
@@ -12475,7 +12475,7 @@ C - - - - - 0x013578 04:B568: B9 2A 05  LDA ram_флаг_владения_мяч
 C - - - - - 0x01357B 04:B56B: 10 0B     BPL bra_B578
 C - - - - - 0x01357D 04:B56D: E6 1C     INC ram_001C
 C - - - - - 0x01357F 04:B56F: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x013582 04:B572: 29 40     AND #$40
+C - - - - - 0x013582 04:B572: 29 40     AND #con_state_владеет_мячом
 C - - - - - 0x013584 04:B574: D0 02     BNE bra_B578    ; если владеет мячом
 C - - - - - 0x013586 04:B576: E6 1C     INC ram_001C
 bra_B578:
@@ -12490,7 +12490,7 @@ C - - - - - 0x013594 04:B584: 85 2F     STA ram_002F
 C - - - - - 0x013596 04:B586: A9 00     LDA #$00
 C - - - - - 0x013598 04:B588: 85 1C     STA ram_001C
 C - - - - - 0x01359A 04:B58A: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x01359D 04:B58D: 29 B0     AND #$B0
+C - - - - - 0x01359D 04:B58D: 29 B0     AND #con_state_в_воздухе + con_state_стоит_на_мяче + con_state_20
 C - - - - - 0x01359F 04:B58F: F0 12     BEQ bra_B5A3
 C - - - - - 0x0135A1 04:B591: E6 1C     INC ram_001C
 C - - - - - 0x0135A3 04:B593: BD 86 04  LDA ram_состояние_игрока,X
@@ -12499,7 +12499,7 @@ C - - - - - 0x0135A8 04:B598: E6 1C     INC ram_001C
 C - - - - - 0x0135AA 04:B59A: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x0135AD 04:B59D: 0A        ASL
 C - - - - - 0x0135AE 04:B59E: 0A        ASL
-C - - - - - 0x0135AF 04:B59F: 30 02     BMI bra_B5A3
+C - - - - - 0x0135AF 04:B59F: 30 02     BMI bra_B5A3    ; con_state_20
 C - - - - - 0x0135B1 04:B5A1: E6 1C     INC ram_001C
 bra_B5A3:
 C - - - - - 0x0135B3 04:B5A3: A5 1C     LDA ram_001C
@@ -12547,7 +12547,7 @@ C - - - - - 0x013606 04:B5F6: 30 F3     BMI bra_B5EB
 C - - - - - 0x013608 04:B5F8: 4C 21 B7  JMP loc_B721_запись_действия
 bra_B5FB:
 C - - - - - 0x01360B 04:B5FB: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x01360E 04:B5FE: 29 08     AND #$08
+C - - - - - 0x01360E 04:B5FE: 29 08     AND #con_state_бег_спринт
 C - - - - - 0x013610 04:B600: F0 09     BEQ bra_B60B    ; если не бег/спринт
 C - - - - - 0x013612 04:B602: A0 02     LDY #$02
 C - - - - - 0x013614 04:B604: B1 2C     LDA (ram_002C),Y
@@ -12646,12 +12646,12 @@ C - - - - - 0x0136C7 04:B6B7: A9 2A     LDA #con_action_2A
 C - - - - - 0x0136C9 04:B6B9: 4C 0F B7  JMP loc_B70F_запись_действия
 bra_B6BC:
 C - - - - - 0x0136CC 04:B6BC: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x0136CF 04:B6BF: 29 08     AND #$08
+C - - - - - 0x0136CF 04:B6BF: 29 08     AND #con_state_бег_спринт
 C - - - - - 0x0136D1 04:B6C1: F0 23     BEQ bra_B6E6_не_бежит
 C - - - - - 0x0136D3 04:B6C3: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x0136D6 04:B6C6: 29 50     AND #$50
+C - - - - - 0x0136D6 04:B6C6: 29 50     AND #con_state_стоит_на_мяче + con_state_владеет_мячом
 C - - - - - 0x0136D8 04:B6C8: F0 34     BEQ bra_B6FE
-C - - - - - 0x0136DA 04:B6CA: 29 10     AND #$10
+C - - - - - 0x0136DA 04:B6CA: 29 10     AND #con_state_стоит_на_мяче
 C - - - - - 0x0136DC 04:B6CC: D0 0C     BNE bra_B6DA
 C - - - - - 0x0136DE 04:B6CE: AD 21 00  LDA ram_0021
 C - - - - - 0x0136E1 04:B6D1: 29 0C     AND #$0C
@@ -13118,7 +13118,7 @@ C - - - - - 0x0138F4 04:B8E4: AA        TAX
 C - - - - - 0x0138F5 04:B8E5: A9 00     LDA #$00
 C - - - - - 0x0138F7 04:B8E7: 85 1C     STA ram_001C
 C - - - - - 0x0138F9 04:B8E9: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x0138FC 04:B8EC: 29 B0     AND #$B0
+C - - - - - 0x0138FC 04:B8EC: 29 B0     AND #con_state_в_воздухе + con_state_стоит_на_мяче + con_state_20
 C - - - - - 0x0138FE 04:B8EE: F0 12     BEQ bra_B902
 C - - - - - 0x013900 04:B8F0: E6 1C     INC ram_001C
 C - - - - - 0x013902 04:B8F2: BD 86 04  LDA ram_состояние_игрока,X
@@ -13127,7 +13127,7 @@ C - - - - - 0x013905 04:B8F5: 30 0B     BMI bra_B902    ; если в возду
 - - - - - - 0x013909 04:B8F9: BD 86 04  LDA ram_состояние_игрока,X
 - - - - - - 0x01390C 04:B8FC: 0A        ASL
 - - - - - - 0x01390D 04:B8FD: 0A        ASL
-- - - - - - 0x01390E 04:B8FE: 30 02     BMI bra_B902
+- - - - - - 0x01390E 04:B8FE: 30 02     BMI bra_B902    ; con_state_20
 - - - - - - 0x013910 04:B900: E6 1C     INC ram_001C
 bra_B902:
 C - - - - - 0x013912 04:B902: A5 1C     LDA ram_001C
@@ -13161,7 +13161,7 @@ bra_B939:
 - - - - - - 0x01394B 04:B93B: 4C DF B9  JMP loc_B9DF_запись_действия
 bra_B93E:
 C - - - - - 0x01394E 04:B93E: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x013951 04:B941: 29 08     AND #$08
+C - - - - - 0x013951 04:B941: 29 08     AND #con_state_бег_спринт
 C - - - - - 0x013953 04:B943: F0 05     BEQ bra_B94A_не_бежит
 C - - - - - 0x013955 04:B945: A9 09     LDA #con_action_09
 C - - - - - 0x013957 04:B947: 4C DF B9  JMP loc_B9DF_запись_действия
@@ -13415,7 +13415,7 @@ C - - - - - 0x013AE6 04:BAD6: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x013AE9 04:BAD9: 20 02 BB  JSR sub_BB02
 C - - - - - 0x013AEC 04:BADC: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x013AEF 04:BADF: 4A        LSR
-C - - - - - 0x013AF0 04:BAE0: B0 0D     BCS bra_BAEF
+C - - - - - 0x013AF0 04:BAE0: B0 0D     BCS bra_BAEF    ; con_state_01
 C - - - - - 0x013AF2 04:BAE2: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x013AF5 04:BAE5: 29 7F     AND #$7F
 C - - - - - 0x013AF7 04:BAE7: C9 43     CMP #con_action_43

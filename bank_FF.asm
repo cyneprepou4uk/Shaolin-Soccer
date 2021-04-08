@@ -2491,7 +2491,7 @@ C - - - - - 0x01CF4F 07:CF3F: 4C 25 CF  RTS
 bra_CF42_F0_тип_удара_мяча:
 C - - - - - 0x01CF52 07:CF42: C8        INY
 C - - - - - 0x01CF53 07:CF43: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x01CF56 07:CF46: 29 40     AND #$40
+C - - - - - 0x01CF56 07:CF46: 29 40     AND #con_state_владеет_мячом
 C - - - - - 0x01CF58 07:CF48: F0 05     BEQ bra_CF4F_не_владеет_мячом
 C - - - - - 0x01CF5A 07:CF4A: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x01CF5C 07:CF4C: 8D 85 04  STA ram_next_действие_мяча
@@ -9722,7 +9722,7 @@ C - - - - - 0x01FA43 07:FA33: 4C F3 F9  JMP loc_F9F3
 loc_FA36:
 C D 3 - - - 0x01FA46 07:FA36: A4 2C     LDY ram_002C
 C - - - - - 0x01FA48 07:FA38: B9 86 04  LDA ram_состояние_игрока,Y
-C - - - - - 0x01FA4B 07:FA3B: 29 01     AND #$01
+C - - - - - 0x01FA4B 07:FA3B: 29 01     AND #con_state_01
 C - - - - - 0x01FA4D 07:FA3D: F0 29     BEQ bra_FA68
 C - - - - - 0x01FA4F 07:FA3F: A6 2E     LDX ram_002E
 C - - - - - 0x01FA51 07:FA41: B9 86 03  LDA ram_pos_Z_lo_игрок,Y

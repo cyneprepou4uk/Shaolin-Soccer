@@ -11134,7 +11134,7 @@ C - - - - - 0x00ADBA 02:ADAA: 9D 79 04  STA ram_next_действие_игрок
 C - - - - - 0x00ADBD 02:ADAD: 9D 27 03  STA ram_pos_X_hi_игрок,X
 C - - - - - 0x00ADC0 02:ADB0: 8D 85 04  STA ram_next_действие_мяча
 C - - - - - 0x00ADC3 02:ADB3: 8D 0E 05  STA ram_флаг_прозрачного_мяча
-C - - - - - 0x00ADC6 02:ADB6: A9 00     LDA #$00
+C - - - - - 0x00ADC6 02:ADB6: A9 00     LDA #$00    ; con_state_стоит_идет
 C - - - - - 0x00ADC8 02:ADB8: 9D 86 04  STA ram_состояние_игрока,X
 C - - - - - 0x00ADCB 02:ADBB: 8D D6 04  STA ram_игрок_с_мячом
 C - - - - - 0x00ADCE 02:ADBE: 9D A3 04  STA ram_напр_движ_игрока,X
@@ -11939,7 +11939,7 @@ C - - - - - 0x00B25F 02:B24F: A8        TAY
 C - - - - - 0x00B260 02:B250: B9 72 B2  LDA tbl_B272,Y
 C - - - - - 0x00B263 02:B253: 10 0E     BPL bra_B263_запись_действия_и_очистка_адресов_анимации
 - - - - - - 0x00B265 02:B255: BD 86 04  LDA ram_состояние_игрока,X
-- - - - - - 0x00B268 02:B258: 29 08     AND #$08
+- - - - - - 0x00B268 02:B258: 29 08     AND #con_state_бег_спринт
 - - - - - - 0x00B26A 02:B25A: F0 05     BEQ bra_B261_не_бежит
 - - - - - - 0x00B26C 02:B25C: A9 21     LDA #con_action_21
 - - - - - - 0x00B26E 02:B25E: 4C 63 B2  JMP loc_B263_запись_действия_и_очистка_адресов_анимации
@@ -12424,7 +12424,7 @@ C - - - - - 0x00B48C 02:B47C: F0 05     BEQ bra_B483
 C - - - - - 0x00B48E 02:B47E: A9 0C     LDA #con_action_0C
 C - - - - - 0x00B490 02:B480: 9D 59 04  STA ram_действие_игрока,X
 bra_B483:
-C - - - - - 0x00B493 02:B483: A9 00     LDA #$00
+C - - - - - 0x00B493 02:B483: A9 00     LDA #$00    ; con_state_стоит_идет
 C - - - - - 0x00B495 02:B485: 9D 86 04  STA ram_состояние_игрока,X
 C - - - - - 0x00B498 02:B488: 9D F6 03  STA ram_spd_X_hi_игрок,X
 C - - - - - 0x00B49B 02:B48B: 9D E8 03  STA ram_spd_X_lo_игрок,X
@@ -14153,7 +14153,7 @@ bra_BD43:
 bra_BD6A_loop:
 - - - - - - 0x00BD7A 02:BD6A: A9 FF     LDA #$FF
 - - - - - - 0x00BD7C 02:BD6C: 9D 99 03  STA ram_pos_Z_hi_игрок,X
-- - - - - - 0x00BD7F 02:BD6F: A9 00     LDA #$00
+- - - - - - 0x00BD7F 02:BD6F: A9 00     LDA #con_state_стоит_идет
 - - - - - - 0x00BD81 02:BD71: 9D 86 04  STA ram_состояние_игрока,X
 - - - - - - 0x00BD84 02:BD74: 95 61     STA ram_0061,X
 - - - - - - 0x00BD86 02:BD76: 9D 27 03  STA ram_pos_X_hi_игрок,X
@@ -14175,7 +14175,7 @@ bra_BD6A_loop:
 - - - - - - 0x00BDA7 02:BD97: B1 2C     LDA (ram_002C),Y
 - - - - - - 0x00BDA9 02:BD99: 9D 86 03  STA ram_pos_Z_lo_игрок,X
 - - - - - - 0x00BDAC 02:BD9C: F0 05     BEQ bra_BDA3
-- - - - - - 0x00BDAE 02:BD9E: A9 80     LDA #$80    ; флаг нахождения в воздухе
+- - - - - - 0x00BDAE 02:BD9E: A9 80     LDA #con_state_в_воздухе
 - - - - - - 0x00BDB0 02:BDA0: 9D 86 04  STA ram_состояние_игрока,X
 bra_BDA3:
 - - - - - - 0x00BDB3 02:BDA3: C8        INY
