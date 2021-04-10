@@ -1272,27 +1272,15 @@ C - - - - - 0x00C80D 03:87FD: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x00C810 03:8800: B9 14 03  LDA ram_pos_X_lo_игрока,Y
 C - - - - - 0x00C813 03:8803: 18        CLC
 C - - - - - 0x00C814 03:8804: 65 1D     ADC ram_001D
-<<<<<<< HEAD
-C - - - - - 0x00C816 03:8806: 9D 20 06  STA ram_0620,X
+C - - - - - 0x00C816 03:8806: 9D 20 06  STA ram_x_lo_ударная_позиция_ботов,X
 C - - - - - 0x00C819 03:8809: B9 27 03  LDA ram_pos_X_hi_игрока,Y
 C - - - - - 0x00C81C 03:880C: 65 1C     ADC ram_001C
-C - - - - - 0x00C81E 03:880E: 9D 2C 06  STA ram_062C,X
+C - - - - - 0x00C81E 03:880E: 9D 2C 06  STA ram_X_hi_ударная_позиция_ботов,X
 C - - - - - 0x00C821 03:8811: B9 4D 03  LDA ram_pos_Y_lo_игрока,Y
 C - - - - - 0x00C824 03:8814: 18        CLC
 C - - - - - 0x00C825 03:8815: 65 1F     ADC ram_001F
-C - - - - - 0x00C827 03:8817: 9D 38 06  STA ram_0638,X
-C - - - - - 0x00C82A 03:881A: B9 60 03  LDA ram_pos_Y_hi_игрока,Y
-=======
-C - - - - - 0x00C816 03:8806: 9D 20 06  STA ram_x_lo_ударная_позиция_ботов,X
-C - - - - - 0x00C819 03:8809: B9 27 03  LDA ram_pos_X_hi_игрок,Y
-C - - - - - 0x00C81C 03:880C: 65 1C     ADC ram_001C
-C - - - - - 0x00C81E 03:880E: 9D 2C 06  STA ram_X_hi_ударная_позиция_ботов,X
-C - - - - - 0x00C821 03:8811: B9 4D 03  LDA ram_pos_Y_lo_игрок,Y
-C - - - - - 0x00C824 03:8814: 18        CLC
-C - - - - - 0x00C825 03:8815: 65 1F     ADC ram_001F
 C - - - - - 0x00C827 03:8817: 9D 38 06  STA ram_y_lo_ударная_позиция_ботов,X
-C - - - - - 0x00C82A 03:881A: B9 60 03  LDA ram_pos_Y_hi_игрок,Y
->>>>>>> bab9daf9a7e17703fdb9bb024ab83ff5b516f3f5
+C - - - - - 0x00C82A 03:881A: B9 60 03  LDA ram_pos_Y_hi_игрока,Y
 C - - - - - 0x00C82D 03:881D: 65 1E     ADC ram_001E
 C - - - - - 0x00C82F 03:881F: 9D 44 06  STA ram_Y_hi_ударная_позиция_ботов,X
 C - - - - - 0x00C832 03:8822: 30 16     BMI bra_883A
@@ -2880,25 +2868,14 @@ C - - - - - 0x00D115 03:9105: 60        RTS
 
 
 ofs_9106_1B:
-<<<<<<< HEAD
 C - - J - - 0x00D116 03:9106: BD 14 03  LDA ram_pos_X_lo_игрока,X
-C - - - - - 0x00D119 03:9109: 9D 20 06  STA ram_0620,X
-C - - - - - 0x00D11C 03:910C: BD 27 03  LDA ram_pos_X_hi_игрока,X
-C - - - - - 0x00D11F 03:910F: 9D 2C 06  STA ram_062C,X
-C - - - - - 0x00D122 03:9112: AD 59 03  LDA ram_pos_Y_lo_мяча
-C - - - - - 0x00D125 03:9115: 9D 38 06  STA ram_0638,X
-C - - - - - 0x00D128 03:9118: AD 6C 03  LDA ram_pos_Y_hi_мяча
-C - - - - - 0x00D12B 03:911B: 9D 44 06  STA ram_0644,X
-=======
-C - - J - - 0x00D116 03:9106: BD 14 03  LDA ram_pos_X_lo_игрок,X
 C - - - - - 0x00D119 03:9109: 9D 20 06  STA ram_x_lo_ударная_позиция_ботов,X
-C - - - - - 0x00D11C 03:910C: BD 27 03  LDA ram_pos_X_hi_игрок,X
+C - - - - - 0x00D11C 03:910C: BD 27 03  LDA ram_pos_X_hi_игрока,X
 C - - - - - 0x00D11F 03:910F: 9D 2C 06  STA ram_X_hi_ударная_позиция_ботов,X
-C - - - - - 0x00D122 03:9112: AD 59 03  LDA ram_pos_Y_lo_мяч
+C - - - - - 0x00D122 03:9112: AD 59 03  LDA ram_pos_Y_lo_мяча
 C - - - - - 0x00D125 03:9115: 9D 38 06  STA ram_y_lo_ударная_позиция_ботов,X
-C - - - - - 0x00D128 03:9118: AD 6C 03  LDA ram_pos_Y_hi_мяч
+C - - - - - 0x00D128 03:9118: AD 6C 03  LDA ram_pos_Y_hi_мяча
 C - - - - - 0x00D12B 03:911B: 9D 44 06  STA ram_Y_hi_ударная_позиция_ботов,X
->>>>>>> bab9daf9a7e17703fdb9bb024ab83ff5b516f3f5
 C - - - - - 0x00D12E 03:911E: 20 37 AE  JSR sub_AE37
 C - - - - - 0x00D131 03:9121: 20 5F 98  JSR sub_985F
 C - - - - - 0x00D134 03:9124: BD B0 04  LDA ram_смена_угла_движения,X
@@ -2911,17 +2888,10 @@ C - - - - - 0x00D13E 03:912E: 60        RTS
 
 
 ofs_912F_1D:
-<<<<<<< HEAD
 C - - J - - 0x00D13F 03:912F: BD 4D 03  LDA ram_pos_Y_lo_игрока,X
-C - - - - - 0x00D142 03:9132: 9D 38 06  STA ram_0638,X
-C - - - - - 0x00D145 03:9135: BD 60 03  LDA ram_pos_Y_hi_игрока,X
-C - - - - - 0x00D148 03:9138: 9D 44 06  STA ram_0644,X
-=======
-C - - J - - 0x00D13F 03:912F: BD 4D 03  LDA ram_pos_Y_lo_игрок,X
 C - - - - - 0x00D142 03:9132: 9D 38 06  STA ram_y_lo_ударная_позиция_ботов,X
-C - - - - - 0x00D145 03:9135: BD 60 03  LDA ram_pos_Y_hi_игрок,X
+C - - - - - 0x00D145 03:9135: BD 60 03  LDA ram_pos_Y_hi_игрока,X
 C - - - - - 0x00D148 03:9138: 9D 44 06  STA ram_Y_hi_ударная_позиция_ботов,X
->>>>>>> bab9daf9a7e17703fdb9bb024ab83ff5b516f3f5
 C - - - - - 0x00D14B 03:913B: AD 17 05  LDA ram_pos_X_lo_подающий
 C - - - - - 0x00D14E 03:913E: 9D 20 06  STA ram_x_lo_ударная_позиция_ботов,X
 C - - - - - 0x00D151 03:9141: AD 18 05  LDA ram_pos_X_hi_подающий
@@ -3645,19 +3615,11 @@ C - - - - - 0x00D5EE 03:95DE: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x00D5F1 03:95E1: A5 34     LDA ram_0034
 C - - - - - 0x00D5F3 03:95E3: 9D 38 06  STA ram_y_lo_ударная_позиция_ботов,X
 C - - - - - 0x00D5F6 03:95E6: A5 35     LDA ram_0035
-<<<<<<< HEAD
-C - - - - - 0x00D5F8 03:95E8: 9D 44 06  STA ram_0644,X
-C - - - - - 0x00D5FB 03:95EB: BD 14 03  LDA ram_pos_X_lo_игрока,X
-C - - - - - 0x00D5FE 03:95EE: 9D 20 06  STA ram_0620,X
-C - - - - - 0x00D601 03:95F1: BD 27 03  LDA ram_pos_X_hi_игрока,X
-C - - - - - 0x00D604 03:95F4: 9D 2C 06  STA ram_062C,X
-=======
 C - - - - - 0x00D5F8 03:95E8: 9D 44 06  STA ram_Y_hi_ударная_позиция_ботов,X
-C - - - - - 0x00D5FB 03:95EB: BD 14 03  LDA ram_pos_X_lo_игрок,X
+C - - - - - 0x00D5FB 03:95EB: BD 14 03  LDA ram_pos_X_lo_игрока,X
 C - - - - - 0x00D5FE 03:95EE: 9D 20 06  STA ram_x_lo_ударная_позиция_ботов,X
-C - - - - - 0x00D601 03:95F1: BD 27 03  LDA ram_pos_X_hi_игрок,X
+C - - - - - 0x00D601 03:95F1: BD 27 03  LDA ram_pos_X_hi_игрока,X
 C - - - - - 0x00D604 03:95F4: 9D 2C 06  STA ram_X_hi_ударная_позиция_ботов,X
->>>>>>> bab9daf9a7e17703fdb9bb024ab83ff5b516f3f5
 C - - - - - 0x00D607 03:95F7: 20 37 AE  JSR sub_AE37
 C - - - - - 0x00D60A 03:95FA: 20 5F 98  JSR sub_985F
 C - - - - - 0x00D60D 03:95FD: 60        RTS
@@ -3711,17 +3673,10 @@ C - - - - - 0x00D660 03:9650: A9 92     LDA #$92
 C - - - - - 0x00D662 03:9652: 9D 38 06  STA ram_y_lo_ударная_позиция_ботов,X
 C - - - - - 0x00D665 03:9655: 4C 64 96  JMP loc_9664
 loc_9658:
-<<<<<<< HEAD
 C D 0 - - - 0x00D668 03:9658: BD 4D 03  LDA ram_pos_Y_lo_игрока,X
-C - - - - - 0x00D66B 03:965B: 9D 38 06  STA ram_0638,X
-C - - - - - 0x00D66E 03:965E: BD 60 03  LDA ram_pos_Y_hi_игрока,X
-C - - - - - 0x00D671 03:9661: 9D 44 06  STA ram_0644,X
-=======
-C D 0 - - - 0x00D668 03:9658: BD 4D 03  LDA ram_pos_Y_lo_игрок,X
 C - - - - - 0x00D66B 03:965B: 9D 38 06  STA ram_y_lo_ударная_позиция_ботов,X
-C - - - - - 0x00D66E 03:965E: BD 60 03  LDA ram_pos_Y_hi_игрок,X
+C - - - - - 0x00D66E 03:965E: BD 60 03  LDA ram_pos_Y_hi_игрока,X
 C - - - - - 0x00D671 03:9661: 9D 44 06  STA ram_Y_hi_ударная_позиция_ботов,X
->>>>>>> bab9daf9a7e17703fdb9bb024ab83ff5b516f3f5
 loc_9664:
 C D 0 - - - 0x00D674 03:9664: BD 27 03  LDA ram_pos_X_hi_игрока,X
 C - - - - - 0x00D677 03:9667: F0 07     BEQ bra_9670
@@ -3741,17 +3696,10 @@ C - - - - - 0x00D692 03:9682: A9 FF     LDA #$FF
 C - - - - - 0x00D694 03:9684: 9D 20 06  STA ram_x_lo_ударная_позиция_ботов,X
 C - - - - - 0x00D697 03:9687: 4C 96 96  JMP loc_9696
 loc_968A:
-<<<<<<< HEAD
 C D 0 - - - 0x00D69A 03:968A: BD 14 03  LDA ram_pos_X_lo_игрока,X
-C - - - - - 0x00D69D 03:968D: 9D 20 06  STA ram_0620,X
-C - - - - - 0x00D6A0 03:9690: BD 27 03  LDA ram_pos_X_hi_игрока,X
-C - - - - - 0x00D6A3 03:9693: 9D 2C 06  STA ram_062C,X
-=======
-C D 0 - - - 0x00D69A 03:968A: BD 14 03  LDA ram_pos_X_lo_игрок,X
 C - - - - - 0x00D69D 03:968D: 9D 20 06  STA ram_x_lo_ударная_позиция_ботов,X
-C - - - - - 0x00D6A0 03:9690: BD 27 03  LDA ram_pos_X_hi_игрок,X
+C - - - - - 0x00D6A0 03:9690: BD 27 03  LDA ram_pos_X_hi_игрока,X
 C - - - - - 0x00D6A3 03:9693: 9D 2C 06  STA ram_X_hi_ударная_позиция_ботов,X
->>>>>>> bab9daf9a7e17703fdb9bb024ab83ff5b516f3f5
 loc_9696:
 C D 0 - - - 0x00D6A6 03:9696: 20 37 AE  JSR sub_AE37
 C - - - - - 0x00D6A9 03:9699: 20 5F 98  JSR sub_985F
