@@ -1082,7 +1082,7 @@ C - - - - - 0x01C572 07:C562: 8D 79 06  STA ram_приказ_боту + 1
 C - - - - - 0x01C575 07:C565: 8D 7A 06  STA ram_напр_паса_команды
 C - - - - - 0x01C578 07:C568: 8D 7B 06  STA ram_напр_паса_команды + 1
 C - - - - - 0x01C57B 07:C56B: 8D 84 06  STA ram_0684
-C - - - - - 0x01C57E 07:C56E: 8D 85 06  STA ram_0685
+C - - - - - 0x01C57E 07:C56E: 8D 85 06  STA ram_0684 + 1
 C - - - - - 0x01C581 07:C571: 20 6A BD  JSR sub_0x01BD7A
 C - - - - - 0x01C584 07:C574: 20 CC BE  JSR sub_0x01BEDC
 C - - - - - 0x01C587 07:C577: 20 9E C2  JSR sub_C29E
@@ -1574,10 +1574,10 @@ sub_C91A:
 C - - - - - 0x01C92A 07:C91A: A9 00     LDA #$00    ; con_hud_kick_off
 C - - - - - 0x01C92C 07:C91C: 8D F8 05  STA ram_содержимое_hud
 C - - - - - 0x01C92F 07:C91F: 8D FD 05  STA ram_сила_ветра
-C - - - - - 0x01C932 07:C922: 8D FF 05  STA ram_spd_X_hi_ветер
-C - - - - - 0x01C935 07:C925: 8D 00 06  STA ram_spd_X_lo_ветер
-C - - - - - 0x01C938 07:C928: 8D 01 06  STA ram_spd_Y_hi_ветер
-C - - - - - 0x01C93B 07:C92B: 8D 02 06  STA ram_spd_Y_lo_ветер
+C - - - - - 0x01C932 07:C922: 8D FF 05  STA ram_spd_X_hi_ветра
+C - - - - - 0x01C935 07:C925: 8D 00 06  STA ram_spd_X_lo_ветра
+C - - - - - 0x01C938 07:C928: 8D 01 06  STA ram_spd_Y_hi_ветра
+C - - - - - 0x01C93B 07:C92B: 8D 02 06  STA ram_spd_Y_lo_ветра
 C - - - - - 0x01C93E 07:C92E: A9 FF     LDA #$FF
 C - - - - - 0x01C940 07:C930: 8D F5 05  STA ram_флаг_гола
 C - - - - - 0x01C943 07:C933: 8D FA 05  STA ram_05FA
@@ -1818,7 +1818,7 @@ bra_CAE3:
 bra_CAE8:
 - - - - - - 0x01CAF8 07:CAE8: A9 82     LDA #$82
 loc_CAEA:
-C D 2 - - - 0x01CAFA 07:CAEA: 8D 30 06  STA ram_X_hi_ударная_позиция_ботов + 4
+C D 2 - - - 0x01CAFA 07:CAEA: 8D 30 06  STA ram_pos_X_hi_точка_удара_бота + 4
 C - - - - - 0x01CAFD 07:CAED: 60        RTS
 
 

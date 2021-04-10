@@ -4153,10 +4153,10 @@ C - - - - - 0x019C95 06:9C85: 29 20     AND #con_state_20
 C - - - - - 0x019C97 06:9C87: D0 3F     BNE bra_9CC8_RTS
 C - - - - - 0x019C99 06:9C89: AD 0D 05  LDA ram_таймер_мокрого_мяча
 C - - - - - 0x019C9C 06:9C8C: 10 0C     BPL bra_9CA2_мяч_не_максимально_мокрый
-C - - - - - 0x019C9E 06:9C8E: 0E 00 06  ASL ram_spd_X_lo_ветер   ; вдвое усилить влияние силы ветра на физику мяча
-C - - - - - 0x019CA1 06:9C91: 2E FF 05  ROL ram_spd_X_hi_ветер
-C - - - - - 0x019CA4 06:9C94: 0E 02 06  ASL ram_spd_Y_lo_ветер
-C - - - - - 0x019CA7 06:9C97: 2E 01 06  ROL ram_spd_Y_hi_ветер
+C - - - - - 0x019C9E 06:9C8E: 0E 00 06  ASL ram_spd_X_lo_ветра   ; вдвое усилить влияние силы ветра на физику мяча
+C - - - - - 0x019CA1 06:9C91: 2E FF 05  ROL ram_spd_X_hi_ветра
+C - - - - - 0x019CA4 06:9C94: 0E 02 06  ASL ram_spd_Y_lo_ветра
+C - - - - - 0x019CA7 06:9C97: 2E 01 06  ROL ram_spd_Y_hi_ветра
 C - - - - - 0x019CAA 06:9C9A: 4C A2 9C  JMP loc_9CA2_учесть_ветер
 bra_9C9D_это_не_мяч:
 C - - - - - 0x019CAD 06:9C9D: BD 86 04  LDA ram_состояние_игрока,X
@@ -4165,17 +4165,17 @@ bra_9CA2_мяч_не_максимально_мокрый:
 loc_9CA2_учесть_ветер:
 C D 0 - - - 0x019CB2 06:9CA2: 18        CLC
 C - - - - - 0x019CB3 06:9CA3: BD E8 03  LDA ram_spd_X_lo_игрока,X
-C - - - - - 0x019CB6 06:9CA6: 6D 00 06  ADC ram_spd_X_lo_ветер
+C - - - - - 0x019CB6 06:9CA6: 6D 00 06  ADC ram_spd_X_lo_ветра
 C - - - - - 0x019CB9 06:9CA9: 9D E8 03  STA ram_spd_X_lo_игрока,X
 C - - - - - 0x019CBC 06:9CAC: BD F6 03  LDA ram_spd_X_hi_игрока,X
-C - - - - - 0x019CBF 06:9CAF: 6D FF 05  ADC ram_spd_X_hi_ветер
+C - - - - - 0x019CBF 06:9CAF: 6D FF 05  ADC ram_spd_X_hi_ветра
 C - - - - - 0x019CC2 06:9CB2: 9D F6 03  STA ram_spd_X_hi_игрока,X
 C - - - - - 0x019CC5 06:9CB5: 18        CLC
 C - - - - - 0x019CC6 06:9CB6: BD 04 04  LDA ram_spd_Y_lo_игрока,X
-C - - - - - 0x019CC9 06:9CB9: 6D 02 06  ADC ram_spd_Y_lo_ветер
+C - - - - - 0x019CC9 06:9CB9: 6D 02 06  ADC ram_spd_Y_lo_ветра
 C - - - - - 0x019CCC 06:9CBC: 9D 04 04  STA ram_spd_Y_lo_игрока,X
 C - - - - - 0x019CCF 06:9CBF: BD 12 04  LDA ram_spd_Y_hi_игрока,X
-C - - - - - 0x019CD2 06:9CC2: 6D 01 06  ADC ram_spd_Y_hi_ветер
+C - - - - - 0x019CD2 06:9CC2: 6D 01 06  ADC ram_spd_Y_hi_ветра
 C - - - - - 0x019CD5 06:9CC5: 9D 12 04  STA ram_spd_Y_hi_игрока,X
 bra_9CC8_RTS:
 C D 0 - - - 0x019CD8 06:9CC8: 60        RTS

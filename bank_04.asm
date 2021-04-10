@@ -12116,10 +12116,10 @@ C - - - - - 0x013352 04:B342: 85 2E     STA ram_002E
 C - - - - - 0x013354 04:B344: B9 95 B4  LDA tbl_B492 + 3,Y
 C - - - - - 0x013357 04:B347: 85 2F     STA ram_002F
 C - - - - - 0x013359 04:B349: A9 00     LDA #$00
-C - - - - - 0x01335B 04:B34B: 8D 00 06  STA ram_spd_X_lo_ветер
-C - - - - - 0x01335E 04:B34E: 8D FF 05  STA ram_spd_X_hi_ветер
-C - - - - - 0x013361 04:B351: 8D 02 06  STA ram_spd_Y_lo_ветер
-C - - - - - 0x013364 04:B354: 8D 01 06  STA ram_spd_Y_hi_ветер
+C - - - - - 0x01335B 04:B34B: 8D 00 06  STA ram_spd_X_lo_ветра
+C - - - - - 0x01335E 04:B34E: 8D FF 05  STA ram_spd_X_hi_ветра
+C - - - - - 0x013361 04:B351: 8D 02 06  STA ram_spd_Y_lo_ветра
+C - - - - - 0x013364 04:B354: 8D 01 06  STA ram_spd_Y_hi_ветра
 C - - - - - 0x013367 04:B357: AD FD 05  LDA ram_сила_ветра
 C - - - - - 0x01336A 04:B35A: F0 3A     BEQ bra_B396_ветер_не_дует
 C - - - - - 0x01336C 04:B35C: 85 1C     STA ram_001C
@@ -12128,18 +12128,18 @@ C - - - - - 0x01336E 04:B35E: 06 1C     ASL ram_001C
 C - - - - - 0x013370 04:B360: 90 22     BCC bra_B384
 C - - - - - 0x013372 04:B362: 18        CLC
 C - - - - - 0x013373 04:B363: A5 2C     LDA ram_002C
-C - - - - - 0x013375 04:B365: 6D 00 06  ADC ram_spd_X_lo_ветер
-C - - - - - 0x013378 04:B368: 8D 00 06  STA ram_spd_X_lo_ветер
+C - - - - - 0x013375 04:B365: 6D 00 06  ADC ram_spd_X_lo_ветра
+C - - - - - 0x013378 04:B368: 8D 00 06  STA ram_spd_X_lo_ветра
 C - - - - - 0x01337B 04:B36B: A5 2D     LDA ram_002D
-C - - - - - 0x01337D 04:B36D: 6D FF 05  ADC ram_spd_X_hi_ветер
-C - - - - - 0x013380 04:B370: 8D FF 05  STA ram_spd_X_hi_ветер
+C - - - - - 0x01337D 04:B36D: 6D FF 05  ADC ram_spd_X_hi_ветра
+C - - - - - 0x013380 04:B370: 8D FF 05  STA ram_spd_X_hi_ветра
 C - - - - - 0x013383 04:B373: 18        CLC
 C - - - - - 0x013384 04:B374: A5 2E     LDA ram_002E
-C - - - - - 0x013386 04:B376: 6D 02 06  ADC ram_spd_Y_lo_ветер
-C - - - - - 0x013389 04:B379: 8D 02 06  STA ram_spd_Y_lo_ветер
+C - - - - - 0x013386 04:B376: 6D 02 06  ADC ram_spd_Y_lo_ветра
+C - - - - - 0x013389 04:B379: 8D 02 06  STA ram_spd_Y_lo_ветра
 C - - - - - 0x01338C 04:B37C: A5 2F     LDA ram_002F
-C - - - - - 0x01338E 04:B37E: 6D 01 06  ADC ram_spd_Y_hi_ветер
-C - - - - - 0x013391 04:B381: 8D 01 06  STA ram_spd_Y_hi_ветер
+C - - - - - 0x01338E 04:B37E: 6D 01 06  ADC ram_spd_Y_hi_ветра
+C - - - - - 0x013391 04:B381: 8D 01 06  STA ram_spd_Y_hi_ветра
 bra_B384:
 C - - - - - 0x013394 04:B384: A5 2D     LDA ram_002D
 C - - - - - 0x013396 04:B386: 0A        ASL
