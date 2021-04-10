@@ -14719,10 +14719,8 @@ C - - - - - 0x003C8A 00:BC7A: 05 1C     ORA ram_001C
 C - - - - - 0x003C8C 00:BC7C: 9D 50 06  STA ram_позиция_управление,X
 C - - - - - 0x003C8F 00:BC7F: CA        DEX
 C - - - - - 0x003C90 00:BC80: 10 E8     BPL bra_BC6A_loop
-C - - - - - 0x003C92 00:BC82: A9 00     LDA #$00
-C - - - - - 0x003C94 00:BC84: 8D 8E 06  STA ram_068E
 C - - - - - 0x003C97 00:BC87: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
-C - - - - - 0x003C9A 00:BC8A: 8D 8F 06  STA ram_068F
+C - - - - - 0x003C9A 00:BC8A: 8D 8F 06  STA ram_rng_байт_pos_удара_бота_пк
 C - - - - - 0x003C9D 00:BC8D: AD F8 BD  LDA tbl_BDF8
 C - - - - - 0x003CA0 00:BC90: 85 2E     STA ram_002E
 C - - - - - 0x003CA2 00:BC92: AD F9 BD  LDA tbl_BDF8 + 1

@@ -1818,7 +1818,7 @@ bra_CAE3:
 bra_CAE8:
 - - - - - - 0x01CAF8 07:CAE8: A9 82     LDA #$82
 loc_CAEA:
-C D 2 - - - 0x01CAFA 07:CAEA: 8D 30 06  STA ram_062C + 4
+C D 2 - - - 0x01CAFA 07:CAEA: 8D 30 06  STA ram_X_hi_ударная_позиция_ботов + 4
 C - - - - - 0x01CAFD 07:CAED: 60        RTS
 
 
