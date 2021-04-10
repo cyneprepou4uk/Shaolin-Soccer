@@ -333,9 +333,9 @@ C - - - - - 0x00C233 03:8223: B5 2C     LDA ram_002C,X
 C - - - - - 0x00C235 03:8225: A8        TAY
 C - - - - - 0x00C236 03:8226: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x00C239 03:8229: 29 7F     AND #$7F
-C - - - - - 0x00C23B 03:822B: C9 04     CMP #con_action_04
+C - - - - - 0x00C23B 03:822B: C9 04     CMP #con_action_лежит_на_спине
 C - - - - - 0x00C23D 03:822D: F0 13     BEQ bra_8242
-C - - - - - 0x00C23F 03:822F: C9 05     CMP #con_action_05
+C - - - - - 0x00C23F 03:822F: C9 05     CMP #con_action_лежит_на_животе
 C - - - - - 0x00C241 03:8231: F0 0F     BEQ bra_8242
 C - - - - - 0x00C243 03:8233: C9 2D     CMP #con_action_2D
 C - - - - - 0x00C245 03:8235: F0 0B     BEQ bra_8242
@@ -587,12 +587,12 @@ loc_83B1:
 ofs_83B1_00:
 C D 0 J - - 0x00C3C1 03:83B1: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00C3C4 03:83B4: 29 7F     AND #$7F
-C - - - - - 0x00C3C6 03:83B6: C9 21     CMP #con_action_21
+C - - - - - 0x00C3C6 03:83B6: C9 21     CMP #con_action_бег
 C - - - - - 0x00C3C8 03:83B8: D0 05     BNE bra_83BF
 C - - - - - 0x00C3CA 03:83BA: A9 0F     LDA #con_action_0F
 C - - - - - 0x00C3CC 03:83BC: 4C C1 83  JMP loc_83C1_запись_действия
 bra_83BF:
-C - - - - - 0x00C3CF 03:83BF: A9 01     LDA #con_action_01
+C - - - - - 0x00C3CF 03:83BF: A9 01     LDA #con_action_стоит_на_месте
 loc_83C1_запись_действия:
 C D 0 - - - 0x00C3D1 03:83C1: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00C3D4 03:83C4: A9 FF     LDA #$FF
@@ -787,7 +787,7 @@ C - - - - - 0x00C52B 03:851B: 60        RTS
 bra_851C_не_в_воздухе:
 C - - - - - 0x00C52C 03:851C: 4C 57 9B  JMP loc_9B57
 bra_851F_не_в_воздухе:
-C - - - - - 0x00C52F 03:851F: A9 23     LDA #con_action_23
+C - - - - - 0x00C52F 03:851F: A9 23     LDA #con_action_подкат
 C - - - - - 0x00C531 03:8521: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00C534 03:8524: 60        RTS
 
@@ -857,13 +857,13 @@ C - - - - - 0x00C5A2 03:8592: 10 0E     BPL bra_85A2_не_в_воздухе
 bra_8594:
 C - - - - - 0x00C5A4 03:8594: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x00C5A7 03:8597: 10 06     BPL bra_859F    ; если не в воздухе
-C - - - - - 0x00C5A9 03:8599: A9 3B     LDA #con_action_3B
+C - - - - - 0x00C5A9 03:8599: A9 3B     LDA #con_action_локоть_в_прыжке
 C - - - - - 0x00C5AB 03:859B: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00C5AE 03:859E: 60        RTS
 bra_859F:
 C - - - - - 0x00C5AF 03:859F: 4C 57 9B  JMP loc_9B57
 bra_85A2_не_в_воздухе:
-C - - - - - 0x00C5B2 03:85A2: A9 22     LDA #con_action_22
+C - - - - - 0x00C5B2 03:85A2: A9 22     LDA #con_action_удар_локтем
 C - - - - - 0x00C5B4 03:85A4: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00C5B7 03:85A7: 60        RTS
 
@@ -913,7 +913,7 @@ C - - - - - 0x00C5F5 03:85E5: A9 00     LDA #$00
 C - - - - - 0x00C5F7 03:85E7: 85 1E     STA ram_001E
 C - - - - - 0x00C5F9 03:85E9: 85 1F     STA ram_001F
 C - - - - - 0x00C5FB 03:85EB: 20 75 B1  JSR sub_B175
-C - - - - - 0x00C5FE 03:85EE: A9 30     LDA #con_action_30
+C - - - - - 0x00C5FE 03:85EE: A9 30     LDA #con_action_прыжок_обычный
 C - - - - - 0x00C600 03:85F0: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00C603 03:85F3: 60        RTS
 bra_85F4:
@@ -1047,7 +1047,7 @@ C - - - - - 0x00C6E6 03:86D6: B0 0D     BCS bra_86E5_RTS
 C - - - - - 0x00C6E8 03:86D8: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x00C6EB 03:86DB: 29 E0     AND #$E0
 C - - - - - 0x00C6ED 03:86DD: 9D B0 04  STA ram_смена_угла_движения,X
-C - - - - - 0x00C6F0 03:86E0: A9 20     LDA #con_action_20
+C - - - - - 0x00C6F0 03:86E0: A9 20     LDA #con_action_ходьба_пешком
 C - - - - - 0x00C6F2 03:86E2: 9D 79 04  STA ram_next_действие_игрока,X
 bra_86E5_RTS:
 C - - - - - 0x00C6F5 03:86E5: 60        RTS
@@ -1396,7 +1396,7 @@ C - - - - - 0x00C902 03:88F2: 10 0C     BPL bra_8900_RTS
 - - - - - - 0x00C904 03:88F4: BD 86 03  LDA ram_pos_Z_lo_игрока,X
 - - - - - - 0x00C907 03:88F7: C9 FB     CMP #$FB
 - - - - - - 0x00C909 03:88F9: B0 05     BCS bra_8900_RTS
-- - - - - - 0x00C90B 03:88FB: A9 30     LDA #con_action_30
+- - - - - - 0x00C90B 03:88FB: A9 30     LDA #con_action_прыжок_обычный
 - - - - - - 0x00C90D 03:88FD: 9D 79 04  STA ram_next_действие_игрока,X
 bra_8900_RTS:
 C - - - - - 0x00C910 03:8900: 60        RTS
@@ -1746,7 +1746,7 @@ C - - - - - 0x00CA78 03:8A68: 9D B0 04  STA ram_смена_угла_движен
 C - - - - - 0x00CA7B 03:8A6B: BD FD 04  LDA ram_защита_поведение,X
 C - - - - - 0x00CA7E 03:8A6E: C9 80     CMP #$80
 C - - - - - 0x00CA80 03:8A70: B0 05     BCS bra_8A77
-C - - - - - 0x00CA82 03:8A72: A9 52     LDA #con_action_52
+C - - - - - 0x00CA82 03:8A72: A9 52     LDA #con_action_прыжок_кипера
 C - - - - - 0x00CA84 03:8A74: 4C 79 8A  JMP loc_8A79_запись_действия
 bra_8A77:
 C - - - - - 0x00CA87 03:8A77: A9 54     LDA #con_action_54
@@ -2187,7 +2187,7 @@ C - - - - - 0x00CD6E 03:8D5E: 29 60     AND #$60
 C - - - - - 0x00CD70 03:8D60: D0 27     BNE bra_8D89
 C - - - - - 0x00CD72 03:8D62: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00CD75 03:8D65: 29 7F     AND #$7F
-C - - - - - 0x00CD77 03:8D67: C9 21     CMP #con_action_21
+C - - - - - 0x00CD77 03:8D67: C9 21     CMP #con_action_бег
 C - - - - - 0x00CD79 03:8D69: D0 05     BNE bra_8D70
 C - - - - - 0x00CD7B 03:8D6B: A9 0F     LDA #con_action_0F
 C - - - - - 0x00CD7D 03:8D6D: 4C 85 8D  JMP loc_8D85_запись_действия
@@ -2198,10 +2198,10 @@ C - - - - - 0x00CD85 03:8D75: F0 0C     BEQ bra_8D83
 - - - - - - 0x00CD87 03:8D77: BD 86 03  LDA ram_pos_Z_lo_игрока,X
 - - - - - - 0x00CD8A 03:8D7A: C9 F0     CMP #$F0
 - - - - - - 0x00CD8C 03:8D7C: B0 05     BCS bra_8D83
-- - - - - - 0x00CD8E 03:8D7E: A9 30     LDA #con_action_30
+- - - - - - 0x00CD8E 03:8D7E: A9 30     LDA #con_action_прыжок_обычный
 - - - - - - 0x00CD90 03:8D80: 4C 85 8D  JMP loc_8D85_запись_действия
 bra_8D83:
-C - - - - - 0x00CD93 03:8D83: A9 20     LDA #con_action_20
+C - - - - - 0x00CD93 03:8D83: A9 20     LDA #con_action_ходьба_пешком
 loc_8D85_запись_действия:
 C D 0 - - - 0x00CD95 03:8D85: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00CD98 03:8D88: 60        RTS
@@ -2212,10 +2212,10 @@ C - - - - - 0x00CD9E 03:8D8E: F0 0C     BEQ bra_8D9C
 - - - - - - 0x00CDA0 03:8D90: BD 86 03  LDA ram_pos_Z_lo_игрока,X
 - - - - - - 0x00CDA3 03:8D93: C9 F0     CMP #$F0
 - - - - - - 0x00CDA5 03:8D95: B0 05     BCS bra_8D9C
-- - - - - - 0x00CDA7 03:8D97: A9 30     LDA #con_action_30
+- - - - - - 0x00CDA7 03:8D97: A9 30     LDA #con_action_прыжок_обычный
 - - - - - - 0x00CDA9 03:8D99: 4C 9E 8D  JMP loc_8D9E_запись_действия
 bra_8D9C:
-C - - - - - 0x00CDAC 03:8D9C: A9 21     LDA #con_action_21
+C - - - - - 0x00CDAC 03:8D9C: A9 21     LDA #con_action_бег
 loc_8D9E_запись_действия:   ; bzk опт
 C - - - - - 0x00CDAE 03:8D9E: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00CDB1 03:8DA1: 60        RTS
@@ -2516,7 +2516,7 @@ ofs_8F0C_00:
 ofs_8F0C_07:
 ofs_8F0C_08:
 ofs_8F0C_06:
-- - - - - - 0x00CF1C 03:8F0C: A9 0D     LDA #con_action_0D
+- - - - - - 0x00CF1C 03:8F0C: A9 0D     LDA #con_action_чеканка_коленом
 - - - - - - 0x00CF1E 03:8F0E: 9D 79 04  STA ram_next_действие_игрока,X
 - - - - - - 0x00CF21 03:8F11: 60        RTS
 
@@ -2540,7 +2540,7 @@ C - - - - - 0x00CF31 03:8F21: C9 FF     CMP #$FF
 C - - - - - 0x00CF33 03:8F23: D0 03     BNE bra_8F28
 - - - - - - 0x00CF35 03:8F25: 4C B5 8E  JMP loc_8EB5
 bra_8F28:
-C - - - - - 0x00CF38 03:8F28: A9 30     LDA #con_action_30
+C - - - - - 0x00CF38 03:8F28: A9 30     LDA #con_action_прыжок_обычный
 loc_8F2A_запись_действия:   ; bzk опт
 C - - - - - 0x00CF3A 03:8F2A: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00CF3D 03:8F2D: 60        RTS
@@ -2583,7 +2583,7 @@ bra_8F58:
 - - - - - - 0x00CF6F 03:8F5F: A9 10     LDA #con_action_10
 - - - - - - 0x00CF71 03:8F61: 4C 66 8F  JMP loc_8F66_запись_действия
 bra_8F64:
-- - - - - - 0x00CF74 03:8F64: A9 30     LDA #con_action_30
+- - - - - - 0x00CF74 03:8F64: A9 30     LDA #con_action_прыжок_обычный
 loc_8F66_запись_действия:   ; bzk опт
 - - - - - - 0x00CF76 03:8F66: 9D 79 04  STA ram_next_действие_игрока,X
 - - - - - - 0x00CF79 03:8F69: 60        RTS
@@ -2642,7 +2642,7 @@ ofs_8FAB_10:
 - - - - - - 0x00CFBE 03:8FAE: A8        TAY
 - - - - - - 0x00CFBF 03:8FAF: B9 7C 06  LDA ram_067C,Y
 - - - - - - 0x00CFC2 03:8FB2: 9D B0 04  STA ram_смена_угла_движения,X
-- - - - - - 0x00CFC5 03:8FB5: A9 20     LDA #con_action_20
+- - - - - - 0x00CFC5 03:8FB5: A9 20     LDA #con_action_ходьба_пешком
 - - - - - - 0x00CFC7 03:8FB7: 9D 79 04  STA ram_next_действие_игрока,X
 - - - - - - 0x00CFCA 03:8FBA: 60        RTS
 
@@ -2693,9 +2693,9 @@ C - - - - - 0x00D010 03:9000: A8        TAY
 C - - - - - 0x00D011 03:9001: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x00D014 03:9004: A4 44     LDY ram_0044
 C - - - - - 0x00D016 03:9006: 29 7F     AND #$7F
-C - - - - - 0x00D018 03:9008: C9 04     CMP #con_action_04
+C - - - - - 0x00D018 03:9008: C9 04     CMP #con_action_лежит_на_спине
 C - - - - - 0x00D01A 03:900A: F0 13     BEQ bra_901F
-C - - - - - 0x00D01C 03:900C: C9 05     CMP #con_action_05
+C - - - - - 0x00D01C 03:900C: C9 05     CMP #con_action_лежит_на_животе
 C - - - - - 0x00D01E 03:900E: F0 0F     BEQ bra_901F
 C - - - - - 0x00D020 03:9010: C9 2D     CMP #con_action_2D
 C - - - - - 0x00D022 03:9012: F0 0B     BEQ bra_901F
@@ -3114,7 +3114,7 @@ C - - - - - 0x00D27E 03:926E: 29 04     AND #$04
 C - - - - - 0x00D280 03:9270: F0 0C     BEQ bra_927E
 C - - - - - 0x00D282 03:9272: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D285 03:9275: 29 7F     AND #$7F
-C - - - - - 0x00D287 03:9277: C9 21     CMP #con_action_21
+C - - - - - 0x00D287 03:9277: C9 21     CMP #con_action_бег
 C - - - - - 0x00D289 03:9279: D0 03     BNE bra_927E
 C - - - - - 0x00D28B 03:927B: 4C AD 92  JMP loc_92AD
 bra_927E:
@@ -3178,7 +3178,7 @@ C - - - - - 0x00D2EF 03:92DF: F0 05     BEQ bra_92E6
 C - - - - - 0x00D2F1 03:92E1: A9 10     LDA #con_action_10
 C - - - - - 0x00D2F3 03:92E3: 4C E8 92  JMP loc_92E8_запись_действия
 bra_92E6:
-C - - - - - 0x00D2F6 03:92E6: A9 30     LDA #con_action_30
+C - - - - - 0x00D2F6 03:92E6: A9 30     LDA #con_action_прыжок_обычный
 loc_92E8_запись_действия:   ; bzk опт
 C D 0 - - - 0x00D2F8 03:92E8: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00D2FB 03:92EB: 60        RTS
@@ -3243,7 +3243,7 @@ C - - - - - 0x00D36E 03:935E: F0 08     BEQ bra_9368
 - - - - - - 0x00D373 03:9363: F0 03     BEQ bra_9368
 - - - - - - 0x00D375 03:9365: 4C 57 9B  JMP loc_9B57
 bra_9368:
-C - - - - - 0x00D378 03:9368: A9 30     LDA #con_action_30
+C - - - - - 0x00D378 03:9368: A9 30     LDA #con_action_прыжок_обычный
 C - - - - - 0x00D37A 03:936A: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00D37D 03:936D: 60        RTS
 
@@ -3408,7 +3408,7 @@ C - - - - - 0x00D48F 03:947F: F0 08     BEQ bra_9489
 - - - - - - 0x00D494 03:9484: F0 03     BEQ bra_9489
 - - - - - - 0x00D496 03:9486: 4C 57 9B  JMP loc_9B57
 bra_9489:
-C - - - - - 0x00D499 03:9489: A9 30     LDA #con_action_30
+C - - - - - 0x00D499 03:9489: A9 30     LDA #con_action_прыжок_обычный
 C - - - - - 0x00D49B 03:948B: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00D49E 03:948E: 60        RTS
 
@@ -3428,7 +3428,7 @@ C - - - - - 0x00D4A4 03:9494: 29 01     AND #$01
 C - - - - - 0x00D4A6 03:9496: A8        TAY
 C - - - - - 0x00D4A7 03:9497: B9 A3 94  LDA tbl_94A3,Y
 C - - - - - 0x00D4AA 03:949A: 9D B0 04  STA ram_смена_угла_движения,X
-C - - - - - 0x00D4AD 03:949D: A9 21     LDA #con_action_21
+C - - - - - 0x00D4AD 03:949D: A9 21     LDA #con_action_бег
 C - - - - - 0x00D4AF 03:949F: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00D4B2 03:94A2: 60        RTS
 
@@ -3466,9 +3466,9 @@ C - - - - - 0x00D4E8 03:94D8: 29 01     AND #$01
 C - - - - - 0x00D4EA 03:94DA: A8        TAY
 C - - - - - 0x00D4EB 03:94DB: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x00D4EE 03:94DE: 29 7F     AND #$7F
-C - - - - - 0x00D4F0 03:94E0: C9 04     CMP #con_action_04
+C - - - - - 0x00D4F0 03:94E0: C9 04     CMP #con_action_лежит_на_спине
 C - - - - - 0x00D4F2 03:94E2: F0 2E     BEQ bra_9512
-C - - - - - 0x00D4F4 03:94E4: C9 05     CMP #con_action_05
+C - - - - - 0x00D4F4 03:94E4: C9 05     CMP #con_action_лежит_на_животе
 C - - - - - 0x00D4F6 03:94E6: F0 2A     BEQ bra_9512
 C - - - - - 0x00D4F8 03:94E8: C9 02     CMP #con_action_02
 C - - - - - 0x00D4FA 03:94EA: F0 26     BEQ bra_9512
@@ -3492,14 +3492,14 @@ C - - - - - 0x00D51C 03:950C: 09 10     ORA #$10
 C - - - - - 0x00D51E 03:950E: 9D 74 06  STA ram_номер_ближайшего,X
 C - - - - - 0x00D521 03:9511: 60        RTS
 bra_9512:
-C - - - - - 0x00D522 03:9512: A9 01     LDA #con_action_01
+C - - - - - 0x00D522 03:9512: A9 01     LDA #con_action_стоит_на_месте
 C - - - - - 0x00D524 03:9514: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00D527 03:9517: 60        RTS
 bra_9518:
 C - - - - - 0x00D528 03:9518: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x00D52B 03:951B: 29 08     AND #con_state_бег_спринт
 C - - - - - 0x00D52D 03:951D: D0 06     BNE bra_9525_бежит
-C - - - - - 0x00D52F 03:951F: A9 20     LDA #con_action_20
+C - - - - - 0x00D52F 03:951F: A9 20     LDA #con_action_ходьба_пешком
 C - - - - - 0x00D531 03:9521: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00D534 03:9524: 60        RTS
 bra_9525_бежит:
@@ -3864,17 +3864,17 @@ C - - - - - 0x00D7CF 03:97BF: 4C DF 97  JMP loc_97DF_нет_направлени
 bra_97C2_есть_направление_движения:
 C - - - - - 0x00D7D2 03:97C2: 29 70     AND #$70    ; фильтр движения налево
 C - - - - - 0x00D7D4 03:97C4: F0 0A     BEQ bra_97D0_движение_не_налево
-C - - - - - 0x00D7D6 03:97C6: A9 21     LDA #con_action_21  ; lda #бег
+C - - - - - 0x00D7D6 03:97C6: A9 21     LDA #con_action_бег  ; lda #бег
 C - - - - - 0x00D7D8 03:97C8: 4C DB 97  BNE bra_97DB_запись_действия
 bra_97D0_движение_не_налево:
 C - - - - - 0x00D7E0 03:97D0: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D7E3 03:97D3: 29 7F     AND #$7F
-C - - - - - 0x00D7E5 03:97D5: C9 21     CMP #con_action_21  ; cmp #бег
+C - - - - - 0x00D7E5 03:97D5: C9 21     CMP #con_action_бег  ; cmp #бег
 C - - - - - 0x00D7E7 03:97D7: D0 F2     BEQ bra_97CB_если_бег
 - - - - - - 0x00D7DB 03:97CB: A9 0F     LDA #con_action_0F  ; lda #спотыкаться
 - - - - - - 0x00D7DD 03:97CD: 4C DB 97  BNE bra_97DB_запись_действия
 bra_97CB_если_бег:
-C - - - - - 0x00D7E9 03:97D9: A9 20     LDA #con_action_20  ; lda #ходить пешком
+C - - - - - 0x00D7E9 03:97D9: A9 20     LDA #con_action_ходьба_пешком  ; lda #ходить пешком
 bra_97DB_запись_действия:   ; bzk опт
 C D 0 - - - 0x00D7EB 03:97DB: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00D7EE 03:97DE: 60        RTS
@@ -3888,7 +3888,7 @@ C - - - - - 0x00D806 03:97F6: C9 02     CMP #$02
 C - - - - - 0x00D808 03:97F8: F0 0D     BEQ bra_9807_подкидывает_мяч_вверх_коленом
 C - - - - - 0x00D80A 03:97FA: 4C 0C 98  JMP loc_980C_удар_по_мячу_с_земли_если_владеешь
 bra_97FD_обычный_прыжок:
-C - - - - - 0x00D80D 03:97FD: A9 30     LDA #con_action_30  ; lda #прыжок
+C - - - - - 0x00D80D 03:97FD: A9 30     LDA #con_action_прыжок_обычный  ; lda #прыжок
 C - - - - - 0x00D80F 03:97FF: 4C 0E 98  JMP loc_980E_запись_действия
 bra_9802_подкидывает_мяч_через_себя:
 C - - - - - 0x00D812 03:9802: A9 10     LDA #con_action_10  ; lda #подкидывает мяч через себя
@@ -3981,7 +3981,7 @@ C - - - - - 0x00D87A 03:986A: 85 1E     STA ram_001E
 C - - - - - 0x00D87C 03:986C: 85 1F     STA ram_001F
 C - - - - - 0x00D87E 03:986E: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D881 03:9871: 29 7F     AND #$7F
-C - - - - - 0x00D883 03:9873: C9 21     CMP #con_action_21
+C - - - - - 0x00D883 03:9873: C9 21     CMP #con_action_бег
 C - - - - - 0x00D885 03:9875: F0 02     BEQ bra_9879
 C - - - - - 0x00D887 03:9877: 46 1F     LSR ram_001F
 bra_9879:
@@ -3991,14 +3991,14 @@ C - - - - - 0x00D88F 03:987F: C9 FF     CMP #$FF
 C - - - - - 0x00D891 03:9881: D0 13     BNE bra_9896
 C - - - - - 0x00D893 03:9883: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D896 03:9886: 29 7F     AND #$7F
-C - - - - - 0x00D898 03:9888: C9 21     CMP #con_action_21
+C - - - - - 0x00D898 03:9888: C9 21     CMP #con_action_бег
 C - - - - - 0x00D89A 03:988A: D0 05     BNE bra_9891
 bra_988C:
 loc_988C:
 C D 0 - - - 0x00D89C 03:988C: A9 0F     LDA #con_action_0F
 C - - - - - 0x00D89E 03:988E: 4C CC 98  JMP loc_98CC_запись_действия
 bra_9891:
-C - - - - - 0x00D8A1 03:9891: A9 01     LDA #con_action_01
+C - - - - - 0x00D8A1 03:9891: A9 01     LDA #con_action_стоит_на_месте
 C - - - - - 0x00D8A3 03:9893: 4C CC 98  JMP loc_98CC_запись_действия
 bra_9896:
 C - - - - - 0x00D8A6 03:9896: BD B0 04  LDA ram_смена_угла_движения,X
@@ -4008,14 +4008,14 @@ C - - - - - 0x00D8AD 03:989D: A5 29     LDA ram_0029
 C - - - - - 0x00D8AF 03:989F: 30 20     BMI bra_98C1
 C - - - - - 0x00D8B1 03:98A1: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D8B4 03:98A4: 29 7F     AND #$7F
-C - - - - - 0x00D8B6 03:98A6: C9 21     CMP #con_action_21
+C - - - - - 0x00D8B6 03:98A6: C9 21     CMP #con_action_бег
 C - - - - - 0x00D8B8 03:98A8: F0 0E     BEQ bra_98B8
 C - - - - - 0x00D8BA 03:98AA: A5 2A     LDA ram_002A
 C - - - - - 0x00D8BC 03:98AC: C9 20     CMP #$20
 C - - - - - 0x00D8BE 03:98AE: B0 03     BCS bra_98B3
 C - - - - - 0x00D8C0 03:98B0: 4C C1 98  JMP loc_98C1
 bra_98B3:
-C - - - - - 0x00D8C3 03:98B3: A9 21     LDA #con_action_21
+C - - - - - 0x00D8C3 03:98B3: A9 21     LDA #con_action_бег
 C - - - - - 0x00D8C5 03:98B5: 4C CC 98  JMP loc_98CC_запись_действия
 bra_98B8:
 C - - - - - 0x00D8C8 03:98B8: A5 2A     LDA ram_002A
@@ -4026,9 +4026,9 @@ bra_98C1:
 loc_98C1:
 C D 0 - - - 0x00D8D1 03:98C1: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D8D4 03:98C4: 29 7F     AND #$7F
-C - - - - - 0x00D8D6 03:98C6: C9 21     CMP #con_action_21
+C - - - - - 0x00D8D6 03:98C6: C9 21     CMP #con_action_бег
 C - - - - - 0x00D8D8 03:98C8: F0 C2     BEQ bra_988C
-C - - - - - 0x00D8DA 03:98CA: A9 20     LDA #con_action_20
+C - - - - - 0x00D8DA 03:98CA: A9 20     LDA #con_action_ходьба_пешком
 loc_98CC_запись_действия:   ; bzk опт
 C D 0 - - - 0x00D8DC 03:98CC: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00D8DF 03:98CF: 60        RTS
@@ -4419,17 +4419,17 @@ loc_9B57:
 C D 0 - - - 0x00DB67 03:9B57: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x00DB6A 03:9B5A: DD 96 04  CMP ram_угол_движения,X
 C - - - - - 0x00DB6D 03:9B5D: D0 06     BNE bra_9B65
-C - - - - - 0x00DB6F 03:9B5F: A9 30     LDA #con_action_30
+C - - - - - 0x00DB6F 03:9B5F: A9 30     LDA #con_action_прыжок_обычный
 C - - - - - 0x00DB71 03:9B61: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00DB74 03:9B64: 60        RTS
 bra_9B65:
 C - - - - - 0x00DB75 03:9B65: 29 70     AND #$70
 C - - - - - 0x00DB77 03:9B67: F0 06     BEQ bra_9B6F
-C - - - - - 0x00DB79 03:9B69: A9 21     LDA #con_action_21
+C - - - - - 0x00DB79 03:9B69: A9 21     LDA #con_action_бег
 C - - - - - 0x00DB7B 03:9B6B: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00DB7E 03:9B6E: 60        RTS
 bra_9B6F:
-C - - - - - 0x00DB7F 03:9B6F: A9 20     LDA #con_action_20
+C - - - - - 0x00DB7F 03:9B6F: A9 20     LDA #con_action_ходьба_пешком
 C - - - - - 0x00DB81 03:9B71: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00DB84 03:9B74: 60        RTS
 
@@ -10858,11 +10858,11 @@ C - - - - - 0x00FA48 03:BA38: F0 36     BEQ bra_BA70
 C - - - - - 0x00FA4A 03:BA3A: C9 36     CMP #con_action_36
 C - - - - - 0x00FA4C 03:BA3C: F0 32     BEQ bra_BA70
 C - - - - - 0x00FA4E 03:BA3E: C9 3A     CMP #con_action_3A    ; bzk мусор
-C - - - - - 0x00FA50 03:BA40: C9 22     CMP #con_action_22
+C - - - - - 0x00FA50 03:BA40: C9 22     CMP #con_action_удар_локтем
 C - - - - - 0x00FA52 03:BA42: F0 31     BEQ bra_BA75
-C - - - - - 0x00FA54 03:BA44: C9 3B     CMP #con_action_3B
+C - - - - - 0x00FA54 03:BA44: C9 3B     CMP #con_action_локоть_в_прыжке
 C - - - - - 0x00FA56 03:BA46: F0 2D     BEQ bra_BA75
-C - - - - - 0x00FA58 03:BA48: C9 23     CMP #con_action_23
+C - - - - - 0x00FA58 03:BA48: C9 23     CMP #con_action_подкат
 C - - - - - 0x00FA5A 03:BA4A: F0 2E     BEQ bra_BA7A
 C - - - - - 0x00FA5C 03:BA4C: C9 42     CMP #con_action_42
 C - - - - - 0x00FA5E 03:BA4E: F0 2A     BEQ bra_BA7A

@@ -12671,19 +12671,19 @@ C - - - - - 0x0136FB 04:B6EB: D0 1D     BNE bra_B70A
 C - - - - - 0x0136FD 04:B6ED: AD 1D 00  LDA ram_001D
 C - - - - - 0x013700 04:B6F0: 29 0F     AND #$0F
 C - - - - - 0x013702 04:B6F2: D0 05     BNE bra_B6F9
-C - - - - - 0x013704 04:B6F4: A9 01     LDA #con_action_01
+C - - - - - 0x013704 04:B6F4: A9 01     LDA #con_action_стоит_на_месте
 C - - - - - 0x013706 04:B6F6: 4C 0F B7  JMP loc_B70F_запись_действия
 bra_B6F9:
-C - - - - - 0x013709 04:B6F9: A9 20     LDA #con_action_20
+C - - - - - 0x013709 04:B6F9: A9 20     LDA #con_action_ходьба_пешком
 C - - - - - 0x01370B 04:B6FB: 4C 0F B7  JMP loc_B70F_запись_действия
 bra_B6FE:
 C - - - - - 0x01370E 04:B6FE: AD 21 00  LDA ram_0021
 C - - - - - 0x013711 04:B701: 29 0F     AND #$0F
 C - - - - - 0x013713 04:B703: F0 0D     BEQ bra_B712
-C - - - - - 0x013715 04:B705: A9 1D     LDA #con_action_1D
+C - - - - - 0x013715 04:B705: A9 1D     LDA #con_action_спринт
 C - - - - - 0x013717 04:B707: 4C 0F B7  JMP loc_B70F_запись_действия
 bra_B70A:
-C - - - - - 0x01371A 04:B70A: A9 21     LDA #con_action_21
+C - - - - - 0x01371A 04:B70A: A9 21     LDA #con_action_бег
 loc_B70F_запись_действия:   ; bzk опт
 C D 1 - - - 0x01371F 04:B70F: 9D 79 04  STA ram_next_действие_игрока,X
 bra_B712:
@@ -12773,11 +12773,11 @@ off_B775_06:
 - - - - - - 0x01378B 04:B77B: 01 B8     .word off_B801_06_03
 
 off_B77D_00_00:
-- D 1 - I - 0x01378D 04:B77D: 30        .byte con_action_30   ; 00
-- D 1 - I - 0x01378E 04:B77E: 30        .byte con_action_30   ; 01
-- D 1 - I - 0x01378F 04:B77F: 30        .byte con_action_30   ; 02
-- D 1 - I - 0x013790 04:B780: 30        .byte con_action_30   ; 03
-- D 1 - I - 0x013791 04:B781: 0D        .byte con_action_0D   ; 04
+- D 1 - I - 0x01378D 04:B77D: 30        .byte con_action_прыжок_обычный   ; 00
+- D 1 - I - 0x01378E 04:B77E: 30        .byte con_action_прыжок_обычный   ; 01
+- D 1 - I - 0x01378F 04:B77F: 30        .byte con_action_прыжок_обычный   ; 02
+- D 1 - I - 0x013790 04:B780: 30        .byte con_action_прыжок_обычный   ; 03
+- D 1 - I - 0x013791 04:B781: 0D        .byte con_action_чеканка_коленом   ; 04
 - D 1 - I - 0x013792 04:B782: 08        .byte con_action_08   ; 05
 - D 1 - I - 0x013793 04:B783: 08        .byte con_action_08   ; 06
 - D 1 - I - 0x013794 04:B784: 07        .byte con_action_07   ; 07
@@ -12830,10 +12830,10 @@ off_B7A1_02_02:
 
 off_B7AD_02_00:
 - D 1 - I - 0x0137BD 04:B7AD: 10        .byte con_action_10   ; 00
-- D 1 - I - 0x0137BE 04:B7AE: 30        .byte con_action_30   ; 01
-- D 1 - I - 0x0137BF 04:B7AF: 30        .byte con_action_30   ; 02
+- D 1 - I - 0x0137BE 04:B7AE: 30        .byte con_action_прыжок_обычный   ; 01
+- D 1 - I - 0x0137BF 04:B7AF: 30        .byte con_action_прыжок_обычный   ; 02
 - D 1 - I - 0x0137C0 04:B7B0: 0E        .byte con_action_0E   ; 03
-- - - - - - 0x0137C1 04:B7B1: 0D        .byte con_action_0D   ; 04
+- - - - - - 0x0137C1 04:B7B1: 0D        .byte con_action_чеканка_коленом   ; 04
 - D 1 - I - 0x0137C2 04:B7B2: 0A        .byte con_action_0A   ; 05
 - D 1 - I - 0x0137C3 04:B7B3: 0A        .byte con_action_0A   ; 06
 - D 1 - I - 0x0137C4 04:B7B4: 09        .byte con_action_09   ; 07
@@ -12862,27 +12862,27 @@ off_B7C5_01_02:
 - - - - - - 0x0137D6 04:B7C6: 44        .byte con_action_44   ; 01
 - - - - - - 0x0137D7 04:B7C7: 44        .byte con_action_44   ; 02
 - - - - - - 0x0137D8 04:B7C8: 44        .byte con_action_44   ; 03
-- - - - - - 0x0137D9 04:B7C9: 23        .byte con_action_23   ; 04
-- - - - - - 0x0137DA 04:B7CA: 23        .byte con_action_23   ; 05
-- - - - - - 0x0137DB 04:B7CB: 23        .byte con_action_23   ; 06
-- - - - - - 0x0137DC 04:B7CC: 22        .byte con_action_22   ; 07
-- - - - - - 0x0137DD 04:B7CD: 22        .byte con_action_22   ; 08
-- - - - - - 0x0137DE 04:B7CE: 22        .byte con_action_22   ; 09
-- - - - - - 0x0137DF 04:B7CF: 22        .byte con_action_22   ; 0A
+- - - - - - 0x0137D9 04:B7C9: 23        .byte con_action_подкат   ; 04
+- - - - - - 0x0137DA 04:B7CA: 23        .byte con_action_подкат   ; 05
+- - - - - - 0x0137DB 04:B7CB: 23        .byte con_action_подкат   ; 06
+- - - - - - 0x0137DC 04:B7CC: 22        .byte con_action_удар_локтем   ; 07
+- - - - - - 0x0137DD 04:B7CD: 22        .byte con_action_удар_локтем   ; 08
+- - - - - - 0x0137DE 04:B7CE: 22        .byte con_action_удар_локтем   ; 09
+- - - - - - 0x0137DF 04:B7CF: 22        .byte con_action_удар_локтем   ; 0A
 - - - - - - 0x0137E0 04:B7D0: 19        .byte con_action_19   ; 0B
 
 off_B7D1_01_00:
-- D 1 - I - 0x0137E1 04:B7D1: 30        .byte con_action_30   ; 00
-- D 1 - I - 0x0137E2 04:B7D2: 30        .byte con_action_30   ; 01
-- - - - - - 0x0137E3 04:B7D3: 30        .byte con_action_30   ; 02
-- D 1 - I - 0x0137E4 04:B7D4: 30        .byte con_action_30   ; 03
-- - - - - - 0x0137E5 04:B7D5: 23        .byte con_action_23   ; 04
-- - - - - - 0x0137E6 04:B7D6: 23        .byte con_action_23   ; 05
-- D 1 - I - 0x0137E7 04:B7D7: 23        .byte con_action_23   ; 06
-- D 1 - I - 0x0137E8 04:B7D8: 22        .byte con_action_22   ; 07
-- D 1 - I - 0x0137E9 04:B7D9: 22        .byte con_action_22   ; 08
-- D 1 - I - 0x0137EA 04:B7DA: 22        .byte con_action_22   ; 09
-- D 1 - I - 0x0137EB 04:B7DB: 22        .byte con_action_22   ; 0A
+- D 1 - I - 0x0137E1 04:B7D1: 30        .byte con_action_прыжок_обычный   ; 00
+- D 1 - I - 0x0137E2 04:B7D2: 30        .byte con_action_прыжок_обычный   ; 01
+- - - - - - 0x0137E3 04:B7D3: 30        .byte con_action_прыжок_обычный   ; 02
+- D 1 - I - 0x0137E4 04:B7D4: 30        .byte con_action_прыжок_обычный   ; 03
+- - - - - - 0x0137E5 04:B7D5: 23        .byte con_action_подкат   ; 04
+- - - - - - 0x0137E6 04:B7D6: 23        .byte con_action_подкат   ; 05
+- D 1 - I - 0x0137E7 04:B7D7: 23        .byte con_action_подкат   ; 06
+- D 1 - I - 0x0137E8 04:B7D8: 22        .byte con_action_удар_локтем   ; 07
+- D 1 - I - 0x0137E9 04:B7D9: 22        .byte con_action_удар_локтем   ; 08
+- D 1 - I - 0x0137EA 04:B7DA: 22        .byte con_action_удар_локтем   ; 09
+- D 1 - I - 0x0137EB 04:B7DB: 22        .byte con_action_удар_локтем   ; 0A
 - D 1 - I - 0x0137EC 04:B7DC: 19        .byte con_action_19   ; 0B
 
 off_B7DD_01_01:
@@ -12893,40 +12893,40 @@ off_B7DD_01_01:
 - - - - - - 0x0137F1 04:B7E1: 42        .byte con_action_42   ; 04
 - - - - - - 0x0137F2 04:B7E2: 42        .byte con_action_42   ; 05
 - D 1 - I - 0x0137F3 04:B7E3: 42        .byte con_action_42   ; 06
-- D 1 - I - 0x0137F4 04:B7E4: 3B        .byte con_action_3B   ; 07
-- D 1 - I - 0x0137F5 04:B7E5: 3B        .byte con_action_3B   ; 08
-- D 1 - I - 0x0137F6 04:B7E6: 3B        .byte con_action_3B   ; 09
-- - - - - - 0x0137F7 04:B7E7: 3B        .byte con_action_3B   ; 0A
-- - - - - - 0x0137F8 04:B7E8: 3B        .byte con_action_3B   ; 0B
+- D 1 - I - 0x0137F4 04:B7E4: 3B        .byte con_action_локоть_в_прыжке   ; 07
+- D 1 - I - 0x0137F5 04:B7E5: 3B        .byte con_action_локоть_в_прыжке   ; 08
+- D 1 - I - 0x0137F6 04:B7E6: 3B        .byte con_action_локоть_в_прыжке   ; 09
+- - - - - - 0x0137F7 04:B7E7: 3B        .byte con_action_локоть_в_прыжке   ; 0A
+- - - - - - 0x0137F8 04:B7E8: 3B        .byte con_action_локоть_в_прыжке   ; 0B
 
 off_B7E9_03_00:
 off_B7E9_03_02:
-- D 1 - I - 0x0137F9 04:B7E9: 30        .byte con_action_30   ; 00
-- D 1 - I - 0x0137FA 04:B7EA: 30        .byte con_action_30   ; 01
-- D 1 - I - 0x0137FB 04:B7EB: 30        .byte con_action_30   ; 02
-- D 1 - I - 0x0137FC 04:B7EC: 30        .byte con_action_30   ; 03
-- - - - - - 0x0137FD 04:B7ED: 11        .byte con_action_11   ; 04
-- D 1 - I - 0x0137FE 04:B7EE: 11        .byte con_action_11   ; 05
-- D 1 - I - 0x0137FF 04:B7EF: 11        .byte con_action_11   ; 06
-- D 1 - I - 0x013800 04:B7F0: 11        .byte con_action_11   ; 07
-- D 1 - I - 0x013801 04:B7F1: 11        .byte con_action_11   ; 08
-- D 1 - I - 0x013802 04:B7F2: 11        .byte con_action_11   ; 09
-- D 1 - I - 0x013803 04:B7F3: 11        .byte con_action_11   ; 0A
-- D 1 - I - 0x013804 04:B7F4: 11        .byte con_action_11   ; 0B
+- D 1 - I - 0x0137F9 04:B7E9: 30        .byte con_action_прыжок_обычный   ; 00
+- D 1 - I - 0x0137FA 04:B7EA: 30        .byte con_action_прыжок_обычный   ; 01
+- D 1 - I - 0x0137FB 04:B7EB: 30        .byte con_action_прыжок_обычный   ; 02
+- D 1 - I - 0x0137FC 04:B7EC: 30        .byte con_action_прыжок_обычный   ; 03
+- - - - - - 0x0137FD 04:B7ED: 11        .byte con_action_базарит   ; 04
+- D 1 - I - 0x0137FE 04:B7EE: 11        .byte con_action_базарит   ; 05
+- D 1 - I - 0x0137FF 04:B7EF: 11        .byte con_action_базарит   ; 06
+- D 1 - I - 0x013800 04:B7F0: 11        .byte con_action_базарит   ; 07
+- D 1 - I - 0x013801 04:B7F1: 11        .byte con_action_базарит   ; 08
+- D 1 - I - 0x013802 04:B7F2: 11        .byte con_action_базарит   ; 09
+- D 1 - I - 0x013803 04:B7F3: 11        .byte con_action_базарит   ; 0A
+- D 1 - I - 0x013804 04:B7F4: 11        .byte con_action_базарит   ; 0B
 
 off_B7F5_03_01:
-- - - - - - 0x013805 04:B7F5: 30        .byte con_action_30   ; 00
-- - - - - - 0x013806 04:B7F6: 30        .byte con_action_30   ; 01
-- - - - - - 0x013807 04:B7F7: 30        .byte con_action_30   ; 02
-- - - - - - 0x013808 04:B7F8: 30        .byte con_action_30   ; 03
-- - - - - - 0x013809 04:B7F9: 30        .byte con_action_30   ; 04
-- D 1 - I - 0x01380A 04:B7FA: 30        .byte con_action_30   ; 05
-- D 1 - I - 0x01380B 04:B7FB: 30        .byte con_action_30   ; 06
-- D 1 - I - 0x01380C 04:B7FC: 30        .byte con_action_30   ; 07
-- D 1 - I - 0x01380D 04:B7FD: 30        .byte con_action_30   ; 08
-- - - - - - 0x01380E 04:B7FE: 30        .byte con_action_30   ; 09
-- - - - - - 0x01380F 04:B7FF: 30        .byte con_action_30   ; 0A
-- - - - - - 0x013810 04:B800: 30        .byte con_action_30   ; 0B
+- - - - - - 0x013805 04:B7F5: 30        .byte con_action_прыжок_обычный   ; 00
+- - - - - - 0x013806 04:B7F6: 30        .byte con_action_прыжок_обычный   ; 01
+- - - - - - 0x013807 04:B7F7: 30        .byte con_action_прыжок_обычный   ; 02
+- - - - - - 0x013808 04:B7F8: 30        .byte con_action_прыжок_обычный   ; 03
+- - - - - - 0x013809 04:B7F9: 30        .byte con_action_прыжок_обычный   ; 04
+- D 1 - I - 0x01380A 04:B7FA: 30        .byte con_action_прыжок_обычный   ; 05
+- D 1 - I - 0x01380B 04:B7FB: 30        .byte con_action_прыжок_обычный   ; 06
+- D 1 - I - 0x01380C 04:B7FC: 30        .byte con_action_прыжок_обычный   ; 07
+- D 1 - I - 0x01380D 04:B7FD: 30        .byte con_action_прыжок_обычный   ; 08
+- - - - - - 0x01380E 04:B7FE: 30        .byte con_action_прыжок_обычный   ; 09
+- - - - - - 0x01380F 04:B7FF: 30        .byte con_action_прыжок_обычный   ; 0A
+- - - - - - 0x013810 04:B800: 30        .byte con_action_прыжок_обычный   ; 0B
 
 off_B801_00_03:
 off_B801_01_03:
@@ -12936,9 +12936,9 @@ off_B801_04_03:
 off_B801_05_03:
 off_B801_06_03:
 - - - - - - 0x013811 04:B801: 10        .byte con_action_10   ; 00
-- D 1 - I - 0x013812 04:B802: 30        .byte con_action_30   ; 01
-- - - - - - 0x013813 04:B803: 30        .byte con_action_30   ; 02
-- D 1 - I - 0x013814 04:B804: 30        .byte con_action_30   ; 03
+- D 1 - I - 0x013812 04:B802: 30        .byte con_action_прыжок_обычный   ; 01
+- - - - - - 0x013813 04:B803: 30        .byte con_action_прыжок_обычный   ; 02
+- D 1 - I - 0x013814 04:B804: 30        .byte con_action_прыжок_обычный   ; 03
 - - - - - - 0x013815 04:B805: FF        .byte $FF   ; 04
 - - - - - - 0x013816 04:B806: FF        .byte $FF   ; 05
 - D 1 - I - 0x013817 04:B807: FF        .byte $FF   ; 06
@@ -12949,14 +12949,14 @@ off_B801_06_03:
 - - - - - - 0x01381C 04:B80C: FF        .byte $FF   ; 0B
 
 off_B80D_05_00:
-- - - - - - 0x01381D 04:B80D: 52        .byte con_action_52   ; 00
+- - - - - - 0x01381D 04:B80D: 52        .byte con_action_прыжок_кипера   ; 00
 - D 1 - I - 0x01381E 04:B80E: 3E        .byte con_action_3E   ; 01
-- - - - - - 0x01381F 04:B80F: 52        .byte con_action_52   ; 02
-- D 1 - I - 0x013820 04:B810: 52        .byte con_action_52   ; 03
-- - - - - - 0x013821 04:B811: 22        .byte con_action_22   ; 04
+- - - - - - 0x01381F 04:B80F: 52        .byte con_action_прыжок_кипера   ; 02
+- D 1 - I - 0x013820 04:B810: 52        .byte con_action_прыжок_кипера   ; 03
+- - - - - - 0x013821 04:B811: 22        .byte con_action_удар_локтем   ; 04
 - D 1 - I - 0x013822 04:B812: 29        .byte con_action_29   ; 05
-- D 1 - I - 0x013823 04:B813: 22        .byte con_action_22   ; 06
-- D 1 - I - 0x013824 04:B814: 22        .byte con_action_22   ; 07
+- D 1 - I - 0x013823 04:B813: 22        .byte con_action_удар_локтем   ; 06
+- D 1 - I - 0x013824 04:B814: 22        .byte con_action_удар_локтем   ; 07
 - D 1 - I - 0x013825 04:B815: 28        .byte con_action_28   ; 08
 - D 1 - I - 0x013826 04:B816: 41        .byte con_action_41   ; 09
 - D 1 - I - 0x013827 04:B817: 41        .byte con_action_41   ; 0A
@@ -12977,14 +12977,14 @@ off_B819_05_01:
 - - - - - - 0x013834 04:B824: 54        .byte con_action_54   ; 0B
 
 off_B825_05_02:
-- - - - - - 0x013835 04:B825: 52        .byte con_action_52   ; 00
+- - - - - - 0x013835 04:B825: 52        .byte con_action_прыжок_кипера   ; 00
 - - - - - - 0x013836 04:B826: 3E        .byte con_action_3E   ; 01
-- - - - - - 0x013837 04:B827: 52        .byte con_action_52   ; 02
-- - - - - - 0x013838 04:B828: 52        .byte con_action_52   ; 03
-- - - - - - 0x013839 04:B829: 22        .byte con_action_22   ; 04
+- - - - - - 0x013837 04:B827: 52        .byte con_action_прыжок_кипера   ; 02
+- - - - - - 0x013838 04:B828: 52        .byte con_action_прыжок_кипера   ; 03
+- - - - - - 0x013839 04:B829: 22        .byte con_action_удар_локтем   ; 04
 - - - - - - 0x01383A 04:B82A: 29        .byte con_action_29   ; 05
-- - - - - - 0x01383B 04:B82B: 22        .byte con_action_22   ; 06
-- - - - - - 0x01383C 04:B82C: 22        .byte con_action_22   ; 07
+- - - - - - 0x01383B 04:B82B: 22        .byte con_action_удар_локтем   ; 06
+- - - - - - 0x01383C 04:B82C: 22        .byte con_action_удар_локтем   ; 07
 - - - - - - 0x01383D 04:B82D: 28        .byte con_action_28   ; 08
 - - - - - - 0x01383E 04:B82E: 41        .byte con_action_41   ; 09
 - - - - - - 0x01383F 04:B82F: 41        .byte con_action_41   ; 0A
@@ -12992,10 +12992,10 @@ off_B825_05_02:
 
 off_B831_04_00:
 off_B831_04_02:
-- - - - - - 0x013841 04:B831: 30        .byte con_action_30   ; 00
-- D 1 - I - 0x013842 04:B832: 30        .byte con_action_30   ; 01
-- - - - - - 0x013843 04:B833: 30        .byte con_action_30   ; 02
-- D 1 - I - 0x013844 04:B834: 30        .byte con_action_30   ; 03
+- - - - - - 0x013841 04:B831: 30        .byte con_action_прыжок_обычный   ; 00
+- D 1 - I - 0x013842 04:B832: 30        .byte con_action_прыжок_обычный   ; 01
+- - - - - - 0x013843 04:B833: 30        .byte con_action_прыжок_обычный   ; 02
+- D 1 - I - 0x013844 04:B834: 30        .byte con_action_прыжок_обычный   ; 03
 - - - - - - 0x013845 04:B835: 0A        .byte con_action_0A   ; 04
 - - - - - - 0x013846 04:B836: 0A        .byte con_action_0A   ; 05
 - D 1 - I - 0x013847 04:B837: 0A        .byte con_action_0A   ; 06
@@ -13016,18 +13016,18 @@ off_B83D_06_02:    ; bzk unused? должно быть по 12 байтов
 - - - - - - 0x013853 04:B843: 17        .byte $17   ; 06
 
 off_B844_06_01:
-- - - - - - 0x013854 04:B844: 30        .byte con_action_30   ; 00
-- - - - - - 0x013855 04:B845: 30        .byte con_action_30   ; 01
-- - - - - - 0x013856 04:B846: 30        .byte con_action_30   ; 02
-- - - - - - 0x013857 04:B847: 30        .byte con_action_30   ; 03
-- - - - - - 0x013858 04:B848: 30        .byte con_action_30   ; 04
-- - - - - - 0x013859 04:B849: 30        .byte con_action_30   ; 05
-- - - - - - 0x01385A 04:B84A: 30        .byte con_action_30   ; 06
-- - - - - - 0x01385B 04:B84B: 30        .byte con_action_30   ; 07
-- - - - - - 0x01385C 04:B84C: 30        .byte con_action_30   ; 08
-- - - - - - 0x01385D 04:B84D: 30        .byte con_action_30   ; 09
-- - - - - - 0x01385E 04:B84E: 30        .byte con_action_30   ; 0A
-- - - - - - 0x01385F 04:B84F: 30        .byte con_action_30   ; 0B
+- - - - - - 0x013854 04:B844: 30        .byte con_action_прыжок_обычный   ; 00
+- - - - - - 0x013855 04:B845: 30        .byte con_action_прыжок_обычный   ; 01
+- - - - - - 0x013856 04:B846: 30        .byte con_action_прыжок_обычный   ; 02
+- - - - - - 0x013857 04:B847: 30        .byte con_action_прыжок_обычный   ; 03
+- - - - - - 0x013858 04:B848: 30        .byte con_action_прыжок_обычный   ; 04
+- - - - - - 0x013859 04:B849: 30        .byte con_action_прыжок_обычный   ; 05
+- - - - - - 0x01385A 04:B84A: 30        .byte con_action_прыжок_обычный   ; 06
+- - - - - - 0x01385B 04:B84B: 30        .byte con_action_прыжок_обычный   ; 07
+- - - - - - 0x01385C 04:B84C: 30        .byte con_action_прыжок_обычный   ; 08
+- - - - - - 0x01385D 04:B84D: 30        .byte con_action_прыжок_обычный   ; 09
+- - - - - - 0x01385E 04:B84E: 30        .byte con_action_прыжок_обычный   ; 0A
+- - - - - - 0x01385F 04:B84F: 30        .byte con_action_прыжок_обычный   ; 0B
 
 
  
@@ -13225,7 +13225,7 @@ C - - - - - 0x0139C2 04:B9B2: D0 0F     BNE bra_B9C3
 C - - - - - 0x0139C4 04:B9B4: AD 1D 00  LDA ram_001D
 C - - - - - 0x0139C7 04:B9B7: 29 0F     AND #$0F
 C - - - - - 0x0139C9 04:B9B9: D0 04     BNE bra_B9BF
-C - - - - - 0x0139CB 04:B9BB: A9 01     LDA #con_action_01
+C - - - - - 0x0139CB 04:B9BB: A9 01     LDA #con_action_стоит_на_месте
 C - - - - - 0x0139CD 04:B9BD: D0 0E     BNE bra_B9CD_запись_действия
 bra_B9BF:
 C - - - - - 0x0139CF 04:B9BF: A9 06     LDA #con_action_06
@@ -13233,7 +13233,7 @@ C - - - - - 0x0139D1 04:B9C1: D0 0A     BNE bra_B9CD_запись_действи
 bra_B9C3:
 C - - - - - 0x0139D3 04:B9C3: 29 03     AND #$03
 C - - - - - 0x0139D5 04:B9C5: D0 04     BNE bra_B9CB
-C - - - - - 0x0139D7 04:B9C7: A9 0D     LDA #con_action_0D
+C - - - - - 0x0139D7 04:B9C7: A9 0D     LDA #con_action_чеканка_коленом
 C - - - - - 0x0139D9 04:B9C9: D0 02     BNE bra_B9CD_запись_действия
 bra_B9CB:
 C - - - - - 0x0139DB 04:B9CB: A9 07     LDA #con_action_07
@@ -13297,12 +13297,12 @@ off_BA05_07:
 - - - - - - 0x013A17 04:BA07: 09        .byte $09   ; 
 - - - - - - 0x013A18 04:BA08: 08        .byte $08   ; 
 - - - - - - 0x013A19 04:BA09: 04        .byte $04   ; 
-- D 1 - I - 0x013A1A 04:BA0A: 04        .byte con_action_04   ; 
-- D 1 - I - 0x013A1B 04:BA0B: 04        .byte con_action_04   ; 
-- D 1 - I - 0x013A1C 04:BA0C: 05        .byte con_action_05   ; 
-- D 1 - I - 0x013A1D 04:BA0D: 05        .byte con_action_05   ; 
-- D 1 - I - 0x013A1E 04:BA0E: 05        .byte con_action_05   ; 
-- D 1 - I - 0x013A1F 04:BA0F: 05        .byte con_action_05   ; 
+- D 1 - I - 0x013A1A 04:BA0A: 04        .byte con_action_лежит_на_спине   ; 
+- D 1 - I - 0x013A1B 04:BA0B: 04        .byte con_action_лежит_на_спине   ; 
+- D 1 - I - 0x013A1C 04:BA0C: 05        .byte con_action_лежит_на_животе   ; 
+- D 1 - I - 0x013A1D 04:BA0D: 05        .byte con_action_лежит_на_животе   ; 
+- D 1 - I - 0x013A1E 04:BA0E: 05        .byte con_action_лежит_на_животе   ; 
+- D 1 - I - 0x013A1F 04:BA0F: 05        .byte con_action_лежит_на_животе   ; 
 
 off_BA10_05:
 - - - - - - 0x013A20 04:BA10: 08        .byte $08   ; 

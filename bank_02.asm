@@ -11053,7 +11053,7 @@ C - - - - - 0x00AD3A 02:AD2A: D0 0C     BNE bra_AD38
 C - - - - - 0x00AD3C 02:AD2C: AD 14 03  LDA ram_pos_X_lo_игрока
 C - - - - - 0x00AD3F 02:AD2F: C9 70     CMP #$70
 C - - - - - 0x00AD41 02:AD31: 90 07     BCC bra_AD3A_RTS
-C - - - - - 0x00AD43 02:AD33: A9 01     LDA #con_action_01
+C - - - - - 0x00AD43 02:AD33: A9 01     LDA #con_action_стоит_на_месте
 C - - - - - 0x00AD45 02:AD35: 8D 59 04  STA ram_действие_игрока
 bra_AD38:
 C - - - - - 0x00AD48 02:AD38: E6 95     INC ram_кадр_анимации_игрока + 1
@@ -11074,9 +11074,9 @@ bra_AD4A:
 C - - - - - 0x00AD5A 02:AD4A: 8C 14 03  STY ram_pos_X_lo_игрока
 C - - - - - 0x00AD5D 02:AD4D: AD 59 04  LDA ram_действие_игрока
 C - - - - - 0x00AD60 02:AD50: 29 7F     AND #$7F
-C - - - - - 0x00AD62 02:AD52: C9 21     CMP #con_action_21
+C - - - - - 0x00AD62 02:AD52: C9 21     CMP #con_action_бег
 C - - - - - 0x00AD64 02:AD54: D0 05     BNE bra_AD5B
-C - - - - - 0x00AD66 02:AD56: A9 01     LDA #con_action_01
+C - - - - - 0x00AD66 02:AD56: A9 01     LDA #con_action_стоит_на_месте
 C - - - - - 0x00AD68 02:AD58: 8D 59 04  STA ram_действие_игрока
 bra_AD5B:
 C - - - - - 0x00AD6B 02:AD5B: AD 92 04  LDA ram_состояние_мяча
@@ -11159,7 +11159,7 @@ C - - - - - 0x00ADF5 02:ADE5: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x00ADF8 02:ADE8: D0 12     BNE bra_ADFC_RTS
 bra_ADEA:
 C - - - - - 0x00ADFA 02:ADEA: FE 61 00  INC ram_0061,X
-C - - - - - 0x00ADFD 02:ADED: A9 01     LDA #con_action_01
+C - - - - - 0x00ADFD 02:ADED: A9 01     LDA #con_action_стоит_на_месте
 C - - - - - 0x00ADFF 02:ADEF: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x00AE02 02:ADF2: A5 9E     LDA ram_сценка_кунио
 C - - - - - 0x00AE04 02:ADF4: FE 27 03  INC ram_pos_X_hi_игрока,X
@@ -11171,9 +11171,9 @@ C - - - - - 0x00AE0C 02:ADFC: 60        RTS
 
 
 tbl_ADFD:
-- D 1 - - - 0x00AE0D 02:ADFD: 21        .byte con_action_21   ; 00
-- D 1 - - - 0x00AE0E 02:ADFE: 21        .byte con_action_21   ; 01
-- D 1 - - - 0x00AE0F 02:ADFF: 21        .byte con_action_21   ; 02
+- D 1 - - - 0x00AE0D 02:ADFD: 21        .byte con_action_бег   ; 00
+- D 1 - - - 0x00AE0E 02:ADFE: 21        .byte con_action_бег   ; 01
+- D 1 - - - 0x00AE0F 02:ADFF: 21        .byte con_action_бег   ; 02
 - D 1 - - - 0x00AE10 02:AE00: 2A        .byte con_action_2A   ; 03
 
 
@@ -11392,7 +11392,7 @@ C - - - - - 0x00AF2A 02:AF1A: D0 0E     BNE bra_AF2A_RTS
 C - - - - - 0x00AF2C 02:AF1C: AD 14 03  LDA ram_pos_X_lo_игрока
 C - - - - - 0x00AF2F 02:AF1F: C9 82     CMP #$82
 C - - - - - 0x00AF31 02:AF21: 90 07     BCC bra_AF2A_RTS
-C - - - - - 0x00AF33 02:AF23: A9 01     LDA #con_action_01
+C - - - - - 0x00AF33 02:AF23: A9 01     LDA #con_action_стоит_на_месте
 C - - - - - 0x00AF35 02:AF25: 8D 59 04  STA ram_действие_игрока
 C D 1 - - - 0x00AF38 02:AF28: E6 95     INC ram_кадр_анимации_игрока + 1
 bra_AF2A_RTS:
@@ -11478,7 +11478,7 @@ C - - - - - 0x00AF94 02:AF84: 20 9A AD  JSR sub_AD9A
 ofs_AF8A_05:
 C - - J - - 0x00AF9A 02:AF8A: AD 33 03  LDA ram_pos_X_hi_мяча
 C - - - - - 0x00AF9D 02:AF8D: F0 9B     BEQ bra_AF2A_RTS
-C - - - - - 0x00AF9F 02:AF8F: A9 21     LDA #con_action_21
+C - - - - - 0x00AF9F 02:AF8F: A9 21     LDA #con_action_бег
 C - - - - - 0x00AFA1 02:AF91: 8D 59 04  STA ram_действие_игрока
                                         INC ram_кадр_анимации_игрока + 1
                                         RTS
@@ -11512,9 +11512,9 @@ C - - - - - 0x00AFC8 02:AFB8: 60        RTS
 
 ofs_AFB9_01:
 C - - J - - 0x00AFC9 02:AFB9: AD 59 04  LDA ram_действие_игрока
-C - - - - - 0x00AFCC 02:AFBC: C9 81     CMP #con_action_01 + $80
+C - - - - - 0x00AFCC 02:AFBC: C9 81     CMP #con_action_стоит_на_месте + $80
 C - - - - - 0x00AFCE 02:AFBE: D0 F8     BNE bra_AFB8_RTS
-C - - - - - 0x00AFD0 02:AFC0: A9 21     LDA #con_action_21
+C - - - - - 0x00AFD0 02:AFC0: A9 21     LDA #con_action_бег
 C - - - - - 0x00AFD2 02:AFC2: 8D 59 04  STA ram_действие_игрока
                                         INC ram_кадр_анимации_игрока + 1
                                         RTS
@@ -11941,10 +11941,10 @@ C - - - - - 0x00B263 02:B253: 10 0E     BPL bra_B263_запись_действи
 - - - - - - 0x00B265 02:B255: BD 86 04  LDA ram_состояние_игрока,X
 - - - - - - 0x00B268 02:B258: 29 08     AND #con_state_бег_спринт
 - - - - - - 0x00B26A 02:B25A: F0 05     BEQ bra_B261_не_бежит
-- - - - - - 0x00B26C 02:B25C: A9 21     LDA #con_action_21
+- - - - - - 0x00B26C 02:B25C: A9 21     LDA #con_action_бег
 - - - - - - 0x00B26E 02:B25E: 4C 63 B2  JMP loc_B263_запись_действия_и_очистка_адресов_анимации
 bra_B261_не_бежит:
-- - - - - - 0x00B271 02:B261: A9 20     LDA #con_action_20
+- - - - - - 0x00B271 02:B261: A9 20     LDA #con_action_ходьба_пешком
 bra_B263_запись_действия_и_очистка_адресов_анимации:
 loc_B263_запись_действия_и_очистка_адресов_анимации:
 C - - - - - 0x00B273 02:B263: 9D 59 04  STA ram_действие_игрока,X
@@ -11958,19 +11958,19 @@ C - - - - - 0x00B281 02:B271: 60        RTS
 
 tbl_B272:
 - - - - - - 0x00B282 02:B272: 00        .byte con_action_00   ; 00
-- - - - - - 0x00B283 02:B273: 01        .byte con_action_01   ; 01
-- D 1 - - - 0x00B284 02:B274: 01        .byte con_action_01   ; 02
-- D 1 - - - 0x00B285 02:B275: 01        .byte con_action_01   ; 03
-- D 1 - - - 0x00B286 02:B276: 01        .byte con_action_01   ; 04
-- D 1 - - - 0x00B287 02:B277: 01        .byte con_action_01   ; 05
-- - - - - - 0x00B288 02:B278: 01        .byte con_action_01   ; 06
-- - - - - - 0x00B289 02:B279: 01        .byte con_action_01   ; 07
+- - - - - - 0x00B283 02:B273: 01        .byte con_action_стоит_на_месте   ; 01
+- D 1 - - - 0x00B284 02:B274: 01        .byte con_action_стоит_на_месте   ; 02
+- D 1 - - - 0x00B285 02:B275: 01        .byte con_action_стоит_на_месте   ; 03
+- D 1 - - - 0x00B286 02:B276: 01        .byte con_action_стоит_на_месте   ; 04
+- D 1 - - - 0x00B287 02:B277: 01        .byte con_action_стоит_на_месте   ; 05
+- - - - - - 0x00B288 02:B278: 01        .byte con_action_стоит_на_месте   ; 06
+- - - - - - 0x00B289 02:B279: 01        .byte con_action_стоит_на_месте   ; 07
 - D 1 - - - 0x00B28A 02:B27A: 02        .byte con_action_02   ; 08
 - D 1 - - - 0x00B28B 02:B27B: 0B        .byte con_action_0B   ; 09
 - - - - - - 0x00B28C 02:B27C: 0E        .byte con_action_0E   ; 0A
 - D 1 - - - 0x00B28D 02:B27D: 0B        .byte con_action_0B   ; 0B
 - - - - - - 0x00B28E 02:B27E: FF        .byte $FF   ; 0C
-- D 1 - - - 0x00B28F 02:B27F: 01        .byte con_action_01   ; 0D
+- D 1 - - - 0x00B28F 02:B27F: 01        .byte con_action_стоит_на_месте   ; 0D
 - - - - - - 0x00B290 02:B280: 0E        .byte con_action_0E   ; 0E
 - - - - - - 0x00B291 02:B281: 00        .byte con_action_00   ; 0F
 
@@ -12706,12 +12706,12 @@ tbl_B63F:
 - D 1 - - - 0x00B651 02:B641: FF        .byte $FF   ; 
 
 - D 1 - - - 0x00B652 02:B642: 00        .byte $00   ; 
-- D 1 - - - 0x00B653 02:B643: 01        .byte con_action_01 + $00   ; 
+- D 1 - - - 0x00B653 02:B643: 01        .byte con_action_стоит_на_месте + $00   ; 
 - D 1 - - - 0x00B654 02:B644: 68        .byte $68   ; 
 - D 1 - - - 0x00B655 02:B645: D8        .byte $D8   ; 
 
 - D 1 - - - 0x00B656 02:B646: 00        .byte $00   ; 
-- D 1 - - - 0x00B657 02:B647: 81        .byte con_action_01 + $80   ; 
+- D 1 - - - 0x00B657 02:B647: 81        .byte con_action_стоит_на_месте + $80   ; 
 - D 1 - - - 0x00B658 02:B648: 98        .byte $98   ; 
 - D 1 - - - 0x00B659 02:B649: D8        .byte $D8   ; 
 
@@ -12722,7 +12722,7 @@ tbl_B63F:
 - - - - - - 0x00B65C 02:B64C: FF        .byte $FF   ; 
 
 - - - - - - 0x00B65D 02:B64D: 00        .byte $00   ; 
-- - - - - - 0x00B65E 02:B64E: 0D        .byte con_action_0D + $00   ; 
+- - - - - - 0x00B65E 02:B64E: 0D        .byte con_action_чеканка_коленом + $00   ; 
 - - - - - - 0x00B65F 02:B64F: 71        .byte $71   ; 
 - - - - - - 0x00B660 02:B650: D8        .byte $D8   ; 
 
@@ -12759,7 +12759,7 @@ tbl_B63F:
 - - - - - - 0x00B676 02:B666: D8        .byte $D8   ; 
 
 - - - - - - 0x00B677 02:B667: 28        .byte $28   ; 
-- - - - - - 0x00B678 02:B668: 21        .byte con_action_21 + $00   ; 
+- - - - - - 0x00B678 02:B668: 21        .byte con_action_бег + $00   ; 
 - - - - - - 0x00B679 02:B669: 60        .byte $60   ; 
 - - - - - - 0x00B67A 02:B66A: D8        .byte $D8   ; 
 
@@ -12770,7 +12770,7 @@ tbl_B63F:
 - - - - - - 0x00B67D 02:B66D: FF        .byte $FF   ; 
 
 - - - - - - 0x00B67E 02:B66E: 00        .byte $00   ; 
-- - - - - - 0x00B67F 02:B66F: 05        .byte con_action_05 + $00   ; 
+- - - - - - 0x00B67F 02:B66F: 05        .byte con_action_лежит_на_животе + $00   ; 
 - - - - - - 0x00B680 02:B670: 80        .byte $80   ; 
 - - - - - - 0x00B681 02:B671: D8        .byte $D8   ; 
 
@@ -12807,7 +12807,7 @@ tbl_B63F:
 - - - - - - 0x00B697 02:B687: C8        .byte $C8   ; 
 
 - - - - - - 0x00B698 02:B688: 00        .byte $00   ; 
-- - - - - - 0x00B699 02:B689: 1D        .byte con_action_1D + $00   ; 
+- - - - - - 0x00B699 02:B689: 1D        .byte con_action_спринт + $00   ; 
 - - - - - - 0x00B69A 02:B68A: 80        .byte $80   ; 
 - - - - - - 0x00B69B 02:B68B: C8        .byte $C8   ; 
 
@@ -12823,7 +12823,7 @@ tbl_B63F:
 - - - - - - 0x00B6A2 02:B692: D8        .byte $D8   ; 
 
 - - - - - - 0x00B6A3 02:B693: 26        .byte $26   ; 
-- - - - - - 0x00B6A4 02:B694: 11        .byte con_action_11 + $00   ; 
+- - - - - - 0x00B6A4 02:B694: 11        .byte con_action_базарит + $00   ; 
 - - - - - - 0x00B6A5 02:B695: 98        .byte $98   ; 
 - - - - - - 0x00B6A6 02:B696: D8        .byte $D8   ; 
 
@@ -12882,12 +12882,12 @@ tbl_B63F:
 - D 1 - - - 0x00B6CA 02:B6BA: FF        .byte $FF   ; 
 
 - D 1 - - - 0x00B6CB 02:B6BB: 25        .byte $25   ; 
-- D 1 - - - 0x00B6CC 02:B6BC: 12        .byte con_action_12 + $00   ; 
+- D 1 - - - 0x00B6CC 02:B6BC: 12        .byte con_action_чеканка_головой + $00   ; 
 - D 1 - - - 0x00B6CD 02:B6BD: 70        .byte $70   ; 
 - D 1 - - - 0x00B6CE 02:B6BE: D8        .byte $D8   ; 
 
 - D 1 - - - 0x00B6CF 02:B6BF: 27        .byte $27   ; 
-- D 1 - - - 0x00B6D0 02:B6C0: 92        .byte con_action_12 + $80   ; 
+- D 1 - - - 0x00B6D0 02:B6C0: 92        .byte con_action_чеканка_головой + $80   ; 
 - D 1 - - - 0x00B6D1 02:B6C1: 90        .byte $90   ; 
 - D 1 - - - 0x00B6D2 02:B6C2: D8        .byte $D8   ; 
 
@@ -13229,8 +13229,8 @@ tbl_B8B2:
 - - - - - - 0x00B8C2 02:B8B2: 00        .byte con_action_00   ; 00
 - D 1 - - - 0x00B8C3 02:B8B3: 02        .byte con_action_02   ; 01
 - D 1 - - - 0x00B8C4 02:B8B4: 03        .byte con_action_03   ; 02
-- D 1 - - - 0x00B8C5 02:B8B5: 04        .byte con_action_04   ; 03
-- D 1 - - - 0x00B8C6 02:B8B6: 01        .byte con_action_01   ; 04
+- D 1 - - - 0x00B8C5 02:B8B5: 04        .byte con_action_лежит_на_спине   ; 03
+- D 1 - - - 0x00B8C6 02:B8B6: 01        .byte con_action_стоит_на_месте   ; 04
 - - - - - - 0x00B8C7 02:B8B7: FF        .byte $FF   ; 05
 - - - - - - 0x00B8C8 02:B8B8: 07        .byte con_action_07   ; 06
 - - - - - - 0x00B8C9 02:B8B9: 08        .byte con_action_08   ; 07
@@ -13257,10 +13257,10 @@ tbl_B8B2:
 - - - - - - 0x00B8DE 02:B8CE: FF        .byte $FF   ; 1C
 - - - - - - 0x00B8DF 02:B8CF: FF        .byte $FF   ; 1D
 - - - - - - 0x00B8E0 02:B8D0: 82        .byte $82   ; 1E
-- - - - - - 0x00B8E1 02:B8D1: 20        .byte con_action_20   ; 1F
+- - - - - - 0x00B8E1 02:B8D1: 20        .byte con_action_ходьба_пешком   ; 1F
 - - - - - - 0x00B8E2 02:B8D2: 24        .byte con_action_24   ; 20
 - - - - - - 0x00B8E3 02:B8D3: FF        .byte $FF   ; 21
-- - - - - - 0x00B8E4 02:B8D4: 23        .byte con_action_23   ; 22
+- - - - - - 0x00B8E4 02:B8D4: 23        .byte con_action_подкат   ; 22
 - - - - - - 0x00B8E5 02:B8D5: FF        .byte $FF   ; 23
 - - - - - - 0x00B8E6 02:B8D6: FF        .byte $FF   ; 24
 - - - - - - 0x00B8E7 02:B8D7: FF        .byte $FF   ; 25
