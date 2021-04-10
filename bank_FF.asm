@@ -4503,7 +4503,7 @@ C D 2 - - - 0x01D8CE 07:D8BE: D0 DF     BNE bra_D89F_loop
 C D 2 - - - 0x01D8D0 07:D8C0: A9 02     LDA #con_погода_дождь
 C D 2 - - - 0x01D8D2 07:D8C2: 8D 66 04  STA ram_погодный_эффект
 bra_D8C5_это_обработанный_дождь:
-C D 2 - - - 0x01D8D5 07:D8C5: AD 40 01  LDA ram_0140
+C D 2 - - - 0x01D8D5 07:D8C5: AD 40 01  LDA ram_скорость_ветра_по_X
 C D 2 - - - 0x01D8D8 07:D8C8: F0 20     BEQ bra_D8EA
 C D 2 - - - 0x01D8DA 07:D8CA: 30 0F     BMI bra_D8DB
 C D 2 - - - 0x01D8DC 07:D8CC: C9 03     CMP #$03
@@ -4544,7 +4544,7 @@ C D 2 - - - 0x01D91C 07:D90C: 69 04     ADC #$04
 C D 2 - - - 0x01D91E 07:D90E: 99 0C 01  STA ram_010C,Y
 C D 2 - - - 0x01D921 07:D911: B9 00 01  LDA ram_0100,Y
 C D 2 - - - 0x01D924 07:D914: 18        CLC
-C D 2 - - - 0x01D925 07:D915: 6D 40 01  ADC ram_0140
+C D 2 - - - 0x01D925 07:D915: 6D 40 01  ADC ram_скорость_ветра_по_X
 C D 2 - - - 0x01D928 07:D918: 99 00 01  STA ram_0100,Y
 C D 2 - - - 0x01D92B 07:D91B: 4C 47 D9  JMP loc_D947
 bra_D91E:
@@ -4831,9 +4831,9 @@ bra_DACC:
 C - - - - - 0x01DADC 07:DACC: A9 04     LDA #con_погода_ветер
 C - - - - - 0x01DADE 07:DACE: 8D 66 04  STA ram_погодный_эффект
 bra_DAD1_это_обработанный_ветер:
-C - - - - - 0x01DAE1 07:DAD1: AD 40 01  LDA ram_0140
+C - - - - - 0x01DAE1 07:DAD1: AD 40 01  LDA ram_скорость_ветра_по_X
 C - - - - - 0x01DAE4 07:DAD4: 85 0C     STA ram_000C
-C - - - - - 0x01DAE6 07:DAD6: AD 41 01  LDA ram_0141
+C - - - - - 0x01DAE6 07:DAD6: AD 41 01  LDA ram_скорость_ветра_по_Y
 C - - - - - 0x01DAE9 07:DAD9: 85 0D     STA ram_000D
 C - - - - - 0x01DAEB 07:DADB: A2 0B     LDX #$0B
 bra_DADD:
@@ -4852,17 +4852,17 @@ C - - - - - 0x01DB05 07:DAF5: 29 40     AND #$40
 C - - - - - 0x01DB07 07:DAF7: F0 14     BEQ bra_DB0D
 C - - - - - 0x01DB09 07:DAF9: BD 00 01  LDA ram_0100,X
 C - - - - - 0x01DB0C 07:DAFC: 18        CLC
-C - - - - - 0x01DB0D 07:DAFD: 6D 40 01  ADC ram_0140
+C - - - - - 0x01DB0D 07:DAFD: 6D 40 01  ADC ram_скорость_ветра_по_X
 C - - - - - 0x01DB10 07:DB00: 9D 00 01  STA ram_0100,X
 C - - - - - 0x01DB13 07:DB03: BD 0C 01  LDA ram_010C,X
 C - - - - - 0x01DB16 07:DB06: 18        CLC
-C - - - - - 0x01DB17 07:DB07: 6D 41 01  ADC ram_0141
+C - - - - - 0x01DB17 07:DB07: 6D 41 01  ADC ram_скорость_ветра_по_Y
 C - - - - - 0x01DB1A 07:DB0A: 9D 0C 01  STA ram_010C,X
 bra_DB0D:
 C - - - - - 0x01DB1D 07:DB0D: BD 0C 01  LDA ram_010C,X
 C - - - - - 0x01DB20 07:DB10: C9 B2     CMP #$B2
 C - - - - - 0x01DB22 07:DB12: 90 17     BCC bra_DB2B
-C - - - - - 0x01DB24 07:DB14: AD 41 01  LDA ram_0141
+C - - - - - 0x01DB24 07:DB14: AD 41 01  LDA ram_скорость_ветра_по_Y
 C - - - - - 0x01DB27 07:DB17: 30 08     BMI bra_DB21
 C - - - - - 0x01DB29 07:DB19: BD 18 01  LDA ram_0118,X
 C - - - - - 0x01DB2C 07:DB1C: 29 07     AND #$07

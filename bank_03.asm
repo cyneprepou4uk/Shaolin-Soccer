@@ -5420,7 +5420,7 @@ C - - - - - 0x00E11A 03:A10A: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x00E11D 03:A10D: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x00E120 03:A110: 29 01     AND #con_state_01
 C - - - - - 0x00E122 03:A112: F0 06     BEQ bra_A11A
-- - - - - - 0x00E124 03:A114: B9 CA 04  LDA ram_04CA,Y
+- - - - - - 0x00E124 03:A114: B9 CA 04  LDA ram_на_кого_запрыгнул_игрок,Y
 - - - - - - 0x00E127 03:A117: 8D D6 04  STA ram_игрок_с_мячом
 bra_A11A:
 C - - - - - 0x00E12A 03:A11A: AD D6 04  LDA ram_игрок_с_мячом
@@ -11250,38 +11250,38 @@ C - - - - - 0x00FCB1 03:BCA1: F0 36     BEQ bra_BCD9
 C - - - - - 0x00FCB3 03:BCA3: C9 C0     CMP #$C0
 C - - - - - 0x00FCB5 03:BCA5: F0 3F     BEQ bra_BCE6
 C - - - - - 0x00FCB7 03:BCA7: A5 1D     LDA ram_001D
-C - - - - - 0x00FCB9 03:BCA9: 8D 40 01  STA ram_0140
-C - - - - - 0x00FCBC 03:BCAC: 8D 41 01  STA ram_0141
+C - - - - - 0x00FCB9 03:BCA9: 8D 40 01  STA ram_скорость_ветра_по_X
+C - - - - - 0x00FCBC 03:BCAC: 8D 41 01  STA ram_скорость_ветра_по_Y
 C - - - - - 0x00FCBF 03:BCAF: 4C F0 BC  RTS
 bra_BCB2:
 C - - - - - 0x00FCC2 03:BCB2: A5 1C     LDA ram_001C
-C - - - - - 0x00FCC4 03:BCB4: 8D 40 01  STA ram_0140
+C - - - - - 0x00FCC4 03:BCB4: 8D 40 01  STA ram_скорость_ветра_по_X
 C - - - - - 0x00FCC7 03:BCB7: A5 1D     LDA ram_001D
-C - - - - - 0x00FCC9 03:BCB9: 8D 41 01  STA ram_0141
+C - - - - - 0x00FCC9 03:BCB9: 8D 41 01  STA ram_скорость_ветра_по_Y
 C - - - - - 0x00FCCC 03:BCBC: 4C F0 BC  RTS
 bra_BCBF:
 C - - - - - 0x00FCCF 03:BCBF: A5 1C     LDA ram_001C
-C - - - - - 0x00FCD1 03:BCC1: 8D 40 01  STA ram_0140
+C - - - - - 0x00FCD1 03:BCC1: 8D 40 01  STA ram_скорость_ветра_по_X
 C - - - - - 0x00FCD4 03:BCC4: A9 00     LDA #$00
-C - - - - - 0x00FCD6 03:BCC6: 8D 41 01  STA ram_0141
+C - - - - - 0x00FCD6 03:BCC6: 8D 41 01  STA ram_скорость_ветра_по_Y
 C - - - - - 0x00FCD9 03:BCC9: 4C F0 BC  RTS
 bra_BCCC:
 C - - - - - 0x00FCDC 03:BCCC: A5 1C     LDA ram_001C
-C - - - - - 0x00FCDE 03:BCCE: 8D 40 01  STA ram_0140
+C - - - - - 0x00FCDE 03:BCCE: 8D 40 01  STA ram_скорость_ветра_по_X
 C - - - - - 0x00FCE1 03:BCD1: A5 1C     LDA ram_001C
-C - - - - - 0x00FCE3 03:BCD3: 8D 41 01  STA ram_0141
+C - - - - - 0x00FCE3 03:BCD3: 8D 41 01  STA ram_скорость_ветра_по_Y
 C - - - - - 0x00FCE6 03:BCD6: 4C F0 BC  RTS
 bra_BCD9:
 - - - - - - 0x00FCE9 03:BCD9: A5 1D     LDA ram_001D
-- - - - - - 0x00FCEB 03:BCDB: 8D 40 01  STA ram_0140
+- - - - - - 0x00FCEB 03:BCDB: 8D 40 01  STA ram_скорость_ветра_по_X
 - - - - - - 0x00FCEE 03:BCDE: A5 1D     LDA ram_001D
-- - - - - - 0x00FCF0 03:BCE0: 8D 41 01  STA ram_0141
+- - - - - - 0x00FCF0 03:BCE0: 8D 41 01  STA ram_скорость_ветра_по_Y
 - - - - - - 0x00FCF3 03:BCE3: 4C F0 BC  RTS
 bra_BCE6:
 C - - - - - 0x00FCF6 03:BCE6: A5 1D     LDA ram_001D
-C - - - - - 0x00FCF8 03:BCE8: 8D 40 01  STA ram_0140
+C - - - - - 0x00FCF8 03:BCE8: 8D 40 01  STA ram_скорость_ветра_по_X
 C - - - - - 0x00FCFB 03:BCEB: A9 00     LDA #$00
-C - - - - - 0x00FCFD 03:BCED: 8D 41 01  STA ram_0141
+C - - - - - 0x00FCFD 03:BCED: 8D 41 01  STA ram_скорость_ветра_по_Y
 C D 1 - - - 0x00FD00 03:BCF0: 60        RTS
 
 
