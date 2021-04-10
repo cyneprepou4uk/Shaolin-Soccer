@@ -247,24 +247,24 @@ C - - - - - 0x00019D 00:818D: F0 15     BEQ bra_81A4
 - - - - - - 0x0001B1 00:81A1: 20 06 80  JSR sub_8006_звуковой_движок
 bra_81A4:
 C - - - - - 0x0001B4 00:81A4: A2 08     LDX #$08
-bra_81A6:
+bra_81A6_loop:
 C - - - - - 0x0001B6 00:81A6: 8E 04 07  STX ram_0704
 C - - - - - 0x0001B9 00:81A9: 20 F0 81  JSR sub_81F0
 C - - - - - 0x0001BC 00:81AC: 20 14 86  JSR sub_8614
 C - - - - - 0x0001BF 00:81AF: CA        DEX
 C - - - - - 0x0001C0 00:81B0: E0 03     CPX #$03
-C - - - - - 0x0001C2 00:81B2: D0 F2     BNE bra_81A6
+C - - - - - 0x0001C2 00:81B2: D0 F2     BNE bra_81A6_loop
 C - - - - - 0x0001C4 00:81B4: 2C E5 07  BIT ram_07E5
 C - - - - - 0x0001C7 00:81B7: 70 36     BVS bra_81EF_RTS
 C - - - - - 0x0001C9 00:81B9: CA        DEX
-bra_81BA:
+bra_81BA_loop:
 C - - - - - 0x0001CA 00:81BA: 8E 04 07  STX ram_0704
 C - - - - - 0x0001CD 00:81BD: 20 D9 88  JSR sub_88D9
 C - - - - - 0x0001D0 00:81C0: 20 14 86  JSR sub_8614
 C - - - - - 0x0001D3 00:81C3: 20 A3 86  JSR sub_86A3
 C - - - - - 0x0001D6 00:81C6: AE 04 07  LDX ram_0704
 C - - - - - 0x0001D9 00:81C9: CA        DEX
-C - - - - - 0x0001DA 00:81CA: 10 EE     BPL bra_81BA
+C - - - - - 0x0001DA 00:81CA: 10 EE     BPL bra_81BA_loop
 C - - - - - 0x0001DC 00:81CC: AD 05 07  LDA ram_0705
 C - - - - - 0x0001DF 00:81CF: 18        CLC
 C - - - - - 0x0001E0 00:81D0: 6D 06 07  ADC ram_0706
@@ -274,14 +274,14 @@ C - - - - - 0x0001E8 00:81D8: A2 03     LDX #$03
 C - - - - - 0x0001EA 00:81DA: 8E 04 07  STX ram_0704
 C - - - - - 0x0001ED 00:81DD: 20 F0 81  JSR sub_81F0
 C - - - - - 0x0001F0 00:81E0: CA        DEX
-bra_81E1:
+bra_81E1_loop:
 C - - - - - 0x0001F1 00:81E1: BD 15 07  LDA ram_0715,X
 C - - - - - 0x0001F4 00:81E4: F0 06     BEQ bra_81EC
 C - - - - - 0x0001F6 00:81E6: 8E 04 07  STX ram_0704
 C - - - - - 0x0001F9 00:81E9: 20 FC 81  JSR sub_81FC
 bra_81EC:
 C - - - - - 0x0001FC 00:81EC: CA        DEX
-C - - - - - 0x0001FD 00:81ED: 10 F2     BPL bra_81E1
+C - - - - - 0x0001FD 00:81ED: 10 F2     BPL bra_81E1_loop
 bra_81EF_RTS:
 C - - - - - 0x0001FF 00:81EF: 60        RTS
 
@@ -14748,19 +14748,19 @@ C - - - - - 0x003CD0 00:BCC0: A9 7F     LDA #$7F
 C - - - - - 0x003CD2 00:BCC2: 9D 74 00  STA ram_анимация_игрока,X
 C - - - - - 0x003CD5 00:BCC5: A9 00     LDA #$00    ; con_state_стоит_идет
 C - - - - - 0x003CD7 00:BCC7: 9D 86 04  STA ram_состояние_игрока,X
-C - - - - - 0x003CDA 00:BCCA: 9D F6 03  STA ram_spd_X_hi_игрок,X
-C - - - - - 0x003CDD 00:BCCD: 9D E8 03  STA ram_spd_X_lo_игрок,X
-C - - - - - 0x003CE0 00:BCD0: 9D 12 04  STA ram_spd_Y_hi_игрок,X
-C - - - - - 0x003CE3 00:BCD3: 9D 04 04  STA ram_spd_Y_lo_игрок,X
-C - - - - - 0x003CE6 00:BCD6: 9D 2E 04  STA ram_spd_Z_hi_игрок,X
-C - - - - - 0x003CE9 00:BCD9: 9D 20 04  STA ram_spd_Z_lo_игрок,X
-C - - - - - 0x003CEC 00:BCDC: 9D 4A 04  STA ram_gravity_hi_игрок,X
-C - - - - - 0x003CEF 00:BCDF: 9D 3C 04  STA ram_gravity_lo_игрок,X
-C - - - - - 0x003CF2 00:BCE2: 9D 01 03  STA ram_pos_X_sub_игрок,X
-C - - - - - 0x003CF5 00:BCE5: 9D 3A 03  STA ram_pos_Y_sub_игрок,X
-C - - - - - 0x003CF8 00:BCE8: 9D 73 03  STA ram_pos_Z_sub_игрок,X
-C - - - - - 0x003CFB 00:BCEB: 9D 86 03  STA ram_pos_Z_lo_игрок,X
-C - - - - - 0x003CFE 00:BCEE: 9D 99 03  STA ram_pos_Z_hi_игрок,X
+C - - - - - 0x003CDA 00:BCCA: 9D F6 03  STA ram_spd_X_hi_игрока,X
+C - - - - - 0x003CDD 00:BCCD: 9D E8 03  STA ram_spd_X_lo_игрока,X
+C - - - - - 0x003CE0 00:BCD0: 9D 12 04  STA ram_spd_Y_hi_игрока,X
+C - - - - - 0x003CE3 00:BCD3: 9D 04 04  STA ram_spd_Y_lo_игрока,X
+C - - - - - 0x003CE6 00:BCD6: 9D 2E 04  STA ram_spd_Z_hi_игрока,X
+C - - - - - 0x003CE9 00:BCD9: 9D 20 04  STA ram_spd_Z_lo_игрока,X
+C - - - - - 0x003CEC 00:BCDC: 9D 4A 04  STA ram_gravity_hi_игрока,X
+C - - - - - 0x003CEF 00:BCDF: 9D 3C 04  STA ram_gravity_lo_игрока,X
+C - - - - - 0x003CF2 00:BCE2: 9D 01 03  STA ram_pos_X_sub_игрока,X
+C - - - - - 0x003CF5 00:BCE5: 9D 3A 03  STA ram_pos_Y_sub_игрока,X
+C - - - - - 0x003CF8 00:BCE8: 9D 73 03  STA ram_pos_Z_sub_игрока,X
+C - - - - - 0x003CFB 00:BCEB: 9D 86 03  STA ram_pos_Z_lo_игрока,X
+C - - - - - 0x003CFE 00:BCEE: 9D 99 03  STA ram_pos_Z_hi_игрока,X
 C - - - - - 0x003D01 00:BCF1: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x003D03 00:BCF3: 29 20     AND #con_gm_пенальти
 C - - - - - 0x003D05 00:BCF5: D0 03     BNE bra_BCFA_пенальти
@@ -14783,17 +14783,17 @@ C - - - - - 0x003D1E 00:BD0E: A8        TAY
 C - - - - - 0x003D1F 00:BD0F: 38        SEC
 C - - - - - 0x003D20 00:BD10: A9 00     LDA #$00
 C - - - - - 0x003D22 00:BD12: F1 2C     SBC (ram_002C),Y
-C - - - - - 0x003D24 00:BD14: 9D 14 03  STA ram_pos_X_lo_игрок,X
+C - - - - - 0x003D24 00:BD14: 9D 14 03  STA ram_pos_X_lo_игрока,X
 C - - - - - 0x003D27 00:BD17: C8        INY
 C - - - - - 0x003D28 00:BD18: A9 02     LDA #$02
 C - - - - - 0x003D2A 00:BD1A: F1 2C     SBC (ram_002C),Y
-C - - - - - 0x003D2C 00:BD1C: 9D 27 03  STA ram_pos_X_hi_игрок,X
+C - - - - - 0x003D2C 00:BD1C: 9D 27 03  STA ram_pos_X_hi_игрока,X
 C - - - - - 0x003D2F 00:BD1F: C8        INY
 C - - - - - 0x003D30 00:BD20: B1 2C     LDA (ram_002C),Y
-C - - - - - 0x003D32 00:BD22: 9D 4D 03  STA ram_pos_Y_lo_игрок,X
+C - - - - - 0x003D32 00:BD22: 9D 4D 03  STA ram_pos_Y_lo_игрока,X
 C - - - - - 0x003D35 00:BD25: C8        INY
 C - - - - - 0x003D36 00:BD26: B1 2C     LDA (ram_002C),Y
-C - - - - - 0x003D38 00:BD28: 9D 60 03  STA ram_pos_Y_hi_игрок,X
+C - - - - - 0x003D38 00:BD28: 9D 60 03  STA ram_pos_Y_hi_игрока,X
 C - - - - - 0x003D3B 00:BD2B: 4C 4F BD  JMP loc_BD4F
 bra_BD2E:
 C - - - - - 0x003D3E 00:BD2E: 8A        TXA
@@ -14803,17 +14803,17 @@ C - - - - - 0x003D42 00:BD32: A8        TAY
 C - - - - - 0x003D43 00:BD33: 18        CLC
 C - - - - - 0x003D44 00:BD34: A9 00     LDA #$00
 C - - - - - 0x003D46 00:BD36: 71 2E     ADC (ram_002E),Y
-C - - - - - 0x003D48 00:BD38: 9D 14 03  STA ram_pos_X_lo_игрок,X
+C - - - - - 0x003D48 00:BD38: 9D 14 03  STA ram_pos_X_lo_игрока,X
 C - - - - - 0x003D4B 00:BD3B: C8        INY
 C - - - - - 0x003D4C 00:BD3C: A9 02     LDA #$02
 C - - - - - 0x003D4E 00:BD3E: 71 2E     ADC (ram_002E),Y
-C - - - - - 0x003D50 00:BD40: 9D 27 03  STA ram_pos_X_hi_игрок,X
+C - - - - - 0x003D50 00:BD40: 9D 27 03  STA ram_pos_X_hi_игрока,X
 C - - - - - 0x003D53 00:BD43: C8        INY
 C - - - - - 0x003D54 00:BD44: B1 2E     LDA (ram_002E),Y
-C - - - - - 0x003D56 00:BD46: 9D 4D 03  STA ram_pos_Y_lo_игрок,X
+C - - - - - 0x003D56 00:BD46: 9D 4D 03  STA ram_pos_Y_lo_игрока,X
 C - - - - - 0x003D59 00:BD49: C8        INY
 C - - - - - 0x003D5A 00:BD4A: B1 2E     LDA (ram_002E),Y
-C - - - - - 0x003D5C 00:BD4C: 9D 60 03  STA ram_pos_Y_hi_игрок,X
+C - - - - - 0x003D5C 00:BD4C: 9D 60 03  STA ram_pos_Y_hi_игрока,X
 loc_BD4F:
 C D 1 - - - 0x003D5F 00:BD4F: E8        INX
 C - - - - - 0x003D60 00:BD50: E0 0D     CPX #$0D
