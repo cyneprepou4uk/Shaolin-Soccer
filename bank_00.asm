@@ -15459,8 +15459,8 @@ C - - - - - 0x003FF3 00:BFE3: 30 8C     BMI bra_BF71
 
 sub_BFE6:
 C - - - - - 0x003FF6 00:BFE6: A0 0A     LDY #$0A
-bra_BFE8_loop:
 C - - - - - 0x003FF8 00:BFE8: 8A        TXA
+bra_BFE8_loop:
 C - - - - - 0x003FF9 00:BFE9: D9 32 05  CMP ram_номер_игрока,Y
 C - - - - - 0x003FFC 00:BFEC: F0 04     BEQ bra_BFF2_RTS
 C - - - - - 0x003FFE 00:BFEE: 88        DEY
