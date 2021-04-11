@@ -12829,10 +12829,10 @@ off_B7A1_02_02:
 - - - - - - 0x0137BC 04:B7AC: 09        .byte con_action_09   ; 0B
 
 off_B7AD_02_00:
-- D 1 - I - 0x0137BD 04:B7AD: 10        .byte con_action_10   ; 00
+- D 1 - I - 0x0137BD 04:B7AD: 10        .byte con_action_подкинуть_мяч_через_себя   ; 00
 - D 1 - I - 0x0137BE 04:B7AE: 30        .byte con_action_прыжок_обычный   ; 01
 - D 1 - I - 0x0137BF 04:B7AF: 30        .byte con_action_прыжок_обычный   ; 02
-- D 1 - I - 0x0137C0 04:B7B0: 0E        .byte con_action_0E   ; 03
+- D 1 - I - 0x0137C0 04:B7B0: 0E        .byte con_action_подкинуть_мяч_коленом   ; 03
 - - - - - - 0x0137C1 04:B7B1: 0D        .byte con_action_чеканка_коленом   ; 04
 - D 1 - I - 0x0137C2 04:B7B2: 0A        .byte con_action_0A   ; 05
 - D 1 - I - 0x0137C3 04:B7B3: 0A        .byte con_action_0A   ; 06
@@ -12935,7 +12935,7 @@ off_B801_03_03:
 off_B801_04_03:
 off_B801_05_03:
 off_B801_06_03:
-- - - - - - 0x013811 04:B801: 10        .byte con_action_10   ; 00
+- - - - - - 0x013811 04:B801: 10        .byte con_action_подкинуть_мяч_через_себя   ; 00
 - D 1 - I - 0x013812 04:B802: 30        .byte con_action_прыжок_обычный   ; 01
 - - - - - - 0x013813 04:B803: 30        .byte con_action_прыжок_обычный   ; 02
 - D 1 - I - 0x013814 04:B804: 30        .byte con_action_прыжок_обычный   ; 03

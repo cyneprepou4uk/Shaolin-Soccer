@@ -225,7 +225,7 @@ C - - - - - 0x01815D 06:814D: C9 1D     CMP #con_action_спринт
 C - - - - - 0x01815F 06:814F: F0 27     BEQ bra_8178
 C - - - - - 0x018161 06:8151: C9 20     CMP #con_action_ходьба_пешком
 C - - - - - 0x018163 06:8153: F0 23     BEQ bra_8178
-C - - - - - 0x018165 06:8155: C9 0F     CMP #con_action_0F
+C - - - - - 0x018165 06:8155: C9 0F     CMP #con_action_споткнуться
 C - - - - - 0x018167 06:8157: F0 1F     BEQ bra_8178
 C - - - - - 0x018169 06:8159: C9 11     CMP #con_action_базарит
 C - - - - - 0x01816B 06:815B: F0 1B     BEQ bra_8178
@@ -686,7 +686,7 @@ C - - - - - 0x01848F 06:847F: 9D 96 04  STA ram_угол_движения,X
 loc_8482:
 C D 0 - - - 0x018492 06:8482: 5D A3 04  EOR ram_напр_движ_игрока,X
 C - - - - - 0x018495 06:8485: 10 08     BPL bra_848F
-C - - - - - 0x018497 06:8487: A9 0F     LDA #con_action_0F
+C - - - - - 0x018497 06:8487: A9 0F     LDA #con_action_споткнуться
 C - - - - - 0x018499 06:8489: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x01849C 06:848C: 4C 36 84  RTS
 bra_848F:
@@ -2043,7 +2043,7 @@ C - - - - - 0x018DD0 06:8DC0: C9 20     CMP #$20
 C - - - - - 0x018DD2 06:8DC2: 90 20     BCC bra_8DE4    ; bzk стремная проверка, неудобно подписывать
 C - - - - - 0x018DD4 06:8DC4: C9 20     CMP #con_action_ходьба_пешком
 C - - - - - 0x018DD6 06:8DC6: F0 1C     BEQ bra_8DE4
-C - - - - - 0x018DD8 06:8DC8: C9 0F     CMP #con_action_0F
+C - - - - - 0x018DD8 06:8DC8: C9 0F     CMP #con_action_споткнуться
 C - - - - - 0x018DDA 06:8DCA: F0 18     BEQ bra_8DE4
 C - - - - - 0x018DDC 06:8DCC: C9 2F     CMP #con_action_2F
 C - - - - - 0x018DDE 06:8DCE: F0 14     BEQ bra_8DE4

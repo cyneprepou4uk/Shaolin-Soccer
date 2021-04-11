@@ -11401,7 +11401,7 @@ C - - - - - 0x00AF3A 02:AF2A: 60        RTS
 
 
 ofs_AF2B_01:
-C - - J - - 0x00AF3B 02:AF2B: A9 0E     LDA #con_action_0E
+C - - J - - 0x00AF3B 02:AF2B: A9 0E     LDA #con_action_подкинуть_мяч_коленом
 C - - - - - 0x00AF3D 02:AF2D: 8D 59 04  STA ram_действие_игрока
                                         INC ram_кадр_анимации_игрока + 1
                                         RTS
@@ -11967,11 +11967,11 @@ tbl_B272:
 - - - - - - 0x00B289 02:B279: 01        .byte con_action_стоит_на_месте   ; 07
 - D 1 - - - 0x00B28A 02:B27A: 02        .byte con_action_02   ; 08
 - D 1 - - - 0x00B28B 02:B27B: 0B        .byte con_action_0B   ; 09
-- - - - - - 0x00B28C 02:B27C: 0E        .byte con_action_0E   ; 0A
+- - - - - - 0x00B28C 02:B27C: 0E        .byte con_action_подкинуть_мяч_коленом   ; 0A
 - D 1 - - - 0x00B28D 02:B27D: 0B        .byte con_action_0B   ; 0B
 - - - - - - 0x00B28E 02:B27E: FF        .byte $FF   ; 0C
 - D 1 - - - 0x00B28F 02:B27F: 01        .byte con_action_стоит_на_месте   ; 0D
-- - - - - - 0x00B290 02:B280: 0E        .byte con_action_0E   ; 0E
+- - - - - - 0x00B290 02:B280: 0E        .byte con_action_подкинуть_мяч_коленом   ; 0E
 - - - - - - 0x00B291 02:B281: 00        .byte con_action_00   ; 0F
 
 
@@ -12818,7 +12818,7 @@ tbl_B63F:
 - - - - - - 0x00B69E 02:B68E: FF        .byte $FF   ; 
 
 - - - - - - 0x00B69F 02:B68F: 26        .byte $26   ; 
-- - - - - - 0x00B6A0 02:B690: 10        .byte con_action_10 + $00   ; 
+- - - - - - 0x00B6A0 02:B690: 10        .byte con_action_подкинуть_мяч_через_себя + $00   ; 
 - - - - - - 0x00B6A1 02:B691: 68        .byte $68   ; 
 - - - - - - 0x00B6A2 02:B692: D8        .byte $D8   ; 
 
