@@ -14615,10 +14615,10 @@ C - - - - - 0x007C4C 01:BC3C: AD 2C 05  LDA ram_номер_команды
 C - - - - - 0x007C4F 01:BC3F: 29 0F     AND #$0F
 C - - - - - 0x007C51 01:BC41: D0 1B     BNE bra_BC5E
 C - - - - - 0x007C53 01:BC43: BC 32 05  LDY ram_номер_игрока,X
-C - - - - - 0x007C56 01:BC46: B9 D5 05  LDA ram_05D5,Y
+C - - - - - 0x007C56 01:BC46: B9 D5 05  LDA ram_суб_позиция_управления,Y
 C - - - - - 0x007C59 01:BC49: 29 0F     AND #$0F
 C - - - - - 0x007C5B 01:BC4B: 85 1D     STA ram_001D
-C - - - - - 0x007C5D 01:BC4D: B9 D5 05  LDA ram_05D5,Y
+C - - - - - 0x007C5D 01:BC4D: B9 D5 05  LDA ram_суб_позиция_управления,Y
 C - - - - - 0x007C60 01:BC50: 29 F0     AND #$F0
 C - - - - - 0x007C62 01:BC52: 85 1C     STA ram_001C
 C - - - - - 0x007C64 01:BC54: BD 50 06  LDA ram_позиция_управление,X

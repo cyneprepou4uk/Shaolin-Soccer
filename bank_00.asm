@@ -15272,49 +15272,49 @@ tbl_BEF6:
 
 
 sub_0x003F16:
-C D 1 - - - 0x003F16 00:BF06: A2 0B     LDX #$0B
+C D 1 - - - 0x003F16 00:BF06: A2 0B     LDX #$0B    ; X - номер игрока в составе, с x06 по x12 пока только у второго состава Японии
 bra_BF08:
-C - - - - - 0x003F18 00:BF08: BD D5 05  LDA ram_05D5,X
+C - - - - - 0x003F18 00:BF08: BD D5 05  LDA ram_суб_позиция_управления,X
 C - - - - - 0x003F1B 00:BF0B: 29 0F     AND #$0F
 C - - - - - 0x003F1D 00:BF0D: 85 1C     STA ram_001C
-C - - - - - 0x003F1F 00:BF0F: BD 1F BF  LDA tbl_BF1F,X
+C - - - - - 0x003F1F 00:BF0F: BD 1F BF  LDA tbl_BF1F_поинтеры_от_номера_игрока_в_расстановке,X
 C - - - - - 0x003F22 00:BF12: 29 03     AND #$03
 C - - - - - 0x003F24 00:BF14: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_поинтеры_после_JSR
-- D 1 - I - 0x003F27 00:BF17: 39 BF     .word ofs_BF39_00
-- D 1 - I - 0x003F29 00:BF19: 45 BF     .word ofs_BF45_01
-- D 1 - I - 0x003F2B 00:BF1B: 54 BF     .word ofs_BF54_02
-- D 1 - I - 0x003F2D 00:BF1D: 5D BF     .word ofs_BF5D_03
+- D 1 - I - 0x003F27 00:BF17: 39 BF     .word ofs_BF39_00_x00x0Ax0B
+- D 1 - I - 0x003F29 00:BF19: 45 BF     .word ofs_BF45_01_x02x04x07
+- D 1 - I - 0x003F2B 00:BF1B: 54 BF     .word ofs_BF54_02_x03x05x08x09
+- D 1 - I - 0x003F2D 00:BF1D: 5D BF     .word ofs_BF5D_03_x01x06
 
 
 
-tbl_BF1F:
-- D 1 - - - 0x003F2F 00:BF1F: 00        .byte $00   ; 
-- D 1 - - - 0x003F30 00:BF20: 43        .byte $43   ; 
-- D 1 - - - 0x003F31 00:BF21: 41        .byte $41   ; 
-- D 1 - - - 0x003F32 00:BF22: 82        .byte $82   ; 
-- D 1 - - - 0x003F33 00:BF23: 81        .byte $81   ; 
-- D 1 - - - 0x003F34 00:BF24: C2        .byte $C2   ; 
-- D 1 - - - 0x003F35 00:BF25: 83        .byte $83   ; 
-- D 1 - - - 0x003F36 00:BF26: 01        .byte $01   ; 
-- D 1 - - - 0x003F37 00:BF27: 02        .byte $02   ; 
-- D 1 - - - 0x003F38 00:BF28: 02        .byte $02   ; 
-- D 1 - - - 0x003F39 00:BF29: 40        .byte $40   ; 
-- D 1 - - - 0x003F3A 00:BF2A: C0        .byte $C0   ; 
+tbl_BF1F_поинтеры_от_номера_игрока_в_расстановке:
+- D 1 - - - 0x003F2F 00:BF1F: 00        .byte $00   ; x00 
+- D 1 - - - 0x003F30 00:BF20: 43        .byte $43   ; x01 
+- D 1 - - - 0x003F31 00:BF21: 41        .byte $41   ; x02 
+- D 1 - - - 0x003F32 00:BF22: 82        .byte $82   ; x03
+- D 1 - - - 0x003F33 00:BF23: 81        .byte $81   ; x04
+- D 1 - - - 0x003F34 00:BF24: C2        .byte $C2   ; x05
+- D 1 - - - 0x003F35 00:BF25: 83        .byte $83   ; x06  \
+- D 1 - - - 0x003F36 00:BF26: 01        .byte $01   ; x07   \
+- D 1 - - - 0x003F37 00:BF27: 02        .byte $02   ; x08    \  походу это байты для 2го состава игроков команд,
+- D 1 - - - 0x003F38 00:BF28: 02        .byte $02   ; x09    /  в нашем случае только 2й состав японии.
+- D 1 - - - 0x003F39 00:BF29: 40        .byte $40   ; x0A   /
+- D 1 - - - 0x003F3A 00:BF2A: C0        .byte $C0   ; x0B  /
 
 
 
 loc_BF2B:
-C D 1 - - - 0x003F3B 00:BF2B: BD D5 05  LDA ram_05D5,X
+C D 1 - - - 0x003F3B 00:BF2B: BD D5 05  LDA ram_суб_позиция_управления,X
 C - - - - - 0x003F3E 00:BF2E: 29 F0     AND #$F0
 C - - - - - 0x003F40 00:BF30: 05 1C     ORA ram_001C
-C - - - - - 0x003F42 00:BF32: 9D D5 05  STA ram_05D5,X
+C - - - - - 0x003F42 00:BF32: 9D D5 05  STA ram_суб_позиция_управления,X
 C - - - - - 0x003F45 00:BF35: CA        DEX
 C - - - - - 0x003F46 00:BF36: 10 D0     BPL bra_BF08
 C - - - - - 0x003F48 00:BF38: 60        RTS
 
 
 
-ofs_BF39_00:
+ofs_BF39_00_x00x0Ax0B:
 C - - J - - 0x003F49 00:BF39: 20 7C BF  JSR sub_BF7C
 C - - - - - 0x003F4C 00:BF3C: 20 AA BF  JSR sub_BFAA
 C - - - - - 0x003F4F 00:BF3F: 20 BA BF  JSR sub_BFBA
@@ -15322,7 +15322,7 @@ C - - - - - 0x003F52 00:BF42: 4C 2B BF  JMP loc_BF2B
 
 
 
-ofs_BF45_01:
+ofs_BF45_01_x02x04x07:
 C - - J - - 0x003F55 00:BF45: 20 7C BF  JSR sub_BF7C
 C - - - - - 0x003F58 00:BF48: 20 C6 BF  JSR sub_BFC6
 C - - - - - 0x003F5B 00:BF4B: 20 AA BF  JSR sub_BFAA
@@ -15331,14 +15331,14 @@ C - - - - - 0x003F61 00:BF51: 4C 2B BF  JMP loc_BF2B
 
 
 
-ofs_BF54_02:
+ofs_BF54_02_x03x05x08x09:
 C - - J - - 0x003F64 00:BF54: 20 BA BF  JSR sub_BFBA
 C - - - - - 0x003F67 00:BF57: 20 B2 BF  JSR sub_BFB2
 C - - - - - 0x003F6A 00:BF5A: 4C 2B BF  JMP loc_BF2B
 
 
 
-ofs_BF5D_03:
+ofs_BF5D_03_x01x06:
 C - - J - - 0x003F6D 00:BF5D: 20 DE BF  JSR sub_BFDE
 C - - - - - 0x003F70 00:BF60: 4C 2B BF  JMP loc_BF2B
 
@@ -15377,7 +15377,7 @@ C - - - - - 0x003F95 00:BF85: 18        CLC
 C - - - - - 0x003F96 00:BF86: 65 1D     ADC ram_001D
 C - - - - - 0x003F98 00:BF88: 6D 30 05  ADC ram_расстановка_команды
 C - - - - - 0x003F9B 00:BF8B: A8        TAY
-C - - - - - 0x003F9C 00:BF8C: BD 1F BF  LDA tbl_BF1F,X
+C - - - - - 0x003F9C 00:BF8C: BD 1F BF  LDA tbl_BF1F_поинтеры_от_номера_игрока_в_расстановке,X
 C - - - - - 0x003F9F 00:BF8F: 29 F0     AND #$F0
 C - - - - - 0x003FA1 00:BF91: D9 98 BF  CMP tbl_BF98,Y
 C - - - - - 0x003FA4 00:BF94: F0 CD     BEQ bra_BF63

@@ -1700,7 +1700,7 @@ bra_CA00_loop:
 C - - - - - 0x01CA10 07:CA00: BC 32 05  LDY ram_номер_игрока,X
 C - - - - - 0x01CA13 07:CA03: BD 50 06  LDA ram_позиция_управление,X
 C - - - - - 0x01CA16 07:CA06: 29 0F     AND #$0F
-C - - - - - 0x01CA18 07:CA08: 99 D5 05  STA ram_05D5,Y
+C - - - - - 0x01CA18 07:CA08: 99 D5 05  STA ram_суб_позиция_управления,Y
 C - - - - - 0x01CA1B 07:CA0B: E8        INX
 C - - - - - 0x01CA1C 07:CA0C: E8        INX
 C - - - - - 0x01CA1D 07:CA0D: E0 0C     CPX #$0C
