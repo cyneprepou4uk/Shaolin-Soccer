@@ -5345,7 +5345,7 @@ C - - - - - 0x01DE63 07:DE53: C9 02     CMP #$02
 C - - - - - 0x01DE65 07:DE55: F0 07     BEQ bra_DE5E
 C - - - - - 0x01DE67 07:DE57: C9 06     CMP #$06
 C - - - - - 0x01DE69 07:DE59: F0 03     BEQ bra_DE5E
-C - - - - - 0x01DE6B 07:DE5B: 4C D3 DE  JMP loc_DED3
+C - - - - - 0x01DE6B 07:DE5B: 4C D3 DE  JMP loc_DED3_проверить_скролл
 bra_DE5E:
 C - - - - - 0x01DE6E 07:DE5E: AD FE 05  LDA ram_угол_ветра
 C - - - - - 0x01DE71 07:DE61: 4A        LSR
@@ -5354,29 +5354,29 @@ C - - - - - 0x01DE73 07:DE63: 4A        LSR
 C - - - - - 0x01DE74 07:DE64: 4A        LSR
 C - - - - - 0x01DE75 07:DE65: 4A        LSR
 C - - - - - 0x01DE76 07:DE66: A8        TAY
-C - - - - - 0x01DE77 07:DE67: B9 53 E1  LDA tbl_E153,Y
+C - - - - - 0x01DE77 07:DE67: B9 53 E1  LDA tbl_E153_тайлы_стрелок_ветра,Y
 C - - - - - 0x01DE7A 07:DE6A: 8D AA 05  STA ram_тайл_hud + 5
 C - - - - - 0x01DE7D 07:DE6D: AD FD 05  LDA ram_сила_ветра
-C - - - - - 0x01DE80 07:DE70: F0 09     BEQ bra_DE7B
+C - - - - - 0x01DE80 07:DE70: F0 09     BEQ bra_DE7B_ветер_не_дует
 C - - - - - 0x01DE82 07:DE72: 18        CLC
 C - - - - - 0x01DE83 07:DE73: 69 8F     ADC #$8F
 C - - - - - 0x01DE85 07:DE75: 8D A9 05  STA ram_тайл_hud + 4
-C - - - - - 0x01DE88 07:DE78: 4C 83 DE  JMP loc_DE83
-bra_DE7B:
-C - - - - - 0x01DE8B 07:DE7B: A9 0F     LDA #$0F
+C - - - - - 0x01DE88 07:DE78: 4C 83 DE  JMP loc_DE83_проверить_время_тайма
+bra_DE7B_ветер_не_дует:
+C - - - - - 0x01DE8B 07:DE7B: A9 0F     LDA #$0F    ; убрать тайлы
 C - - - - - 0x01DE8D 07:DE7D: 8D A9 05  STA ram_тайл_hud + 4
 C - - - - - 0x01DE90 07:DE80: 8D AA 05  STA ram_тайл_hud + 5
-loc_DE83:
+loc_DE83_проверить_время_тайма:
 C D 2 - - - 0x01DE93 07:DE83: AD C1 05  LDA ram_timer_x_00_0
 C - - - - - 0x01DE96 07:DE86: 0D C0 05  ORA ram_timer_0_x0_0
 C - - - - - 0x01DE99 07:DE89: 0D BF 05  ORA ram_timer_0_0x_0
-C - - - - - 0x01DE9C 07:DE8C: D0 25     BNE bra_DEB3
+C - - - - - 0x01DE9C 07:DE8C: D0 25     BNE bra_DEB3_не_отображать_loss    ; если основное время еще не закончилось
 C - - - - - 0x01DE9E 07:DE8E: AD C2 05  LDA ram_loss_0_00_x
 C - - - - - 0x01DEA1 07:DE91: 0D C3 05  ORA ram_loss_0_0x_0
 C - - - - - 0x01DEA4 07:DE94: 0D C4 05  ORA ram_loss_0_x0_0
 C - - - - - 0x01DEA7 07:DE97: 0D C5 05  ORA ram_loss_x_00_0
-C - - - - - 0x01DEAA 07:DE9A: F0 17     BEQ bra_DEB3
-C - - - - - 0x01DEAC 07:DE9C: A9 4D     LDA #$4D
+C - - - - - 0x01DEAA 07:DE9A: F0 17     BEQ bra_DEB3_не_отображать_loss    ; если в запасе нету времени loss
+C - - - - - 0x01DEAC 07:DE9C: A9 4D     LDA #$4D    ; тайлы LOSS
 C - - - - - 0x01DEAE 07:DE9E: 8D A8 05  STA ram_тайл_hud + 3
 C - - - - - 0x01DEB1 07:DEA1: A9 80     LDA #$80
 C - - - - - 0x01DEB3 07:DEA3: 8D A7 05  STA ram_тайл_hud + 2
@@ -5384,8 +5384,8 @@ C - - - - - 0x01DEB6 07:DEA6: A9 4E     LDA #$4E
 C - - - - - 0x01DEB8 07:DEA8: 8D A6 05  STA ram_тайл_hud + 1
 C - - - - - 0x01DEBB 07:DEAB: A9 4E     LDA #$4E
 C - - - - - 0x01DEBD 07:DEAD: 8D A5 05  STA ram_тайл_hud
-C - - - - - 0x01DEC0 07:DEB0: 4C D3 DE  JMP loc_DED3
-bra_DEB3:
+C - - - - - 0x01DEC0 07:DEB0: 4C D3 DE  JMP loc_DED3_проверить_скролл
+bra_DEB3_не_отображать_loss:
 C - - - - - 0x01DEC3 07:DEB3: AD C1 05  LDA ram_timer_x_00_0
 C - - - - - 0x01DEC6 07:DEB6: 18        CLC
 C - - - - - 0x01DEC7 07:DEB7: 69 80     ADC #$80
@@ -5400,7 +5400,7 @@ C - - - - - 0x01DEDA 07:DECA: AD BF 05  LDA ram_timer_0_0x_0
 C - - - - - 0x01DEDD 07:DECD: 18        CLC
 C - - - - - 0x01DEDE 07:DECE: 69 80     ADC #$80
 C - - - - - 0x01DEE0 07:DED0: 8D A5 05  STA ram_тайл_hud
-loc_DED3:
+loc_DED3_проверить_скролл:
 C D 2 - - - 0x01DEE3 07:DED3: AD EC 00  LDA ram_pos_X_lo_скролл
 C - - - - - 0x01DEE6 07:DED6: 38        SEC
 C - - - - - 0x01DEE7 07:DED7: ED F0 00  SBC ram_pos_X_lo_камера
@@ -5416,7 +5416,7 @@ C - - - - - 0x01DEFE 07:DEEE: 09 07     ORA #$07
 C - - - - - 0x01DF00 07:DEF0: 38        SEC
 C - - - - - 0x01DF01 07:DEF1: E5 27     SBC ram_0027
 C - - - - - 0x01DF03 07:DEF3: 30 1D     BMI bra_DF12
-C - - - - - 0x01DF05 07:DEF5: 4C 4E E1  JMP loc_E14E
+C - - - - - 0x01DF05 07:DEF5: 4C 4E E1  JMP loc_E14E_выход
 bra_DEF8:
 C - - - - - 0x01DF08 07:DEF8: AD F0 00  LDA ram_pos_X_lo_камера
 C - - - - - 0x01DF0B 07:DEFB: 38        SEC
@@ -5430,7 +5430,7 @@ C - - - - - 0x01DF18 07:DF08: 09 07     ORA #$07
 C - - - - - 0x01DF1A 07:DF0A: 38        SEC
 C - - - - - 0x01DF1B 07:DF0B: E5 27     SBC ram_0027
 C - - - - - 0x01DF1D 07:DF0D: 30 15     BMI bra_DF24
-C - - - - - 0x01DF1F 07:DF0F: 4C 4E E1  JMP loc_E14E
+C - - - - - 0x01DF1F 07:DF0F: 4C 4E E1  JMP loc_E14E_выход
 bra_DF12:
 C - - - - - 0x01DF22 07:DF12: AD F0 00  LDA ram_pos_X_lo_камера
 C - - - - - 0x01DF25 07:DF15: 18        CLC
@@ -5471,7 +5471,7 @@ C - - - - - 0x01DF63 07:DF53: C8        INY
 C - - - - - 0x01DF64 07:DF54: B1 40     LDA (ram_0040),Y
 C - - - - - 0x01DF66 07:DF56: 85 2D     STA ram_002D
 C - - - - - 0x01DF68 07:DF58: A2 00     LDX #$00
-bra_DF5A:
+bra_DF5A_loop:
 C - - - - - 0x01DF6A 07:DF5A: 8A        TXA
 C - - - - - 0x01DF6B 07:DF5B: 18        CLC
 C - - - - - 0x01DF6C 07:DF5C: 69 04     ADC #$04
@@ -5487,7 +5487,7 @@ C - - - - - 0x01DF7B 07:DF6B: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x01DF7D 07:DF6D: 9D 42 01  STA ram_тайлы_поля_NMT_1,X
 C - - - - - 0x01DF80 07:DF70: E8        INX
 C - - - - - 0x01DF81 07:DF71: E0 1A     CPX #$1A
-C - - - - - 0x01DF83 07:DF73: D0 E5     BNE bra_DF5A
+C - - - - - 0x01DF83 07:DF73: D0 E5     BNE bra_DF5A_loop
 C - - - - - 0x01DF85 07:DF75: A5 1F     LDA ram_001F
 C - - - - - 0x01DF87 07:DF77: 18        CLC
 C - - - - - 0x01DF88 07:DF78: 69 04     ADC #$04
@@ -5526,7 +5526,7 @@ C - - - - - 0x01DFC0 07:DFB0: 8D AB 05  STA ram_флаг_обновл_тайло
 C - - - - - 0x01DFC3 07:DFB3: AD 8D 05  LDA ram_байт_2006_lo_NMT_1
 C - - - - - 0x01DFC6 07:DFB6: 29 01     AND #$01
 C - - - - - 0x01DFC8 07:DFB8: D0 03     BNE bra_DFBD
-C - - - - - 0x01DFCA 07:DFBA: 4C 4E E1  JMP loc_E14E
+C - - - - - 0x01DFCA 07:DFBA: 4C 4E E1  JMP loc_E14E_выход
 bra_DFBD:
 C - - - - - 0x01DFCD 07:DFBD: A5 1D     LDA ram_001D
 C - - - - - 0x01DFCF 07:DFBF: 30 28     BMI bra_DFE9
@@ -5614,7 +5614,7 @@ C - - - - - 0x01E066 07:E056: 85 2F     STA ram_002F
 C - - - - - 0x01E068 07:E058: A2 00     LDX #$00
 C - - - - - 0x01E06A 07:E05A: A5 1E     LDA ram_001E
 C - - - - - 0x01E06C 07:E05C: 85 26     STA ram_0026
-bra_E05E:
+bra_E05E_loop:
 C - - - - - 0x01E06E 07:E05E: A5 26     LDA ram_0026
 C - - - - - 0x01E070 07:E060: 18        CLC
 C - - - - - 0x01E071 07:E061: 69 08     ADC #$08
@@ -5625,7 +5625,7 @@ C - - - - - 0x01E079 07:E069: 25 23     AND ram_0023
 C - - - - - 0x01E07B 07:E06B: 9D 9A 05  STA ram_059A,X
 C - - - - - 0x01E07E 07:E06E: E8        INX
 C - - - - - 0x01E07F 07:E06F: E0 07     CPX #$07
-C - - - - - 0x01E081 07:E071: D0 EB     BNE bra_E05E
+C - - - - - 0x01E081 07:E071: D0 EB     BNE bra_E05E_loop
 C - - - - - 0x01E083 07:E073: A5 1F     LDA ram_001F
 C - - - - - 0x01E085 07:E075: 18        CLC
 C - - - - - 0x01E086 07:E076: 69 04     ADC #$04
@@ -5645,7 +5645,7 @@ C - - - - - 0x01E09C 07:E08C: 85 2F     STA ram_002F
 C - - - - - 0x01E09E 07:E08E: A2 00     LDX #$00
 C - - - - - 0x01E0A0 07:E090: A5 1E     LDA ram_001E
 C - - - - - 0x01E0A2 07:E092: 85 26     STA ram_0026
-bra_E094:
+bra_E094_loop:
 C - - - - - 0x01E0A4 07:E094: A4 26     LDY ram_0026
 C - - - - - 0x01E0A6 07:E096: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x01E0A8 07:E098: 25 23     AND ram_0023
@@ -5656,7 +5656,7 @@ C - - - - - 0x01E0B0 07:E0A0: 69 08     ADC #$08
 C - - - - - 0x01E0B2 07:E0A2: 85 26     STA ram_0026
 C - - - - - 0x01E0B4 07:E0A4: E8        INX
 C - - - - - 0x01E0B5 07:E0A5: E0 04     CPX #$04
-C - - - - - 0x01E0B7 07:E0A7: D0 EB     BNE bra_E094
+C - - - - - 0x01E0B7 07:E0A7: D0 EB     BNE bra_E094_loop
 C - - - - - 0x01E0B9 07:E0A9: A4 21     LDY ram_0021
 C - - - - - 0x01E0BB 07:E0AB: 20 5B E1  JSR sub_E15B
 C - - - - - 0x01E0BE 07:E0AE: A5 21     LDA ram_0021
@@ -5672,7 +5672,7 @@ C - - - - - 0x01E0CC 07:E0BC: 85 2F     STA ram_002F
 C - - - - - 0x01E0CE 07:E0BE: A2 00     LDX #$00
 C - - - - - 0x01E0D0 07:E0C0: A5 1E     LDA ram_001E
 C - - - - - 0x01E0D2 07:E0C2: 85 26     STA ram_0026
-bra_E0C4:
+bra_E0C4_loop:
 C - - - - - 0x01E0D4 07:E0C4: A5 26     LDA ram_0026
 C - - - - - 0x01E0D6 07:E0C6: 18        CLC
 C - - - - - 0x01E0D7 07:E0C7: 69 08     ADC #$08
@@ -5684,7 +5684,7 @@ C - - - - - 0x01E0E1 07:E0D1: 1D 9A 05  ORA ram_059A,X
 C - - - - - 0x01E0E4 07:E0D4: 9D 9A 05  STA ram_059A,X
 C - - - - - 0x01E0E7 07:E0D7: E8        INX
 C - - - - - 0x01E0E8 07:E0D8: E0 07     CPX #$07
-C - - - - - 0x01E0EA 07:E0DA: D0 E8     BNE bra_E0C4
+C - - - - - 0x01E0EA 07:E0DA: D0 E8     BNE bra_E0C4_loop
 C - - - - - 0x01E0EC 07:E0DC: A5 21     LDA ram_0021
 C - - - - - 0x01E0EE 07:E0DE: 18        CLC
 C - - - - - 0x01E0EF 07:E0DF: 69 04     ADC #$04
@@ -5704,7 +5704,7 @@ C - - - - - 0x01E106 07:E0F6: 85 2F     STA ram_002F
 C - - - - - 0x01E108 07:E0F8: A2 00     LDX #$00
 C - - - - - 0x01E10A 07:E0FA: A5 1E     LDA ram_001E
 C - - - - - 0x01E10C 07:E0FC: 85 26     STA ram_0026
-bra_E0FE:
+bra_E0FE_loop:
 C - - - - - 0x01E10E 07:E0FE: A4 26     LDY ram_0026
 C - - - - - 0x01E110 07:E100: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x01E112 07:E102: 25 24     AND ram_0024
@@ -5716,13 +5716,13 @@ C - - - - - 0x01E11D 07:E10D: 69 08     ADC #$08
 C - - - - - 0x01E11F 07:E10F: 85 26     STA ram_0026
 C - - - - - 0x01E121 07:E111: E8        INX
 C - - - - - 0x01E122 07:E112: E0 04     CPX #$04
-C - - - - - 0x01E124 07:E114: D0 E8     BNE bra_E0FE
+C - - - - - 0x01E124 07:E114: D0 E8     BNE bra_E0FE_loop
 C - - - - - 0x01E126 07:E116: A5 22     LDA ram_0022
 C - - - - - 0x01E128 07:E118: 18        CLC
 C - - - - - 0x01E129 07:E119: 69 C8     ADC #$C8
 C - - - - - 0x01E12B 07:E11B: 85 25     STA ram_0025
 C - - - - - 0x01E12D 07:E11D: A2 00     LDX #$00
-bra_E11F:
+bra_E11F_loop:
 C - - - - - 0x01E12F 07:E11F: A5 25     LDA ram_0025
 C - - - - - 0x01E131 07:E121: 9D 8F 05  STA ram_058F,X
 C - - - - - 0x01E134 07:E124: 18        CLC
@@ -5730,13 +5730,13 @@ C - - - - - 0x01E135 07:E125: 69 08     ADC #$08
 C - - - - - 0x01E137 07:E127: 85 25     STA ram_0025
 C - - - - - 0x01E139 07:E129: E8        INX
 C - - - - - 0x01E13A 07:E12A: E0 07     CPX #$07
-C - - - - - 0x01E13C 07:E12C: D0 F1     BNE bra_E11F
+C - - - - - 0x01E13C 07:E12C: D0 F1     BNE bra_E11F_loop
 C - - - - - 0x01E13E 07:E12E: A5 22     LDA ram_0022
 C - - - - - 0x01E140 07:E130: 18        CLC
 C - - - - - 0x01E141 07:E131: 69 C0     ADC #$C0
 C - - - - - 0x01E143 07:E133: 85 25     STA ram_0025
 C - - - - - 0x01E145 07:E135: A2 00     LDX #$00
-bra_E137:
+bra_E137_loop:
 C - - - - - 0x01E147 07:E137: A5 25     LDA ram_0025
 C - - - - - 0x01E149 07:E139: 9D 96 05  STA ram_0596,X
 C - - - - - 0x01E14C 07:E13C: 18        CLC
@@ -5744,26 +5744,26 @@ C - - - - - 0x01E14D 07:E13D: 69 08     ADC #$08
 C - - - - - 0x01E14F 07:E13F: 85 25     STA ram_0025
 C - - - - - 0x01E151 07:E141: E8        INX
 C - - - - - 0x01E152 07:E142: E0 04     CPX #$04
-C - - - - - 0x01E154 07:E144: D0 F1     BNE bra_E137
+C - - - - - 0x01E154 07:E144: D0 F1     BNE bra_E137_loop
 C - - - - - 0x01E156 07:E146: AD AB 05  LDA ram_флаг_обновл_тайлов_экр
 C - - - - - 0x01E159 07:E149: 09 40     ORA #$40
 C - - - - - 0x01E15B 07:E14B: 8D AB 05  STA ram_флаг_обновл_тайлов_экр
-loc_E14E:
+loc_E14E_выход:
 C D 3 - - - 0x01E15E 07:E14E: 68        PLA
 C - - - - - 0x01E15F 07:E14F: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01E162 07:E152: 60        RTS
 
 
 
-tbl_E153:
-- D 3 - - - 0x01E163 07:E153: 5C        .byte $5C   ; 
-- D 3 - - - 0x01E164 07:E154: 5D        .byte $5D   ; 
-- D 3 - - - 0x01E165 07:E155: 5E        .byte $5E   ; 
-- D 3 - - - 0x01E166 07:E156: 5F        .byte $5F   ; 
-- - - - - - 0x01E167 07:E157: 6C        .byte $6C   ; 
-- - - - - - 0x01E168 07:E158: 6D        .byte $6D   ; 
-- D 3 - - - 0x01E169 07:E159: 6E        .byte $6E   ; 
-- - - - - - 0x01E16A 07:E15A: 6F        .byte $6F   ; 
+tbl_E153_тайлы_стрелок_ветра:
+- D 3 - - - 0x01E163 07:E153: 5C        .byte $5C   ; 00 0   градусов вверх
+- D 3 - - - 0x01E164 07:E154: 5D        .byte $5D   ; 01 45  
+- D 3 - - - 0x01E165 07:E155: 5E        .byte $5E   ; 02 90  вправо
+- D 3 - - - 0x01E166 07:E156: 5F        .byte $5F   ; 03 135 
+- - - - - - 0x01E167 07:E157: 6C        .byte $6C   ; 04 180 вниз
+- - - - - - 0x01E168 07:E158: 6D        .byte $6D   ; 05 225 
+- D 3 - - - 0x01E169 07:E159: 6E        .byte $6E   ; 06 270 влево
+- - - - - - 0x01E16A 07:E15A: 6F        .byte $6F   ; 07 315 
 
 
 
