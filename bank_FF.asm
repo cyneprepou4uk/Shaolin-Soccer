@@ -7722,19 +7722,19 @@ C D 3 - - - 0x01EB9C 07:EB8C: A9 00     LDA #$00
 C - - - - - 0x01EB9E 07:EB8E: 85 1C     STA ram_001C
 C - - - - - 0x01EBA0 07:EB90: 85 1D     STA ram_001D
 C - - - - - 0x01EBA2 07:EB92: A4 F4     LDY ram_00F4
-C - - - - - 0x01EBA4 07:EB94: AD 58 00  LDA ram_script
-C - - - - - 0x01EBA7 07:EB97: F0 14     BEQ bra_EBAD    ; если игра на поле
-C - - - - - 0x01EBA9 07:EB99: C9 01     CMP #$01
-C - - - - - 0x01EBAB 07:EB9B: F0 10     BEQ bra_EBAD
-C - - - - - 0x01EBAD 07:EB9D: C9 03     CMP #$03
-C - - - - - 0x01EBAF 07:EB9F: F0 0C     BEQ bra_EBAD
+C - - - - - 0x01EBA4 07:EB94: AD 58 00  LDA ram_script  ; bzk опт, проверить сразу на con_script_меню
+C - - - - - 0x01EBA7 07:EB97: F0 14     BEQ bra_EBAD_это_не_меню    ; если игра на поле
+C - - - - - 0x01EBA9 07:EB99: C9 01     CMP #con_script_логотип
+C - - - - - 0x01EBAB 07:EB9B: F0 10     BEQ bra_EBAD_это_не_меню
+C - - - - - 0x01EBAD 07:EB9D: C9 03     CMP #con_script_титры
+C - - - - - 0x01EBAF 07:EB9F: F0 0C     BEQ bra_EBAD_это_не_меню
 C - - - - - 0x01EBB1 07:EBA1: B5 74     LDA ram_анимация_игрока,X
 C - - - - - 0x01EBB3 07:EBA3: 29 7F     AND #$7F
 C - - - - - 0x01EBB5 07:EBA5: C9 7F     CMP #$7F
 C - - - - - 0x01EBB7 07:EBA7: F0 43     BEQ bra_EBEC_RTS
 C - - - - - 0x01EBB9 07:EBA9: 8A        TXA
 C - - - - - 0x01EBBA 07:EBAA: 4C E7 EB  JMP loc_EBE7
-bra_EBAD:
+bra_EBAD_это_не_меню:
 C - - - - - 0x01EBBD 07:EBAD: BD 99 03  LDA ram_pos_Z_hi_игрока,X
 C - - - - - 0x01EBC0 07:EBB0: 10 0D     BPL bra_EBBF
 C - - - - - 0x01EBC2 07:EBB2: F0 0B     BEQ bra_EBBF
@@ -7749,10 +7749,10 @@ C - - - - - 0x01EBCF 07:EBBF: B5 74     LDA ram_анимация_игрока,X
 C - - - - - 0x01EBD1 07:EBC1: 29 7F     AND #$7F
 C - - - - - 0x01EBD3 07:EBC3: C9 7F     CMP #$7F
 C - - - - - 0x01EBD5 07:EBC5: F0 0F     BEQ bra_EBD6
-C - - - - - 0x01EBD7 07:EBC7: E0 0C     CPX #$0C
-C - - - - - 0x01EBD9 07:EBC9: D0 03     BNE bra_EBCE
-C - - - - - 0x01EBDB 07:EBCB: 20 ED EB  JSR sub_EBED
-bra_EBCE:
+C - - - - - 0x01EBD7 07:EBC7: E0 0C     CPX #con_индекс_мяча
+C - - - - - 0x01EBD9 07:EBC9: D0 03     BNE bra_EBCE_это_не_мяч
+C - - - - - 0x01EBDB 07:EBCB: 20 ED EB  JSR sub_EBED_мяч
+bra_EBCE_это_не_мяч:
 C - - - - - 0x01EBDE 07:EBCE: 8A        TXA
 C - - - - - 0x01EBDF 07:EBCF: 05 1D     ORA ram_001D
 C - - - - - 0x01EBE1 07:EBD1: 99 A1 00  STA ram_приоритет_анимации,Y
@@ -7775,7 +7775,7 @@ C - - - - - 0x01EBFC 07:EBEC: 60        RTS
 
 
 
-sub_EBED:
+sub_EBED_мяч:
 C - - - - - 0x01EBFD 07:EBED: AD 0E 05  LDA ram_флаг_прозрачного_мяча
 C - - - - - 0x01EC00 07:EBF0: D0 21     BNE bra_EC13
 C - - - - - 0x01EC02 07:EBF2: 38        SEC
