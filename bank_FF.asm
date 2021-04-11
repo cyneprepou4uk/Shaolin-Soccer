@@ -1691,7 +1691,7 @@ C - - - - - 0x01CA00 07:C9F0: 85 58     STA ram_script
 C - - - - - 0x01CA02 07:C9F2: A9 0E     LDA #$0E
 C - - - - - 0x01CA04 07:C9F4: 85 59     STA ram_subscript
 C - - - - - 0x01CA06 07:C9F6: A9 03     LDA #$03
-C - - - - - 0x01CA08 07:C9F8: 85 5B     STA ram_для_0059
+C - - - - - 0x01CA08 07:C9F8: 85 5B     STA ram_для_subscript
 loc_C9FA:
 C D 2 - - - 0x01CA0A 07:C9FA: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01CA0C 07:C9FC: 10 20     BPL bra_CA11_RTS    ; если режим прохождения

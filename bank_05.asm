@@ -3231,7 +3231,7 @@ C - - - - - 0x01529D 05:928D: 30 02     BMI bra_9291
 bra_9291:
 C - - - - - 0x0152A1 05:9291: 85 59     STA ram_subscript
 C - - - - - 0x0152A3 05:9293: A9 04     LDA #$04
-C - - - - - 0x0152A5 05:9295: 8D 5B 00  STA ram_для_0059
+C - - - - - 0x0152A5 05:9295: 8D 5B 00  STA ram_для_subscript
 C - - - - - 0x0152A8 05:9298: 4C BE 92  RTS
 bra_929B:
 C - - - - - 0x0152AB 05:929B: 20 7D C0  JSR sub_0x01C345
@@ -6332,7 +6332,7 @@ tbl_A317:
 
 
 sub_A318:
-C - - - - - 0x016328 05:A318: AD 5B 00  LDA ram_для_0059
+C - - - - - 0x016328 05:A318: AD 5B 00  LDA ram_для_subscript
 C - - - - - 0x01632B 05:A31B: 8D 59 00  STA ram_subscript
 C - - - - - 0x01632E 05:A31E: 60        RTS
 
@@ -7591,7 +7591,7 @@ C - - - - - 0x016A95 05:AA85: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x016A98 05:AA88: A9 0A     LDA #$0A
 C - - - - - 0x016A9A 05:AA8A: 85 59     STA ram_subscript
 C - - - - - 0x016A9C 05:AA8C: A9 0D     LDA #$0D
-C - - - - - 0x016A9E 05:AA8E: 85 5B     STA ram_для_0059
+C - - - - - 0x016A9E 05:AA8E: 85 5B     STA ram_для_subscript
 C - - - - - 0x016AA0 05:AA90: 4C EC A8  RTS
 
 
@@ -9385,7 +9385,7 @@ loc_B3BD:
 - - - - - - 0x0173CF 05:B3BF: 8D 4A 05  STA ram_054A
 - - - - - - 0x0173D2 05:B3C2: A8        TAY
 - - - - - - 0x0173D3 05:B3C3: A9 03     LDA #$03
-- - - - - - 0x0173D5 05:B3C5: 85 5B     STA ram_для_0059
+- - - - - - 0x0173D5 05:B3C5: 85 5B     STA ram_для_subscript
 - - - - - - 0x0173D7 05:B3C7: A5 57     LDA ram_опция_режим_и_сложность
 - - - - - - 0x0173D9 05:B3C9: 29 03     AND #$03
 - - - - - - 0x0173DB 05:B3CB: D0 06     BNE bra_B3D3
@@ -9551,7 +9551,7 @@ ofs_B4AE_01:
 - - - - - - 0x0174CE 05:B4BE: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 - - - - - - 0x0174D1 05:B4C1: 20 44 C0  JSR sub_0x01D057
 - - - - - - 0x0174D4 05:B4C4: 20 4A C0  JSR sub_0x01D072
-- - - - - - 0x0174D7 05:B4C7: A5 5B     LDA ram_для_0059
+- - - - - - 0x0174D7 05:B4C7: A5 5B     LDA ram_для_subscript
 - - - - - - 0x0174D9 05:B4C9: 85 59     STA ram_subscript
 - - - - - - 0x0174DB 05:B4CB: A9 04     LDA #$04
 - - - - - - 0x0174DD 05:B4CD: 8D 29 05  STA ram_опция_материк
@@ -9575,7 +9575,7 @@ sub_B4D6:
 - - - - - - 0x0174FD 05:B4ED: 8D 20 03  STA ram_pos_X_lo_мяча
 - - - - - - 0x017500 05:B4F0: A9 A0     LDA #$A0
 - - - - - - 0x017502 05:B4F2: 8D 59 03  STA ram_pos_Y_lo_мяча
-- - - - - - 0x017505 05:B4F5: A5 5B     LDA ram_для_0059
+- - - - - - 0x017505 05:B4F5: A5 5B     LDA ram_для_subscript
 - - - - - - 0x017507 05:B4F7: C9 04     CMP #$04
 - - - - - - 0x017509 05:B4F9: F0 0E     BEQ bra_B509_RTS
 - - - - - - 0x01750B 05:B4FB: AD 4A 05  LDA ram_054A
