@@ -10669,7 +10669,7 @@ C - - - - - 0x00AAA5 02:AA95: A9 00     LDA #$00    ; логотип с куни
 C - - - - - 0x00AAA7 02:AA97: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
 C - - - - - 0x00AAAA 02:AA9A: 20 62 C0  JSR sub_0x01EF64_убрать_полоску_слева_на_экране
 C - - - - - 0x00AAAD 02:AA9D: A9 08     LDA #$08
-C - - - - - 0x00AAAF 02:AA9F: 8D 6D 00  STA ram_006D
+C - - - - - 0x00AAAF 02:AA9F: 8D 6D 00  STA ram_006D_мяч
 C - - - - - 0x00AAB2 02:AAA2: E6 93     INC ram_таймер_анимации_мяча
 C - - - - - 0x00AAB4 02:AAA4: C6 A0     DEC ram_кадр_анимации_мяча
 C - - - - - 0x00AAB6 02:AAA6: 20 01 AE  JSR sub_AE01
@@ -10825,7 +10825,7 @@ C - - - - - 0x00AB93 02:AB83: A9 59     LDA #con_chr_bank + $59
 C - - - - - 0x00AB95 02:AB85: 8D B8 05  STA ram_банк_спрайтов
 C - - - - - 0x00AB98 02:AB88: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 C - - - - - 0x00AB9B 02:AB8B: A9 09     LDA #$09
-C - - - - - 0x00AB9D 02:AB8D: 8D 6D 00  STA ram_006D
+C - - - - - 0x00AB9D 02:AB8D: 8D 6D 00  STA ram_006D_мяч
 C - - - - - 0x00ABA0 02:AB90: E6 93     INC ram_таймер_анимации_мяча
 C - - - - - 0x00ABA2 02:AB92: C6 94     DEC ram_кадр_анимации_игрока
 C - - - - - 0x00ABA4 02:AB94: A9 C0     LDA #$C0
@@ -13744,8 +13744,8 @@ sub_BA66:
 - - - - - - 0x00BA80 02:BA70: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
 - - - - - - 0x00BA83 02:BA73: 8D B1 05  STA ram_номер_палитры_спрайтов + 3
 - - - - - - 0x00BA86 02:BA76: 8D 61 00  STA ram_0061
-- - - - - - 0x00BA89 02:BA79: 8D 62 00  STA ram_0062
-- - - - - - 0x00BA8C 02:BA7C: 8D 6D 00  STA ram_006D
+- - - - - - 0x00BA89 02:BA79: 8D 62 00  STA ram_0061 + 1
+- - - - - - 0x00BA8C 02:BA7C: 8D 6D 00  STA ram_006D_мяч
 - - - - - - 0x00BA8F 02:BA7F: A2 2C     LDX #con_chr_bank + $2C
 - - - - - - 0x00BA91 02:BA81: 8E B8 05  STX ram_банк_спрайтов
 - - - - - - 0x00BA94 02:BA84: E8        INX ; con_chr_bank + $2D
@@ -14190,7 +14190,7 @@ bra_BDA9:
 - - - - - - 0x00BDC2 02:BDB2: A2 0C     LDX #$0C
 - - - - - - 0x00BDC4 02:BDB4: D0 B4     BNE bra_BD6A_loop
 bra_BDB6:
-- - - - - - 0x00BDC6 02:BDB6: EE 6D 00  INC ram_006D
+- - - - - - 0x00BDC6 02:BDB6: EE 6D 00  INC ram_006D_мяч
 - - - - - - 0x00BDC9 02:BDB9: 20 D4 BE  JSR sub_BED4
 - - - - - - 0x00BDCC 02:BDBC: 20 59 C0  JSR sub_0x01D05F
 - - - - - - 0x00BDCF 02:BDBF: 60        RTS
