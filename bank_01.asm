@@ -14298,7 +14298,7 @@ C - - - - - 0x007A1D 01:BA0D: A9 45     LDA #con_sfx_молния
 C - - - - - 0x007A1F 01:BA0F: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x007A22 01:BA12: AD 45 00  LDA ram_рандом
 C - - - - - 0x007A25 01:BA15: 29 07     AND #$07
-C - - - - - 0x007A27 01:BA17: 8D E4 05  STA ram_05E4
+C - - - - - 0x007A27 01:BA17: 8D E4 05  STA ram_поинтер_координаты_молнии_на_экране
 C - - - - - 0x007A2A 01:BA1A: 4C 8B BA  JMP loc_BA8B
 
 
@@ -14372,7 +14372,7 @@ C - - - - - 0x007A97 01:BA87: 4C 3E BB  JMP loc_BB3E
 
 
 ofs_BA8B_01_молния:
-C D 1 - - - 0x007A9B 01:BA8B: AD E4 05  LDA ram_05E4
+C D 1 - - - 0x007A9B 01:BA8B: AD E4 05  LDA ram_поинтер_координаты_молнии_на_экране
 loc_BA8B:
 C - - - - - 0x007A9E 01:BA8E: A8        TAY
 C - - - - - 0x007A9F 01:BA8F: B9 1D BA  LDA tbl_BA1D,Y

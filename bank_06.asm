@@ -4142,7 +4142,7 @@ C - - - - - 0x019C7F 06:9C6F: 9D 2E 04  STA ram_spd_Z_hi_игрока,X
 loc_9C72_пропустить_гравитацию:
 C D 0 - - - 0x019C82 06:9C72: A5 58     LDA ram_script
 C - - - - - 0x019C84 06:9C74: D0 52     BNE bra_9CC8_RTS    ; если не игра на поле
-C - - - - - 0x019C86 06:9C76: AD FC 05  LDA ram_05FC
+C - - - - - 0x019C86 06:9C76: AD FC 05  LDA ram_степень_силы_ветра
 C - - - - - 0x019C89 06:9C79: D0 03     BNE bra_9C7E
 C - - - - - 0x019C8B 06:9C7B: 4C C8 9C  RTS
 bra_9C7E:
@@ -4711,7 +4711,7 @@ C - - - - - 0x01A05E 06:A04E: B0 18     BCS bra_A068
 C - - - - - 0x01A060 06:A050: A5 1D     LDA ram_001D
 C - - - - - 0x01A062 06:A052: C9 02     CMP #$02
 C - - - - - 0x01A064 06:A054: D0 2A     BNE bra_A080
-C - - - - - 0x01A066 06:A056: AD FC 05  LDA ram_05FC
+C - - - - - 0x01A066 06:A056: AD FC 05  LDA ram_степень_силы_ветра
 C - - - - - 0x01A069 06:A059: F0 25     BEQ bra_A080
 C - - - - - 0x01A06B 06:A05B: C9 01     CMP #$01
 C - - - - - 0x01A06D 06:A05D: D0 09     BNE bra_A068
