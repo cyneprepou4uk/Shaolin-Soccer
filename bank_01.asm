@@ -14371,9 +14371,9 @@ C - - - - - 0x007A97 01:BA87: 4C 3E BB  JMP loc_BB3E
 
 
 
-loc_BA8B:
 ofs_BA8B_01_молния:
 C D 1 - - - 0x007A9B 01:BA8B: AD E4 05  LDA ram_05E4
+loc_BA8B:
 C - - - - - 0x007A9E 01:BA8E: A8        TAY
 C - - - - - 0x007A9F 01:BA8F: B9 1D BA  LDA tbl_BA1D,Y
 C - - - - - 0x007AA2 01:BA92: 85 1C     STA ram_001C
