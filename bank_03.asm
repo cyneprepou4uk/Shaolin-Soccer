@@ -12,7 +12,7 @@
 .export loc_0x00C019_выбрать_погоду
 .export loc_0x00C01C
 .export loc_0x00C01F
-.export loc_0x00C022
+.export loc_0x00C022_мерцание_спрайтов
 
 
 
@@ -35,7 +35,7 @@ C - - J - - 0x00C01C 03:800C: 4C F1 BC  JMP loc_BCF1
 loc_0x00C01F:
 C - - J - - 0x00C01F 03:800F: 4C D4 BE  JMP loc_BED4
 
-loc_0x00C022:
+loc_0x00C022_мерцание_спрайтов:
 C - - J - - 0x00C022 03:8012: 4C 23 BF  JMP loc_BF23_мерцание_спрайтов
 
 
@@ -11715,14 +11715,14 @@ C - - - - - 0x00FFD5 03:BFC5: A9 00     LDA #$00
 C - - - - - 0x00FFD7 03:BFC7: 85 1C     STA ram_001C
 C - - - - - 0x00FFD9 03:BFC9: A6 1D     LDX ram_001D
 C - - - - - 0x00FFDB 03:BFCB: CA        DEX
-bra_BFCC:
+bra_BFCC_loop:
 C - - - - - 0x00FFDC 03:BFCC: A4 1C     LDY ram_001C
 C - - - - - 0x00FFDE 03:BFCE: B9 32 00  LDA ram_0032,Y
 C - - - - - 0x00FFE1 03:BFD1: B4 38     LDY ram_0038,X
 C - - - - - 0x00FFE3 03:BFD3: 99 A1 00  STA ram_приоритет_анимации,Y
 C - - - - - 0x00FFE6 03:BFD6: E6 1C     INC ram_001C
 C - - - - - 0x00FFE8 03:BFD8: CA        DEX
-C - - - - - 0x00FFE9 03:BFD9: 10 F1     BPL bra_BFCC
+C - - - - - 0x00FFE9 03:BFD9: 10 F1     BPL bra_BFCC_loop
 C - - - - - 0x00FFEB 03:BFDB: 60        RTS
 
 
