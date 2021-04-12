@@ -4507,7 +4507,7 @@ C D 2 - - - 0x01D8D8 07:D8C8: F0 20     BEQ bra_D8EA
 C D 2 - - - 0x01D8DA 07:D8CA: 30 0F     BMI bra_D8DB
 C D 2 - - - 0x01D8DC 07:D8CC: C9 03     CMP #$03
 C D 2 - - - 0x01D8DE 07:D8CE: 90 1A     BCC bra_D8EA
-C D 2 - - - 0x01D8E0 07:D8D0: A9 74     LDA #$74
+C D 2 - - - 0x01D8E0 07:D8D0: A9 74     LDA #con_номер_тайла + $74
 C D 2 - - - 0x01D8E2 07:D8D2: 85 0C     STA ram_000C
 C D 2 - - - 0x01D8E4 07:D8D4: A9 41     LDA #$41
 C D 2 - - - 0x01D8E6 07:D8D6: 85 0D     STA ram_000D
@@ -4515,13 +4515,13 @@ C D 2 - - - 0x01D8E8 07:D8D8: 4C F2 D8  JMP loc_D8F2
 bra_D8DB:
 C D 2 - - - 0x01D8EB 07:D8DB: C9 FE     CMP #$FE
 C D 2 - - - 0x01D8ED 07:D8DD: B0 0B     BCS bra_D8EA
-C D 2 - - - 0x01D8EF 07:D8DF: A9 74     LDA #$74
+C D 2 - - - 0x01D8EF 07:D8DF: A9 74     LDA #con_номер_тайла + $74
 C D 2 - - - 0x01D8F1 07:D8E1: 85 0C     STA ram_000C
 C D 2 - - - 0x01D8F3 07:D8E3: A9 01     LDA #$01
 C D 2 - - - 0x01D8F5 07:D8E5: 85 0D     STA ram_000D
 C D 2 - - - 0x01D8F7 07:D8E7: 4C F2 D8  JMP loc_D8F2
 bra_D8EA:
-C D 2 - - - 0x01D8FA 07:D8EA: A9 73     LDA #$73
+C D 2 - - - 0x01D8FA 07:D8EA: A9 73     LDA #con_номер_тайла + $73
 C D 2 - - - 0x01D8FC 07:D8EC: 85 0C     STA ram_000C
 C D 2 - - - 0x01D8FE 07:D8EE: A9 01     LDA #$01
 C D 2 - - - 0x01D900 07:D8F0: 85 0D     STA ram_000D
@@ -4590,7 +4590,7 @@ C D 2 - - - 0x01D97A 07:D96A: 10 05     BPL bra_D971
 C D 2 - - - 0x01D97C 07:D96C: A5 0C     LDA ram_000C
 C D 2 - - - 0x01D97E 07:D96E: 4C 73 D9  JMP loc_D973
 bra_D971:
-C D 2 - - - 0x01D981 07:D971: A9 76     LDA #$76
+C D 2 - - - 0x01D981 07:D971: A9 76     LDA #con_номер_тайла + $76
 loc_D973:
 C D 2 - - - 0x01D983 07:D973: 9D 01 02  STA ram_spr_T,X
 C D 2 - - - 0x01D986 07:D976: A5 0D     LDA ram_000D
@@ -4753,18 +4753,18 @@ tbl_DA5E_spr_Y:
 
 
 tbl_DA6A_spr_T:
-- D 2 - - - 0x01DA7A 07:DA6A: E0        .byte $E0   ; 
-- D 2 - - - 0x01DA7B 07:DA6B: F0        .byte $F0   ; 
-- D 2 - - - 0x01DA7C 07:DA6C: F1        .byte $F1   ; 
-- D 2 - - - 0x01DA7D 07:DA6D: E2        .byte $E2   ; 
-- D 2 - - - 0x01DA7E 07:DA6E: F2        .byte $F2   ; 
-- D 2 - - - 0x01DA7F 07:DA6F: E4        .byte $E4   ; 
-- D 2 - - - 0x01DA80 07:DA70: E3        .byte $E3   ; 
-- D 2 - - - 0x01DA81 07:DA71: F4        .byte $F4   ; 
-- D 2 - - - 0x01DA82 07:DA72: F5        .byte $F5   ; 
-- D 2 - - - 0x01DA83 07:DA73: E5        .byte $E5   ; 
-- D 2 - - - 0x01DA84 07:DA74: E6        .byte $E6   ; 
-- D 2 - - - 0x01DA85 07:DA75: F6        .byte $F6   ; 
+- D 2 - - - 0x01DA7A 07:DA6A: E0        .byte con_номер_тайла + $E0   ; 
+- D 2 - - - 0x01DA7B 07:DA6B: F0        .byte con_номер_тайла + $F0   ; 
+- D 2 - - - 0x01DA7C 07:DA6C: F1        .byte con_номер_тайла + $F1   ; 
+- D 2 - - - 0x01DA7D 07:DA6D: E2        .byte con_номер_тайла + $E2   ; 
+- D 2 - - - 0x01DA7E 07:DA6E: F2        .byte con_номер_тайла + $F2   ; 
+- D 2 - - - 0x01DA7F 07:DA6F: E4        .byte con_номер_тайла + $E4   ; 
+- D 2 - - - 0x01DA80 07:DA70: E3        .byte con_номер_тайла + $E3   ; 
+- D 2 - - - 0x01DA81 07:DA71: F4        .byte con_номер_тайла + $F4   ; 
+- D 2 - - - 0x01DA82 07:DA72: F5        .byte con_номер_тайла + $F5   ; 
+- D 2 - - - 0x01DA83 07:DA73: E5        .byte con_номер_тайла + $E5   ; 
+- D 2 - - - 0x01DA84 07:DA74: E6        .byte con_номер_тайла + $E6   ; 
+- D 2 - - - 0x01DA85 07:DA75: F6        .byte con_номер_тайла + $F6   ; 
 
 
 
@@ -4893,7 +4893,7 @@ bra_DB4C:
 C - - - - - 0x01DB5C 07:DB4C: A9 F9     LDA #$F9
 loc_DB4E:
 C D 2 - - - 0x01DB5E 07:DB4E: 9D 00 02  STA ram_spr_Y,X
-C - - - - - 0x01DB61 07:DB51: A9 07     LDA #$07
+C - - - - - 0x01DB61 07:DB51: A9 07     LDA #con_номер_тайла + $07
 C - - - - - 0x01DB63 07:DB53: 9D 01 02  STA ram_spr_T,X
 C - - - - - 0x01DB66 07:DB56: B9 18 01  LDA ram_0118,Y
 C - - - - - 0x01DB69 07:DB59: 29 C0     AND #$C0
@@ -4950,7 +4950,7 @@ C - - - - - 0x01DBCC 07:DBBC: 10 03     BPL bra_DBC1_не_ручная_пауз�
 - - - - - - 0x01DBCE 07:DBBE: 4C 64 DC  JMP loc_DC64
 bra_DBC1_не_ручная_пауза:
 C - - - - - 0x01DBD1 07:DBC1: A2 0B     LDX #$0B
-loc_DBC3:
+loc_DBC3_loop:
 C D 2 - - - 0x01DBD3 07:DBC3: FE 18 01  INC ram_0118,X
 C - - - - - 0x01DBD6 07:DBC6: BD 18 01  LDA ram_0118,X
 C - - - - - 0x01DBD9 07:DBC9: C9 6E     CMP #$6E
@@ -5030,13 +5030,13 @@ C - - - - - 0x01DC68 07:DC58: 7D 24 01  ADC ram_0124,X
 C - - - - - 0x01DC6B 07:DC5B: 9D 00 01  STA ram_0100,X
 C - - - - - 0x01DC6E 07:DC5E: CA        DEX
 C - - - - - 0x01DC6F 07:DC5F: 30 03     BMI bra_DC64
-C - - - - - 0x01DC71 07:DC61: 4C C3 DB  JMP loc_DBC3
+C - - - - - 0x01DC71 07:DC61: 4C C3 DB  JMP loc_DBC3_loop
 bra_DC64:
 loc_DC64:
 C - - - - - 0x01DC74 07:DC64: A9 00     LDA #$00
 C - - - - - 0x01DC76 07:DC66: AA        TAX
 C - - - - - 0x01DC77 07:DC67: A8        TAY
-loc_DC68:
+loc_DC68_loop:
 C D 2 - - - 0x01DC78 07:DC68: CC AC 03  CPY ram_объем_дождя
 C - - - - - 0x01DC7B 07:DC6B: F0 0C     BEQ bra_DC79
 C - - - - - 0x01DC7D 07:DC6D: B0 0A     BCS bra_DC79
@@ -5048,7 +5048,7 @@ bra_DC79:
 C - - - - - 0x01DC89 07:DC79: A9 F9     LDA #$F9
 loc_DC7B:
 C - - - - - 0x01DC8B 07:DC7B: 9D 00 02  STA ram_spr_Y,X
-C - - - - - 0x01DC8E 07:DC7E: A9 07     LDA #$07
+C - - - - - 0x01DC8E 07:DC7E: A9 07     LDA #con_номер_тайла + $07
 C - - - - - 0x01DC90 07:DC80: 9D 01 02  STA ram_spr_T,X
 C - - - - - 0x01DC93 07:DC83: B9 24 01  LDA ram_0124,Y
 C - - - - - 0x01DC96 07:DC86: 30 05     BMI bra_DC8D
@@ -5064,7 +5064,7 @@ C - - - - - 0x01DCA8 07:DC98: E8        INX
 C - - - - - 0x01DCAC 07:DC9C: E0 30     CPX #$0C
 C - - - - - 0x01DCAE 07:DC9E: F0 04     BEQ bra_DCA4_RTS
 C - - - - - 0x01DCB0 07:DCA0: C8        INY
-C - - - - - 0x01DCB1 07:DCA1: 4C 68 DC  JMP loc_DC68
+C - - - - - 0x01DCB1 07:DCA1: 4C 68 DC  JMP loc_DC68_loop
 bra_DCA4_RTS:
 C - - - - - 0x01DCB4 07:DCA4: 60        RTS
 
@@ -5222,7 +5222,7 @@ C - - - - - 0x01DDC8 07:DDB8: 29 C1     AND #$C1
 loc_DDBA:
 C D 2 - - - 0x01DDCA 07:DDBA: 09 01     ORA #$01
 C - - - - - 0x01DDCC 07:DDBC: 9D 02 02  STA ram_spr_A,X
-C - - - - - 0x01DDCF 07:DDBF: B9 FF DD  LDA tbl_DDFF,Y
+C - - - - - 0x01DDCF 07:DDBF: B9 FF DD  LDA tbl_DDFF_spr_T,Y
 C - - - - - 0x01DDD2 07:DDC2: 9D 01 02  STA ram_spr_T,X
 C - - - - - 0x01DDD5 07:DDC5: E8        INX
 C - - - - - 0x01DDD9 07:DDC9: C8        INY
@@ -5286,19 +5286,19 @@ tbl_DDF3:
 
 
 
-tbl_DDFF:
-- D 2 - - - 0x01DE0F 07:DDFF: CA        .byte $CA   ; 
-- D 2 - - - 0x01DE10 07:DE00: CA        .byte $CA   ; 
-- D 2 - - - 0x01DE11 07:DE01: CA        .byte $CA   ; 
-- D 2 - - - 0x01DE12 07:DE02: CA        .byte $CA   ; 
-- D 2 - - - 0x01DE13 07:DE03: EA        .byte $EA   ; 
-- D 2 - - - 0x01DE14 07:DE04: EA        .byte $EA   ; 
-- D 2 - - - 0x01DE15 07:DE05: CA        .byte $CA   ; 
-- D 2 - - - 0x01DE16 07:DE06: CA        .byte $CA   ; 
-- D 2 - - - 0x01DE17 07:DE07: CA        .byte $CA   ; 
-- D 2 - - - 0x01DE18 07:DE08: CA        .byte $CA   ; 
-- D 2 - - - 0x01DE19 07:DE09: EA        .byte $EA   ; 
-- D 2 - - - 0x01DE1A 07:DE0A: CA        .byte $CA   ; 
+tbl_DDFF_spr_T:
+- D 2 - - - 0x01DE0F 07:DDFF: CA        .byte con_номер_тайла + $CA   ; 
+- D 2 - - - 0x01DE10 07:DE00: CA        .byte con_номер_тайла + $CA   ; 
+- D 2 - - - 0x01DE11 07:DE01: CA        .byte con_номер_тайла + $CA   ; 
+- D 2 - - - 0x01DE12 07:DE02: CA        .byte con_номер_тайла + $CA   ; 
+- D 2 - - - 0x01DE13 07:DE03: EA        .byte con_номер_тайла + $EA   ; 
+- D 2 - - - 0x01DE14 07:DE04: EA        .byte con_номер_тайла + $EA   ; 
+- D 2 - - - 0x01DE15 07:DE05: CA        .byte con_номер_тайла + $CA   ; 
+- D 2 - - - 0x01DE16 07:DE06: CA        .byte con_номер_тайла + $CA   ; 
+- D 2 - - - 0x01DE17 07:DE07: CA        .byte con_номер_тайла + $CA   ; 
+- D 2 - - - 0x01DE18 07:DE08: CA        .byte con_номер_тайла + $CA   ; 
+- D 2 - - - 0x01DE19 07:DE09: EA        .byte con_номер_тайла + $EA   ; 
+- D 2 - - - 0x01DE1A 07:DE0A: CA        .byte con_номер_тайла + $CA   ; 
 
 
 
