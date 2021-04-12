@@ -156,14 +156,14 @@ C - - - - - 0x0141A5 05:8195: B9 08 00  LDA ram_btn_press,Y
 C - - - - - 0x0141A8 05:8198: 30 06     BMI bra_81A0_нажато_A
 C - - - - - 0x0141AA 05:819A: 0A        ASL
 C - - - - - 0x0141AB 05:819B: 30 08     BMI bra_81A5_нажато_B
-C - - - - - 0x0141AD 05:819D: 4C AA 81  JMP loc_81AA_не_A_или_B     ; bzk опт, BPL
+C - - - - - 0x0141AD 05:819D: 4C AA 81  BPL bra_81AA_не_A_или_B
 bra_81A0_нажато_A:
 C - - - - - 0x0141B0 05:81A0: A9 03     LDA #$03    ; A
 C - - - - - 0x0141B2 05:81A2: 4C CF 81  BNE bra_81CF_запись_кнопки
 bra_81A5_нажато_B:
 C - - - - - 0x0141B5 05:81A5: A9 04     LDA #$04    ; B
 C - - - - - 0x0141B7 05:81A7: 4C CF 81  BNE bra_81CF_запись_кнопки
-loc_81AA_не_A_или_B:
+bra_81AA_не_A_или_B:
 C D 0 - - - 0x0141BA 05:81AA: B9 08 00  LDA ram_btn_press,Y
 C - - - - - 0x0141BD 05:81AD: 4A        LSR
 C - - - - - 0x0141BE 05:81AE: B0 1D     BCS bra_81CD_нажато_Right
