@@ -1985,7 +1985,7 @@ C - - - - - 0x01CC0C 07:CBFC: 9D 59 04  STA ram_номер_цифры - $0E,X
 bra_CBFF:
 C - - - - - 0x01CC0F 07:CBFF: A9 84     LDA #$84
 C - - - - - 0x01CC11 07:CC01: 9D 74 00  STA ram_анимация_игрока,X
-C - - - - - 0x01CC14 07:CC04: A0 0C     LDY #con_индекс_мяча
+C - - - - - 0x01CC14 07:CC04: A0 0C     LDY #con_id_мяча
 C - - - - - 0x01CC16 07:CC06: 84 44     STY ram_0044
 C - - - - - 0x01CC18 07:CC08: 4C 9C CC  JMP loc_CC9C_только_для_мяча
 
@@ -4260,7 +4260,7 @@ C - - - - - 0x01D6FE 07:D6EE: A5 59     LDA ram_subscript
 C - - - - - 0x01D700 07:D6F0: C9 06     CMP #$06
 C - - - - - 0x01D702 07:D6F2: F0 13     BEQ bra_D707
 C - - - - - 0x01D704 07:D6F4: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x01D707 07:D6F7: C0 0A     CPY #con_индекс_кипера
+C - - - - - 0x01D707 07:D6F7: C0 0A     CPY #con_id_кипера
 C - - - - - 0x01D709 07:D6F9: 90 0F     BCC bra_D70A    ; если это не кипер
 C - - - - - 0x01D70B 07:D6FB: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x01D70E 07:D6FE: 29 40     AND #$40
@@ -7746,7 +7746,7 @@ C - - - - - 0x01EBCF 07:EBBF: B5 74     LDA ram_анимация_игрока,X
 C - - - - - 0x01EBD1 07:EBC1: 29 7F     AND #$7F
 C - - - - - 0x01EBD3 07:EBC3: C9 7F     CMP #$7F
 C - - - - - 0x01EBD5 07:EBC5: F0 0F     BEQ bra_EBD6
-C - - - - - 0x01EBD7 07:EBC7: E0 0C     CPX #con_индекс_мяча
+C - - - - - 0x01EBD7 07:EBC7: E0 0C     CPX #con_id_мяча
 C - - - - - 0x01EBD9 07:EBC9: D0 03     BNE bra_EBCE_это_не_мяч
 C - - - - - 0x01EBDB 07:EBCB: 20 ED EB  JSR sub_EBED_мяч
 bra_EBCE_это_не_мяч:

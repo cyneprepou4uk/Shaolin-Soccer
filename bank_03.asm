@@ -56,7 +56,7 @@ C - - - - - 0x00C03D 03:802D: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x00C040 03:8030: 10 1D     BPL bra_804F
 C - - - - - 0x00C042 03:8032: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00C045 03:8035: 85 1C     STA ram_001C
-C - - - - - 0x00C047 03:8037: A0 0C     LDY #con_индекс_мяча
+C - - - - - 0x00C047 03:8037: A0 0C     LDY #con_id_мяча
 C - - - - - 0x00C049 03:8039: 20 D0 98  JSR sub_98D0
 C - - - - - 0x00C04C 03:803C: AD 20 03  LDA ram_pos_X_lo_мяча
 C - - - - - 0x00C04F 03:803F: 48        PHA
@@ -607,7 +607,7 @@ C - - - - - 0x00C3D9 03:83C9: 60        RTS
 loc_83CA:
 ofs_83CA_05:
 C D 0 J - - 0x00C3DA 03:83CA: 20 0D 84  JSR sub_840D
-C - - - - - 0x00C3DD 03:83CD: E0 0A     CPX #con_индекс_кипера
+C - - - - - 0x00C3DD 03:83CD: E0 0A     CPX #con_id_кипера
 C - - - - - 0x00C3DF 03:83CF: 90 10     BCC bra_83E1_это_не_кипер
 C - - - - - 0x00C3E1 03:83D1: A5 22     LDA ram_0022
 C - - - - - 0x00C3E3 03:83D3: D0 09     BNE bra_83DE
@@ -643,7 +643,7 @@ C - - - - - 0x00C41C 03:840C: 60        RTS
 
 
 sub_840D:
-C - - - - - 0x00C41D 03:840D: E0 0A     CPX #con_индекс_кипера
+C - - - - - 0x00C41D 03:840D: E0 0A     CPX #con_id_кипера
 C - - - - - 0x00C41F 03:840F: D0 2B     BNE bra_843C_это_правый_кипер
 C - - - - - 0x00C421 03:8411: AD 20 03  LDA ram_pos_X_lo_мяча
 C - - - - - 0x00C424 03:8414: 38        SEC
@@ -3187,7 +3187,7 @@ C D 0 - - - 0x00D2F8 03:92E8: 9D 79 04  STA ram_next_действие_игрок
 C - - - - - 0x00D2FB 03:92EB: 60        RTS
 loc_92EC:
 ofs_92EC_24:
-C D 0 J - - 0x00D2FC 03:92EC: A0 0C     LDY #con_индекс_мяча
+C D 0 J - - 0x00D2FC 03:92EC: A0 0C     LDY #con_id_мяча
 C - - - - - 0x00D2FE 03:92EE: B9 99 03  LDA ram_pos_Z_hi_игрока,Y
 C - - - - - 0x00D301 03:92F1: 30 0A     BMI bra_92FD
 C - - - - - 0x00D303 03:92F3: 19 86 03  ORA ram_pos_Z_lo_игрока,Y
@@ -3218,7 +3218,7 @@ C - - - - - 0x00D332 03:9322: 10 02     BPL bra_9326
 C - - - - - 0x00D334 03:9324: A9 00     LDA #$00
 bra_9326:
 C - - - - - 0x00D336 03:9326: 85 1C     STA ram_001C
-C - - - - - 0x00D338 03:9328: A0 0C     LDY #con_индекс_мяча
+C - - - - - 0x00D338 03:9328: A0 0C     LDY #con_id_мяча
 C - - - - - 0x00D33A 03:932A: 20 D0 98  JSR sub_98D0
 C - - - - - 0x00D33D 03:932D: 20 75 9B  JSR sub_9B75
 C - - - - - 0x00D340 03:9330: 20 4B AE  JSR sub_AE4B
@@ -3351,7 +3351,7 @@ C - - - - - 0x00D417 03:9407: 10 02     BPL bra_940B
 C - - - - - 0x00D419 03:9409: A9 00     LDA #$00
 bra_940B:
 C - - - - - 0x00D41B 03:940B: 85 1C     STA ram_001C
-C - - - - - 0x00D41D 03:940D: A0 0C     LDY #con_индекс_мяча
+C - - - - - 0x00D41D 03:940D: A0 0C     LDY #con_id_мяча
 C - - - - - 0x00D41F 03:940F: 20 D0 98  JSR sub_98D0
 C - - - - - 0x00D422 03:9412: 20 75 9B  JSR sub_9B75
 C - - - - - 0x00D425 03:9415: 20 4B AE  JSR sub_AE4B
@@ -3364,7 +3364,7 @@ C - - - - - 0x00D431 03:9421: C9 40     CMP #$40
 C - - - - - 0x00D433 03:9423: B0 DC     BCS bra_9401
 C - - - - - 0x00D435 03:9425: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x00D438 03:9428: 10 3C     BPL bra_9466_не_в_воздухе
-C - - - - - 0x00D43A 03:942A: A0 0C     LDY #con_индекс_мяча
+C - - - - - 0x00D43A 03:942A: A0 0C     LDY #con_id_мяча
 C - - - - - 0x00D43C 03:942C: 20 BF AE  JSR sub_AEBF
 C - - - - - 0x00D43F 03:942F: 90 D0     BCC bra_9401
 C - - - - - 0x00D441 03:9431: AD 45 00  LDA ram_рандом
@@ -4541,7 +4541,7 @@ C - - - - - 0x00DC15 03:9C05: 20 03 9E  JSR sub_9E03
 C - - - - - 0x00DC18 03:9C08: 4C 22 9C  JMP loc_9C22
 bra_9C0B:
 C - - - - - 0x00DC1B 03:9C0B: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x00DC1E 03:9C0E: C0 0A     CPY #con_индекс_кипера
+C - - - - - 0x00DC1E 03:9C0E: C0 0A     CPY #con_id_кипера
 C - - - - - 0x00DC20 03:9C10: 90 08     BCC bra_9C1A    ; если это не кипер
 C - - - - - 0x00DC22 03:9C12: B9 7C 06  LDA ram_067C,Y
 C - - - - - 0x00DC25 03:9C15: 30 03     BMI bra_9C1A
@@ -4767,7 +4767,7 @@ C - - - - - 0x00DDA2 03:9D92: AD 6C 03  LDA ram_pos_Y_hi_мяча
 C - - - - - 0x00DDA5 03:9D95: 48        PHA
 C - - - - - 0x00DDA6 03:9D96: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00DDA9 03:9D99: F0 1E     BEQ bra_9DB9
-C - - - - - 0x00DDAB 03:9D9B: A0 0C     LDY #con_индекс_мяча
+C - - - - - 0x00DDAB 03:9D9B: A0 0C     LDY #con_id_мяча
 C - - - - - 0x00DDAD 03:9D9D: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00DDB0 03:9DA0: 85 1C     STA ram_001C
 C - - - - - 0x00DDB2 03:9DA2: 20 D0 98  JSR sub_98D0
@@ -5272,7 +5272,7 @@ C - - - - - 0x00E032 03:A022: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x00E035 03:A025: 29 40     AND #$40
 C - - - - - 0x00E037 03:A027: F0 15     BEQ bra_A03E
 C - - - - - 0x00E039 03:A029: AD D6 04  LDA ram_игрок_с_мячом
-C - - - - - 0x00E03C 03:A02C: C9 0A     CMP #con_индекс_кипера
+C - - - - - 0x00E03C 03:A02C: C9 0A     CMP #con_id_кипера
 C - - - - - 0x00E03E 03:A02E: 90 0E     BCC bra_A03E    ; если это не кипер
 C - - - - - 0x00E040 03:A030: 8A        TXA
 C - - - - - 0x00E041 03:A031: 49 01     EOR #$01
@@ -5621,7 +5621,7 @@ C - - - - - 0x00E2A5 03:A295: 68        PLA
 C - - - - - 0x00E2A6 03:A296: AA        TAX
 bra_A297:
 C - - - - - 0x00E2A7 03:A297: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x00E2AA 03:A29A: C0 0A     CPY #con_индекс_кипера
+C - - - - - 0x00E2AA 03:A29A: C0 0A     CPY #con_id_кипера
 C - - - - - 0x00E2AC 03:A29C: B0 08     BCS bra_A2A6_это_кипер
 C - - - - - 0x00E2AE 03:A29E: A9 0A     LDA #con_ai_0A
 C - - - - - 0x00E2B0 03:A2A0: 9D 66 06  STA ram_интеллект_бота + 10,X
@@ -5797,7 +5797,7 @@ C - - - - - 0x00E3AB 03:A39B: 60        RTS
 
 sub_A39C:
 C - - - - - 0x00E3AC 03:A39C: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x00E3AF 03:A39F: C0 0A     CPY #con_индекс_кипера
+C - - - - - 0x00E3AF 03:A39F: C0 0A     CPY #con_id_кипера
 C - - - - - 0x00E3B1 03:A3A1: 90 08     BCC bra_A3AB    ; если это не кипер
 C - - - - - 0x00E3B3 03:A3A3: B9 7C 06  LDA ram_067C,Y
 C - - - - - 0x00E3B6 03:A3A6: 30 03     BMI bra_A3AB
@@ -6099,7 +6099,7 @@ C - - - - - 0x00E5B2 03:A5A2: C8        INY
 C - - - - - 0x00E5B3 03:A5A3: C8        INY
 C - - - - - 0x00E5B4 03:A5A4: C0 0C     CPY #$0C
 C - - - - - 0x00E5B6 03:A5A6: 90 F7     BCC bra_A59F_loop
-C - - - - - 0x00E5B8 03:A5A8: A0 0C     LDY #con_индекс_мяча
+C - - - - - 0x00E5B8 03:A5A8: A0 0C     LDY #con_id_мяча
 C - - - - - 0x00E5BA 03:A5AA: AD 24 05  LDA ram_таймер_прицельного_паса
 C - - - - - 0x00E5BD 03:A5AD: 85 1C     STA ram_001C
 C - - - - - 0x00E5BF 03:A5AF: 20 D0 98  JSR sub_98D0
@@ -6212,7 +6212,7 @@ bra_A68B:
 C - - - - - 0x00E69B 03:A68B: A9 00     LDA #$00
 loc_A68D:
 C D 1 - - - 0x00E69D 03:A68D: 85 1C     STA ram_001C
-C - - - - - 0x00E69F 03:A68F: A0 0C     LDY #con_индекс_мяча
+C - - - - - 0x00E69F 03:A68F: A0 0C     LDY #con_id_мяча
 C - - - - - 0x00E6A1 03:A691: 20 D0 98  JSR sub_98D0
 C - - - - - 0x00E6A4 03:A694: AD 20 03  LDA ram_pos_X_lo_мяча
 C - - - - - 0x00E6A7 03:A697: 48        PHA
@@ -6223,7 +6223,7 @@ C - - - - - 0x00E6AF 03:A69F: 48        PHA
 C - - - - - 0x00E6B0 03:A6A0: AD 6C 03  LDA ram_pos_Y_hi_мяча
 C - - - - - 0x00E6B3 03:A6A3: 48        PHA
 C - - - - - 0x00E6B4 03:A6A4: 20 94 81  JSR sub_8194_записать_0032_0035_в_pos_мяча
-C - - - - - 0x00E6B7 03:A6A7: A0 0C     LDY #con_индекс_мяча
+C - - - - - 0x00E6B7 03:A6A7: A0 0C     LDY #con_id_мяча
 C - - - - - 0x00E6B9 03:A6A9: 20 D7 B0  JSR sub_B0D7
 C - - - - - 0x00E6BC 03:A6AC: 85 1C     STA ram_001C
 C - - - - - 0x00E6BE 03:A6AE: E4 1C     CPX ram_001C
@@ -8305,7 +8305,7 @@ C - - - - - 0x00F0BD 03:B0AD: 60        RTS
 
 
 sub_B0AE_вычислить_флаг_кипера_в_штрафной:
-C - - - - - 0x00F0BE 03:B0AE: A0 0A     LDY #con_индекс_кипера
+C - - - - - 0x00F0BE 03:B0AE: A0 0A     LDY #con_id_кипера
 bra_B0B0_loop:
 C - - - - - 0x00F0C0 03:B0B0: 20 D7 B0  JSR sub_B0D7
 C - - - - - 0x00F0C3 03:B0B3: 30 11     BMI bra_B0C6

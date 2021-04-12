@@ -10961,7 +10961,7 @@ C - - - - - 0x00AC9D 02:AC8D: CE 6B 05  DEC ram_номер_управляемо�
 C - - - - - 0x00ACA0 02:AC90: CE 7A 06  DEC ram_напр_паса_команды
 C - - - - - 0x00ACA3 02:AC93: A2 00     LDX #$00
 C - - - - - 0x00ACA5 02:AC95: 20 A5 AD  JSR sub_ADA5
-C - - - - - 0x00ACA8 02:AC98: A2 0C     LDX #con_индекс_мяча
+C - - - - - 0x00ACA8 02:AC98: A2 0C     LDX #con_id_мяча
 C - - - - - 0x00ACAA 02:AC9A: 20 A5 AD  JSR sub_ADA5
 C - - - - - 0x00ACAD 02:AC9D: 20 62 C0  JSR sub_0x01EF64_убрать_полоску_слева_на_экране
 C - - - - - 0x00ACB0 02:ACA0: 20 1B AA  JSR sub_0x01C2AE
@@ -13859,7 +13859,7 @@ sub_BB3C:
 - - - - - - 0x00BB5D 02:BB4D: E8        INX
 - - - - - - 0x00BB5E 02:BB4E: 20 DD B6  JSR sub_B6DD
 - - - - - - 0x00BB61 02:BB51: 20 65 C0  JSR sub_0x01EB9C
-- - - - - - 0x00BB64 02:BB54: A2 0C     LDX #con_индекс_мяча
+- - - - - - 0x00BB64 02:BB54: A2 0C     LDX #con_id_мяча
 - - - - - - 0x00BB66 02:BB56: 20 DD B6  JSR sub_B6DD
 - - - - - - 0x00BB69 02:BB59: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x00BB6C 02:BB5C: 60        RTS
@@ -14291,7 +14291,7 @@ bra_BE94_RTS:
 
 
 ofs_BE95_0A:
-- - - - - - 0x00BEA5 02:BE95: A2 0C     LDX #con_индекс_мяча
+- - - - - - 0x00BEA5 02:BE95: A2 0C     LDX #con_id_мяча
 - - - - - - 0x00BEA7 02:BE97: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x00BEAA 02:BE9A: 60        RTS
 
