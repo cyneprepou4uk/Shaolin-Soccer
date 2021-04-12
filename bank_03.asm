@@ -3155,13 +3155,13 @@ C - - - - - 0x00D2C5 03:92B5: 30 09     BMI bra_92C0
 C - - - - - 0x00D2C7 03:92B7: C9 40     CMP #$40
 C - - - - - 0x00D2C9 03:92B9: 90 0A     BCC bra_92C5
 C - - - - - 0x00D2CB 03:92BB: A9 38     LDA #con_action_38
-C - - - - - 0x00D2CD 03:92BD: 4C C7 92  JMP loc_92C7_запись_действия
+C - - - - - 0x00D2CD 03:92BD: 4C C7 92  BNE bra_92C7_запись_действия
 bra_92C0:
 C - - - - - 0x00D2D0 03:92C0: A9 37     LDA #con_action_37
-C - - - - - 0x00D2D2 03:92C2: 4C C7 92  JMP loc_92C7_запись_действия
+C - - - - - 0x00D2D2 03:92C2: 4C C7 92  BNE bra_92C7_запись_действия
 bra_92C5:
 C - - - - - 0x00D2D5 03:92C5: A9 46     LDA #con_action_46
-loc_92C7_запись_действия:   ; bzk опт
+bra_92C7_запись_действия:
 C D 0 - - - 0x00D2D7 03:92C7: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00D2DA 03:92CA: A9 FF     LDA #$FF
 C - - - - - 0x00D2DC 03:92CC: 9D B0 04  STA ram_смена_угла_движения,X
