@@ -4543,8 +4543,8 @@ bra_9C0B:
 C - - - - - 0x00DC1B 03:9C0B: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x00DC1E 03:9C0E: C0 0A     CPY #con_id_кипера
 C - - - - - 0x00DC20 03:9C10: 90 08     BCC bra_9C1A    ; если это не кипер
-C - - - - - 0x00DC22 03:9C12: B9 7C 06  LDA ram_067C,Y
-C - - - - - 0x00DC25 03:9C15: 30 03     BMI bra_9C1A
+C - - - - - 0x00DC22 03:9C12: B9 7C 06  LDA ram_флаг_кипера_в_штрафной - con_id_кипера,Y
+C - - - - - 0x00DC25 03:9C15: 30 03     BMI bra_9C1A    ; если кипер не в штрафной
 C - - - - - 0x00DC27 03:9C17: 4C 43 9C  JMP loc_9C43
 bra_9C1A:
 C - - - - - 0x00DC2A 03:9C1A: 84 2C     STY ram_002C
@@ -5799,8 +5799,8 @@ sub_A39C:
 C - - - - - 0x00E3AC 03:A39C: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x00E3AF 03:A39F: C0 0A     CPY #con_id_кипера
 C - - - - - 0x00E3B1 03:A3A1: 90 08     BCC bra_A3AB    ; если это не кипер
-C - - - - - 0x00E3B3 03:A3A3: B9 7C 06  LDA ram_067C,Y
-C - - - - - 0x00E3B6 03:A3A6: 30 03     BMI bra_A3AB
+C - - - - - 0x00E3B3 03:A3A3: B9 7C 06  LDA ram_флаг_кипера_в_штрафной - con_id_кипера,Y
+C - - - - - 0x00E3B6 03:A3A6: 30 03     BMI bra_A3AB    ; если кипер не в штрафной
 C - - - - - 0x00E3B8 03:A3A8: 4C 89 A5  JMP loc_A589
 bra_A3AB:
 C - - - - - 0x00E3BB 03:A3AB: A9 00     LDA #con_ai_00

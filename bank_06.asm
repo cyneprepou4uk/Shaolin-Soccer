@@ -4284,8 +4284,8 @@ C - - - - - 0x019D81 06:9D71: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x019D84 06:9D74: C0 0A     CPY #$0A
 C - - - - - 0x019D86 06:9D76: 90 17     BCC bra_9D8F    ; если это не кипер
 C - - - - - 0x019D88 06:9D78: 85 20     STA ram_0020
-C - - - - - 0x019D8A 06:9D7A: B9 7C 06  LDA ram_067C,Y
-C - - - - - 0x019D8D 06:9D7D: 30 12     BMI bra_9D91
+C - - - - - 0x019D8A 06:9D7A: B9 7C 06  LDA ram_флаг_кипера_в_штрафной - con_id_кипера,Y
+C - - - - - 0x019D8D 06:9D7D: 30 12     BMI bra_9D91    ; если кипер не в штрафной
 C - - - - - 0x019D8F 06:9D7F: B9 FD 04  LDA ram_защита_поведение,Y
 C - - - - - 0x019D92 06:9D82: 29 03     AND #$03
 C - - - - - 0x019D94 06:9D84: A8        TAY
@@ -5020,8 +5020,8 @@ tbl_A242_тип_анимации_плача:
 bra_A248:
 C - - - - - 0x01A258 06:A248: E0 0A     CPX #con_id_кипера
 C - - - - - 0x01A25A 06:A24A: 90 0E     BCC bra_A25A    ; если это не кипер
-C - - - - - 0x01A25C 06:A24C: BD 7C 06  LDA ram_067C,X
-C - - - - - 0x01A25F 06:A24F: 30 09     BMI bra_A25A
+C - - - - - 0x01A25C 06:A24C: BD 7C 06  LDA ram_флаг_кипера_в_штрафной - con_id_кипера,X
+C - - - - - 0x01A25F 06:A24F: 30 09     BMI bra_A25A    ; если кипер не в штрафной
 C - - - - - 0x01A261 06:A251: 24 5C     BIT ram_flag_gameplay
 C - - - - - 0x01A263 06:A253: 70 05     BVS bra_A25A    ; если сейчас con_gp_футбольная_пауза
 C - - - - - 0x01A265 06:A255: A9 01     LDA #$01
@@ -7409,8 +7409,8 @@ C - - - - - 0x01AD53 06:AD43: A9 00     LDA #$00
 C - - - - - 0x01AD55 06:AD45: 85 1C     STA ram_001C
 C - - - - - 0x01AD57 06:AD47: C0 0A     CPY #$0A
 C - - - - - 0x01AD59 06:AD49: 90 07     BCC bra_AD52    ; если это не кипер
-C - - - - - 0x01AD5B 06:AD4B: B9 7C 06  LDA ram_067C,Y
-C - - - - - 0x01AD5E 06:AD4E: 30 02     BMI bra_AD52
+C - - - - - 0x01AD5B 06:AD4B: B9 7C 06  LDA ram_флаг_кипера_в_штрафной - con_id_кипера,Y
+C - - - - - 0x01AD5E 06:AD4E: 30 02     BMI bra_AD52    ; если кипер не в штрафной
 C - - - - - 0x01AD60 06:AD50: E6 1C     INC ram_001C
 bra_AD52:
 C - - - - - 0x01AD62 06:AD52: B9 59 04  LDA ram_действие_игрока,Y
@@ -7761,8 +7761,8 @@ C - - - - - 0x01AFD9 06:AFC9: A4 1D     LDY ram_001D
 C - - - - - 0x01AFDB 06:AFCB: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x01AFDE 06:AFCE: C0 0A     CPY #$0A
 C - - - - - 0x01AFE0 06:AFD0: 90 22     BCC bra_AFF4    ; если это не кипер
-C - - - - - 0x01AFE2 06:AFD2: B9 7C 06  LDA ram_067C,Y
-C - - - - - 0x01AFE5 06:AFD5: 30 1D     BMI bra_AFF4
+C - - - - - 0x01AFE2 06:AFD2: B9 7C 06  LDA ram_флаг_кипера_в_штрафной - con_id_кипера,Y
+C - - - - - 0x01AFE5 06:AFD5: 30 1D     BMI bra_AFF4    ; если кипер не в штрафной
 C - - - - - 0x01AFE7 06:AFD7: B9 FD 04  LDA ram_защита_поведение,Y
 C - - - - - 0x01AFEA 06:AFDA: 29 03     AND #$03
 C - - - - - 0x01AFEC 06:AFDC: A8        TAY
@@ -8653,8 +8653,8 @@ C - - - - - 0x01B517 06:B507: 60        RTS
 sub_B508:
 C - - - - - 0x01B518 06:B508: C0 0A     CPY #$0A
 C - - - - - 0x01B51A 06:B50A: 90 0A     BCC bra_B516    ; если это не кипер
-C - - - - - 0x01B51C 06:B50C: B9 7C 06  LDA ram_067C,Y
-C - - - - - 0x01B51F 06:B50F: 30 05     BMI bra_B516
+C - - - - - 0x01B51C 06:B50C: B9 7C 06  LDA ram_флаг_кипера_в_штрафной - con_id_кипера,Y
+C - - - - - 0x01B51F 06:B50F: 30 05     BMI bra_B516    ; если кипер не в штрафной
 C - - - - - 0x01B521 06:B511: A0 09     LDY #$09
 C - - - - - 0x01B523 06:B513: 4C 37 B5  JMP loc_B537
 bra_B516:
