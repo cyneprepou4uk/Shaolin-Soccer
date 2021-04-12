@@ -14740,7 +14740,7 @@ C - - - - - 0x003CBE 00:BCAE: 9D B0 04  STA ram_смена_угла_движен
 C - - - - - 0x003CC1 00:BCB1: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x003CC4 00:BCB4: BD C9 BD  LDA tbl_BDC9,X
 C - - - - - 0x003CC7 00:BCB7: 9D 61 00  STA ram_0061,X
-C - - - - - 0x003CCA 00:BCBA: BD D6 BD  LDA tbl_BDD6,X
+C - - - - - 0x003CCA 00:BCBA: BD D6 BD  LDA #con_action_стоит_на_месте
 C - - - - - 0x003CCD 00:BCBD: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x003CD0 00:BCC0: A9 7F     LDA #$7F
 C - - - - - 0x003CD2 00:BCC2: 9D 74 00  STA ram_анимация_игрока,X
@@ -14919,23 +14919,6 @@ tbl_BDC9:
 - D 1 - - - 0x003DE3 00:BDD3: 00        .byte $00   ; 
 - D 1 - - - 0x003DE4 00:BDD4: 00        .byte $00   ; 
 - D 1 - - - 0x003DE5 00:BDD5: 01        .byte $01   ; 
-
-
-
-tbl_BDD6:   ; bzk опт
-- D 1 - - - 0x003DE6 00:BDD6: 01        .byte con_action_стоит_на_месте   ; 00
-- D 1 - - - 0x003DE7 00:BDD7: 01        .byte con_action_стоит_на_месте   ; 01
-- D 1 - - - 0x003DE8 00:BDD8: 01        .byte con_action_стоит_на_месте   ; 02
-- D 1 - - - 0x003DE9 00:BDD9: 01        .byte con_action_стоит_на_месте   ; 03
-- D 1 - - - 0x003DEA 00:BDDA: 01        .byte con_action_стоит_на_месте   ; 04
-- D 1 - - - 0x003DEB 00:BDDB: 01        .byte con_action_стоит_на_месте   ; 05
-- D 1 - - - 0x003DEC 00:BDDC: 01        .byte con_action_стоит_на_месте   ; 06
-- D 1 - - - 0x003DED 00:BDDD: 01        .byte con_action_стоит_на_месте   ; 07
-- D 1 - - - 0x003DEE 00:BDDE: 01        .byte con_action_стоит_на_месте   ; 08
-- D 1 - - - 0x003DEF 00:BDDF: 01        .byte con_action_стоит_на_месте   ; 09
-- D 1 - - - 0x003DF0 00:BDE0: 01        .byte con_action_стоит_на_месте   ; 0A
-- D 1 - - - 0x003DF1 00:BDE1: 01        .byte con_action_стоит_на_месте   ; 0B
-- D 1 - - - 0x003DF2 00:BDE2: 01        .byte con_action_стоит_на_месте   ; 0C
 
 
 
