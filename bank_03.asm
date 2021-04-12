@@ -4801,7 +4801,7 @@ C - - - - - 0x00DDE7 03:9DD7: 86 23     STX ram_0023
 C - - - - - 0x00DDE9 03:9DD9: BD 86 06  LDA ram_флаг_кипера_в_штрафной,X
 C - - - - - 0x00DDEC 03:9DDC: 10 05     BPL bra_9DE3_кипер_в_штрафной
 C - - - - - 0x00DDEE 03:9DDE: A9 06     LDA #$06
-C - - - - - 0x00DDF0 03:9DE0: 4C E5 9D  JMP loc_9DE5
+C - - - - - 0x00DDF0 03:9DE0: 4C E5 9D  JMP loc_9DE5    ; bzk опт
 bra_9DE3_кипер_в_штрафной:
 C - - - - - 0x00DDF3 03:9DE3: A9 05     LDA #$05
 loc_9DE5:
