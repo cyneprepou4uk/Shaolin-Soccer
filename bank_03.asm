@@ -1766,10 +1766,10 @@ C - - - - - 0x00CA9B 03:8A8B: A5 1C     LDA ram_001C
 C - - - - - 0x00CA9D 03:8A8D: C9 14     CMP #$14
 C - - - - - 0x00CA9F 03:8A8F: B0 05     BCS bra_8A96
 C - - - - - 0x00CAA1 03:8A91: A9 3F     LDA #con_action_3F
-C - - - - - 0x00CAA3 03:8A93: 4C 98 8A  JMP loc_8A98_запись_действия
+C - - - - - 0x00CAA3 03:8A93: 4C 98 8A  BNE bra_8A98_запись_действия
 bra_8A96:
 C - - - - - 0x00CAA6 03:8A96: A9 3E     LDA #con_action_3E
-loc_8A98_запись_действия:   ; bzk опт
+bra_8A98_запись_действия:
 C D 0 - - - 0x00CAA8 03:8A98: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00CAAB 03:8A9B: 60        RTS
 sub_8A9C:
