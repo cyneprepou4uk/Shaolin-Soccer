@@ -2588,15 +2588,15 @@ C - - - - - 0x019230 06:9220: 20 95 9B  JSR sub_9B95_сдвинуть_объек
 C - - - - - 0x019233 06:9223: 4C 97 8F  JMP loc_8F97
 
 sub_9224_деление_скоростей_на_8:
-    LDY #$03
-@цикл:
-    LDA ram_temp_hi
-    ASL
-    ROR ram_temp_hi
-    ROR ram_temp_lo
-    DEY
-    BNE @цикл
-    RTS
+                                        LDY #$03
+@bra_цикл_деления_на_2:
+                                        LDA ram_temp_hi
+                                        ASL
+                                        ROR ram_temp_hi
+                                        ROR ram_temp_lo
+                                        DEY
+                                        BNE @bra_цикл_деления_на_2
+                                        RTS
 .endscope
 
 
