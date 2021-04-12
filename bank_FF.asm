@@ -583,7 +583,7 @@ sub_C271:
 C - - - - - 0x01C281 07:C271: A9 00     LDA #$00
 C - - - - - 0x01C283 07:C273: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
-sub_C28A:
+sub_C28A_отрисовка_спрайтов_анимаций_объектов:
 C - - - - - 0x01C29A 07:C28A: A9 01     LDA #$01
 C - - - - - 0x01C29C 07:C28C: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
@@ -850,33 +850,33 @@ C D 2 - - - 0x01C354 07:C344: 0A        ASL
 C - - - - - 0x01C355 07:C345: A8        TAY
 C - - - - - 0x01C356 07:C346: AD FF BF  LDA $BFFF
 C - - - - - 0x01C359 07:C349: 48        PHA
-C - - - - - 0x01C35A 07:C34A: A5 F6     LDA ram_00F6
+C - - - - - 0x01C35A 07:C34A: A5 F6     LDA ram_indirect_jmp_lo
 C - - - - - 0x01C35C 07:C34C: 48        PHA
-C - - - - - 0x01C35D 07:C34D: A5 F7     LDA ram_00F7
+C - - - - - 0x01C35D 07:C34D: A5 F7     LDA ram_indirect_jmp_hi
 C - - - - - 0x01C35F 07:C34F: 48        PHA
 C - - - - - 0x01C360 07:C350: B9 70 C3  LDA tbl_C370_prg_bank,Y
 C - - - - - 0x01C363 07:C353: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01C366 07:C356: B9 71 C3  LDA tbl_C370_low_byte_addr_для_indirect_jump + 1,Y
-C - - - - - 0x01C369 07:C359: 85 F6     STA ram_00F6
+C - - - - - 0x01C369 07:C359: 85 F6     STA ram_indirect_jmp_lo
 C - - - - - 0x01C36B 07:C35B: A9 80     LDA #$80
-C - - - - - 0x01C36D 07:C35D: 85 F7     STA ram_00F7
+C - - - - - 0x01C36D 07:C35D: 85 F7     STA ram_indirect_jmp_hi
 C - - - - - 0x01C36F 07:C35F: 20 6D C3  JSR sub_C36D_непрямой_прыжок
 C - - - - - 0x01C372 07:C362: 68        PLA
-C - - - - - 0x01C373 07:C363: 85 F7     STA ram_00F7
+C - - - - - 0x01C373 07:C363: 85 F7     STA ram_indirect_jmp_hi
 C - - - - - 0x01C375 07:C365: 68        PLA
-C - - - - - 0x01C376 07:C366: A5 F6     LDA ram_00F6
+C - - - - - 0x01C376 07:C366: A5 F6     LDA ram_indirect_jmp_lo
 loc_C368_восстановить_prg_банк:
 C D 2 - - - 0x01C378 07:C368: 68        PLA
 C - - - - - 0x01C379 07:C369: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01C37C 07:C36C: 60        RTS
 
 sub_C36D_непрямой_прыжок:
-C - - - - - 0x01C37D 07:C36D: 6C F6 00  JMP (ram_00F6)
+C - - - - - 0x01C37D 07:C36D: 6C F6 00  JMP (ram_indirect_jmp_lo)
 
 tbl_C370_prg_bank:
 tbl_C370_low_byte_addr_для_indirect_jump:
 - D 2 - - - 0x01C380 07:C370: 03        .byte con_prg_bank + $03, < loc_0x00C010       ; 00
-- D 2 - - - 0x01C382 07:C372: 04        .byte con_prg_bank + $04, < loc_0x010010       ; 01
+- D 2 - - - 0x01C382 07:C372: 04        .byte con_prg_bank + $04, < loc_0x010010_отрисовка_спрайтов_анимаций_объектов       ; 01
 - D 2 - - - 0x01C384 07:C374: 03        .byte con_prg_bank + $03, < loc_0x00C013       ; 02
 - D 2 - - - 0x01C386 07:C376: 03        .byte con_prg_bank + $03, < loc_0x00C016       ; 03
 - D 2 - - - 0x01C388 07:C378: 01        .byte con_prg_bank + $01, < loc_0x004010       ; 04
@@ -957,7 +957,7 @@ C - - - - - 0x01C48F 07:C47F: 20 A0 CE  JSR sub_CEA0_поставить_и_сн�
 C - - - - - 0x01C492 07:C482: A5 59     LDA ram_subscript
 C - - - - - 0x01C494 07:C484: 85 5A     STA ram_copy_subscript
 C - - - - - 0x01C496 07:C486: EE 00 03  INC ram_счетчик_кадров
-C - - - - - 0x01C499 07:C489: 20 8A C2  JSR sub_C28A
+C - - - - - 0x01C499 07:C489: 20 8A C2  JSR sub_C28A_отрисовка_спрайтов_анимаций_объектов
 C - - - - - 0x01C49C 07:C48C: 20 35 EE  JSR sub_EE35_вращение_рандома
 C - - - - - 0x01C49F 07:C48F: 20 CD ED  JSR sub_EDCD_опрос_регистров_джойстиков
 C - - - - - 0x01C4A2 07:C492: A5 58     LDA ram_script
@@ -7721,7 +7721,7 @@ sub_0x01EB9C:
 C D 3 - - - 0x01EB9C 07:EB8C: A9 00     LDA #$00
 C - - - - - 0x01EB9E 07:EB8E: 85 1C     STA ram_001C
 C - - - - - 0x01EBA0 07:EB90: 85 1D     STA ram_001D
-C - - - - - 0x01EBA2 07:EB92: A4 F4     LDY ram_00F4
+C - - - - - 0x01EBA2 07:EB92: A4 F4     LDY ram_счетчик_объектов_на_экране
 C - - - - - 0x01EBA4 07:EB94: AD 58 00  LDA ram_script
                                         CMP #con_script_меню
                                         BNE bra_EBAD_это_не_меню
@@ -7739,7 +7739,7 @@ C - - - - - 0x01EBC4 07:EBB4: 8A        TXA
 C - - - - - 0x01EBC5 07:EBB5: 09 40     ORA #$40
 C - - - - - 0x01EBC7 07:EBB7: 99 A1 00  STA ram_приоритет_анимации,Y
 C - - - - - 0x01EBCA 07:EBBA: C8        INY
-C - - - - - 0x01EBCB 07:EBBB: E6 F4     INC ram_00F4
+C - - - - - 0x01EBCB 07:EBBB: E6 F4     INC ram_счетчик_объектов_на_экране
 C - - - - - 0x01EBCD 07:EBBD: E6 1C     INC ram_001C
 bra_EBBF:
 C - - - - - 0x01EBCF 07:EBBF: B5 74     LDA ram_анимация_игрока,X
@@ -7753,7 +7753,7 @@ bra_EBCE_это_не_мяч:
 C - - - - - 0x01EBDE 07:EBCE: 8A        TXA
 C - - - - - 0x01EBDF 07:EBCF: 05 1D     ORA ram_001D
 C - - - - - 0x01EBE1 07:EBD1: 99 A1 00  STA ram_приоритет_анимации,Y
-C - - - - - 0x01EBE4 07:EBD4: E6 F4     INC ram_00F4
+C - - - - - 0x01EBE4 07:EBD4: E6 F4     INC ram_счетчик_объектов_на_экране
 bra_EBD6:
 C - - - - - 0x01EBE6 07:EBD6: A5 1C     LDA ram_001C
 C - - - - - 0x01EBE8 07:EBD8: D0 12     BNE bra_EBEC_RTS
@@ -7766,7 +7766,7 @@ C - - - - - 0x01EBF4 07:EBE4: 09 20     ORA #$20
 C - - - - - 0x01EBF6 07:EBE6: C8        INY
 loc_EBE7:
 C D 3 - - - 0x01EBF7 07:EBE7: 99 A1 00  STA ram_приоритет_анимации,Y
-C - - - - - 0x01EBFA 07:EBEA: E6 F4     INC ram_00F4
+C - - - - - 0x01EBFA 07:EBEA: E6 F4     INC ram_счетчик_объектов_на_экране
 bra_EBEC_RTS:
 C - - - - - 0x01EBFC 07:EBEC: 60        RTS
 

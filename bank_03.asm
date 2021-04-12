@@ -36,7 +36,7 @@ loc_0x00C01F:
 C - - J - - 0x00C01F 03:800F: 4C D4 BE  JMP loc_BED4
 
 loc_0x00C022:
-C - - J - - 0x00C022 03:8012: 4C 23 BF  JMP loc_BF23
+C - - J - - 0x00C022 03:8012: 4C 23 BF  JMP loc_BF23_мерцание_спрайтов
 
 
 
@@ -11612,14 +11612,14 @@ tbl_BF1B:
 
 
 
-loc_BF23:
+loc_BF23_мерцание_спрайтов:
 C D 1 - - - 0x00FF33 03:BF23: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x00FF36 03:BF26: 4A        LSR
 C - - - - - 0x00FF37 03:BF27: 90 01     BCC bra_BF2A
-bra_BF29:
+bra_BF29_RTS:
 C - - - - - 0x00FF39 03:BF29: 60        RTS
 bra_BF2A:
-C - - - - - 0x00FF3A 03:BF2A: A6 F4     LDX ram_00F4
+C - - - - - 0x00FF3A 03:BF2A: A6 F4     LDX ram_счетчик_объектов_на_экране
 C - - - - - 0x00FF3C 03:BF2C: CA        DEX
 C - - - - - 0x00FF3D 03:BF2D: A0 00     LDY #$00
 bra_BF2F:
@@ -11632,7 +11632,7 @@ C - - - - - 0x00FF46 03:BF36: CA        DEX
 C - - - - - 0x00FF47 03:BF37: 10 F6     BPL bra_BF2F
 C - - - - - 0x00FF49 03:BF39: C0 08     CPY #$08
 C - - - - - 0x00FF4B 03:BF3B: 90 1C     BCC bra_BF59
-C - - - - - 0x00FF4D 03:BF3D: A6 F4     LDX ram_00F4
+C - - - - - 0x00FF4D 03:BF3D: A6 F4     LDX ram_счетчик_объектов_на_экране
 C - - - - - 0x00FF4F 03:BF3F: CA        DEX
 C - - - - - 0x00FF50 03:BF40: A0 00     LDY #$00
 bra_BF42:
@@ -11641,7 +11641,7 @@ C - - - - - 0x00FF54 03:BF44: 99 1C 00  STA ram_001C,Y
 C - - - - - 0x00FF57 03:BF47: C8        INY
 C - - - - - 0x00FF58 03:BF48: CA        DEX
 C - - - - - 0x00FF59 03:BF49: 10 F7     BPL bra_BF42
-C - - - - - 0x00FF5B 03:BF4B: A6 F4     LDX ram_00F4
+C - - - - - 0x00FF5B 03:BF4B: A6 F4     LDX ram_счетчик_объектов_на_экране
 C - - - - - 0x00FF5D 03:BF4D: CA        DEX
 C - - - - - 0x00FF5E 03:BF4E: 88        DEY
 bra_BF4F:
@@ -11685,11 +11685,11 @@ C - - - - - 0x00FFA2 03:BF92: CA        DEX
 C - - - - - 0x00FFA3 03:BF93: 10 D9     BPL bra_BF6E_loop
 bra_BF95:
 C - - - - - 0x00FFA5 03:BF95: C0 04     CPY #$04
-C - - - - - 0x00FFA7 03:BF97: 90 90     BCC bra_BF29
+C - - - - - 0x00FFA7 03:BF97: 90 90     BCC bra_BF29_RTS
 C - - - - - 0x00FFA9 03:BF99: 84 1C     STY ram_001C
 C - - - - - 0x00FFAB 03:BF9B: A9 00     LDA #$00
 C - - - - - 0x00FFAD 03:BF9D: 85 1D     STA ram_001D
-C - - - - - 0x00FFAF 03:BF9F: A6 F4     LDX ram_00F4
+C - - - - - 0x00FFAF 03:BF9F: A6 F4     LDX ram_счетчик_объектов_на_экране
 C - - - - - 0x00FFB1 03:BFA1: CA        DEX
 bra_BFA2:
 C - - - - - 0x00FFB2 03:BFA2: A4 1C     LDY ram_001C

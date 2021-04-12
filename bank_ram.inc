@@ -148,6 +148,7 @@ ram_приоритет_анимации          = $A1 ; 20   приоритет
     ram_00B3                        = $B3 ; N/A     предположительно лимит приоритета до ram_00B3 включительно
                                           ;         12 игроков + 1 мяч + 1 иконка мяча + 4 циферки + 1 погода? = 19
                                           ;         пруфы в 0x010063, там адреса с диапазоном $13 (19)
+                                          ; однако возможно бывает и больше, смотреть 0x01007B
 
 ram_00B4                        = $B4 ; N/A
 ram_00B5                        = $B5 ; N/A
@@ -206,19 +207,20 @@ ram_pos_X_hi_камера             = $F1 ; 27
 ram_pos_Y_lo_камера             = $F2 ; 26   
 ram_pos_Y_hi_камера             = $F3 ; 25   
 
-; адреса для музыки
-ram_00F4                        = $F4 ; 22   
+ram_счетчик_объектов_на_экране  = $F4 ; 22   
 ram_00F5                        = $F5 ; 2   
-ram_00F6                        = $F6 ; 4   ($indirect) <1>   
-ram_00F7                        = $F7 ; 3   
-ram_00F8                        = $F8 ; N/A
-ram_00F9                        = $F9 ; N/A
-ram_00FA                        = $FA ; N/A
-ram_00FB                        = $FB ; N/A
-ram_00FC                        = $FC ; N/A
-ram_00FD                        = $FD ; N/A
-ram_00FE                        = $FE ; N/A
-ram_00FF                        = $FF ; 1   
+
+ram_indirect_jmp_lo             = $F6 ; 4   ($indirect) <1>   
+ram_indirect_jmp_hi             = $F7 ; 3   байты для непрямого прыжка
+
+ram_00F8                        = $F8 ; N/A unused
+ram_00F9                        = $F9 ; N/A unused
+ram_00FA                        = $FA ; N/A unused
+ram_00FB                        = $FB ; N/A unused
+ram_00FC                        = $FC ; N/A unused
+ram_00FD                        = $FD ; N/A unused
+ram_00FE                        = $FE ; N/A unused
+ram_00FF                        = $FF ; 1   unused, bzk придумать как заменить ссылку
 
 ram_0100                        = $0100 ; 36   
 ram_0101                        = $0101 ; N/A
