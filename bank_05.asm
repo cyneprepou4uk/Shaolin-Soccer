@@ -4762,7 +4762,7 @@ C - - - - - 0x015AF4 05:9AE4: AC CA 05  LDY ram_номер_опции
 C - - - - - 0x015AF7 05:9AE7: C0 09     CPY #$09
 C - - - - - 0x015AF9 05:9AE9: B0 EE     BCS bra_9AD9
 C - - - - - 0x015AFB 05:9AEB: A9 06     LDA #$06    ; Down
-loc_9AED:   ; bzk опт
+bra_9AED:
 C D 0 - - - 0x015AFD 05:9AED: 8D CD 05  STA ram_btn_menu
 C - - - - - 0x015B00 05:9AF0: 20 DD 81  JSR sub_81DD
 C - - - - - 0x015B03 05:9AF3: 20 B3 9C  JSR sub_9CB3
@@ -4774,7 +4774,7 @@ ofs_9AF9_04_B:
 C - - J - - 0x015B09 05:9AF9: A9 34     LDA #con_sfx_no
 C - - - - - 0x015B0B 05:9AFB: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x015B0E 05:9AFE: A9 05     LDA #$05    ; Up
-C - - - - - 0x015B10 05:9B00: 4C ED 9A  JMP loc_9AED
+C - - - - - 0x015B10 05:9B00: 4C ED 9A  BNE bra_9AED
 
 
 
