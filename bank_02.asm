@@ -12413,7 +12413,7 @@ C - - - - - 0x00B470 02:B460: 9D B0 04  STA ram_смена_угла_движен
 C - - - - - 0x00B473 02:B463: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00B476 02:B466: BD 25 B5  LDA tbl_B525,X
 C - - - - - 0x00B479 02:B469: 9D 61 00  STA ram_0061,X
-C - - - - - 0x00B47C 02:B46C: BD 29 B5  LDA tbl_B529,X
+C - - - - - 0x00B47C 02:B46C: BD 29 B5  LDA #con_action_07
 C - - - - - 0x00B47F 02:B46F: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x00B482 02:B472: A5 58     LDA ram_script
 C - - - - - 0x00B484 02:B474: C9 03     CMP #con_script_титры
@@ -12538,14 +12538,6 @@ tbl_B525:
 - D 1 - - - 0x00B536 02:B526: 04        .byte $04   ; 
 - D 1 - - - 0x00B537 02:B527: 04        .byte $04   ; 
 - D 1 - - - 0x00B538 02:B528: 04        .byte $04   ; 
-
-
-
-tbl_B529:   ; bzk опт
-- D 1 - - - 0x00B539 02:B529: 07        .byte con_action_07   ; 
-- D 1 - - - 0x00B53A 02:B52A: 07        .byte con_action_07   ; 
-- D 1 - - - 0x00B53B 02:B52B: 07        .byte con_action_07   ; 
-- D 1 - - - 0x00B53C 02:B52C: 07        .byte con_action_07   ; 
 
 
 
