@@ -3996,10 +3996,10 @@ C - - - - - 0x00D89A 03:988A: D0 05     BNE bra_9891
 bra_988C:
 loc_988C:
 C D 0 - - - 0x00D89C 03:988C: A9 0F     LDA #con_action_споткнуться
-C - - - - - 0x00D89E 03:988E: 4C CC 98  JMP loc_98CC_запись_действия
+C - - - - - 0x00D89E 03:988E: 4C CC 98  BNE bra_98CC_запись_действия
 bra_9891:
 C - - - - - 0x00D8A1 03:9891: A9 01     LDA #con_action_стоит_на_месте
-C - - - - - 0x00D8A3 03:9893: 4C CC 98  JMP loc_98CC_запись_действия
+C - - - - - 0x00D8A3 03:9893: 4C CC 98  BNE bra_98CC_запись_действия
 bra_9896:
 C - - - - - 0x00D8A6 03:9896: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x00D8A9 03:9899: 29 7F     AND #$7F
@@ -4016,7 +4016,7 @@ C - - - - - 0x00D8BE 03:98AE: B0 03     BCS bra_98B3
 C - - - - - 0x00D8C0 03:98B0: 4C C1 98  JMP loc_98C1
 bra_98B3:
 C - - - - - 0x00D8C3 03:98B3: A9 21     LDA #con_action_бег
-C - - - - - 0x00D8C5 03:98B5: 4C CC 98  JMP loc_98CC_запись_действия
+C - - - - - 0x00D8C5 03:98B5: 4C CC 98  BNE bra_98CC_запись_действия
 bra_98B8:
 C - - - - - 0x00D8C8 03:98B8: A5 2A     LDA ram_002A
 C - - - - - 0x00D8CA 03:98BA: C9 10     CMP #$10
@@ -4029,7 +4029,7 @@ C - - - - - 0x00D8D4 03:98C4: 29 7F     AND #$7F
 C - - - - - 0x00D8D6 03:98C6: C9 21     CMP #con_action_бег
 C - - - - - 0x00D8D8 03:98C8: F0 C2     BEQ bra_988C
 C - - - - - 0x00D8DA 03:98CA: A9 20     LDA #con_action_ходьба_пешком
-loc_98CC_запись_действия:   ; bzk опт
+bra_98CC_запись_действия:
 C D 0 - - - 0x00D8DC 03:98CC: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00D8DF 03:98CF: 60        RTS
 
