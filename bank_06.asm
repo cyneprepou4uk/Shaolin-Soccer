@@ -4641,17 +4641,17 @@ C - - - - - 0x019FFB 06:9FEB: 30 0A     BMI bra_9FF7
 C - - - - - 0x019FFD 06:9FED: 0D 92 03  ORA ram_pos_Z_lo_мяча
 C - - - - - 0x01A000 06:9FF0: D0 0A     BNE bra_9FFC
 C - - - - - 0x01A002 06:9FF2: A9 07     LDA #$07
-C - - - - - 0x01A004 06:9FF4: 4C 08 A0  JMP loc_A008
+C - - - - - 0x01A004 06:9FF4: 4C 08 A0  JMP loc_A008_запись_действия_мяча_запись_действия_мяча
 bra_9FF7:
 - - - - - - 0x01A007 06:9FF7: A9 01     LDA #$01
-- - - - - - 0x01A009 06:9FF9: 4C 08 A0  JMP loc_A008
+- - - - - - 0x01A009 06:9FF9: 4C 08 A0  JMP loc_A008_запись_действия_мяча_запись_действия_мяча
 bra_9FFC:
 C - - - - - 0x01A00C 06:9FFC: A9 00     LDA #$00
 C - - - - - 0x01A00E 06:9FFE: 8D 56 04  STA ram_gravity_hi_мяча
 C - - - - - 0x01A011 06:A001: A9 80     LDA #$80
 C - - - - - 0x01A013 06:A003: 8D 48 04  STA ram_gravity_lo_мяча
 C - - - - - 0x01A016 06:A006: A9 06     LDA #$06
-loc_A008:   ; bzk опт
+loc_A008_запись_действия_мяча_запись_действия_мяча:   ; bzk опт
 C D 1 - - - 0x01A018 06:A008: 8D 85 04  STA ram_next_действие_мяча
 bra_A00B_RTS:
 C - - - - - 0x01A01B 06:A00B: 60        RTS
