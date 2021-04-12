@@ -12640,10 +12640,10 @@ C - - - - - 0x0136BB 04:B6AB: AD 1D 00  LDA ram_001D
 C - - - - - 0x0136BE 04:B6AE: 29 0C     AND #$0C
 C - - - - - 0x0136C0 04:B6B0: F0 0A     BEQ bra_B6BC
 C - - - - - 0x0136C2 04:B6B2: A9 27     LDA #con_action_27
-C - - - - - 0x0136C4 04:B6B4: 4C 0F B7  JMP loc_B70F_запись_действия
+C - - - - - 0x0136C4 04:B6B4: 4C 0F B7  BNE bra_B70F_запись_действия
 bra_B6B7:
 C - - - - - 0x0136C7 04:B6B7: A9 2A     LDA #con_action_2A
-C - - - - - 0x0136C9 04:B6B9: 4C 0F B7  JMP loc_B70F_запись_действия
+C - - - - - 0x0136C9 04:B6B9: 4C 0F B7  BNE bra_B70F_запись_действия
 bra_B6BC:
 C - - - - - 0x0136CC 04:B6BC: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x0136CF 04:B6BF: 29 08     AND #con_state_бег_спринт
@@ -12657,13 +12657,13 @@ C - - - - - 0x0136DE 04:B6CE: AD 21 00  LDA ram_0021
 C - - - - - 0x0136E1 04:B6D1: 29 0C     AND #$0C
 C - - - - - 0x0136E3 04:B6D3: F0 29     BEQ bra_B6FE
 C - - - - - 0x0136E5 04:B6D5: A9 24     LDA #con_action_24
-C - - - - - 0x0136E7 04:B6D7: 4C 0F B7  JMP loc_B70F_запись_действия
+C - - - - - 0x0136E7 04:B6D7: 4C 0F B7  BNE bra_B70F_запись_действия
 bra_B6DA:
 C - - - - - 0x0136EA 04:B6DA: AD 21 00  LDA ram_0021
 C - - - - - 0x0136ED 04:B6DD: 29 0C     AND #$0C
 C - - - - - 0x0136EF 04:B6DF: F0 1D     BEQ bra_B6FE
 C - - - - - 0x0136F1 04:B6E1: A9 25     LDA #con_action_25
-C - - - - - 0x0136F3 04:B6E3: 4C 0F B7  JMP loc_B70F_запись_действия
+C - - - - - 0x0136F3 04:B6E3: 4C 0F B7  BNE bra_B70F_запись_действия
 bra_B6E6_не_бежит:
 C - - - - - 0x0136F6 04:B6E6: AD 21 00  LDA ram_0021
 C - - - - - 0x0136F9 04:B6E9: 29 0F     AND #$0F
@@ -12672,19 +12672,19 @@ C - - - - - 0x0136FD 04:B6ED: AD 1D 00  LDA ram_001D
 C - - - - - 0x013700 04:B6F0: 29 0F     AND #$0F
 C - - - - - 0x013702 04:B6F2: D0 05     BNE bra_B6F9
 C - - - - - 0x013704 04:B6F4: A9 01     LDA #con_action_стоит_на_месте
-C - - - - - 0x013706 04:B6F6: 4C 0F B7  JMP loc_B70F_запись_действия
+C - - - - - 0x013706 04:B6F6: 4C 0F B7  BNE bra_B70F_запись_действия
 bra_B6F9:
 C - - - - - 0x013709 04:B6F9: A9 20     LDA #con_action_ходьба_пешком
-C - - - - - 0x01370B 04:B6FB: 4C 0F B7  JMP loc_B70F_запись_действия
+C - - - - - 0x01370B 04:B6FB: 4C 0F B7  BNE bra_B70F_запись_действия
 bra_B6FE:
 C - - - - - 0x01370E 04:B6FE: AD 21 00  LDA ram_0021
 C - - - - - 0x013711 04:B701: 29 0F     AND #$0F
 C - - - - - 0x013713 04:B703: F0 0D     BEQ bra_B712
 C - - - - - 0x013715 04:B705: A9 1D     LDA #con_action_спринт
-C - - - - - 0x013717 04:B707: 4C 0F B7  JMP loc_B70F_запись_действия
+C - - - - - 0x013717 04:B707: 4C 0F B7  BNE bra_B70F_запись_действия
 bra_B70A:
 C - - - - - 0x01371A 04:B70A: A9 21     LDA #con_action_бег
-loc_B70F_запись_действия:   ; bzk опт
+bra_B70F_запись_действия:
 C D 1 - - - 0x01371F 04:B70F: 9D 79 04  STA ram_next_действие_игрока,X
 bra_B712:
 C - - - - - 0x013722 04:B712: AD 1D 00  LDA ram_001D
