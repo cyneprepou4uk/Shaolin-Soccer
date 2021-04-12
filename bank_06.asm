@@ -2300,17 +2300,17 @@ tbl_8FC6:
 
 
 ofs_8FC8_01:
-C - - J - - 0x018FD8 06:8FC8: BD 59 04  LDA ram_действие_игрока,X
+C - - J - - 0x018FD8 06:8FC8: BD 59 04  LDA ram_действие_мяча
 C - - - - - 0x018FDB 06:8FCB: 30 14     BMI bra_8FE1
 C - - - - - 0x018FDD 06:8FCD: 20 27 99  JSR sub_9927_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x018FE0 06:8FD0: 20 56 98  JSR sub_9856
 C - - - - - 0x018FE3 06:8FD3: A9 00     LDA #$00
-C - - - - - 0x018FE5 06:8FD5: 9D 2E 04  STA ram_spd_Z_hi_игрока,X
-C - - - - - 0x018FE8 06:8FD8: 9D 20 04  STA ram_spd_Z_lo_игрока,X
-C - - - - - 0x018FEB 06:8FDB: 9D 4A 04  STA ram_gravity_hi_игрока,X
-C - - - - - 0x018FEE 06:8FDE: 9D 3C 04  STA ram_gravity_lo_игрока,X
+C - - - - - 0x018FE5 06:8FD5: 9D 2E 04  STA ram_spd_Z_hi_мяча
+C - - - - - 0x018FE8 06:8FD8: 9D 20 04  STA ram_spd_Z_lo_мяча
+C - - - - - 0x018FEB 06:8FDB: 9D 4A 04  STA ram_gravity_hi_мяча
+C - - - - - 0x018FEE 06:8FDE: 9D 3C 04  STA ram_gravity_lo_мяча
 bra_8FE1:
-C - - - - - 0x018FF1 06:8FE1: BD 30 01  LDA ram_на_чем_стоит_игрок,X
+C - - - - - 0x018FF1 06:8FE1: BD 30 01  LDA ram_на_чем_стоит_мяч
 C - - - - - 0x018FF4 06:8FE4: C9 02     CMP #$02
 C - - - - - 0x018FF6 06:8FE6: 90 27     BCC bra_900F    ; если на траве или луже
 C - - - - - 0x018FF8 06:8FE8: 20 C9 9C  JSR sub_9CC9_очистить_скорости_X_Y_Z_и_гравитацию
