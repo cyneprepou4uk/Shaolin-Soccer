@@ -14603,7 +14603,7 @@ C - - - - - 0x007C36 01:BC26: B9 18 BD  LDA tbl_BD18_данные_игроков
 C - - - - - 0x007C39 01:BC29: 85 2C     STA ram_002C
 C - - - - - 0x007C3B 01:BC2B: B9 19 BD  LDA tbl_BD18_данные_игроков_команд + 1,Y
 C - - - - - 0x007C3E 01:BC2E: 85 2D     STA ram_002D
-loc_BC30_loop:
+bra_BC30_loop:
 C D 1 - - - 0x007C40 01:BC30: A9 00     LDA #$00
 C - - - - - 0x007C42 01:BC32: 85 1C     STA ram_001C    ; bzk запись выглядит бесполезной
 C - - - - - 0x007C44 01:BC34: A5 57     LDA ram_опция_режим_и_сложность
@@ -14650,9 +14650,7 @@ C - - - - - 0x007C95 01:BC85: 20 BA BC  JSR sub_BCBA
 C - - - - - 0x007C98 01:BC88: E8        INX
 C - - - - - 0x007C99 01:BC89: E8        INX
 C - - - - - 0x007C9A 01:BC8A: E0 0C     CPX #$0C
-C - - - - - 0x007C9C 01:BC8C: B0 03     BCS bra_BC91
-C - - - - - 0x007C9E 01:BC8E: 4C 30 BC  JMP loc_BC30_loop    ; bzk опт
-bra_BC91:
+C - - - - - 0x007C9C 01:BC8C: B0 03     BCC bra_BC30_loop
 C - - - - - 0x007CA1 01:BC91: A6 43     LDX ram_0043
 C - - - - - 0x007CA3 01:BC93: BD 30 05  LDA ram_расстановка_команды,X
 C - - - - - 0x007CA6 01:BC96: 29 03     AND #$03
