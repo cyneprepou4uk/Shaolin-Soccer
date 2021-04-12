@@ -1717,10 +1717,10 @@ C - - - - - 0x00CA45 03:8A35: A5 1C     LDA ram_001C
 C - - - - - 0x00CA47 03:8A37: C9 14     CMP #$14
 C - - - - - 0x00CA49 03:8A39: B0 05     BCS bra_8A40
 C - - - - - 0x00CA4B 03:8A3B: A9 29     LDA #con_action_29
-C - - - - - 0x00CA4D 03:8A3D: 4C 42 8A  JMP loc_8A42_запись_действия
+C - - - - - 0x00CA4D 03:8A3D: 4C 42 8A  BNE bra_8A42_запись_действия
 bra_8A40:
 C - - - - - 0x00CA50 03:8A40: A9 28     LDA #con_action_28
-loc_8A42_запись_действия:   ; bzk опт
+bra_8A42_запись_действия:
 C D 0 - - - 0x00CA52 03:8A42: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00CA55 03:8A45: 60        RTS
 bra_8A46:
