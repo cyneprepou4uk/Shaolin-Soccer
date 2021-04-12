@@ -29,7 +29,7 @@ sub_0x000000_RESET_init:
                                         JSR sub_скопировать_на_батарейку
                                         JSR sub_0x01EE81_выключить_NMI
                                         JSR sub_0x01EF74_очистка_фона_и_спрайтов
-;                                        JSR sub_подготовка_палитры_vt03
+;                                         JSR sub_подготовка_палитры_vt03
                                         LDA #$00
                                         STA ram_pos_X_lo_скролл
                                         STA ram_pos_X_hi_скролл
@@ -129,12 +129,44 @@ sub_подготовка_палитры_vt03:
                                         STA $2006
                                         LDA #< $3F00
                                         STA $2006
-                                        LDX #$00    ; запись 00-FF в палитру 3F00-3FFF
+                                        LDX #$00    ; запись в диапазон 3F00-3FFF
 @цикл_записи_индексов_палитры:
-                                        STX $2007
+                                        LDA tbl_0000_номера_палитры,X
+                                        STA $2007
                                         INX
                                         BNE @цикл_записи_индексов_палитры
+                                        LDA #< tbl_0000_начальная_палитра
+                                        STA ram_000C
+                                        LDA #> tbl_0000_начальная_палитра
+                                        STA ram_000D
+                                        LDX #$00
+@цикл_записи_rgb:
+                                        STX $401B
+                                        LDY #$00
+                                        LDA (ram_000C),Y
+                                        STA $401B
+                                        INY
+                                        LDA (ram_000C),Y
+                                        STA $401B
+                                        INY
+                                        LDA (ram_000C),Y
+                                        STA $401B
+                                        LDA ram_000C
+                                        CLC
+                                        ADC #$03
+                                        STA ram_000C
+                                        BCC @not_overflow
+                                        INC ram_000D
+@not_overflow:
+                                        INX
+                                        BNE @цикл_записи_rgb
                                         RTS
+
+tbl_0000_номера_палитры:
+    .incbin "incbin/3F00_3FFF.bin"
+
+tbl_0000_начальная_палитра:
+    .incbin "incbin/default_RGB.bin"
 
 
 
