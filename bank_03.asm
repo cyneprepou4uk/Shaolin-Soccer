@@ -2213,10 +2213,10 @@ C - - - - - 0x00CD9E 03:8D8E: F0 0C     BEQ bra_8D9C
 - - - - - - 0x00CDA3 03:8D93: C9 F0     CMP #$F0
 - - - - - - 0x00CDA5 03:8D95: B0 05     BCS bra_8D9C
 - - - - - - 0x00CDA7 03:8D97: A9 30     LDA #con_action_прыжок_обычный
-- - - - - - 0x00CDA9 03:8D99: 4C 9E 8D  JMP loc_8D9E_запись_действия
+- - - - - - 0x00CDA9 03:8D99: 4C 9E 8D  BNE bra_8D9E_запись_действия
 bra_8D9C:
 C - - - - - 0x00CDAC 03:8D9C: A9 21     LDA #con_action_бег
-loc_8D9E_запись_действия:   ; bzk опт
+bra_8D9E_запись_действия:
 C - - - - - 0x00CDAE 03:8D9E: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00CDB1 03:8DA1: 60        RTS
 
