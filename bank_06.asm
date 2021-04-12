@@ -1935,7 +1935,7 @@ tbl_8CAF:
 
 
 ofs_8CE2_16:
-- - - - - - 0x018CF2 06:8CE2: BD 59 04  LDA ram_действие_игрока,X
+- - - - - - 0x018CF2 06:8CE2: BD 59 04  LDA ram_действие_мяча
 - - - - - - 0x018CF5 06:8CE5: 30 0D     BMI bra_8CF4
 - - - - - - 0x018CF7 06:8CE7: 20 27 99  JSR sub_9927_запись_действия_и_очистка_адресов_анимации
 - - - - - - 0x018CFA 06:8CEA: A9 40     LDA #$40
@@ -1948,24 +1948,24 @@ bra_8CF4:
 - - - - - - 0x018D09 06:8CF9: 18        CLC
 - - - - - - 0x018D0A 06:8CFA: AD C9 04  LDA ram_таймер_действия_мяча
 - - - - - - 0x018D0D 06:8CFD: 29 FC     AND #$FC
-- - - - - - 0x018D0F 06:8CFF: 7D B0 04  ADC ram_смена_угла_движения,X
-- - - - - - 0x018D12 06:8D02: 9D B0 04  STA ram_смена_угла_движения,X
+- - - - - - 0x018D0F 06:8CFF: 7D B0 04  ADC ram_смена_угла_движения + con_id_мяча
+- - - - - - 0x018D12 06:8D02: 9D B0 04  STA ram_смена_угла_движения + con_id_мяча
 - - - - - - 0x018D15 06:8D05: A9 02     LDA #$02
 - - - - - - 0x018D17 06:8D07: 20 D1 93  JSR sub_93D1
 - - - - - - 0x018D1A 06:8D0A: 18        CLC
 - - - - - - 0x018D1B 06:8D0B: AD F5 03  LDA ram_spd_X_lo_погоды
-- - - - - - 0x018D1E 06:8D0E: 7D E8 03  ADC ram_spd_X_lo_игрока,X
-- - - - - - 0x018D21 06:8D11: 9D E8 03  STA ram_spd_X_lo_игрока,X
+- - - - - - 0x018D1E 06:8D0E: 7D E8 03  ADC ram_spd_X_lo_мяча
+- - - - - - 0x018D21 06:8D11: 9D E8 03  STA ram_spd_X_lo_мяча
 - - - - - - 0x018D24 06:8D14: AD 03 04  LDA ram_spd_X_hi_погоды
-- - - - - - 0x018D27 06:8D17: 7D F6 03  ADC ram_spd_X_hi_игрока,X
-- - - - - - 0x018D2A 06:8D1A: 9D F6 03  STA ram_spd_X_hi_игрока,X
+- - - - - - 0x018D27 06:8D17: 7D F6 03  ADC ram_spd_X_hi_мяча
+- - - - - - 0x018D2A 06:8D1A: 9D F6 03  STA ram_spd_X_hi_мяча
 - - - - - - 0x018D2D 06:8D1D: 18        CLC
 - - - - - - 0x018D2E 06:8D1E: AD 11 04  LDA ram_spd_Y_lo_погоды
-- - - - - - 0x018D31 06:8D21: 7D 04 04  ADC ram_spd_Y_lo_игрока,X
-- - - - - - 0x018D34 06:8D24: 9D 04 04  STA ram_spd_Y_lo_игрока,X
+- - - - - - 0x018D31 06:8D21: 7D 04 04  ADC ram_spd_Y_lo_мяча
+- - - - - - 0x018D34 06:8D24: 9D 04 04  STA ram_spd_Y_lo_мяча
 - - - - - - 0x018D37 06:8D27: AD 1F 04  LDA ram_spd_Y_hi_погоды
-- - - - - - 0x018D3A 06:8D2A: 7D 12 04  ADC ram_spd_Y_hi_игрока,X
-- - - - - - 0x018D3D 06:8D2D: 9D 12 04  STA ram_spd_Y_hi_игрока,X
+- - - - - - 0x018D3A 06:8D2A: 7D 12 04  ADC ram_spd_Y_hi_мяча
+- - - - - - 0x018D3D 06:8D2D: 9D 12 04  STA ram_spd_Y_hi_мяча
 bra_8D30:
 - - - - - - 0x018D40 06:8D30: 20 42 96  JSR sub_9642
 - - - - - - 0x018D43 06:8D33: 20 95 9B  JSR sub_9B95_сдвинуть_объект
