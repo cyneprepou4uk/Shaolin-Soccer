@@ -2813,7 +2813,7 @@ C - - - - - 0x0193E1 06:93D1: 85 1C     STA ram_001C
 C - - - - - 0x0193E3 06:93D3: 4A        LSR
 C - - - - - 0x0193E4 06:93D4: 65 1C     ADC ram_001C
 C - - - - - 0x0193E6 06:93D6: 85 1C     STA ram_001C
-C - - - - - 0x0193E8 06:93D8: BD B0 04  LDA ram_смена_угла_движения,X
+C - - - - - 0x0193E8 06:93D8: BD B0 04  LDA ram_смена_угла_движения + con_id_мяча
 C - - - - - 0x0193EB 06:93DB: 29 F0     AND #$F0
 C - - - - - 0x0193ED 06:93DD: 4A        LSR
 C - - - - - 0x0193EE 06:93DE: 4A        LSR
@@ -2827,27 +2827,27 @@ C - - - - - 0x0193FD 06:93ED: 85 2E     STA ram_002E
 C - - - - - 0x0193FF 06:93EF: B9 38 94  LDA tbl_9438,Y
 C - - - - - 0x019402 06:93F2: 85 2F     STA ram_002F
 C - - - - - 0x019404 06:93F4: A9 00     LDA #$00
-C - - - - - 0x019406 06:93F6: 9D E8 03  STA ram_spd_X_lo_игрока,X
-C - - - - - 0x019409 06:93F9: 9D F6 03  STA ram_spd_X_hi_игрока,X
-C - - - - - 0x01940C 06:93FC: 9D 04 04  STA ram_spd_Y_lo_игрока,X
-C - - - - - 0x01940F 06:93FF: 9D 12 04  STA ram_spd_Y_hi_игрока,X
+C - - - - - 0x019406 06:93F6: 9D E8 03  STA ram_spd_X_lo_мяча
+C - - - - - 0x019409 06:93F9: 9D F6 03  STA ram_spd_X_hi_мяча
+C - - - - - 0x01940C 06:93FC: 9D 04 04  STA ram_spd_Y_lo_мяча
+C - - - - - 0x01940F 06:93FF: 9D 12 04  STA ram_spd_Y_hi_мяча
 bra_9402:
 C - - - - - 0x019412 06:9402: 46 1C     LSR ram_001C
 C - - - - - 0x019414 06:9404: 90 22     BCC bra_9428
 C - - - - - 0x019416 06:9406: 18        CLC
 C - - - - - 0x019417 06:9407: A5 2C     LDA ram_002C
-C - - - - - 0x019419 06:9409: 7D E8 03  ADC ram_spd_X_lo_игрока,X
-C - - - - - 0x01941C 06:940C: 9D E8 03  STA ram_spd_X_lo_игрока,X
+C - - - - - 0x019419 06:9409: 7D E8 03  ADC ram_spd_X_lo_мяча
+C - - - - - 0x01941C 06:940C: 9D E8 03  STA ram_spd_X_lo_мяча
 C - - - - - 0x01941F 06:940F: A5 2D     LDA ram_002D
-C - - - - - 0x019421 06:9411: 7D F6 03  ADC ram_spd_X_hi_игрока,X
-C - - - - - 0x019424 06:9414: 9D F6 03  STA ram_spd_X_hi_игрока,X
+C - - - - - 0x019421 06:9411: 7D F6 03  ADC ram_spd_X_hi_мяча
+C - - - - - 0x019424 06:9414: 9D F6 03  STA ram_spd_X_hi_мяча
 C - - - - - 0x019427 06:9417: 18        CLC
 C - - - - - 0x019428 06:9418: A5 2E     LDA ram_002E
-C - - - - - 0x01942A 06:941A: 7D 04 04  ADC ram_spd_Y_lo_игрока,X
-C - - - - - 0x01942D 06:941D: 9D 04 04  STA ram_spd_Y_lo_игрока,X
+C - - - - - 0x01942A 06:941A: 7D 04 04  ADC ram_spd_Y_lo_мяча
+C - - - - - 0x01942D 06:941D: 9D 04 04  STA ram_spd_Y_lo_мяча
 C - - - - - 0x019430 06:9420: A5 2F     LDA ram_002F
-C - - - - - 0x019432 06:9422: 7D 12 04  ADC ram_spd_Y_hi_игрока,X
-C - - - - - 0x019435 06:9425: 9D 12 04  STA ram_spd_Y_hi_игрока,X
+C - - - - - 0x019432 06:9422: 7D 12 04  ADC ram_spd_Y_hi_мяча
+C - - - - - 0x019435 06:9425: 9D 12 04  STA ram_spd_Y_hi_мяча
 bra_9428:
 C - - - - - 0x019438 06:9428: 06 2C     ASL ram_002C
 C - - - - - 0x01943A 06:942A: 26 2D     ROL ram_002D
