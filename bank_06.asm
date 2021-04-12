@@ -1895,7 +1895,8 @@ C - - - - - 0x018CAC 06:8C9C: 60        RTS
 
 
 sub_8C9D_обработка_движения_мяча:
-C - - - - - 0x018CAD 06:8C9D: BD 59 04  LDA ram_действие_мяча - con_id_мяча,X
+; на входе X = 0C
+C - - - - - 0x018CAD 06:8C9D: BD 59 04  LDA ram_действие_мяча
 C - - - - - 0x018CB0 06:8CA0: 0A        ASL
 C - - - - - 0x018CB1 06:8CA1: A8        TAY
 C - - - - - 0x018CB2 06:8CA2: B9 AF 8C  LDA tbl_8CAF,Y
