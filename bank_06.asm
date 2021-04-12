@@ -2149,19 +2149,19 @@ C - - - - - 0x018E9E 06:8E8E: 60        RTS
 
 
 ofs_8E8F_04_пас:
-C - - J - - 0x018E9F 06:8E8F: BD 59 04  LDA ram_действие_мяча - con_id_мяча,X
+C - - J - - 0x018E9F 06:8E8F: BD 59 04  LDA ram_действие_мяча
 C - - - - - 0x018EA2 06:8E92: 30 2B     BMI bra_8EBF
 C - - - - - 0x018EA4 06:8E94: 20 27 99  JSR sub_9927_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x018EA7 06:8E97: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x018EAA 06:8E9A: B9 A3 04  LDA ram_напр_движ_игрока,Y
-C - - - - - 0x018EAD 06:8E9D: 9D A3 04  STA ram_напр_движ_мяча - con_id_мяча,X
+C - - - - - 0x018EAD 06:8E9D: 9D A3 04  STA ram_напр_движ_мяча
 C - - - - - 0x018EB0 06:8EA0: B9 B0 04  LDA ram_смена_угла_движения,Y
-C - - - - - 0x018EB3 06:8EA3: 9D B0 04  STA ram_смена_угла_движения,X
-C - - - - - 0x018EB6 06:8EA6: BD 99 03  LDA ram_pos_Z_hi_мяча - con_id_мяча,X
+C - - - - - 0x018EB3 06:8EA3: 9D B0 04  STA ram_смена_угла_движения + con_id_мяча
+C - - - - - 0x018EB6 06:8EA6: BD 99 03  LDA ram_pos_Z_hi_мяча
 C - - - - - 0x018EB9 06:8EA9: 10 08     BPL bra_8EB3
 - - - - - - 0x018EBB 06:8EAB: A9 00     LDA #$00
-- - - - - - 0x018EBD 06:8EAD: 9D 86 03  STA ram_pos_Z_lo_игрока,X
-- - - - - - 0x018EC0 06:8EB0: 9D 99 03  STA ram_pos_Z_hi_мяча - con_id_мяча,X
+- - - - - - 0x018EBD 06:8EAD: 9D 86 03  STA ram_pos_Z_lo_мяча
+- - - - - - 0x018EC0 06:8EB0: 9D 99 03  STA ram_pos_Z_hi_мяча
 bra_8EB3:
 C - - - - - 0x018EC3 06:8EB3: 20 C9 9C  JSR sub_9CC9_очистить_скорости_X_Y_Z_и_гравитацию
 C - - - - - 0x018EC6 06:8EB6: 20 FA A2  JSR sub_A2FA_вычислить_физику_паса
@@ -2172,20 +2172,20 @@ bra_8EBF:
 C - - - - - 0x018ECF 06:8EBF: 20 42 96  JSR sub_9642
 C - - - - - 0x018ED2 06:8EC2: 20 95 9B  JSR sub_9B95_сдвинуть_объект
 C - - - - - 0x018ED5 06:8EC5: 20 75 94  JSR sub_9475
-C - - - - - 0x018ED8 06:8EC8: BD 2E 04  LDA ram_spd_Z_hi_мяча - con_id_мяча,X
+C - - - - - 0x018ED8 06:8EC8: BD 2E 04  LDA ram_spd_Z_hi_мяча
 C - - - - - 0x018EDB 06:8ECB: 10 05     BPL bra_8ED2
 C - - - - - 0x018EDD 06:8ECD: A9 06     LDA #con_action_06
-C - - - - - 0x018EDF 06:8ECF: 9D 59 04  STA ram_действие_мяча - con_id_мяча,X
+C - - - - - 0x018EDF 06:8ECF: 9D 59 04  STA ram_действие_мяча
 bra_8ED2:
 C - - - - - 0x018EE2 06:8ED2: 4C 97 8F  JMP loc_8F97
 bra_8ED5:
 C - - - - - 0x018EE5 06:8ED5: 20 42 96  JSR sub_9642
 C - - - - - 0x018EE8 06:8ED8: 20 95 9B  JSR sub_9B95_сдвинуть_объект
 C - - - - - 0x018EEB 06:8EDB: A9 00     LDA #$00
-C - - - - - 0x018EED 06:8EDD: 9D 20 04  STA ram_spd_Z_lo_мяча - con_id_мяча,X
-C - - - - - 0x018EF0 06:8EE0: 9D 2E 04  STA ram_spd_Z_hi_мяча - con_id_мяча,X
+C - - - - - 0x018EED 06:8EDD: 9D 20 04  STA ram_spd_Z_lo_мяча
+C - - - - - 0x018EF0 06:8EE0: 9D 2E 04  STA ram_spd_Z_hi_мяча
 C - - - - - 0x018EF3 06:8EE3: A9 07     LDA #con_action_07
-C - - - - - 0x018EF5 06:8EE5: 9D 59 04  STA ram_действие_мяча - con_id_мяча,X
+C - - - - - 0x018EF5 06:8EE5: 9D 59 04  STA ram_действие_мяча
 C - - - - - 0x018EF8 06:8EE8: 60        RTS
 
 
