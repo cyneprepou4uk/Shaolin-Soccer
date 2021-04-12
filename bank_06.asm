@@ -3970,20 +3970,6 @@ tbl_9AFD:
 
 
 
-loc_9B34_очистить_скорости_Y_Z_и_гравитацию:
-sub_9B34_очистить_скорости_Y_Z_и_гравитацию:
-; bzk опт, использовать функцию 0x019CD9
-C D 0 - - - 0x019B44 06:9B34: A9 00     LDA #$00
-C - - - - - 0x019B46 06:9B36: 9D 4A 04  STA ram_gravity_hi_игрока,X
-C - - - - - 0x019B49 06:9B39: 9D 3C 04  STA ram_gravity_lo_игрока,X
-C - - - - - 0x019B4C 06:9B3C: 9D 2E 04  STA ram_spd_Z_hi_игрока,X
-C - - - - - 0x019B4F 06:9B3F: 9D 20 04  STA ram_spd_Z_lo_игрока,X
-C - - - - - 0x019B52 06:9B42: 9D 12 04  STA ram_spd_Y_hi_игрока,X
-C - - - - - 0x019B55 06:9B45: 9D 04 04  STA ram_spd_Y_lo_игрока,X
-C - - - - - 0x019B58 06:9B48: 60        RTS
-
-
-
 sub_9B49:
 C - - - - - 0x019B59 06:9B49: BD F6 03  LDA ram_spd_X_hi_игрока,X
 C - - - - - 0x019B5C 06:9B4C: 1D E8 03  ORA ram_spd_X_lo_игрока,X
@@ -4187,6 +4173,9 @@ sub_9CC9_очистить_скорости_X_Y_Z_и_гравитацию:
 C D 0 - - - 0x019CD9 06:9CC9: A9 00     LDA #$00
 C - - - - - 0x019CDB 06:9CCB: 9D F6 03  STA ram_spd_X_hi_игрока,X
 C - - - - - 0x019CDE 06:9CCE: 9D E8 03  STA ram_spd_X_lo_игрока,X
+loc_9B34_очистить_скорости_Y_Z_и_гравитацию:
+sub_9B34_очистить_скорости_Y_Z_и_гравитацию:
+                                        LDA #$00
 C - - - - - 0x019CE1 06:9CD1: 9D 12 04  STA ram_spd_Y_hi_игрока,X
 C - - - - - 0x019CE4 06:9CD4: 9D 04 04  STA ram_spd_Y_lo_игрока,X
 C - - - - - 0x019CE7 06:9CD7: 9D 2E 04  STA ram_spd_Z_hi_игрока,X
