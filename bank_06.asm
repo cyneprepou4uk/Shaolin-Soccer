@@ -6851,7 +6851,7 @@ C - - - - - 0x01AA3E 06:AA2E: BD 86 04  LDA ram_состояние_игрока,
 C - - - - - 0x01AA41 06:AA31: 30 14     BMI bra_AA47    ; если в воздухе
 C - - - - - 0x01AA43 06:AA33: BD F1 04  LDA ram_скилл,X
 C - - - - - 0x01AA46 06:AA36: 4A        LSR
-C - - - - - 0x01AA47 06:AA37: B0 0E     BCS bra_AA47
+C - - - - - 0x01AA47 06:AA37: B0 0E     BCS bra_AA47    ; если в наличии con_skill_01 ?
 C - - - - - 0x01AA49 06:AA39: BD 30 01  LDA ram_на_чем_стоит_игрок,X
 C - - - - - 0x01AA4C 06:AA3C: F0 09     BEQ bra_AA47    ; если на траве
 C - - - - - 0x01AA4E 06:AA3E: C9 03     CMP #$03

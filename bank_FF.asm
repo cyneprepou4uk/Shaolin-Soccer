@@ -647,7 +647,7 @@ sub_C2D5:
 C - - - - - 0x01C2E5 07:C2D5: A9 10     LDA #$10
 C - - - - - 0x01C2E7 07:C2D7: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
-sub_C299:
+sub_C299_мерцание_спрайтов:
 C - - - - - 0x01C2A9 07:C299: A9 11     LDA #$11
 C - - - - - 0x01C2AB 07:C29B: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
@@ -892,7 +892,7 @@ tbl_C370_low_byte_addr_для_indirect_jump:
 - D 2 - - - 0x01C39C 07:C38C: 02        .byte con_prg_bank + $02, < loc_0x008013       ; 0E
 - D 2 - - - 0x01C39E 07:C38E: 04        .byte con_prg_bank + $04, < loc_0x010028       ; 0F
 - D 2 - - - 0x01C3A0 07:C390: 02        .byte con_prg_bank + $02, < loc_0x008016       ; 10
-- D 2 - - - 0x01C3A2 07:C392: 03        .byte con_prg_bank + $03, < loc_0x00C022       ; 11
+- D 2 - - - 0x01C3A2 07:C392: 03        .byte con_prg_bank + $03, < loc_0x00C022_мерцание_спрайтов       ; 11
 - D 2 - - - 0x01C3A4 07:C394: 05        .byte con_prg_bank + $05, < loc_0x014010_скрипт_меню       ; 12
 - D 2 - - - 0x01C3A6 07:C396: 03        .byte con_prg_bank + $03, < loc_0x00C019_выбрать_погоду       ; 13
 - D 2 - - - 0x01C3A8 07:C398: 04        .byte con_prg_bank + $04, < loc_0x01001C       ; 14
@@ -1079,8 +1079,8 @@ C - - - - - 0x01C56A 07:C55A: 8D F0 05  STA ram_счетчик_следов
 C - - - - - 0x01C56D 07:C55D: A9 FF     LDA #$FF
 C - - - - - 0x01C56F 07:C55F: 8D 78 06  STA ram_приказ_боту
 C - - - - - 0x01C572 07:C562: 8D 79 06  STA ram_приказ_боту + 1
-C - - - - - 0x01C575 07:C565: 8D 7A 06  STA ram_напр_паса_команды
-C - - - - - 0x01C578 07:C568: 8D 7B 06  STA ram_напр_паса_команды + 1
+C - - - - - 0x01C575 07:C565: 8D 7A 06  STA ram_направление_паса_команды
+C - - - - - 0x01C578 07:C568: 8D 7B 06  STA ram_направление_паса_команды + 1
 C - - - - - 0x01C57B 07:C56B: 8D 84 06  STA ram_0684
 C - - - - - 0x01C57E 07:C56E: 8D 85 06  STA ram_0684 + 1
 C - - - - - 0x01C581 07:C571: 20 6A BD  JSR sub_0x01BD7A
@@ -1201,7 +1201,7 @@ C - - - - - 0x01C696 07:C686: 20 85 C2  JSR sub_C285
 C - - - - - 0x01C699 07:C689: 20 9C C8  JSR sub_C89C
 C - - - - - 0x01C69C 07:C68C: 20 CC BE  JSR sub_0x01BEDC
 C - - - - - 0x01C69F 07:C68F: 20 9E C2  JSR sub_C29E
-C - - - - - 0x01C6A2 07:C692: 20 99 C2  JSR sub_C299
+C - - - - - 0x01C6A2 07:C692: 20 99 C2  JSR sub_C299_мерцание_спрайтов
 C - - - - - 0x01C6A5 07:C695: 20 73 D0  JSR sub_D073
 C D 2 - - - 0x01C6A8 07:C698: 60        RTS
 
@@ -1240,7 +1240,7 @@ C - - - - - 0x01C6C6 07:C6B6: 20 A3 C2  JSR sub_C2A3
 C - - - - - 0x01C6C9 07:C6B9: 20 85 C2  JSR sub_C285
 C - - - - - 0x01C6CC 07:C6BC: 20 A5 F3  JSR sub_F3A5
 C - - - - - 0x01C6CF 07:C6BF: 20 9E C2  JSR sub_C29E
-C - - - - - 0x01C6D2 07:C6C2: 20 99 C2  JSR sub_C299
+C - - - - - 0x01C6D2 07:C6C2: 20 99 C2  JSR sub_C299_мерцание_спрайтов
 C - - - - - 0x01C6D5 07:C6C5: AD E2 05  LDA ram_таймер_катсцены
 C - - - - - 0x01C6D8 07:C6C8: C9 20     CMP #$20
 C - - - - - 0x01C6DA 07:C6CA: 90 10     BCC bra_C6DC
