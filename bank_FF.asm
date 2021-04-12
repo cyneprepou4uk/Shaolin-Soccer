@@ -1984,7 +1984,7 @@ C - - - - - 0x01CC0A 07:CBFA: 09 80     ORA #$80
 C - - - - - 0x01CC0C 07:CBFC: 9D 59 04  STA ram_номер_цифры - $0E,X
 bra_CBFF:
 C - - - - - 0x01CC0F 07:CBFF: A9 84     LDA #$84
-C - - - - - 0x01CC11 07:CC01: 9D 74 00  STA ram_анимация_игрока,X
+C - - - - - 0x01CC11 07:CC01: 9D 74 00  STA ram_номер_анимации_игрока,X
 C - - - - - 0x01CC14 07:CC04: A0 0C     LDY #con_id_мяча
 C - - - - - 0x01CC16 07:CC06: 84 44     STY ram_0044
 C - - - - - 0x01CC18 07:CC08: 4C 9C CC  JMP loc_CC9C_только_для_мяча
@@ -2004,7 +2004,7 @@ C - - - - - 0x01CC25 07:CC15: BD 59 04  LDA ram_номер_цифры - $0E,X
 C - - - - - 0x01CC28 07:CC18: 29 7F     AND #$7F
 C - - - - - 0x01CC2A 07:CC1A: A8        TAY
 C - - - - - 0x01CC2B 07:CC1B: B9 23 CD  LDA tbl_CD23,Y
-C - - - - - 0x01CC2E 07:CC1E: 9D 74 00  STA ram_анимация_игрока,X
+C - - - - - 0x01CC2E 07:CC1E: 9D 74 00  STA ram_номер_анимации_игрока,X
 C - - - - - 0x01CC31 07:CC21: B9 29 CD  LDA tbl_CD29,Y
 C - - - - - 0x01CC34 07:CC24: 10 22     BPL bra_CC48
 C - - - - - 0x01CC36 07:CC26: 29 7F     AND #$7F
@@ -2022,7 +2022,7 @@ C - - - - - 0x01CC4C 07:CC3C: B9 D9 00  LDA ram_флаг_видимости_иг
 C - - - - - 0x01CC4F 07:CC3F: D0 09     BNE bra_CC4A    ; если на экране
 bra_CC41:
 C - - - - - 0x01CC51 07:CC41: A9 7F     LDA #$7F
-C - - - - - 0x01CC53 07:CC43: 9D 74 00  STA ram_анимация_игрока,X
+C - - - - - 0x01CC53 07:CC43: 9D 74 00  STA ram_номер_анимации_игрока,X
 C - - - - - 0x01CC56 07:CC46: A9 00     LDA #$00
 bra_CC48:
 C - - - - - 0x01CC58 07:CC48: 85 44     STA ram_0044
@@ -2066,7 +2066,7 @@ C D 2 - - - 0x01CCAC 07:CC9C: AD 59 00  LDA ram_subscript
 C - - - - - 0x01CCAF 07:CC9F: C9 01     CMP #$01
 C - - - - - 0x01CCB1 07:CCA1: D0 08     BNE bra_CCAB
 C - - - - - 0x01CCB3 07:CCA3: A9 7F     LDA #$7F
-C - - - - - 0x01CCB5 07:CCA5: 9D 74 00  STA ram_анимация_игрока,X
+C - - - - - 0x01CCB5 07:CCA5: 9D 74 00  STA ram_номер_анимации_игрока,X
 C - - - - - 0x01CCB8 07:CCA8: 4C 1E CD  RTS
 bra_CCAB:
 C - - - - - 0x01CCBB 07:CCAB: B9 14 03  LDA ram_pos_X_lo_игрока,Y
@@ -2430,7 +2430,7 @@ C - - - - - 0x01CEDC 07:CECC: A0 00     LDY #$00
 C - - - - - 0x01CEDE 07:CECE: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x01CEE0 07:CED0: C9 FD     CMP #$FD
 C - - - - - 0x01CEE2 07:CED2: D0 11     BNE bra_CEE5_нету_подтипа_анимации
-C - - - - - 0x01CEE4 07:CED4: BD 6C 04  LDA ram_категория_анимации_игрока,X
+C - - - - - 0x01CEE4 07:CED4: BD 6C 04  LDA ram_подтип_анимации_игрока,X
 C - - - - - 0x01CEE7 07:CED7: 0A        ASL
 C - - - - - 0x01CEE8 07:CED8: A8        TAY
 C - - - - - 0x01CEE9 07:CED9: C8        INY
@@ -2472,7 +2472,7 @@ C - - - - - 0x01CF2C 07:CF1C: 4C E5 CE  JMP loc_CEE5_продолжить_чте
 bra_CF1F:
 C - - - - - 0x01CF2F 07:CF1F: C8        INY
 C - - - - - 0x01CF30 07:CF20: B1 2C     LDA (ram_002C),Y
-C - - - - - 0x01CF32 07:CF22: 9D 74 00  STA ram_анимация_игрока,X
+C - - - - - 0x01CF32 07:CF22: 9D 74 00  STA ram_номер_анимации_игрока,X
 C D 2 - - - 0x01CF35 07:CF25: 60        RTS
 bra_CF26_FE_повторить_loop_анимации:
 C - - - - - 0x01CF36 07:CF26: A9 00     LDA #$00
@@ -2486,7 +2486,7 @@ C - - - - - 0x01CF43 07:CF33: 20 90 CF  JSR sub_CF90_непрямой_прыжо
 C - - - - - 0x01CF46 07:CF36: AC 44 00  LDY ram_0044
 C - - - - - 0x01CF49 07:CF39: 88        DEY
 C - - - - - 0x01CF4A 07:CF3A: B1 2C     LDA (ram_002C),Y
-C - - - - - 0x01CF4C 07:CF3C: 9D 74 00  STA ram_анимация_игрока,X
+C - - - - - 0x01CF4C 07:CF3C: 9D 74 00  STA ram_номер_анимации_игрока,X
 C - - - - - 0x01CF4F 07:CF3F: 4C 25 CF  RTS
 bra_CF42_F0_тип_удара_мяча:
 C - - - - - 0x01CF52 07:CF42: C8        INY
@@ -7725,7 +7725,7 @@ C - - - - - 0x01EBA2 07:EB92: A4 F4     LDY ram_счетчик_объектов_
 C - - - - - 0x01EBA4 07:EB94: AD 58 00  LDA ram_script
                                         CMP #con_script_меню
                                         BNE bra_EBAD_это_не_меню
-C - - - - - 0x01EBB1 07:EBA1: B5 74     LDA ram_анимация_игрока,X
+C - - - - - 0x01EBB1 07:EBA1: B5 74     LDA ram_номер_анимации_игрока,X
 C - - - - - 0x01EBB3 07:EBA3: 29 7F     AND #$7F
 C - - - - - 0x01EBB5 07:EBA5: C9 7F     CMP #$7F
 C - - - - - 0x01EBB7 07:EBA7: F0 43     BEQ bra_EBEC_RTS
@@ -7742,7 +7742,7 @@ C - - - - - 0x01EBCA 07:EBBA: C8        INY
 C - - - - - 0x01EBCB 07:EBBB: E6 F4     INC ram_счетчик_объектов_на_экране
 C - - - - - 0x01EBCD 07:EBBD: E6 1C     INC ram_001C
 bra_EBBF:
-C - - - - - 0x01EBCF 07:EBBF: B5 74     LDA ram_анимация_игрока,X
+C - - - - - 0x01EBCF 07:EBBF: B5 74     LDA ram_номер_анимации_игрока,X
 C - - - - - 0x01EBD1 07:EBC1: 29 7F     AND #$7F
 C - - - - - 0x01EBD3 07:EBC3: C9 7F     CMP #$7F
 C - - - - - 0x01EBD5 07:EBC5: F0 0F     BEQ bra_EBD6

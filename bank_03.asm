@@ -3297,7 +3297,7 @@ C - - - - - 0x00D3B4 03:93A4: C9 20     CMP #$20
 C - - - - - 0x00D3B6 03:93A6: 90 48     BCC bra_93F0
 C - - - - - 0x00D3B8 03:93A8: C9 38     CMP #$38
 C - - - - - 0x00D3BA 03:93AA: B0 44     BCS bra_93F0
-C - - - - - 0x00D3BC 03:93AC: BD 74 00  LDA ram_анимация_игрока,X
+C - - - - - 0x00D3BC 03:93AC: BD 74 00  LDA ram_номер_анимации_игрока,X
 C - - - - - 0x00D3BF 03:93AF: 30 3F     BMI bra_93F0
 C - - - - - 0x00D3C1 03:93B1: BD 4D 03  LDA ram_pos_Y_lo_игрока,X
 C - - - - - 0x00D3C4 03:93B4: C9 90     CMP #$90
@@ -3311,7 +3311,7 @@ C - - - - - 0x00D3D1 03:93C1: C9 E0     CMP #$E0
 C - - - - - 0x00D3D3 03:93C3: B0 2B     BCS bra_93F0
 C - - - - - 0x00D3D5 03:93C5: C9 C8     CMP #$C8
 C - - - - - 0x00D3D7 03:93C7: 90 27     BCC bra_93F0
-C - - - - - 0x00D3D9 03:93C9: BD 74 00  LDA ram_анимация_игрока,X
+C - - - - - 0x00D3D9 03:93C9: BD 74 00  LDA ram_номер_анимации_игрока,X
 C - - - - - 0x00D3DC 03:93CC: 10 22     BPL bra_93F0
 C - - - - - 0x00D3DE 03:93CE: BD 4D 03  LDA ram_pos_Y_lo_игрока,X
 C - - - - - 0x00D3E1 03:93D1: C9 90     CMP #$90
@@ -5448,7 +5448,7 @@ C - - - - - 0x00E14E 03:A13E: 85 2E     STA ram_002E
 C - - - - - 0x00E150 03:A140: B9 27 03  LDA ram_pos_X_hi_игрока,Y
 C - - - - - 0x00E153 03:A143: 85 2D     STA ram_002D
 C - - - - - 0x00E155 03:A145: 85 2F     STA ram_002F
-C - - - - - 0x00E157 03:A147: B9 74 00  LDA ram_анимация_игрока,Y
+C - - - - - 0x00E157 03:A147: B9 74 00  LDA ram_номер_анимации_игрока,Y
 C - - - - - 0x00E15A 03:A14A: 10 10     BPL bra_A15C
 C - - - - - 0x00E15C 03:A14C: A5 2E     LDA ram_002E
 C - - - - - 0x00E15E 03:A14E: 38        SEC
@@ -7960,7 +7960,7 @@ C - - - - - 0x00EE8E 03:AE7E: 69 01     ADC #$01
 bra_AE80:
 C - - - - - 0x00EE90 03:AE80: 85 2A     STA ram_002A
 C - - - - - 0x00EE92 03:AE82: A5 28     LDA ram_0028
-C - - - - - 0x00EE94 03:AE84: 5D 74 00  EOR ram_анимация_игрока,X
+C - - - - - 0x00EE94 03:AE84: 5D 74 00  EOR ram_номер_анимации_игрока,X
 C - - - - - 0x00EE97 03:AE87: 85 29     STA ram_0029
 C - - - - - 0x00EE99 03:AE89: A5 34     LDA ram_0034
 C - - - - - 0x00EE9B 03:AE8B: 38        SEC
@@ -11571,7 +11571,7 @@ C - - - - - 0x00FF04 03:BEF4: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FF07 03:BEF7: 29 7F     AND #$7F
 C - - - - - 0x00FF09 03:BEF9: C9 01     CMP #con_погода_молния
 C - - - - - 0x00FF0B 03:BEFB: F0 0D     BEQ bra_BF0A
-C - - - - - 0x00FF0D 03:BEFD: AD 80 00  LDA ram_анимация_мяча
+C - - - - - 0x00FF0D 03:BEFD: AD 80 00  LDA ram_номер_анимации_мяча
 C - - - - - 0x00FF10 03:BF00: 29 7F     AND #$7F
 bra_BF02_loop:
 C - - - - - 0x00FF12 03:BF02: C8        INY

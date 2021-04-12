@@ -14621,7 +14621,7 @@ C - - - - - 0x003BCC 00:BBBC: A2 0E     LDX #$0E
 bra_BBBE_loop:
 C - - - - - 0x003BCE 00:BBBE: B9 E3 BD  LDA tbl_BDE3,Y
 C - - - - - 0x003BD1 00:BBC1: 9D 59 04  STA ram_действие_игрока,X
-C - - - - - 0x003BD4 00:BBC4: A9 03     LDA #$03
+C - - - - - 0x003BD4 00:BBC4: A9 03     LDA #con_anim_type_цифра
 C - - - - - 0x003BD6 00:BBC6: 9D 61 00  STA ram_тип_анимации_игрока,X
 C - - - - - 0x003BD9 00:BBC9: E8        INX
 C - - - - - 0x003BDA 00:BBCA: C8        INY
@@ -14743,7 +14743,7 @@ C - - - - - 0x003CC7 00:BCB7: 9D 61 00  STA ram_тип_анимации_игро
 C - - - - - 0x003CCA 00:BCBA: BD D6 BD  LDA #con_action_стоит_на_месте
 C - - - - - 0x003CCD 00:BCBD: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x003CD0 00:BCC0: A9 7F     LDA #$7F
-C - - - - - 0x003CD2 00:BCC2: 9D 74 00  STA ram_анимация_игрока,X
+C - - - - - 0x003CD2 00:BCC2: 9D 74 00  STA ram_номер_анимации_игрока,X
 C - - - - - 0x003CD5 00:BCC5: A9 00     LDA #$00    ; con_state_стоит_идет
 C - - - - - 0x003CD7 00:BCC7: 9D 86 04  STA ram_состояние_игрока,X
 C - - - - - 0x003CDA 00:BCCA: 9D F6 03  STA ram_spd_X_hi_игрока,X
@@ -14906,19 +14906,19 @@ tbl_BDB9:
 
 
 tbl_BDC9:
-- D 1 - - - 0x003DD9 00:BDC9: 00        .byte $00   ; 
-- D 1 - - - 0x003DDA 00:BDCA: 00        .byte $00   ; 
-- D 1 - - - 0x003DDB 00:BDCB: 00        .byte $00   ; 
-- D 1 - - - 0x003DDC 00:BDCC: 00        .byte $00   ; 
-- D 1 - - - 0x003DDD 00:BDCD: 00        .byte $00   ; 
-- D 1 - - - 0x003DDE 00:BDCE: 00        .byte $00   ; 
-- D 1 - - - 0x003DDF 00:BDCF: 00        .byte $00   ; 
-- D 1 - - - 0x003DE0 00:BDD0: 00        .byte $00   ; 
-- D 1 - - - 0x003DE1 00:BDD1: 00        .byte $00   ; 
-- D 1 - - - 0x003DE2 00:BDD2: 00        .byte $00   ; 
-- D 1 - - - 0x003DE3 00:BDD3: 00        .byte $00   ; 
-- D 1 - - - 0x003DE4 00:BDD4: 00        .byte $00   ; 
-- D 1 - - - 0x003DE5 00:BDD5: 01        .byte $01   ; 
+- D 1 - - - 0x003DD9 00:BDC9: 00        .byte con_anim_type_полевой   ; 00
+- D 1 - - - 0x003DDA 00:BDCA: 00        .byte con_anim_type_полевой   ; 01
+- D 1 - - - 0x003DDB 00:BDCB: 00        .byte con_anim_type_полевой   ; 02
+- D 1 - - - 0x003DDC 00:BDCC: 00        .byte con_anim_type_полевой   ; 03
+- D 1 - - - 0x003DDD 00:BDCD: 00        .byte con_anim_type_полевой   ; 04
+- D 1 - - - 0x003DDE 00:BDCE: 00        .byte con_anim_type_полевой   ; 05
+- D 1 - - - 0x003DDF 00:BDCF: 00        .byte con_anim_type_полевой   ; 06
+- D 1 - - - 0x003DE0 00:BDD0: 00        .byte con_anim_type_полевой   ; 07
+- D 1 - - - 0x003DE1 00:BDD1: 00        .byte con_anim_type_полевой   ; 08
+- D 1 - - - 0x003DE2 00:BDD2: 00        .byte con_anim_type_полевой   ; 09
+- D 1 - - - 0x003DE3 00:BDD3: 00        .byte con_anim_type_полевой   ; 0A
+- D 1 - - - 0x003DE4 00:BDD4: 00        .byte con_anim_type_полевой   ; 0B
+- D 1 - - - 0x003DE5 00:BDD5: 01        .byte con_anim_type_мяч   ; 0C
 
 
 
