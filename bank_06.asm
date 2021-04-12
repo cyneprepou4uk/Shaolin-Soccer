@@ -2090,19 +2090,19 @@ C - - - - - 0x018E30 06:8E20: 60        RTS
 
 
 ofs_8E21_11:
-C - - J - - 0x018E31 06:8E21: BD 59 04  LDA ram_действие_игрока,X
+C - - J - - 0x018E31 06:8E21: BD 59 04  LDA ram_действие_мяча
 C - - - - - 0x018E34 06:8E24: 30 03     BMI bra_8E29
 C - - - - - 0x018E36 06:8E26: 20 27 99  JSR sub_9927_запись_действия_и_очистка_адресов_анимации
 bra_8E29:
 C - - - - - 0x018E39 06:8E29: 20 2F 97  JSR sub_972F
-C - - - - - 0x018E3C 06:8E2C: BD 99 03  LDA ram_pos_Z_hi_игрока,X
+C - - - - - 0x018E3C 06:8E2C: BD 99 03  LDA ram_pos_Z_hi_мяча
 C - - - - - 0x018E3F 06:8E2F: 30 11     BMI bra_8E42
 C - - - - - 0x018E41 06:8E31: A9 00     LDA #$00
-C - - - - - 0x018E43 06:8E33: 9D 99 03  STA ram_pos_Z_hi_игрока,X
-C - - - - - 0x018E46 06:8E36: 9D 86 03  STA ram_pos_Z_lo_игрока,X
-C - - - - - 0x018E49 06:8E39: 9D 73 03  STA ram_pos_Z_sub_игрока,X
-C - - - - - 0x018E4C 06:8E3C: 9D 2E 04  STA ram_spd_Z_hi_игрока,X
-C - - - - - 0x018E4F 06:8E3F: 9D 20 04  STA ram_spd_Z_lo_игрока,X
+C - - - - - 0x018E43 06:8E33: 9D 99 03  STA ram_pos_Z_hi_мяча
+C - - - - - 0x018E46 06:8E36: 9D 86 03  STA ram_pos_Z_lo_мяча
+C - - - - - 0x018E49 06:8E39: 9D 73 03  STA ram_pos_Z_sub_мяча
+C - - - - - 0x018E4C 06:8E3C: 9D 2E 04  STA ram_spd_Z_hi_мяча
+C - - - - - 0x018E4F 06:8E3F: 9D 20 04  STA ram_spd_Z_lo_мяча
 bra_8E42:
 C - - - - - 0x018E52 06:8E42: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x018E55 06:8E45: 10 05     BPL bra_8E4C_в_воздухе
