@@ -92,6 +92,7 @@ con_на_песке                    = $03 ; оставляет следы
 
 ; ram_действие_игрока                   = $0459     нужны комменты в 0x01803D
 ; ram_next_действие_игрока              = $0479
+; смотреть вспомогательные комменты в 0x01A5D6
 con_action_00                           = $00 ; unused
 con_action_стоит_на_месте               = $01 ; просто стоит
 con_action_02                           = $02 ; сидит на корточках, кадр после приземления с прыжка или когда встает
@@ -202,8 +203,8 @@ con_act_ball_09                 = $09 ;
 con_act_ball_0A                 = $0A ; 
 con_act_ball_0B                 = $0B ; 
 con_act_ball_0C                 = $0C ; 
-con_act_ball_0D                 = $0D ; 
-con_act_ball_0E                 = $0E ; 
+con_act_ball_0D                 = $0D ; unused?
+con_act_ball_0E                 = $0E ; unused?
 con_act_ball_0F                 = $0F ; 
 con_act_ball_10                 = $10 ; 
 con_act_ball_11                 = $11 ; 
@@ -211,9 +212,9 @@ con_act_ball_12                 = $12 ;
 con_act_ball_13                 = $13 ; 
 con_act_ball_удар_по_мячу       = $14 ; 
 con_act_ball_чеканка            = $15 ; 
-con_act_ball_16                 = $16 ; 
+con_act_ball_16                 = $16 ; unused?
 con_act_ball_17                 = $17 ; 
-con_act_ball_18                 = $18 ; 
+con_act_ball_18                 = $18 ; unused?
 
 
 

@@ -3389,9 +3389,9 @@ C - - - - - 0x01978A 06:977A: 60        RTS
 sub_977B:
 C - - - - - 0x01978B 06:977B: BD D9 00  LDA ram_флаг_видимости_игрока,X
 C - - - - - 0x01978E 06:977E: D0 07     BNE bra_9787_visible
-C - - - - - 0x019790 06:9780: A9 00     LDA #$00
+C - - - - - 0x019790 06:9780: A9 00     LDA #con_на_траве
 C - - - - - 0x019792 06:9782: 9D 30 01  STA ram_на_чем_стоит_игрок,X
-C - - - - - 0x019795 06:9785: F0 29     BEQ bra_97B0_RTS    ; если на траве
+C - - - - - 0x019795 06:9785: F0 29     BEQ bra_97B0_RTS    ; выход
 bra_9787_visible:
 C - - - - - 0x019797 06:9787: A5 58     LDA ram_script
 C - - - - - 0x019799 06:9789: D0 25     BNE bra_97B0_RTS    ; если не игра на поле
@@ -6857,7 +6857,7 @@ C - - - - - 0x01AA47 06:AA37: B0 0E     BCS bra_AA47    ; если в налич
 C - - - - - 0x01AA49 06:AA39: BD 30 01  LDA ram_на_чем_стоит_игрок,X
 C - - - - - 0x01AA4C 06:AA3C: F0 09     BEQ bra_AA47    ; если на траве
 C - - - - - 0x01AA4E 06:AA3E: C9 03     CMP #$03
-C - - - - - 0x01AA50 06:AA40: B0 05     BCS bra_AA47
+C - - - - - 0x01AA50 06:AA40: B0 05     BCS bra_AA47    ; если на песке; bzk опт, BCS -> BEQ?
 C - - - - - 0x01AA52 06:AA42: A9 06     LDA #con_action_06
 C - - - - - 0x01AA54 06:AA44: 9D 79 04  STA ram_next_действие_игрока,X
 bra_AA47:
@@ -6996,7 +6996,7 @@ C - - - - - 0x01AB2A 06:AB1A: 30 0E     BMI bra_AB2A
 C - - - - - 0x01AB2C 06:AB1C: BD 30 01  LDA ram_на_чем_стоит_игрок,X
 C - - - - - 0x01AB2F 06:AB1F: F0 09     BEQ bra_AB2A    ; если на траве
 C - - - - - 0x01AB31 06:AB21: C9 03     CMP #$03
-C - - - - - 0x01AB33 06:AB23: B0 05     BCS bra_AB2A
+C - - - - - 0x01AB33 06:AB23: B0 05     BCS bra_AB2A    ; если на песке; bzk опт, BCS -> BEQ?
 C - - - - - 0x01AB35 06:AB25: A9 FF     LDA #$FF
 C - - - - - 0x01AB37 06:AB27: 8D 25 05  STA ram_таймер_электр_мяча
 bra_AB2A:
