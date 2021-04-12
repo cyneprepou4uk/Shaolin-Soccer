@@ -821,14 +821,14 @@ C - - - - - 0x00C53E 03:852E: D0 16     BNE bra_8546    ; если не легк
 - - - - - - 0x00C553 03:8543: 4C B9 84  JMP loc_84B9
 bra_8546:
 C - - - - - 0x00C556 03:8546: BD F1 04  LDA ram_скилл,X
-C - - - - - 0x00C559 03:8549: 29 40     AND #con_skill_40
-C - - - - - 0x00C55B 03:854B: F0 03     BEQ bra_8550
+C - - - - - 0x00C559 03:8549: 29 40     AND #con_skill_коленочник
+C - - - - - 0x00C55B 03:854B: F0 03     BEQ bra_8550    ; если коленочник
 C - - - - - 0x00C55D 03:854D: 4C AC 85  JMP loc_85AC
 bra_8550:
 loc_8550:
 C D 0 - - - 0x00C560 03:8550: BD F1 04  LDA ram_скилл,X
-C - - - - - 0x00C563 03:8553: 29 02     AND #con_skill_02
-C - - - - - 0x00C565 03:8555: F0 03     BEQ bra_855A
+C - - - - - 0x00C563 03:8553: 29 02     AND #con_skill_гвинейская_крутилка
+C - - - - - 0x00C565 03:8555: F0 03     BEQ bra_855A    ; если в наличии гвинейская крутилка
 C - - - - - 0x00C567 03:8557: 4C CD 85  JMP loc_85CD
 bra_855A:
 loc_855A:
@@ -850,11 +850,11 @@ C - - - - - 0x00C58B 03:857B: 29 0F     AND #$0F
 C - - - - - 0x00C58D 03:857D: C9 0C     CMP #$0C
 C - - - - - 0x00C58F 03:857F: B0 13     BCS bra_8594
 C - - - - - 0x00C591 03:8581: BD F1 04  LDA ram_скилл,X
-C - - - - - 0x00C594 03:8584: 29 02     AND #con_skill_02
-C - - - - - 0x00C596 03:8586: D0 17     BNE bra_859F
+C - - - - - 0x00C594 03:8584: 29 02     AND #con_skill_гвинейская_крутилка
+C - - - - - 0x00C596 03:8586: D0 17     BNE bra_859F    ; если нету гвинейской крутилки
 C - - - - - 0x00C598 03:8588: BD F1 04  LDA ram_скилл,X
-C - - - - - 0x00C59B 03:858B: 29 08     AND #con_skill_08
-C - - - - - 0x00C59D 03:858D: D0 05     BNE bra_8594
+C - - - - - 0x00C59B 03:858B: 29 08     AND #con_skill_мексиканское_сверло
+C - - - - - 0x00C59D 03:858D: D0 05     BNE bra_8594    ; если нету мекс сверла
 C - - - - - 0x00C59F 03:858F: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x00C5A2 03:8592: 10 0E     BPL bra_85A2_не_в_воздухе
 bra_8594:
@@ -2232,16 +2232,16 @@ C - - - - - 0x00CDB7 03:8DA7: D0 03     BNE bra_8DAC_не_easy_diff
 - - - - - - 0x00CDB9 03:8DA9: 4C CE 8B  JMP loc_8BCE
 bra_8DAC_не_easy_diff:
 C - - - - - 0x00CDBC 03:8DAC: BD F1 04  LDA ram_скилл,X
-C - - - - - 0x00CDBF 03:8DAF: 29 04     AND #con_skill_04
-C - - - - - 0x00CDC1 03:8DB1: F0 0B     BEQ bra_8DBE
+C - - - - - 0x00CDBF 03:8DAF: 29 04     AND #con_skill_высокопрыгающий
+C - - - - - 0x00CDC1 03:8DB1: F0 0B     BEQ bra_8DBE    ; если высокопрыгающий
 C - - - - - 0x00CDC3 03:8DB3: BD F6 03  LDA ram_spd_X_hi_игрока,X
 C - - - - - 0x00CDC6 03:8DB6: 1D 12 04  ORA ram_spd_Y_hi_игрока,X
 C - - - - - 0x00CDC9 03:8DB9: F0 03     BEQ bra_8DBE
 C - - - - - 0x00CDCB 03:8DBB: 4C 12 8F  JMP loc_8F12
 bra_8DBE:
 C - - - - - 0x00CDCE 03:8DBE: BD F1 04  LDA ram_скилл,X
-C - - - - - 0x00CDD1 03:8DC1: 29 80     AND #con_skill_80
-C - - - - - 0x00CDD3 03:8DC3: F0 0A     BEQ bra_8DCF
+C - - - - - 0x00CDD1 03:8DC1: 29 80     AND #con_skill_зачистка
+C - - - - - 0x00CDD3 03:8DC3: F0 0A     BEQ bra_8DCF    ; если умеет зачищать
 C - - - - - 0x00CDD5 03:8DC5: BD 96 04  LDA ram_угол_движения,X
 C - - - - - 0x00CDD8 03:8DC8: 29 60     AND #$60
 C - - - - - 0x00CDDA 03:8DCA: F0 03     BEQ bra_8DCF
@@ -3113,8 +3113,8 @@ tbl_9263:
 ofs_926B_00:
 ofs_926B_01:
 C - - J - - 0x00D27B 03:926B: BD F1 04  LDA ram_скилл,X
-C - - - - - 0x00D27E 03:926E: 29 04     AND #con_skill_04
-C - - - - - 0x00D280 03:9270: F0 0C     BEQ bra_927E
+C - - - - - 0x00D27E 03:926E: 29 04     AND #con_skill_высокопрыгающий
+C - - - - - 0x00D280 03:9270: F0 0C     BEQ bra_927E    ; если высокопрыгающий
 C - - - - - 0x00D282 03:9272: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x00D285 03:9275: 29 7F     AND #$7F
 C - - - - - 0x00D287 03:9277: C9 21     CMP #con_action_бег

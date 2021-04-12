@@ -213,15 +213,15 @@ con_state_в_воздухе             = $80 ; мяч в воздухе
 
 
 ; ram_скилл                     = $04F1
-con_skill_00                    = $00 ; 
+con_skill_нету                  = $00 ; 
 con_skill_01                    = $01 ; 
-con_skill_02                    = $02 ; 
-con_skill_04                    = $04 ; 
-con_skill_08                    = $08 ; 
-con_skill_10                    = $10 ; 
-con_skill_20                    = $20 ; 
-con_skill_40                    = $40 ; 
-con_skill_80                    = $80 ; 
+con_skill_гвинейская_крутилка   = $02 ; 
+con_skill_высокопрыгающий       = $04 ; 
+con_skill_мексиканское_сверло   = $08 ; 
+con_skill_вратарская_крутилка   = $10 ; 
+con_skill_ветряная_крутилка     = $20 ; 
+con_skill_коленочник            = $40 ; 
+con_skill_зачистка              = $80 ; 
 
 
 
