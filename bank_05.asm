@@ -3055,25 +3055,19 @@ ofs_91CC:   ; bzk стремная подпрограмма, зачем очищ
 
 
 sub_91D5:
-C - - - - - 0x0151E5 05:91D5: AD F0 91  LDA tbl_91F0
+C - - - - - 0x0151E5 05:91D5: AD F0 91  LDA #< tbl_91F4
 C - - - - - 0x0151E8 05:91D8: 85 30     STA ram_0030
-C - - - - - 0x0151EA 05:91DA: AD F1 91  LDA tbl_91F0 + 1
+C - - - - - 0x0151EA 05:91DA: AD F1 91  LDA #> tbl_91F4
 C - - - - - 0x0151ED 05:91DD: 85 31     STA ram_0031
-C - - - - - 0x0151EF 05:91DF: AD F2 91  LDA tbl_91F2
+C - - - - - 0x0151EF 05:91DF: AD F2 91  LDA #< ofs_91CC
 C - - - - - 0x0151F2 05:91E2: 85 32     STA ram_0032
-C - - - - - 0x0151F4 05:91E4: AD F3 91  LDA tbl_91F2 + 1
+C - - - - - 0x0151F4 05:91E4: AD F3 91  LDA #> ofs_91CC
 C - - - - - 0x0151F7 05:91E7: 85 33     STA ram_0033
 C - - - - - 0x0151F9 05:91E9: BD 59 04  LDA ram_действие_игрока,X
 C D 0 - I - 0x0151FC 05:91EC: 20 56 C0  JSR sub_0x01CECD_вычислить_анимацию
 C - - - - - 0x0151FF 05:91EF: 60        RTS
 
 
-
-tbl_91F0:   ; bzk опт
-- D 0 - - - 0x015200 05:91F0: F4 91     .word tbl_91F4
-
-tbl_91F2:   ; bzk опт
-- D 0 - - - 0x015202 05:91F2: CC 91     .word ofs_91CC
 
 tbl_91F4:
 - - - - - - 0x015204 05:91F4: 08 92     .word off_9208_00
