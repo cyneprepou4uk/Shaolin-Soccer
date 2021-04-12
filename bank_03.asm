@@ -2533,7 +2533,7 @@ C D 0 - - - 0x00CF22 03:8F12: BD 86 04  LDA ram_состояние_игрока,
 C - - - - - 0x00CF25 03:8F15: 29 10     AND #con_state_стоит_на_мяче
 C - - - - - 0x00CF27 03:8F17: F0 05     BEQ bra_8F1E
 - - - - - - 0x00CF29 03:8F19: A9 10     LDA #con_action_подкинуть_мяч_через_себя
-- - - - - - 0x00CF2B 03:8F1B: 4C 2A 8F  JMP loc_8F2A_запись_действия
+- - - - - - 0x00CF2B 03:8F1B: 4C 2A 8F  BNE bra_8F2A_запись_действия
 bra_8F1E:
 C - - - - - 0x00CF2E 03:8F1E: BD 96 04  LDA ram_угол_движения,X
 C - - - - - 0x00CF31 03:8F21: C9 FF     CMP #$FF
@@ -2541,7 +2541,7 @@ C - - - - - 0x00CF33 03:8F23: D0 03     BNE bra_8F28
 - - - - - - 0x00CF35 03:8F25: 4C B5 8E  JMP loc_8EB5
 bra_8F28:
 C - - - - - 0x00CF38 03:8F28: A9 30     LDA #con_action_прыжок_обычный
-loc_8F2A_запись_действия:   ; bzk опт
+bra_8F2A_запись_действия:
 C - - - - - 0x00CF3A 03:8F2A: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00CF3D 03:8F2D: 60        RTS
 
