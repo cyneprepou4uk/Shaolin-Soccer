@@ -15181,8 +15181,8 @@ C - - - - - 0x007EA0 01:BE90: AD 5B 06  LDA ram_позиция_управлен�
 C - - - - - 0x007EA3 01:BE93: 09 80     ORA #con_флаг_бота
 C - - - - - 0x007EA5 01:BE95: 8D 5B 06  STA ram_позиция_управление + 11
 C - - - - - 0x007EA8 01:BE98: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x007EAA 01:BE9A: 4A        LSR
-C - - - - - 0x007EAB 01:BE9B: 29 04     AND #$04
+C - - - - - 0x007EAA 01:BE9A: 4A        LSR     ; очистка флага con_gp_разводка ?
+C - - - - - 0x007EAB 01:BE9B: 29 04     AND #$04    ; con_gp_угловой_от_ворот
 C - - - - - 0x007EAD 01:BE9D: 85 1C     STA ram_001C
 C - - - - - 0x007EAF 01:BE9F: AD 33 03  LDA ram_pos_X_hi_мяча
 C - - - - - 0x007EB2 01:BEA2: C9 02     CMP #$02
@@ -15215,8 +15215,8 @@ C - - - - - 0x007EE7 01:BED7: 0D D6 04  ORA ram_игрок_с_мячом
 C - - - - - 0x007EEA 01:BEDA: AA        TAX
 C - - - - - 0x007EEB 01:BEDB: 8E D6 04  STX ram_игрок_с_мячом
 C - - - - - 0x007EEE 01:BEDE: AD 5C 00  LDA ram_flag_gameplay
-C - - - - - 0x007EF1 01:BEE1: 29 04     AND #$04
-C - - - - - 0x007EF3 01:BEE3: D0 2B     BNE bra_BF10
+C - - - - - 0x007EF1 01:BEE1: 29 04     AND #con_gp_аут
+C - - - - - 0x007EF3 01:BEE3: D0 2B     BNE bra_BF10_сейчас_не_аут
 C - - - - - 0x007EF5 01:BEE5: 06 1C     ASL ram_001C
 C - - - - - 0x007EF7 01:BEE7: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x007EFA 01:BEEA: 29 01     AND #$01
@@ -15235,7 +15235,7 @@ C - - - - - 0x007F14 01:BF04: 8D 19 05  STA ram_pos_Y_lo_подающий
 C - - - - - 0x007F17 01:BF07: B9 91 BF  LDA tbl_BF91,Y
 C - - - - - 0x007F1A 01:BF0A: 8D 1A 05  STA ram_pos_Y_hi_подающий
 C - - - - - 0x007F1D 01:BF0D: 4C 56 BF  JMP loc_BF56
-bra_BF10:
+bra_BF10_сейчас_не_аут:
 C - - - - - 0x007F20 01:BF10: A0 00     LDY #$00
 C - - - - - 0x007F22 01:BF12: AD 1A 05  LDA ram_pos_Y_hi_подающий
 C - - - - - 0x007F25 01:BF15: F0 02     BEQ bra_BF19

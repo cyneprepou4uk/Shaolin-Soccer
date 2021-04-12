@@ -12422,7 +12422,7 @@ C - - - - - 0x01350E 04:B4FE: 8D 21 00  STA ram_0021
 C - - - - - 0x013511 04:B501: BD 68 05  LDA ram_номер_управляемого,X
 C - - - - - 0x013514 04:B504: AA        TAX
 C - - - - - 0x013515 04:B505: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x013517 04:B507: 29 40     AND #$40
+C - - - - - 0x013517 04:B507: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x013519 04:B509: D0 2B     BNE bra_B536
 C - - - - - 0x01351B 04:B50B: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x01351E 04:B50E: 29 01     AND #con_state_01
@@ -14049,7 +14049,7 @@ C - - - - - 0x013E00 04:BDF0: 85 32     STA ram_0032
 C - - - - - 0x013E02 04:BDF2: AD 0B BE  LDA tbl_BE0A + 1
 C - - - - - 0x013E05 04:BDF5: 85 33     STA ram_0033
 C - - - - - 0x013E07 04:BDF7: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x013E09 04:BDF9: 29 40     AND #$40
+C - - - - - 0x013E09 04:BDF9: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x013E0B 04:BDFB: F0 04     BEQ bra_BE01
 C - - - - - 0x013E0D 04:BDFD: A9 00     LDA #$00
 C - - - - - 0x013E0F 04:BDFF: F0 03     BEQ bra_BE04

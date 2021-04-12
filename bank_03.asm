@@ -446,8 +446,8 @@ C - - - - - 0x00C2D9 03:82C9: C0 0C     CPY #$0C
 C - - - - - 0x00C2DB 03:82CB: 90 EC     BCC bra_82B9_loop
 C - - - - - 0x00C2DD 03:82CD: AE D6 04  LDX ram_игрок_с_мячом
 C - - - - - 0x00C2E0 03:82D0: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x00C2E2 03:82D2: 29 04     AND #$04
-C - - - - - 0x00C2E4 03:82D4: D0 43     BNE bra_8319
+C - - - - - 0x00C2E2 03:82D2: 29 04     AND #con_gp_аут
+C - - - - - 0x00C2E4 03:82D4: D0 43     BNE bra_8319_сейчас_не_аут
 C - - - - - 0x00C2E6 03:82D6: AD 1A 05  LDA ram_pos_Y_hi_подающий
 C - - - - - 0x00C2E9 03:82D9: F0 0A     BEQ bra_82E5
 C - - - - - 0x00C2EB 03:82DB: AD 19 05  LDA ram_pos_Y_lo_подающий
@@ -482,7 +482,10 @@ C - - - - - 0x00C321 03:8311: 29 F0     AND #$F0
 C - - - - - 0x00C323 03:8313: 09 01     ORA #$01
 C - - - - - 0x00C325 03:8315: 9D 68 06  STA ram_счетчик_поведения_ботов,X
 C - - - - - 0x00C328 03:8318: 60        RTS
-bra_8319:
+
+
+
+bra_8319_сейчас_не_аут:
 C - - - - - 0x00C329 03:8319: AD 8A 06  LDA ram_068A
 C - - - - - 0x00C32C 03:831C: A8        TAY
 C - - - - - 0x00C32D 03:831D: B9 2E 83  LDA tbl_832E,Y
@@ -11018,7 +11021,7 @@ off_BAE5_03:
 
 loc_BAF9_выбрать_погоду:
 C D 1 - - - 0x00FB09 03:BAF9: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x00FB0B 03:BAFB: 29 40     AND #$40
+C - - - - - 0x00FB0B 03:BAFB: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x00FB0D 03:BAFD: D0 0C     BNE bra_BB0B_RTS
 C - - - - - 0x00FB0F 03:BAFF: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x00FB12 03:BB02: 29 7F     AND #$7F
@@ -11549,9 +11552,9 @@ loc_BED4:
 C D 1 - - - 0x00FEE4 03:BED4: A5 58     LDA ram_script
 C - - - - - 0x00FEE6 03:BED6: D0 3A     BNE bra_BF12_RTS    ; если не игра на поле
 C - - - - - 0x00FEE8 03:BED8: 24 5C     BIT ram_flag_gameplay
-C - - - - - 0x00FEEA 03:BEDA: 50 16     BVC bra_BEF2
+C - - - - - 0x00FEEA 03:BEDA: 50 16     BVC bra_BEF2        ; если сейчас не con_gp_футбольная_пауза
 C - - - - - 0x00FEEC 03:BEDC: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x00FEEE 03:BEDE: 29 0F     AND #$0F
+C - - - - - 0x00FEEE 03:BEDE: 29 0F     AND #con_gp_разв_гол_аут_угл
 C - - - - - 0x00FEF0 03:BEE0: D0 07     BNE bra_BEE9
 C - - - - - 0x00FEF2 03:BEE2: AD 59 05  LDA ram_номер_тайма
 C - - - - - 0x00FEF5 03:BEE5: F0 0B     BEQ bra_BEF2    ; если первый тайм

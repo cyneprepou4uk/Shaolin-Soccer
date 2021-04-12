@@ -214,7 +214,7 @@ bra_8136:
 C - - - - - 0x018146 06:8136: BC CA 04  LDY ram_на_кого_запрыгнул_игрок,X
 C - - - - - 0x018149 06:8139: 20 72 8C  JSR sub_8C72
 C - - - - - 0x01814C 06:813C: 24 5C     BIT ram_flag_gameplay
-C - - - - - 0x01814E 06:813E: 70 30     BVS bra_8170_запись_действия_30
+C - - - - - 0x01814E 06:813E: 70 30     BVS bra_8170_запись_действия_30    ; если сейчас con_gp_футбольная_пауза
 C - - - - - 0x018150 06:8140: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x018153 06:8143: 29 7F     AND #$7F
 C - - - - - 0x018155 06:8145: C9 01     CMP #con_action_стоит_на_месте
@@ -2205,7 +2205,7 @@ C - - - - - 0x018F14 06:8F04: 20 C6 C2  JSR sub_0x01C2D6
 C - - - - - 0x018F17 06:8F07: 20 D3 98  JSR sub_98D3_начальная_Z_скорость_мяча
 bra_8F0A:
 C - - - - - 0x018F1A 06:8F0A: 24 5C     BIT ram_flag_gameplay
-C - - - - - 0x018F1C 06:8F0C: 50 03     BVC bra_8F11
+C - - - - - 0x018F1C 06:8F0C: 50 03     BVC bra_8F11    ; если сейчас не con_gp_футбольная_пауза
 C - - - - - 0x018F1E 06:8F0E: 20 56 98  JSR sub_9856
 bra_8F11:
 C - - - - - 0x018F21 06:8F11: 20 B7 C2  JSR sub_0x01C2C7
@@ -3175,7 +3175,7 @@ sub_9609:
 C - - - - - 0x019619 06:9609: AD 25 05  LDA ram_таймер_электр_мяча
 C - - - - - 0x01961C 06:960C: F0 22     BEQ bra_9630    ; если не наэлектризован
 C - - - - - 0x01961E 06:960E: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x019620 06:9610: 29 40     AND #$40
+C - - - - - 0x019620 06:9610: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x019622 06:9612: F0 08     BEQ bra_961C
 C - - - - - 0x019624 06:9614: A9 00     LDA #$00
 C - - - - - 0x019626 06:9616: 8D 25 05  STA ram_таймер_электр_мяча
@@ -4329,11 +4329,11 @@ bra_9DC4:
 C - - - - - 0x019DD4 06:9DC4: 85 1F     STA ram_001F
 C - - - - - 0x019DD6 06:9DC6: B9 9E 9E  LDA tbl_9E9D + 1,Y
 C - - - - - 0x019DD9 06:9DC9: A4 1C     LDY ram_001C
-C - - - - - 0x019DDB 06:9DCB: 20 A5 9E  JSR sub_9EA5
+C - - - - - 0x019DDB 06:9DCB: 20 A5 9E  JSR sub_9EA5_отнять_силу_игроку
 C - - - - - 0x019DDE 06:9DCE: A4 1E     LDY ram_001E
 C - - - - - 0x019DE0 06:9DD0: B9 9D 9E  LDA tbl_9E9D,Y
 C - - - - - 0x019DE3 06:9DD3: A4 1D     LDY ram_001D
-C - - - - - 0x019DE5 06:9DD5: 20 A5 9E  JSR sub_9EA5
+C - - - - - 0x019DE5 06:9DD5: 20 A5 9E  JSR sub_9EA5_отнять_силу_игроку
 C - - - - - 0x019DE8 06:9DD8: 38        SEC
 C - - - - - 0x019DE9 06:9DD9: A5 1F     LDA ram_001F
 C - - - - - 0x019DEB 06:9DDB: C5 20     CMP ram_0020
@@ -4366,7 +4366,7 @@ C - - - - - 0x019E22 06:9E12: B9 86 04  LDA ram_состояние_игрока,
 C - - - - - 0x019E25 06:9E15: 0A        ASL
 C - - - - - 0x019E26 06:9E16: 30 32     BMI bra_9E4A    ; если владеет мячом?
 C - - - - - 0x019E28 06:9E18: 24 5C     BIT ram_flag_gameplay
-C - - - - - 0x019E2A 06:9E1A: 70 2E     BVS bra_9E4A
+C - - - - - 0x019E2A 06:9E1A: 70 2E     BVS bra_9E4A    ; если сейчас con_gp_футбольная_пауза
 C - - - - - 0x019E2C 06:9E1C: A0 00     LDY #$00
 C - - - - - 0x019E2E 06:9E1E: BD 60 03  LDA ram_pos_Y_hi_игрока,X
 C - - - - - 0x019E31 06:9E21: D0 07     BNE bra_9E2A
@@ -4468,31 +4468,31 @@ tbl_9E9D:
 
 
 
-sub_9EA5:
+sub_9EA5_отнять_силу_игроку:
 C - - - - - 0x019EB5 06:9EA5: 85 21     STA ram_0021
 C - - - - - 0x019EB7 06:9EA7: 38        SEC
 C - - - - - 0x019EB8 06:9EA8: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x019EBB 06:9EAB: E5 21     SBC ram_0021
-C - - - - - 0x019EBD 06:9EAD: B0 02     BCS bra_9EB1
+C - - - - - 0x019EBD 06:9EAD: B0 02     BCS bra_9EB1_запись_силы
 C - - - - - 0x019EBF 06:9EAF: A9 00     LDA #$00
-bra_9EB1:
+bra_9EB1_запись_силы:
 C - - - - - 0x019EC1 06:9EB1: 99 E4 04  STA ram_сила_игрока,Y
 C - - - - - 0x019EC4 06:9EB4: 60        RTS
 
 
 
-sub_9EB5:
+sub_9EB5_добавить_силу_игроку:
 C - - - - - 0x019EC5 06:9EB5: 18        CLC
 C - - - - - 0x019EC6 06:9EB6: 79 E4 04  ADC ram_сила_игрока,Y
-C - - - - - 0x019EC9 06:9EB9: 90 F6     BCC bra_9EB1
+C - - - - - 0x019EC9 06:9EB9: 90 F6     BCC bra_9EB1_запись_силы
 - - - - - - 0x019ECB 06:9EBB: A9 FF     LDA #$FF
-- - - - - - 0x019ECD 06:9EBD: 30 F2     BMI bra_9EB1
+- - - - - - 0x019ECD 06:9EBD: 30 F2     BMI bra_9EB1_запись_силы
 
 
 
 sub_9EBF:
 C - - - - - 0x019ECF 06:9EBF: 24 5C     BIT ram_flag_gameplay
-C - - - - - 0x019ED1 06:9EC1: 70 1F     BVS bra_9EE2_RTS
+C - - - - - 0x019ED1 06:9EC1: 70 1F     BVS bra_9EE2_RTS    ; если сейчас con_gp_футбольная_пауза
 C - - - - - 0x019ED3 06:9EC3: E0 0A     CPX #$0A
 C - - - - - 0x019ED5 06:9EC5: B0 1B     BCS bra_9EE2_RTS    ; если это кипер
 C - - - - - 0x019ED7 06:9EC7: BD 50 06  LDA ram_позиция_управление,X
@@ -4837,7 +4837,7 @@ C - - - - - 0x01A127 06:A117: 4D D6 04  EOR ram_игрок_с_мячом
 C - - - - - 0x01A12A 06:A11A: 29 01     AND #$01
 C - - - - - 0x01A12C 06:A11C: F0 F5     BEQ bra_A113
 C - - - - - 0x01A12E 06:A11E: 24 5C     BIT ram_flag_gameplay
-C - - - - - 0x01A130 06:A120: 70 F1     BVS bra_A113
+C - - - - - 0x01A130 06:A120: 70 F1     BVS bra_A113    ; если сейчас con_gp_футбольная_пауза
 C - - - - - 0x01A132 06:A122: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x01A135 06:A125: C0 0A     CPY #con_индекс_кипера
 C - - - - - 0x01A137 06:A127: 90 05     BCC bra_A12E_это_не_кипер
@@ -4979,7 +4979,7 @@ C - - - - - 0x01A219 06:A209: 10 3D     BPL bra_A248
 C - - - - - 0x01A21B 06:A20B: 0A        ASL
 C - - - - - 0x01A21C 06:A20C: 30 3A     BMI bra_A248
 C - - - - - 0x01A21E 06:A20E: AD 5C 00  LDA ram_flag_gameplay
-C - - - - - 0x01A221 06:A211: 29 0F     AND #$0F
+C - - - - - 0x01A221 06:A211: 29 0F     AND #con_gp_разв_гол_аут_угл
 C - - - - - 0x01A223 06:A213: D0 07     BNE bra_A21C
 C - - - - - 0x01A225 06:A215: AD 59 05  LDA ram_номер_тайма
 C - - - - - 0x01A228 06:A218: D0 06     BNE bra_A220_второй_тайм
@@ -5023,7 +5023,7 @@ C - - - - - 0x01A25A 06:A24A: 90 0E     BCC bra_A25A    ; если это не �
 C - - - - - 0x01A25C 06:A24C: BD 7C 06  LDA ram_067C,X
 C - - - - - 0x01A25F 06:A24F: 30 09     BMI bra_A25A
 C - - - - - 0x01A261 06:A251: 24 5C     BIT ram_flag_gameplay
-C - - - - - 0x01A263 06:A253: 70 05     BVS bra_A25A
+C - - - - - 0x01A263 06:A253: 70 05     BVS bra_A25A    ; если сейчас con_gp_футбольная_пауза
 C - - - - - 0x01A265 06:A255: A9 01     LDA #$01
 C - - - - - 0x01A267 06:A257: 4C D1 A2  JMP loc_A2D1_запись_типа_анимации    ; bzk опт
 bra_A25A:
@@ -7535,7 +7535,7 @@ C - - - - - 0x01AE32 06:AE22: 20 E4 C2  JSR sub_0x01C2F4_воспроизвес�
 C - - - - - 0x01AE35 06:AE25: A9 02     LDA #con_action_02
 C - - - - - 0x01AE37 06:AE27: 20 7B B0  JSR sub_B07B
 C - - - - - 0x01AE3A 06:AE2A: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01AE3C 06:AE2C: 29 40     AND #$40
+C - - - - - 0x01AE3C 06:AE2C: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x01AE3E 06:AE2E: F0 05     BEQ bra_AE35
 C - - - - - 0x01AE40 06:AE30: A9 11     LDA #$11
 C - - - - - 0x01AE42 06:AE32: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
@@ -7608,7 +7608,7 @@ C - - - - - 0x01AEBC 06:AEAC: 20 63 AF  JSR sub_AF63
 C - - - - - 0x01AEBF 06:AEAF: 8C D6 04  STY ram_игрок_с_мячом
 C - - - - - 0x01AEC2 06:AEB2: 20 50 AF  JSR sub_AF50
 C - - - - - 0x01AEC5 06:AEB5: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01AEC7 06:AEB7: 29 40     AND #$40
+C - - - - - 0x01AEC7 06:AEB7: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x01AEC9 06:AEB9: F0 03     BEQ bra_AEBE    ; если время не вышло/мяч не вне игры
 C - - - - - 0x01AECB 06:AEBB: 4C 72 AD  RTS
 bra_AEBE:
@@ -7633,7 +7633,7 @@ C - - - - - 0x01AEF5 06:AEE5: 8D 92 04  STA ram_состояние_мяча
 C - - - - - 0x01AEF8 06:AEE8: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01AEFA 06:AEEA: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01AEFC 06:AEEC: F0 04     BEQ bra_AEF2_не_пенальти
-C - - - - - 0x01AEFE 06:AEEE: A9 40     LDA #con_gp_время_вышло
+C - - - - - 0x01AEFE 06:AEEE: A9 40     LDA #con_gp_футбольная_пауза
 C - - - - - 0x01AF00 06:AEF0: 85 5C     STA ram_flag_gameplay
 bra_AEF2_не_пенальти:
 C - - - - - 0x01AF02 06:AEF2: A4 1D     LDY ram_001D
@@ -7690,8 +7690,8 @@ C - - - - - 0x01AF5D 06:AF4D: 4C 8B AD  JMP loc_AD8B_запись_действи
 
 sub_AF50:
 C - - - - - 0x01AF60 06:AF50: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01AF62 06:AF52: 29 0C     AND #$0C
-C - - - - - 0x01AF64 06:AF54: F0 0C     BEQ bra_AF62_RTS
+C - - - - - 0x01AF62 06:AF52: 29 0C     AND #con_gp_аут + con_gp_угловой_от_ворот
+C - - - - - 0x01AF64 06:AF54: F0 0C     BEQ bra_AF62_RTS    ; если мяч в игре
 C - - - - - 0x01AF66 06:AF56: 68        PLA
 C - - - - - 0x01AF67 06:AF57: 68        PLA
 C - - - - - 0x01AF68 06:AF58: A5 1D     LDA ram_001D
@@ -7753,10 +7753,10 @@ C - - - - - 0x01AFC9 06:AFB9: 84 1E     STY ram_001E
 C - - - - - 0x01AFCB 06:AFBB: 69 01     ADC #$01
 bra_AFBD_мяч_не_наэлектризован:
 C - - - - - 0x01AFCD 06:AFBD: A4 1D     LDY ram_001D
-C - - - - - 0x01AFCF 06:AFBF: 20 A5 9E  JSR sub_9EA5
+C - - - - - 0x01AFCF 06:AFBF: 20 A5 9E  JSR sub_9EA5_отнять_силу_игроку
 C - - - - - 0x01AFD2 06:AFC2: A9 08     LDA #$08
 C - - - - - 0x01AFD4 06:AFC4: A0 0C     LDY #$0C
-C - - - - - 0x01AFD6 06:AFC6: 20 A5 9E  JSR sub_9EA5
+C - - - - - 0x01AFD6 06:AFC6: 20 A5 9E  JSR sub_9EA5_отнять_силу_игроку
 C - - - - - 0x01AFD9 06:AFC9: A4 1D     LDY ram_001D
 C - - - - - 0x01AFDB 06:AFCB: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x01AFDE 06:AFCE: C0 0A     CPY #$0A
@@ -8169,10 +8169,10 @@ sub_B1D3:
 C - - - - - 0x01B1E3 06:B1D3: 86 43     STX ram_0043
 C - - - - - 0x01B1E5 06:B1D5: A0 00     LDY #$00
 C - - - - - 0x01B1E7 06:B1D7: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01B1E9 06:B1D9: 29 0C     AND #$0C
-C - - - - - 0x01B1EB 06:B1DB: F0 03     BEQ bra_B1E0
+C - - - - - 0x01B1E9 06:B1D9: 29 0C     AND #con_gp_аут + con_gp_угловой_от_ворот
+C - - - - - 0x01B1EB 06:B1DB: F0 03     BEQ bra_B1E0_мяч_в_игре
 C - - - - - 0x01B1ED 06:B1DD: AC D6 04  LDY ram_игрок_с_мячом
-bra_B1E0:
+bra_B1E0_мяч_в_игре:
 C - - - - - 0x01B1F0 06:B1E0: 84 44     STY ram_0044
 C - - - - - 0x01B1F2 06:B1E2: 20 13 B3  JSR sub_B313
 C - - - - - 0x01B1F5 06:B1E5: 20 37 B3  JSR sub_B337
@@ -8191,8 +8191,8 @@ C - - - - - 0x01B212 06:B202: 38        SEC
 C - - - - - 0x01B213 06:B203: B0 0F     BCS bra_B214
 bra_B205:
 C - - - - - 0x01B215 06:B205: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01B217 06:B207: 29 0C     AND #$0C
-C - - - - - 0x01B219 06:B209: D0 08     BNE bra_B213
+C - - - - - 0x01B217 06:B207: 29 0C     AND #con_gp_аут + con_gp_угловой_от_ворот
+C - - - - - 0x01B219 06:B209: D0 08     BNE bra_B213    ; если мяч в игре
 C - - - - - 0x01B21B 06:B20B: E6 44     INC ram_0044
 C - - - - - 0x01B21D 06:B20D: A5 44     LDA ram_0044
 C - - - - - 0x01B21F 06:B20F: C9 0C     CMP #$0C
@@ -8458,12 +8458,12 @@ sub_B3A0:
 C - - - - - 0x01B3B0 06:B3A0: A6 43     LDX ram_0043
 C - - - - - 0x01B3B2 06:B3A2: A4 44     LDY ram_0044
 C - - - - - 0x01B3B4 06:B3A4: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01B3B6 06:B3A6: 29 0C     AND #$0C
-C - - - - - 0x01B3B8 06:B3A8: D0 0C     BNE bra_B3B6
+C - - - - - 0x01B3B6 06:B3A6: 29 0C     AND #con_gp_аут + con_gp_угловой_от_ворот
+C - - - - - 0x01B3B8 06:B3A8: D0 0C     BNE bra_B3B6    ; если мяч в игре
 C - - - - - 0x01B3BA 06:B3AA: B5 D9     LDA ram_флаг_видимости_игрока,X
 C - - - - - 0x01B3BC 06:B3AC: F0 05     BEQ bra_B3B3_не_на_экране
 C - - - - - 0x01B3BE 06:B3AE: B9 D9 00  LDA ram_флаг_видимости_игрока,Y
-C - - - - - 0x01B3C1 06:B3B1: D0 03     BNE bra_B3B6    ; если на экране
+C - - - - - 0x01B3C1 06:B3B1: D0 03     BNE bra_B3B6    ; если виден на экране
 bra_B3B3_не_на_экране:
 C - - - - - 0x01B3C3 06:B3B3: 4C E7 B4  JMP loc_B4E7
 bra_B3B6:
@@ -9446,8 +9446,8 @@ C - - - - - 0x01B892 06:B882: E6 1C     INC ram_001C
 C - - - - - 0x01B894 06:B884: E6 1C     INC ram_001C
 bra_B886:
 C - - - - - 0x01B896 06:B886: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01B898 06:B888: 29 0C     AND #$0C
-C - - - - - 0x01B89A 06:B88A: F0 0F     BEQ bra_B89B_RTS
+C - - - - - 0x01B898 06:B888: 29 0C     AND #con_gp_аут + con_gp_угловой_от_ворот
+C - - - - - 0x01B89A 06:B88A: F0 0F     BEQ bra_B89B_RTS    ; если мяч сейчас вне игры
 C - - - - - 0x01B89C 06:B88C: EC D6 04  CPX ram_игрок_с_мячом
 C - - - - - 0x01B89F 06:B88F: D0 0A     BNE bra_B89B_RTS
 C - - - - - 0x01B8A1 06:B891: A5 57     LDA ram_опция_режим_и_сложность
@@ -9523,11 +9523,11 @@ C - - - - - 0x01B8E1 06:B8D1: D0 03     BNE bra_B8D6
 C - - - - - 0x01B8E3 06:B8D3: 4C F5 B9  JMP loc_B9F5
 bra_B8D6:
 C - - - - - 0x01B8E6 06:B8D6: A5 5C     LDA ram_flag_gameplay
-C - - - - - 0x01B8E8 06:B8D8: 29 0C     AND #$0C
-C - - - - - 0x01B8EA 06:B8DA: F0 09     BEQ bra_B8E5
+C - - - - - 0x01B8E8 06:B8D8: 29 0C     AND #con_gp_аут + con_gp_угловой_от_ворот
+C - - - - - 0x01B8EA 06:B8DA: F0 09     BEQ bra_B8E5    ; если мяч сейчас вне игры
 C - - - - - 0x01B8EC 06:B8DC: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01B8EE 06:B8DE: 29 20     AND #con_gm_пенальти
-C - - - - - 0x01B8F0 06:B8E0: D0 03     BNE bra_B8E5
+C - - - - - 0x01B8F0 06:B8E0: D0 03     BNE bra_B8E5    ; если не пенальти
 C - - - - - 0x01B8F2 06:B8E2: 4C 30 BA  RTS
 bra_B8E5:
 C - - - - - 0x01B8F5 06:B8E5: 20 B6 BA  JSR sub_BAB6
@@ -9539,7 +9539,7 @@ C - - - - - 0x01B901 06:B8F1: F0 03     BEQ bra_B8F6
 C - - - - - 0x01B903 06:B8F3: 4C BB B9  JMP loc_B9BB
 bra_B8F6:
 C - - - - - 0x01B906 06:B8F6: 20 99 BB  JSR sub_BB99
-C - - - - - 0x01B909 06:B8F9: 20 31 BA  JSR sub_BA31
+C - - - - - 0x01B909 06:B8F9: 20 31 BA  JSR sub_BA31_засчитать_гол
 C - - - - - 0x01B90C 06:B8FC: AD F0 04  LDA ram_сила_мяча
 C - - - - - 0x01B90F 06:B8FF: F0 19     BEQ bra_B91A
 C - - - - - 0x01B911 06:B901: 20 C8 BC  JSR sub_BCC8
@@ -9583,7 +9583,7 @@ C - - - - - 0x01B95F 06:B94F: F0 47     BEQ bra_B998
 - - - - - - 0x01B966 06:B956: 20 64 BC  JSR sub_BC64
 - - - - - - 0x01B969 06:B959: 20 87 A1  JSR sub_A187_ограничение_максимальной_скорости
 - - - - - - 0x01B96C 06:B95C: 20 56 98  JSR sub_9856
-- - - - - - 0x01B96F 06:B95F: 20 31 BA  JSR sub_BA31
+- - - - - - 0x01B96F 06:B95F: 20 31 BA  JSR sub_BA31_засчитать_гол
 - - - - - - 0x01B972 06:B962: 4C 30 BA  RTS
 bra_B965:
 C - - - - - 0x01B975 06:B965: AD 0E 05  LDA ram_флаг_прозрачного_мяча
@@ -9617,9 +9617,9 @@ C - - - - - 0x01B9B4 06:B9A4: 1D 99 03  ORA ram_pos_Z_hi_игрока,X
 C - - - - - 0x01B9B7 06:B9A7: D0 0A     BNE bra_B9B3
 bra_B9A9:
 C - - - - - 0x01B9B9 06:B9A9: AD 5C 00  LDA ram_flag_gameplay
-C - - - - - 0x01B9BC 06:B9AC: 29 02     AND #$02
-C - - - - - 0x01B9BE 06:B9AE: D0 08     BNE bra_B9B8_RTS
-C - - - - - 0x01B9C0 06:B9B0: 20 31 BA  JSR sub_BA31
+C - - - - - 0x01B9BC 06:B9AC: 29 02     AND #con_gp_гол
+C - - - - - 0x01B9BE 06:B9AE: D0 08     BNE bra_B9B8_RTS    ; если это не гол
+C - - - - - 0x01B9C0 06:B9B0: 20 31 BA  JSR sub_BA31_засчитать_гол
 bra_B9B3:
 C - - - - - 0x01B9C3 06:B9B3: A5 1C     LDA ram_001C
 C - - - - - 0x01B9C5 06:B9B5: 8D 0E 05  STA ram_флаг_прозрачного_мяча
@@ -9630,7 +9630,7 @@ C - - - - - 0x01B9C8 06:B9B8: 4C 30 BA  RTS
 
 loc_B9BB:
 C D 1 - - - 0x01B9CB 06:B9BB: AD 5C 00  LDA ram_flag_gameplay
-C - - - - - 0x01B9CE 06:B9BE: 29 40     AND #$40
+C - - - - - 0x01B9CE 06:B9BE: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x01B9D0 06:B9C0: D0 29     BNE bra_B9EB
 C - - - - - 0x01B9D2 06:B9C2: AD 0E 05  LDA ram_флаг_прозрачного_мяча
 C - - - - - 0x01B9D5 06:B9C5: C9 FF     CMP #$FF
@@ -9657,7 +9657,7 @@ C - - - - - 0x01BA02 06:B9F2: 4C 30 BA  RTS
 
 loc_B9F5:
 C D 1 - - - 0x01BA05 06:B9F5: AD 5C 00  LDA ram_flag_gameplay
-C - - - - - 0x01BA08 06:B9F8: 29 40     AND #$40
+C - - - - - 0x01BA08 06:B9F8: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x01BA0A 06:B9FA: D0 27     BNE bra_BA23
 C - - - - - 0x01BA0C 06:B9FC: AD 0E 05  LDA ram_флаг_прозрачного_мяча
 C - - - - - 0x01BA0F 06:B9FF: 10 22     BPL bra_BA23
@@ -9687,9 +9687,9 @@ C D 1 - - - 0x01BA40 06:BA30: 60        RTS
 
 
 
-sub_BA31:
+sub_BA31_засчитать_гол:
 C - - - - - 0x01BA41 06:BA31: AD 5C 00  LDA ram_flag_gameplay
-C - - - - - 0x01BA44 06:BA34: 29 40     AND #$40
+C - - - - - 0x01BA44 06:BA34: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x01BA46 06:BA36: D0 7D     BNE bra_BAB5_RTS
 C - - - - - 0x01BA48 06:BA38: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x01BA4B 06:BA3B: 29 40     AND #$40
@@ -9699,16 +9699,16 @@ C - - - - - 0x01BA51 06:BA41: 8D 80 00  STA ram_анимация_мяча
 C - - - - - 0x01BA54 06:BA44: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x01BA57 06:BA47: 29 7F     AND #$7F
 C - - - - - 0x01BA59 06:BA49: C9 01     CMP #con_погода_молния
-C - - - - - 0x01BA5B 06:BA4B: D0 07     BNE bra_BA54
+C - - - - - 0x01BA5B 06:BA4B: D0 07     BNE bra_BA54_это_не_молния
 - - - - - - 0x01BA5D 06:BA4D: A9 60     LDA #$60
 - - - - - - 0x01BA5F 06:BA4F: 8D 3F 01  STA ram_таймер_погоды
-- - - - - - 0x01BA62 06:BA52: D0 05     BNE bra_BA59
-bra_BA54:
+- - - - - - 0x01BA62 06:BA52: D0 05     BNE bra_BA59_не_выключать_погоду
+bra_BA54_это_не_молния:
 C - - - - - 0x01BA64 06:BA54: A9 00     LDA #con_погода_выкл
 C - - - - - 0x01BA66 06:BA56: 8D 66 04  STA ram_погодный_эффект
-bra_BA59:
+bra_BA59_не_выключать_погоду:
 C - - - - - 0x01BA69 06:BA59: 24 5C     BIT ram_flag_gameplay
-C - - - - - 0x01BA6B 06:BA5B: 70 58     BVS bra_BAB5_RTS
+C - - - - - 0x01BA6B 06:BA5B: 70 58     BVS bra_BAB5_RTS    ; если сейчас con_gp_футбольная_пауза
 C - - - - - 0x01BA6D 06:BA5D: A9 02     LDA #$02
 C - - - - - 0x01BA6F 06:BA5F: 20 55 BD  JSR sub_BD55
 C - - - - - 0x01BA72 06:BA62: AD CC 05  LDA ram_счетчик_смен
@@ -9716,11 +9716,11 @@ C - - - - - 0x01BA75 06:BA65: 29 01     AND #$01
 C - - - - - 0x01BA77 06:BA67: A8        TAY
 C - - - - - 0x01BA78 06:BA68: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01BA7A 06:BA6A: 29 20     AND #con_gm_пенальти
-C - - - - - 0x01BA7C 06:BA6C: F0 07     BEQ bra_BA75_не_пенальти
+C - - - - - 0x01BA7C 06:BA6C: F0 07     BEQ bra_BA75_это_не_пенальти
 C - - - - - 0x01BA7E 06:BA6E: BD 27 03  LDA ram_pos_X_hi_игрока,X
 C - - - - - 0x01BA81 06:BA71: F0 42     BEQ bra_BAB5_RTS
 C - - - - - 0x01BA83 06:BA73: D0 08     BNE bra_BA7D
-bra_BA75_не_пенальти:
+bra_BA75_это_не_пенальти:
 C - - - - - 0x01BA85 06:BA75: A0 00     LDY #$00
 C - - - - - 0x01BA87 06:BA77: BD 27 03  LDA ram_pos_X_hi_игрока,X
 C - - - - - 0x01BA8A 06:BA7A: D0 01     BNE bra_BA7D
@@ -9749,8 +9749,8 @@ C - - - - - 0x01BAB5 06:BAA5: 98        TYA
 C - - - - - 0x01BAB6 06:BAA6: 49 01     EOR #$01
 C - - - - - 0x01BAB8 06:BAA8: 09 0A     ORA #$0A
 C - - - - - 0x01BABA 06:BAAA: A8        TAY
-C - - - - - 0x01BABB 06:BAAB: A9 14     LDA #$14
-C - - - - - 0x01BABD 06:BAAD: 20 B5 9E  JSR sub_9EB5
+C - - - - - 0x01BABB 06:BAAB: A9 14     LDA #$14    ; 20хп киперу за пропуск гола
+C - - - - - 0x01BABD 06:BAAD: 20 B5 9E  JSR sub_9EB5_добавить_силу_игроку
 C - - - - - 0x01BAC0 06:BAB0: A9 2E     LDA #con_sfx_гол
 C - - - - - 0x01BAC2 06:BAB2: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
 bra_BAB5_RTS:
@@ -10197,18 +10197,18 @@ tbl_BD53_погода:
 sub_BD55:
 C - - - - - 0x01BD65 06:BD55: A8        TAY
 C - - - - - 0x01BD66 06:BD56: 2C 5C 00  BIT ram_flag_gameplay
-C - - - - - 0x01BD69 06:BD59: 70 0B     BVS bra_BD66_RTS
+C - - - - - 0x01BD69 06:BD59: 70 0B     BVS bra_BD66_RTS    ; если сейчас con_gp_футбольная_пауза
 C - - - - - 0x01BD6B 06:BD5B: AD 5C 00  LDA ram_flag_gameplay
-C - - - - - 0x01BD6E 06:BD5E: 29 80     AND #con_gp_пауза
+C - - - - - 0x01BD6E 06:BD5E: 29 80     AND #con_gp_ручная_пауза
 C - - - - - 0x01BD70 06:BD60: 19 67 BD  ORA tbl_BD67,Y
 C - - - - - 0x01BD73 06:BD63: 8D 5C 00  STA ram_flag_gameplay
 bra_BD66_RTS:
 C - - - - - 0x01BD76 06:BD66: 60        RTS
 
 tbl_BD67:
-- D 1 - - - 0x01BD77 06:BD67: 48        .byte con_gp_угловой_от_ворот
-- D 1 - - - 0x01BD78 06:BD68: 44        .byte con_gp_аут
-- D 1 - - - 0x01BD79 06:BD69: 42        .byte con_gp_гол
+- D 1 - - - 0x01BD77 06:BD67: 48        .byte con_gp_футбольная_пауза + con_gp_угловой_от_ворот
+- D 1 - - - 0x01BD78 06:BD68: 44        .byte con_gp_футбольная_пауза + con_gp_аут
+- D 1 - - - 0x01BD79 06:BD69: 42        .byte con_gp_футбольная_пауза + con_gp_гол
 
 
 
@@ -10403,19 +10403,19 @@ C - - - - - 0x01BEDB 06:BECB: 60        RTS
 
 sub_0x01BEDC:
 C - - - - - 0x01BEDC 06:BECC: AD 5C 00  LDA ram_flag_gameplay
-C - - - - - 0x01BEDF 06:BECF: 29 02     AND #$02
-C - - - - - 0x01BEE1 06:BED1: D0 14     BNE bra_BEE7_RTS
-C - - - - - 0x01BEE3 06:BED3: A2 0E     LDX #$0E
+C - - - - - 0x01BEDF 06:BECF: 29 02     AND #con_gp_гол
+C - - - - - 0x01BEE1 06:BED1: D0 14     BNE bra_BEE7_RTS    ; если это не гол
+C - - - - - 0x01BEE3 06:BED3: A2 0E     LDX #con_индекс_цифры
 C - - - - - 0x01BEE5 06:BED5: A5 59     LDA ram_subscript
 C - - - - - 0x01BEE7 06:BED7: C9 01     CMP #$01
-C - - - - - 0x01BEE9 06:BED9: D0 01     BNE bra_BEDC
-C - - - - - 0x01BEEB 06:BEDB: E8        INX
-bra_BEDC:
+C - - - - - 0x01BEE9 06:BED9: D0 01     BNE bra_BEDC_loop
+C - - - - - 0x01BEEB 06:BEDB: E8        INX ; пропустить иконку мяча
+bra_BEDC_loop:
 C - - - - - 0x01BEEC 06:BEDC: 20 D6 CB  JSR sub_0x01CBE6_циферки_на_миникарте_и_над_игроком
 C - - - - - 0x01BEEF 06:BEDF: 20 8C EB  JSR sub_0x01EB9C
 C - - - - - 0x01BEF2 06:BEE2: E8        INX
 C - - - - - 0x01BEF3 06:BEE3: E0 13     CPX #$13
-C - - - - - 0x01BEF5 06:BEE5: 90 F5     BCC bra_BEDC
+C - - - - - 0x01BEF5 06:BEE5: 90 F5     BCC bra_BEDC_loop
 bra_BEE7_RTS:
 C - - - - - 0x01BEF7 06:BEE7: 60        RTS
 
