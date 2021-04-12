@@ -291,11 +291,11 @@ C - - - - - 0x00C1F0 03:81E0: 29 40     AND #$40
 C - - - - - 0x00C1F2 03:81E2: D0 22     BNE bra_8206
 C - - - - - 0x00C1F4 03:81E4: AD 65 04  LDA ram_действие_мяча
 C - - - - - 0x00C1F7 03:81E7: 29 7F     AND #$7F
-C - - - - - 0x00C1F9 03:81E9: C9 04     CMP #con_act_ball_04
+C - - - - - 0x00C1F9 03:81E9: C9 04     CMP #con_act_ball_пас
 C - - - - - 0x00C1FB 03:81EB: F0 0E     BEQ bra_81FB
 C - - - - - 0x00C1FD 03:81ED: C9 0A     CMP #con_act_ball_0A
 C - - - - - 0x00C1FF 03:81EF: F0 0A     BEQ bra_81FB
-C - - - - - 0x00C201 03:81F1: C9 15     CMP #con_act_ball_15
+C - - - - - 0x00C201 03:81F1: C9 15     CMP #con_act_ball_чеканка
 C - - - - - 0x00C203 03:81F3: F0 06     BEQ bra_81FB
 bra_81F5:
 C - - - - - 0x00C205 03:81F5: 20 9B A5  JSR sub_A59B

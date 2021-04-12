@@ -2294,7 +2294,7 @@ bra_8FC5_RTS:
 C - - - - - 0x018FD5 06:8FC5: 60        RTS
 
 tbl_8FC6:
-- D 0 - - - 0x018FD6 06:8FC6: 08        .byte con_act_ball_08   ; 
+- D 0 - - - 0x018FD6 06:8FC6: 08        .byte con_act_ball_отскок_от_земли   ; 
 - D 0 - - - 0x018FD7 06:8FC7: 01        .byte con_act_ball_01   ; 
 
 
@@ -7465,7 +7465,7 @@ C - - - - - 0x01ADAA 06:AD9A: 20 E4 C2  JSR sub_0x01C2F4_воспроизвес�
 C - - - - - 0x01ADAD 06:AD9D: A4 1D     LDY ram_001D
 C - - - - - 0x01ADAF 06:AD9F: 20 63 AF  JSR sub_AF63
 C - - - - - 0x01ADB2 06:ADA2: 8C D6 04  STY ram_игрок_с_мячом
-C - - - - - 0x01ADB5 06:ADA5: A9 04     LDA #con_act_ball_04
+C - - - - - 0x01ADB5 06:ADA5: A9 04     LDA #con_act_ball_пас
 C - - - - - 0x01ADB7 06:ADA7: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 
 
@@ -7502,7 +7502,7 @@ C - - - - - 0x01ADEA 06:ADDA: C9 0A     CMP #con_act_ball_0A
 C - - - - - 0x01ADEC 06:ADDC: F0 17     BEQ bra_ADF5
 C - - - - - 0x01ADEE 06:ADDE: C9 03     CMP #con_act_ball_03
 C - - - - - 0x01ADF0 06:ADE0: F0 0C     BEQ bra_ADEE
-C - - - - - 0x01ADF2 06:ADE2: C9 15     CMP #con_act_ball_15
+C - - - - - 0x01ADF2 06:ADE2: C9 15     CMP #con_act_ball_чеканка
 C - - - - - 0x01ADF4 06:ADE4: D0 28     BNE bra_AE0E
 C - - - - - 0x01ADF6 06:ADE6: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x01ADF9 06:ADE9: 30 23     BMI bra_AE0E    ; если в воздухе
@@ -7599,7 +7599,7 @@ C - - - - - 0x01AEAB 06:AE9B: A9 23     LDA #con_sfx_принять_мяч
 C - - - - - 0x01AEAD 06:AE9D: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x01AEB0 06:AEA0: A9 26     LDA #con_action_26
 C - - - - - 0x01AEB2 06:AEA2: 20 7B B0  JSR sub_B07B
-C - - - - - 0x01AEB5 06:AEA5: A9 15     LDA #con_act_ball_15
+C - - - - - 0x01AEB5 06:AEA5: A9 15     LDA #con_act_ball_чеканка
 C - - - - - 0x01AEB7 06:AEA7: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 
 
@@ -10246,7 +10246,7 @@ C - - - - - 0x01BDB1 06:BDA1: C9 03     CMP #con_act_ball_03
 C - - - - - 0x01BDB3 06:BDA3: F0 0B     BEQ bra_BDB0
 C - - - - - 0x01BDB5 06:BDA5: C9 09     CMP #con_act_ball_09
 C - - - - - 0x01BDB7 06:BDA7: F0 07     BEQ bra_BDB0
-C - - - - - 0x01BDB9 06:BDA9: C9 14     CMP #con_act_ball_14
+C - - - - - 0x01BDB9 06:BDA9: C9 14     CMP #con_act_ball_удар_по_мячу
 C - - - - - 0x01BDBB 06:BDAB: F0 03     BEQ bra_BDB0
 C - - - - - 0x01BDBD 06:BDAD: 4C B3 BD  JMP loc_BDB3
 bra_BDB0:
