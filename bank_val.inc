@@ -212,6 +212,19 @@ con_state_в_воздухе             = $80 ; мяч в воздухе
 
 
 
+; ram_скилл                     = $04F1
+con_skill_00                    = $00 ; 
+con_skill_01                    = $01 ; 
+con_skill_02                    = $02 ; 
+con_skill_04                    = $04 ; 
+con_skill_08                    = $08 ; 
+con_skill_10                    = $10 ; 
+con_skill_20                    = $20 ; 
+con_skill_40                    = $40 ; 
+con_skill_80                    = $80 ; 
+
+
+
 ; ram_содержимое_hud            = $05F8
 con_hud_kick_off                = $00 ; кик офф
 con_hud_goal                    = $01 ; гол

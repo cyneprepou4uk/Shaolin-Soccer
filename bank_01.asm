@@ -14698,7 +14698,7 @@ bra_BCDB:
 - - - - - - 0x007CED 01:BCDD: 0A        ASL
 - - - - - - 0x007CEE 01:BCDE: 10 08     BPL bra_BCE8
 - - - - - - 0x007CF0 01:BCE0: BD F1 04  LDA ram_скилл,X
-- - - - - - 0x007CF3 01:BCE3: 09 01     ORA #$01
+- - - - - - 0x007CF3 01:BCE3: 09 01     ORA #con_skill_01
 - - - - - - 0x007CF5 01:BCE5: 9D F1 04  STA ram_скилл,X
 bra_BCE8:
 - - - - - - 0x007CF8 01:BCE8: A5 1C     LDA ram_001C
@@ -14763,413 +14763,497 @@ off_BD12_02:
 
 
 tbl_BD18_данные_игроков_команд:
-- D 1 - - - 0x007D28 01:BD18: 38 BD     .word off_BD38_00
-- D 1 - - - 0x007D2A 01:BD1A: 68 BD     .word off_BD68_01
-- - - - - - 0x007D2C 01:BD1C: 80 BD     .word off_BD80_02
-- D 1 - - - 0x007D2E 01:BD1E: 98 BD     .word off_BD98_03
+- D 1 - - - 0x007D28 01:BD18: 38 BD     .word off_BD38_00_япония
+- D 1 - - - 0x007D2A 01:BD1A: 68 BD     .word off_BD68_01_корея
+- - - - - - 0x007D2C 01:BD1C: 80 BD     .word off_BD80_02_монголия
+- D 1 - - - 0x007D2E 01:BD1E: 98 BD     .word off_BD98_03_таиланд
 - - - - - - 0x007D30 01:BD20: 38 BD     .word off_BD38_04
-- D 1 - - - 0x007D32 01:BD22: B0 BD     .word off_BDB0_05
-- - - - - - 0x007D34 01:BD24: C8 BD     .word off_BDC8_06
-- D 1 - - - 0x007D36 01:BD26: E0 BD     .word off_BDE0_07
+- D 1 - - - 0x007D32 01:BD22: B0 BD     .word off_BDB0_05_гвинея
+- - - - - - 0x007D34 01:BD24: C8 BD     .word off_BDC8_06_сенегал
+- D 1 - - - 0x007D36 01:BD26: E0 BD     .word off_BDE0_07_камерун
 - - - - - - 0x007D38 01:BD28: 38 BD     .word off_BD38_08
-- D 1 - - - 0x007D3A 01:BD2A: F8 BD     .word off_BDF8_09
-- - - - - - 0x007D3C 01:BD2C: 10 BE     .word off_BE10_0A
-- D 1 - - - 0x007D3E 01:BD2E: 28 BE     .word off_BE28_0B
+- D 1 - - - 0x007D3A 01:BD2A: F8 BD     .word off_BDF8_09_германия
+- - - - - - 0x007D3C 01:BD2C: 10 BE     .word off_BE10_0A_англия
+- D 1 - - - 0x007D3E 01:BD2E: 28 BE     .word off_BE28_0B_италия
 - - - - - - 0x007D40 01:BD30: 38 BD     .word off_BD38_0C
-- D 1 - - - 0x007D42 01:BD32: 40 BE     .word off_BE40_0D
-- D 1 - - - 0x007D44 01:BD34: 58 BE     .word off_BE58_0E
-- D 1 - - - 0x007D46 01:BD36: 70 BE     .word off_BE70_0F
+- D 1 - - - 0x007D42 01:BD32: 40 BE     .word off_BE40_0D_бразилия
+- D 1 - - - 0x007D44 01:BD34: 58 BE     .word off_BE58_0E_аргентина
+- D 1 - - - 0x007D46 01:BD36: 70 BE     .word off_BE70_0F_мексика
 
 
 
-off_BD38_00:
+off_BD38_00_япония:
 off_BD38_04:
 off_BD38_08:
 off_BD38_0C:
+; 00
 - D 1 - I - 0x007D48 01:BD38: 32        .byte $32   ; 
 - D 1 - I - 0x007D49 01:BD39: 01        .byte $01   ; 
 - D 1 - I - 0x007D4A 01:BD3A: C1        .byte $C1   ; 
-- D 1 - I - 0x007D4B 01:BD3B: 40        .byte $40   ; 
+- D 1 - I - 0x007D4B 01:BD3B: 40        .byte con_skill_40   ; 
+; 01
 - D 1 - I - 0x007D4C 01:BD3C: 32        .byte $32   ; 
 - D 1 - I - 0x007D4D 01:BD3D: 00        .byte $00   ; 
 - D 1 - I - 0x007D4E 01:BD3E: 02        .byte $02   ; 
-- D 1 - I - 0x007D4F 01:BD3F: 04        .byte $04   ; 
+- D 1 - I - 0x007D4F 01:BD3F: 04        .byte con_skill_04   ; 
+; 02
 - D 1 - I - 0x007D50 01:BD40: 37        .byte $37   ; 
 - D 1 - I - 0x007D51 01:BD41: 01        .byte $01   ; 
 - D 1 - I - 0x007D52 01:BD42: 83        .byte $83   ; 
-- D 1 - I - 0x007D53 01:BD43: 20        .byte $20   ; 
+- D 1 - I - 0x007D53 01:BD43: 20        .byte con_skill_20   ; 
+; 03
 - D 1 - I - 0x007D54 01:BD44: 3C        .byte $3C   ; 
 - D 1 - I - 0x007D55 01:BD45: 03        .byte $03   ; 
 - D 1 - I - 0x007D56 01:BD46: 42        .byte $42   ; 
-- D 1 - I - 0x007D57 01:BD47: 40        .byte $40   ; 
+- D 1 - I - 0x007D57 01:BD47: 40        .byte con_skill_40   ; 
+; 04
 - D 1 - I - 0x007D58 01:BD48: 2D        .byte $2D   ; 
 - D 1 - I - 0x007D59 01:BD49: 01        .byte $01   ; 
 - D 1 - I - 0x007D5A 01:BD4A: 82        .byte $82   ; 
-- D 1 - I - 0x007D5B 01:BD4B: 08        .byte $08   ; 
+- D 1 - I - 0x007D5B 01:BD4B: 08        .byte con_skill_08   ; 
+; 05
 - D 1 - I - 0x007D5C 01:BD4C: 3C        .byte $3C   ; 
 - D 1 - I - 0x007D5D 01:BD4D: 02        .byte $02   ; 
 - D 1 - I - 0x007D5E 01:BD4E: 42        .byte $42   ; 
-- D 1 - I - 0x007D5F 01:BD4F: 90        .byte $90   ; 
+- D 1 - I - 0x007D5F 01:BD4F: 90        .byte con_skill_10 + con_skill_80   ; 
+; 06
 - D 1 - I - 0x007D60 01:BD50: 2D        .byte $2D   ; 
 - D 1 - I - 0x007D61 01:BD51: 03        .byte $03   ; 
 - D 1 - I - 0x007D62 01:BD52: 02        .byte $02   ; 
-- D 1 - I - 0x007D63 01:BD53: 02        .byte $02   ; 
+- D 1 - I - 0x007D63 01:BD53: 02        .byte con_skill_02   ; 
+; 07
 - D 1 - I - 0x007D64 01:BD54: 32        .byte $32   ; 
 - D 1 - I - 0x007D65 01:BD55: 01        .byte $01   ; 
 - D 1 - I - 0x007D66 01:BD56: 83        .byte $83   ; 
-- D 1 - I - 0x007D67 01:BD57: 80        .byte $80   ; 
+- D 1 - I - 0x007D67 01:BD57: 80        .byte con_skill_80   ; 
+; 08
 - D 1 - I - 0x007D68 01:BD58: 32        .byte $32   ; 
 - D 1 - I - 0x007D69 01:BD59: 03        .byte $03   ; 
 - D 1 - I - 0x007D6A 01:BD5A: 43        .byte $43   ; 
-- D 1 - I - 0x007D6B 01:BD5B: 40        .byte $40   ; 
+- D 1 - I - 0x007D6B 01:BD5B: 40        .byte con_skill_40   ; 
+; 09
 - D 1 - I - 0x007D6C 01:BD5C: 2D        .byte $2D   ; 
 - D 1 - I - 0x007D6D 01:BD5D: 03        .byte $03   ; 
 - D 1 - I - 0x007D6E 01:BD5E: 43        .byte $43   ; 
-- D 1 - I - 0x007D6F 01:BD5F: 40        .byte $40   ; 
+- D 1 - I - 0x007D6F 01:BD5F: 40        .byte con_skill_40   ; 
+; 0A
 - D 1 - I - 0x007D70 01:BD60: 41        .byte $41   ; 
 - D 1 - I - 0x007D71 01:BD61: 01        .byte $01   ; 
 - D 1 - I - 0x007D72 01:BD62: C2        .byte $C2   ; 
-- D 1 - I - 0x007D73 01:BD63: 80        .byte $80   ; 
+- D 1 - I - 0x007D73 01:BD63: 80        .byte con_skill_80   ; 
+; 0B
 - D 1 - I - 0x007D74 01:BD64: 41        .byte $41   ; 
 - D 1 - I - 0x007D75 01:BD65: 03        .byte $03   ; 
 - D 1 - I - 0x007D76 01:BD66: C1        .byte $C1   ; 
-- D 1 - I - 0x007D77 01:BD67: 12        .byte $12   ; 
+- D 1 - I - 0x007D77 01:BD67: 12        .byte con_skill_02 + con_skill_10   ; 
 
 
 
-off_BD68_01:
+off_BD68_01_корея:
+; 00
 - D 1 - I - 0x007D78 01:BD68: 28        .byte $28   ; 
 - D 1 - I - 0x007D79 01:BD69: 02        .byte $02   ; 
 - D 1 - I - 0x007D7A 01:BD6A: 00        .byte $00   ; 
-- D 1 - I - 0x007D7B 01:BD6B: 00        .byte $00   ; 
+- D 1 - I - 0x007D7B 01:BD6B: 00        .byte con_skill_00   ; 
+; 01
 - D 1 - I - 0x007D7C 01:BD6C: 23        .byte $23   ; 
 - D 1 - I - 0x007D7D 01:BD6D: 02        .byte $02   ; 
 - D 1 - I - 0x007D7E 01:BD6E: C2        .byte $C2   ; 
-- D 1 - I - 0x007D7F 01:BD6F: 00        .byte $00   ; 
+- D 1 - I - 0x007D7F 01:BD6F: 00        .byte con_skill_00   ; 
+; 02
 - D 1 - I - 0x007D80 01:BD70: 28        .byte $28   ; 
 - D 1 - I - 0x007D81 01:BD71: 02        .byte $02   ; 
 - D 1 - I - 0x007D82 01:BD72: 42        .byte $42   ; 
-- D 1 - I - 0x007D83 01:BD73: 00        .byte $00   ; 
+- D 1 - I - 0x007D83 01:BD73: 00        .byte con_skill_00   ; 
+; 03
 - D 1 - I - 0x007D84 01:BD74: 14        .byte $14   ; 
 - D 1 - I - 0x007D85 01:BD75: 02        .byte $02   ; 
 - D 1 - I - 0x007D86 01:BD76: 42        .byte $42   ; 
-- D 1 - I - 0x007D87 01:BD77: 00        .byte $00   ; 
+- D 1 - I - 0x007D87 01:BD77: 00        .byte con_skill_00   ; 
+; 04
 - D 1 - I - 0x007D88 01:BD78: 32        .byte $32   ; 
 - D 1 - I - 0x007D89 01:BD79: 02        .byte $02   ; 
 - D 1 - I - 0x007D8A 01:BD7A: 42        .byte $42   ; 
-- D 1 - I - 0x007D8B 01:BD7B: 00        .byte $00   ; 
+- D 1 - I - 0x007D8B 01:BD7B: 00        .byte con_skill_00   ; 
+; 05
 - D 1 - I - 0x007D8C 01:BD7C: 28        .byte $28   ; 
 - D 1 - I - 0x007D8D 01:BD7D: 02        .byte $02   ; 
 - D 1 - I - 0x007D8E 01:BD7E: 42        .byte $42   ; 
-- D 1 - I - 0x007D8F 01:BD7F: 00        .byte $00   ; 
+- D 1 - I - 0x007D8F 01:BD7F: 00        .byte con_skill_00   ; 
 
 
 
-off_BD80_02:
+off_BD80_02_монголия:
+; 00
 - - - - - - 0x007D90 01:BD80: 32        .byte $32   ; 
 - - - - - - 0x007D91 01:BD81: 01        .byte $01   ; 
 - - - - - - 0x007D92 01:BD82: C1        .byte $C1   ; 
-- - - - - - 0x007D93 01:BD83: 00        .byte $00   ; 
+- - - - - - 0x007D93 01:BD83: 00        .byte con_skill_00   ; 
+; 01
 - - - - - - 0x007D94 01:BD84: 23        .byte $23   ; 
 - - - - - - 0x007D95 01:BD85: 01        .byte $01   ; 
 - - - - - - 0x007D96 01:BD86: 41        .byte $41   ; 
-- - - - - - 0x007D97 01:BD87: 00        .byte $00   ; 
+- - - - - - 0x007D97 01:BD87: 00        .byte con_skill_00   ; 
+; 02
 - - - - - - 0x007D98 01:BD88: 23        .byte $23   ; 
 - - - - - - 0x007D99 01:BD89: 02        .byte $02   ; 
 - - - - - - 0x007D9A 01:BD8A: 41        .byte $41   ; 
-- - - - - - 0x007D9B 01:BD8B: 00        .byte $00   ; 
+- - - - - - 0x007D9B 01:BD8B: 00        .byte con_skill_00   ; 
+; 03
 - - - - - - 0x007D9C 01:BD8C: 46        .byte $46   ; 
 - - - - - - 0x007D9D 01:BD8D: 01        .byte $01   ; 
 - - - - - - 0x007D9E 01:BD8E: 41        .byte $41   ; 
-- - - - - - 0x007D9F 01:BD8F: 00        .byte $00   ; 
+- - - - - - 0x007D9F 01:BD8F: 00        .byte con_skill_00   ; 
+; 04
 - - - - - - 0x007DA0 01:BD90: 46        .byte $46   ; 
 - - - - - - 0x007DA1 01:BD91: 03        .byte $03   ; 
 - - - - - - 0x007DA2 01:BD92: C1        .byte $C1   ; 
-- - - - - - 0x007DA3 01:BD93: 00        .byte $00   ; 
+- - - - - - 0x007DA3 01:BD93: 00        .byte con_skill_00   ; 
+; 05
 - - - - - - 0x007DA4 01:BD94: 32        .byte $32   ; 
 - - - - - - 0x007DA5 01:BD95: 03        .byte $03   ; 
 - - - - - - 0x007DA6 01:BD96: 41        .byte $41   ; 
-- - - - - - 0x007DA7 01:BD97: 00        .byte $00   ; 
+- - - - - - 0x007DA7 01:BD97: 00        .byte con_skill_00   ; 
 
 
 
-off_BD98_03:
+off_BD98_03_таиланд:
+; 00
 - D 1 - I - 0x007DA8 01:BD98: 14        .byte $14   ; 
 - D 1 - I - 0x007DA9 01:BD99: 01        .byte $01   ; 
 - D 1 - I - 0x007DAA 01:BD9A: C3        .byte $C3   ; 
-- D 1 - I - 0x007DAB 01:BD9B: 40        .byte $40   ; 
+- D 1 - I - 0x007DAB 01:BD9B: 40        .byte con_skill_40   ; 
+; 01
 - D 1 - I - 0x007DAC 01:BD9C: 14        .byte $14   ; 
 - D 1 - I - 0x007DAD 01:BD9D: 01        .byte $01   ; 
 - D 1 - I - 0x007DAE 01:BD9E: 83        .byte $83   ; 
-- D 1 - I - 0x007DAF 01:BD9F: 40        .byte $40   ; 
+- D 1 - I - 0x007DAF 01:BD9F: 40        .byte con_skill_40   ; 
+; 02
 - D 1 - I - 0x007DB0 01:BDA0: 14        .byte $14   ; 
 - D 1 - I - 0x007DB1 01:BDA1: 00        .byte $00   ; 
 - D 1 - I - 0x007DB2 01:BDA2: 83        .byte $83   ; 
-- D 1 - I - 0x007DB3 01:BDA3: 40        .byte $40   ; 
+- D 1 - I - 0x007DB3 01:BDA3: 40        .byte con_skill_40   ; 
+; 03
 - D 1 - I - 0x007DB4 01:BDA4: 14        .byte $14   ; 
 - D 1 - I - 0x007DB5 01:BDA5: 02        .byte $02   ; 
 - D 1 - I - 0x007DB6 01:BDA6: 83        .byte $83   ; 
-- D 1 - I - 0x007DB7 01:BDA7: 40        .byte $40   ; 
+- D 1 - I - 0x007DB7 01:BDA7: 40        .byte con_skill_40   ; 
+; 04
 - D 1 - I - 0x007DB8 01:BDA8: 28        .byte $28   ; 
 - D 1 - I - 0x007DB9 01:BDA9: 02        .byte $02   ; 
 - D 1 - I - 0x007DBA 01:BDAA: 43        .byte $43   ; 
-- D 1 - I - 0x007DBB 01:BDAB: 40        .byte $40   ; 
+- D 1 - I - 0x007DBB 01:BDAB: 40        .byte con_skill_40   ; 
+; 05
 - D 1 - I - 0x007DBC 01:BDAC: 23        .byte $23   ; 
 - D 1 - I - 0x007DBD 01:BDAD: 02        .byte $02   ; 
 - D 1 - I - 0x007DBE 01:BDAE: 83        .byte $83   ; 
-- D 1 - I - 0x007DBF 01:BDAF: 40        .byte $40   ; 
+- D 1 - I - 0x007DBF 01:BDAF: 40        .byte con_skill_40   ; 
 
 
 
-off_BDB0_05:
+off_BDB0_05_гвинея:
+; 00
 - D 1 - I - 0x007DC0 01:BDB0: 14        .byte $14   ; 
 - D 1 - I - 0x007DC1 01:BDB1: 00        .byte $00   ; 
 - D 1 - I - 0x007DC2 01:BDB2: C2        .byte $C2   ; 
-- D 1 - I - 0x007DC3 01:BDB3: 02        .byte $02   ; 
+- D 1 - I - 0x007DC3 01:BDB3: 02        .byte con_skill_02   ; 
+; 01
 - D 1 - I - 0x007DC4 01:BDB4: 14        .byte $14   ; 
 - D 1 - I - 0x007DC5 01:BDB5: 03        .byte $03   ; 
 - D 1 - I - 0x007DC6 01:BDB6: 02        .byte $02   ; 
-- D 1 - I - 0x007DC7 01:BDB7: 02        .byte $02   ; 
+- D 1 - I - 0x007DC7 01:BDB7: 02        .byte con_skill_02   ; 
+; 02
 - D 1 - I - 0x007DC8 01:BDB8: 14        .byte $14   ; 
 - D 1 - I - 0x007DC9 01:BDB9: 03        .byte $03   ; 
 - D 1 - I - 0x007DCA 01:BDBA: 82        .byte $82   ; 
-- D 1 - I - 0x007DCB 01:BDBB: 02        .byte $02   ; 
+- D 1 - I - 0x007DCB 01:BDBB: 02        .byte con_skill_02   ; 
+; 03
 - D 1 - I - 0x007DCC 01:BDBC: 14        .byte $14   ; 
 - D 1 - I - 0x007DCD 01:BDBD: 01        .byte $01   ; 
 - D 1 - I - 0x007DCE 01:BDBE: 02        .byte $02   ; 
-- D 1 - I - 0x007DCF 01:BDBF: 02        .byte $02   ; 
+- D 1 - I - 0x007DCF 01:BDBF: 02        .byte con_skill_02   ; 
+; 04
 - D 1 - I - 0x007DD0 01:BDC0: 23        .byte $23   ; 
 - D 1 - I - 0x007DD1 01:BDC1: 03        .byte $03   ; 
 - D 1 - I - 0x007DD2 01:BDC2: 42        .byte $42   ; 
-- D 1 - I - 0x007DD3 01:BDC3: 02        .byte $02   ; 
+- D 1 - I - 0x007DD3 01:BDC3: 02        .byte con_skill_02   ; 
+; 05
 - D 1 - I - 0x007DD4 01:BDC4: 23        .byte $23   ; 
 - D 1 - I - 0x007DD5 01:BDC5: 03        .byte $03   ; 
 - D 1 - I - 0x007DD6 01:BDC6: C2        .byte $C2   ; 
-- D 1 - I - 0x007DD7 01:BDC7: 02        .byte $02   ; 
+- D 1 - I - 0x007DD7 01:BDC7: 02        .byte con_skill_02   ; 
 
 
 
-off_BDC8_06:
+off_BDC8_06_сенегал:
+; 00
 - - - - - - 0x007DD8 01:BDC8: 32        .byte $32   ; 
 - - - - - - 0x007DD9 01:BDC9: 03        .byte $03   ; 
 - - - - - - 0x007DDA 01:BDCA: C2        .byte $C2   ; 
-- - - - - - 0x007DDB 01:BDCB: 00        .byte $00   ; 
+- - - - - - 0x007DDB 01:BDCB: 00        .byte con_skill_00   ; 
+; 01
 - - - - - - 0x007DDC 01:BDCC: 28        .byte $28   ; 
 - - - - - - 0x007DDD 01:BDCD: 03        .byte $03   ; 
 - - - - - - 0x007DDE 01:BDCE: 42        .byte $42   ; 
-- - - - - - 0x007DDF 01:BDCF: 00        .byte $00   ; 
+- - - - - - 0x007DDF 01:BDCF: 00        .byte con_skill_00   ; 
+; 02
 - - - - - - 0x007DE0 01:BDD0: 32        .byte $32   ; 
 - - - - - - 0x007DE1 01:BDD1: 03        .byte $03   ; 
 - - - - - - 0x007DE2 01:BDD2: 42        .byte $42   ; 
-- - - - - - 0x007DE3 01:BDD3: 00        .byte $00   ; 
+- - - - - - 0x007DE3 01:BDD3: 00        .byte con_skill_00   ; 
+; 03
 - - - - - - 0x007DE4 01:BDD4: 28        .byte $28   ; 
 - - - - - - 0x007DE5 01:BDD5: 03        .byte $03   ; 
 - - - - - - 0x007DE6 01:BDD6: 42        .byte $42   ; 
-- - - - - - 0x007DE7 01:BDD7: 00        .byte $00   ; 
+- - - - - - 0x007DE7 01:BDD7: 00        .byte con_skill_00   ; 
+; 04
 - - - - - - 0x007DE8 01:BDD8: 28        .byte $28   ; 
 - - - - - - 0x007DE9 01:BDD9: 03        .byte $03   ; 
 - - - - - - 0x007DEA 01:BDDA: C2        .byte $C2   ; 
-- - - - - - 0x007DEB 01:BDDB: 00        .byte $00   ; 
+- - - - - - 0x007DEB 01:BDDB: 00        .byte con_skill_00   ; 
+; 05
 - - - - - - 0x007DEC 01:BDDC: 32        .byte $32   ; 
 - - - - - - 0x007DED 01:BDDD: 03        .byte $03   ; 
 - - - - - - 0x007DEE 01:BDDE: 42        .byte $42   ; 
-- - - - - - 0x007DEF 01:BDDF: 00        .byte $00   ; 
+- - - - - - 0x007DEF 01:BDDF: 00        .byte con_skill_00   ; 
 
 
 
-off_BDE0_07:
+off_BDE0_07_камерун:
+; 00
 - D 1 - I - 0x007DF0 01:BDE0: 46        .byte $46   ; 
 - D 1 - I - 0x007DF1 01:BDE1: 03        .byte $03   ; 
 - D 1 - I - 0x007DF2 01:BDE2: C2        .byte $C2   ; 
-- D 1 - I - 0x007DF3 01:BDE3: 04        .byte $04   ; 
+- D 1 - I - 0x007DF3 01:BDE3: 04        .byte con_skill_04   ; 
+; 01
 - D 1 - I - 0x007DF4 01:BDE4: 50        .byte $50   ; 
 - D 1 - I - 0x007DF5 01:BDE5: 03        .byte $03   ; 
 - D 1 - I - 0x007DF6 01:BDE6: C1        .byte $C1   ; 
-- D 1 - I - 0x007DF7 01:BDE7: 04        .byte $04   ; 
+- D 1 - I - 0x007DF7 01:BDE7: 04        .byte con_skill_04   ; 
+; 02
 - D 1 - I - 0x007DF8 01:BDE8: 32        .byte $32   ; 
 - D 1 - I - 0x007DF9 01:BDE9: 01        .byte $01   ; 
 - D 1 - I - 0x007DFA 01:BDEA: C2        .byte $C2   ; 
-- D 1 - I - 0x007DFB 01:BDEB: 04        .byte $04   ; 
+- D 1 - I - 0x007DFB 01:BDEB: 04        .byte con_skill_04   ; 
+; 03
 - D 1 - I - 0x007DFC 01:BDEC: 46        .byte $46   ; 
 - D 1 - I - 0x007DFD 01:BDED: 03        .byte $03   ; 
 - D 1 - I - 0x007DFE 01:BDEE: C1        .byte $C1   ; 
-- D 1 - I - 0x007DFF 01:BDEF: 04        .byte $04   ; 
+- D 1 - I - 0x007DFF 01:BDEF: 04        .byte con_skill_04   ; 
+; 04
 - D 1 - I - 0x007E00 01:BDF0: 32        .byte $32   ; 
 - D 1 - I - 0x007E01 01:BDF1: 03        .byte $03   ; 
 - D 1 - I - 0x007E02 01:BDF2: C1        .byte $C1   ; 
-- D 1 - I - 0x007E03 01:BDF3: 04        .byte $04   ; 
+- D 1 - I - 0x007E03 01:BDF3: 04        .byte con_skill_04   ; 
+; 05
 - D 1 - I - 0x007E04 01:BDF4: 46        .byte $46   ; 
 - D 1 - I - 0x007E05 01:BDF5: 03        .byte $03   ; 
 - D 1 - I - 0x007E06 01:BDF6: C1        .byte $C1   ; 
-- D 1 - I - 0x007E07 01:BDF7: 04        .byte $04   ; 
+- D 1 - I - 0x007E07 01:BDF7: 04        .byte con_skill_04   ; 
 
 
 
-off_BDF8_09:
+off_BDF8_09_германия:
+; 00
 - D 1 - I - 0x007E08 01:BDF8: 50        .byte $50   ; 
 - D 1 - I - 0x007E09 01:BDF9: 01        .byte $01   ; 
 - D 1 - I - 0x007E0A 01:BDFA: 82        .byte $82   ; 
-- D 1 - I - 0x007E0B 01:BDFB: 80        .byte $80   ; 
+- D 1 - I - 0x007E0B 01:BDFB: 80        .byte con_skill_80   ; 
+; 01
 - D 1 - I - 0x007E0C 01:BDFC: 46        .byte $46   ; 
 - D 1 - I - 0x007E0D 01:BDFD: 00        .byte $00   ; 
 - D 1 - I - 0x007E0E 01:BDFE: C1        .byte $C1   ; 
-- D 1 - I - 0x007E0F 01:BDFF: 80        .byte $80   ; 
+- D 1 - I - 0x007E0F 01:BDFF: 80        .byte con_skill_80   ; 
+; 02
 - D 1 - I - 0x007E10 01:BE00: 50        .byte $50   ; 
 - D 1 - I - 0x007E11 01:BE01: 00        .byte $00   ; 
 - D 1 - I - 0x007E12 01:BE02: 81        .byte $81   ; 
-- D 1 - I - 0x007E13 01:BE03: 80        .byte $80   ; 
+- D 1 - I - 0x007E13 01:BE03: 80        .byte con_skill_80   ; 
+; 03
 - D 1 - I - 0x007E14 01:BE04: 50        .byte $50   ; 
 - D 1 - I - 0x007E15 01:BE05: 03        .byte $03   ; 
 - D 1 - I - 0x007E16 01:BE06: 41        .byte $41   ; 
-- D 1 - I - 0x007E17 01:BE07: 80        .byte $80   ; 
+- D 1 - I - 0x007E17 01:BE07: 80        .byte con_skill_80   ; 
+; 04
 - D 1 - I - 0x007E18 01:BE08: 50        .byte $50   ; 
 - D 1 - I - 0x007E19 01:BE09: 00        .byte $00   ; 
 - D 1 - I - 0x007E1A 01:BE0A: C0        .byte $C0   ; 
-- D 1 - I - 0x007E1B 01:BE0B: 80        .byte $80   ; 
+- D 1 - I - 0x007E1B 01:BE0B: 80        .byte con_skill_80   ; 
+; 05
 - D 1 - I - 0x007E1C 01:BE0C: 46        .byte $46   ; 
 - D 1 - I - 0x007E1D 01:BE0D: 00        .byte $00   ; 
 - D 1 - I - 0x007E1E 01:BE0E: 80        .byte $80   ; 
-- D 1 - I - 0x007E1F 01:BE0F: 80        .byte $80   ; 
+- D 1 - I - 0x007E1F 01:BE0F: 80        .byte con_skill_80   ; 
 
 
 
-off_BE10_0A:
+off_BE10_0A_англия:
+; 00
 - - - - - - 0x007E20 01:BE10: 32        .byte $32   ; 
 - - - - - - 0x007E21 01:BE11: 01        .byte $01   ; 
 - - - - - - 0x007E22 01:BE12: 43        .byte $43   ; 
-- - - - - - 0x007E23 01:BE13: 80        .byte $80   ; 
+- - - - - - 0x007E23 01:BE13: 80        .byte con_skill_80   ; 
+; 01
 - - - - - - 0x007E24 01:BE14: 32        .byte $32   ; 
 - - - - - - 0x007E25 01:BE15: 01        .byte $01   ; 
 - - - - - - 0x007E26 01:BE16: C3        .byte $C3   ; 
-- - - - - - 0x007E27 01:BE17: 80        .byte $80   ; 
+- - - - - - 0x007E27 01:BE17: 80        .byte con_skill_80   ; 
+; 02
 - - - - - - 0x007E28 01:BE18: 32        .byte $32   ; 
 - - - - - - 0x007E29 01:BE19: 00        .byte $00   ; 
 - - - - - - 0x007E2A 01:BE1A: C3        .byte $C3   ; 
-- - - - - - 0x007E2B 01:BE1B: 80        .byte $80   ; 
+- - - - - - 0x007E2B 01:BE1B: 80        .byte con_skill_80   ; 
+; 03
 - - - - - - 0x007E2C 01:BE1C: 46        .byte $46   ; 
 - - - - - - 0x007E2D 01:BE1D: 01        .byte $01   ; 
 - - - - - - 0x007E2E 01:BE1E: 43        .byte $43   ; 
-- - - - - - 0x007E2F 01:BE1F: 80        .byte $80   ; 
+- - - - - - 0x007E2F 01:BE1F: 80        .byte con_skill_80   ; 
+; 04
 - - - - - - 0x007E30 01:BE20: 46        .byte $46   ; 
 - - - - - - 0x007E31 01:BE21: 02        .byte $02   ; 
 - - - - - - 0x007E32 01:BE22: 43        .byte $43   ; 
-- - - - - - 0x007E33 01:BE23: 80        .byte $80   ; 
+- - - - - - 0x007E33 01:BE23: 80        .byte con_skill_80   ; 
+; 05
 - - - - - - 0x007E34 01:BE24: 46        .byte $46   ; 
 - - - - - - 0x007E35 01:BE25: 02        .byte $02   ; 
 - - - - - - 0x007E36 01:BE26: 43        .byte $43   ; 
-- - - - - - 0x007E37 01:BE27: 80        .byte $80   ; 
+- - - - - - 0x007E37 01:BE27: 80        .byte con_skill_80   ; 
 
 
 
-off_BE28_0B:
+off_BE28_0B_италия:
+; 00
 - D 1 - I - 0x007E38 01:BE28: 50        .byte $50   ; 
 - D 1 - I - 0x007E39 01:BE29: 03        .byte $03   ; 
 - D 1 - I - 0x007E3A 01:BE2A: C2        .byte $C2   ; 
-- D 1 - I - 0x007E3B 01:BE2B: 14        .byte $14   ; 
+- D 1 - I - 0x007E3B 01:BE2B: 14        .byte con_skill_04 + con_skill_10   ; 
+; 01
 - D 1 - I - 0x007E3C 01:BE2C: 50        .byte $50   ; 
 - D 1 - I - 0x007E3D 01:BE2D: 00        .byte $00   ; 
 - D 1 - I - 0x007E3E 01:BE2E: C1        .byte $C1   ; 
-- D 1 - I - 0x007E3F 01:BE2F: 14        .byte $14   ; 
+- D 1 - I - 0x007E3F 01:BE2F: 14        .byte con_skill_04 + con_skill_10   ; 
+; 02
 - D 1 - I - 0x007E40 01:BE30: 46        .byte $46   ; 
 - D 1 - I - 0x007E41 01:BE31: 00        .byte $00   ; 
 - D 1 - I - 0x007E42 01:BE32: C0        .byte $C0   ; 
-- D 1 - I - 0x007E43 01:BE33: 14        .byte $14   ; 
+- D 1 - I - 0x007E43 01:BE33: 14        .byte con_skill_04 + con_skill_10   ; 
+; 03
 - D 1 - I - 0x007E44 01:BE34: 46        .byte $46   ; 
 - D 1 - I - 0x007E45 01:BE35: 03        .byte $03   ; 
 - D 1 - I - 0x007E46 01:BE36: C0        .byte $C0   ; 
-- D 1 - I - 0x007E47 01:BE37: 14        .byte $14   ; 
+- D 1 - I - 0x007E47 01:BE37: 14        .byte con_skill_04 + con_skill_10   ; 
+; 04
 - D 1 - I - 0x007E48 01:BE38: 50        .byte $50   ; 
 - D 1 - I - 0x007E49 01:BE39: 03        .byte $03   ; 
 - D 1 - I - 0x007E4A 01:BE3A: C1        .byte $C1   ; 
-- D 1 - I - 0x007E4B 01:BE3B: 14        .byte $14   ; 
+- D 1 - I - 0x007E4B 01:BE3B: 14        .byte con_skill_04 + con_skill_10   ; 
+; 05
 - D 1 - I - 0x007E4C 01:BE3C: 50        .byte $50   ; 
 - D 1 - I - 0x007E4D 01:BE3D: 03        .byte $03   ; 
 - D 1 - I - 0x007E4E 01:BE3E: 40        .byte $40   ; 
-- D 1 - I - 0x007E4F 01:BE3F: 14        .byte $14   ; 
+- D 1 - I - 0x007E4F 01:BE3F: 14        .byte con_skill_04 + con_skill_10   ; 
 
 
 
-off_BE40_0D:
+off_BE40_0D_бразилия:
+; 00
 - D 1 - I - 0x007E50 01:BE40: 50        .byte $50   ; 
 - D 1 - I - 0x007E51 01:BE41: 03        .byte $03   ; 
 - D 1 - I - 0x007E52 01:BE42: C1        .byte $C1   ; 
-- D 1 - I - 0x007E53 01:BE43: 04        .byte $04   ; 
+- D 1 - I - 0x007E53 01:BE43: 04        .byte con_skill_04   ; 
+; 01
 - D 1 - I - 0x007E54 01:BE44: 46        .byte $46   ; 
 - D 1 - I - 0x007E55 01:BE45: 00        .byte $00   ; 
 - D 1 - I - 0x007E56 01:BE46: C2        .byte $C2   ; 
-- D 1 - I - 0x007E57 01:BE47: 04        .byte $04   ; 
+- D 1 - I - 0x007E57 01:BE47: 04        .byte con_skill_04   ; 
+; 02
 - D 1 - I - 0x007E58 01:BE48: 46        .byte $46   ; 
 - D 1 - I - 0x007E59 01:BE49: 03        .byte $03   ; 
 - D 1 - I - 0x007E5A 01:BE4A: 42        .byte $42   ; 
-- D 1 - I - 0x007E5B 01:BE4B: 04        .byte $04   ; 
+- D 1 - I - 0x007E5B 01:BE4B: 04        .byte con_skill_04   ; 
+; 03
 - D 1 - I - 0x007E5C 01:BE4C: 46        .byte $46   ; 
 - D 1 - I - 0x007E5D 01:BE4D: 00        .byte $00   ; 
 - D 1 - I - 0x007E5E 01:BE4E: 41        .byte $41   ; 
-- D 1 - I - 0x007E5F 01:BE4F: 04        .byte $04   ; 
+- D 1 - I - 0x007E5F 01:BE4F: 04        .byte con_skill_04   ; 
+; 04
 - D 1 - I - 0x007E60 01:BE50: 50        .byte $50   ; 
 - D 1 - I - 0x007E61 01:BE51: 03        .byte $03   ; 
 - D 1 - I - 0x007E62 01:BE52: C1        .byte $C1   ; 
-- D 1 - I - 0x007E63 01:BE53: 04        .byte $04   ; 
+- D 1 - I - 0x007E63 01:BE53: 04        .byte con_skill_04   ; 
+; 05
 - D 1 - I - 0x007E64 01:BE54: 46        .byte $46   ; 
 - D 1 - I - 0x007E65 01:BE55: 03        .byte $03   ; 
 - D 1 - I - 0x007E66 01:BE56: C0        .byte $C0   ; 
-- D 1 - I - 0x007E67 01:BE57: 04        .byte $04   ; 
+- D 1 - I - 0x007E67 01:BE57: 04        .byte con_skill_04   ; 
 
 
 
-off_BE58_0E:
+off_BE58_0E_аргентина:
+; 00
 - D 1 - I - 0x007E68 01:BE58: 46        .byte $46   ; 
 - D 1 - I - 0x007E69 01:BE59: 03        .byte $03   ; 
 - D 1 - I - 0x007E6A 01:BE5A: 82        .byte $82   ; 
-- D 1 - I - 0x007E6B 01:BE5B: 90        .byte $90   ; 
+- D 1 - I - 0x007E6B 01:BE5B: 90        .byte con_skill_10 + con_skill_80   ; 
+; 01
 - D 1 - I - 0x007E6C 01:BE5C: 32        .byte $32   ; 
 - D 1 - I - 0x007E6D 01:BE5D: 00        .byte $00   ; 
 - D 1 - I - 0x007E6E 01:BE5E: C2        .byte $C2   ; 
-- D 1 - I - 0x007E6F 01:BE5F: 90        .byte $90   ; 
+- D 1 - I - 0x007E6F 01:BE5F: 90        .byte con_skill_10 + con_skill_80   ; 
+; 02
 - D 1 - I - 0x007E70 01:BE60: 46        .byte $46   ; 
 - D 1 - I - 0x007E71 01:BE61: 01        .byte $01   ; 
 - D 1 - I - 0x007E72 01:BE62: C2        .byte $C2   ; 
-- D 1 - I - 0x007E73 01:BE63: 90        .byte $90   ; 
+- D 1 - I - 0x007E73 01:BE63: 90        .byte con_skill_10 + con_skill_80   ; 
+; 03
 - D 1 - I - 0x007E74 01:BE64: 28        .byte $28   ; 
 - D 1 - I - 0x007E75 01:BE65: 03        .byte $03   ; 
 - D 1 - I - 0x007E76 01:BE66: 82        .byte $82   ; 
-- D 1 - I - 0x007E77 01:BE67: 90        .byte $90   ; 
+- D 1 - I - 0x007E77 01:BE67: 90        .byte con_skill_10 + con_skill_80   ; 
+; 04
 - D 1 - I - 0x007E78 01:BE68: 32        .byte $32   ; 
 - D 1 - I - 0x007E79 01:BE69: 01        .byte $01   ; 
 - D 1 - I - 0x007E7A 01:BE6A: 82        .byte $82   ; 
-- D 1 - I - 0x007E7B 01:BE6B: 90        .byte $90   ; 
+- D 1 - I - 0x007E7B 01:BE6B: 90        .byte con_skill_10 + con_skill_80   ; 
+; 05
 - D 1 - I - 0x007E7C 01:BE6C: 46        .byte $46   ; 
 - D 1 - I - 0x007E7D 01:BE6D: 03        .byte $03   ; 
 - D 1 - I - 0x007E7E 01:BE6E: C0        .byte $C0   ; 
-- D 1 - I - 0x007E7F 01:BE6F: 90        .byte $90   ; 
+- D 1 - I - 0x007E7F 01:BE6F: 90        .byte con_skill_10 + con_skill_80   ; 
 
 
 
-off_BE70_0F:
+off_BE70_0F_мексика:
+; 00
 - D 1 - I - 0x007E80 01:BE70: 46        .byte $46   ; 
 - D 1 - I - 0x007E81 01:BE71: 03        .byte $03   ; 
 - D 1 - I - 0x007E82 01:BE72: 82        .byte $82   ; 
-- D 1 - I - 0x007E83 01:BE73: 08        .byte $08   ; 
+- D 1 - I - 0x007E83 01:BE73: 08        .byte con_skill_08   ; 
+; 01
 - D 1 - I - 0x007E84 01:BE74: 28        .byte $28   ; 
 - D 1 - I - 0x007E85 01:BE75: 01        .byte $01   ; 
 - D 1 - I - 0x007E86 01:BE76: C2        .byte $C2   ; 
-- D 1 - I - 0x007E87 01:BE77: 08        .byte $08   ; 
+- D 1 - I - 0x007E87 01:BE77: 08        .byte con_skill_08   ; 
+; 02
 - D 1 - I - 0x007E88 01:BE78: 28        .byte $28   ; 
 - D 1 - I - 0x007E89 01:BE79: 01        .byte $01   ; 
 - D 1 - I - 0x007E8A 01:BE7A: 02        .byte $02   ; 
-- D 1 - I - 0x007E8B 01:BE7B: 08        .byte $08   ; 
+- D 1 - I - 0x007E8B 01:BE7B: 08        .byte con_skill_08   ; 
+; 03
 - D 1 - I - 0x007E8C 01:BE7C: 32        .byte $32   ; 
 - D 1 - I - 0x007E8D 01:BE7D: 03        .byte $03   ; 
 - D 1 - I - 0x007E8E 01:BE7E: 42        .byte $42   ; 
-- D 1 - I - 0x007E8F 01:BE7F: 08        .byte $08   ; 
+- D 1 - I - 0x007E8F 01:BE7F: 08        .byte con_skill_08   ; 
+; 04
 - D 1 - I - 0x007E90 01:BE80: 23        .byte $23   ; 
 - D 1 - I - 0x007E91 01:BE81: 01        .byte $01   ; 
 - D 1 - I - 0x007E92 01:BE82: 02        .byte $02   ; 
-- D 1 - I - 0x007E93 01:BE83: 08        .byte $08   ; 
+- D 1 - I - 0x007E93 01:BE83: 08        .byte con_skill_08   ; 
+; 05
 - D 1 - I - 0x007E94 01:BE84: 28        .byte $28   ; 
 - D 1 - I - 0x007E95 01:BE85: 01        .byte $01   ; 
 - D 1 - I - 0x007E96 01:BE86: C2        .byte $C2   ; 
-- D 1 - I - 0x007E97 01:BE87: 08        .byte $08   ; 
+- D 1 - I - 0x007E97 01:BE87: 08        .byte con_skill_08   ; 
 
 
 
