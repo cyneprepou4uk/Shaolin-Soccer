@@ -7722,12 +7722,9 @@ C D 3 - - - 0x01EB9C 07:EB8C: A9 00     LDA #$00
 C - - - - - 0x01EB9E 07:EB8E: 85 1C     STA ram_001C
 C - - - - - 0x01EBA0 07:EB90: 85 1D     STA ram_001D
 C - - - - - 0x01EBA2 07:EB92: A4 F4     LDY ram_00F4
-C - - - - - 0x01EBA4 07:EB94: AD 58 00  LDA ram_script  ; bzk опт, проверить сразу на con_script_меню
-C - - - - - 0x01EBA7 07:EB97: F0 14     BEQ bra_EBAD_это_не_меню    ; если игра на поле
-C - - - - - 0x01EBA9 07:EB99: C9 01     CMP #con_script_логотип
-C - - - - - 0x01EBAB 07:EB9B: F0 10     BEQ bra_EBAD_это_не_меню
-C - - - - - 0x01EBAD 07:EB9D: C9 03     CMP #con_script_титры
-C - - - - - 0x01EBAF 07:EB9F: F0 0C     BEQ bra_EBAD_это_не_меню
+C - - - - - 0x01EBA4 07:EB94: AD 58 00  LDA ram_script
+                                        CMP #con_script_меню
+                                        BNE bra_EBAD_это_не_меню
 C - - - - - 0x01EBB1 07:EBA1: B5 74     LDA ram_анимация_игрока,X
 C - - - - - 0x01EBB3 07:EBA3: 29 7F     AND #$7F
 C - - - - - 0x01EBB5 07:EBA5: C9 7F     CMP #$7F
