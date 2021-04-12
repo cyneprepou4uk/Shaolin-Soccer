@@ -188,6 +188,35 @@ con_action_5C                           = $5C ; вратарская крути�
 
 
 
+; ram_действие_мяча             = $0465     нужны комменты в 0x018CBF
+con_act_ball_00                 = $00 ; 
+con_act_ball_01                 = $01 ; 
+con_act_ball_02                 = $02 ; 
+con_act_ball_03                 = $03 ; 
+con_act_ball_04                 = $04 ; 
+con_act_ball_05                 = $05 ; 
+con_act_ball_06                 = $06 ; 
+con_act_ball_07                 = $07 ; 
+con_act_ball_08                 = $08 ; 
+con_act_ball_09                 = $09 ; 
+con_act_ball_0A                 = $0A ; 
+con_act_ball_0B                 = $0B ; 
+con_act_ball_0C                 = $0C ; 
+con_act_ball_0D                 = $0D ; 
+con_act_ball_0E                 = $0E ; 
+con_act_ball_0F                 = $0F ; 
+con_act_ball_10                 = $10 ; 
+con_act_ball_11                 = $11 ; 
+con_act_ball_12                 = $12 ; 
+con_act_ball_13                 = $13 ; 
+con_act_ball_14                 = $14 ; 
+con_act_ball_15                 = $15 ; 
+con_act_ball_16                 = $16 ; 
+con_act_ball_17                 = $17 ; 
+con_act_ball_18                 = $18 ; 
+
+
+
 ; ram_погодный_эффект           = $0466
 con_погода_выкл                 = $00 ; нет погоды
 con_погода_молния               = $01 ; молния

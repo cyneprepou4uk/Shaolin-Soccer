@@ -500,7 +500,7 @@ C - - - - - 0x018349 06:8339: 20 A7 A5  JSR sub_A5A7_воспроизвести_
 C - - - - - 0x01834C 06:833C: 20 29 9D  JSR sub_9D29_вычислить_флаг_зеркала_анимации
 C - - - - - 0x01834F 06:833F: AD 65 04  LDA ram_действие_мяча
 C - - - - - 0x018352 06:8342: 29 7F     AND #$7F
-C - - - - - 0x018354 06:8344: C9 09     CMP #$09
+C - - - - - 0x018354 06:8344: C9 09     CMP #con_act_ball_09
 C - - - - - 0x018356 06:8346: F0 03     BEQ bra_834B_RTS
 C - - - - - 0x018358 06:8348: 20 6C 8B  JSR sub_8B6C_вычислить_следующий_номер_движения
 bra_834B_RTS:
@@ -1974,7 +1974,7 @@ bra_8D30:
 
 
 ofs_8D39_0F:
-C - - J - - 0x018D49 06:8D39: A9 02     LDA #con_action_02
+C - - J - - 0x018D49 06:8D39: A9 02     LDA #con_act_ball_02
 C - - - - - 0x018D4B 06:8D3B: 9D 59 04  STA ram_действие_мяча
 C - - - - - 0x018D4E 06:8D3E: A9 00     LDA #$00
 C - - - - - 0x018D50 06:8D40: 8D 25 05  STA ram_таймер_электр_мяча
@@ -2139,7 +2139,7 @@ C - - - - - 0x018E8C 06:8E7C: 10 10     BPL bra_8E8E_RTS
 C - - - - - 0x018E8E 06:8E7E: 29 7F     AND #$7F
 C - - - - - 0x018E90 06:8E80: C9 02     CMP #con_action_02
 C - - - - - 0x018E92 06:8E82: F0 0A     BEQ bra_8E8E_RTS
-C - - - - - 0x018E94 06:8E84: A9 11     LDA #$11
+C - - - - - 0x018E94 06:8E84: A9 11     LDA #con_act_ball_11
 C - - - - - 0x018E96 06:8E86: 8D 65 04  STA ram_действие_мяча
 C - - - - - 0x018E99 06:8E89: A9 00     LDA #$00
 C - - - - - 0x018E9B 06:8E8B: 9D 74 00  STA ram_номер_анимации_мяча
@@ -2174,7 +2174,7 @@ C - - - - - 0x018ED2 06:8EC2: 20 95 9B  JSR sub_9B95_сдвинуть_объек
 C - - - - - 0x018ED5 06:8EC5: 20 75 94  JSR sub_9475
 C - - - - - 0x018ED8 06:8EC8: BD 2E 04  LDA ram_spd_Z_hi_мяча
 C - - - - - 0x018EDB 06:8ECB: 10 05     BPL bra_8ED2
-C - - - - - 0x018EDD 06:8ECD: A9 06     LDA #con_action_06
+C - - - - - 0x018EDD 06:8ECD: A9 06     LDA #con_act_ball_06
 C - - - - - 0x018EDF 06:8ECF: 9D 59 04  STA ram_действие_мяча
 bra_8ED2:
 C - - - - - 0x018EE2 06:8ED2: 4C 97 8F  JMP loc_8F97
@@ -2184,7 +2184,7 @@ C - - - - - 0x018EE8 06:8ED8: 20 95 9B  JSR sub_9B95_сдвинуть_объек
 C - - - - - 0x018EEB 06:8EDB: A9 00     LDA #$00
 C - - - - - 0x018EED 06:8EDD: 9D 20 04  STA ram_spd_Z_lo_мяча
 C - - - - - 0x018EF0 06:8EE0: 9D 2E 04  STA ram_spd_Z_hi_мяча
-C - - - - - 0x018EF3 06:8EE3: A9 07     LDA #con_action_07
+C - - - - - 0x018EF3 06:8EE3: A9 07     LDA #con_act_ball_07
 C - - - - - 0x018EF5 06:8EE5: 9D 59 04  STA ram_действие_мяча
 C - - - - - 0x018EF8 06:8EE8: 60        RTS
 
@@ -2228,7 +2228,7 @@ C - - - - - 0x018F48 06:8F38: 0D 10 05  ORA ram_подтип_супера
 C - - - - - 0x018F4B 06:8F3B: D0 0D     BNE bra_8F4A
 C - - - - - 0x018F4D 06:8F3D: BD 59 04  LDA ram_действие_мяча
 C - - - - - 0x018F50 06:8F40: 10 08     BPL bra_8F4A
-C - - - - - 0x018F52 06:8F42: A9 06     LDA #con_action_06
+C - - - - - 0x018F52 06:8F42: A9 06     LDA #con_act_ball_06
 C - - - - - 0x018F54 06:8F44: 9D 59 04  STA ram_действие_мяча
 C - - - - - 0x018F57 06:8F47: 4C 97 8F  JMP loc_8F97
 bra_8F4A:
@@ -2294,8 +2294,8 @@ bra_8FC5_RTS:
 C - - - - - 0x018FD5 06:8FC5: 60        RTS
 
 tbl_8FC6:
-- D 0 - - - 0x018FD6 06:8FC6: 08        .byte con_action_08   ; 
-- D 0 - - - 0x018FD7 06:8FC7: 01        .byte con_action_стоит_на_месте   ; 
+- D 0 - - - 0x018FD6 06:8FC6: 08        .byte con_act_ball_08   ; 
+- D 0 - - - 0x018FD7 06:8FC7: 01        .byte con_act_ball_01   ; 
 
 
 
@@ -2370,7 +2370,7 @@ bra_9043:
 - - - - - - 0x019060 06:9050: 20 95 9B  JSR sub_9B95_сдвинуть_объект
 - - - - - - 0x019063 06:9053: 20 42 96  JSR sub_9642
 - - - - - - 0x019066 06:9056: 20 D3 B1  JSR sub_B1D3
-- - - - - - 0x019069 06:9059: A9 07     LDA #$07
+- - - - - - 0x019069 06:9059: A9 07     LDA #con_act_ball_07
 - - - - - - 0x01906B 06:905B: 8D 65 04  STA ram_действие_мяча
 - - - - - - 0x01906E 06:905E: 60        RTS
 
@@ -2412,7 +2412,7 @@ C - - - - - 0x0190B1 06:90A1: B0 10     BCS bra_90B3
 C - - - - - 0x0190B3 06:90A3: A9 00     LDA #$00
 C - - - - - 0x0190B5 06:90A5: 9D 20 04  STA ram_spd_Z_lo_мяча
 C - - - - - 0x0190B8 06:90A8: 9D 2E 04  STA ram_spd_Z_hi_мяча
-C - - - - - 0x0190BB 06:90AB: A9 07     LDA #con_action_07
+C - - - - - 0x0190BB 06:90AB: A9 07     LDA #con_act_ball_07
 C - - - - - 0x0190BD 06:90AD: 9D 59 04  STA ram_действие_мяча
 C - - - - - 0x0190C0 06:90B0: 4C C6 90  JMP loc_90C6
 bra_90B3:
@@ -2421,7 +2421,7 @@ C - - - - - 0x0190C6 06:90B6: 10 0E     BPL bra_90C6
 C - - - - - 0x0190C8 06:90B8: 20 D3 98  JSR sub_98D3_начальная_Z_скорость_мяча
 C - - - - - 0x0190CB 06:90BB: 20 95 9B  JSR sub_9B95_сдвинуть_объект
 C - - - - - 0x0190CE 06:90BE: 20 56 98  JSR sub_9856
-C - - - - - 0x0190D1 06:90C1: A9 06     LDA #con_action_06
+C - - - - - 0x0190D1 06:90C1: A9 06     LDA #con_act_ball_06
 C - - - - - 0x0190D3 06:90C3: 9D 59 04  STA ram_действие_мяча
 bra_90C6:
 loc_90C6:
@@ -2487,7 +2487,7 @@ C - - - - - 0x019148 06:9138: B9 99 03  LDA ram_pos_Z_hi_игрока,Y
 C - - - - - 0x01914B 06:913B: 9D 99 03  STA ram_pos_Z_hi_мяча
 loc_913E:
 C - - - - - 0x01914E 06:913E: 20 42 96  JSR sub_9642
-C - - - - - 0x019151 06:9141: A9 03     LDA #con_action_03
+C - - - - - 0x019151 06:9141: A9 03     LDA #con_act_ball_03
 C - - - - - 0x019153 06:9143: 9D 59 04  STA ram_действие_мяча
 bra_9146_RTS:
 C - - - - - 0x019156 06:9146: 60        RTS
@@ -2682,7 +2682,7 @@ bra_92C8:
 loc_92C8:
 C D 0 - - - 0x0192D8 06:92C8: 20 42 96  JSR sub_9642
 C - - - - - 0x0192DB 06:92CB: 20 95 9B  JSR sub_9B95_сдвинуть_объект
-C - - - - - 0x0192DE 06:92CE: A9 06     LDA #con_action_06
+C - - - - - 0x0192DE 06:92CE: A9 06     LDA #con_act_ball_06
 C - - - - - 0x0192E0 06:92D0: 9D 59 04  STA ram_действие_мяча
 C - - - - - 0x0192E3 06:92D3: 60        RTS
 
@@ -2769,7 +2769,7 @@ C - - - - - 0x01938E 06:937E: 20 D3 98  JSR sub_98D3_начальная_Z_ско
 bra_9381:
 C - - - - - 0x019391 06:9381: 20 42 96  JSR sub_9642
 C - - - - - 0x019394 06:9384: 20 95 9B  JSR sub_9B95_сдвинуть_объект
-C - - - - - 0x019397 06:9387: A9 06     LDA #con_action_06
+C - - - - - 0x019397 06:9387: A9 06     LDA #con_act_ball_06
 C - - - - - 0x019399 06:9389: 9D 59 04  STA ram_действие_мяча
 C - - - - - 0x01939C 06:938C: 60        RTS
 
@@ -2800,7 +2800,7 @@ C - - - - - 0x0193CF 06:93BF: EE 26 05  INC ram_таймер_чеканки
 C - - - - - 0x0193D2 06:93C2: AD 26 05  LDA ram_таймер_чеканки
 C - - - - - 0x0193D5 06:93C5: C9 0E     CMP #$0E
 C - - - - - 0x0193D7 06:93C7: 90 05     BCC bra_93CE
-C - - - - - 0x0193D9 06:93C9: A9 06     LDA #con_action_06
+C - - - - - 0x0193D9 06:93C9: A9 06     LDA #con_act_ball_06
 C - - - - - 0x0193DB 06:93CB: 9D 59 04  STA ram_действие_мяча
 bra_93CE:
 C - - - - - 0x0193DE 06:93CE: 4C 97 8F  JMP loc_8F97
@@ -4252,7 +4252,7 @@ C - - - - - 0x019D47 06:9D37: D0 20     BNE bra_9D59_не_менять_зерк�
 bra_9D39_в_воздухе:
 C - - - - - 0x019D49 06:9D39: AD 65 04  LDA ram_действие_мяча
 C - - - - - 0x019D4C 06:9D3C: 29 7F     AND #$7F
-C - - - - - 0x019D4E 06:9D3E: C9 09     CMP #$09
+C - - - - - 0x019D4E 06:9D3E: C9 09     CMP #con_act_ball_09
 C - - - - - 0x019D50 06:9D40: D0 17     BNE bra_9D59_не_менять_зеркало
 C - - - - - 0x019D52 06:9D42: 38        SEC
 C - - - - - 0x019D53 06:9D43: AD 20 03  LDA ram_pos_X_lo_мяча
@@ -4559,7 +4559,7 @@ C - - - - - 0x019F54 06:9F44: 29 40     AND #con_state_владеет_мячом
 C - - - - - 0x019F56 06:9F46: F0 12     BEQ bra_9F5A_не_владеет_мячом
 bra_9F48_владеет_мячом:
 - - - - - - 0x019F58 06:9F48: 8C D6 04  STY ram_игрок_с_мячом
-- - - - - - 0x019F5B 06:9F4B: A9 09     LDA #$09
+- - - - - - 0x019F5B 06:9F4B: A9 09     LDA #con_act_ball_09
 - - - - - - 0x019F5D 06:9F4D: 8D 65 04  STA ram_действие_мяча
 - - - - - - 0x019F60 06:9F50: A9 0B     LDA #con_action_0B
 - - - - - - 0x019F62 06:9F52: 99 59 04  STA ram_действие_игрока,Y
@@ -4589,7 +4589,7 @@ C - - - - - 0x019FB4 06:9FA4: 9D 30 01  STA ram_на_чем_стоит_игро�
 C - - - - - 0x019FB7 06:9FA7: A0 00     LDY #$00
 C - - - - - 0x019FB9 06:9FA9: AD 65 04  LDA ram_действие_мяча
 C - - - - - 0x019FBC 06:9FAC: 29 7F     AND #$7F
-C - - - - - 0x019FBE 06:9FAE: C9 12     CMP #$12
+C - - - - - 0x019FBE 06:9FAE: C9 12     CMP #con_act_ball_12
 C - - - - - 0x019FC0 06:9FB0: D0 02     BNE bra_9FB4
 C - - - - - 0x019FC2 06:9FB2: C8        INY
 C - - - - - 0x019FC3 06:9FB3: C8        INY
@@ -7448,7 +7448,7 @@ C - - - - - 0x01AD92 06:AD82: F0 EE     BEQ bra_AD95_RTS
 bra_AD84:
 C - - - - - 0x01AD94 06:AD84: A4 1D     LDY ram_001D
 C - - - - - 0x01AD96 06:AD86: 8C D6 04  STY ram_игрок_с_мячом
-C - - - - - 0x01AD99 06:AD89: A9 05     LDA #$05
+C - - - - - 0x01AD99 06:AD89: A9 05     LDA #con_act_ball_05
 loc_AD8B_запись_действия_мяча:
 C D 1 - - - 0x01AD9B 06:AD8B: 8D 65 04  STA ram_действие_мяча
 C - - - - - 0x01AD9E 06:AD8E: A8        TAY
@@ -7465,7 +7465,7 @@ C - - - - - 0x01ADAA 06:AD9A: 20 E4 C2  JSR sub_0x01C2F4_воспроизвес�
 C - - - - - 0x01ADAD 06:AD9D: A4 1D     LDY ram_001D
 C - - - - - 0x01ADAF 06:AD9F: 20 63 AF  JSR sub_AF63
 C - - - - - 0x01ADB2 06:ADA2: 8C D6 04  STY ram_игрок_с_мячом
-C - - - - - 0x01ADB5 06:ADA5: A9 04     LDA #$04
+C - - - - - 0x01ADB5 06:ADA5: A9 04     LDA #con_act_ball_04
 C - - - - - 0x01ADB7 06:ADA7: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 
 
@@ -7476,7 +7476,7 @@ C - - - - - 0x01ADBC 06:ADAC: 20 E4 C2  JSR sub_0x01C2F4_воспроизвес�
 C - - - - - 0x01ADBF 06:ADAF: A4 1D     LDY ram_001D
 C - - - - - 0x01ADC1 06:ADB1: 20 63 AF  JSR sub_AF63
 C - - - - - 0x01ADC4 06:ADB4: 8C D6 04  STY ram_игрок_с_мячом
-C - - - - - 0x01ADC7 06:ADB7: A9 0A     LDA #$0A
+C - - - - - 0x01ADC7 06:ADB7: A9 0A     LDA #con_act_ball_0A
 C - - - - - 0x01ADC9 06:ADB9: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 
 
@@ -7485,7 +7485,7 @@ ofs_ADBC_04:
 C - - J - - 0x01ADCC 06:ADBC: A4 1D     LDY ram_001D
 C - - - - - 0x01ADCE 06:ADBE: 20 63 AF  JSR sub_AF63
 C - - - - - 0x01ADD1 06:ADC1: 8C D6 04  STY ram_игрок_с_мячом
-C - - - - - 0x01ADD4 06:ADC4: A9 0C     LDA #$0C
+C - - - - - 0x01ADD4 06:ADC4: A9 0C     LDA #con_act_ball_0C
 C - - - - - 0x01ADD6 06:ADC6: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 
 
@@ -7496,13 +7496,13 @@ C - - - - - 0x01ADDC 06:ADCC: A4 1D     LDY ram_001D
 C - - - - - 0x01ADDE 06:ADCE: 20 63 AF  JSR sub_AF63
 C - - - - - 0x01ADE1 06:ADD1: AD 65 04  LDA ram_действие_мяча
 C - - - - - 0x01ADE4 06:ADD4: 29 7F     AND #$7F
-C - - - - - 0x01ADE6 06:ADD6: C9 09     CMP #$09
+C - - - - - 0x01ADE6 06:ADD6: C9 09     CMP #con_act_ball_09
 C - - - - - 0x01ADE8 06:ADD8: F0 11     BEQ bra_ADEB_RTS
-C - - - - - 0x01ADEA 06:ADDA: C9 0A     CMP #$0A
+C - - - - - 0x01ADEA 06:ADDA: C9 0A     CMP #con_act_ball_0A
 C - - - - - 0x01ADEC 06:ADDC: F0 17     BEQ bra_ADF5
-C - - - - - 0x01ADEE 06:ADDE: C9 03     CMP #$03
+C - - - - - 0x01ADEE 06:ADDE: C9 03     CMP #con_act_ball_03
 C - - - - - 0x01ADF0 06:ADE0: F0 0C     BEQ bra_ADEE
-C - - - - - 0x01ADF2 06:ADE2: C9 15     CMP #$15
+C - - - - - 0x01ADF2 06:ADE2: C9 15     CMP #con_act_ball_15
 C - - - - - 0x01ADF4 06:ADE4: D0 28     BNE bra_AE0E
 C - - - - - 0x01ADF6 06:ADE6: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x01ADF9 06:ADE9: 30 23     BMI bra_AE0E    ; если в воздухе
@@ -7539,10 +7539,10 @@ C - - - - - 0x01AE37 06:AE27: 20 7B B0  JSR sub_B07B
 C - - - - - 0x01AE3A 06:AE2A: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01AE3C 06:AE2C: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x01AE3E 06:AE2E: F0 05     BEQ bra_AE35
-C - - - - - 0x01AE40 06:AE30: A9 11     LDA #$11
+C - - - - - 0x01AE40 06:AE30: A9 11     LDA #con_act_ball_11
 C - - - - - 0x01AE42 06:AE32: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 bra_AE35:
-C - - - - - 0x01AE45 06:AE35: A9 12     LDA #$12
+C - - - - - 0x01AE45 06:AE35: A9 12     LDA #con_act_ball_12
 C - - - - - 0x01AE47 06:AE37: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 bra_AE3A:
 C - - - - - 0x01AE4A 06:AE3A: 20 5D B0  JSR sub_B05D_толкнуть_игрока_мокрым_мячом
@@ -7579,7 +7579,7 @@ loc_AE75:
 C D 1 - - - 0x01AE85 06:AE75: BD 86 03  LDA ram_pos_Z_lo_игрока,X
 C - - - - - 0x01AE88 06:AE78: D0 05     BNE bra_AE7F
 bra_AE7A:
-C - - - - - 0x01AE8A 06:AE7A: A9 03     LDA #$03
+C - - - - - 0x01AE8A 06:AE7A: A9 03     LDA #con_act_ball_03
 C - - - - - 0x01AE8C 06:AE7C: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 bra_AE7F:
 C - - - - - 0x01AE8F 06:AE7F: 20 5D B0  JSR sub_B05D_толкнуть_игрока_мокрым_мячом
@@ -7588,7 +7588,7 @@ C - - - - - 0x01AE94 06:AE84: 20 7B B0  JSR sub_B07B
 loc_AE87:
 C D 1 - - - 0x01AE97 06:AE87: A9 23     LDA #con_sfx_принять_мяч
 C - - - - - 0x01AE99 06:AE89: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x01AE9C 06:AE8C: A9 09     LDA #$09
+C - - - - - 0x01AE9C 06:AE8C: A9 09     LDA #con_act_ball_09
 C - - - - - 0x01AE9E 06:AE8E: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 bra_AE91:
 C - - - - - 0x01AEA1 06:AE91: BD 86 03  LDA ram_pos_Z_lo_игрока,X
@@ -7599,7 +7599,7 @@ C - - - - - 0x01AEAB 06:AE9B: A9 23     LDA #con_sfx_принять_мяч
 C - - - - - 0x01AEAD 06:AE9D: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x01AEB0 06:AEA0: A9 26     LDA #con_action_26
 C - - - - - 0x01AEB2 06:AEA2: 20 7B B0  JSR sub_B07B
-C - - - - - 0x01AEB5 06:AEA5: A9 15     LDA #$15
+C - - - - - 0x01AEB5 06:AEA5: A9 15     LDA #con_act_ball_15
 C - - - - - 0x01AEB7 06:AEA7: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 
 
@@ -7661,7 +7661,7 @@ C - - - - - 0x01AF26 06:AF16: 8D 92 04  STA ram_состояние_мяча
 C - - - - - 0x01AF29 06:AF19: A4 1D     LDY ram_001D
 C - - - - - 0x01AF2B 06:AF1B: A9 02     LDA #$02
 C - - - - - 0x01AF2D 06:AF1D: 20 D7 A2  JSR sub_A2D7
-C - - - - - 0x01AF30 06:AF20: A9 0F     LDA #$0F
+C - - - - - 0x01AF30 06:AF20: A9 0F     LDA #con_act_ball_0F
 C - - - - - 0x01AF32 06:AF22: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 bra_AF25:
 C - - - - - 0x01AF35 06:AF25: A4 1D     LDY ram_001D
@@ -7670,7 +7670,7 @@ C - - - - - 0x01AF3A 06:AF2A: 30 05     BMI bra_AF31_игрок_в_воздух�
 C - - - - - 0x01AF3C 06:AF2C: A9 11     LDA #con_action_базарит
 C - - - - - 0x01AF3E 06:AF2E: 20 7B B0  JSR sub_B07B
 bra_AF31_игрок_в_воздухе:
-C - - - - - 0x01AF41 06:AF31: A9 17     LDA #$17
+C - - - - - 0x01AF41 06:AF31: A9 17     LDA #con_act_ball_17
 C - - - - - 0x01AF43 06:AF33: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 
 
@@ -7685,7 +7685,7 @@ bra_AF43:
 C - - - - - 0x01AF53 06:AF43: 8C D6 04  STY ram_игрок_с_мячом
 C - - - - - 0x01AF56 06:AF46: A9 26     LDA #con_sfx_словить_отбить
 C - - - - - 0x01AF58 06:AF48: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x01AF5B 06:AF4B: A9 10     LDA #$10
+C - - - - - 0x01AF5B 06:AF4B: A9 10     LDA #con_act_ball_10
 C - - - - - 0x01AF5D 06:AF4D: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 
 
@@ -7698,7 +7698,7 @@ C - - - - - 0x01AF66 06:AF56: 68        PLA
 C - - - - - 0x01AF67 06:AF57: 68        PLA
 C - - - - - 0x01AF68 06:AF58: A5 1D     LDA ram_001D
 C - - - - - 0x01AF6A 06:AF5A: 8D D6 04  STA ram_игрок_с_мячом
-C - - - - - 0x01AF6D 06:AF5D: A9 13     LDA #$13
+C - - - - - 0x01AF6D 06:AF5D: A9 13     LDA #con_act_ball_13
 C - - - - - 0x01AF6F 06:AF5F: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 bra_AF62_RTS:
 C - - - - - 0x01AF72 06:AF62: 60        RTS
@@ -7783,7 +7783,7 @@ C - - - - - 0x01B004 06:AFF4: CD F0 04  CMP ram_сила_мяча
 C - - - - - 0x01B007 06:AFF7: 90 0B     BCC bra_B004
 bra_AFF9:
 C - - - - - 0x01B009 06:AFF9: 20 56 98  JSR sub_9856
-C - - - - - 0x01B00C 06:AFFC: A9 17     LDA #$17
+C - - - - - 0x01B00C 06:AFFC: A9 17     LDA #con_act_ball_17
 C - - - - - 0x01B00E 06:AFFE: 8D 65 04  STA ram_действие_мяча
 C - - - - - 0x01B011 06:B001: 8C D6 04  STY ram_игрок_с_мячом
 bra_B004:
@@ -10242,11 +10242,11 @@ C - - - - - 0x01BDA8 06:BD98: 29 40     AND #$40
 C - - - - - 0x01BDAA 06:BD9A: F0 17     BEQ bra_BDB3
 C - - - - - 0x01BDAC 06:BD9C: AD 65 04  LDA ram_действие_мяча
 C - - - - - 0x01BDAF 06:BD9F: 29 7F     AND #$7F
-C - - - - - 0x01BDB1 06:BDA1: C9 03     CMP #$03
+C - - - - - 0x01BDB1 06:BDA1: C9 03     CMP #con_act_ball_03
 C - - - - - 0x01BDB3 06:BDA3: F0 0B     BEQ bra_BDB0
-C - - - - - 0x01BDB5 06:BDA5: C9 09     CMP #$09
+C - - - - - 0x01BDB5 06:BDA5: C9 09     CMP #con_act_ball_09
 C - - - - - 0x01BDB7 06:BDA7: F0 07     BEQ bra_BDB0
-C - - - - - 0x01BDB9 06:BDA9: C9 14     CMP #$14
+C - - - - - 0x01BDB9 06:BDA9: C9 14     CMP #con_act_ball_14
 C - - - - - 0x01BDBB 06:BDAB: F0 03     BEQ bra_BDB0
 C - - - - - 0x01BDBD 06:BDAD: 4C B3 BD  JMP loc_BDB3
 bra_BDB0:
