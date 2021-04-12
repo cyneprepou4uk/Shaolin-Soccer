@@ -2191,7 +2191,7 @@ C - - - - - 0x018EF8 06:8EE8: 60        RTS
 
 
 ofs_8EE9_05:
-C - - J - - 0x018EF9 06:8EE9: BD 59 04  LDA ram_действие_игрока,X
+C - - J - - 0x018EF9 06:8EE9: BD 59 04  LDA ram_действие_мяча
 C - - - - - 0x018EFC 06:8EEC: 30 06     BMI bra_8EF4
 C - - - - - 0x018EFE 06:8EEE: 20 27 99  JSR sub_9927_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x018F01 06:8EF1: 20 BC C2  JSR sub_0x01C2CC
@@ -2226,22 +2226,22 @@ C - - - - - 0x018F42 06:8F32: 20 CB C2  JSR sub_0x01C2DB
 C - - - - - 0x018F45 06:8F35: AD F0 04  LDA ram_сила_мяча
 C - - - - - 0x018F48 06:8F38: 0D 10 05  ORA ram_подтип_супера
 C - - - - - 0x018F4B 06:8F3B: D0 0D     BNE bra_8F4A
-C - - - - - 0x018F4D 06:8F3D: BD 59 04  LDA ram_действие_игрока,X
+C - - - - - 0x018F4D 06:8F3D: BD 59 04  LDA ram_действие_мяча
 C - - - - - 0x018F50 06:8F40: 10 08     BPL bra_8F4A
 C - - - - - 0x018F52 06:8F42: A9 06     LDA #con_action_06
-C - - - - - 0x018F54 06:8F44: 9D 59 04  STA ram_действие_игрока,X
+C - - - - - 0x018F54 06:8F44: 9D 59 04  STA ram_действие_мяча
 C - - - - - 0x018F57 06:8F47: 4C 97 8F  JMP loc_8F97
 bra_8F4A:
 C - - - - - 0x018F5A 06:8F4A: 20 7B 97  JSR sub_977B
-C - - - - - 0x018F5D 06:8F4D: BD 99 03  LDA ram_pos_Z_hi_игрока,X
+C - - - - - 0x018F5D 06:8F4D: BD 99 03  LDA ram_pos_Z_hi_мяча
 C - - - - - 0x018F60 06:8F50: 10 28     BPL bra_8F7A_RTS
 C - - - - - 0x018F62 06:8F52: A9 00     LDA #$00
-C - - - - - 0x018F64 06:8F54: 9D 86 03  STA ram_pos_Z_lo_игрока,X
-C - - - - - 0x018F67 06:8F57: 9D 99 03  STA ram_pos_Z_hi_игрока,X
+C - - - - - 0x018F64 06:8F54: 9D 86 03  STA ram_pos_Z_lo_мяча
+C - - - - - 0x018F67 06:8F57: 9D 99 03  STA ram_pos_Z_hi_мяча
 C - - - - - 0x018F6A 06:8F5A: 20 CB C2  JSR sub_0x01C2DB
 C - - - - - 0x018F6D 06:8F5D: A9 3E     LDA #con_sfx_отскок_супера_от_земли
 C - - - - - 0x018F6F 06:8F5F: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x018F72 06:8F62: BD 30 01  LDA ram_на_чем_стоит_игрок,X
+C - - - - - 0x018F72 06:8F62: BD 30 01  LDA ram_на_чем_стоит_мяч
 C - - - - - 0x018F75 06:8F65: C9 02     CMP #$02
 C - - - - - 0x018F77 06:8F67: 90 11     BCC bra_8F7A_RTS    ; если на траве или луже
 - - - - - - 0x018F79 06:8F69: AD 0F 05  LDA ram_номер_супера
