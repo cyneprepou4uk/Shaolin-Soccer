@@ -13745,7 +13745,7 @@ sub_BA66:
 - - - - - - 0x00BAA0 02:BA90: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 - - - - - - 0x00BAA3 02:BA93: A2 00     LDX #$00
 - - - - - - 0x00BAA5 02:BA95: 8E 68 05  STX ram_номер_управляемого
-- - - - - - 0x00BAA8 02:BA98: CA        DEX
+- - - - - - 0x00BAA8 02:BA98: CA        DEX ; FF
 - - - - - - 0x00BAA9 02:BA99: 8E 69 05  STX ram_номер_управляемого + 1
 - - - - - - 0x00BAAC 02:BA9C: 8E 6A 05  STX ram_номер_управляемого + 2
 - - - - - - 0x00BAAF 02:BA9F: 8E 6B 05  STX ram_номер_управляемого + 3
@@ -13762,7 +13762,7 @@ sub_BA66:
 - - - - - - 0x00BACE 02:BABE: 8D AF 04  STA ram_напр_движ_мяча
 - - - - - - 0x00BAD1 02:BAC1: A9 02     LDA #$02
 - - - - - - 0x00BAD3 02:BAC3: 85 1C     STA ram_001C
-bra_BAC5:
+bra_BAC5_loop:
 - - - - - - 0x00BAD5 02:BAC5: A4 1C     LDY ram_001C
 - - - - - - 0x00BAD7 02:BAC7: BE 1E BB  LDX tbl_BB1E,Y
 - - - - - - 0x00BADA 02:BACA: A9 00     LDA #$00
@@ -13797,7 +13797,7 @@ bra_BAC5:
 - - - - - - 0x00BB24 02:BB14: A9 01     LDA #$01
 - - - - - - 0x00BB26 02:BB16: 9D 27 03  STA ram_pos_X_hi_игрока,X
 - - - - - - 0x00BB29 02:BB19: C6 1C     DEC ram_001C
-- - - - - - 0x00BB2B 02:BB1B: 10 A8     BPL bra_BAC5
+- - - - - - 0x00BB2B 02:BB1B: 10 A8     BPL bra_BAC5_loop
 - - - - - - 0x00BB2D 02:BB1D: 60        RTS
 
 
