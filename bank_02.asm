@@ -12413,7 +12413,7 @@ loc_B45E:
 C D 1 - - - 0x00B46E 02:B45E: A9 FF     LDA #$FF
 C - - - - - 0x00B470 02:B460: 9D B0 04  STA ram_смена_угла_движения,X
 C - - - - - 0x00B473 02:B463: 9D 79 04  STA ram_next_действие_игрока,X
-C - - - - - 0x00B476 02:B466: BD 25 B5  LDA tbl_B525,X
+C - - - - - 0x00B476 02:B466: BD 25 B5  LDA #con_anim_type_04
 C - - - - - 0x00B479 02:B469: 9D 61 00  STA ram_тип_анимации_игрока,X
 C - - - - - 0x00B47C 02:B46C: BD 29 B5  LDA #con_action_07
 C - - - - - 0x00B47F 02:B46F: 9D 59 04  STA ram_действие_игрока,X
@@ -12532,14 +12532,6 @@ tbl_B511:
 - - - - - - 0x00B532 02:B522: 04        .byte $04   ; 
 - - - - - - 0x00B533 02:B523: 04        .byte $04   ; 
 - - - - - - 0x00B534 02:B524: 08        .byte $08   ; 
-
-
-
-tbl_B525:   ; bzk опт
-- D 1 - - - 0x00B535 02:B525: 04        .byte con_anim_type_04   ; 
-- D 1 - - - 0x00B536 02:B526: 04        .byte con_anim_type_04   ; 
-- D 1 - - - 0x00B537 02:B527: 04        .byte con_anim_type_04   ; 
-- D 1 - - - 0x00B538 02:B528: 04        .byte con_anim_type_04   ; 
 
 
 
