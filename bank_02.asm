@@ -12427,8 +12427,9 @@ C - - - - - 0x00B48C 02:B47C: F0 05     BEQ bra_B483
 C - - - - - 0x00B48E 02:B47E: A9 0C     LDA #con_action_0C
 C - - - - - 0x00B490 02:B480: 9D 59 04  STA ram_действие_игрока,X
 bra_B483:
-C - - - - - 0x00B493 02:B483: A9 00     LDA #$00    ; con_state_стоит_идет
+C - - - - - 0x00B493 02:B483: A9 00     LDA #con_state_стоит_идет
 C - - - - - 0x00B495 02:B485: 9D 86 04  STA ram_состояние_игрока,X
+                                        LDA #$00
 C - - - - - 0x00B498 02:B488: 9D F6 03  STA ram_spd_X_hi_игрока,X
 C - - - - - 0x00B49B 02:B48B: 9D E8 03  STA ram_spd_X_lo_игрока,X
 C - - - - - 0x00B49E 02:B48E: 9D 12 04  STA ram_spd_Y_hi_игрока,X
