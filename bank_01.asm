@@ -14677,7 +14677,7 @@ C - - - - - 0x007CC9 01:BCB9: 60        RTS
 
 
 sub_BCBA:
-C - - - - - 0x007CCA 01:BCBA: AD 4A 05  LDA ram_054A
+C - - - - - 0x007CCA 01:BCBA: AD 4A 05  LDA ram_раунд_плей_офф
 C - - - - - 0x007CCD 01:BCBD: 30 0E     BMI bra_BCCD
 C - - - - - 0x007CCF 01:BCBF: 8A        TXA
 C - - - - - 0x007CD0 01:BCC0: 29 01     AND #$01

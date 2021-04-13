@@ -1659,7 +1659,7 @@ C - - - - - 0x01C9C5 07:C9B5: A9 01     LDA #$01
 C - - - - - 0x01C9C7 07:C9B7: 85 59     STA ram_subscript
 C - - - - - 0x01C9C9 07:C9B9: 4C 1E CA  RTS
 bra_C9BC_прохождение:
-C - - - - - 0x01C9CC 07:C9BC: AD 4A 05  LDA ram_054A
+C - - - - - 0x01C9CC 07:C9BC: AD 4A 05  LDA ram_раунд_плей_офф
 C - - - - - 0x01C9CF 07:C9BF: 30 2D     BMI bra_C9EE
 - - - - - - 0x01C9D1 07:C9C1: C9 03     CMP #$03
 - - - - - - 0x01C9D3 07:C9C3: D0 0F     BNE bra_C9D4
@@ -1677,14 +1677,14 @@ bra_C9D4:
 - - - - - - 0x01C9E9 07:C9D9: D0 10     BNE bra_C9EB
 - - - - - - 0x01C9EB 07:C9DB: A9 02     LDA #$02
 bra_C9DD:
-- - - - - - 0x01C9ED 07:C9DD: 8D 1F 06  STA ram_061F
+- - - - - - 0x01C9ED 07:C9DD: 8D 1F 06  STA ram_место_по_итогам_чемпионата
 - - - - - - 0x01C9F0 07:C9E0: A9 03     LDA #con_script_титры
 - - - - - - 0x01C9F2 07:C9E2: 85 58     STA ram_script
 - - - - - - 0x01C9F4 07:C9E4: A9 00     LDA #$00
 - - - - - - 0x01C9F6 07:C9E6: 85 59     STA ram_subscript
 - - - - - - 0x01C9F8 07:C9E8: 4C 1E CA  RTS
 bra_C9EB:
-- - - - - - 0x01C9FB 07:C9EB: EE 4A 05  INC ram_054A
+- - - - - - 0x01C9FB 07:C9EB: EE 4A 05  INC ram_раунд_плей_офф
 bra_C9EE:
 C - - - - - 0x01C9FE 07:C9EE: A9 02     LDA #con_script_меню
 C - - - - - 0x01CA00 07:C9F0: 85 58     STA ram_script

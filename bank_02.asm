@@ -12108,7 +12108,7 @@ C - - - - - 0x00B34F 02:B33F: A0 00     LDY #$00
 C - - - - - 0x00B351 02:B341: A5 58     LDA ram_script
 C - - - - - 0x00B353 02:B343: C9 03     CMP #con_script_титры
 C - - - - - 0x00B355 02:B345: D0 09     BNE bra_B350
-- - - - - - 0x00B357 02:B347: AD 1F 06  LDA ram_061F
+- - - - - - 0x00B357 02:B347: AD 1F 06  LDA ram_место_по_итогам_чемпионата
 - - - - - - 0x00B35A 02:B34A: C9 02     CMP #$02
 - - - - - - 0x00B35C 02:B34C: D0 02     BNE bra_B350
 - - - - - - 0x00B35E 02:B34E: A0 02     LDY #$02
@@ -13784,9 +13784,9 @@ bra_BAC5:
 - - - - - - 0x00BAFD 02:BAED: 9D 86 04  STA ram_состояние_игрока,X
 - - - - - - 0x00BB00 02:BAF0: A9 FF     LDA #$FF
 - - - - - - 0x00BB02 02:BAF2: 9D 79 04  STA ram_next_действие_игрока,X
-- - - - - - 0x00BB05 02:BAF5: AD 1F 06  LDA ram_061F
+- - - - - - 0x00BB05 02:BAF5: AD 1F 06  LDA ram_место_по_итогам_чемпионата
 - - - - - - 0x00BB08 02:BAF8: 0A        ASL
-- - - - - - 0x00BB09 02:BAF9: 6D 1F 06  ADC ram_061F
+- - - - - - 0x00BB09 02:BAF9: 6D 1F 06  ADC ram_место_по_итогам_чемпионата
 - - - - - - 0x00BB0C 02:BAFC: 65 1C     ADC ram_001C
 - - - - - - 0x00BB0E 02:BAFE: A8        TAY
 - - - - - - 0x00BB0F 02:BAFF: B9 21 BB  LDA tbl_BB21,Y
@@ -13938,7 +13938,7 @@ ofs_BBCE_02_первая_фотка_в_титрах:
 - - - - - - 0x00BBEC 02:BBDC: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 - - - - - - 0x00BBEF 02:BBDF: A9 1C     LDA #$1C
 - - - - - - 0x00BBF1 02:BBE1: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
-- - - - - - 0x00BBF4 02:BBE4: AD 1F 06  LDA ram_061F
+- - - - - - 0x00BBF4 02:BBE4: AD 1F 06  LDA ram_место_по_итогам_чемпионата
 - - - - - - 0x00BBF7 02:BBE7: 0A        ASL
 - - - - - - 0x00BBF8 02:BBE8: 0A        ASL
 - - - - - - 0x00BBF9 02:BBE9: 0A        ASL
@@ -13957,15 +13957,15 @@ bra_BBEE_loop:
 - - - - - - 0x00BC0F 02:BBFF: 8D 94 06  STA ram_байт_2006_lo_атрибуты
 - - - - - - 0x00BC12 02:BC02: A9 20     LDA #> $20A9
 - - - - - - 0x00BC14 02:BC04: 8D 93 06  STA ram_байт_2006_hi_атрибуты
-- - - - - - 0x00BC17 02:BC07: AD 1F 06  LDA ram_061F
+- - - - - - 0x00BC17 02:BC07: AD 1F 06  LDA ram_место_по_итогам_чемпионата
 - - - - - - 0x00BC1A 02:BC0A: F0 1B     BEQ bra_BC27
 - - - - - - 0x00BC1C 02:BC0C: A9 DA     LDA #$DA
 - - - - - - 0x00BC1E 02:BC0E: 8D B9 06  STA ram_буфер_графики
 - - - - - - 0x00BC21 02:BC11: A9 01     LDA #$01
 - - - - - - 0x00BC23 02:BC13: 8D B8 06  STA ram_счетчик_буфера_графики
-- - - - - - 0x00BC26 02:BC16: AD 1F 06  LDA ram_061F
+- - - - - - 0x00BC26 02:BC16: AD 1F 06  LDA ram_место_по_итогам_чемпионата
 - - - - - - 0x00BC29 02:BC19: 0A        ASL
-- - - - - - 0x00BC2A 02:BC1A: 6D 1F 06  ADC ram_061F
+- - - - - - 0x00BC2A 02:BC1A: 6D 1F 06  ADC ram_место_по_итогам_чемпионата
 - - - - - - 0x00BC2D 02:BC1D: 69 88     ADC #< $2088
 - - - - - - 0x00BC2F 02:BC1F: 8D B7 06  STA ram_байт_2006_lo_графика
 - - - - - - 0x00BC32 02:BC22: A9 20     LDA #> $2088
@@ -14260,7 +14260,7 @@ ofs_BE59_06_звонок_по_мобиле:
 - - - - - - 0x00BE69 02:BE59: 20 C8 BE  JSR sub_BEC8
 - - - - - - 0x00BE6C 02:BE5C: 20 9B BE  JSR sub_BE9B_звонок_по_мобиле
 - - - - - - 0x00BE6F 02:BE5F: 90 E0     BCC bra_BE41_RTS
-- - - - - - 0x00BE71 02:BE61: AD 1F 06  LDA ram_061F
+- - - - - - 0x00BE71 02:BE61: AD 1F 06  LDA ram_место_по_итогам_чемпионата
 - - - - - - 0x00BE74 02:BE64: 18        CLC
 - - - - - - 0x00BE75 02:BE65: 69 36     ADC #$36
 - - - - - - 0x00BE77 02:BE67: 8D 06 06  STA ram_0606

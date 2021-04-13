@@ -65,7 +65,7 @@ sub_0x000000_RESET_init:
                                         STA ram_байт_2006_hi_графика
                                         STA ram_байт_2006_hi_палитра
                                         STA ram_флаг_гола
-                                        STA ram_054A
+                                        STA ram_раунд_плей_офф
                                         LDA #$42
                                         STA ram_номер_палитры_фона
                                         STA ram_номер_палитры_фона + 1
