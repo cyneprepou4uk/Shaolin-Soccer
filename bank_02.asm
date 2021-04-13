@@ -10899,8 +10899,9 @@ C - - - - - 0x00AC17 02:AC07: 85 59     STA ram_subscript
 C - - - - - 0x00AC19 02:AC09: 8D 89 05  STA ram_таймер_демо_lo
 C - - - - - 0x00AC1C 02:AC0C: A9 03     LDA #$03
 C - - - - - 0x00AC1E 02:AC0E: 8D 8A 05  STA ram_таймер_демо_hi
-C - - - - - 0x00AC21 02:AC11: A9 80     LDA #$80    ; bzk опт, лучше еще одно LDA 80 для номера команды
+C - - - - - 0x00AC21 02:AC11: A9 80     LDA #$80
 C - - - - - 0x00AC23 02:AC13: 8D 8B 05  STA ram_флаг_демо
+                                        LDA #con_id_японии + $80
 C - - - - - 0x00AC26 02:AC16: 8D 2C 05  STA ram_номер_команды
 C - - - - - 0x00AC29 02:AC19: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x00AC2C 02:AC1C: 29 0F     AND #$0F
