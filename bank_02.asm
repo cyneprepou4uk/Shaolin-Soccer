@@ -10688,7 +10688,7 @@ C - - - - - 0x00AAD4 02:AAC4: 8E B8 05  STX ram_банк_спрайтов
 C - - - - - 0x00AAD7 02:AAC7: E8        INX ; con_chr_bank + $71
 C - - - - - 0x00AAD8 02:AAC8: 8E B9 05  STX ram_банк_спрайтов + 1
 C - - - - - 0x00AADB 02:AACB: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
-C - - - - - 0x00AADE 02:AACE: 20 59 C0  JSR sub_0x01D05F
+C - - - - - 0x00AADE 02:AACE: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
 C - - - - - 0x00AAE1 02:AAD1: A9 04     LDA #$04
 C - - - - - 0x00AAE3 02:AAD3: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AAE6 02:AAD6: E6 59     INC ram_subscript
@@ -10700,9 +10700,9 @@ ofs_AAD9_09:
 ofs_AAD9_01_кунио_с_кулаком:
 C - - J - - 0x00AAE9 02:AAD9: 20 01 AE  JSR sub_AE01
 C - - - - - 0x00AAEC 02:AADC: 2C B2 05  BIT ram_флаг_яркости
-C - - - - - 0x00AAEF 02:AADF: 30 03     BMI bra_AAE4
+C - - - - - 0x00AAEF 02:AADF: 30 03     BMI bra_AAE4_яркость_готова
 C - - - - - 0x00AAF1 02:AAE1: 20 5C C0  JSR sub_0x01D083
-bra_AAE4:
+bra_AAE4_яркость_готова:
 C - - - - - 0x00AAF4 02:AAE4: A5 A0     LDA ram_кадр_анимации_мяча
 C - - - - - 0x00AAF6 02:AAE6: C9 02     CMP #$02
 C - - - - - 0x00AAF8 02:AAE8: 90 55     BCC bra_AB3F_RTS
@@ -10843,7 +10843,7 @@ C - - - - - 0x00ABBC 02:ABAC: 8E B1 05  STX ram_номер_палитры_спр
 C - - - - - 0x00ABBF 02:ABAF: 20 33 B0  JSR sub_B033_анимация_мяча
 C - - - - - 0x00ABC2 02:ABB2: A9 01     LDA #con_music_логотип
 C - - - - - 0x00ABC4 02:ABB4: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x00ABC7 02:ABB7: 20 59 C0  JSR sub_0x01D05F
+C - - - - - 0x00ABC7 02:ABB7: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
 C - - - - - 0x00ABCA 02:ABBA: A9 04     LDA #$04
 C - - - - - 0x00ABCC 02:ABBC: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00ABCF 02:ABBF: A9 90     LDA #$90
@@ -10860,7 +10860,7 @@ ofs_ABCE_0B_загрузка_экрана_с_мисако:
 C - - J - - 0x00ABDE 02:ABCE: 20 33 B0  JSR sub_B033_анимация_мяча
 C - - - - - 0x00ABE1 02:ABD1: 20 5C C0  JSR sub_0x01D083
 C - - - - - 0x00ABE4 02:ABD4: 2C B2 05  BIT ram_флаг_яркости
-C - - - - - 0x00ABE7 02:ABD7: 10 04     BPL bra_ABDD_RTS
+C - - - - - 0x00ABE7 02:ABD7: 10 04     BPL bra_ABDD_RTS    ; если яркость не готова
 C - - - - - 0x00ABE9 02:ABD9: A9 03     LDA #$03
 C - - - - - 0x00ABEB 02:ABDB: 85 59     STA ram_subscript
 bra_ABDD_RTS:
@@ -10873,7 +10873,7 @@ C - - J - - 0x00ABEE 02:ABDE: 20 33 B0  JSR sub_B033_анимация_мяча
 C - - - - - 0x00ABF1 02:ABE1: 20 7C AE  JSR sub_AE7C
 C - - - - - 0x00ABF4 02:ABE4: 30 10     BMI bra_ABF6
 C - - - - - 0x00ABF6 02:ABE6: 50 15     BVC bra_ABFD_RTS
-C - - - - - 0x00ABF8 02:ABE8: 20 44 C0  JSR sub_0x01D057
+C - - - - - 0x00ABF8 02:ABE8: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x00ABFB 02:ABEB: A9 04     LDA #$04
 C - - - - - 0x00ABFD 02:ABED: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AC00 02:ABF0: 20 4A C0  JSR sub_0x01D072
@@ -10965,7 +10965,7 @@ C - - - - - 0x00ACA8 02:AC98: A2 0C     LDX #con_id_мяча
 C - - - - - 0x00ACAA 02:AC9A: 20 A5 AD  JSR sub_ADA5
 C - - - - - 0x00ACAD 02:AC9D: 20 62 C0  JSR sub_0x01EF64_убрать_полоску_слева_на_экране
 C - - - - - 0x00ACB0 02:ACA0: 20 1B AA  JSR sub_0x01C2AE
-C - - - - - 0x00ACB3 02:ACA3: 20 59 C0  JSR sub_0x01D05F
+C - - - - - 0x00ACB3 02:ACA3: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
 C - - - - - 0x00ACB6 02:ACA6: E6 59     INC ram_subscript
 C - - - - - 0x00ACB8 02:ACA8: 60        RTS
 
@@ -10978,7 +10978,7 @@ C - - - - - 0x00ACBC 02:ACAC: 20 2F AA  JSR sub_0x01C296
 C - - - - - 0x00ACBF 02:ACAF: 20 1B AA  JSR sub_0x01C2AE
 C - - - - - 0x00ACC2 02:ACB2: 20 5C C0  JSR sub_0x01D083
 C - - - - - 0x00ACC5 02:ACB5: 2C B2 05  BIT ram_флаг_яркости
-C - - - - - 0x00ACC8 02:ACB8: 10 02     BPL bra_ACBC_RTS
+C - - - - - 0x00ACC8 02:ACB8: 10 02     BPL bra_ACBC_RTS    ; если яркость не готова
 C - - - - - 0x00ACCA 02:ACBA: E6 59     INC ram_subscript
 bra_ACBC_RTS:
 C - - - - - 0x00ACCC 02:ACBC: 60        RTS
@@ -11007,7 +11007,7 @@ C - - - - - 0x00ACF3 02:ACE3: 85 58     STA ram_script
 C - - - - - 0x00ACF5 02:ACE5: A9 00     LDA #$00
 bra_ACE7:
 C - - - - - 0x00ACF7 02:ACE7: 85 59     STA ram_subscript
-C - - - - - 0x00ACF9 02:ACE9: 20 44 C0  JSR sub_0x01D057
+C - - - - - 0x00ACF9 02:ACE9: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x00ACFC 02:ACEC: A9 04     LDA #$04
 C - - - - - 0x00ACFE 02:ACEE: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AD01 02:ACF1: 20 4A C0  JSR sub_0x01D072
@@ -11266,7 +11266,7 @@ sub_AE65:
 C - - - - - 0x00AE75 02:AE65: A5 58     LDA ram_script
 C - - - - - 0x00AE77 02:AE67: C9 03     CMP #con_script_титры
 C - - - - - 0x00AE79 02:AE69: F0 0E     BEQ bra_AE79_credits
-C - - - - - 0x00AE7B 02:AE6B: 20 44 C0  JSR sub_0x01D057
+C - - - - - 0x00AE7B 02:AE6B: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x00AE7E 02:AE6E: A9 04     LDA #$04
 C - - - - - 0x00AE80 02:AE70: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AE83 02:AE73: 20 4A C0  JSR sub_0x01D072
@@ -13904,7 +13904,7 @@ ofs_BB78_00:
 - - - - - - 0x00BBAD 02:BB9D: 20 66 BA  JSR sub_BA66
 - - - - - - 0x00BBB0 02:BBA0: 20 3C BB  JSR sub_BB3C
 - - - - - - 0x00BBB3 02:BBA3: 20 1B AA  JSR sub_0x01C2AE
-- - - - - - 0x00BBB6 02:BBA6: 20 59 C0  JSR sub_0x01D05F
+- - - - - - 0x00BBB6 02:BBA6: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
 - - - - - - 0x00BBB9 02:BBA9: A9 0B     LDA #con_music_кубок
 - - - - - - 0x00BBBB 02:BBAB: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 - - - - - - 0x00BBBE 02:BBAE: E6 59     INC ram_subscript
@@ -13933,7 +13933,7 @@ ofs_BBCE_02_первая_фотка_в_титрах:
 - - - - - - 0x00BBDE 02:BBCE: 20 C8 BE  JSR sub_BEC8
 - - - - - - 0x00BBE1 02:BBD1: 20 7C AE  JSR sub_AE7C
 - - - - - - 0x00BBE4 02:BBD4: 50 DA     BVC bra_BBB0_RTS
-- - - - - - 0x00BBE6 02:BBD6: 20 44 C0  JSR sub_0x01D057
+- - - - - - 0x00BBE6 02:BBD6: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 - - - - - - 0x00BBE9 02:BBD9: 20 4A C0  JSR sub_0x01D072
 - - - - - - 0x00BBEC 02:BBDC: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 - - - - - - 0x00BBEF 02:BBDF: A9 1C     LDA #$1C
@@ -14029,7 +14029,7 @@ bra_BC27:
 - - - - - - 0x00BCC7 02:BCB7: 20 BF BE  JSR sub_BEBF
 - - - - - - 0x00BCCA 02:BCBA: EE 8A 05  INC ram_таймер_демо_hi
 - - - - - - 0x00BCCD 02:BCBD: 20 D4 BE  JSR sub_BED4
-- - - - - - 0x00BCD0 02:BCC0: 20 59 C0  JSR sub_0x01D05F
+- - - - - - 0x00BCD0 02:BCC0: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
 - - - - - - 0x00BCD3 02:BCC3: A9 0E     LDA #con_music_финал
 - - - - - - 0x00BCD5 02:BCC5: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 - - - - - - 0x00BCD8 02:BCC8: A9 80     LDA #$80
@@ -14097,7 +14097,7 @@ ofs_BD00_03_фотки_в_титрах:
 - - - - - - 0x00BD13 02:BD03: 20 5C C0  JSR sub_0x01D083
 - - - - - - 0x00BD16 02:BD06: 20 7C AE  JSR sub_AE7C
 - - - - - - 0x00BD19 02:BD09: 50 C4     BVC bra_BCCF_RTS
-- - - - - - 0x00BD1B 02:BD0B: 20 44 C0  JSR sub_0x01D057
+- - - - - - 0x00BD1B 02:BD0B: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 - - - - - - 0x00BD1E 02:BD0E: 20 4A C0  JSR sub_0x01D072
 - - - - - - 0x00BD21 02:BD11: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 - - - - - - 0x00BD24 02:BD14: EE 8C 05  INC ram_058C
@@ -14184,7 +14184,7 @@ bra_BDA9:
 bra_BDB6:
 - - - - - - 0x00BDC6 02:BDB6: EE 6D 00  INC ram_тип_анимации_мяча
 - - - - - - 0x00BDC9 02:BDB9: 20 D4 BE  JSR sub_BED4
-- - - - - - 0x00BDCC 02:BDBC: 20 59 C0  JSR sub_0x01D05F
+- - - - - - 0x00BDCC 02:BDBC: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
 - - - - - - 0x00BDCF 02:BDBF: 60        RTS
 
 
@@ -14235,7 +14235,7 @@ ofs_BDC0_04_последняя_фотка_в_титрах:
 - - - - - - 0x00BE43 02:BE33: 20 BF BE  JSR sub_BEBF
 - - - - - - 0x00BE46 02:BE36: EE 8A 05  INC ram_таймер_демо_hi
 - - - - - - 0x00BE49 02:BE39: EE 8A 05  INC ram_таймер_демо_hi
-- - - - - - 0x00BE4C 02:BE3C: 20 59 C0  JSR sub_0x01D05F
+- - - - - - 0x00BE4C 02:BE3C: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
 - - - - - - 0x00BE4F 02:BE3F: E6 59     INC ram_subscript
 bra_BE41_RTS:
 - - - - - - 0x00BE51 02:BE41: 60        RTS
@@ -14278,7 +14278,7 @@ ofs_BE76_07:
 - - - - - - 0x00BE89 02:BE79: 20 C8 BE  JSR sub_BEC8
 - - - - - - 0x00BE8C 02:BE7C: AD 05 06  LDA ram_0605
 - - - - - - 0x00BE8F 02:BE7F: 30 13     BMI bra_BE94_RTS
-- - - - - - 0x00BE91 02:BE81: 20 44 C0  JSR sub_0x01D057
+- - - - - - 0x00BE91 02:BE81: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 - - - - - - 0x00BE94 02:BE84: 20 4A C0  JSR sub_0x01D072
 - - - - - - 0x00BE97 02:BE87: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 - - - - - - 0x00BE9A 02:BE8A: A9 00     LDA #$00

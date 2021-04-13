@@ -10375,15 +10375,15 @@ C - - - - - 0x01BEA5 06:BE95: BD 14 03  LDA ram_pos_X_lo_игрока,X
 C - - - - - 0x01BEA8 06:BE98: 30 0D     BMI bra_BEA7
 bra_BE9A:
 C - - - - - 0x01BEAA 06:BE9A: AD B2 05  LDA ram_флаг_яркости
-C - - - - - 0x01BEAD 06:BE9D: 10 08     BPL bra_BEA7
-C - - - - - 0x01BEAF 06:BE9F: 20 47 D0  JSR sub_0x01D057
+C - - - - - 0x01BEAD 06:BE9D: 10 08     BPL bra_BEA7    ; если яркость не готова
+C - - - - - 0x01BEAF 06:BE9F: 20 47 D0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x01BEB2 06:BEA2: A9 00     LDA #$00
 C - - - - - 0x01BEB4 06:BEA4: 8D E8 05  STA ram_следы_2006_hi
 bra_BEA7:
 C - - - - - 0x01BEB7 06:BEA7: CA        DEX
 C - - - - - 0x01BEB8 06:BEA8: 10 9A     BPL bra_BE44_loop
 C - - - - - 0x01BEBA 06:BEAA: AD B2 05  LDA ram_флаг_яркости
-C - - - - - 0x01BEBD 06:BEAD: 10 1C     BPL bra_BECB_RTS
+C - - - - - 0x01BEBD 06:BEAD: 10 1C     BPL bra_BECB_RTS    ; если яркость не готова
 C - - - - - 0x01BEBF 06:BEAF: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x01BEC2 06:BEB2: 29 3F     AND #$3F
 C - - - - - 0x01BEC4 06:BEB4: D0 04     BNE bra_BEBA

@@ -47,8 +47,8 @@
 .export sub_0x01CDDB
 .export sub_0x01CECD_вычислить_анимацию
 .export sub_0x01D046
-.export sub_0x01D057
-.export sub_0x01D05F
+.export sub_0x01D057_включить_затемнение_яркости
+.export sub_0x01D05F_включить_осветление_яркости
 .export sub_0x01D072
 .export sub_0x01D083
 .export sub_0x01D0E5_запись_палитры_в_буфер_с_учетом_яркости
@@ -1016,7 +1016,7 @@ C - - - - - 0x01C4FA 07:C4EA: CE 8A 05  DEC ram_таймер_демо_hi
 C - - - - - 0x01C4FD 07:C4ED: D0 16     BNE bra_C505_RTS
 bra_C4EF_Select_или_Start:
 C - - - - - 0x01C4FF 07:C4EF: 84 2B     STY ram_002B
-C - - - - - 0x01C501 07:C4F1: 20 47 D0  JSR sub_D047
+C - - - - - 0x01C501 07:C4F1: 20 47 D0  JSR sub_D047_включить_затемнение_яркости
 C - - - - - 0x01C504 07:C4F4: 20 62 D0  JSR sub_D062
 C - - - - - 0x01C507 07:C4F7: A5 2B     LDA ram_002B
 C - - - - - 0x01C509 07:C4F9: 85 59     STA ram_subscript
@@ -1070,7 +1070,7 @@ C - - - - - 0x01C551 07:C541: 20 93 CF  JSR sub_CF93
 C - - - - - 0x01C554 07:C544: 20 0B DE  JSR sub_DE0B
 C - - - - - 0x01C557 07:C547: A9 02     LDA #$02
 C - - - - - 0x01C559 07:C549: 8D B3 05  STA ram_скорость_яркости
-C - - - - - 0x01C55C 07:C54C: A9 00     LDA #$00
+C - - - - - 0x01C55C 07:C54C: A9 00     LDA #$00    ; флаг осветления
 C - - - - - 0x01C55E 07:C54E: 8D B2 05  STA ram_флаг_яркости
 C - - - - - 0x01C561 07:C551: 8D B6 05  STA ram_счетчик_яркости
 C - - - - - 0x01C564 07:C554: 8D B5 05  STA ram_таймер_яркости
@@ -1098,7 +1098,7 @@ C - - - - - 0x01C596 07:C586: 20 A5 F3  JSR sub_F3A5
 C - - - - - 0x01C599 07:C589: 20 9E C2  JSR sub_C29E
 C - - - - - 0x01C59C 07:C58C: 20 73 D0  JSR sub_D073
 C - - - - - 0x01C59F 07:C58F: AD B2 05  LDA ram_флаг_яркости
-C - - - - - 0x01C5A2 07:C592: 10 E6     BPL bra_C612_RTS
+C - - - - - 0x01C5A2 07:C592: 10 E6     BPL bra_C612_RTS    ; если яркость не готова
 C - - - - - 0x01C5A4 07:C594: AD FA 05  LDA ram_дальность_перелив_надписи
 C - - - - - 0x01C5A7 07:C597: 10 17     BPL bra_C5B0
 C - - - - - 0x01C5A9 07:C599: AD F8 05  LDA ram_содержимое_hud
@@ -1264,7 +1264,7 @@ bra_C6F0:
 C - - - - - 0x01C700 07:C6F0: C9 FF     CMP #$FF
 C - - - - - 0x01C702 07:C6F2: F0 12     BEQ bra_C706
 bra_C6F4:
-C - - - - - 0x01C704 07:C6F4: 20 47 D0  JSR sub_D047
+C - - - - - 0x01C704 07:C6F4: 20 47 D0  JSR sub_D047_включить_затемнение_яркости
 C - - - - - 0x01C707 07:C6F7: A9 00     LDA #con_music_выкл
 C - - - - - 0x01C709 07:C6F9: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
 C - - - - - 0x01C70C 07:C6FC: A9 FF     LDA #$FF
@@ -1275,8 +1275,8 @@ bra_C706:
 loc_C706:
 C D 2 - - - 0x01C716 07:C706: 20 73 D0  JSR sub_D073
 C - - - - - 0x01C719 07:C709: 2C B2 05  BIT ram_флаг_яркости
-C - - - - - 0x01C71C 07:C70C: 10 0D     BPL bra_C71B_RTS
-C - - - - - 0x01C71E 07:C70E: 50 0B     BVC bra_C71B_RTS
+C - - - - - 0x01C71C 07:C70C: 10 0D     BPL bra_C71B_RTS    ; если яркость не готова
+C - - - - - 0x01C71E 07:C70E: 50 0B     BVC bra_C71B_RTS    ; если не затемнение
 C - - - - - 0x01C720 07:C710: 20 1A C9  JSR sub_C91A
 C - - - - - 0x01C723 07:C713: A9 00     LDA #$00    ; con_gp_игра
 C - - - - - 0x01C725 07:C715: 8D 5C 00  STA ram_flag_gameplay
@@ -1298,7 +1298,7 @@ C - - - - - 0x01C742 07:C732: 20 E4 C2  JSR sub_C2E4_воспроизвести_
 loc_C735:
 C D 2 - - - 0x01C745 07:C735: A9 00     LDA #$00
 C - - - - - 0x01C747 07:C737: 8D E2 05  STA ram_таймер_катсцены
-C - - - - - 0x01C74A 07:C73A: 20 4F D0  JSR sub_D04F
+C - - - - - 0x01C74A 07:C73A: 20 4F D0  JSR sub_D04F_включить_осветление_яркости
 C - - - - - 0x01C74D 07:C73D: E6 59     INC ram_subscript
 C - - - - - 0x01C74F 07:C73F: 78        SEI
 C - - - - - 0x01C750 07:C740: 4C 98 C6  RTS
@@ -1348,12 +1348,12 @@ loc_C786:
 C D 2 - - - 0x01C796 07:C786: 20 9E C2  JSR sub_C29E
 C - - - - - 0x01C799 07:C789: 20 73 D0  JSR sub_D073
 C - - - - - 0x01C79C 07:C78C: AD B2 05  LDA ram_флаг_яркости
-C - - - - - 0x01C79F 07:C78F: 10 3C     BPL bra_C7CD_RTS
-C - - - - - 0x01C7A1 07:C791: 0A        ASL
-C - - - - - 0x01C7A2 07:C792: 10 06     BPL bra_C79A
+C - - - - - 0x01C79F 07:C78F: 10 3C     BPL bra_C7CD_RTS    ; если яркость не готова
+C - - - - - 0x01C7A1 07:C791: 0A        ASL     ; значит тут 80 или C0, по итогу * 2 = 00 или 80
+C - - - - - 0x01C7A2 07:C792: 10 06     BPL bra_C79A_яркость_не_на_паузе
 C - - - - - 0x01C7A4 07:C794: 20 1A C9  JSR sub_C91A
 C - - - - - 0x01C7A7 07:C797: 4C CD C7  RTS
-bra_C79A:
+bra_C79A_яркость_не_на_паузе:
 C - - - - - 0x01C7AA 07:C79A: AD E2 05  LDA ram_таймер_катсцены
 C - - - - - 0x01C7AD 07:C79D: D0 06     BNE bra_C7A5
 C - - - - - 0x01C7AF 07:C79F: AD EC 05  LDA ram_следы_2006_lo
@@ -1374,7 +1374,7 @@ C - - - - - 0x01C7CB 07:C7BB: AD E2 05  LDA ram_таймер_катсцены
 C - - - - - 0x01C7CE 07:C7BE: C9 F0     CMP #$F0
 C - - - - - 0x01C7D0 07:C7C0: 90 0B     BCC bra_C7CD_RTS
 bra_C7C2:
-C - - - - - 0x01C7D2 07:C7C2: 20 47 D0  JSR sub_D047
+C - - - - - 0x01C7D2 07:C7C2: 20 47 D0  JSR sub_D047_включить_затемнение_яркости
 C - - - - - 0x01C7D5 07:C7C5: A9 00     LDA #$00    ; con_music_выкл
 C - - - - - 0x01C7D7 07:C7C7: 8D E8 05  STA ram_следы_2006_hi
 C - - - - - 0x01C7DA 07:C7CA: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
@@ -2622,17 +2622,15 @@ C - - - - - 0x01D056 07:D046: 60        RTS
 
 
 
-sub_D047:
-sub_0x01D057:
+sub_D047_включить_затемнение_яркости:
+sub_0x01D057_включить_затемнение_яркости:
 C D 2 - - - 0x01D057 07:D047: A9 40     LDA #$40
-C - - - - - 0x01D059 07:D049: 8D B2 05  BNE bra_D051
+C - - - - - 0x01D059 07:D049: 8D B2 05  BNE bra_D051_запись_флага
 
-
-
-sub_0x01D05F:
-sub_D04F:
+sub_D04F_включить_осветление_яркости:
+sub_0x01D05F_включить_осветление_яркости:
 C D 2 - - - 0x01D05F 07:D04F: A9 00     LDA #$00
-bra_D051:
+bra_D051_запись_флага:
 C - - - - - 0x01D061 07:D051: 8D B2 05  STA ram_флаг_яркости
 C D 2 - - - 0x01D064 07:D054: A9 02     LDA #$02
 C - - - - - 0x01D066 07:D056: 8D B3 05  STA ram_скорость_яркости
@@ -2652,7 +2650,7 @@ bra_D068_infinite_loop:
 C - - - - - 0x01D078 07:D068: CD 51 00  CMP ram_задержка_кадра
 C - - - - - 0x01D07B 07:D06B: F0 FB     BEQ bra_D068_infinite_loop
 C - - - - - 0x01D07D 07:D06D: AD B2 05  LDA ram_флаг_яркости
-C - - - - - 0x01D080 07:D070: 10 F0     BPL bra_D062_infinite_loop
+C - - - - - 0x01D080 07:D070: 10 F0     BPL bra_D062_infinite_loop  ; если яркость не готова
 C - - - - - 0x01D082 07:D072: 60        RTS
 
 
@@ -2660,17 +2658,17 @@ C - - - - - 0x01D082 07:D072: 60        RTS
 sub_0x01D083:
 sub_D073:
 C D 2 - - - 0x01D083 07:D073: 2C B2 05  BIT ram_флаг_яркости
-C - - - - - 0x01D086 07:D076: 30 52     BMI bra_D0CA_RTS
-C - - - - - 0x01D088 07:D078: 70 0E     BVS bra_D088
+C - - - - - 0x01D086 07:D076: 30 52     BMI bra_D0CA_RTS    ; если яркость готова
+C - - - - - 0x01D088 07:D078: 70 0E     BVS bra_D088_идет_затемнение
 C - - - - - 0x01D08A 07:D07A: AD B6 05  LDA ram_счетчик_яркости
 C - - - - - 0x01D08D 07:D07D: 10 00     BPL bra_D07F
 bra_D07F:
 C - - - - - 0x01D08F 07:D07F: AC B6 05  LDY ram_счетчик_яркости
-C - - - - - 0x01D092 07:D082: B9 CB D0  LDA tbl_D0CB,Y
+C - - - - - 0x01D092 07:D082: B9 CB D0  LDA tbl_D0CB_осветление,Y
 C - - - - - 0x01D095 07:D085: 4C 8E D0  JMP loc_D08E
-bra_D088:
+bra_D088_идет_затемнение:
 C - - - - - 0x01D098 07:D088: AC B6 05  LDY ram_счетчик_яркости
-C - - - - - 0x01D09B 07:D08B: B9 D0 D0  LDA tbl_D0D0,Y
+C - - - - - 0x01D09B 07:D08B: B9 D0 D0  LDA tbl_D0D0_затемнение,Y
 loc_D08E:
 C D 2 - - - 0x01D09E 07:D08E: 8D B4 05  STA ram_текущая_яркость
 C - - - - - 0x01D0A1 07:D091: AD B5 05  LDA ram_таймер_яркости
@@ -2694,14 +2692,14 @@ C - - - - - 0x01D0CB 07:D0BB: 90 0D     BCC bra_D0CA_RTS
 C - - - - - 0x01D0CD 07:D0BD: A9 00     LDA #$00
 C - - - - - 0x01D0CF 07:D0BF: 8D B6 05  STA ram_счетчик_яркости
 C - - - - - 0x01D0D2 07:D0C2: AD B2 05  LDA ram_флаг_яркости
-C - - - - - 0x01D0D5 07:D0C5: 09 80     ORA #$80
+C - - - - - 0x01D0D5 07:D0C5: 09 80     ORA #$80    ; флаг готовности яркости
 C - - - - - 0x01D0D7 07:D0C7: 8D B2 05  STA ram_флаг_яркости
 bra_D0CA_RTS:
 C - - - - - 0x01D0DA 07:D0CA: 60        RTS
 
 
 
-tbl_D0CB:
+tbl_D0CB_осветление:
 - D 2 - - - 0x01D0DB 07:D0CB: 00        .byte $00   ; 
 - D 2 - - - 0x01D0DC 07:D0CC: 10        .byte $10   ; 
 - D 2 - - - 0x01D0DD 07:D0CD: 20        .byte $20   ; 
@@ -2710,7 +2708,7 @@ tbl_D0CB:
 
 
 
-tbl_D0D0:
+tbl_D0D0_затемнение:
 - D 2 - - - 0x01D0E0 07:D0D0: 40        .byte $40   ; 
 - D 2 - - - 0x01D0E1 07:D0D1: 30        .byte $30   ; 
 - D 2 - - - 0x01D0E2 07:D0D2: 20        .byte $20   ; 
