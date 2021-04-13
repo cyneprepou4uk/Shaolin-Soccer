@@ -10891,9 +10891,11 @@ C - - - - - 0x00AC0D 02:ABFD: 60        RTS
 ofs_ABFE_04_подготовка_демо_матча:
 C - - J - - 0x00AC0E 02:ABFE: A9 01     LDA #$01    ; средняя сложность
 C - - - - - 0x00AC10 02:AC00: 8D 57 00  STA ram_опция_режим_и_сложность
-C - - - - - 0x00AC13 02:AC03: A9 00     LDA #$00    ; con_script_игра_на_поле   con_subscr_gp_00    bzk опт
+C - - - - - 0x00AC13 02:AC03: A9 00     LDA #con_script_игра_на_поле
 C - - - - - 0x00AC15 02:AC05: 85 58     STA ram_script
+                                        LDA #con_subscr_gp_00
 C - - - - - 0x00AC17 02:AC07: 85 59     STA ram_subscript
+                                        LDA #$00
 C - - - - - 0x00AC19 02:AC09: 8D 89 05  STA ram_таймер_демо_lo
 C - - - - - 0x00AC1C 02:AC0C: A9 03     LDA #$03
 C - - - - - 0x00AC1E 02:AC0E: 8D 8A 05  STA ram_таймер_демо_hi
