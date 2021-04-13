@@ -3231,7 +3231,7 @@ C - - - - - 0x01529D 05:928D: 30 02     BMI bra_9291_запись_subscript
 - - - - - - 0x01529F 05:928F: A9 0F     LDA #con_subscr_menu_0F
 bra_9291_запись_subscript:
 C - - - - - 0x0152A1 05:9291: 85 59     STA ram_subscript
-C - - - - - 0x0152A3 05:9293: A9 04     LDA #$04
+C - - - - - 0x0152A3 05:9293: A9 04     LDA #con_subscr_menu_раздевалка
 C - - - - - 0x0152A5 05:9295: 8D 5B 00  STA ram_для_subscript
 C - - - - - 0x0152A8 05:9298: 4C BE 92  RTS
 bra_929B:
@@ -7594,7 +7594,7 @@ C - - - - - 0x016A92 05:AA82: 20 44 C0  JSR sub_0x01D057_включить_зат
 C - - - - - 0x016A95 05:AA85: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x016A98 05:AA88: A9 0A     LDA #con_subscr_menu_статы_игрока_японии
 C - - - - - 0x016A9A 05:AA8A: 85 59     STA ram_subscript
-C - - - - - 0x016A9C 05:AA8C: A9 0D     LDA #$0D
+C - - - - - 0x016A9C 05:AA8C: A9 0D     LDA #con_subscr_menu_весь_состав_японии
 C - - - - - 0x016A9E 05:AA8E: 85 5B     STA ram_для_subscript
 C - - - - - 0x016AA0 05:AA90: 4C EC A8  RTS
 

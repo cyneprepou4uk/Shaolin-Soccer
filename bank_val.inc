@@ -14,8 +14,8 @@ con_id_мексики                          = $0F ;
 
 
 
-; ram_btn_hold                          = $04
-; ram_btn_press                         = $08
+; ram_btn_hold                          = $0004
+; ram_btn_press                         = $0008
 con_btn_Right                           = $01 ; 
 con_btn_Left                            = $02 ; 
 con_btn_Down                            = $04 ; 
@@ -32,14 +32,14 @@ con_btns__ABSS                          = con_btn_A + con_btn_B + con_btn_Start 
 
 
 
-; ram_флаг_nmi                          = $4F
+; ram_флаг_nmi                          = $004F
 con_nmi_выкл                            = $00 ; выключить NMI
 con_nmi_irq_выкл                        = $80 ; выключить IRQ во время NMI
 con_nmi_irq_вкл                         = $C0 ; включить IRQ во время NMI
 
 
 
-; ram_опция_режим_и_сложность           = $57 ; game mode (режим игры)
+; ram_опция_режим_и_сложность           = $0057 ; game mode (режим игры)
 con_gm_демо                             = $00 ; 
 con_gm_пенальти                         = $20 ; 
 con_gm_минибатл                         = $40 ; 
@@ -47,7 +47,7 @@ con_gm_прохождение                      = $80 ;
 
 
 
-; ram_script                            = $58
+; ram_script                            = $0058
 con_script_игра_на_поле                 = $00 ; игра на поле
 con_script_логотип                      = $01 ; логотип, мисако, жми старт
 con_script_меню                         = $02 ; любые меню, где можно выбирать опции (а также VS экран)
@@ -55,7 +55,7 @@ con_script_титры                        = $03 ; финальные титр
 
 
 
-; ram_subscript                         = $59 расшифровать 0x007605
+; ram_subscript                         = $0059 расшифровать 0x007605 0x017507
 ; 00 игра на поле (gameplay) 0x01C52F
 con_subscr_gp_подг_экр_разводки         = $00 ; подготовка разводки
 con_subscr_gp_разводка                  = $01 ; разводка
@@ -115,7 +115,7 @@ con_subscr_cred_0A                      = $0A ;
 
 
 
-; ram_flag_gameplay                     = $5C
+; ram_flag_gameplay                     = $005C
 con_gp_игра                             = $00 ; нормальная игра, возможность двигаться игроками, без нарушений в данный момент
 con_gp_разводка                         = $01 ; 
 con_gp_гол                              = $02 ; 
@@ -129,7 +129,7 @@ con_gp_ручная_пауза                     = $80 ; пауза на Start
 
 
 
-; ram_тип_анимации_игрока               = $61
+; ram_тип_анимации_игрока               = $0061
 con_anim_type_полевой                   = $00 ; игрок/кипер
 con_anim_type_мяч                       = $01 ; мяч
 con_anim_type_02                        = $02 ; ??? unused? 0x0103EC
