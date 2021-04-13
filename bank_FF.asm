@@ -1571,8 +1571,9 @@ C D 2 - - - 0x01C929 07:C919: 60        RTS
 
 
 sub_C91A_подготовка_разводки:
-C - - - - - 0x01C92A 07:C91A: A9 00     LDA #$00    ; con_hud_kick_off
+C - - - - - 0x01C92A 07:C91A: A9 00     LDA #con_hud_kick_off
 C - - - - - 0x01C92C 07:C91C: 8D F8 05  STA ram_содержимое_hud
+                                        LDA #$00
 C - - - - - 0x01C92F 07:C91F: 8D FD 05  STA ram_сила_ветра
 C - - - - - 0x01C932 07:C922: 8D FF 05  STA ram_spd_X_hi_ветра
 C - - - - - 0x01C935 07:C925: 8D 00 06  STA ram_spd_X_lo_ветра
