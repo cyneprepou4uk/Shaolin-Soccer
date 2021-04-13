@@ -13512,10 +13512,8 @@ C - - - - - 0x013B3D 04:BB2D: C8        INY
 bra_BB2E:
 C - - - - - 0x013B3E 04:BB2E: B9 C0 BB  LDA tbl_BBC0,Y
 C - - - - - 0x013B41 04:BB31: 85 2E     STA ram_002E
-C - - - - - 0x013B43 04:BB33: 8D 1B 05  STA ram_051B
 C - - - - - 0x013B46 04:BB36: B9 C1 BB  LDA tbl_BBC1,Y
 C - - - - - 0x013B49 04:BB39: 85 2F     STA ram_002F
-C - - - - - 0x013B4B 04:BB3B: 8D 1C 05  STA ram_051C
 C - - - - - 0x013B4E 04:BB3E: A0 00     LDY #$00
 bra_BB40:
 C - - - - - 0x013B50 04:BB40: 38        SEC
@@ -13555,26 +13553,20 @@ C - - - - - 0x013B8F 04:BB7F: A8        TAY
 loc_BB80:
 C D 1 - - - 0x013B90 04:BB80: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013B92 04:BB82: 85 30     STA ram_0030
-C - - - - - 0x013B94 04:BB84: 8D 1D 05  STA ram_051D
 C - - - - - 0x013B97 04:BB87: C8        INY
 C - - - - - 0x013B98 04:BB88: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x013B9A 04:BB8A: 85 31     STA ram_0031
-C - - - - - 0x013B9C 04:BB8C: 8D 1E 05  STA ram_051E
 C - - - - - 0x013B9F 04:BB8F: 10 22     BPL bra_BBB3
 C - - - - - 0x013BA1 04:BB91: BD 4D 03  LDA ram_pos_Y_lo_игрока,X
 C - - - - - 0x013BA4 04:BB94: 85 30     STA ram_0030
-C - - - - - 0x013BA6 04:BB96: 8D 1D 05  STA ram_051D
 C - - - - - 0x013BA9 04:BB99: BD 60 03  LDA ram_pos_Y_hi_игрока,X
 C - - - - - 0x013BAC 04:BB9C: 85 31     STA ram_0031
-C - - - - - 0x013BAE 04:BB9E: 8D 1E 05  STA ram_051E
 C - - - - - 0x013BB1 04:BBA1: A9 00     LDA #$00
 C - - - - - 0x013BB3 04:BBA3: 85 2E     STA ram_002E
-C - - - - - 0x013BB5 04:BBA5: 8D 1B 05  STA ram_051B
 C - - - - - 0x013BB8 04:BBA8: A5 2F     LDA ram_002F
 C - - - - - 0x013BBA 04:BBAA: F0 07     BEQ bra_BBB3
 C - - - - - 0x013BBC 04:BBAC: A9 04     LDA #$04    ; центровка на правые ворота при обычном ударе в левой зоне примерно в центре
 C - - - - - 0x013BBE 04:BBAE: 85 2F     STA ram_002F
-C - - - - - 0x013BC0 04:BBB0: 8D 1C 05  STA ram_051C
 bra_BBB3:
 C - - - - - 0x013BC3 04:BBB3: 20 35 C0  JSR sub_0x01F6A1
 C - - - - - 0x013BC6 04:BBB6: 9D B0 04  STA ram_смена_угла_движения,X
