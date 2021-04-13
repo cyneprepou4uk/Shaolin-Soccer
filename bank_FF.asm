@@ -1775,7 +1775,8 @@ C - - - - - 0x01CAB0 07:CAA0: A5 1C     LDA ram_001C
 C - - - - - 0x01CAB2 07:CAA2: 38        SEC
 C - - - - - 0x01CAB3 07:CAA3: E5 1D     SBC ram_001D
 C - - - - - 0x01CAB5 07:CAA5: 30 37     BMI bra_CADE
-loc_CAA7:
+loc_CAA7_loop:
+bra_CAA7_loop:
 C D 2 - - - 0x01CAB7 07:CAA7: F0 35     BEQ bra_CADE
 C - - - - - 0x01CAB9 07:CAA9: C9 01     CMP #$01
 C - - - - - 0x01CABB 07:CAAB: F0 2C     BEQ bra_CAD9
@@ -1793,12 +1794,11 @@ bra_CAC0:
 C - - - - - 0x01CAD0 07:CAC0: A5 1C     LDA ram_001C
 C - - - - - 0x01CAD2 07:CAC2: 38        SEC
 C - - - - - 0x01CAD3 07:CAC3: E5 1D     SBC ram_001D
-C - - - - - 0x01CAD5 07:CAC5: 10 05     BPL bra_CACC    ; bzk опт
+C - - - - - 0x01CAD5 07:CAC5: 10 05     BMI bra_CAA7_loop
 C - - - - - 0x01CAD7 07:CAC7: 49 FF     EOR #$FF
 C - - - - - 0x01CAD9 07:CAC9: 18        CLC
 C - - - - - 0x01CADA 07:CACA: 69 01     ADC #$01
-bra_CACC:
-C - - - - - 0x01CADC 07:CACC: 4C A7 CA  JMP loc_CAA7
+C - - - - - 0x01CADC 07:CACC: 4C A7 CA  JMP loc_CAA7_loop
 loc_CACF:
 C D 2 - - - 0x01CADF 07:CACF: A9 80     LDA #$80
 C - - - - - 0x01CAE1 07:CAD1: 4C EA CA  BMI bra_CAEA_запись_типа
