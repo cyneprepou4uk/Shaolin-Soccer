@@ -12409,7 +12409,7 @@ C - - - - - 0x00B467 02:B457: C8        INY
 bra_B458_это_япония:
 C - - - - - 0x00B468 02:B458: B9 FF B4  LDA tbl_B4FF,Y
 C - - - - - 0x00B46B 02:B45B: 8D BA 05  STA ram_банк_спрайтов + 2
-loc_B45E:
+loc_B45E_loop:
 C D 1 - - - 0x00B46E 02:B45E: A9 FF     LDA #$FF
 C - - - - - 0x00B470 02:B460: 9D B0 04  STA ram_смена_угла_движения,X
 C - - - - - 0x00B473 02:B463: 9D 79 04  STA ram_next_действие_игрока,X
@@ -12478,7 +12478,7 @@ C - - - - - 0x00B502 02:B4F2: E8        INX
 C - - - - - 0x00B503 02:B4F3: E8        INX
 C - - - - - 0x00B504 02:B4F4: E0 04     CPX #$04
 C - - - - - 0x00B506 02:B4F6: B0 03     BCS bra_B4FB
-C - - - - - 0x00B508 02:B4F8: 4C 5E B4  JMP loc_B45E
+C - - - - - 0x00B508 02:B4F8: 4C 5E B4  JMP loc_B45E_loop
 bra_B4FB:
 C - - - - - 0x00B50B 02:B4FB: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 C - - - - - 0x00B50E 02:B4FE: 60        RTS
