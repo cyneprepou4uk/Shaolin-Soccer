@@ -233,10 +233,10 @@ C - - - - - 0x01816D 06:815D: C9 07     CMP #con_action_07
 C - - - - - 0x01816F 06:815F: F0 08     BEQ bra_8169_запись_действия_47
 C - - - - - 0x018171 06:8161: C9 22     CMP #con_action_удар_локтем
 C - - - - - 0x018173 06:8163: F0 04     BEQ bra_8169_запись_действия_47
-C - - - - - 0x018175 06:8165: C9 43     CMP #con_action_43
+C - - - - - 0x018175 06:8165: C9 43     CMP #con_action_высокий_сальто_удар
 C - - - - - 0x018177 06:8167: D0 07     BNE bra_8170_запись_действия_30
 bra_8169_запись_действия_47:
-C - - - - - 0x018179 06:8169: A9 47     LDA #con_action_47
+C - - - - - 0x018179 06:8169: A9 47     LDA #con_action_низкий_сальто_удар
 C - - - - - 0x01817B 06:816B: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x01817E 06:816E: D0 0E     BNE bra_817E_RTS
 bra_8170_запись_действия_30:
@@ -354,26 +354,26 @@ C - - - - - 0x018238 06:8228: 30 0E     BMI bra_8238
 C - - - - - 0x01823A 06:822A: 20 27 99  JSR sub_9927_запись_действия_и_очистка_адресов_анимации
 C - - - - - 0x01823D 06:822D: 20 C9 9C  JSR sub_9CC9_очистить_скорости_X_Y_Z_и_гравитацию
 C - - - - - 0x018240 06:8230: 20 DA 9F  JSR sub_9FDA
-C - - - - - 0x018243 06:8233: A9 46     LDA #con_sfx_unk_46
+C - - - - - 0x018243 06:8233: A9 46     LDA #con_sfx_удар_током
 C - - - - - 0x018245 06:8235: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
 bra_8238:
 C - - - - - 0x018248 06:8238: 20 A7 A5  JSR sub_A5A7_воспроизвести_анимацию
 C - - - - - 0x01824B 06:823B: AD 66 04  LDA ram_погодный_эффект
 C - - - - - 0x01824E 06:823E: 29 7F     AND #$7F
 C - - - - - 0x018250 06:8240: C9 01     CMP #con_погода_молния
-C - - - - - 0x018252 06:8242: F0 12     BEQ bra_8256
+C - - - - - 0x018252 06:8242: F0 12     BEQ bra_8256_молнии_нету
 C - - - - - 0x018254 06:8244: AD 25 05  LDA ram_таймер_электр_мяча
-C - - - - - 0x018257 06:8247: D0 06     BNE bra_824F
+C - - - - - 0x018257 06:8247: D0 06     BNE bra_824F_мяч_наэлектризован
 C - - - - - 0x018259 06:8249: 20 6C 8B  JSR sub_8B6C_вычислить_следующий_номер_движения
 C - - - - - 0x01825C 06:824C: 4C 5B 82  JMP loc_825B
-bra_824F:
+bra_824F_мяч_наэлектризован:
 C - - - - - 0x01825F 06:824F: AD 00 03  LDA ram_счетчик_кадров
 C - - - - - 0x018262 06:8252: 29 01     AND #$01
-C - - - - - 0x018264 06:8254: F0 05     BEQ bra_825B
-bra_8256:
+C - - - - - 0x018264 06:8254: F0 05     BEQ bra_825B_четный_кадр
+bra_8256_молнии_нету:
 C - - - - - 0x018266 06:8256: A9 24     LDA #$24
 C - - - - - 0x018268 06:8258: 9D 74 00  STA ram_номер_анимации_игрока,X
-bra_825B:
+bra_825B_четный_кадр:
 loc_825B:
 C D 0 - - - 0x01826B 06:825B: 20 29 9D  JSR sub_9D29_вычислить_флаг_зеркала_анимации
 C - - - - - 0x01826E 06:825E: 60        RTS
@@ -1882,9 +1882,9 @@ C - - - - - 0x018C9A 06:8C8A: 60        RTS
 
 sub_8C8B:
 C - - - - - 0x018C9B 06:8C8B: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x018C9E 06:8C8E: 29 01     AND #con_state_01
+C - - - - - 0x018C9E 06:8C8E: 29 01     AND #con_state_участие_в_этажерке
 C - - - - - 0x018CA0 06:8C90: F0 07     BEQ bra_8C99
-C - - - - - 0x018CA2 06:8C92: A9 43     LDA #con_action_43
+C - - - - - 0x018CA2 06:8C92: A9 43     LDA #con_action_высокий_сальто_удар
 C - - - - - 0x018CA4 06:8C94: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x018CA7 06:8C97: 68        PLA
 C - - - - - 0x018CA8 06:8C98: 68        PLA
@@ -3661,7 +3661,7 @@ C - - - - - 0x019961 06:9951: 29 7F     AND #$7F
 C - - - - - 0x019963 06:9953: C9 21     CMP #con_action_бег
 C - - - - - 0x019965 06:9955: D0 21     BNE bra_9978
 C - - - - - 0x019967 06:9957: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x01996A 06:995A: 29 11     AND #con_state_стоит_на_мяче + con_state_01
+C - - - - - 0x01996A 06:995A: 29 11     AND #con_state_стоит_на_мяче + con_state_участие_в_этажерке
 C - - - - - 0x01996C 06:995C: D0 10     BNE bra_996E    ; если что-то из этих двух состояний
 C - - - - - 0x01996E 06:995E: A0 00     LDY #$00
 C - - - - - 0x019970 06:9960: BD D7 04  LDA ram_тип_скорости,X
@@ -4529,7 +4529,7 @@ C - - - - - 0x019F0F 06:9EFF: 29 01     AND #$01
 C - - - - - 0x019F11 06:9F01: D0 6C     BNE bra_9F6F_RTS
 C - - - - - 0x019F13 06:9F03: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x019F16 06:9F06: 29 7F     AND #$7F
-C - - - - - 0x019F18 06:9F08: C9 14     CMP #con_action_14
+C - - - - - 0x019F18 06:9F08: C9 14     CMP #con_action_стоит_на_этажерке
 C - - - - - 0x019F1A 06:9F0A: F0 63     BEQ bra_9F6F_RTS
 C - - - - - 0x019F1C 06:9F0C: 98        TYA
 C - - - - - 0x019F1D 06:9F0D: 9D CA 04  STA ram_на_кого_запрыгнул_игрок,X
@@ -4563,13 +4563,13 @@ bra_9F48_владеет_мячом:
 - - - - - - 0x019F5D 06:9F4D: 8D 65 04  STA ram_действие_мяча
 - - - - - - 0x019F60 06:9F50: A9 0B     LDA #con_action_0B
 - - - - - - 0x019F62 06:9F52: 99 59 04  STA ram_действие_игрока,Y
-- - - - - - 0x019F65 06:9F55: A9 56     LDA #con_action_56
+- - - - - - 0x019F65 06:9F55: A9 56     LDA #con_action_в_прыжке_на_этажерку
 - - - - - - 0x019F67 06:9F57: 4C 64 9F  JMP loc_9F64_запись_действия
 bra_9F5A_не_владеет_мячом:
 C - - - - - 0x019F6A 06:9F5A: B9 86 04  LDA ram_состояние_игрока,Y
-C - - - - - 0x019F6D 06:9F5D: 09 01     ORA #con_state_01
+C - - - - - 0x019F6D 06:9F5D: 09 01     ORA #con_state_участие_в_этажерке
 C - - - - - 0x019F6F 06:9F5F: 99 86 04  STA ram_состояние_игрока,Y
-C - - - - - 0x019F72 06:9F62: A9 14     LDA #con_action_14
+C - - - - - 0x019F72 06:9F62: A9 14     LDA #con_action_стоит_на_этажерке
 loc_9F64_запись_действия:
 C D 0 - - - 0x019F74 06:9F64: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x019F77 06:9F67: A9 00     LDA #$00
@@ -5030,9 +5030,9 @@ C - - - - - 0x01A265 06:A255: A9 01     LDA #$01
 C - - - - - 0x01A267 06:A257: 4C D1 A2  JMP loc_A2D1_запись_типа_анимации    ; bzk опт
 bra_A25A:
 C - - - - - 0x01A26A 06:A25A: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x01A26D 06:A25D: 29 11     AND #con_state_стоит_на_мяче + con_state_01
+C - - - - - 0x01A26D 06:A25D: 29 11     AND #con_state_стоит_на_мяче + con_state_участие_в_этажерке
 C - - - - - 0x01A26F 06:A25F: F0 0E     BEQ bra_A26F
-C - - - - - 0x01A271 06:A261: 29 01     AND #con_state_01
+C - - - - - 0x01A271 06:A261: 29 01     AND #con_state_участие_в_этажерке
 C - - - - - 0x01A273 06:A263: F0 05     BEQ bra_A26A
 C - - - - - 0x01A275 06:A265: A9 02     LDA #$02
 C - - - - - 0x01A277 06:A267: 4C D1 A2  JMP loc_A2D1_запись_типа_анимации    ; bzk опт
@@ -7074,13 +7074,13 @@ C - - - - - 0x01ABC2 06:ABB2: 60        RTS
 
 
 
-sub_ABB3:
+sub_ABB3_дублировать_параметры_этажерки:
 C - - - - - 0x01ABC3 06:ABB3: A2 00     LDX #$00
 bra_ABB5_loop:
 C - - - - - 0x01ABC5 06:ABB5: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x01ABC8 06:ABB8: 29 7F     AND #$7F
-C - - - - - 0x01ABCA 06:ABBA: C9 14     CMP #con_action_14
-C - - - - - 0x01ABCC 06:ABBC: D0 1A     BNE bra_ABD8
+C - - - - - 0x01ABCA 06:ABBA: C9 14     CMP #con_action_стоит_на_этажерке
+C - - - - - 0x01ABCC 06:ABBC: D0 1A     BNE bra_ABD8_не_стоит
 C - - - - - 0x01ABCE 06:ABBE: BC CA 04  LDY ram_на_кого_запрыгнул_игрок,X
 C - - - - - 0x01ABD1 06:ABC1: BD B0 04  LDA ram_смена_угла_движения,X
 C - - - - - 0x01ABD4 06:ABC4: 99 B0 04  STA ram_смена_угла_движения,Y
@@ -7090,7 +7090,7 @@ C - - - - - 0x01ABDD 06:ABCD: B9 A3 04  LDA ram_напр_движ_игрока,Y
 C - - - - - 0x01ABE0 06:ABD0: 9D A3 04  STA ram_напр_движ_игрока,X
 C - - - - - 0x01ABE3 06:ABD3: A9 FF     LDA #$FF
 C - - - - - 0x01ABE5 06:ABD5: 9D 79 04  STA ram_next_действие_игрока,X
-bra_ABD8:
+bra_ABD8_не_стоит:
 C - - - - - 0x01ABE8 06:ABD8: E8        INX
 C - - - - - 0x01ABE9 06:ABD9: E0 0C     CPX #$0C
 C - - - - - 0x01ABEB 06:ABDB: 90 D8     BCC bra_ABB5_loop
@@ -7100,22 +7100,22 @@ C - - - - - 0x01ABED 06:ABDD: 60        RTS
 
 sub_ABDE:
 C - - - - - 0x01ABEE 06:ABDE: A2 00     LDX #$00
-bra_ABE0_loop:
+bra_ABE0_loop_очистка_флага_этажерки:
 C - - - - - 0x01ABF0 06:ABE0: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x01ABF3 06:ABE3: 29 FE     AND #con_state_01 ^ $FF
+C - - - - - 0x01ABF3 06:ABE3: 29 FE     AND #con_state_участие_в_этажерке ^ $FF
 C - - - - - 0x01ABF5 06:ABE5: 9D 86 04  STA ram_состояние_игрока,X
 C - - - - - 0x01ABF8 06:ABE8: E8        INX
 C - - - - - 0x01ABF9 06:ABE9: E0 0C     CPX #$0C
-C - - - - - 0x01ABFB 06:ABEB: 90 F3     BCC bra_ABE0_loop
+C - - - - - 0x01ABFB 06:ABEB: 90 F3     BCC bra_ABE0_loop_очистка_флага_этажерки
 C - - - - - 0x01ABFD 06:ABED: A2 00     LDX #$00
 bra_ABEF_loop:
 C - - - - - 0x01ABFF 06:ABEF: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x01AC02 06:ABF2: 29 7F     AND #$7F
-C - - - - - 0x01AC04 06:ABF4: C9 14     CMP #con_action_14
-C - - - - - 0x01AC06 06:ABF6: D0 4F     BNE bra_AC47
+C - - - - - 0x01AC04 06:ABF4: C9 14     CMP #con_action_стоит_на_этажерке
+C - - - - - 0x01AC06 06:ABF6: D0 4F     BNE bra_AC47_не_стоит_на_этажерке
 C - - - - - 0x01AC08 06:ABF8: BC CA 04  LDY ram_на_кого_запрыгнул_игрок,X
 C - - - - - 0x01AC0B 06:ABFB: B9 86 04  LDA ram_состояние_игрока,Y
-C - - - - - 0x01AC0E 06:ABFE: 09 01     ORA #con_state_01
+C - - - - - 0x01AC0E 06:ABFE: 09 01     ORA #con_state_участие_в_этажерке
 C - - - - - 0x01AC10 06:AC00: 9D 86 04  STA ram_состояние_игрока,X
 C - - - - - 0x01AC13 06:AC03: 99 86 04  STA ram_состояние_игрока,Y
 C - - - - - 0x01AC16 06:AC06: B9 14 03  LDA ram_pos_X_lo_игрока,Y
@@ -7141,7 +7141,7 @@ C - - - - - 0x01AC4B 06:AC3B: B9 04 04  LDA ram_spd_Y_lo_игрока,Y
 C - - - - - 0x01AC4E 06:AC3E: 9D 04 04  STA ram_spd_Y_lo_игрока,X
 C - - - - - 0x01AC51 06:AC41: B9 12 04  LDA ram_spd_Y_hi_игрока,Y
 C - - - - - 0x01AC54 06:AC44: 9D 12 04  STA ram_spd_Y_hi_игрока,X
-bra_AC47:
+bra_AC47_не_стоит_на_этажерке:
 C - - - - - 0x01AC57 06:AC47: E8        INX
 C - - - - - 0x01AC58 06:AC48: E0 0C     CPX #$0C
 C - - - - - 0x01AC5A 06:AC4A: 90 A3     BCC bra_ABEF_loop
@@ -10215,7 +10215,7 @@ tbl_BD67:
 
 
 sub_0x01BD7A:
-C - - - - - 0x01BD7A 06:BD6A: 20 B3 AB  JSR sub_ABB3
+C - - - - - 0x01BD7A 06:BD6A: 20 B3 AB  JSR sub_ABB3_дублировать_параметры_этажерки
 C - - - - - 0x01BD7D 06:BD6D: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x01BD7F 06:BD6F: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01BD81 06:BD71: D0 50     BNE bra_BDC3_пенальти
@@ -10260,7 +10260,7 @@ C - - - - - 0x01BDCC 06:BDBC: 20 A4 B2  JSR sub_B2A4
 C - - - - - 0x01BDCF 06:BDBF: 20 DE AB  JSR sub_ABDE
 C - - - - - 0x01BDD2 06:BDC2: 60        RTS
 bra_BDC3_пенальти:
-C - - - - - 0x01BDD3 06:BDC3: 20 B3 AB  JSR sub_ABB3
+C - - - - - 0x01BDD3 06:BDC3: 20 B3 AB  JSR sub_ABB3_дублировать_параметры_этажерки
 C - - - - - 0x01BDD6 06:BDC6: AD CC 05  LDA ram_счетчик_смен
 C - - - - - 0x01BDD9 06:BDC9: 29 0F     AND #$0F
 C - - - - - 0x01BDDB 06:BDCB: AA        TAX

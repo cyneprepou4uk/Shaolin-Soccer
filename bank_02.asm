@@ -10701,7 +10701,7 @@ ofs_AAD9_01_экран_с_лого:
 C - - J - - 0x00AAE9 02:AAD9: 20 01 AE  JSR sub_AE01
 C - - - - - 0x00AAEC 02:AADC: 2C B2 05  BIT ram_флаг_яркости
 C - - - - - 0x00AAEF 02:AADF: 30 03     BMI bra_AAE4_яркость_готова
-C - - - - - 0x00AAF1 02:AAE1: 20 5C C0  JSR sub_0x01D083
+C - - - - - 0x00AAF1 02:AAE1: 20 5C C0  JSR sub_0x01D083_обработка_яркости_без_задержки
 bra_AAE4_яркость_готова:
 C - - - - - 0x00AAF4 02:AAE4: A5 A0     LDA ram_кадр_анимации_мяча
 C - - - - - 0x00AAF6 02:AAE6: C9 02     CMP #$02
@@ -10858,7 +10858,7 @@ C - - - - - 0x00ABDD 02:ABCD: 60        RTS
 
 ofs_ABCE_0B_экран_с_мисако:
 C - - J - - 0x00ABDE 02:ABCE: 20 33 B0  JSR sub_B033_анимация_мяча
-C - - - - - 0x00ABE1 02:ABD1: 20 5C C0  JSR sub_0x01D083
+C - - - - - 0x00ABE1 02:ABD1: 20 5C C0  JSR sub_0x01D083_обработка_яркости_без_задержки
 C - - - - - 0x00ABE4 02:ABD4: 2C B2 05  BIT ram_флаг_яркости
 C - - - - - 0x00ABE7 02:ABD7: 10 04     BPL bra_ABDD_RTS    ; если яркость не готова
 C - - - - - 0x00ABE9 02:ABD9: A9 03     LDA #con_subscr_logo_монолог_мисако
@@ -10870,16 +10870,16 @@ C - - - - - 0x00ABED 02:ABDD: 60        RTS
 
 ofs_ABDE_03_монолог_мисако:
 C - - J - - 0x00ABEE 02:ABDE: 20 33 B0  JSR sub_B033_анимация_мяча
-C - - - - - 0x00ABF1 02:ABE1: 20 7C AE  JSR sub_AE7C
-C - - - - - 0x00ABF4 02:ABE4: 30 10     BMI bra_ABF6
-C - - - - - 0x00ABF6 02:ABE6: 50 15     BVC bra_ABFD_RTS
+C - - - - - 0x00ABF1 02:ABE1: 20 7C AE  JSR sub_AE7C_уменьшение_таймера_и_пропуск_экрана
+C - - - - - 0x00ABF4 02:ABE4: 30 10     BMI bra_ABF6_пропуск_по_кнопке
+C - - - - - 0x00ABF6 02:ABE6: 50 15     BVC bra_ABFD_RTS    ; если таймер еще не закончился
 C - - - - - 0x00ABF8 02:ABE8: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x00ABFB 02:ABEB: A9 04     LDA #$04
 C - - - - - 0x00ABFD 02:ABED: 8D B3 05  STA ram_скорость_яркости
-C - - - - - 0x00AC00 02:ABF0: 20 4A C0  JSR sub_0x01D072
+C - - - - - 0x00AC00 02:ABF0: 20 4A C0  JSR sub_0x01D072_обработка_яркости_с_задержкой_кадра
 C - - - - - 0x00AC03 02:ABF3: E6 59     INC ram_subscript   ; con_subscr_logo_подг_демо_матча
 C - - - - - 0x00AC05 02:ABF5: 60        RTS
-bra_ABF6:
+bra_ABF6_пропуск_по_кнопке:
 C - - - - - 0x00AC06 02:ABF6: 20 65 AE  JSR sub_AE65
 C - - - - - 0x00AC09 02:ABF9: A9 08     LDA #con_subscr_logo_подг_экр_жми_старт
 C - - - - - 0x00AC0B 02:ABFB: 85 59     STA ram_subscript
@@ -10979,7 +10979,7 @@ ofs_ACA9_09_экран_жми_старт:
 C - - J - - 0x00ACB9 02:ACA9: 20 91 AD  JSR sub_AD91
 C - - - - - 0x00ACBC 02:ACAC: 20 2F AA  JSR sub_0x01C296
 C - - - - - 0x00ACBF 02:ACAF: 20 1B AA  JSR sub_0x01C2AE
-C - - - - - 0x00ACC2 02:ACB2: 20 5C C0  JSR sub_0x01D083
+C - - - - - 0x00ACC2 02:ACB2: 20 5C C0  JSR sub_0x01D083_обработка_яркости_без_задержки
 C - - - - - 0x00ACC5 02:ACB5: 2C B2 05  BIT ram_флаг_яркости
 C - - - - - 0x00ACC8 02:ACB8: 10 02     BPL bra_ACBC_RTS    ; если яркость не готова
 C - - - - - 0x00ACCA 02:ACBA: E6 59     INC ram_subscript   ; con_subscr_logo_демо_сценка_кунио   con_subscr_logo_кунио_без_демо_сценки
@@ -10995,12 +10995,12 @@ C - - - - - 0x00ACD0 02:ACC0: 20 F8 AC  JSR sub_ACF8
 C - - - - - 0x00ACD3 02:ACC3: 20 20 AA  JSR sub_0x01C2BD
 C - - - - - 0x00ACD6 02:ACC6: 20 2F AA  JSR sub_0x01C296
 C - - - - - 0x00ACD9 02:ACC9: 20 1B AA  JSR sub_0x01C2AE
-C - - - - - 0x00ACDC 02:ACCC: 20 7C AE  JSR sub_AE7C
-C - - - - - 0x00ACDF 02:ACCF: 30 06     BMI bra_ACD7
-C - - - - - 0x00ACE1 02:ACD1: 50 24     BVC bra_ACF7_RTS
+C - - - - - 0x00ACDC 02:ACCC: 20 7C AE  JSR sub_AE7C_уменьшение_таймера_и_пропуск_экрана
+C - - - - - 0x00ACDF 02:ACCF: 30 06     BMI bra_ACD7_пропуск_по_кнопке
+C - - - - - 0x00ACE1 02:ACD1: 50 24     BVC bra_ACF7_RTS    ; если таймер еще не закончился
 C - - - - - 0x00ACE3 02:ACD3: A9 04     LDA #con_subscr_logo_подг_демо_матча
 C - - - - - 0x00ACE5 02:ACD5: D0 10     BNE bra_ACE7_запись_subscript
-bra_ACD7:
+bra_ACD7_пропуск_по_кнопке:
 C - - - - - 0x00ACE7 02:ACD7: A9 00     LDA #$00
 C - - - - - 0x00ACE9 02:ACD9: 8D 8B 05  STA ram_флаг_демо
 C - - - - - 0x00ACEC 02:ACDC: A9 33     LDA #con_sfx_yes
@@ -11013,7 +11013,7 @@ C - - - - - 0x00ACF7 02:ACE7: 85 59     STA ram_subscript
 C - - - - - 0x00ACF9 02:ACE9: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x00ACFC 02:ACEC: A9 04     LDA #$04
 C - - - - - 0x00ACFE 02:ACEE: 8D B3 05  STA ram_скорость_яркости
-C - - - - - 0x00AD01 02:ACF1: 20 4A C0  JSR sub_0x01D072
+C - - - - - 0x00AD01 02:ACF1: 20 4A C0  JSR sub_0x01D072_обработка_яркости_с_задержкой_кадра
 C - - - - - 0x00AD04 02:ACF4: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 bra_ACF7_RTS:
 C - - - - - 0x00AD07 02:ACF7: 60        RTS
@@ -11274,7 +11274,7 @@ C - - - - - 0x00AE79 02:AE69: F0 0E     BEQ bra_AE79_это_титры
 C - - - - - 0x00AE7B 02:AE6B: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x00AE7E 02:AE6E: A9 04     LDA #$04
 C - - - - - 0x00AE80 02:AE70: 8D B3 05  STA ram_скорость_яркости
-C - - - - - 0x00AE83 02:AE73: 20 4A C0  JSR sub_0x01D072
+C - - - - - 0x00AE83 02:AE73: 20 4A C0  JSR sub_0x01D072_обработка_яркости_с_задержкой_кадра
 C - - - - - 0x00AE86 02:AE76: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 bra_AE79_это_титры:
 C - - - - - 0x00AE89 02:AE79: E6 59     INC ram_subscript
@@ -11282,23 +11282,24 @@ C - - - - - 0x00AE8B 02:AE7B: 60        RTS
 
 
 
-sub_AE7C:
+sub_AE7C_уменьшение_таймера_и_пропуск_экрана:
+; пропуск по кнопкам (80) проверяется только у монолога мисако и на экране жми старт
 C - - - - - 0x00AE8C 02:AE7C: A9 00     LDA #$00
 C - - - - - 0x00AE8E 02:AE7E: 85 1C     STA ram_001C
 C - - - - - 0x00AE90 02:AE80: A5 08     LDA ram_btn_press
 C - - - - - 0x00AE92 02:AE82: 29 30     AND #con_btns_SS
-C - - - - - 0x00AE94 02:AE84: D0 0E     BNE bra_AE94
+C - - - - - 0x00AE94 02:AE84: D0 0E     BNE bra_AE94_кнопка_нажата
 C - - - - - 0x00AE96 02:AE86: CE 89 05  DEC ram_таймер_демо_lo
-C - - - - - 0x00AE99 02:AE89: D0 0D     BNE bra_AE98
+C - - - - - 0x00AE99 02:AE89: D0 0D     BNE bra_AE98_таймер_еще_не_закончился
 C - - - - - 0x00AE9B 02:AE8B: CE 8A 05  DEC ram_таймер_демо_hi
-C - - - - - 0x00AE9E 02:AE8E: D0 08     BNE bra_AE98
-C - - - - - 0x00AEA0 02:AE90: A9 40     LDA #$40
-C - - - - - 0x00AEA2 02:AE92: D0 02     BNE bra_AE96
-bra_AE94:
-C - - - - - 0x00AEA4 02:AE94: A9 80     LDA #$80
-bra_AE96:
+C - - - - - 0x00AE9E 02:AE8E: D0 08     BNE bra_AE98_таймер_еще_не_закончился
+C - - - - - 0x00AEA0 02:AE90: A9 40     LDA #$40    ; флаг закончившегося таймера
+C - - - - - 0x00AEA2 02:AE92: D0 02     BNE bra_AE96_таймер_закончился
+bra_AE94_кнопка_нажата:
+C - - - - - 0x00AEA4 02:AE94: A9 80     LDA #$80    ; флаг нажатой кнопки
+bra_AE96_таймер_закончился:
 C - - - - - 0x00AEA6 02:AE96: 85 1C     STA ram_001C
-bra_AE98:
+bra_AE98_таймер_еще_не_закончился:
 C - - - - - 0x00AEA8 02:AE98: 24 1C     BIT ram_001C
 C - - - - - 0x00AEAA 02:AE9A: 60        RTS
 
@@ -12429,7 +12430,7 @@ C - - - - - 0x00B482 02:B472: A5 58     LDA ram_script
 C - - - - - 0x00B484 02:B474: C9 03     CMP #con_script_титры
 C - - - - - 0x00B486 02:B476: F0 0B     BEQ bra_B483    ; если это не титры
 C - - - - - 0x00B488 02:B478: A5 59     LDA ram_subscript
-C - - - - - 0x00B48A 02:B47A: C9 04     CMP #con_subscr_cred_последняя_фотка
+C - - - - - 0x00B48A 02:B47A: C9 04     CMP #con_subscr_cred_подг_последней_фотки
 C - - - - - 0x00B48C 02:B47C: F0 05     BEQ bra_B483
 C - - - - - 0x00B48E 02:B47E: A9 0C     LDA #con_action_0C
 C - - - - - 0x00B490 02:B480: 9D 59 04  STA ram_действие_игрока,X
@@ -12835,7 +12836,7 @@ tbl_B63F:
 - - - - - - 0x00B6AD 02:B69D: D8        .byte $D8   ; 
 
 - - - - - - 0x00B6AE 02:B69E: 00        .byte $00   ; 
-- - - - - - 0x00B6AF 02:B69F: 14        .byte con_action_14 + con_направо   ; 
+- - - - - - 0x00B6AF 02:B69F: 14        .byte con_action_стоит_на_этажерке + con_направо   ; 
 - - - - - - 0x00B6B0 02:B6A0: 98        .byte $98   ; 
 - - - - - - 0x00B6B1 02:B6A1: D8        .byte $D8   ; 
 
@@ -13874,12 +13875,12 @@ sub_BB3C:
 loc_BB5D_скрипт_титров:
 - - - - - - 0x00BB6D 02:BB5D: A5 59     LDA ram_subscript
 - - - - - - 0x00BB6F 02:BB5F: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_поинтеры_после_JSR
-- - - - - - 0x00BB72 02:BB62: 78 BB     .word ofs_BB78_00
-- - - - - - 0x00BB74 02:BB64: B1 BB     .word ofs_BBB1_01
-- - - - - - 0x00BB76 02:BB66: CE BB     .word ofs_BBCE_02_первая_фотка_в_титрах
+- - - - - - 0x00BB72 02:BB62: 78 BB     .word ofs_BB78_00_подготовка_экрана_с_кубком_и_японцами
+- - - - - - 0x00BB74 02:BB64: B1 BB     .word ofs_BBB1_01_японцы_с_кубком
+- - - - - - 0x00BB76 02:BB66: CE BB     .word ofs_BBCE_02_японцы_с_кубком_сфотканы
 - - - - - - 0x00BB78 02:BB68: 00 BD     .word ofs_BD00_03_фотки_в_титрах
-- - - - - - 0x00BB7A 02:BB6A: C0 BD     .word ofs_BDC0_04_последняя_фотка_в_титрах
-- - - - - - 0x00BB7C 02:BB6C: 42 BE     .word ofs_BE42_05
+- - - - - - 0x00BB7A 02:BB6A: C0 BD     .word ofs_BDC0_04_подготовка_последней_фотки
+- - - - - - 0x00BB7C 02:BB6C: 42 BE     .word ofs_BE42_05_последняя_фотка
 - - - - - - 0x00BB7E 02:BB6E: 59 BE     .word ofs_BE59_06_звонок_по_мобиле
 - - - - - - 0x00BB80 02:BB70: 76 BE     .word ofs_BE76_07
 - - - - - - 0x00BB82 02:BB72: 95 AA     .word ofs_AA95_08
@@ -13888,7 +13889,7 @@ loc_BB5D_скрипт_титров:
 
 
 
-ofs_BB78_00:
+ofs_BB78_00_подготовка_экрана_с_кубком_и_японцами:
 - - - - - - 0x00BB88 02:BB78: 20 62 C0  JSR sub_0x01EF64_убрать_полоску_слева_на_экране
 - - - - - - 0x00BB8B 02:BB7B: A9 F0     LDA #$F0
 - - - - - - 0x00BB8D 02:BB7D: 8D 56 00  STA ram_ограничитель_Y_спрайтов
@@ -13912,34 +13913,34 @@ ofs_BB78_00:
 - - - - - - 0x00BBB6 02:BBA6: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
 - - - - - - 0x00BBB9 02:BBA9: A9 0B     LDA #con_music_кубок
 - - - - - - 0x00BBBB 02:BBAB: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
-- - - - - - 0x00BBBE 02:BBAE: E6 59     INC ram_subscript   ; con_subscr_cred_01
+- - - - - - 0x00BBBE 02:BBAE: E6 59     INC ram_subscript   ; con_subscr_cred_японцы_с_кубком
 bra_BBB0_RTS:
 - - - - - - 0x00BBC0 02:BBB0: 60        RTS
 
 
 
-ofs_BBB1_01:
-- - - - - - 0x00BBC1 02:BBB1: 20 5C C0  JSR sub_0x01D083
+ofs_BBB1_01_японцы_с_кубком:
+- - - - - - 0x00BBC1 02:BBB1: 20 5C C0  JSR sub_0x01D083_обработка_яркости_без_задержки
 - - - - - - 0x00BBC4 02:BBB4: 20 3C BB  JSR sub_BB3C
 - - - - - - 0x00BBC7 02:BBB7: 20 1B AA  JSR sub_0x01C2AE
 - - - - - - 0x00BBCA 02:BBBA: AD E5 07  LDA ram_07E5
 - - - - - - 0x00BBCD 02:BBBD: 29 02     AND #$02
 - - - - - - 0x00BBCF 02:BBBF: D0 EF     BNE bra_BBB0_RTS
-- - - - - - 0x00BBD1 02:BBC1: A9 44     LDA #con_sfx_unk_44
+- - - - - - 0x00BBD1 02:BBC1: A9 44     LDA #con_sfx_сделана_фотка
 - - - - - - 0x00BBD3 02:BBC3: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 - - - - - - 0x00BBD6 02:BBC6: A9 10     LDA #$10
-- - - - - - 0x00BBD8 02:BBC8: 20 BF BE  JSR sub_BEBF
-- - - - - - 0x00BBDB 02:BBCB: 4C AE BB  INC ram_subscript   ; con_subscr_cred_первая_фотка
+- - - - - - 0x00BBD8 02:BBC8: 20 BF BE  JSR sub_BEBF_запись_таймера
+- - - - - - 0x00BBDB 02:BBCB: 4C AE BB  INC ram_subscript   ; con_subscr_cred_фотка_с_кубком
                                         RTS
 
 
 
-ofs_BBCE_02_первая_фотка_в_титрах:
+ofs_BBCE_02_японцы_с_кубком_сфотканы:
 - - - - - - 0x00BBDE 02:BBCE: 20 C8 BE  JSR sub_BEC8
-- - - - - - 0x00BBE1 02:BBD1: 20 7C AE  JSR sub_AE7C
-- - - - - - 0x00BBE4 02:BBD4: 50 DA     BVC bra_BBB0_RTS
+- - - - - - 0x00BBE1 02:BBD1: 20 7C AE  JSR sub_AE7C_уменьшение_таймера_и_пропуск_экрана
+- - - - - - 0x00BBE4 02:BBD4: 50 DA     BVC bra_BBB0_RTS    ; если таймер еще не закончился
 - - - - - - 0x00BBE6 02:BBD6: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
-- - - - - - 0x00BBE9 02:BBD9: 20 4A C0  JSR sub_0x01D072
+- - - - - - 0x00BBE9 02:BBD9: 20 4A C0  JSR sub_0x01D072_обработка_яркости_с_задержкой_кадра
 - - - - - - 0x00BBEC 02:BBDC: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 - - - - - - 0x00BBEF 02:BBDF: A9 1C     LDA #$1C
 - - - - - - 0x00BBF1 02:BBE1: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
@@ -14031,7 +14032,7 @@ bra_BC27:
 - - - - - - 0x00BCC0 02:BCB0: A9 FF     LDA #$FF
 - - - - - - 0x00BCC2 02:BCB2: 8D 8C 05  STA ram_058C
 - - - - - - 0x00BCC5 02:BCB5: A9 2C     LDA #$2C
-- - - - - - 0x00BCC7 02:BCB7: 20 BF BE  JSR sub_BEBF
+- - - - - - 0x00BCC7 02:BCB7: 20 BF BE  JSR sub_BEBF_запись_таймера
 - - - - - - 0x00BCCA 02:BCBA: EE 8A 05  INC ram_таймер_демо_hi
 - - - - - - 0x00BCCD 02:BCBD: 20 D4 BE  JSR sub_BED4
 - - - - - - 0x00BCD0 02:BCC0: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
@@ -14039,7 +14040,7 @@ bra_BC27:
 - - - - - - 0x00BCD5 02:BCC5: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 - - - - - - 0x00BCD8 02:BCC8: A9 80     LDA #$80
 - - - - - - 0x00BCDA 02:BCCA: 8D 8B 05  STA ram_флаг_демо
-- - - - - - 0x00BCDD 02:BCCD: E6 59     INC ram_subscript   ; con_subscr_cred_фотки
+- - - - - - 0x00BCDD 02:BCCD: E6 59     INC ram_subscript   ; con_subscr_cred_список_фоток
 bra_BCCF_RTS:
 - - - - - - 0x00BCDF 02:BCCF: 60        RTS
 
@@ -14099,17 +14100,17 @@ tbl_BCD0:
 
 ofs_BD00_03_фотки_в_титрах:
 - - - - - - 0x00BD10 02:BD00: 20 D4 BE  JSR sub_BED4
-- - - - - - 0x00BD13 02:BD03: 20 5C C0  JSR sub_0x01D083
-- - - - - - 0x00BD16 02:BD06: 20 7C AE  JSR sub_AE7C
-- - - - - - 0x00BD19 02:BD09: 50 C4     BVC bra_BCCF_RTS
+- - - - - - 0x00BD13 02:BD03: 20 5C C0  JSR sub_0x01D083_обработка_яркости_без_задержки
+- - - - - - 0x00BD16 02:BD06: 20 7C AE  JSR sub_AE7C_уменьшение_таймера_и_пропуск_экрана
+- - - - - - 0x00BD19 02:BD09: 50 C4     BVC bra_BCCF_RTS    ; если таймер еще не закончился
 - - - - - - 0x00BD1B 02:BD0B: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
-- - - - - - 0x00BD1E 02:BD0E: 20 4A C0  JSR sub_0x01D072
+- - - - - - 0x00BD1E 02:BD0E: 20 4A C0  JSR sub_0x01D072_обработка_яркости_с_задержкой_кадра
 - - - - - - 0x00BD21 02:BD11: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 - - - - - - 0x00BD24 02:BD14: EE 8C 05  INC ram_058C
 - - - - - - 0x00BD27 02:BD17: AD 8C 05  LDA ram_058C
 - - - - - - 0x00BD2A 02:BD1A: C9 07     CMP #$07
 - - - - - - 0x00BD2C 02:BD1C: B0 AF     BCC bra_BD1E
-                                        INC ram_subscript   ; con_subscr_cred_последняя_фотка
+                                        INC ram_subscript   ; con_subscr_cred_подг_последней_фотки
                                         RTS
 bra_BD1E:
 - - - - - - 0x00BD2E 02:BD1E: 69 1D     ADC #$1D    ; 1D-23, фотки в титрах
@@ -14123,7 +14124,7 @@ bra_BD1E:
 - - - - - - 0x00BD40 02:BD30: 85 2D     STA ram_002D
 - - - - - - 0x00BD42 02:BD32: A0 00     LDY #$00
 - - - - - - 0x00BD44 02:BD34: B1 2C     LDA (ram_002C),Y
-- - - - - - 0x00BD46 02:BD36: 20 BF BE  JSR sub_BEBF
+- - - - - - 0x00BD46 02:BD36: 20 BF BE  JSR sub_BEBF_запись_таймера
 - - - - - - 0x00BD49 02:BD39: AD 89 05  LDA ram_таймер_демо_lo
 - - - - - - 0x00BD4C 02:BD3C: C9 40     CMP #$40
 - - - - - - 0x00BD4E 02:BD3E: B0 03     BCS bra_BD43
@@ -14196,7 +14197,7 @@ bra_BDB6:
 
 
 
-ofs_BDC0_04_последняя_фотка_в_титрах:
+ofs_BDC0_04_подготовка_последней_фотки:
 - - - - - - 0x00BDD0 02:BDC0: 20 66 BA  JSR sub_BA66
 - - - - - - 0x00BDD3 02:BDC3: A5 7C     LDA ram_номер_анимации_игрока + 8
 - - - - - - 0x00BDD5 02:BDC5: 85 74     STA ram_номер_анимации_игрока
@@ -14239,23 +14240,23 @@ ofs_BDC0_04_последняя_фотка_в_титрах:
 - - - - - - 0x00BE3C 02:BE2C: A9 24     LDA #$24    ; фотка в титрах
 - - - - - - 0x00BE3E 02:BE2E: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
 - - - - - - 0x00BE41 02:BE31: A9 00     LDA #$00
-- - - - - - 0x00BE43 02:BE33: 20 BF BE  JSR sub_BEBF
+- - - - - - 0x00BE43 02:BE33: 20 BF BE  JSR sub_BEBF_запись_таймера
 - - - - - - 0x00BE46 02:BE36: EE 8A 05  INC ram_таймер_демо_hi
 - - - - - - 0x00BE49 02:BE39: EE 8A 05  INC ram_таймер_демо_hi
 - - - - - - 0x00BE4C 02:BE3C: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
-- - - - - - 0x00BE4F 02:BE3F: E6 59     INC ram_subscript   ; con_subscr_cred_05
+- - - - - - 0x00BE4F 02:BE3F: E6 59     INC ram_subscript   ; con_subscr_cred_последняя_фотка
 bra_BE41_RTS:
 - - - - - - 0x00BE51 02:BE41: 60        RTS
 
 
 
-ofs_BE42_05:
+ofs_BE42_05_последняя_фотка:
 - - - - - - 0x00BE52 02:BE42: 20 C8 BE  JSR sub_BEC8
-- - - - - - 0x00BE55 02:BE45: 20 5C C0  JSR sub_0x01D083
-- - - - - - 0x00BE58 02:BE48: 20 7C AE  JSR sub_AE7C
-- - - - - - 0x00BE5B 02:BE4B: 50 F4     BVC bra_BE41_RTS
+- - - - - - 0x00BE55 02:BE45: 20 5C C0  JSR sub_0x01D083_обработка_яркости_без_задержки
+- - - - - - 0x00BE58 02:BE48: 20 7C AE  JSR sub_AE7C_уменьшение_таймера_и_пропуск_экрана
+- - - - - - 0x00BE5B 02:BE4B: 50 F4     BVC bra_BE41_RTS    ; если таймер еще не закончился
 - - - - - - 0x00BE5D 02:BE4D: A9 01     LDA #$01
-- - - - - - 0x00BE5F 02:BE4F: 20 BF BE  JSR sub_BEBF
+- - - - - - 0x00BE5F 02:BE4F: 20 BF BE  JSR sub_BEBF_запись_таймера
 - - - - - - 0x00BE62 02:BE52: A9 00     LDA #$00
 - - - - - - 0x00BE64 02:BE54: 8D 8C 05  STA ram_058C
 - - - - - - 0x00BE67 02:BE57: F0 E6     INC ram_subscript   ; con_subscr_cred_звонок_по_мобиле
@@ -14286,7 +14287,7 @@ ofs_BE76_07:
 - - - - - - 0x00BE8C 02:BE7C: AD 05 06  LDA ram_0605
 - - - - - - 0x00BE8F 02:BE7F: 30 13     BMI bra_BE94_RTS
 - - - - - - 0x00BE91 02:BE81: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
-- - - - - - 0x00BE94 02:BE84: 20 4A C0  JSR sub_0x01D072
+- - - - - - 0x00BE94 02:BE84: 20 4A C0  JSR sub_0x01D072_обработка_яркости_с_задержкой_кадра
 - - - - - - 0x00BE97 02:BE87: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
 - - - - - - 0x00BE9A 02:BE8A: A9 00     LDA #$00
 - - - - - - 0x00BE9C 02:BE8C: 8D E6 05  STA ram_скорость_игры
@@ -14305,15 +14306,15 @@ ofs_BE95_0A:
 
 
 sub_BE9B_звонок_по_мобиле:
-- - - - - - 0x00BEAB 02:BE9B: 20 7C AE  JSR sub_AE7C
+- - - - - - 0x00BEAB 02:BE9B: 20 7C AE  JSR sub_AE7C_уменьшение_таймера_и_пропуск_экрана
 - - - - - - 0x00BEAE 02:BE9E: 18        CLC
-- - - - - - 0x00BEAF 02:BE9F: 50 1D     BVC bra_BEBE_RTS
+- - - - - - 0x00BEAF 02:BE9F: 50 1D     BVC bra_BEBE_RTS    ; если таймер еще не закончился
 - - - - - - 0x00BEB1 02:BEA1: EE 8C 05  INC ram_058C
 - - - - - - 0x00BEB4 02:BEA4: AD 8C 05  LDA ram_058C
 - - - - - - 0x00BEB7 02:BEA7: C9 04     CMP #$04
 - - - - - - 0x00BEB9 02:BEA9: B0 13     BCS bra_BEBE_RTS
 - - - - - - 0x00BEBB 02:BEAB: A9 40     LDA #$40
-- - - - - - 0x00BEBD 02:BEAD: 20 BF BE  JSR sub_BEBF
+- - - - - - 0x00BEBD 02:BEAD: 20 BF BE  JSR sub_BEBF_запись_таймера
 - - - - - - 0x00BEC0 02:BEB0: A9 4C     LDA #con_sfx_тебе_звонят
 - - - - - - 0x00BEC2 02:BEB2: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 - - - - - - 0x00BEC5 02:BEB5: 18        CLC
@@ -14326,7 +14327,7 @@ bra_BEBE_RTS:
 
 
 
-sub_BEBF:
+sub_BEBF_запись_таймера:
 - - - - - - 0x00BECF 02:BEBF: 8D 89 05  STA ram_таймер_демо_lo
 - - - - - - 0x00BED2 02:BEC2: A9 01     LDA #$01
 - - - - - - 0x00BED4 02:BEC4: 8D 8A 05  STA ram_таймер_демо_hi

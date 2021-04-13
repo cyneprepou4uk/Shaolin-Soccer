@@ -12452,7 +12452,7 @@ C - - - - - 0x013515 04:B505: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x013517 04:B507: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x013519 04:B509: D0 2B     BNE bra_B536
 C - - - - - 0x01351B 04:B50B: BD 86 04  LDA ram_состояние_игрока,X
-C - - - - - 0x01351E 04:B50E: 29 01     AND #con_state_01
+C - - - - - 0x01351E 04:B50E: 29 01     AND #con_state_участие_в_этажерке
 C - - - - - 0x013520 04:B510: D0 44     BNE bra_B556
 C - - - - - 0x013522 04:B512: E0 0A     CPX #con_id_кипера
 C - - - - - 0x013524 04:B514: B0 2B     BCS bra_B541_это_кипер
@@ -13442,12 +13442,12 @@ C - - - - - 0x013AE6 04:BAD6: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x013AE9 04:BAD9: 20 02 BB  JSR sub_BB02
 C - - - - - 0x013AEC 04:BADC: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x013AEF 04:BADF: 4A        LSR
-C - - - - - 0x013AF0 04:BAE0: B0 0D     BCS bra_BAEF    ; con_state_01
+C - - - - - 0x013AF0 04:BAE0: B0 0D     BCS bra_BAEF    ; con_state_участие_в_этажерке
 C - - - - - 0x013AF2 04:BAE2: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x013AF5 04:BAE5: 29 7F     AND #$7F
-C - - - - - 0x013AF7 04:BAE7: C9 43     CMP #con_action_43
+C - - - - - 0x013AF7 04:BAE7: C9 43     CMP #con_action_высокий_сальто_удар
 C - - - - - 0x013AF9 04:BAE9: F0 04     BEQ bra_BAEF
-C - - - - - 0x013AFB 04:BAEB: C9 47     CMP #con_action_47
+C - - - - - 0x013AFB 04:BAEB: C9 47     CMP #con_action_низкий_сальто_удар
 C - - - - - 0x013AFD 04:BAED: D0 05     BNE bra_BAF4
 bra_BAEF:
 - - - - - - 0x013AFF 04:BAEF: A9 28     LDA #$28
