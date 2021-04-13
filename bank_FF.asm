@@ -4650,14 +4650,14 @@ C - - - - - 0x01D9E7 07:D9D7: 60        RTS
 bra_D9D8_это_обработанная_молния:
 C - - - - - 0x01D9E8 07:D9D8: A2 00     LDX #$00
 bra_D9DA_loop:
-C - - - - - 0x01D9EA 07:D9DA: EE AE 03  INC ram_03AE
-C - - - - - 0x01D9ED 07:D9DD: AD AE 03  LDA ram_03AE
+C - - - - - 0x01D9EA 07:D9DA: EE AE 03  INC ram_смещение_для_отрисовки_молнии
+C - - - - - 0x01D9ED 07:D9DD: AD AE 03  LDA ram_смещение_для_отрисовки_молнии
 C - - - - - 0x01D9F0 07:D9E0: C9 0B     CMP #$0B
 C - - - - - 0x01D9F2 07:D9E2: 90 05     BCC bra_D9E9
 C - - - - - 0x01D9F4 07:D9E4: A9 00     LDA #$00
-C - - - - - 0x01D9F6 07:D9E6: 8D AE 03  STA ram_03AE
+C - - - - - 0x01D9F6 07:D9E6: 8D AE 03  STA ram_смещение_для_отрисовки_молнии
 bra_D9E9:
-C - - - - - 0x01D9F9 07:D9E9: AC AE 03  LDY ram_03AE
+C - - - - - 0x01D9F9 07:D9E9: AC AE 03  LDY ram_смещение_для_отрисовки_молнии
 C - - - - - 0x01D9FC 07:D9EC: BD 0C 01  LDA ram_010C,X
 C - - - - - 0x01D9FF 07:D9EF: 18        CLC
 C - - - - - 0x01DA00 07:D9F0: 69 40     ADC #$40
