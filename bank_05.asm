@@ -3224,9 +3224,11 @@ C - - - - - 0x0152A5 05:9295: 8D 5B 00  STA ram_для_subscript
 C - - - - - 0x0152A8 05:9298: 4C BE 92  RTS
 bra_929B:
 C - - - - - 0x0152AB 05:929B: 20 7D C0  JSR sub_0x01C345
-C - - - - - 0x0152AE 05:929E: A9 00     LDA #$00    ; con_script_игра_на_поле   con_subscr_gp_00    bzk опт
+C - - - - - 0x0152AE 05:929E: A9 00     LDA #$00
 C - - - - - 0x0152B0 05:92A0: 8D CC 05  STA ram_счетчик_смен
+                                        LDA #con_script_игра_на_поле
 C - - - - - 0x0152B3 05:92A3: 85 58     STA ram_script
+                                        LDA #con_subscr_gp_00
 C - - - - - 0x0152B5 05:92A5: 85 59     STA ram_subscript
 C - - - - - 0x0152B7 05:92A7: 20 84 BB  JSR sub_BB84
 C - - - - - 0x0152BA 05:92AA: 20 0F 80  JSR sub_0x01C263_выставить_базовые_параметры_игроков
