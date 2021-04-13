@@ -13572,7 +13572,7 @@ C - - - - - 0x013BB3 04:BBA3: 85 2E     STA ram_002E
 C - - - - - 0x013BB5 04:BBA5: 8D 1B 05  STA ram_051B
 C - - - - - 0x013BB8 04:BBA8: A5 2F     LDA ram_002F
 C - - - - - 0x013BBA 04:BBAA: F0 07     BEQ bra_BBB3
-C - - - - - 0x013BBC 04:BBAC: A9 04     LDA #$04
+C - - - - - 0x013BBC 04:BBAC: A9 04     LDA #$04    ; центровка на правые ворота при обычном ударе в левой зоне примерно в центре
 C - - - - - 0x013BBE 04:BBAE: 85 2F     STA ram_002F
 C - - - - - 0x013BC0 04:BBB0: 8D 1C 05  STA ram_051C
 bra_BBB3:

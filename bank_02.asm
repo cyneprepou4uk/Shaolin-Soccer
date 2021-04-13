@@ -14030,7 +14030,7 @@ bra_BC27:
 - - - - - - 0x00BCBA 02:BCAA: AD 92 03  LDA ram_pos_Z_lo_мяча
 - - - - - - 0x00BCBD 02:BCAD: 8D 90 03  STA ram_pos_Z_lo_игрока + 10
 - - - - - - 0x00BCC0 02:BCB0: A9 FF     LDA #$FF
-- - - - - - 0x00BCC2 02:BCB2: 8D 8C 05  STA ram_058C
+- - - - - - 0x00BCC2 02:BCB2: 8D 8C 05  STA ram_номер_фото_на_титрах
 - - - - - - 0x00BCC5 02:BCB5: A9 2C     LDA #$2C
 - - - - - - 0x00BCC7 02:BCB7: 20 BF BE  JSR sub_BEBF_запись_таймера
 - - - - - - 0x00BCCA 02:BCBA: EE 8A 05  INC ram_таймер_демо_hi
@@ -14106,8 +14106,8 @@ ofs_BD00_03_фотки_в_титрах:
 - - - - - - 0x00BD1B 02:BD0B: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 - - - - - - 0x00BD1E 02:BD0E: 20 4A C0  JSR sub_0x01D072_обработка_яркости_с_задержкой_кадра
 - - - - - - 0x00BD21 02:BD11: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
-- - - - - - 0x00BD24 02:BD14: EE 8C 05  INC ram_058C
-- - - - - - 0x00BD27 02:BD17: AD 8C 05  LDA ram_058C
+- - - - - - 0x00BD24 02:BD14: EE 8C 05  INC ram_номер_фото_на_титрах
+- - - - - - 0x00BD27 02:BD17: AD 8C 05  LDA ram_номер_фото_на_титрах
 - - - - - - 0x00BD2A 02:BD1A: C9 07     CMP #$07
 - - - - - - 0x00BD2C 02:BD1C: B0 AF     BCC bra_BD1E
                                         INC ram_subscript   ; con_subscr_cred_подг_последней_фотки
@@ -14115,7 +14115,7 @@ ofs_BD00_03_фотки_в_титрах:
 bra_BD1E:
 - - - - - - 0x00BD2E 02:BD1E: 69 1D     ADC #$1D    ; 1D-23, фотки в титрах
 - - - - - - 0x00BD30 02:BD20: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
-- - - - - - 0x00BD33 02:BD23: AD 8C 05  LDA ram_058C
+- - - - - - 0x00BD33 02:BD23: AD 8C 05  LDA ram_номер_фото_на_титрах
 - - - - - - 0x00BD36 02:BD26: 0A        ASL
 - - - - - - 0x00BD37 02:BD27: A8        TAY
 - - - - - - 0x00BD38 02:BD28: B9 EC BE  LDA tbl_BEEC,Y
@@ -14258,7 +14258,7 @@ ofs_BE42_05_последняя_фотка:
 - - - - - - 0x00BE5D 02:BE4D: A9 01     LDA #$01
 - - - - - - 0x00BE5F 02:BE4F: 20 BF BE  JSR sub_BEBF_запись_таймера
 - - - - - - 0x00BE62 02:BE52: A9 00     LDA #$00
-- - - - - - 0x00BE64 02:BE54: 8D 8C 05  STA ram_058C
+- - - - - - 0x00BE64 02:BE54: 8D 8C 05  STA ram_номер_фото_на_титрах
 - - - - - - 0x00BE67 02:BE57: F0 E6     INC ram_subscript   ; con_subscr_cred_звонок_по_мобиле
                                         RTS
 
@@ -14309,8 +14309,8 @@ sub_BE9B_звонок_по_мобиле:
 - - - - - - 0x00BEAB 02:BE9B: 20 7C AE  JSR sub_AE7C_уменьшение_таймера_и_пропуск_экрана
 - - - - - - 0x00BEAE 02:BE9E: 18        CLC
 - - - - - - 0x00BEAF 02:BE9F: 50 1D     BVC bra_BEBE_RTS    ; если таймер еще не закончился
-- - - - - - 0x00BEB1 02:BEA1: EE 8C 05  INC ram_058C
-- - - - - - 0x00BEB4 02:BEA4: AD 8C 05  LDA ram_058C
+- - - - - - 0x00BEB1 02:BEA1: EE 8C 05  INC ram_номер_фото_на_титрах
+- - - - - - 0x00BEB4 02:BEA4: AD 8C 05  LDA ram_номер_фото_на_титрах
 - - - - - - 0x00BEB7 02:BEA7: C9 04     CMP #$04
 - - - - - - 0x00BEB9 02:BEA9: B0 13     BCS bra_BEBE_RTS
 - - - - - - 0x00BEBB 02:BEAB: A9 40     LDA #$40
