@@ -198,7 +198,7 @@ C - - - - - 0x00C151 03:8141: A9 22     LDA #$22
 C - - - - - 0x00C153 03:8143: 8D 73 06  STA ram_счетчик_поведения_ботов + 11
 bra_8146:
 C - - - - - 0x00C156 03:8146: A5 59     LDA ram_subscript
-C - - - - - 0x00C158 03:8148: C9 01     CMP #con_subscr_gp_01
+C - - - - - 0x00C158 03:8148: C9 01     CMP #con_subscr_gp_разводка
 C - - - - - 0x00C15A 03:814A: D0 15     BNE bra_8161
 C - - - - - 0x00C15C 03:814C: AD 5C 00  LDA ram_flag_gameplay
 C - - - - - 0x00C15F 03:814F: 29 20     AND #con_gp_нарушение
@@ -254,9 +254,9 @@ C - - - - - 0x00C1B8 03:81A8: 60        RTS
 
 sub_81A9:
 C - - - - - 0x00C1B9 03:81A9: AD 59 00  LDA ram_subscript
-C - - - - - 0x00C1BC 03:81AC: C9 03     CMP #con_subscr_gp_03
+C - - - - - 0x00C1BC 03:81AC: C9 03     CMP #con_subscr_gp_футбольная_пауза
 C - - - - - 0x00C1BE 03:81AE: F0 07     BEQ bra_81B7_RTS
-C - - - - - 0x00C1C0 03:81B0: C9 06     CMP #con_subscr_gp_06
+C - - - - - 0x00C1C0 03:81B0: C9 06     CMP #con_subscr_gp_мяч_вне_игры
 C - - - - - 0x00C1C2 03:81B2: D0 04     BNE bra_81B8
 C - - - - - 0x00C1C4 03:81B4: 4C 98 82  JMP loc_8298
 bra_81B7_RTS:
@@ -4495,7 +4495,7 @@ tbl_9BC2:
 
 sub_9BD2:
 C - - - - - 0x00DBE2 03:9BD2: A5 59     LDA ram_subscript
-C - - - - - 0x00DBE4 03:9BD4: C9 02     CMP #con_subscr_gp_02
+C - - - - - 0x00DBE4 03:9BD4: C9 02     CMP #con_subscr_gp_игра_в_разгаре
 C - - - - - 0x00DBE6 03:9BD6: F0 01     BEQ bra_9BD9
 C - - - - - 0x00DBE8 03:9BD8: 60        RTS
 bra_9BD9:
@@ -6361,9 +6361,9 @@ tbl_A79E:
 
 sub_A7A1:
 C - - - - - 0x00E7B1 03:A7A1: A5 59     LDA ram_subscript
-C - - - - - 0x00E7B3 03:A7A3: C9 01     CMP #con_subscr_gp_01
+C - - - - - 0x00E7B3 03:A7A3: C9 01     CMP #con_subscr_gp_разводка
 C - - - - - 0x00E7B5 03:A7A5: F0 0E     BEQ bra_A7B5_RTS
-C - - - - - 0x00E7B7 03:A7A7: C9 03     CMP #con_subscr_gp_03
+C - - - - - 0x00E7B7 03:A7A7: C9 03     CMP #con_subscr_gp_футбольная_пауза
 C - - - - - 0x00E7B9 03:A7A9: F0 0A     BEQ bra_A7B5_RTS
 C - - - - - 0x00E7BB 03:A7AB: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00E7BE 03:A7AE: 29 20     AND #con_gm_пенальти
@@ -11467,7 +11467,7 @@ C - - - - - 0x00FE45 03:BE35: AD EF 00  LDA ram_pos_Y_hi_скролл
 C - - - - - 0x00FE48 03:BE38: E5 1D     SBC ram_001D
 C - - - - - 0x00FE4A 03:BE3A: 8D F3 00  STA ram_pos_Y_hi_камера
 C - - - - - 0x00FE4D 03:BE3D: A5 59     LDA ram_subscript
-C - - - - - 0x00FE4F 03:BE3F: C9 05     CMP #con_subscr_gp_05
+C - - - - - 0x00FE4F 03:BE3F: C9 05     CMP #con_subscr_gp_счет_после_гола
 C - - - - - 0x00FE51 03:BE41: F0 04     BEQ bra_BE47
 C - - - - - 0x00FE53 03:BE43: C9 08     CMP #$08
 C - - - - - 0x00FE55 03:BE45: 90 37     BCC bra_BE7E_это_не_экраны_со_счетом

@@ -54,7 +54,7 @@ C - - - - - 0x014067 05:8057: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_по�
 
 
 ofs_8083_00_переход_от_скрипта_логотипа_к_скрипту_меню:
-C - - J - - 0x014093 05:8083: A9 01     LDA #con_subscr_menu_01
+C - - J - - 0x014093 05:8083: A9 01     LDA #con_subscr_menu_главное_меню
 C - - - - - 0x014095 05:8085: 8D 59 00  STA ram_subscript
 C - - - - - 0x014098 05:8088: 4C 7A 80  RTS
 
@@ -1110,9 +1110,9 @@ C - - - - - 0x014721 05:8711: 60        RTS
 
 tbl_8712:
 - D 0 - - - 0x014723 05:8713: 0E        .byte con_subscr_menu_0E   ; 00 режим прохождения
-- D 0 - - - 0x014725 05:8715: 05        .byte con_subscr_menu_05   ; 01 минибатл
-- D 0 - - - 0x014727 05:8717: 05        .byte con_subscr_menu_05   ; 02 пенальти
-- - - - - - 0x014729 05:8719: 06        .byte con_subscr_menu_06   ; 03 bzk мусор?
+- D 0 - - - 0x014725 05:8715: 05        .byte con_subscr_menu_выбор_команд   ; 01 минибатл
+- D 0 - - - 0x014727 05:8717: 05        .byte con_subscr_menu_выбор_команд   ; 02 пенальти
+- - - - - - 0x014729 05:8719: 06        .byte con_subscr_menu_выбор_погоды   ; 03 bzk мусор?
 
 
 
@@ -1391,7 +1391,7 @@ sub_8885:
 C - - - - - 0x014895 05:8885: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x014898 05:8888: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x01489B 05:888B: 20 47 BB  JSR sub_BB47
-C - - - - - 0x01489E 05:888E: A9 03     LDA #con_subscr_menu_03
+C - - - - - 0x01489E 05:888E: A9 03     LDA #con_subscr_menu_экран_vs
 C - - - - - 0x0148A0 05:8890: 85 59     STA ram_subscript
 C - - - - - 0x0148A2 05:8892: 60        RTS
 
@@ -1430,7 +1430,7 @@ C - - - - - 0x0148D0 05:88C0: A9 33     LDA #con_sfx_yes
 C - - - - - 0x0148D2 05:88C2: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x0148D5 05:88C5: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x0148D8 05:88C8: 20 4A C0  JSR sub_0x01D072
-C - - - - - 0x0148DB 05:88CB: A9 04     LDA #con_subscr_menu_04
+C - - - - - 0x0148DB 05:88CB: A9 04     LDA #con_subscr_menu_раздевалка
 C - - - - - 0x0148DD 05:88CD: 85 59     STA ram_subscript
 bra_88CF_RTS:
 C D 0 - - - 0x0148DF 05:88CF: 60        RTS
@@ -2126,7 +2126,7 @@ C - - - - - 0x014CFE 05:8CEE: 20 44 C0  JSR sub_0x01D057_включить_зат
 C - - - - - 0x014D01 05:8CF1: 20 4A C0  JSR sub_0x01D072
 C - - - - - 0x014D04 05:8CF4: A9 00     LDA #$00
 C - - - - - 0x014D06 05:8CF6: 8D CC 05  STA ram_счетчик_смен
-C - - - - - 0x014D09 05:8CF9: A9 06     LDA #con_subscr_menu_06
+C - - - - - 0x014D09 05:8CF9: A9 06     LDA #con_subscr_menu_выбор_погоды
 C - - - - - 0x014D0B 05:8CFB: 85 59     STA ram_subscript
 C - - - - - 0x014D0D 05:8CFD: 60        RTS
 
@@ -2358,7 +2358,7 @@ ofs_8E08_01:
 C - - J - - 0x014E18 05:8E08: 2C B2 05  BIT ram_флаг_яркости
 C - - - - - 0x014E1B 05:8E0B: 10 25     BPL bra_8E32    ; если яркость не готова
 C - - - - - 0x014E1D 05:8E0D: 50 06     BVC bra_8E15_не_затемнение
-C - - - - - 0x014E1F 05:8E0F: 20 73 8F  LDA #con_subscr_menu_04
+C - - - - - 0x014E1F 05:8E0F: 20 73 8F  LDA #con_subscr_menu_раздевалка
                                         STA ram_subscript
 C - - - - - 0x014E22 05:8E12: 4C 3B 8E  RTS
 bra_8E15_не_затемнение:
@@ -3224,7 +3224,7 @@ C - - - - - 0x01528D 05:927D: A4 44     LDY ram_0044
 C - - - - - 0x01528F 05:927F: B9 BF 92  LDA tbl_92BF,Y
 C - - - - - 0x015292 05:9282: F0 17     BEQ bra_929B
 C - - - - - 0x015294 05:9284: 30 2A     BMI bra_92B0
-C - - - - - 0x015296 05:9286: C9 09     CMP #con_subscr_menu_09
+C - - - - - 0x015296 05:9286: C9 09     CMP #con_subscr_menu_турнирная_таблица
 C - - - - - 0x015298 05:9288: D0 07     BNE bra_9291_запись_subscript
 C - - - - - 0x01529A 05:928A: AC 4A 05  LDY ram_раунд_плей_офф
 C - - - - - 0x01529D 05:928D: 30 02     BMI bra_9291_запись_subscript
@@ -3240,7 +3240,7 @@ C - - - - - 0x0152AE 05:929E: A9 00     LDA #$00
 C - - - - - 0x0152B0 05:92A0: 8D CC 05  STA ram_счетчик_смен
                                         LDA #con_script_игра_на_поле
 C - - - - - 0x0152B3 05:92A3: 85 58     STA ram_script
-                                        LDA #con_subscr_gp_00
+                                        LDA #con_subscr_gp_подг_экр_разводки
 C - - - - - 0x0152B5 05:92A5: 85 59     STA ram_subscript
 C - - - - - 0x0152B7 05:92A7: 20 84 BB  JSR sub_BB84
 C - - - - - 0x0152BA 05:92AA: 20 0F 80  JSR sub_0x01C263_выставить_базовые_параметры_игроков
@@ -3258,26 +3258,26 @@ C D 0 - - - 0x0152CE 05:92BE: 60        RTS
 
 tbl_92BF:
 ; 00
-- D 0 - - - 0x0152CF 05:92BF: 07        .byte con_subscr_menu_07   ; для прохождения
-- D 0 - - - 0x0152D0 05:92C0: 07        .byte con_subscr_menu_07   ; для минибатла
+- D 0 - - - 0x0152CF 05:92BF: 07        .byte con_subscr_menu_расстановка   ; для прохождения
+- D 0 - - - 0x0152D0 05:92C0: 07        .byte con_subscr_menu_расстановка   ; для минибатла
 ; 01
-- D 0 - - - 0x0152D1 05:92C1: 0D        .byte con_subscr_menu_0D   ; 
+- D 0 - - - 0x0152D1 05:92C1: 0D        .byte con_subscr_menu_весь_состав_японии   ; 
 - D 0 - - - 0x0152D2 05:92C2: FF        .byte $FF   ; 
 ; 02
 - D 0 - - - 0x0152D3 05:92C3: 00        .byte $00   ; 
 - D 0 - - - 0x0152D4 05:92C4: 80        .byte $80   ; 
 ; 03
-- D 0 - - - 0x0152D5 05:92C5: 08        .byte con_subscr_menu_08   ; 
-- D 0 - - - 0x0152D6 05:92C6: 08        .byte con_subscr_menu_08   ; 
+- D 0 - - - 0x0152D5 05:92C5: 08        .byte con_subscr_menu_прогноз_погоды   ; 
+- D 0 - - - 0x0152D6 05:92C6: 08        .byte con_subscr_menu_прогноз_погоды   ; 
 ; 04
-- D 0 - - - 0x0152D7 05:92C7: 09        .byte con_subscr_menu_09   ; 
+- D 0 - - - 0x0152D7 05:92C7: 09        .byte con_subscr_menu_турнирная_таблица   ; 
 - D 0 - - - 0x0152D8 05:92C8: FF        .byte $FF   ; 
 ; 05
-- D 0 - - - 0x0152D9 05:92C9: 0A        .byte con_subscr_menu_0A   ; 
+- D 0 - - - 0x0152D9 05:92C9: 0A        .byte con_subscr_menu_статы_игрока_японии   ; 
 - D 0 - - - 0x0152DA 05:92CA: FF        .byte $FF   ; 
 ; 06
-- D 0 - - - 0x0152DB 05:92CB: 0B        .byte con_subscr_menu_0B   ; 
-- D 0 - - - 0x0152DC 05:92CC: 0B        .byte con_subscr_menu_0B   ; 
+- D 0 - - - 0x0152DB 05:92CB: 0B        .byte con_subscr_menu_выбор_музыки   ; 
+- D 0 - - - 0x0152DC 05:92CC: 0B        .byte con_subscr_menu_выбор_музыки   ; 
 
 
 
@@ -4338,11 +4338,11 @@ C - - - - - 0x0157F5 05:97E5: 24 57     BIT ram_опция_режим_и_сло�
 C - - - - - 0x0157F7 05:97E7: 70 06     BVS bra_97EF_minibattle
 C - - - - - 0x0157F9 05:97E9: A9 00     LDA #con_script_игра_на_поле
 C - - - - - 0x0157FB 05:97EB: 85 58     STA ram_script
-C - - - - - 0x0157FD 05:97ED: F0 02     LDA #con_subscr_gp_00
+C - - - - - 0x0157FD 05:97ED: F0 02     LDA #con_subscr_gp_подг_экр_разводки
                                         STA ram_subscript
                                         RTS
 bra_97EF_minibattle:
-C - - - - - 0x0157FF 05:97EF: A9 03     LDA #con_subscr_menu_03
+C - - - - - 0x0157FF 05:97EF: A9 03     LDA #con_subscr_menu_экран_vs
 C - - - - - 0x015801 05:97F1: 8D 59 00  STA ram_subscript
 C - - - - - 0x015804 05:97F4: 60        RTS
 
@@ -5339,7 +5339,7 @@ C - - - - - 0x015D9F 05:9D8F: 60        RTS
 sub_9D90:
 C - - - - - 0x015DA0 05:9D90: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x015DA3 05:9D93: 20 4A C0  JSR sub_0x01D072
-C - - - - - 0x015DA6 05:9D96: A9 04     LDA #con_subscr_menu_04
+C - - - - - 0x015DA6 05:9D96: A9 04     LDA #con_subscr_menu_раздевалка
 C - - - - - 0x015DA8 05:9D98: 85 59     STA ram_subscript
 C - - - - - 0x015DAA 05:9D9A: 60        RTS
 
@@ -6053,7 +6053,7 @@ C - - - - - 0x01616E 05:A15E: 60        RTS
 sub_A15F:
 C - - - - - 0x01616F 05:A15F: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x016172 05:A162: 20 4A C0  JSR sub_0x01D072
-C - - - - - 0x016175 05:A165: A9 04     LDA #con_subscr_menu_04
+C - - - - - 0x016175 05:A165: A9 04     LDA #con_subscr_menu_раздевалка
 C - - - - - 0x016177 05:A167: 85 59     STA ram_subscript
 C - - - - - 0x016179 05:A169: 60        RTS
 
@@ -7055,7 +7055,7 @@ tbl_A6D1_музыка_материка:
 sub_A6D6:
 C - - - - - 0x0166E6 05:A6D6: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x0166E9 05:A6D9: 20 4A C0  JSR sub_0x01D072
-C - - - - - 0x0166EC 05:A6DC: A9 04     LDA #con_subscr_menu_04
+C - - - - - 0x0166EC 05:A6DC: A9 04     LDA #con_subscr_menu_раздевалка
 C - - - - - 0x0166EE 05:A6DE: 85 59     STA ram_subscript
 C - - - - - 0x0166F0 05:A6E0: 60        RTS
 
@@ -7592,7 +7592,7 @@ C - - J - - 0x016A8D 05:AA7D: A9 33     LDA #con_sfx_yes
 C - - - - - 0x016A8F 05:AA7F: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x016A92 05:AA82: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x016A95 05:AA85: 20 4A C0  JSR sub_0x01D072
-C - - - - - 0x016A98 05:AA88: A9 0A     LDA #con_subscr_menu_0A
+C - - - - - 0x016A98 05:AA88: A9 0A     LDA #con_subscr_menu_статы_игрока_японии
 C - - - - - 0x016A9A 05:AA8A: 85 59     STA ram_subscript
 C - - - - - 0x016A9C 05:AA8C: A9 0D     LDA #$0D
 C - - - - - 0x016A9E 05:AA8E: 85 5B     STA ram_для_subscript
@@ -7995,7 +7995,7 @@ C D 1 - - - 0x016CB6 05:ACA6: 60        RTS
 sub_ACA7:
 C - - - - - 0x016CB7 05:ACA7: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
 C - - - - - 0x016CBA 05:ACAA: 20 4A C0  JSR sub_0x01D072
-C - - - - - 0x016CBD 05:ACAD: A9 04     LDA #con_subscr_menu_04
+C - - - - - 0x016CBD 05:ACAD: A9 04     LDA #con_subscr_menu_раздевалка
 C - - - - - 0x016CBF 05:ACAF: 8D 59 00  STA ram_subscript
 C - - - - - 0x016CC2 05:ACB2: 60        RTS
 
@@ -9388,7 +9388,7 @@ loc_B3BD:
 - - - - - - 0x0173CD 05:B3BD: A9 00     LDA #$00
 - - - - - - 0x0173CF 05:B3BF: 8D 4A 05  STA ram_раунд_плей_офф
 - - - - - - 0x0173D2 05:B3C2: A8        TAY
-- - - - - - 0x0173D3 05:B3C3: A9 03     LDA #con_subscr_menu_03
+- - - - - - 0x0173D3 05:B3C3: A9 03     LDA #con_subscr_menu_экран_vs
 - - - - - - 0x0173D5 05:B3C5: 85 5B     STA ram_для_subscript
 - - - - - - 0x0173D7 05:B3C7: A5 57     LDA ram_опция_режим_и_сложность
 - - - - - - 0x0173D9 05:B3C9: 29 03     AND #$03
@@ -9405,7 +9405,7 @@ C - - - - - 0x0173EB 05:B3DB: 60        RTS
 
 tbl_B3DC:
 - - - - - - 0x0173EC 05:B3DC: 0F        .byte con_subscr_menu_0F   ; 
-- D 1 - - - 0x0173ED 05:B3DD: 02        .byte con_subscr_menu_02   ; 
+- D 1 - - - 0x0173ED 05:B3DD: 02        .byte con_subscr_menu_выбор_соперника_проха   ; 
 
 
 

@@ -10339,7 +10339,7 @@ C - - - - - 0x01BE58 06:BE48: B9 2A 05  LDA ram_флаг_владения_мяч
 C - - - - - 0x01BE5B 06:BE4B: 29 01     AND #$01
 C - - - - - 0x01BE5D 06:BE4D: F0 58     BEQ bra_BEA7
 C - - - - - 0x01BE5F 06:BE4F: A5 59     LDA ram_subscript
-C - - - - - 0x01BE61 06:BE51: C9 05     CMP #con_subscr_gp_05
+C - - - - - 0x01BE61 06:BE51: C9 05     CMP #con_subscr_gp_счет_после_гола
 C - - - - - 0x01BE63 06:BE53: F0 08     BEQ bra_BE5D
 C - - - - - 0x01BE65 06:BE55: A9 80     LDA #$80
 C - - - - - 0x01BE67 06:BE57: 8D AD 03  STA ram_объект_камеры
@@ -10409,7 +10409,7 @@ C - - - - - 0x01BEDF 06:BECF: 29 02     AND #con_gp_гол
 C - - - - - 0x01BEE1 06:BED1: D0 14     BNE bra_BEE7_RTS    ; если это не гол
 C - - - - - 0x01BEE3 06:BED3: A2 0E     LDX #con_id_цифры
 C - - - - - 0x01BEE5 06:BED5: A5 59     LDA ram_subscript
-C - - - - - 0x01BEE7 06:BED7: C9 01     CMP #con_subscr_gp_01
+C - - - - - 0x01BEE7 06:BED7: C9 01     CMP #con_subscr_gp_разводка
 C - - - - - 0x01BEE9 06:BED9: D0 01     BNE bra_BEDC_loop
 C - - - - - 0x01BEEB 06:BEDB: E8        INX ; пропустить иконку мяча
 bra_BEDC_loop:

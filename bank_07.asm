@@ -86,7 +86,7 @@ sub_0x000000_RESET_init:
                                         STA ram_061C
                                         LDA #con_script_логотип
                                         STA ram_script
-                                        LDA #con_subscr_logo_00
+                                        LDA #con_subscr_logo_подг_экр_лого
                                         STA ram_subscript
                                         STA $E000
                                         LDA #$00
