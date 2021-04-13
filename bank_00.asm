@@ -11506,10 +11506,10 @@ C - - - - - 0x002F27 00:AF17: AD 08 06  LDA ram_0608
 C - - - - - 0x002F2A 00:AF1A: 30 03     BMI bra_AF1F
 C - - - - - 0x002F2C 00:AF1C: 4C B8 B0  JMP loc_B0B8
 bra_AF1F:
-C - - - - - 0x002F2F 00:AF1F: AD 18 B1  LDA tbl_B118
+C - - - - - 0x002F2F 00:AF1F: AD 18 B1  LDA tbl_B118_адрес_ppu
 C - - - - - 0x002F32 00:AF22: 8D 08 06  STA ram_0608
 C - - - - - 0x002F35 00:AF25: 8D 0F 06  STA ram_060F
-C - - - - - 0x002F38 00:AF28: AD 19 B1  LDA tbl_B119
+C - - - - - 0x002F38 00:AF28: AD 19 B1  LDA tbl_B118_адрес_ppu + 1
 C - - - - - 0x002F3B 00:AF2B: 8D 07 06  STA ram_0607
 C - - - - - 0x002F3E 00:AF2E: 8D 10 06  STA ram_0610
 C - - - - - 0x002F41 00:AF31: AD 05 06  LDA ram_0605
@@ -11542,7 +11542,7 @@ C D 1 - - - 0x002F71 00:AF61: AD 0E 06  LDA ram_060E
 C - - - - - 0x002F74 00:AF64: 8D 0C 06  STA ram_060C
 C - - - - - 0x002F77 00:AF67: A5 58     LDA ram_script
 C - - - - - 0x002F79 00:AF69: F0 11     BEQ bra_AF7C    ; если игра на поле
-C - - - - - 0x002F7B 00:AF6B: C9 07     CMP #$07
+C - - - - - 0x002F7B 00:AF6B: C9 07     CMP #$07        ; bzk опт, разве скрипт бывает больше 03?
 C - - - - - 0x002F7D 00:AF6D: B0 0D     BCS bra_AF7C
 C - - - - - 0x002F7F 00:AF6F: A5 04     LDA ram_btn_hold
 C - - - - - 0x002F81 00:AF71: 05 05     ORA ram_btn_hold + 1
@@ -11563,9 +11563,9 @@ C - - - - - 0x002F9D 00:AF8D: 85 28     STA ram_0028
 C - - - - - 0x002F9F 00:AF8F: A9 FF     LDA #$FF
 C - - - - - 0x002FA1 00:AF91: 85 29     STA ram_0029
 C - - - - - 0x002FA3 00:AF93: EE 09 06  INC ram_0609
-C - - - - - 0x002FA6 00:AF96: D0 03     BNE bra_AF9B
+C - - - - - 0x002FA6 00:AF96: D0 03     BNE bra_AF9B_not_overflow
 C - - - - - 0x002FA8 00:AF98: EE 0A 06  INC ram_060A
-bra_AF9B:
+bra_AF9B_not_overflow:
 C - - - - - 0x002FAB 00:AF9B: A5 33     LDA ram_0033
 C - - - - - 0x002FAD 00:AF9D: 18        CLC
 C - - - - - 0x002FAE 00:AF9E: 6D 0A 06  ADC ram_060A
@@ -11639,8 +11639,8 @@ C - - - - - 0x00302C 00:B01C: 4C A6 AF  JMP loc_AFA6
 
 
 tbl_B01F:
-- D 1 - - - 0x00302F 00:B01F: 11 06     .word $0611
-- D 1 - - - 0x003031 00:B021: 17 06     .word $0617
+- D 1 - - - 0x00302F 00:B01F: 11 06     .word ram_0611
+- D 1 - - - 0x003031 00:B021: 17 06     .word ram_0617
 
 
 
@@ -11737,9 +11737,9 @@ ofs_B0A4_F4:
 C - - J - - 0x0030B4 00:B0A4: AD 05 06  LDA ram_0605
 C - - - - - 0x0030B7 00:B0A7: 09 10     ORA #$10
 C - - - - - 0x0030B9 00:B0A9: 8D 05 06  STA ram_0605
-C - - - - - 0x0030BC 00:B0AC: AD 18 B1  LDA tbl_B118
+C - - - - - 0x0030BC 00:B0AC: AD 18 B1  LDA tbl_B118_адрес_ppu
 C - - - - - 0x0030BF 00:B0AF: 8D 08 06  STA ram_0608
-C - - - - - 0x0030C2 00:B0B2: AD 19 B1  LDA tbl_B119
+C - - - - - 0x0030C2 00:B0B2: AD 19 B1  LDA tbl_B118_адрес_ppu + 1
 C - - - - - 0x0030C5 00:B0B5: 8D 07 06  STA ram_0607
 loc_B0B8:
 C D 1 - - - 0x0030C8 00:B0B8: A2 1B     LDX #$1B
@@ -11799,10 +11799,8 @@ C - - - - - 0x003127 00:B117: 60        RTS
 
 
 
-tbl_B118:
-- D 1 - - - 0x003128 00:B118: 02        .byte $02   ; 
-tbl_B119:
-- D 1 - - - 0x003129 00:B119: 23        .byte $23   ; 
+tbl_B118_адрес_ppu:
+- D 1 - - - 0x003128 00:B118: 02 23     .word $2302
 
 
 
