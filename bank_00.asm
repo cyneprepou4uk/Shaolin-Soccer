@@ -11582,7 +11582,7 @@ bra_AFB4:
 C - - - - - 0x002FC4 00:AFB4: 10 07     BPL bra_AFBD
 C - - - - - 0x002FC6 00:AFB6: C9 F0     CMP #$F0
 C - - - - - 0x002FC8 00:AFB8: 90 1C     BCC bra_AFD6
-C - - - - - 0x002FCA 00:AFBA: 4C 59 B0  JMP loc_B059
+C - - - - - 0x002FCA 00:AFBA: 4C 59 B0  JMP loc_B059_управляющие_байты
 bra_AFBD:
 C - - - - - 0x002FCD 00:AFBD: C9 20     CMP #$20
 C - - - - - 0x002FCF 00:AFBF: 90 15     BCC bra_AFD6
@@ -11673,7 +11673,7 @@ C - - - - - 0x003068 00:B058: 60        RTS
 
 
 
-loc_B059:
+loc_B059_управляющие_байты:
 C D 1 - - - 0x003069 00:B059: 38        SEC
 C - - - - - 0x00306A 00:B05A: E9 F0     SBC #$F0
 C - - - - - 0x00306C 00:B05C: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_поинтеры_после_JSR

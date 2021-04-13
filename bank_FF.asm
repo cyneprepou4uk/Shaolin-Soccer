@@ -1666,28 +1666,28 @@ bra_C9BC_прохождение:
 C - - - - - 0x01C9CC 07:C9BC: AD 4A 05  LDA ram_раунд_плей_офф
 C - - - - - 0x01C9CF 07:C9BF: 30 2D     BMI bra_C9EE
 - - - - - - 0x01C9D1 07:C9C1: C9 03     CMP #$03
-- - - - - - 0x01C9D3 07:C9C3: D0 0F     BNE bra_C9D4
+- - - - - - 0x01C9D3 07:C9C3: D0 0F     BNE bra_C9D4_это_не_финал
 - - - - - - 0x01C9D5 07:C9C5: AD 2A 05  LDA ram_флаг_владения_мячом_ком
 - - - - - - 0x01C9D8 07:C9C8: 29 01     AND #$01
-- - - - - - 0x01C9DA 07:C9CA: D0 04     BNE bra_C9D0
-- - - - - - 0x01C9DC 07:C9CC: A9 01     LDA #$01
-- - - - - - 0x01C9DE 07:C9CE: D0 0D     BNE bra_C9DD
-bra_C9D0:
-- - - - - - 0x01C9E0 07:C9D0: A9 00     LDA #$00
-- - - - - - 0x01C9E2 07:C9D2: F0 09     BEQ bra_C9DD
-bra_C9D4:
+- - - - - - 0x01C9DA 07:C9CA: D0 04     BNE bra_C9D0_первое_место
+- - - - - - 0x01C9DC 07:C9CC: A9 01     LDA #$01    ; 2е место
+- - - - - - 0x01C9DE 07:C9CE: D0 0D     BNE bra_C9DD_запись_места
+bra_C9D0_первое_место:
+- - - - - - 0x01C9E0 07:C9D0: A9 00     LDA #$00    ; 1е место
+- - - - - - 0x01C9E2 07:C9D2: F0 09     BEQ bra_C9DD_запись_места
+bra_C9D4_это_не_финал:
 - - - - - - 0x01C9E4 07:C9D4: AD 2A 05  LDA ram_флаг_владения_мячом_ком
 - - - - - - 0x01C9E7 07:C9D7: 29 01     AND #$01
-- - - - - - 0x01C9E9 07:C9D9: D0 10     BNE bra_C9EB
-- - - - - - 0x01C9EB 07:C9DB: A9 02     LDA #$02
-bra_C9DD:
+- - - - - - 0x01C9E9 07:C9D9: D0 10     BNE bra_C9EB_продолжить_чемп
+- - - - - - 0x01C9EB 07:C9DB: A9 02     LDA #$02    ; 3е место
+bra_C9DD_запись_места:
 - - - - - - 0x01C9ED 07:C9DD: 8D 1F 06  STA ram_место_по_итогам_чемпионата
 - - - - - - 0x01C9F0 07:C9E0: A9 03     LDA #con_script_титры
 - - - - - - 0x01C9F2 07:C9E2: 85 58     STA ram_script
 - - - - - - 0x01C9F4 07:C9E4: A9 00     LDA #con_subscr_cred_00
 - - - - - - 0x01C9F6 07:C9E6: 85 59     STA ram_subscript
 - - - - - - 0x01C9F8 07:C9E8: 4C 1E CA  RTS
-bra_C9EB:
+bra_C9EB_продолжить_чемп:
 - - - - - - 0x01C9FB 07:C9EB: EE 4A 05  INC ram_раунд_плей_офф
 bra_C9EE:
 C - - - - - 0x01C9FE 07:C9EE: A9 02     LDA #con_script_меню

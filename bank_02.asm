@@ -12121,7 +12121,7 @@ C - - - - - 0x00B353 02:B343: C9 03     CMP #con_script_титры
 C - - - - - 0x00B355 02:B345: D0 09     BNE bra_B350
 - - - - - - 0x00B357 02:B347: AD 1F 06  LDA ram_место_по_итогам_чемпионата
 - - - - - - 0x00B35A 02:B34A: C9 02     CMP #$02
-- - - - - - 0x00B35C 02:B34C: D0 02     BNE bra_B350
+- - - - - - 0x00B35C 02:B34C: D0 02     BNE bra_B350    ; если не 3е место
 - - - - - - 0x00B35E 02:B34E: A0 02     LDY #$02
 bra_B350:
 C - - - - - 0x00B360 02:B350: B9 6B B3  LDA tbl_B36B,Y
@@ -13820,12 +13820,15 @@ tbl_BB1E:
 
 
 tbl_BB21:
+; 00 1е место
 - - - - - - 0x00BB31 02:BB21: 07        .byte con_action_07   ; 
 - - - - - - 0x00BB32 02:BB22: 25        .byte con_action_25   ; 
 - - - - - - 0x00BB33 02:BB23: 26        .byte con_action_26   ; 
+; 01 2е место
 - - - - - - 0x00BB34 02:BB24: 07        .byte con_action_07   ; 
 - - - - - - 0x00BB35 02:BB25: 27        .byte con_action_27   ; 
 - - - - - - 0x00BB36 02:BB26: 28        .byte con_action_28   ; 
+; 02 3е место
 - - - - - - 0x00BB37 02:BB27: 07        .byte con_action_07   ; 
 - - - - - - 0x00BB38 02:BB28: 29        .byte con_action_29   ; 
 - - - - - - 0x00BB39 02:BB29: 2A        .byte con_action_2A   ; 
@@ -13964,7 +13967,7 @@ bra_BBEE_loop:
 - - - - - - 0x00BC12 02:BC02: A9 20     LDA #> $20A9
 - - - - - - 0x00BC14 02:BC04: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 - - - - - - 0x00BC17 02:BC07: AD 1F 06  LDA ram_место_по_итогам_чемпионата
-- - - - - - 0x00BC1A 02:BC0A: F0 1B     BEQ bra_BC27
+- - - - - - 0x00BC1A 02:BC0A: F0 1B     BEQ bra_BC27_первое_место
 - - - - - - 0x00BC1C 02:BC0C: A9 DA     LDA #$DA
 - - - - - - 0x00BC1E 02:BC0E: 8D B9 06  STA ram_буфер_графики
 - - - - - - 0x00BC21 02:BC11: A9 01     LDA #$01
@@ -13976,7 +13979,7 @@ bra_BBEE_loop:
 - - - - - - 0x00BC2F 02:BC1F: 8D B7 06  STA ram_байт_2006_lo_графика
 - - - - - - 0x00BC32 02:BC22: A9 20     LDA #> $2088
 - - - - - - 0x00BC34 02:BC24: 8D B6 06  STA ram_байт_2006_hi_графика
-bra_BC27:
+bra_BC27_первое_место:
 - - - - - - 0x00BC37 02:BC27: A2 00     LDX #$00
 - - - - - - 0x00BC39 02:BC29: BD 4D 03  LDA ram_pos_Y_lo_игрока,X
 - - - - - - 0x00BC3C 02:BC2C: 38        SEC
@@ -14047,6 +14050,7 @@ bra_BCCF_RTS:
 
 
 tbl_BCD0:
+; 00 1е место
 - - - - - - 0x00BCE0 02:BCD0: 02        .byte $02   ; 
 - - - - - - 0x00BCE1 02:BCD1: 02        .byte $02   ; 
 - - - - - - 0x00BCE2 02:BCD2: E3        .byte $E3   ; 
@@ -14063,6 +14067,7 @@ tbl_BCD0:
 - - - - - - 0x00BCED 02:BCDD: 02        .byte $02   ; 
 - - - - - - 0x00BCEE 02:BCDE: 02        .byte $02   ; 
 - - - - - - 0x00BCEF 02:BCDF: 02        .byte $02   ; 
+; 01 2е место
 - - - - - - 0x00BCF0 02:BCE0: E3        .byte $E3   ; 
 - - - - - - 0x00BCF1 02:BCE1: 02        .byte $02   ; 
 - - - - - - 0x00BCF2 02:BCE2: AD        .byte $AD   ; 
@@ -14079,6 +14084,7 @@ tbl_BCD0:
 - - - - - - 0x00BCFD 02:BCED: 02        .byte $02   ; 
 - - - - - - 0x00BCFE 02:BCEE: 02        .byte $02   ; 
 - - - - - - 0x00BCFF 02:BCEF: 02        .byte $02   ; 
+; 02 3е место
 - - - - - - 0x00BD00 02:BCF0: 02        .byte $02   ; 
 - - - - - - 0x00BD01 02:BCF1: 02        .byte $02   ; 
 - - - - - - 0x00BD02 02:BCF2: 02        .byte $02   ; 
