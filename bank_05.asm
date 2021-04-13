@@ -4324,10 +4324,11 @@ C - - - - - 0x0157F5 05:97E5: 24 57     BIT ram_опция_режим_и_сло�
 C - - - - - 0x0157F7 05:97E7: 70 06     BVS bra_97EF_minibattle
 C - - - - - 0x0157F9 05:97E9: A9 00     LDA #con_script_игра_на_поле
 C - - - - - 0x0157FB 05:97EB: 85 58     STA ram_script
-C - - - - - 0x0157FD 05:97ED: F0 02     BEQ bra_97F1
+C - - - - - 0x0157FD 05:97ED: F0 02     LDA #con_subscr_gp_00
+                                        STA ram_subscript
+                                        RTS
 bra_97EF_minibattle:
 C - - - - - 0x0157FF 05:97EF: A9 03     LDA #con_subscr_menu_03
-bra_97F1:   ; con_subscr_gp_00  bzk опт
 C - - - - - 0x015801 05:97F1: 8D 59 00  STA ram_subscript
 C - - - - - 0x015804 05:97F4: 60        RTS
 
