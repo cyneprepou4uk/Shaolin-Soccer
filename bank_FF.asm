@@ -1098,7 +1098,9 @@ C - - - - - 0x01C596 07:C586: 20 A5 F3  JSR sub_F3A5
 C - - - - - 0x01C599 07:C589: 20 9E C2  JSR sub_C29E
 C - - - - - 0x01C59C 07:C58C: 20 73 D0  JSR sub_D073
 C - - - - - 0x01C59F 07:C58F: AD B2 05  LDA ram_флаг_яркости
-C - - - - - 0x01C5A2 07:C592: 10 E6     BPL bra_C612_RTS    ; если яркость не готова
+C - - - - - 0x01C5A2 07:C592: 10 E6     BMI bra_C594_яркость_готова
+                                        RTS
+bra_C594_яркость_готова:
 C - - - - - 0x01C5A4 07:C594: AD FA 05  LDA ram_дальность_перелив_надписи
 C - - - - - 0x01C5A7 07:C597: 10 17     BPL bra_C5B0
 C - - - - - 0x01C5A9 07:C599: AD F8 05  LDA ram_содержимое_hud
@@ -1126,8 +1128,9 @@ C - - - - - 0x01C5D4 07:C5C4: 2C 92 04  BIT ram_состояние_мяча
 C - - - - - 0x01C5D7 07:C5C7: 70 49     BVS bra_C612_RTS
 bra_C5C9_не_нарушение:
 C - - - - - 0x01C5D9 07:C5C9: E6 59     INC ram_subscript   ; con_subscr_gp_02
-C - - - - - 0x01C5DB 07:C5CB: A9 00     LDA #$00    ; con_gp_игра
+C - - - - - 0x01C5DB 07:C5CB: A9 00     LDA #con_gp_игра
 C - - - - - 0x01C5DD 07:C5CD: 85 5C     STA ram_flag_gameplay
+                                        LDA #$00
 C - - - - - 0x01C5DF 07:C5CF: 8D 2A 05  STA ram_флаг_владения_мячом_ком
 C - - - - - 0x01C5E2 07:C5D2: 8D 2B 05  STA ram_флаг_владения_мячом_ком + 1
 C - - - - - 0x01C5E5 07:C5D5: 20 1F D0  JSR sub_D01F_палитра_фона_в_зависимости_от_обеих_комад
