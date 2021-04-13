@@ -55,7 +55,7 @@ con_script_титры                        = $03 ; финальные титр
 
 
 
-; ram_subscript                         = $59
+; ram_subscript                         = $59 расшифровать 0x007605
 ; 00 игра на поле (gameplay) 0x01C52F
 con_subscr_gp_00                        = $00 ; подготовка разводки
 con_subscr_gp_01                        = $01 ; разводка

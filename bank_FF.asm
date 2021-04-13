@@ -1005,11 +1005,11 @@ ofs_C4BD_03_титры:
 
 
 sub_C4DB:
-C - - - - - 0x01C4EB 07:C4DB: A0 08     LDY #$08
+C - - - - - 0x01C4EB 07:C4DB: A0 08     LDY #con_subscr_logo_08
 C - - - - - 0x01C4ED 07:C4DD: A5 08     LDA ram_btn_press
 C - - - - - 0x01C4EF 07:C4DF: 29 30     AND #con_btns_SS
 C - - - - - 0x01C4F1 07:C4E1: D0 0C     BNE bra_C4EF_Select_или_Start
-C - - - - - 0x01C4F3 07:C4E3: A0 05     LDY #$05
+C - - - - - 0x01C4F3 07:C4E3: A0 05     LDY #con_subscr_logo_05
 C - - - - - 0x01C4F5 07:C4E5: CE 89 05  DEC ram_таймер_демо_lo
 C - - - - - 0x01C4F8 07:C4E8: D0 1B     BNE bra_C505_RTS
 C - - - - - 0x01C4FA 07:C4EA: CE 8A 05  DEC ram_таймер_демо_hi
@@ -1125,7 +1125,7 @@ bra_C5C4_не_нарушение:
 C - - - - - 0x01C5D4 07:C5C4: 2C 92 04  BIT ram_состояние_мяча
 C - - - - - 0x01C5D7 07:C5C7: 70 49     BVS bra_C612_RTS
 bra_C5C9_не_нарушение:
-C - - - - - 0x01C5D9 07:C5C9: E6 59     INC ram_subscript   ; bzk опт LDA #con_subscr_gp_02
+C - - - - - 0x01C5D9 07:C5C9: E6 59     INC ram_subscript   ; con_subscr_gp_02
 C - - - - - 0x01C5DB 07:C5CB: A9 00     LDA #$00    ; con_gp_игра
 C - - - - - 0x01C5DD 07:C5CD: 85 5C     STA ram_flag_gameplay
 C - - - - - 0x01C5DF 07:C5CF: 8D 2A 05  STA ram_флаг_владения_мячом_ком
@@ -1299,7 +1299,7 @@ loc_C735:
 C D 2 - - - 0x01C745 07:C735: A9 00     LDA #$00
 C - - - - - 0x01C747 07:C737: 8D E2 05  STA ram_таймер_катсцены
 C - - - - - 0x01C74A 07:C73A: 20 4F D0  JSR sub_D04F_включить_осветление_яркости
-C - - - - - 0x01C74D 07:C73D: E6 59     INC ram_subscript   ; bzk опт LDA #con_subscr_gp_05
+C - - - - - 0x01C74D 07:C73D: E6 59     INC ram_subscript   ; con_subscr_gp_05
 C - - - - - 0x01C74F 07:C73F: 78        SEI
 C - - - - - 0x01C750 07:C740: 4C 98 C6  RTS
 
@@ -1614,7 +1614,7 @@ bra_C968_не_пенальти:
 C - - - - - 0x01C978 07:C968: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C97A 07:C96A: 29 20     AND #con_gp_нарушение
 C - - - - - 0x01C97C 07:C96C: F0 07     BEQ bra_C975
-C - - - - - 0x01C97E 07:C96E: A9 00     LDA #con_subscr_gp_00    ; подготовка разводки
+C - - - - - 0x01C97E 07:C96E: A9 00     LDA #con_subscr_gp_00
 bra_C970_запись_subscript:
 C - - - - - 0x01C980 07:C970: 85 59     STA ram_subscript
 C - - - - - 0x01C982 07:C972: 4C 1E CA  RTS
@@ -1623,21 +1623,21 @@ C - - - - - 0x01C985 07:C975: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C987 07:C977: 29 0F     AND #con_gp_разв_гол_аут_угл
 C - - - - - 0x01C989 07:C979: F0 04     BEQ bra_C97F
 bra_C97B_сейчас_не_гол:
-C - - - - - 0x01C98B 07:C97B: A9 04     LDA #con_subscr_gp_04    ; экран со счетом после гола
+C - - - - - 0x01C98B 07:C97B: A9 04     LDA #con_subscr_gp_04
 C - - - - - 0x01C98D 07:C97D: D0 F1     BNE bra_C970_запись_subscript
 bra_C97F:
 C - - - - - 0x01C98F 07:C97F: AD 59 05  LDA ram_номер_тайма
 C - - - - - 0x01C992 07:C982: D0 04     BNE bra_C988_второй_тайм
-C - - - - - 0x01C994 07:C984: A9 07     LDA #con_subscr_gp_07    ; экран со счетом после 1го тайма
+C - - - - - 0x01C994 07:C984: A9 07     LDA #con_subscr_gp_07
 C - - - - - 0x01C996 07:C986: D0 E8     BNE bra_C970_запись_subscript
 bra_C988_второй_тайм:
 C - - - - - 0x01C998 07:C988: AD 2E 05  LDA ram_счет_команды
 C - - - - - 0x01C99B 07:C98B: CD 2F 05  CMP ram_счет_команды + 1
 C - - - - - 0x01C99E 07:C98E: F0 04     BEQ bra_C994_ничья
-C - - - - - 0x01C9A0 07:C990: A9 09     LDA #con_subscr_gp_09    ; экран со счетом после матча
+C - - - - - 0x01C9A0 07:C990: A9 09     LDA #con_subscr_gp_09
 C - - - - - 0x01C9A2 07:C992: D0 DC     BNE bra_C970_запись_subscript
 bra_C994_ничья:
-- - - - - - 0x01C9A4 07:C994: A9 0B     LDA #con_subscr_gp_0B    ; экран со счетом после 2го тайма
+- - - - - - 0x01C9A4 07:C994: A9 0B     LDA #con_subscr_gp_0B
 - - - - - - 0x01C9A6 07:C996: D0 D8     BNE bra_C970_запись_subscript
 bra_C998:
 C - - - - - 0x01C9A8 07:C998: A9 00     LDA #con_subscr_gp_00
@@ -1646,7 +1646,7 @@ C - - - - - 0x01C9AC 07:C99C: 4C 1E CA  RTS
 bra_C99F:
 C - - - - - 0x01C9AF 07:C99F: A9 02     LDA #con_script_меню
 C - - - - - 0x01C9B1 07:C9A1: 85 58     STA ram_script
-C - - - - - 0x01C9B3 07:C9A3: A9 04     LDA #$04
+C - - - - - 0x01C9B3 07:C9A3: A9 04     LDA #con_subscr_menu_04
 C - - - - - 0x01C9B5 07:C9A5: 85 59     STA ram_subscript
 C - - - - - 0x01C9B7 07:C9A7: EE 59 05  INC ram_номер_тайма
 C - - - - - 0x01C9BA 07:C9AA: 4C FA C9  JMP loc_C9FA
@@ -1655,7 +1655,7 @@ C - - - - - 0x01C9BD 07:C9AD: A5 57     LDA ram_опция_режим_и_сло�
 C - - - - - 0x01C9BF 07:C9AF: 30 0B     BMI bra_C9BC_прохождение
 C - - - - - 0x01C9C1 07:C9B1: A9 02     LDA #con_script_меню
 C - - - - - 0x01C9C3 07:C9B3: 85 58     STA ram_script
-C - - - - - 0x01C9C5 07:C9B5: A9 01     LDA #$01
+C - - - - - 0x01C9C5 07:C9B5: A9 01     LDA #con_subscr_menu_01
 C - - - - - 0x01C9C7 07:C9B7: 85 59     STA ram_subscript
 C - - - - - 0x01C9C9 07:C9B9: 4C 1E CA  RTS
 bra_C9BC_прохождение:
@@ -1680,7 +1680,7 @@ bra_C9DD:
 - - - - - - 0x01C9ED 07:C9DD: 8D 1F 06  STA ram_место_по_итогам_чемпионата
 - - - - - - 0x01C9F0 07:C9E0: A9 03     LDA #con_script_титры
 - - - - - - 0x01C9F2 07:C9E2: 85 58     STA ram_script
-- - - - - - 0x01C9F4 07:C9E4: A9 00     LDA #$00
+- - - - - - 0x01C9F4 07:C9E4: A9 00     LDA #con_subscr_cred_00
 - - - - - - 0x01C9F6 07:C9E6: 85 59     STA ram_subscript
 - - - - - - 0x01C9F8 07:C9E8: 4C 1E CA  RTS
 bra_C9EB:
@@ -1688,9 +1688,9 @@ bra_C9EB:
 bra_C9EE:
 C - - - - - 0x01C9FE 07:C9EE: A9 02     LDA #con_script_меню
 C - - - - - 0x01CA00 07:C9F0: 85 58     STA ram_script
-C - - - - - 0x01CA02 07:C9F2: A9 0E     LDA #$0E
+C - - - - - 0x01CA02 07:C9F2: A9 0E     LDA #con_subscr_menu_0E
 C - - - - - 0x01CA04 07:C9F4: 85 59     STA ram_subscript
-C - - - - - 0x01CA06 07:C9F6: A9 03     LDA #$03
+C - - - - - 0x01CA06 07:C9F6: A9 03     LDA #con_subscr_menu_03
 C - - - - - 0x01CA08 07:C9F8: 85 5B     STA ram_для_subscript
 loc_C9FA:
 C D 2 - - - 0x01CA0A 07:C9FA: A5 57     LDA ram_опция_режим_и_сложность
@@ -2063,7 +2063,7 @@ C - - - - - 0x01CCA9 07:CC99: 4C 1E CD  RTS
 bra_CC9C:
 loc_CC9C_только_для_мяча:
 C D 2 - - - 0x01CCAC 07:CC9C: AD 59 00  LDA ram_subscript
-C - - - - - 0x01CCAF 07:CC9F: C9 01     CMP #$01
+C - - - - - 0x01CCAF 07:CC9F: C9 01     CMP #con_subscr_gp_01
 C - - - - - 0x01CCB1 07:CCA1: D0 08     BNE bra_CCAB
 C - - - - - 0x01CCB3 07:CCA3: A9 7F     LDA #$7F
 C - - - - - 0x01CCB5 07:CCA5: 9D 74 00  STA ram_номер_анимации_игрока,X
@@ -4162,9 +4162,9 @@ sub_E170_отрисовать_инфу_hud:
 C D 2 - - - 0x01D62A 07:D61A: A5 59     LDA ram_subscript
 C - - - - - 0x01D62C 07:D61C: C5 5A     CMP ram_copy_subscript
 C - - - - - 0x01D62E 07:D61E: D0 08     BNE bra_D628_RTS
-C - - - - - 0x01D630 07:D620: C9 02     CMP #$02
+C - - - - - 0x01D630 07:D620: C9 02     CMP #con_subscr_gp_02
 C - - - - - 0x01D632 07:D622: F0 05     BEQ bra_D629
-C - - - - - 0x01D634 07:D624: C9 06     CMP #$06
+C - - - - - 0x01D634 07:D624: C9 06     CMP #con_subscr_gp_06
 C - - - - - 0x01D636 07:D626: F0 01     BEQ bra_D629
 bra_D628_RTS:
 C - - - - - 0x01D638 07:D628: 60        RTS
@@ -4255,7 +4255,7 @@ C - - - - - 0x01D6F7 07:D6E7: AD 57 00  LDA ram_опция_режим_и_сло�
 C - - - - - 0x01D6FA 07:D6EA: 29 20     AND #con_gm_пенальти
 C - - - - - 0x01D6FC 07:D6EC: D0 1C     BNE bra_D70A
 C - - - - - 0x01D6FE 07:D6EE: A5 59     LDA ram_subscript
-C - - - - - 0x01D700 07:D6F0: C9 06     CMP #$06
+C - - - - - 0x01D700 07:D6F0: C9 06     CMP #con_subscr_gp_06
 C - - - - - 0x01D702 07:D6F2: F0 13     BEQ bra_D707
 C - - - - - 0x01D704 07:D6F4: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x01D707 07:D6F7: C0 0A     CPY #con_id_кипера
@@ -4338,7 +4338,7 @@ C - - - - - 0x01D79F 07:D78F: A9 00     LDA #con_погода_выкл
 C - - - - - 0x01D7A1 07:D791: 8D 66 04  STA ram_погодный_эффект
 loc_D794:
 C - - - - - 0x01D7A4 07:D794: A5 59     LDA ram_subscript
-C - - - - - 0x01D7A6 07:D796: C9 06     CMP #$06
+C - - - - - 0x01D7A6 07:D796: C9 06     CMP #con_subscr_gp_06
 C - - - - - 0x01D7A8 07:D798: F0 09     BEQ bra_D7A3_RTS
 C - - - - - 0x01D7AA 07:D79A: A9 40     LDA #con_gp_футбольная_пауза
 C - - - - - 0x01D7AC 07:D79C: 85 5C     STA ram_flag_gameplay
@@ -5339,9 +5339,9 @@ C - - - - - 0x01DE5A 07:DE4A: 48        PHA
 C - - - - - 0x01DE5B 07:DE4B: AD F3 05  LDA ram_номер_prg_банка
 C - - - - - 0x01DE5E 07:DE4E: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01DE61 07:DE51: A5 59     LDA ram_subscript
-C - - - - - 0x01DE63 07:DE53: C9 02     CMP #$02
+C - - - - - 0x01DE63 07:DE53: C9 02     CMP #con_subscr_gp_02
 C - - - - - 0x01DE65 07:DE55: F0 07     BEQ bra_DE5E
-C - - - - - 0x01DE67 07:DE57: C9 06     CMP #$06
+C - - - - - 0x01DE67 07:DE57: C9 06     CMP #con_subscr_gp_06
 C - - - - - 0x01DE69 07:DE59: F0 03     BEQ bra_DE5E
 C - - - - - 0x01DE6B 07:DE5B: 4C D3 DE  JMP loc_DED3_проверить_скролл
 bra_DE5E:
@@ -8177,15 +8177,15 @@ C D 3 - - - 0x01EFBD 07:EFAD: A5 58     LDA ram_script
 C - - - - - 0x01EFBF 07:EFAF: D0 34     BNE bra_EFE5_write_3_buffers_to_ppu ; если не игра на поле
 C - - - - - 0x01EFC1 07:EFB1: A5 59     LDA ram_subscript
 C - - - - - 0x01EFC3 07:EFB3: F0 30     BEQ bra_EFE5_write_3_buffers_to_ppu
-C - - - - - 0x01EFC5 07:EFB5: C9 05     CMP #$05
-C - - - - - 0x01EFC7 07:EFB7: 90 1B     BCC bra_EFD4
-C - - - - - 0x01EFC9 07:EFB9: C9 05     CMP #$05
+C - - - - - 0x01EFC5 07:EFB5: C9 05     CMP #$05    ;  bzk лучше переделать под конкретные значения чтоб лучше видно было
+C - - - - - 0x01EFC7 07:EFB7: 90 1B     BCC bra_EFD4    ; если на экране сейчас не поле
+C - - - - - 0x01EFC9 07:EFB9: C9 05     CMP #con_subscr_gp_05
 C - - - - - 0x01EFCB 07:EFBB: F0 0F     BEQ bra_EFCC
-C - - - - - 0x01EFCD 07:EFBD: C9 06     CMP #$06
+C - - - - - 0x01EFCD 07:EFBD: C9 06     CMP #con_subscr_gp_06
 C - - - - - 0x01EFCF 07:EFBF: F0 13     BEQ bra_EFD4
-C - - - - - 0x01EFD1 07:EFC1: C9 08     CMP #$08
+C - - - - - 0x01EFD1 07:EFC1: C9 08     CMP #con_subscr_gp_08
 C - - - - - 0x01EFD3 07:EFC3: F0 07     BEQ bra_EFCC
-C - - - - - 0x01EFD5 07:EFC5: C9 0A     CMP #$0A
+C - - - - - 0x01EFD5 07:EFC5: C9 0A     CMP #con_subscr_gp_0A
 C - - - - - 0x01EFD7 07:EFC7: F0 03     BEQ bra_EFCC
 C - - - - - 0x01EFD9 07:EFC9: 4C E5 EF  JMP loc_EFE5_write_3_buffers_to_ppu
 bra_EFCC:
@@ -8721,9 +8721,9 @@ sub_E170_отрисовать_время_hud_и_следы_на_поле:
 C - - - - - 0x01F360 07:F350: A5 59     LDA ram_subscript
 C - - - - - 0x01F362 07:F352: C5 5A     CMP ram_copy_subscript
 C - - - - - 0x01F364 07:F354: D0 4E     BNE bra_F3A4_RTS
-C - - - - - 0x01F366 07:F356: C9 02     CMP #$02
+C - - - - - 0x01F366 07:F356: C9 02     CMP #con_subscr_gp_02
 C - - - - - 0x01F368 07:F358: F0 07     BEQ bra_F361_нарисовать_таймер
-C - - - - - 0x01F36A 07:F35A: C9 06     CMP #$06
+C - - - - - 0x01F36A 07:F35A: C9 06     CMP #con_subscr_gp_06
 C - - - - - 0x01F36C 07:F35C: F0 03     BEQ bra_F361_нарисовать_таймер
 C - - - - - 0x01F36E 07:F35E: 4C 82 F3  JMP loc_F382_нарисовать_следы
 bra_F361_нарисовать_таймер:
@@ -10055,9 +10055,9 @@ C - - - - - 0x01FCFD 07:FCED: 48        PHA
 C - - - - - 0x01FCFE 07:FCEE: A5 0D     LDA ram_000D
 C - - - - - 0x01FD00 07:FCF0: 48        PHA
 C - - - - - 0x01FD01 07:FCF1: A5 59     LDA ram_subscript
-C - - - - - 0x01FD03 07:FCF3: C9 01     CMP #$01
+C - - - - - 0x01FD03 07:FCF3: C9 01     CMP #con_subscr_gp_01
 C - - - - - 0x01FD05 07:FCF5: F0 18     BEQ bra_FD0F
-C - - - - - 0x01FD07 07:FCF7: C9 03     CMP #$03
+C - - - - - 0x01FD07 07:FCF7: C9 03     CMP #con_subscr_gp_03
 C - - - - - 0x01FD09 07:FCF9: D0 51     BNE bra_FD4C
 C - - - - - 0x01FD0B 07:FCFB: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01FD0D 07:FCFD: 29 03     AND #con_gp_разводка + con_gp_гол
