@@ -55,6 +55,66 @@ con_script_титры                        = $03 ; финальные титр
 
 
 
+; ram_subscript                         = $59
+; 00 игра на поле (gameplay) 0x01C52F
+con_subscr_gp_00                        = $00 ; подготовка разводки
+con_subscr_gp_01                        = $01 ; разводка
+con_subscr_gp_02                        = $02 ; игра в разгаре
+con_subscr_gp_03                        = $03 ; футбольная пауза (гол, время вышло, нарушение, конец тайма/матча)
+con_subscr_gp_04                        = $04 ; подготовка экрана со счетом после гола
+con_subscr_gp_05                        = $05 ; экран со счетом после гола
+con_subscr_gp_06                        = $06 ; мяч вне игры
+con_subscr_gp_07                        = $07 ; подготовка экрана со счетом после 1го тайма
+con_subscr_gp_08                        = $08 ; экран со счетом после 1го тайма
+con_subscr_gp_09                        = $09 ; подготовка экрана со счетом после матча
+con_subscr_gp_0A                        = $0A ; экран со счетом после матча
+con_subscr_gp_0B                        = $0B ; подготовка экрана со счетом после 2го тайма
+con_subscr_gp_0C                        = $0C ; экран со счетом после 2го тайма
+; 01 логотип 0x00AA7B
+con_subscr_logo_00                      = $00 ; подготовка экрана с лого
+con_subscr_logo_01                      = $01 ; экран с лого
+con_subscr_logo_02                      = $02 ; подготовка экрана с мисако
+con_subscr_logo_03                      = $03 ; монолог мисако (после 0B)
+con_subscr_logo_04                      = $04 ; подготовка демо матча
+con_subscr_logo_05                      = $05 ; подготовка демо экрана жми старт
+con_subscr_logo_06                      = $06 ; демо экран жми старт
+con_subscr_logo_07                      = $07 ; демо сценка кунио
+con_subscr_logo_08                      = $08 ; подготовка экрана жми старт
+con_subscr_logo_09                      = $09 ; экран жми старт
+con_subscr_logo_0A                      = $0A ; кунио бежит к мячу без сценки
+con_subscr_logo_0B                      = $0B ; экран с мисако (после 03)
+; 02 меню 0x014065
+con_subscr_menu_00                      = $00 ; переход от скрипта логотипа к скрипту меню
+con_subscr_menu_01                      = $01 ; главное меню
+con_subscr_menu_02                      = $02 ; выбор соперника на прохождение
+con_subscr_menu_03                      = $03 ; экран VS
+con_subscr_menu_04                      = $04 ; раздевалка
+con_subscr_menu_05                      = $05 ; выбор команд
+con_subscr_menu_06                      = $06 ; выбор погоды
+con_subscr_menu_07                      = $07 ; расстановка
+con_subscr_menu_08                      = $08 ; прогноз погоды
+con_subscr_menu_09                      = $09 ; турнирная таблица
+con_subscr_menu_0A                      = $0A ; параметры игрока японии
+con_subscr_menu_0B                      = $0B ; выбор музыки
+con_subscr_menu_0C                      = $0C ; = 0D
+con_subscr_menu_0D                      = $0D ; весь состав японии
+con_subscr_menu_0E                      = $0E ; ???
+con_subscr_menu_0F                      = $0F ; ???
+; 03 титры (credits) 0x00BB6D
+con_subscr_cred_00                      = $00 ; 
+con_subscr_cred_01                      = $01 ; 
+con_subscr_cred_02                      = $02 ; первая фотка в титрах
+con_subscr_cred_03                      = $03 ; фотки в титрах
+con_subscr_cred_04                      = $04 ; последняя фотка в титрах
+con_subscr_cred_05                      = $05 ; 
+con_subscr_cred_06                      = $06 ; звонок по мобиле
+con_subscr_cred_07                      = $07 ; 
+con_subscr_cred_08                      = $08 ; 
+con_subscr_cred_09                      = $09 ; 
+con_subscr_cred_0A                      = $0A ; 
+
+
+
 ; ram_flag_gameplay                     = $5C
 con_gp_игра                             = $00 ; нормальная игра, возможность двигаться игроками, без нарушений в данный момент
 con_gp_разводка                         = $01 ; 

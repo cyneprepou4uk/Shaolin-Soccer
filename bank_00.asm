@@ -14607,11 +14607,11 @@ C - - - - - 0x003BB5 00:BBA5: AD 5B 05  LDA ram_field_formation
 C - - - - - 0x003BB8 00:BBA8: F0 0A     BEQ bra_BBB4
 C - - - - - 0x003BBA 00:BBAA: A9 20     LDA #con_gp_нарушение
 C - - - - - 0x003BBC 00:BBAC: 85 5C     STA ram_flag_gameplay
-C - - - - - 0x003BBE 00:BBAE: A9 01     LDA #$01
+C - - - - - 0x003BBE 00:BBAE: A9 01     LDA #con_subscr_gp_01
 C - - - - - 0x003BC0 00:BBB0: 85 59     STA ram_subscript
 C - - - - - 0x003BC2 00:BBB2: D0 06     BNE bra_BBBA
 bra_BBB4:
-C - - - - - 0x003BC4 00:BBB4: A9 01     LDA #$01
+C - - - - - 0x003BC4 00:BBB4: A9 01     LDA #con_subscr_gp_01
 C - - - - - 0x003BC6 00:BBB6: 85 59     STA ram_subscript
                                         LDA #con_gp_разводка
 C - - - - - 0x003BC8 00:BBB8: 85 5C     STA ram_flag_gameplay
@@ -14657,7 +14657,7 @@ C - - - - - 0x003C12 00:BC02: F0 18     BEQ bra_BC1C
 bra_BC05:
 C - - - - - 0x003C15 00:BC05: A9 01     LDA #$01
 C - - - - - 0x003C17 00:BC07: 99 2A 05  STA ram_флаг_владения_мячом_ком,Y
-C - - - - - 0x003C1A 00:BC0A: A9 09     LDA #$09
+C - - - - - 0x003C1A 00:BC0A: A9 09     LDA #con_subscr_gp_09
 C - - - - - 0x003C1C 00:BC0C: 85 59     STA ram_subscript
 C - - - - - 0x003C1E 00:BC0E: A5 57     LDA ram_опция_режим_и_сложность
 C - - - - - 0x003C20 00:BC10: 29 DF     AND #con_gm_пенальти ^ $FF
