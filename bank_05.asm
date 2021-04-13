@@ -1790,8 +1790,9 @@ C - - - - - 0x014AEF 05:8ADF: 8D CB 05  STA ram_номер_опции + 1
 C - - - - - 0x014AF2 05:8AE2: A9 05     LDA #con_anim_type_стрелочка_рожи
 C - - - - - 0x014AF4 05:8AE4: 8D 63 00  STA ram_тип_анимации_игрока + 2
 C - - - - - 0x014AF7 05:8AE7: 8D 64 00  STA ram_тип_анимации_игрока + 3
-C - - - - - 0x014AFA 05:8AEA: A9 01     LDA #$01    ; con_anim_type_мяч
+C - - - - - 0x014AFA 05:8AEA: A9 01     LDA #con_anim_type_мяч
 C - - - - - 0x014AFC 05:8AEC: 8D 6D 00  STA ram_тип_анимации_мяча
+                                        LDA #$01
 C - - - - - 0x014AFF 05:8AEF: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x014B02 05:8AF2: A2 08     LDX #con_chr_bank + $08
 C - - - - - 0x014B04 05:8AF4: 8E B8 05  STX ram_банк_спрайтов
