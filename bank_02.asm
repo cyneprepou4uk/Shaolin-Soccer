@@ -11137,10 +11137,12 @@ C - - - - - 0x00ADBA 02:ADAA: 9D 79 04  STA ram_next_действие_игрок
 C - - - - - 0x00ADBD 02:ADAD: 9D 27 03  STA ram_pos_X_hi_игрока,X
 C - - - - - 0x00ADC0 02:ADB0: 8D 85 04  STA ram_next_действие_мяча
 C - - - - - 0x00ADC3 02:ADB3: 8D 0E 05  STA ram_флаг_прозрачного_мяча
-C - - - - - 0x00ADC6 02:ADB6: A9 00     LDA #$00    ; con_state_стоит_идет  con_anim_type_
+C - - - - - 0x00ADC6 02:ADB6: A9 00     LDA #con_state_стоит_идет
 C - - - - - 0x00ADC8 02:ADB8: 9D 86 04  STA ram_состояние_игрока,X
+                                        LDA #$00
 C - - - - - 0x00ADCB 02:ADBB: 8D D6 04  STA ram_игрок_с_мячом
 C - - - - - 0x00ADCE 02:ADBE: 9D A3 04  STA ram_напр_движ_игрока,X
+                                        LDA #con_anim_type_полевой
 C - - - - - 0x00ADD1 02:ADC1: 9D 61 00  STA ram_тип_анимации_игрока,X
 C - - - - - 0x00ADD4 02:ADC4: A9 A4     LDA #$A4
 C - - - - - 0x00ADD6 02:ADC6: 9D 4D 03  STA ram_pos_Y_lo_игрока,X
