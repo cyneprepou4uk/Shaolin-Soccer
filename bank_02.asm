@@ -14140,9 +14140,11 @@ bra_BD43:
 bra_BD6A_loop:
 - - - - - - 0x00BD7A 02:BD6A: A9 FF     LDA #$FF
 - - - - - - 0x00BD7C 02:BD6C: 9D 99 03  STA ram_pos_Z_hi_игрока,X
-- - - - - - 0x00BD7F 02:BD6F: A9 00     LDA #$00    ; con_state_стоит_идет  con_anim_type_полевой
+- - - - - - 0x00BD7F 02:BD6F: A9 00     LDA #con_state_стоит_идет
 - - - - - - 0x00BD81 02:BD71: 9D 86 04  STA ram_состояние_игрока,X
+                                        LDA #con_anim_type_полевой
 - - - - - - 0x00BD84 02:BD74: 95 61     STA ram_тип_анимации_игрока,X
+                                        LDA #$00
 - - - - - - 0x00BD86 02:BD76: 9D 27 03  STA ram_pos_X_hi_игрока,X
 - - - - - - 0x00BD89 02:BD79: 9D 60 03  STA ram_pos_Y_hi_игрока,X
 - - - - - - 0x00BD8C 02:BD7C: C8        INY
