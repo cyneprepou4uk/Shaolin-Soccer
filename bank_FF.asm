@@ -8207,7 +8207,8 @@ C - - - - - 0x01EFE8 07:EFD8: 4C B4 F0  JSR sub_F0B4_отрисовка_поля
                                         JSR sub_F166_отрисовать_сетку_после_гола
                                         JSR sub_E170_отрисовать_надпись_hud
 C - - - - - 0x01EFEF 07:EFDF: 4C 1A D6  JSR sub_E170_отрисовать_инфу_hud
-C - - - - - 0x01EFF2 07:EFE2: 4C 40 F3  JSR sub_E170_отрисовать_время_hud_и_следы_на_поле
+C - - - - - 0x01EFF2 07:EFE2: 4C 40 F3  JSR sub_E170_отрисовать_время_hud
+                                        JSR sub_F382_отрисовать_следы_на_поле
 @выход:
                                         RTS
 bra_EFE5_write_3_buffers_to_ppu:
@@ -8724,15 +8725,15 @@ C - - - - - 0x01F34F 07:F33F: 60        RTS
 
 
 
-sub_E170_отрисовать_время_hud_и_следы_на_поле:
+sub_E170_отрисовать_время_hud:
 C - - - - - 0x01F360 07:F350: A5 59     LDA ram_subscript
 C - - - - - 0x01F362 07:F352: C5 5A     CMP ram_copy_subscript
-C - - - - - 0x01F364 07:F354: D0 4E     BNE bra_F3A4_RTS
+C - - - - - 0x01F364 07:F354: D0 4E     BNE bra_F381_RTS
 C - - - - - 0x01F366 07:F356: C9 02     CMP #con_subscr_gp_игра_в_разгаре
 C - - - - - 0x01F368 07:F358: F0 07     BEQ bra_F361_нарисовать_таймер
 C - - - - - 0x01F36A 07:F35A: C9 06     CMP #con_subscr_gp_мяч_вне_игры
 C - - - - - 0x01F36C 07:F35C: F0 03     BEQ bra_F361_нарисовать_таймер
-C - - - - - 0x01F36E 07:F35E: 4C 82 F3  JMP loc_F382_нарисовать_следы
+C - - - - - 0x01F36E 07:F35E: 4C 82 F3  RTS
 bra_F361_нарисовать_таймер:
 C - - - - - 0x01F371 07:F361: A5 4C     LDA ram_для_2000
 C - - - - - 0x01F373 07:F363: 29 FB     AND #$FB
@@ -8749,7 +8750,12 @@ C - - - - - 0x01F389 07:F379: BD A5 05  LDA ram_тайл_hud,X
 C - - - - - 0x01F38C 07:F37C: 8D 07 20  STA $2007
 C - - - - - 0x01F38F 07:F37F: CA        DEX
 C - - - - - 0x01F390 07:F380: 10 F7     BPL bra_F379_loop
-loc_F382_нарисовать_следы:
+bra_F381_RTS:
+                                        RTS
+
+
+
+sub_F382_отрисовать_следы_на_поле:
 C D 3 - - - 0x01F392 07:F382: AE F0 05  LDX ram_счетчик_следов
 C - - - - - 0x01F395 07:F385: F0 1D     BEQ bra_F3A4_RTS
 C - - - - - 0x01F397 07:F387: CA        DEX
