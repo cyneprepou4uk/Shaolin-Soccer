@@ -14744,8 +14744,9 @@ C - - - - - 0x003CCA 00:BCBA: BD D6 BD  LDA #con_action_стоит_на_мест
 C - - - - - 0x003CCD 00:BCBD: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x003CD0 00:BCC0: A9 7F     LDA #$7F
 C - - - - - 0x003CD2 00:BCC2: 9D 74 00  STA ram_номер_анимации_игрока,X
-C - - - - - 0x003CD5 00:BCC5: A9 00     LDA #$00    ; con_state_стоит_идет
+C - - - - - 0x003CD5 00:BCC5: A9 00     LDA #con_state_стоит_идет
 C - - - - - 0x003CD7 00:BCC7: 9D 86 04  STA ram_состояние_игрока,X
+                                        LDA #$00
 C - - - - - 0x003CDA 00:BCCA: 9D F6 03  STA ram_spd_X_hi_игрока,X
 C - - - - - 0x003CDD 00:BCCD: 9D E8 03  STA ram_spd_X_lo_игрока,X
 C - - - - - 0x003CE0 00:BCD0: 9D 12 04  STA ram_spd_Y_hi_игрока,X
