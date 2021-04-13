@@ -11040,7 +11040,7 @@ C - - - - - 0x00FB33 03:BB23: F0 F6     BEQ bra_BB1B
 C - - - - - 0x00FB35 03:BB25: AD 94 04  LDA ram_опция_дождя_и_ветра
 C - - - - - 0x00FB38 03:BB28: 29 04     AND #$04
 C - - - - - 0x00FB3A 03:BB2A: D0 45     BNE bra_BB71
-C - - - - - 0x00FB3C 03:BB2C: AD 03 06  LDA ram_шанс_на_дождь_при_ветер+дождь
+C - - - - - 0x00FB3C 03:BB2C: AD 03 06  LDA ram_шанс_на_дождь_при_ветер_плюс_дождь
 C - - - - - 0x00FB3F 03:BB2F: F0 EA     BEQ bra_BB1B
 C - - - - - 0x00FB41 03:BB31: 0A        ASL
 C - - - - - 0x00FB42 03:BB32: 90 02     BCC bra_BB36
