@@ -7156,10 +7156,10 @@ C - - - - - 0x0167B9 05:A7A9: 85 1C     STA ram_001C
 C - - - - - 0x0167BB 05:A7AB: 38        SEC
 C - - - - - 0x0167BC 05:A7AC: A9 04     LDA #$04
 C - - - - - 0x0167BE 05:A7AE: E5 1C     SBC ram_001C
-C - - - - - 0x0167C0 05:A7B0: B0 02     BCS bra_A7B4
+C - - - - - 0x0167C0 05:A7B0: B0 02     BCS bra_A7B4_not_underflow
 - - - - - - 0x0167C2 05:A7B2: A9 00     LDA #$00
-bra_A7B4:
-C - - - - - 0x0167C4 05:A7B4: 8D E1 05  STA ram_количество_недоступных_подарков_японии
+bra_A7B4_not_underflow:
+C - - - - - 0x0167C4 05:A7B4: 8D E1 05  STA ram_колво_недоступных_подарков_японии
 C - - - - - 0x0167C7 05:A7B7: A9 05     LDA #con_anim_type_стрелочка_рожи
 C - - - - - 0x0167C9 05:A7B9: 8D 61 00  STA ram_тип_анимации_игрока
 C - - - - - 0x0167CC 05:A7BC: A9 01     LDA #$01
@@ -7579,7 +7579,7 @@ ofs_AA93_06:
 C - - J - - 0x016AA3 05:AA93: A2 00     LDX #$00
 C - - - - - 0x016AA5 05:AA95: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x016AA8 05:AA98: 10 09     BPL bra_AAA3
-C - - - - - 0x016AAA 05:AA9A: AD E1 05  LDA ram_количество_недоступных_подарков_японии
+C - - - - - 0x016AAA 05:AA9A: AD E1 05  LDA ram_колво_недоступных_подарков_японии
 C - - - - - 0x016AAD 05:AA9D: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x016AB0 05:AAA0: 20 53 AD  JSR sub_AD53
 bra_AAA3:
@@ -7633,7 +7633,7 @@ C - - - - - 0x016AFF 05:AAEF: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x016B02 05:AAF2: 69 01     ADC #$01
 C - - - - - 0x016B04 05:AAF4: C9 0C     CMP #$0C
 C - - - - - 0x016B06 05:AAF6: 90 03     BCC bra_AAFB
-C - - - - - 0x016B08 05:AAF8: AD E1 05  LDA ram_количество_недоступных_подарков_японии
+C - - - - - 0x016B08 05:AAF8: AD E1 05  LDA ram_колво_недоступных_подарков_японии
 bra_AAFB:
 loc_AAFB:
 C D 1 - - - 0x016B0B 05:AAFB: 8D CA 05  STA ram_номер_опции
@@ -7650,7 +7650,7 @@ C - - J - - 0x016B19 05:AB09: 38        SEC
 C - - - - - 0x016B1A 05:AB0A: AD CA 05  LDA ram_номер_опции
 C - - - - - 0x016B1D 05:AB0D: E9 01     SBC #$01
 C - - - - - 0x016B1F 05:AB0F: 30 05     BMI bra_AB16
-C - - - - - 0x016B21 05:AB11: CD E1 05  CMP ram_количество_недоступных_подарков_японии
+C - - - - - 0x016B21 05:AB11: CD E1 05  CMP ram_колво_недоступных_подарков_японии
 C - - - - - 0x016B24 05:AB14: B0 E5     BCS bra_AAFB
 bra_AB16:
 C - - - - - 0x016B26 05:AB16: A9 0B     LDA #$0B
@@ -8078,7 +8078,7 @@ C - - - - - 0x016D77 05:AD67: 85 1F     STA ram_001F
 C - - - - - 0x016D79 05:AD69: 20 91 AD  JSR sub_AD91
 C - - - - - 0x016D7C 05:AD6C: 38        SEC
 C - - - - - 0x016D7D 05:AD6D: AD B9 06  LDA ram_буфер_графики
-C - - - - - 0x016D80 05:AD70: ED E1 05  SBC ram_количество_недоступных_подарков_японии
+C - - - - - 0x016D80 05:AD70: ED E1 05  SBC ram_колво_недоступных_подарков_японии
 C - - - - - 0x016D83 05:AD73: 8D B9 06  STA ram_буфер_графики
 C - - - - - 0x016D86 05:AD76: A5 1F     LDA ram_001F
 C - - - - - 0x016D88 05:AD78: 8D 95 06  STA ram_счетчик_буфера_атрибутов
@@ -8665,7 +8665,7 @@ C - - - - - 0x017005 05:AFF5: D0 D4     BNE bra_AFCB
 ofs_AFF7_02:
 C - - J - - 0x017007 05:AFF7: 18        CLC
 C - - - - - 0x017008 05:AFF8: A9 2C     LDA #$2C
-C - - - - - 0x01700A 05:AFFA: 6D E1 05  ADC ram_количество_недоступных_подарков_японии
+C - - - - - 0x01700A 05:AFFA: 6D E1 05  ADC ram_колво_недоступных_подарков_японии
 C - - - - - 0x01700D 05:AFFD: D0 CC     BNE bra_AFCB
 
 
