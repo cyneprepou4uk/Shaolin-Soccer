@@ -72,7 +72,7 @@ if %size% EQU 393232 (
 ) else (
     echo.
     echo --------------------------------------------------
-    echo Something's wrong, check log for more information.
+    echo Something's wrong, check log for more information. 
     if exist !goal5.bak (
         echo.
         copy !goal5.bak !goal5.nes
