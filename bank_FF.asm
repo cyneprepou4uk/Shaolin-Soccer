@@ -1278,8 +1278,9 @@ C - - - - - 0x01C719 07:C709: 2C B2 05  BIT ram_флаг_яркости
 C - - - - - 0x01C71C 07:C70C: 10 0D     BPL bra_C71B_RTS    ; если яркость не готова
 C - - - - - 0x01C71E 07:C70E: 50 0B     BVC bra_C71B_RTS    ; если не затемнение
 C - - - - - 0x01C720 07:C710: 20 1A C9  JSR sub_C91A_подготовка_разводки
-C - - - - - 0x01C723 07:C713: A9 00     LDA #$00    ; con_gp_игра
+C - - - - - 0x01C723 07:C713: A9 00     LDA #con_gp_игра
 C - - - - - 0x01C725 07:C715: 8D 5C 00  STA ram_flag_gameplay
+                                        LDA #$00
 C - - - - - 0x01C728 07:C718: 8D E2 05  STA ram_таймер_катсцены
 bra_C71B_RTS:
 C - - - - - 0x01C72B 07:C71B: 4C 98 C6  RTS
