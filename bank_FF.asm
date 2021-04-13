@@ -1801,23 +1801,23 @@ bra_CACC:
 C - - - - - 0x01CADC 07:CACC: 4C A7 CA  JMP loc_CAA7
 loc_CACF:
 C D 2 - - - 0x01CADF 07:CACF: A9 80     LDA #$80
-C - - - - - 0x01CAE1 07:CAD1: 4C EA CA  JMP loc_CAEA_запись_типа
+C - - - - - 0x01CAE1 07:CAD1: 4C EA CA  BMI bra_CAEA_запись_типа
 bra_CAD4:
 C - - - - - 0x01CAE4 07:CAD4: A9 81     LDA #$81
-C - - - - - 0x01CAE6 07:CAD6: 4C EA CA  JMP loc_CAEA_запись_типа
+C - - - - - 0x01CAE6 07:CAD6: 4C EA CA  BMI bra_CAEA_запись_типа
 bra_CAD9:
 C - - - - - 0x01CAE9 07:CAD9: A9 01     LDA #$01
-C - - - - - 0x01CAEB 07:CADB: 4C EA CA  JMP loc_CAEA_запись_типа
+C - - - - - 0x01CAEB 07:CADB: 4C EA CA  BPL bra_CAEA_запись_типа
 bra_CADE:
 loc_CADE:
 C - - - - - 0x01CAEE 07:CADE: A9 00     LDA #$00
-C - - - - - 0x01CAF0 07:CAE0: 4C EA CA  JMP loc_CAEA_запись_типа
+C - - - - - 0x01CAF0 07:CAE0: 4C EA CA  BPL bra_CAEA_запись_типа
 bra_CAE3:
 - - - - - - 0x01CAF3 07:CAE3: A9 02     LDA #$02
-- - - - - - 0x01CAF5 07:CAE5: 4C EA CA  JMP loc_CAEA_запись_типа
+- - - - - - 0x01CAF5 07:CAE5: 4C EA CA  BPL bra_CAEA_запись_типа
 bra_CAE8:
 - - - - - - 0x01CAF8 07:CAE8: A9 82     LDA #$82
-loc_CAEA_запись_типа:   ; bzk опт
+bra_CAEA_запись_типа:
 C D 2 - - - 0x01CAFA 07:CAEA: 8D 30 06  STA ram_тип_болельщиков
 C - - - - - 0x01CAFD 07:CAED: 60        RTS
 
