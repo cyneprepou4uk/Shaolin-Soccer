@@ -1375,8 +1375,9 @@ C - - - - - 0x01C7CE 07:C7BE: C9 F0     CMP #$F0
 C - - - - - 0x01C7D0 07:C7C0: 90 0B     BCC bra_C7CD_RTS
 bra_C7C2:
 C - - - - - 0x01C7D2 07:C7C2: 20 47 D0  JSR sub_D047_включить_затемнение_яркости
-C - - - - - 0x01C7D5 07:C7C5: A9 00     LDA #$00    ; con_music_выкл
+C - - - - - 0x01C7D5 07:C7C5: A9 00     LDA #$00
 C - - - - - 0x01C7D7 07:C7C7: 8D E8 05  STA ram_следы_2006_hi
+                                        LDA #con_music_выкл
 C - - - - - 0x01C7DA 07:C7CA: 20 E4 C2  JSR sub_C2E4_воспроизвести_звук
 bra_C7CD_RTS:
 C D 2 - - - 0x01C7DD 07:C7CD: 4C 98 C6  RTS
