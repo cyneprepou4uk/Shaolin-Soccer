@@ -11478,7 +11478,7 @@ C - - - - - 0x002EF2 00:AEE2: 60        RTS
 bra_AEE3:
 - - - - - - 0x002EF3 00:AEE3: A5 58     LDA ram_script
 - - - - - - 0x002EF5 00:AEE5: F0 11     BEQ bra_AEF8    ; если игра на поле
-- - - - - - 0x002EF7 00:AEE7: C9 07     CMP #$07
+- - - - - - 0x002EF7 00:AEE7: C9 07     CMP #$07        ; bzk опт, разве скрипт бывает больше 03?
 - - - - - - 0x002EF9 00:AEE9: B0 0D     BCS bra_AEF8
 - - - - - - 0x002EFB 00:AEEB: A5 04     LDA ram_btn_hold
 - - - - - - 0x002EFD 00:AEED: 05 05     ORA ram_btn_hold + 1
@@ -11495,23 +11495,23 @@ bra_AEF8:
 bra_AF05_RTS:
 - - - - - - 0x002F15 00:AF05: 60        RTS
 bra_AF06:
-C - - - - - 0x002F16 00:AF06: AD 08 06  LDA ram_0608
+C - - - - - 0x002F16 00:AF06: AD 08 06  LDA ram_0608__2006_lo
 C - - - - - 0x002F19 00:AF09: 18        CLC
 C - - - - - 0x002F1A 00:AF0A: 69 40     ADC #$40
-C - - - - - 0x002F1C 00:AF0C: 8D 08 06  STA ram_0608
-C - - - - - 0x002F1F 00:AF0F: AD 07 06  LDA ram_0607
+C - - - - - 0x002F1C 00:AF0C: 8D 08 06  STA ram_0608__2006_lo
+C - - - - - 0x002F1F 00:AF0F: AD 07 06  LDA ram_0607__2006_hi
 C - - - - - 0x002F22 00:AF12: 69 00     ADC #$00
-C - - - - - 0x002F24 00:AF14: 8D 07 06  STA ram_0607
-C - - - - - 0x002F27 00:AF17: AD 08 06  LDA ram_0608
+C - - - - - 0x002F24 00:AF14: 8D 07 06  STA ram_0607__2006_hi
+C - - - - - 0x002F27 00:AF17: AD 08 06  LDA ram_0608__2006_lo
 C - - - - - 0x002F2A 00:AF1A: 30 03     BMI bra_AF1F
 C - - - - - 0x002F2C 00:AF1C: 4C B8 B0  JMP loc_B0B8
 bra_AF1F:
 C - - - - - 0x002F2F 00:AF1F: AD 18 B1  LDA tbl_B118_адрес_ppu
-C - - - - - 0x002F32 00:AF22: 8D 08 06  STA ram_0608
-C - - - - - 0x002F35 00:AF25: 8D 0F 06  STA ram_060F
+C - - - - - 0x002F32 00:AF22: 8D 08 06  STA ram_0608__2006_lo
+C - - - - - 0x002F35 00:AF25: 8D 0F 06  STA ram_060F__2006_lo
 C - - - - - 0x002F38 00:AF28: AD 19 B1  LDA tbl_B118_адрес_ppu + 1
-C - - - - - 0x002F3B 00:AF2B: 8D 07 06  STA ram_0607
-C - - - - - 0x002F3E 00:AF2E: 8D 10 06  STA ram_0610
+C - - - - - 0x002F3B 00:AF2B: 8D 07 06  STA ram_0607__2006_hi
+C - - - - - 0x002F3E 00:AF2E: 8D 10 06  STA ram_0610__2006_hi
 C - - - - - 0x002F41 00:AF31: AD 05 06  LDA ram_0605
 C - - - - - 0x002F44 00:AF34: 29 EF     AND #$EF
 C - - - - - 0x002F46 00:AF36: 8D 05 06  STA ram_0605
@@ -11523,13 +11523,13 @@ loc_AF3A:
 C D 1 - - - 0x002F4A 00:AF3A: A9 00     LDA #$00
 C - - - - - 0x002F4C 00:AF3C: 8D 04 06  STA ram_0604
 C - - - - - 0x002F4F 00:AF3F: A9 FF     LDA #$FF
-C - - - - - 0x002F51 00:AF41: 8D 09 06  STA ram_0609
-C - - - - - 0x002F54 00:AF44: 8D 0A 06  STA ram_060A
+C - - - - - 0x002F51 00:AF41: 8D 09 06  STA ram_0609__поинтер_lo
+C - - - - - 0x002F54 00:AF44: 8D 0A 06  STA ram_060A__поинтер_hi
 C - - - - - 0x002F57 00:AF47: A9 05     LDA #$05
 C - - - - - 0x002F59 00:AF49: 8D 0E 06  STA ram_060E
 C - - - - - 0x002F5C 00:AF4C: A5 58     LDA ram_script
 C - - - - - 0x002F5E 00:AF4E: F0 09     BEQ bra_AF59    ; если игра на поле
-C - - - - - 0x002F60 00:AF50: C9 07     CMP #$07
+C - - - - - 0x002F60 00:AF50: C9 07     CMP #$07        ; bzk опт, разве скрипт бывает больше 03?
 C - - - - - 0x002F62 00:AF52: B0 05     BCS bra_AF59
 C - - - - - 0x002F64 00:AF54: A9 02     LDA #$02
 C - - - - - 0x002F66 00:AF56: 8D 0E 06  STA ram_060E
@@ -11562,15 +11562,15 @@ C - - - - - 0x002F9B 00:AF8B: A9 00     LDA #$00
 C - - - - - 0x002F9D 00:AF8D: 85 28     STA ram_0028
 C - - - - - 0x002F9F 00:AF8F: A9 FF     LDA #$FF
 C - - - - - 0x002FA1 00:AF91: 85 29     STA ram_0029
-C - - - - - 0x002FA3 00:AF93: EE 09 06  INC ram_0609
+C - - - - - 0x002FA3 00:AF93: EE 09 06  INC ram_0609__поинтер_lo
 C - - - - - 0x002FA6 00:AF96: D0 03     BNE bra_AF9B_not_overflow
-C - - - - - 0x002FA8 00:AF98: EE 0A 06  INC ram_060A
+C - - - - - 0x002FA8 00:AF98: EE 0A 06  INC ram_060A__поинтер_hi
 bra_AF9B_not_overflow:
 C - - - - - 0x002FAB 00:AF9B: A5 33     LDA ram_0033
 C - - - - - 0x002FAD 00:AF9D: 18        CLC
-C - - - - - 0x002FAE 00:AF9E: 6D 0A 06  ADC ram_060A
+C - - - - - 0x002FAE 00:AF9E: 6D 0A 06  ADC ram_060A__поинтер_hi
 C - - - - - 0x002FB1 00:AFA1: 85 33     STA ram_0033
-C - - - - - 0x002FB3 00:AFA3: AC 09 06  LDY ram_0609
+C - - - - - 0x002FB3 00:AFA3: AC 09 06  LDY ram_0609__поинтер_lo
 loc_AFA6:
 C D 1 - - - 0x002FB6 00:AFA6: B1 32     LDA (ram_0032),Y
 C - - - - - 0x002FB8 00:AFA8: D0 0A     BNE bra_AFB4
@@ -11614,7 +11614,7 @@ C D 1 - - - 0x002FF9 00:AFE9: AD 0E 06  LDA ram_060E
 C - - - - - 0x002FFC 00:AFEC: 8D 0C 06  STA ram_060C
 C - - - - - 0x002FFF 00:AFEF: A5 58     LDA ram_script
 C - - - - - 0x003001 00:AFF1: F0 11     BEQ bra_B004    ; если игра на поле
-C - - - - - 0x003003 00:AFF3: C9 07     CMP #$07
+C - - - - - 0x003003 00:AFF3: C9 07     CMP #$07        ; bzk опт, разве скрипт бывает больше 03?
 C - - - - - 0x003005 00:AFF5: B0 0D     BCS bra_B004
 C - - - - - 0x003007 00:AFF7: A5 04     LDA ram_btn_hold
 C - - - - - 0x003009 00:AFF9: 05 05     ORA ram_btn_hold + 1
@@ -11632,11 +11632,9 @@ C - - - - - 0x00301C 00:B00C: B9 1F B0  LDA tbl_B01F,Y
 C - - - - - 0x00301F 00:B00F: 85 32     STA ram_0032
 C - - - - - 0x003021 00:B011: B9 20 B0  LDA tbl_B01F + 1,Y
 C - - - - - 0x003024 00:B014: 85 33     STA ram_0033
-C - - - - - 0x003026 00:B016: EE 0B 06  INC ram_060B
-C - - - - - 0x003029 00:B019: AC 0B 06  LDY ram_060B
+C - - - - - 0x003026 00:B016: EE 0B 06  INC ram_060B__указатель
+C - - - - - 0x003029 00:B019: AC 0B 06  LDY ram_060B__указатель
 C - - - - - 0x00302C 00:B01C: 4C A6 AF  JMP loc_AFA6
-
-
 
 tbl_B01F:
 - D 1 - - - 0x00302F 00:B01F: 11 06     .word ram_буфер_имени_игрока
@@ -11648,20 +11646,20 @@ loc_B023:
 C D 1 - - - 0x003033 00:B023: A9 01     LDA #$01
 C - - - - - 0x003035 00:B025: 8D 95 06  STA ram_счетчик_буфера_атрибутов
 C - - - - - 0x003038 00:B028: 8D B8 06  STA ram_счетчик_буфера_графики
-C - - - - - 0x00303B 00:B02B: AD 08 06  LDA ram_0608
+C - - - - - 0x00303B 00:B02B: AD 08 06  LDA ram_0608__2006_lo
 C - - - - - 0x00303E 00:B02E: 8D 94 06  STA ram_байт_2006_lo_атрибуты
 C - - - - - 0x003041 00:B031: 18        CLC
 C - - - - - 0x003042 00:B032: 69 20     ADC #$20
 C - - - - - 0x003044 00:B034: 8D B7 06  STA ram_байт_2006_lo_графика
 C - - - - - 0x003047 00:B037: 08        PHP
-C - - - - - 0x003048 00:B038: AD 07 06  LDA ram_0607
+C - - - - - 0x003048 00:B038: AD 07 06  LDA ram_0607__2006_hi
 C - - - - - 0x00304B 00:B03B: 8D 93 06  STA ram_байт_2006_hi_атрибуты
 C - - - - - 0x00304E 00:B03E: 28        PLP
 C - - - - - 0x00304F 00:B03F: 69 00     ADC #$00
 C - - - - - 0x003051 00:B041: 8D B6 06  STA ram_байт_2006_hi_графика
-C - - - - - 0x003054 00:B044: EE 08 06  INC ram_0608
+C - - - - - 0x003054 00:B044: EE 08 06  INC ram_0608__2006_lo
 C - - - - - 0x003057 00:B047: D0 03     BNE bra_B04C
-- - - - - - 0x003059 00:B049: EE 07 06  INC ram_0607
+- - - - - - 0x003059 00:B049: EE 07 06  INC ram_0607__2006_hi
 bra_B04C:
 C - - - - - 0x00305C 00:B04C: AD B9 06  LDA ram_буфер_графики
 C - - - - - 0x00305F 00:B04F: C9 FF     CMP #$FF
@@ -11694,7 +11692,7 @@ ofs_B073_F0:
 C - - J - - 0x003083 00:B073: A9 84     LDA #$84
 C - - - - - 0x003085 00:B075: 8D 05 06  STA ram_0605
 C - - - - - 0x003088 00:B078: A9 FF     LDA #$FF
-C - - - - - 0x00308A 00:B07A: 8D 0B 06  STA ram_060B
+C - - - - - 0x00308A 00:B07A: 8D 0B 06  STA ram_060B__указатель
 C - - - - - 0x00308D 00:B07D: 60        RTS
 
 
@@ -11703,7 +11701,7 @@ ofs_B07E_F1:
 C - - J - - 0x00308E 00:B07E: A9 88     LDA #$88
 C - - - - - 0x003090 00:B080: 8D 05 06  STA ram_0605
 C - - - - - 0x003093 00:B083: A9 FF     LDA #$FF
-C - - - - - 0x003095 00:B085: 8D 0B 06  STA ram_060B
+C - - - - - 0x003095 00:B085: 8D 0B 06  STA ram_060B__указатель
 C - - - - - 0x003098 00:B088: 60        RTS
 
 
@@ -11738,9 +11736,9 @@ C - - J - - 0x0030B4 00:B0A4: AD 05 06  LDA ram_0605
 C - - - - - 0x0030B7 00:B0A7: 09 10     ORA #$10
 C - - - - - 0x0030B9 00:B0A9: 8D 05 06  STA ram_0605
 C - - - - - 0x0030BC 00:B0AC: AD 18 B1  LDA tbl_B118_адрес_ppu
-C - - - - - 0x0030BF 00:B0AF: 8D 08 06  STA ram_0608
+C - - - - - 0x0030BF 00:B0AF: 8D 08 06  STA ram_0608__2006_lo
 C - - - - - 0x0030C2 00:B0B2: AD 19 B1  LDA tbl_B118_адрес_ppu + 1
-C - - - - - 0x0030C5 00:B0B5: 8D 07 06  STA ram_0607
+C - - - - - 0x0030C5 00:B0B5: 8D 07 06  STA ram_0607__2006_hi
 loc_B0B8:
 C D 1 - - - 0x0030C8 00:B0B8: A2 1B     LDX #$1B
 C - - - - - 0x0030CA 00:B0BA: 8E 95 06  STX ram_счетчик_буфера_атрибутов
@@ -11751,15 +11749,15 @@ C - - - - - 0x0030D2 00:B0C2: 9D 96 06  STA ram_буфер_атрибутов,X
 C - - - - - 0x0030D5 00:B0C5: 9D B9 06  STA ram_буфер_графики,X
 C - - - - - 0x0030D8 00:B0C8: CA        DEX
 C - - - - - 0x0030D9 00:B0C9: 10 F7     BPL bra_B0C2
-C - - - - - 0x0030DB 00:B0CB: AD 08 06  LDA ram_0608
+C - - - - - 0x0030DB 00:B0CB: AD 08 06  LDA ram_0608__2006_lo
 C - - - - - 0x0030DE 00:B0CE: 8D 94 06  STA ram_байт_2006_lo_атрибуты
-C - - - - - 0x0030E1 00:B0D1: AD 07 06  LDA ram_0607
+C - - - - - 0x0030E1 00:B0D1: AD 07 06  LDA ram_0607__2006_hi
 C - - - - - 0x0030E4 00:B0D4: 8D 93 06  STA ram_байт_2006_hi_атрибуты
-C - - - - - 0x0030E7 00:B0D7: AD 08 06  LDA ram_0608
+C - - - - - 0x0030E7 00:B0D7: AD 08 06  LDA ram_0608__2006_lo
 C - - - - - 0x0030EA 00:B0DA: 18        CLC
 C - - - - - 0x0030EB 00:B0DB: 69 20     ADC #$20
 C - - - - - 0x0030ED 00:B0DD: 8D B7 06  STA ram_байт_2006_lo_графика
-C - - - - - 0x0030F0 00:B0E0: AD 07 06  LDA ram_0607
+C - - - - - 0x0030F0 00:B0E0: AD 07 06  LDA ram_0607__2006_hi
 C - - - - - 0x0030F3 00:B0E3: 69 00     ADC #$00
 C - - - - - 0x0030F5 00:B0E5: 8D B6 06  STA ram_байт_2006_hi_графика
 C - - - - - 0x0030F8 00:B0E8: 60        RTS
@@ -11778,15 +11776,15 @@ C - - - - - 0x003105 00:B0F5: 60        RTS
 
 
 ofs_B0F7_F7:
-C - - J - - 0x003107 00:B0F7: AD 0F 06  LDA ram_060F
+C - - J - - 0x003107 00:B0F7: AD 0F 06  LDA ram_060F__2006_lo
 C - - - - - 0x00310A 00:B0FA: 18        CLC
 C - - - - - 0x00310B 00:B0FB: 69 40     ADC #$40
-C - - - - - 0x00310D 00:B0FD: 8D 08 06  STA ram_0608
-C - - - - - 0x003110 00:B100: 8D 0F 06  STA ram_060F
-C - - - - - 0x003113 00:B103: AD 10 06  LDA ram_0610
+C - - - - - 0x00310D 00:B0FD: 8D 08 06  STA ram_0608__2006_lo
+C - - - - - 0x003110 00:B100: 8D 0F 06  STA ram_060F__2006_lo
+C - - - - - 0x003113 00:B103: AD 10 06  LDA ram_0610__2006_hi
 C - - - - - 0x003116 00:B106: 69 00     ADC #$00
-C - - - - - 0x003118 00:B108: 8D 07 06  STA ram_0607
-C - - - - - 0x00311B 00:B10B: 8D 10 06  STA ram_0610
+C - - - - - 0x003118 00:B108: 8D 07 06  STA ram_0607__2006_hi
+C - - - - - 0x00311B 00:B10B: 8D 10 06  STA ram_0610__2006_hi
 C - - - - - 0x00311E 00:B10E: 60        RTS
 
 

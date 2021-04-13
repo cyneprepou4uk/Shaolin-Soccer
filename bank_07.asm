@@ -75,13 +75,13 @@ sub_0x000000_RESET_init:
                                         STA ram_номер_палитры_спрайтов + 2
                                         STA ram_номер_палитры_спрайтов + 3
                                         JSR sub_0x01D046
-                                        LDA #$22
-                                        STA ram_0607
-                                        STA ram_0610
-                                        LDA #$E3
-                                        STA ram_0608
-                                        STA ram_060F
-                                        LDA #$F8
+                                        LDA #> $22E3
+                                        STA ram_0607__2006_hi
+                                        STA ram_0610__2006_hi
+                                        LDA #< $22E3
+                                        STA ram_0608__2006_lo
+                                        STA ram_060F__2006_lo
+                                        LDA #$F8    ; закрыть буфер
                                         STA ram_буфер_имени_игрока + 4
                                         STA ram_0617_буфер + 5
                                         LDA #con_script_логотип

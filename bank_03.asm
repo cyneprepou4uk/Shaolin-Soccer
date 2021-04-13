@@ -5226,22 +5226,22 @@ tbl_A003:
 
 
 tbl_A007:
-- D 1 - - - 0x00E017 03:A007: FF        .byte $FF   ; 
-- D 1 - - - 0x00E018 03:A008: 40        .byte $40   ; 
-- D 1 - - - 0x00E019 03:A009: C0        .byte $C0   ; 
-- - - - - - 0x00E01A 03:A00A: FF        .byte $FF   ; 
-- D 1 - - - 0x00E01B 03:A00B: 80        .byte $80   ; 
-- D 1 - - - 0x00E01C 03:A00C: 60        .byte $60   ; 
-- D 1 - - - 0x00E01D 03:A00D: A0        .byte $A0   ; 
-- - - - - - 0x00E01E 03:A00E: FF        .byte $FF   ; 
-- D 1 - - - 0x00E01F 03:A00F: 00        .byte $00   ; 
-- D 1 - - - 0x00E020 03:A010: 20        .byte $20   ; 
-- - - - - - 0x00E021 03:A011: E0        .byte $E0   ; 
-- - - - - - 0x00E022 03:A012: FF        .byte $FF   ; 
-- - - - - - 0x00E023 03:A013: FF        .byte $FF   ; 
-- - - - - - 0x00E024 03:A014: FF        .byte $FF   ; 
-- - - - - - 0x00E025 03:A015: FF        .byte $FF   ; 
-- - - - - - 0x00E026 03:A016: FF        .byte $FF   ; 
+- D 1 - - - 0x00E017 03:A007: FF        .byte $FF   ; 00 
+- D 1 - - - 0x00E018 03:A008: 40        .byte $40   ; 01 вправо
+- D 1 - - - 0x00E019 03:A009: C0        .byte $C0   ; 02 влево
+- - - - - - 0x00E01A 03:A00A: FF        .byte $FF   ; 03 
+- D 1 - - - 0x00E01B 03:A00B: 80        .byte $80   ; 04 вниз
+- D 1 - - - 0x00E01C 03:A00C: 60        .byte $60   ; 05 вниз + вправо
+- D 1 - - - 0x00E01D 03:A00D: A0        .byte $A0   ; 06 вниз + влево
+- - - - - - 0x00E01E 03:A00E: FF        .byte $FF   ; 07 
+- D 1 - - - 0x00E01F 03:A00F: 00        .byte $00   ; 08 вверх
+- D 1 - - - 0x00E020 03:A010: 20        .byte $20   ; 09 вверх + вправо
+- - - - - - 0x00E021 03:A011: E0        .byte $E0   ; 0A вверх + влево
+- - - - - - 0x00E022 03:A012: FF        .byte $FF   ; 0B 
+- - - - - - 0x00E023 03:A013: FF        .byte $FF   ; 0C 
+- - - - - - 0x00E024 03:A014: FF        .byte $FF   ; 0D 
+- - - - - - 0x00E025 03:A015: FF        .byte $FF   ; 0E 
+- - - - - - 0x00E026 03:A016: FF        .byte $FF   ; 0F 
 
 
 
@@ -6598,12 +6598,12 @@ C - - - - - 0x00E942 03:A932: 85 2E     STA ram_002E
 C - - - - - 0x00E944 03:A934: B9 89 AB  LDA tbl_AB88 + 1,Y
 C - - - - - 0x00E947 03:A937: 85 2F     STA ram_002F
 C - - - - - 0x00E949 03:A939: A0 00     LDY #$00
-bra_A93B:
+bra_A93B_loop:
 C - - - - - 0x00E94B 03:A93B: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x00E94D 03:A93D: C8        INY
 C - - - - - 0x00E94E 03:A93E: 91 2C     STA (ram_002C),Y
 C - - - - - 0x00E950 03:A940: C0 05     CPY #$05
-C - - - - - 0x00E952 03:A942: 90 F7     BCC bra_A93B
+C - - - - - 0x00E952 03:A942: 90 F7     BCC bra_A93B_loop
 C - - - - - 0x00E954 03:A944: 60        RTS
 
 
