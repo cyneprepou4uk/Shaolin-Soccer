@@ -8529,11 +8529,11 @@ C - - - - - 0x00F187 03:B177: A5 2A     LDA ram_002A
 C - - - - - 0x00F189 03:B179: F0 07     BEQ bra_B182
 C - - - - - 0x00F18B 03:B17B: C5 1E     CMP ram_001E
 C - - - - - 0x00F18D 03:B17D: 90 03     BCC bra_B182
-C - - - - - 0x00F18F 03:B17F: 4C 87 B1  JMP loc_B187
+C - - - - - 0x00F18F 03:B17F: 4C 87 B1  BCS bra_B187
 bra_B182:
 C - - - - - 0x00F192 03:B182: A9 00     LDA #$00
 C - - - - - 0x00F194 03:B184: 4C 92 B1  BEQ bra_B192
-loc_B187:
+bra_B187:
 C D 1 - - - 0x00F197 03:B187: A5 1C     LDA ram_001C
 C - - - - - 0x00F199 03:B189: 10 05     BPL bra_B190
 C - - - - - 0x00F19B 03:B18B: A9 02     LDA #$02
@@ -8546,11 +8546,11 @@ C - - - - - 0x00F1A4 03:B194: A5 2B     LDA ram_002B
 C - - - - - 0x00F1A6 03:B196: F0 07     BEQ bra_B19F
 C - - - - - 0x00F1A8 03:B198: C5 1F     CMP ram_001F
 C - - - - - 0x00F1AA 03:B19A: 90 03     BCC bra_B19F
-C - - - - - 0x00F1AC 03:B19C: 4C A4 B1  JMP loc_B1A4
+C - - - - - 0x00F1AC 03:B19C: 4C A4 B1  BCS bra_B1A4
 bra_B19F:
 C - - - - - 0x00F1AF 03:B19F: A9 00     LDA #$00
 C - - - - - 0x00F1B1 03:B1A1: 4C CB B1  BEQ bra_B1CB
-loc_B1A4:
+bra_B1A4:
 C D 1 - - - 0x00F1B4 03:B1A4: A5 1D     LDA ram_001D
 C - - - - - 0x00F1B6 03:B1A6: 10 13     BPL bra_B1BB
 C - - - - - 0x00F1B8 03:B1A8: A5 20     LDA ram_0020
