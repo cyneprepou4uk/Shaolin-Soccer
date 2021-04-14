@@ -777,7 +777,7 @@ C - - - - - 0x00C51F 03:850F: 10 0E     BPL bra_851F_не_в_воздухе
 bra_8511:
 C - - - - - 0x00C521 03:8511: BD 86 04  LDA ram_состояние_игрока,X
 C - - - - - 0x00C524 03:8514: 10 06     BPL bra_851C_не_в_воздухе
-C - - - - - 0x00C526 03:8516: A9 42     LDA #con_action_42
+C - - - - - 0x00C526 03:8516: A9 42     LDA #con_action_удар_двумя_ногами_в_прыжке
 C - - - - - 0x00C528 03:8518: 9D 79 04  STA ram_next_действие_игрока,X
 C - - - - - 0x00C52B 03:851B: 60        RTS
 bra_851C_не_в_воздухе:
@@ -10903,77 +10903,77 @@ C - - - - - 0x00FA01 03:B9F1: 10 03     BPL bra_B9F6
 - - - - - - 0x00FA05 03:B9F5: 60        RTS
 bra_B9F6:
 C - - - - - 0x00FA06 03:B9F6: C9 09     CMP #con_action_09    ; 09 - удар по мячу с земли если ты владеешь им
-C - - - - - 0x00FA08 03:B9F8: F0 71     BEQ bra_BA6B
+C - - - - - 0x00FA08 03:B9F8: F0 71     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA0A 03:B9FA: C9 07     CMP #con_action_07    ; 07 - удар по мячу с земли
-C - - - - - 0x00FA0C 03:B9FC: F0 6D     BEQ bra_BA6B
+C - - - - - 0x00FA0C 03:B9FC: F0 6D     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA0E 03:B9FE: C9 31     CMP #con_action_31    ; 31 - нырок вперед рыбкой
-C - - - - - 0x00FA10 03:BA00: F0 69     BEQ bra_BA6B
+C - - - - - 0x00FA10 03:BA00: F0 69     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA12 03:BA02: C9 32     CMP #con_action_32    ; 32 - удар через себя в воздухе без мяча
-C - - - - - 0x00FA14 03:BA04: F0 65     BEQ bra_BA6B
+C - - - - - 0x00FA14 03:BA04: F0 65     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA16 03:BA06: C9 46     CMP #con_action_46    ; 46 - удар через себя в воздухе с мячем
-C - - - - - 0x00FA18 03:BA08: F0 61     BEQ bra_BA6B
+C - - - - - 0x00FA18 03:BA08: F0 61     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA1A 03:BA0A: C9 33     CMP #con_action_33    ; 33 - удар ногой в воздухе без мяча
-C - - - - - 0x00FA1C 03:BA0C: F0 5D     BEQ bra_BA6B
+C - - - - - 0x00FA1C 03:BA0C: F0 5D     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA1E 03:BA0E: C9 34     CMP #con_action_34    ; 34 - удар головой в воздухе без мяча
-C - - - - - 0x00FA20 03:BA10: F0 59     BEQ bra_BA6B
+C - - - - - 0x00FA20 03:BA10: F0 59     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA22 03:BA12: C9 37     CMP #con_action_37    ; 37 - удар ногой в воздухе с мячем
-C - - - - - 0x00FA24 03:BA14: F0 55     BEQ bra_BA6B
+C - - - - - 0x00FA24 03:BA14: F0 55     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA26 03:BA16: C9 38     CMP #con_action_38    ; 38 - удар головой в воздухе с мячем
-C - - - - - 0x00FA28 03:BA18: F0 51     BEQ bra_BA6B
+C - - - - - 0x00FA28 03:BA18: F0 51     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA2A 03:BA1A: C9 49     CMP #con_action_49    ; 49 - вертушка по ветру
-C - - - - - 0x00FA2C 03:BA1C: F0 4D     BEQ bra_BA6B
+C - - - - - 0x00FA2C 03:BA1C: F0 4D     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA2E 03:BA1E: C9 4B     CMP #con_action_4B    ; 4B - мексиканское сверло головой
-C - - - - - 0x00FA30 03:BA20: F0 49     BEQ bra_BA6B
+C - - - - - 0x00FA30 03:BA20: F0 49     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA32 03:BA22: C9 4D     CMP #con_action_4D    ; 4D - вертушка по ветру вокруг головы
-C - - - - - 0x00FA34 03:BA24: F0 45     BEQ bra_BA6B
+C - - - - - 0x00FA34 03:BA24: F0 45     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA36 03:BA26: C9 4F     CMP #con_action_4F    ; 4F - мексиканское сверло ногами
-C - - - - - 0x00FA38 03:BA28: F0 41     BEQ bra_BA6B
+C - - - - - 0x00FA38 03:BA28: F0 41     BEQ bra_BA6B_удары_по_мячу
 C - - - - - 0x00FA3A 03:BA2A: C9 0A     CMP #con_action_0A    ; 0A - пас с земли если владеешь мячем
-C - - - - - 0x00FA3C 03:BA2C: F0 42     BEQ bra_BA70
+C - - - - - 0x00FA3C 03:BA2C: F0 42     BEQ bra_BA70_пасы
 C - - - - - 0x00FA3E 03:BA2E: C9 08     CMP #con_action_08    ; 08 - пас с земли
-C - - - - - 0x00FA40 03:BA30: F0 3E     BEQ bra_BA70
+C - - - - - 0x00FA40 03:BA30: F0 3E     BEQ bra_BA70_пасы
 C - - - - - 0x00FA42 03:BA32: C9 35     CMP #con_action_35    ; 35 - пас головой в воздухе без мяча
-C - - - - - 0x00FA44 03:BA34: F0 3A     BEQ bra_BA70
+C - - - - - 0x00FA44 03:BA34: F0 3A     BEQ bra_BA70_пасы
 C - - - - - 0x00FA46 03:BA36: C9 39     CMP #con_action_39    ; 39 - пас ногой в воздухе с мячем
-C - - - - - 0x00FA48 03:BA38: F0 36     BEQ bra_BA70
+C - - - - - 0x00FA48 03:BA38: F0 36     BEQ bra_BA70_пасы
 C - - - - - 0x00FA4A 03:BA3A: C9 36     CMP #con_action_36    ; 36 - пас головой в воздухе без мяча
-C - - - - - 0x00FA4C 03:BA3C: F0 32     BEQ bra_BA70
+C - - - - - 0x00FA4C 03:BA3C: F0 32     BEQ bra_BA70_пасы
 C - - - - - 0x00FA4E 03:BA3E: C9 3A     CMP #con_action_3A    ; bzk мусор
 C - - - - - 0x00FA50 03:BA40: C9 22     CMP #con_action_удар_локтем    ; 22 - удар локтем на земле
-C - - - - - 0x00FA52 03:BA42: F0 31     BEQ bra_BA75
+C - - - - - 0x00FA52 03:BA42: F0 31     BEQ bra_BA75_08
 C - - - - - 0x00FA54 03:BA44: C9 3B     CMP #con_action_локоть_в_прыжке    ; 3B - удар локтем в прыжке
-C - - - - - 0x00FA56 03:BA46: F0 2D     BEQ bra_BA75
+C - - - - - 0x00FA56 03:BA46: F0 2D     BEQ bra_BA75_08
 C - - - - - 0x00FA58 03:BA48: C9 23     CMP #con_action_подкат    ; 23 - подкат
-C - - - - - 0x00FA5A 03:BA4A: F0 2E     BEQ bra_BA7A
-C - - - - - 0x00FA5C 03:BA4C: C9 42     CMP #con_action_42    ; 42 - удар 2мя ногами в прыжке
-C - - - - - 0x00FA5E 03:BA4E: F0 2A     BEQ bra_BA7A
+C - - - - - 0x00FA5A 03:BA4A: F0 2E     BEQ bra_BA7A_0C
+C - - - - - 0x00FA5C 03:BA4C: C9 42     CMP #con_action_удар_двумя_ногами_в_прыжке    ; 42 - удар 2мя ногами в прыжке
+C - - - - - 0x00FA5E 03:BA4E: F0 2A     BEQ bra_BA7A_0C
 C - - - - - 0x00FA60 03:BA50: C9 2D     CMP #con_action_2D    ; 2D - отбрасывает(не падает) назад с выпученными глазами
-C - - - - - 0x00FA62 03:BA52: F0 2B     BEQ bra_BA7F
+C - - - - - 0x00FA62 03:BA52: F0 2B     BEQ bra_BA7F_сшибание
 C - - - - - 0x00FA64 03:BA54: C9 2E     CMP #con_action_2E    ; 2E - отбрасывает(не падает) вперед с выпученными глазами
-C - - - - - 0x00FA66 03:BA56: F0 27     BEQ bra_BA7F
+C - - - - - 0x00FA66 03:BA56: F0 27     BEQ bra_BA7F_сшибание
 C - - - - - 0x00FA68 03:BA58: C9 3C     CMP #con_action_3C    ; 3C - отбрасывает(и падает) назад с выпученными глазами
-C - - - - - 0x00FA6A 03:BA5A: F0 23     BEQ bra_BA7F
+C - - - - - 0x00FA6A 03:BA5A: F0 23     BEQ bra_BA7F_сшибание
 C - - - - - 0x00FA6C 03:BA5C: C9 3D     CMP #con_action_3D    ; 3D - отбрасывает(и падает) вперед с выпученными глазами
-C - - - - - 0x00FA6E 03:BA5E: F0 1F     BEQ bra_BA7F
+C - - - - - 0x00FA6E 03:BA5E: F0 1F     BEQ bra_BA7F_сшибание
 C - - - - - 0x00FA70 03:BA60: C9 59     CMP #con_action_59    ; 59 - отлетает назад высоко с выпученными глазами
-C - - - - - 0x00FA72 03:BA62: F0 1B     BEQ bra_BA7F
+C - - - - - 0x00FA72 03:BA62: F0 1B     BEQ bra_BA7F_сшибание
 C - - - - - 0x00FA74 03:BA64: C9 5A     CMP #con_action_5A    ; 5A - отлетает вперед высоко с выпученными глазами
-C - - - - - 0x00FA76 03:BA66: F0 17     BEQ bra_BA7F
+C - - - - - 0x00FA76 03:BA66: F0 17     BEQ bra_BA7F_сшибание
 C - - - - - 0x00FA78 03:BA68: A9 00     LDA #$00
 C - - - - - 0x00FA7A 03:BA6A: 60        RTS
-bra_BA6B:
+bra_BA6B_удары_по_мячу:
 C - - - - - 0x00FA7B 03:BA6B: A9 00     LDA #$00
 C - - - - - 0x00FA7D 03:BA6D: 4C 81 BA  BEQ bra_BA81
-bra_BA70:
+bra_BA70_пасы:
 C - - - - - 0x00FA80 03:BA70: A9 04     LDA #$04
 C - - - - - 0x00FA82 03:BA72: 4C 81 BA  BNE bra_BA81
-bra_BA75:
+bra_BA75_08:
 C - - - - - 0x00FA85 03:BA75: A9 08     LDA #$08
 C - - - - - 0x00FA87 03:BA77: 4C 81 BA  BNE bra_BA81
-bra_BA7A:
+bra_BA7A_0C:
 C - - - - - 0x00FA8A 03:BA7A: A9 0C     LDA #$0C
 C - - - - - 0x00FA8C 03:BA7C: 4C 81 BA  BNE bra_BA81
-bra_BA7F:
+bra_BA7F_сшибание:
 C - - - - - 0x00FA8F 03:BA7F: A9 10     LDA #$10
 bra_BA81:
 C D 1 - - - 0x00FA91 03:BA81: 85 1C     STA ram_001C
@@ -11002,22 +11002,27 @@ tbl_BAA1:
 - D 1 - - - 0x00FAB7 03:BAA7: E5 BA     .word off_BAE5_03
 
 off_BAA9_00:
+; 00
 - D 1 - I - 0x00FAB9 03:BAA9: 2C        .byte $2C   ; 
 - D 1 - I - 0x00FABA 03:BAAA: 2D        .byte $2D   ; 
 - D 1 - I - 0x00FABB 03:BAAB: 02        .byte $02   ; 
 - D 1 - I - 0x00FABC 03:BAAC: 17        .byte $17   ; 
+; 04
 - D 1 - I - 0x00FABD 03:BAAD: 33        .byte $33   ; 
 - D 1 - I - 0x00FABE 03:BAAE: 32        .byte $32   ; 
 - D 1 - I - 0x00FABF 03:BAAF: 07        .byte $07   ; 
 - D 1 - I - 0x00FAC0 03:BAB0: 34        .byte $34   ; 
+; 08
 - D 1 - I - 0x00FAC1 03:BAB1: 2C        .byte $2C   ; 
 - D 1 - I - 0x00FAC2 03:BAB2: 30        .byte $30   ; 
 - D 1 - I - 0x00FAC3 03:BAB3: 33        .byte $33   ; 
 - D 1 - I - 0x00FAC4 03:BAB4: 3F        .byte $3F   ; 
+; 0C
 - D 1 - I - 0x00FAC5 03:BAB5: 33        .byte $33   ; 
 - D 1 - I - 0x00FAC6 03:BAB6: 2F        .byte $2F   ; 
 - D 1 - I - 0x00FAC7 03:BAB7: 30        .byte $30   ; 
 - D 1 - I - 0x00FAC8 03:BAB8: 34        .byte $34   ; 
+; 10
 - D 1 - I - 0x00FAC9 03:BAB9: 3D        .byte $3D   ; 
 - D 1 - I - 0x00FACA 03:BABA: 3E        .byte $3E   ; 
 - D 1 - I - 0x00FACB 03:BABB: 37        .byte $37   ; 
@@ -11026,22 +11031,27 @@ off_BAA9_00:
 
 
 off_BABD_01:
+; 00
 - D 1 - I - 0x00FACD 03:BABD: 2E        .byte $2E   ; 
 - D 1 - I - 0x00FACE 03:BABE: 29        .byte $29   ; 
 - D 1 - I - 0x00FACF 03:BABF: 31        .byte $31   ; 
 - D 1 - I - 0x00FAD0 03:BAC0: 35        .byte $35   ; 
+; 04
 - D 1 - I - 0x00FAD1 03:BAC1: 27        .byte $27   ; 
 - D 1 - I - 0x00FAD2 03:BAC2: 07        .byte $07   ; 
 - D 1 - I - 0x00FAD3 03:BAC3: 0E        .byte $0E   ; 
 - D 1 - I - 0x00FAD4 03:BAC4: 36        .byte $36   ; 
+; 08
 - D 1 - I - 0x00FAD5 03:BAC5: 2E        .byte $2E   ; 
 - D 1 - I - 0x00FAD6 03:BAC6: 2A        .byte $2A   ; 
 - D 1 - I - 0x00FAD7 03:BAC7: 30        .byte $30   ; 
 - D 1 - I - 0x00FAD8 03:BAC8: 35        .byte $35   ; 
+; 0C
 - D 1 - I - 0x00FAD9 03:BAC9: 28        .byte $28   ; 
 - D 1 - I - 0x00FADA 03:BACA: 13        .byte $13   ; 
 - D 1 - I - 0x00FADB 03:BACB: 3E        .byte $3E   ; 
 - D 1 - I - 0x00FADC 03:BACC: 38        .byte $38   ; 
+; 10
 - D 1 - I - 0x00FADD 03:BACD: 3E        .byte $3E   ; 
 - D 1 - I - 0x00FADE 03:BACE: 3F        .byte $3F   ; 
 - D 1 - I - 0x00FADF 03:BACF: 2B        .byte $2B   ; 
@@ -11050,22 +11060,27 @@ off_BABD_01:
 
 
 off_BAD1_02:
+; 00
 - D 1 - I - 0x00FAE1 03:BAD1: 00        .byte $00   ; 
 - D 1 - I - 0x00FAE2 03:BAD2: 02        .byte $02   ; 
 - D 1 - I - 0x00FAE3 03:BAD3: 39        .byte $39   ; 
 - D 1 - I - 0x00FAE4 03:BAD4: 18        .byte $18   ; 
+; 04
 - D 1 - I - 0x00FAE5 03:BAD5: 07        .byte $07   ; 
 - D 1 - I - 0x00FAE6 03:BAD6: 3F        .byte $3F   ; 
 - D 1 - I - 0x00FAE7 03:BAD7: 33        .byte $33   ; 
 - D 1 - I - 0x00FAE8 03:BAD8: 39        .byte $39   ; 
+; 08
 - D 1 - I - 0x00FAE9 03:BAD9: 10        .byte $10   ; 
 - D 1 - I - 0x00FAEA 03:BADA: 11        .byte $11   ; 
 - D 1 - I - 0x00FAEB 03:BADB: 33        .byte $33   ; 
 - D 1 - I - 0x00FAEC 03:BADC: 2C        .byte $2C   ; 
+; 0C
 - D 1 - I - 0x00FAED 03:BADD: 13        .byte $13   ; 
 - D 1 - I - 0x00FAEE 03:BADE: 14        .byte $14   ; 
 - D 1 - I - 0x00FAEF 03:BADF: 33        .byte $33   ; 
 - D 1 - I - 0x00FAF0 03:BAE0: 2F        .byte $2F   ; 
+; 10
 - D 1 - I - 0x00FAF1 03:BAE1: 3A        .byte $3A   ; 
 - D 1 - I - 0x00FAF2 03:BAE2: 3F        .byte $3F   ; 
 - D 1 - I - 0x00FAF3 03:BAE3: 3E        .byte $3E   ; 
@@ -11074,22 +11089,27 @@ off_BAD1_02:
 
 
 off_BAE5_03:
+; 00
 - D 1 - I - 0x00FAF5 03:BAE5: 00        .byte $00   ; 
 - D 1 - I - 0x00FAF6 03:BAE6: 02        .byte $02   ; 
 - D 1 - I - 0x00FAF7 03:BAE7: 2C        .byte $2C   ; 
 - D 1 - I - 0x00FAF8 03:BAE8: 39        .byte $39   ; 
+; 04
 - D 1 - I - 0x00FAF9 03:BAE9: 07        .byte $07   ; 
 - D 1 - I - 0x00FAFA 03:BAEA: 2F        .byte $2F   ; 
 - D 1 - I - 0x00FAFB 03:BAEB: 30        .byte $30   ; 
 - D 1 - I - 0x00FAFC 03:BAEC: 32        .byte $32   ; 
+; 08
 - D 1 - I - 0x00FAFD 03:BAED: 10        .byte $10   ; 
 - D 1 - I - 0x00FAFE 03:BAEE: 19        .byte $19   ; 
 - D 1 - I - 0x00FAFF 03:BAEF: 31        .byte $31   ; 
 - D 1 - I - 0x00FB00 03:BAF0: 33        .byte $33   ; 
+; 0C
 - D 1 - I - 0x00FB01 03:BAF1: 13        .byte $13   ; 
 - D 1 - I - 0x00FB02 03:BAF2: 18        .byte $18   ; 
 - D 1 - I - 0x00FB03 03:BAF3: 33        .byte $33   ; 
 - D 1 - I - 0x00FB04 03:BAF4: 2F        .byte $2F   ; 
+; 10
 - D 1 - I - 0x00FB05 03:BAF5: 37        .byte $37   ; 
 - D 1 - I - 0x00FB06 03:BAF6: 2A        .byte $2A   ; 
 - D 1 - I - 0x00FB07 03:BAF7: 3E        .byte $3E   ; 

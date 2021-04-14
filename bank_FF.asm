@@ -881,7 +881,7 @@ C - - - - - 0x01C307 07:C2F7: 48        PHA
 C - - - - - 0x01C308 07:C2F8: A9 00     LDA #con_prg_bank + $00
 C - - - - - 0x01C30A 07:C2FA: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 C - - - - - 0x01C30D 07:C2FD: AD FF 07  LDA ram_номер_звука
-C - - - - - 0x01C310 07:C300: 20 00 80  JSR sub_0x000016_звуковой_движок
+C - - - - - 0x01C310 07:C300: 20 00 80  JSR sub_0x000016_воспроизвести_звук
 C - - - - - 0x01C313 07:C303: 68        PLA
 C - - - - - 0x01C314 07:C304: 20 D3 EE  JSR sub_EED3_prg_bankswitch
 bra_C307_RTS:
@@ -889,12 +889,12 @@ C - - - - - 0x01C317 07:C307: 60        RTS
 
 
 
-sub_C308:
+sub_C308_обновить_звуковой_движок:
 C - - - - - 0x01C318 07:C308: AD FF BF  LDA $BFFF
 C - - - - - 0x01C31B 07:C30B: 48        PHA
 C - - - - - 0x01C31C 07:C30C: A9 00     LDA #con_prg_bank + $00
 C - - - - - 0x01C31E 07:C30E: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01C321 07:C311: 20 03 80  JSR sub_0x000193
+C - - - - - 0x01C321 07:C311: 20 03 80  JSR sub_0x000193_обновить_звуковой_движок
 C - - - - - 0x01C324 07:C314: 4C 68 C3  JMP loc_C368_восстановить_prg_банк
 
 
@@ -10106,7 +10106,7 @@ C - - - - - 0x01FCC5 07:FCB5: 20 78 DB  JSR sub_DB78_смерч
 C - - - - - 0x01FCC8 07:FCB8: 20 81 DA  JSR sub_DA81_ветер
 C - - - - - 0x01FCCB 07:FCBB: 20 B1 DC  JSR sub_DCB1_рваная_сетка
 bra_FC37_IRQ_отключен:
-C - - - - - 0x01FC47 07:FC37: 20 08 C3  JSR sub_C308
+C - - - - - 0x01FC47 07:FC37: 20 08 C3  JSR sub_C308_обновить_звуковой_движок
 C D 3 - - - 0x01FCD1 07:FCC1: E6 51     INC ram_задержка_кадра
 loc_FCC3_выход_из_NMI_и_IRQ:
                                         LDA #$00

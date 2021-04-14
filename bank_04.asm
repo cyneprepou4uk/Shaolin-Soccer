@@ -12917,9 +12917,9 @@ off_B7DD_01_01:
 - - - - - - 0x0137EE 04:B7DE: FF        .byte $FF   ; 01
 - - - - - - 0x0137EF 04:B7DF: FF        .byte $FF   ; 02
 - - - - - - 0x0137F0 04:B7E0: FF        .byte $FF   ; 03
-- - - - - - 0x0137F1 04:B7E1: 42        .byte con_action_42   ; 04
-- - - - - - 0x0137F2 04:B7E2: 42        .byte con_action_42   ; 05
-- D 1 - I - 0x0137F3 04:B7E3: 42        .byte con_action_42   ; 06
+- - - - - - 0x0137F1 04:B7E1: 42        .byte con_action_удар_двумя_ногами_в_прыжке   ; 04
+- - - - - - 0x0137F2 04:B7E2: 42        .byte con_action_удар_двумя_ногами_в_прыжке   ; 05
+- D 1 - I - 0x0137F3 04:B7E3: 42        .byte con_action_удар_двумя_ногами_в_прыжке   ; 06
 - D 1 - I - 0x0137F4 04:B7E4: 3B        .byte con_action_локоть_в_прыжке   ; 07
 - D 1 - I - 0x0137F5 04:B7E5: 3B        .byte con_action_локоть_в_прыжке   ; 08
 - D 1 - I - 0x0137F6 04:B7E6: 3B        .byte con_action_локоть_в_прыжке   ; 09
