@@ -4362,7 +4362,6 @@ C - - - - - 0x019E31 06:9E21: D0 07     BNE bra_9E2A
 - - - - - - 0x019E39 06:9E29: C8        INY
 bra_9E2A:
 C - - - - - 0x019E3A 06:9E2A: B9 6D 9E  LDA tbl_9E6D,Y
-C - - - - - 0x019E3D 06:9E2D: 30 1B     BMI bra_9E4A    ; bzk опт, в таблице нету байтов 80+
 C - - - - - 0x019E3F 06:9E2F: 8D 5B 05  STA ram_field_formation
 C - - - - - 0x019E42 06:9E32: A5 1E     LDA ram_001E
 C - - - - - 0x019E44 06:9E34: 49 01     EOR #$01    ; индекс противоположной команды
