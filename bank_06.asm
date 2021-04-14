@@ -4305,9 +4305,7 @@ C - - - - - 0x019DBA 06:9DAA: A9 00     LDY #$00
 bra_9DAC:
 C - - - - - 0x019DBE 06:9DAE: 85 1E     STY ram_001E
 C - - - - - 0x019DC1 06:9DB1: B9 A0 9E  LDA tbl_9E9D_номер_звука + 3,Y
-C - - - - - 0x019DC4 06:9DB4: 30 03     BMI bra_9DB9    ; bzk опт, в таблице нету байтов +80
 C - - - - - 0x019DC6 06:9DB6: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
-bra_9DB9:
 C - - - - - 0x019DC9 06:9DB9: 18        CLC
 C - - - - - 0x019DCA 06:9DBA: BD E4 04  LDA ram_сила_игрока,X
 C - - - - - 0x019DCD 06:9DBD: 79 9F 9E  ADC tbl_9E9D_преимущество_силы_атакующего + 2,Y
