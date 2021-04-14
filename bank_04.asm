@@ -13389,7 +13389,7 @@ C - - - - - 0x013A79 04:BA69: 90 E8     BCC bra_BA53
 bra_BA6B:
 C - - - - - 0x013A7B 04:BA6B: 84 1C     STY ram_001C
 C - - - - - 0x013A7D 04:BA6D: BD 99 03  LDA ram_pos_Z_hi_игрока,X
-C - - - - - 0x013A80 04:BA70: D0 61     BNE bra_BAD3_это_не_мексиканский_супер
+C - - - - - 0x013A80 04:BA70: D0 61     BNE bra_BAD3
 C - - - - - 0x013A82 04:BA72: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x013A85 04:BA75: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x013A88 04:BA78: 29 7F     AND #$7F
@@ -13401,14 +13401,14 @@ bra_BA82:
 C - - - - - 0x013A92 04:BA82: 20 C0 BD  JSR sub_BDC0
 C - - - - - 0x013A95 04:BA85: BD 86 03  LDA ram_pos_Z_lo_игрока,X
 C - - - - - 0x013A98 04:BA88: D9 D7 BD  CMP tbl_BDD7,Y
-C - - - - - 0x013A9B 04:BA8B: 90 46     BCC bra_BAD3_это_не_мексиканский_супер
+C - - - - - 0x013A9B 04:BA8B: 90 46     BCC bra_BAD3
 C - - - - - 0x013A9D 04:BA8D: E6 1C     INC ram_001C
 C - - - - - 0x013A9F 04:BA8F: 4C 9D BA  JMP loc_BA9D
 bra_BA92:
 C - - - - - 0x013AA2 04:BA92: 20 C0 BD  JSR sub_BDC0
 C - - - - - 0x013AA5 04:BA95: BD 86 03  LDA ram_pos_Z_lo_игрока,X
 C - - - - - 0x013AA8 04:BA98: D9 DD BD  CMP tbl_BDDD,Y
-C - - - - - 0x013AAB 04:BA9B: 90 36     BCC bra_BAD3_это_не_мексиканский_супер
+C - - - - - 0x013AAB 04:BA9B: 90 36     BCC bra_BAD3
 loc_BA9D:
 C D 1 - - - 0x013AAD 04:BA9D: A4 1C     LDY ram_001C
 C - - - - - 0x013AAF 04:BA9F: B9 16 BB  LDA tbl_BB16,Y
@@ -13433,16 +13433,16 @@ C - - - - - 0x013AD4 04:BAC4: B9 12 BD  LDA tbl_BD12,Y
 bra_BAC7:
 C - - - - - 0x013AD7 04:BAC7: 8D 0F 05  STA ram_номер_супера
 C - - - - - 0x013ADA 04:BACA: C9 1E     CMP #$1E
-C - - - - - 0x013ADC 04:BACC: D0 05     BNE bra_BAD3_это_не_мексиканский_супер
+C - - - - - 0x013ADC 04:BACC: D0 05     BNE bra_BAD3    ; если это не мексиканский супер
 C - - - - - 0x013ADE 04:BACE: A9 7F     LDA #$7F
 C - - - - - 0x013AE0 04:BAD0: 8D 25 05  STA ram_таймер_электр_мяча
-bra_BAD3_это_не_мексиканский_супер:
+bra_BAD3:
 C - - - - - 0x013AE3 04:BAD3: AC D6 04  LDY ram_игрок_с_мячом
 C - - - - - 0x013AE6 04:BAD6: B9 E4 04  LDA ram_сила_игрока,Y
 C - - - - - 0x013AE9 04:BAD9: 20 02 BB  JSR sub_BB02_добавить_силу_мяча
 C - - - - - 0x013AEC 04:BADC: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x013AEF 04:BADF: 4A        LSR
-C - - - - - 0x013AF0 04:BAE0: B0 0D     BCS bra_BAEF    ; con_state_участие_в_этажерке
+C - - - - - 0x013AF0 04:BAE0: B0 0D     BCS bra_BAEF    ; если con_state_участие_в_этажерке
 C - - - - - 0x013AF2 04:BAE2: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x013AF5 04:BAE5: 29 7F     AND #$7F
 C - - - - - 0x013AF7 04:BAE7: C9 43     CMP #con_action_высокий_сальто_удар
@@ -13455,7 +13455,7 @@ bra_BAEF:
 bra_BAF4:
 C - - - - - 0x013B04 04:BAF4: AC 0F 05  LDY ram_номер_супера
 C - - - - - 0x013B07 04:BAF7: C0 03     CPY #$03
-C - - - - - 0x013B09 04:BAF9: B0 06     BCS bra_BB01_RTS
+C - - - - - 0x013B09 04:BAF9: B0 06     BCS bra_BB01_RTS    ; если не красный супер
 C - - - - - 0x013B0B 04:BAFB: B9 0F BD  LDA tbl_BD0F,Y
 C - - - - - 0x013B0E 04:BAFE: 20 02 BB  JSR sub_BB02_добавить_силу_мяча
 bra_BB01_RTS:
