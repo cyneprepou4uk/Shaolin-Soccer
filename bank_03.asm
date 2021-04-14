@@ -6404,29 +6404,29 @@ C - - - - - 0x00E7FE 03:A7EE: 20 81 A9  JSR sub_A981
 bra_A7F1:
 loc_A7F1:
 C D 1 - - - 0x00E801 03:A7F1: BD 84 06  LDA ram_таймер_текста_приказа,X
-C - - - - - 0x00E804 03:A7F4: F0 03     BEQ bra_A7F9
+C - - - - - 0x00E804 03:A7F4: F0 03     BEQ bra_A7F9_таймер_текста_закончился
 C - - - - - 0x00E806 03:A7F6: 4C 01 A8  JMP loc_A801
-bra_A7F9:
+bra_A7F9_таймер_текста_закончился:
 C - - - - - 0x00E809 03:A7F9: A9 C0     LDA #$C0
 C - - - - - 0x00E80B 03:A7FB: 9D 80 06  STA ram_номер_текста_приказа,X
 C - - - - - 0x00E80E 03:A7FE: 9D 82 06  STA ram_номер_текста_ответа,X
 loc_A801:
 C D 1 - - - 0x00E811 03:A801: BD 80 06  LDA ram_номер_текста_приказа,X
 C - - - - - 0x00E814 03:A804: 10 06     BPL bra_A80C
-C - - - - - 0x00E816 03:A806: 20 F0 A8  JSR sub_A8F0
+C - - - - - 0x00E816 03:A806: 20 F0 A8  JSR sub_A8F0_вывести_текст_приказа
 C - - - - - 0x00E819 03:A809: 20 81 A9  JSR sub_A981
 bra_A80C:
 C - - - - - 0x00E81C 03:A80C: BD 82 06  LDA ram_номер_текста_ответа,X
 C - - - - - 0x00E81F 03:A80F: 10 06     BPL bra_A817
-C - - - - - 0x00E821 03:A811: 20 45 A9  JSR sub_A945
+C - - - - - 0x00E821 03:A811: 20 45 A9  JSR sub_A945_вывести_текст_ответа_на_приказ
 C - - - - - 0x00E824 03:A814: 20 81 A9  JSR sub_A981
 bra_A817:
 C - - - - - 0x00E827 03:A817: DE 84 06  DEC ram_таймер_текста_приказа,X
 C - - - - - 0x00E82A 03:A81A: BD 84 06  LDA ram_таймер_текста_приказа,X
-C - - - - - 0x00E82D 03:A81D: 10 05     BPL bra_A824
+C - - - - - 0x00E82D 03:A81D: 10 05     BPL bra_A824_таймер_еще_тикает
 C - - - - - 0x00E82F 03:A81F: A9 FF     LDA #$FF
 C - - - - - 0x00E831 03:A821: 9D 84 06  STA ram_таймер_текста_приказа,X
-bra_A824:
+bra_A824_таймер_еще_тикает:
 C - - - - - 0x00E834 03:A824: E8        INX
 C - - - - - 0x00E835 03:A825: E0 02     CPX #$02
 C - - - - - 0x00E837 03:A827: B0 03     BCS bra_A82C_RTS
@@ -6486,7 +6486,7 @@ C - - - - - 0x00E882 03:A872: 85 2B     STA ram_002B
 C - - - - - 0x00E884 03:A874: A8        TAY
 C - - - - - 0x00E885 03:A875: A5 2E     LDA ram_002E
 C - - - - - 0x00E887 03:A877: 18        CLC
-C - - - - - 0x00E888 03:A878: 79 4B AB  ADC tbl_AB4B,Y
+C - - - - - 0x00E888 03:A878: 79 4B AB  ADC tbl_AB4B_offset,Y
 C - - - - - 0x00E88B 03:A87B: 85 2E     STA ram_002E
 C - - - - - 0x00E88D 03:A87D: A5 2F     LDA ram_002F
 C - - - - - 0x00E88F 03:A87F: 69 00     ADC #$00
@@ -6503,14 +6503,14 @@ C - - - - - 0x00E8A1 03:A891: 69 00     ADC #$00
 C - - - - - 0x00E8A3 03:A893: 85 33     STA ram_0033
 C - - - - - 0x00E8A5 03:A895: 20 01 AB  JSR sub_AB01
 C - - - - - 0x00E8A8 03:A898: A2 00     LDX #$00
-bra_A89A:
+bra_A89A_loop:
 C - - - - - 0x00E8AA 03:A89A: BD 6F AB  LDA tbl_AB6F,X
 C - - - - - 0x00E8AD 03:A89D: A8        TAY
 C - - - - - 0x00E8AE 03:A89E: B5 1C     LDA ram_001C,X
 C - - - - - 0x00E8B0 03:A8A0: 91 2C     STA (ram_002C),Y
 C - - - - - 0x00E8B2 03:A8A2: E8        INX
 C - - - - - 0x00E8B3 03:A8A3: E0 0D     CPX #$0D
-C - - - - - 0x00E8B5 03:A8A5: 90 F3     BCC bra_A89A
+C - - - - - 0x00E8B5 03:A8A5: 90 F3     BCC bra_A89A_loop
 C - - - - - 0x00E8B7 03:A8A7: A6 43     LDX ram_0043
 C - - - - - 0x00E8B9 03:A8A9: BD 7A 06  LDA ram_направление_паса_команды,X
 C - - - - - 0x00E8BC 03:A8AC: 29 0F     AND #$0F
@@ -6521,9 +6521,9 @@ C - - - - - 0x00E8C4 03:A8B4: 4A        LSR
 C - - - - - 0x00E8C5 03:A8B5: 4A        LSR
 C - - - - - 0x00E8C6 03:A8B6: 4A        LSR
 C - - - - - 0x00E8C7 03:A8B7: A8        TAY
-C - - - - - 0x00E8C8 03:A8B8: B9 80 AB  LDA tbl_AB80_tiles,Y
+C - - - - - 0x00E8C8 03:A8B8: B9 80 AB  LDA tbl_AB80_тайлы_позиций,Y
 C - - - - - 0x00E8CB 03:A8BB: 85 1C     STA ram_001C
-C - - - - - 0x00E8CD 03:A8BD: B9 81 AB  LDA tbl_AB80_tiles + 1,Y
+C - - - - - 0x00E8CD 03:A8BD: B9 81 AB  LDA tbl_AB80_тайлы_позиций + 1,Y
 C - - - - - 0x00E8D0 03:A8C0: 85 1D     STA ram_001D
 C - - - - - 0x00E8D2 03:A8C2: A2 00     LDX #$00
 C - - - - - 0x00E8D4 03:A8C4: A0 13     LDY #$13
@@ -6543,19 +6543,19 @@ C - - - - - 0x00E8EA 03:A8DA: A0 19     LDY #$19
 C - - - - - 0x00E8EC 03:A8DC: 91 2C     STA (ram_002C),Y
 C - - - - - 0x00E8EE 03:A8DE: A0 15     LDY #$15
 C - - - - - 0x00E8F0 03:A8E0: A2 00     LDX #$00
-bra_A8E2:
+bra_A8E2_loop:
 C - - - - - 0x00E8F2 03:A8E2: BD 63 AB  LDA tbl_AB63,X
 C - - - - - 0x00E8F5 03:A8E5: 91 2C     STA (ram_002C),Y
 C - - - - - 0x00E8F7 03:A8E7: E8        INX
 C - - - - - 0x00E8F8 03:A8E8: C8        INY
 C - - - - - 0x00E8F9 03:A8E9: E0 03     CPX #$03
-C - - - - - 0x00E8FB 03:A8EB: 90 F5     BCC bra_A8E2
+C - - - - - 0x00E8FB 03:A8EB: 90 F5     BCC bra_A8E2_loop
 C - - - - - 0x00E8FD 03:A8ED: A6 43     LDX ram_0043
 C - - - - - 0x00E8FF 03:A8EF: 60        RTS
 
 
 
-sub_A8F0:
+sub_A8F0_вывести_текст_приказа:
 C - - - - - 0x00E900 03:A8F0: BD 80 06  LDA ram_номер_текста_приказа,X
 C - - - - - 0x00E903 03:A8F3: C9 C0     CMP #$C0
 C - - - - - 0x00E905 03:A8F5: D0 0A     BNE bra_A901
@@ -6581,7 +6581,7 @@ loc_A917:
 C D 1 - - - 0x00E927 03:A917: A8        TAY
 C - - - - - 0x00E928 03:A918: B9 66 AB  LDA tbl_AB66,Y
 C - - - - - 0x00E92B 03:A91B: A0 00     LDY #$00
-loc_A91D:
+loc_A91D:   ; A = FF
 C D 1 - - - 0x00E92D 03:A91D: 91 2C     STA (ram_002C),Y
 C - - - - - 0x00E92F 03:A91F: BD 80 06  LDA ram_номер_текста_приказа,X
 C - - - - - 0x00E932 03:A922: 29 7F     AND #$7F
@@ -6607,7 +6607,7 @@ C - - - - - 0x00E954 03:A944: 60        RTS
 
 
 
-sub_A945:
+sub_A945_вывести_текст_ответа_на_приказ:
 C - - - - - 0x00E955 03:A945: A9 20     LDA #$20
 C - - - - - 0x00E957 03:A947: 9D 84 06  STA ram_таймер_текста_приказа,X
 C - - - - - 0x00E95A 03:A94A: BD 82 06  LDA ram_номер_текста_ответа,X
@@ -6697,7 +6697,7 @@ C D 1 - - - 0x00E9DD 03:A9CD: 85 2B     STA ram_002B
 C - - - - - 0x00E9DF 03:A9CF: A8        TAY
 C - - - - - 0x00E9E0 03:A9D0: A5 2E     LDA ram_002E
 C - - - - - 0x00E9E2 03:A9D2: 18        CLC
-C - - - - - 0x00E9E3 03:A9D3: 79 4B AB  ADC tbl_AB4B,Y
+C - - - - - 0x00E9E3 03:A9D3: 79 4B AB  ADC tbl_AB4B_offset,Y
 C - - - - - 0x00E9E6 03:A9D6: 85 2E     STA ram_002E
 C - - - - - 0x00E9E8 03:A9D8: A5 2F     LDA ram_002F
 C - - - - - 0x00E9EA 03:A9DA: 69 00     ADC #$00
@@ -6801,10 +6801,10 @@ C - - - - - 0x00EAB6 03:AAA6: 4A        LSR
 C - - - - - 0x00EAB7 03:AAA7: 4A        LSR
 C - - - - - 0x00EAB8 03:AAA8: 4A        LSR
 C - - - - - 0x00EAB9 03:AAA9: A8        TAY
-C - - - - - 0x00EABA 03:AAAA: B9 80 AB  LDA tbl_AB80_tiles,Y
+C - - - - - 0x00EABA 03:AAAA: B9 80 AB  LDA tbl_AB80_тайлы_позиций,Y
 C - - - - - 0x00EABD 03:AAAD: 8D 07 20  STA $2007
 C - - - - - 0x00EAC0 03:AAB0: C8        INY
-C - - - - - 0x00EAC1 03:AAB1: B9 80 AB  LDA tbl_AB80_tiles,Y
+C - - - - - 0x00EAC1 03:AAB1: B9 80 AB  LDA tbl_AB80_тайлы_позиций,Y
 C - - - - - 0x00EAC4 03:AAB4: 8D 07 20  STA $2007
 C - - - - - 0x00EAC7 03:AAB7: AD 57 00  LDA ram_опция_режим_и_сложность
 C - - - - - 0x00EACA 03:AABA: 29 20     AND #con_gm_пенальти
@@ -6850,12 +6850,12 @@ C - - - - - 0x00EB10 03:AB00: 60        RTS
 sub_AB01:
 C - - - - - 0x00EB11 03:AB01: A0 04     LDY #$04
 C - - - - - 0x00EB13 03:AB03: A9 FA     LDA #$FA
-bra_AB05:
+bra_AB05_loop:
 C - - - - - 0x00EB15 03:AB05: 99 1C 00  STA ram_001C,Y
 C - - - - - 0x00EB18 03:AB08: 88        DEY
-C - - - - - 0x00EB19 03:AB09: 10 FA     BPL bra_AB05
+C - - - - - 0x00EB19 03:AB09: 10 FA     BPL bra_AB05_loop
 C - - - - - 0x00EB1B 03:AB0B: A0 00     LDY #$00
-bra_AB0D:
+bra_AB0D_loop:
 C - - - - - 0x00EB1D 03:AB0D: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x00EB1F 03:AB0F: C9 50     CMP #$50
 C - - - - - 0x00EB21 03:AB11: 90 09     BCC bra_AB1C
@@ -6881,7 +6881,7 @@ C D 1 - - - 0x00EB40 03:AB30: A5 2B     LDA ram_002B
 C - - - - - 0x00EB42 03:AB32: 99 21 00  STA ram_0021,Y
 C - - - - - 0x00EB45 03:AB35: C8        INY
 C - - - - - 0x00EB46 03:AB36: C0 05     CPY #$05
-C - - - - - 0x00EB48 03:AB38: 90 D3     BCC bra_AB0D
+C - - - - - 0x00EB48 03:AB38: 90 D3     BCC bra_AB0D_loop
 C - - - - - 0x00EB4A 03:AB3A: A0 00     LDY #$00
 C - - - - - 0x00EB4C 03:AB3C: B1 32     LDA (ram_0032),Y
 C - - - - - 0x00EB4E 03:AB3E: 85 26     STA ram_0026
@@ -6895,19 +6895,19 @@ C - - - - - 0x00EB5A 03:AB4A: 60        RTS
 
 
 
-tbl_AB4B:
-- D 1 - - - 0x00EB5B 03:AB4B: 00        .byte $00   ; 
-- D 1 - - - 0x00EB5C 03:AB4C: 05        .byte $05   ; 
-- D 1 - - - 0x00EB5D 03:AB4D: 0A        .byte $0A   ; 
-- D 1 - - - 0x00EB5E 03:AB4E: 0F        .byte $0F   ; 
-- D 1 - - - 0x00EB5F 03:AB4F: 14        .byte $14   ; 
-- D 1 - - - 0x00EB60 03:AB50: 19        .byte $19   ; 
-- - - - - - 0x00EB61 03:AB51: 1E        .byte $1E   ; 
-- D 1 - - - 0x00EB62 03:AB52: 23        .byte $23   ; 
-- D 1 - - - 0x00EB63 03:AB53: 28        .byte $28   ; 
-- D 1 - - - 0x00EB64 03:AB54: 2D        .byte $2D   ; 
-- D 1 - - - 0x00EB65 03:AB55: 32        .byte $32   ; 
-- D 1 - - - 0x00EB66 03:AB56: 37        .byte $37   ; 
+tbl_AB4B_offset:
+- D 1 - - - 0x00EB5B 03:AB4B: 00        .byte $00   ; 00
+- D 1 - - - 0x00EB5C 03:AB4C: 05        .byte $05   ; 01
+- D 1 - - - 0x00EB5D 03:AB4D: 0A        .byte $0A   ; 02
+- D 1 - - - 0x00EB5E 03:AB4E: 0F        .byte $0F   ; 03
+- D 1 - - - 0x00EB5F 03:AB4F: 14        .byte $14   ; 04
+- D 1 - - - 0x00EB60 03:AB50: 19        .byte $19   ; 05
+- - - - - - 0x00EB61 03:AB51: 1E        .byte $1E   ; 06
+- D 1 - - - 0x00EB62 03:AB52: 23        .byte $23   ; 07
+- D 1 - - - 0x00EB63 03:AB53: 28        .byte $28   ; 08
+- D 1 - - - 0x00EB64 03:AB54: 2D        .byte $2D   ; 09
+- D 1 - - - 0x00EB65 03:AB55: 32        .byte $32   ; 0A
+- D 1 - - - 0x00EB66 03:AB56: 37        .byte $37   ; 0B
 
 
 
@@ -6938,39 +6938,39 @@ tbl_89E1_ppu_lo:
 
 
 tbl_AB63:
-- D 1 - - - 0x00EB73 03:AB63: 0F        .byte $0F   ; 
-- D 1 - - - 0x00EB74 03:AB64: 0C        .byte $0C   ; 
-- D 1 - - - 0x00EB75 03:AB65: 0D        .byte $0D   ; 
+- D 1 - - - 0x00EB73 03:AB63: 0F        .byte $0F   ; 00
+- D 1 - - - 0x00EB74 03:AB64: 0C        .byte $0C   ; 01
+- D 1 - - - 0x00EB75 03:AB65: 0D        .byte $0D   ; 02
 
 
 
 tbl_AB66:
-- D 1 - - - 0x00EB76 03:AB66: 5C        .byte $5C   ; 
-- D 1 - - - 0x00EB77 03:AB67: 5D        .byte $5D   ; 
-- D 1 - - - 0x00EB78 03:AB68: 5E        .byte $5E   ; 
-- D 1 - - - 0x00EB79 03:AB69: 5F        .byte $5F   ; 
-- D 1 - - - 0x00EB7A 03:AB6A: 6C        .byte $6C   ; 
-- D 1 - - - 0x00EB7B 03:AB6B: 6D        .byte $6D   ; 
-- D 1 - - - 0x00EB7C 03:AB6C: 6E        .byte $6E   ; 
-- - - - - - 0x00EB7D 03:AB6D: 6F        .byte $6F   ; 
-- D 1 - - - 0x00EB7E 03:AB6E: 0F        .byte $0F   ; 
+- D 1 - - - 0x00EB76 03:AB66: 5C        .byte $5C   ; 00
+- D 1 - - - 0x00EB77 03:AB67: 5D        .byte $5D   ; 01
+- D 1 - - - 0x00EB78 03:AB68: 5E        .byte $5E   ; 02
+- D 1 - - - 0x00EB79 03:AB69: 5F        .byte $5F   ; 03
+- D 1 - - - 0x00EB7A 03:AB6A: 6C        .byte $6C   ; 04
+- D 1 - - - 0x00EB7B 03:AB6B: 6D        .byte $6D   ; 05
+- D 1 - - - 0x00EB7C 03:AB6C: 6E        .byte $6E   ; 06
+- - - - - - 0x00EB7D 03:AB6D: 6F        .byte $6F   ; 07
+- D 1 - - - 0x00EB7E 03:AB6E: 0F        .byte $0F   ; 08
 
 
 
 tbl_AB6F:
-- D 1 - - - 0x00EB7F 03:AB6F: 06        .byte $06   ; 
-- D 1 - - - 0x00EB80 03:AB70: 07        .byte $07   ; 
-- D 1 - - - 0x00EB81 03:AB71: 08        .byte $08   ; 
-- D 1 - - - 0x00EB82 03:AB72: 09        .byte $09   ; 
-- D 1 - - - 0x00EB83 03:AB73: 0A        .byte $0A   ; 
-- D 1 - - - 0x00EB84 03:AB74: 0B        .byte $0B   ; 
-- D 1 - - - 0x00EB85 03:AB75: 0C        .byte $0C   ; 
-- D 1 - - - 0x00EB86 03:AB76: 0D        .byte $0D   ; 
-- D 1 - - - 0x00EB87 03:AB77: 0E        .byte $0E   ; 
-- D 1 - - - 0x00EB88 03:AB78: 0F        .byte $0F   ; 
-- D 1 - - - 0x00EB89 03:AB79: 11        .byte $11   ; 
-- D 1 - - - 0x00EB8A 03:AB7A: 12        .byte $12   ; 
-- D 1 - - - 0x00EB8B 03:AB7B: 18        .byte $18   ; 
+- D 1 - - - 0x00EB7F 03:AB6F: 06        .byte $06   ; 00
+- D 1 - - - 0x00EB80 03:AB70: 07        .byte $07   ; 01
+- D 1 - - - 0x00EB81 03:AB71: 08        .byte $08   ; 02
+- D 1 - - - 0x00EB82 03:AB72: 09        .byte $09   ; 03
+- D 1 - - - 0x00EB83 03:AB73: 0A        .byte $0A   ; 04
+- D 1 - - - 0x00EB84 03:AB74: 0B        .byte $0B   ; 05
+- D 1 - - - 0x00EB85 03:AB75: 0C        .byte $0C   ; 06
+- D 1 - - - 0x00EB86 03:AB76: 0D        .byte $0D   ; 07
+- D 1 - - - 0x00EB87 03:AB77: 0E        .byte $0E   ; 08
+- D 1 - - - 0x00EB88 03:AB78: 0F        .byte $0F   ; 09
+- D 1 - - - 0x00EB89 03:AB79: 11        .byte $11   ; 0A
+- D 1 - - - 0x00EB8A 03:AB7A: 12        .byte $12   ; 0B
+- D 1 - - - 0x00EB8B 03:AB7B: 18        .byte $18   ; 0C
 
 
 
@@ -6980,15 +6980,11 @@ tbl_AB7C_выбор_буфера:
 
 
 
-tbl_AB80_tiles:
-- D 1 - - - 0x00EB90 03:AB80: 8F        .byte $8F   ; 
-- D 1 - - - 0x00EB91 03:AB81: A1        .byte $A1   ; 
-- D 1 - - - 0x00EB92 03:AB82: A0        .byte $A0   ; 
-- D 1 - - - 0x00EB93 03:AB83: 8F        .byte $8F   ; 
-- D 1 - - - 0x00EB94 03:AB84: 8D        .byte $8D   ; 
-- D 1 - - - 0x00EB95 03:AB85: 8F        .byte $8F   ; 
-- D 1 - - - 0x00EB96 03:AB86: 9E        .byte $9E   ; 
-- D 1 - - - 0x00EB97 03:AB87: 9F        .byte $9F   ; 
+tbl_AB80_тайлы_позиций:
+- D 1 - - - 0x00EB90 03:AB80: 8F        .byte $8F, $A1   ; 00 FW
+- D 1 - - - 0x00EB92 03:AB82: A0        .byte $A0, $8F   ; 01 MF
+- D 1 - - - 0x00EB94 03:AB84: 8D        .byte $8D, $8F   ; 02 DF
+- D 1 - - - 0x00EB96 03:AB86: 9E        .byte $9E, $9F   ; 03 GK
 
 
 
