@@ -4296,15 +4296,12 @@ C - - - - - 0x019DAE 06:9D9E: C9 3B     CMP #con_action_локоть_в_прыж
 C - - - - - 0x019DB0 06:9DA0: F0 08     BEQ bra_9DAA_это_удар_в_прыжке
 C - - - - - 0x019DB2 06:9DA2: C9 42     CMP #con_action_удар_двумя_ногами_в_прыжке
 C - - - - - 0x019DB4 06:9DA4: F0 04     BEQ bra_9DAA_это_удар_в_прыжке
-C - - - - - 0x019DB6 06:9DA6: A9 01     LDA #$01
+C - - - - - 0x019DB6 06:9DA6: A9 01     LDY #$04
 C - - - - - 0x019DB8 06:9DA8: D0 02     BNE bra_9DAC
 bra_9DAA_это_удар_в_прыжке:
-C - - - - - 0x019DBA 06:9DAA: A9 00     LDA #$00
+C - - - - - 0x019DBA 06:9DAA: A9 00     LDY #$00
 bra_9DAC:
-C - - - - - 0x019DBC 06:9DAC: 0A        ASL     ; bzk опт, сразу писать 00 или 04 без ASL, и писать через Y без TAY
-C - - - - - 0x019DBD 06:9DAD: 0A        ASL
-C - - - - - 0x019DBE 06:9DAE: 85 1E     STA ram_001E
-C - - - - - 0x019DC0 06:9DB0: A8        TAY
+C - - - - - 0x019DBE 06:9DAE: 85 1E     STY ram_001E
 C - - - - - 0x019DC1 06:9DB1: B9 A0 9E  LDA tbl_9E9D + 3,Y
 C - - - - - 0x019DC4 06:9DB4: 30 03     BMI bra_9DB9
 C - - - - - 0x019DC6 06:9DB6: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
