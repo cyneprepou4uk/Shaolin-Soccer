@@ -95,14 +95,14 @@ C - - - - - 0x00C08E 03:807E: 29 40     AND #$40
 C - - - - - 0x00C090 03:8080: F0 12     BEQ bra_8094
 C - - - - - 0x00C092 03:8082: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x00C095 03:8085: 29 01     AND #$01
-C - - - - - 0x00C097 03:8087: D0 0B     BNE bra_8094
+C - - - - - 0x00C097 03:8087: D0 0B     BNE bra_8094    ; если игрок из команды справа
 C - - - - - 0x00C099 03:8089: A9 00     LDA #$00
 C - - - - - 0x00C09B 03:808B: 8D 76 06  STA ram_дистанция_ближайшего
 C - - - - - 0x00C09E 03:808E: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x00C0A1 03:8091: 4C B4 80  JMP loc_80B4
 bra_8094:
 C - - - - - 0x00C0A4 03:8094: A2 00     LDX #$00
-loc_8096:
+loc_8096_loop:
 C D 0 - - - 0x00C0A6 03:8096: B5 2C     LDA ram_002C,X
 C - - - - - 0x00C0A8 03:8098: C9 FF     CMP #$FF
 C - - - - - 0x00C0AA 03:809A: F0 09     BEQ bra_80A5
@@ -110,7 +110,7 @@ C - - - - - 0x00C0AC 03:809C: 29 01     AND #$01
 C - - - - - 0x00C0AE 03:809E: F0 0D     BEQ bra_80AD
 C - - - - - 0x00C0B0 03:80A0: E8        INX
 C - - - - - 0x00C0B1 03:80A1: E8        INX
-C - - - - - 0x00C0B2 03:80A2: 4C 96 80  JMP loc_8096
+C - - - - - 0x00C0B2 03:80A2: 4C 96 80  JMP loc_8096_loop
 bra_80A5:
 - - - - - - 0x00C0B5 03:80A5: 8D 76 06  STA ram_дистанция_ближайшего
 - - - - - - 0x00C0B8 03:80A8: A9 00     LDA #$00
@@ -133,7 +133,7 @@ C - - - - - 0x00C0DA 03:80CA: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x00C0DD 03:80CD: 4C F0 80  JMP loc_80F0
 bra_80D0:
 C - - - - - 0x00C0E0 03:80D0: A2 00     LDX #$00
-loc_80D2:
+loc_80D2_loop:
 C D 0 - - - 0x00C0E2 03:80D2: B5 2C     LDA ram_002C,X
 C - - - - - 0x00C0E4 03:80D4: C9 FF     CMP #$FF
 C - - - - - 0x00C0E6 03:80D6: F0 09     BEQ bra_80E1
@@ -141,7 +141,7 @@ C - - - - - 0x00C0E8 03:80D8: 29 01     AND #$01
 C - - - - - 0x00C0EA 03:80DA: D0 0D     BNE bra_80E9
 C - - - - - 0x00C0EC 03:80DC: E8        INX
 C - - - - - 0x00C0ED 03:80DD: E8        INX
-C - - - - - 0x00C0EE 03:80DE: 4C D2 80  JMP loc_80D2
+C - - - - - 0x00C0EE 03:80DE: 4C D2 80  JMP loc_80D2_loop
 bra_80E1:
 - - - - - - 0x00C0F1 03:80E1: 8D 77 06  STA ram_дистанция_ближайшего + 1
 - - - - - - 0x00C0F4 03:80E4: A9 01     LDA #$01
@@ -157,7 +157,7 @@ C - - - - - 0x00C105 03:80F5: A9 10     LDA #$10
 C - - - - - 0x00C107 03:80F7: 85 1C     STA ram_001C
 C - - - - - 0x00C109 03:80F9: A9 01     LDA #$01
 C - - - - - 0x00C10B 03:80FB: 85 1D     STA ram_001D
-bra_80FD:
+bra_80FD_loop:
 C - - - - - 0x00C10D 03:80FD: B5 2D     LDA ram_002D,X
 C - - - - - 0x00C10F 03:80FF: C9 FF     CMP #$FF
 C - - - - - 0x00C111 03:8101: F0 27     BEQ bra_812A
@@ -181,7 +181,7 @@ C - - - - - 0x00C132 03:8122: E6 1D     INC ram_001D
 C - - - - - 0x00C134 03:8124: E8        INX
 C - - - - - 0x00C135 03:8125: E8        INX
 C - - - - - 0x00C136 03:8126: E0 0C     CPX #$0C
-C - - - - - 0x00C138 03:8128: 90 D3     BCC bra_80FD
+C - - - - - 0x00C138 03:8128: 90 D3     BCC bra_80FD_loop
 bra_812A:
 C - - - - - 0x00C13A 03:812A: AD 72 06  LDA ram_счетчик_поведения_ботов + 10
 C - - - - - 0x00C13D 03:812D: 29 0F     AND #$0F
@@ -265,11 +265,11 @@ bra_81B8:
 C - - - - - 0x00C1C8 03:81B8: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x00C1CB 03:81BB: 48        PHA
 C - - - - - 0x00C1CC 03:81BC: A2 00     LDX #$00
-bra_81BE:
+bra_81BE_loop:
 C - - - - - 0x00C1CE 03:81BE: 20 DD 81  JSR sub_81DD
 C - - - - - 0x00C1D1 03:81C1: E8        INX
 C - - - - - 0x00C1D2 03:81C2: E0 02     CPX #$02
-C - - - - - 0x00C1D4 03:81C4: 90 F8     BCC bra_81BE
+C - - - - - 0x00C1D4 03:81C4: 90 F8     BCC bra_81BE_loop
 C - - - - - 0x00C1D6 03:81C6: 68        PLA
 C - - - - - 0x00C1D7 03:81C7: 8D D6 04  STA ram_игрок_с_мячом
 C - - - - - 0x00C1DA 03:81CA: AD 57 00  LDA ram_опция_режим_и_сложность
@@ -291,11 +291,11 @@ C - - - - - 0x00C1F0 03:81E0: 29 40     AND #$40
 C - - - - - 0x00C1F2 03:81E2: D0 22     BNE bra_8206
 C - - - - - 0x00C1F4 03:81E4: AD 65 04  LDA ram_действие_мяча
 C - - - - - 0x00C1F7 03:81E7: 29 7F     AND #$7F
-C - - - - - 0x00C1F9 03:81E9: C9 04     CMP #con_act_ball_пас
+C - - - - - 0x00C1F9 03:81E9: C9 04     CMP #con_act_ball_пас_поверху
 C - - - - - 0x00C1FB 03:81EB: F0 0E     BEQ bra_81FB
-C - - - - - 0x00C1FD 03:81ED: C9 0A     CMP #con_act_ball_0A
+C - - - - - 0x00C1FD 03:81ED: C9 0A     CMP #con_act_ball_подкинут_после_чеканки
 C - - - - - 0x00C1FF 03:81EF: F0 0A     BEQ bra_81FB
-C - - - - - 0x00C201 03:81F1: C9 15     CMP #con_act_ball_чеканка
+C - - - - - 0x00C201 03:81F1: C9 15     CMP #con_act_ball_устаканивание
 C - - - - - 0x00C203 03:81F3: F0 06     BEQ bra_81FB
 bra_81F5:
 C - - - - - 0x00C205 03:81F5: 20 9B A5  JSR sub_A59B
@@ -356,7 +356,7 @@ C - - - - - 0x00C256 03:8246: 90 DB     BCC bra_8223_loop
 loc_824B:
 C D 0 - - - 0x00C25B 03:824B: AD 65 04  LDA ram_действие_мяча
 C - - - - - 0x00C25E 03:824E: 29 7F     AND #$7F
-C - - - - - 0x00C260 03:8250: C9 05     CMP #con_act_ball_05
+C - - - - - 0x00C260 03:8250: C9 05     CMP #con_act_ball_удар
 C - - - - - 0x00C262 03:8252: D0 05     BNE bra_8259
 C - - - - - 0x00C264 03:8254: A9 05     LDA #con_ai_05
 C - - - - - 0x00C266 03:8256: 4C 5B 82  JMP loc_825B
@@ -6187,7 +6187,7 @@ C - - - - - 0x00E676 03:A666: 4C 90 A7  JMP loc_A790_запись_интелле
 bra_A669:
 C - - - - - 0x00E679 03:A669: AD 65 04  LDA ram_действие_мяча
 C - - - - - 0x00E67C 03:A66C: 29 7F     AND #$7F
-C - - - - - 0x00E67E 03:A66E: C9 05     CMP #con_act_ball_05
+C - - - - - 0x00E67E 03:A66E: C9 05     CMP #con_act_ball_удар
 C - - - - - 0x00E680 03:A670: F0 6E     BEQ bra_A6E0
 C - - - - - 0x00E682 03:A672: AD 02 04  LDA ram_spd_X_hi_мяча
 C - - - - - 0x00E685 03:A675: 10 05     BPL bra_A67C
@@ -7641,243 +7641,327 @@ off_AD4A_40:
 
 
 tbl_AD4F:
-- D 1 - - - 0x00ED5F 03:AD4F: 6F AD     .word off_AD6F_00
-- D 1 - - - 0x00ED61 03:AD51: 87 AD     .word off_AD87_01
-- - - - - - 0x00ED63 03:AD53: 9F AD     .word off_AD9F_02
-- D 1 - - - 0x00ED65 03:AD55: 93 AD     .word off_AD93_03
+- D 1 - - - 0x00ED5F 03:AD4F: 6F AD     .word off_AD6F_00_япония
+- D 1 - - - 0x00ED61 03:AD51: 87 AD     .word off_AD87_01_корея
+- - - - - - 0x00ED63 03:AD53: 9F AD     .word off_AD9F_02_монголия
+- D 1 - - - 0x00ED65 03:AD55: 93 AD     .word off_AD93_03_таиланд
 - - - - - - 0x00ED67 03:AD57: 6F AD     .word off_AD6F_04
-- D 1 - - - 0x00ED69 03:AD59: AB AD     .word off_ADAB_05
-- - - - - - 0x00ED6B 03:AD5B: B7 AD     .word off_ADB7_06
-- D 1 - - - 0x00ED6D 03:AD5D: C3 AD     .word off_ADC3_07
+- D 1 - - - 0x00ED69 03:AD59: AB AD     .word off_ADAB_05_гвинея
+- - - - - - 0x00ED6B 03:AD5B: B7 AD     .word off_ADB7_06_сенегал
+- D 1 - - - 0x00ED6D 03:AD5D: C3 AD     .word off_ADC3_07_камерун
 - - - - - - 0x00ED6F 03:AD5F: 6F AD     .word off_AD6F_08
-- D 1 - - - 0x00ED71 03:AD61: CF AD     .word off_ADCF_09
-- - - - - - 0x00ED73 03:AD63: DB AD     .word off_ADDB_0A
-- D 1 - - - 0x00ED75 03:AD65: E7 AD     .word off_ADE7_0B
+- D 1 - - - 0x00ED71 03:AD61: CF AD     .word off_ADCF_09_германия
+- - - - - - 0x00ED73 03:AD63: DB AD     .word off_ADDB_0A_англия
+- D 1 - - - 0x00ED75 03:AD65: E7 AD     .word off_ADE7_0B_италия
 - - - - - - 0x00ED77 03:AD67: 6F AD     .word off_AD6F_0C
-- D 1 - - - 0x00ED79 03:AD69: F3 AD     .word off_ADF3_0D
-- D 1 - - - 0x00ED7B 03:AD6B: FF AD     .word off_ADFF_0E
-- D 1 - - - 0x00ED7D 03:AD6D: 0B AE     .word off_AE0B_0F
+- D 1 - - - 0x00ED79 03:AD69: F3 AD     .word off_ADF3_0D_бразилия
+- D 1 - - - 0x00ED7B 03:AD6B: FF AD     .word off_ADFF_0E_аргентина
+- D 1 - - - 0x00ED7D 03:AD6D: 0B AE     .word off_AE0B_0F_мексика
 
 
 
-off_AD6F_00:
+off_AD6F_00_япония:
 off_AD6F_04:
 off_AD6F_08:
 off_AD6F_0C:
+; 00
 - D 1 - I - 0x00ED7F 03:AD6F: 00        .byte $00   ; 
 - D 1 - I - 0x00ED80 03:AD70: 98        .byte $98   ; 
+; 01
 - D 1 - I - 0x00ED81 03:AD71: 18        .byte $18   ; 
 - D 1 - I - 0x00ED82 03:AD72: 97        .byte $97   ; 
+; 02
 - D 1 - I - 0x00ED83 03:AD73: 08        .byte $08   ; 
 - D 1 - I - 0x00ED84 03:AD74: 99        .byte $99   ; 
+; 03
 - D 1 - I - 0x00ED85 03:AD75: 16        .byte $16   ; 
 - D 1 - I - 0x00ED86 03:AD76: 91        .byte $91   ; 
+; 04
 - D 1 - I - 0x00ED87 03:AD77: 0A        .byte $0A   ; 
 - D 1 - I - 0x00ED88 03:AD78: 92        .byte $92   ; 
+; 05
 - D 1 - I - 0x00ED89 03:AD79: 02        .byte $02   ; 
 - D 1 - I - 0x00ED8A 03:AD7A: 90        .byte $90   ; 
+; 06
 - - - - - - 0x00ED8B 03:AD7B: 12        .byte $12   ; 
 - - - - - - 0x00ED8C 03:AD7C: 93        .byte $93   ; 
+; 07
 - D 1 - I - 0x00ED8D 03:AD7D: 14        .byte $14   ; 
 - D 1 - I - 0x00ED8E 03:AD7E: 94        .byte $94   ; 
+; 08
 - D 1 - I - 0x00ED8F 03:AD7F: 06        .byte $06   ; 
 - D 1 - I - 0x00ED90 03:AD80: 95        .byte $95   ; 
+; 09
 - D 1 - I - 0x00ED91 03:AD81: 10        .byte $10   ; 
 - D 1 - I - 0x00ED92 03:AD82: 96        .byte $96   ; 
+; 0A
 - D 1 - I - 0x00ED93 03:AD83: 1A        .byte $1A   ; 
 - D 1 - I - 0x00ED94 03:AD84: 9A        .byte $9A   ; 
+; 0B
 - D 1 - I - 0x00ED95 03:AD85: 04        .byte $04   ; 
 - D 1 - I - 0x00ED96 03:AD86: 9B        .byte $9B   ; 
 
 
 
-off_AD87_01:
+off_AD87_01_корея:
+; 00
 - D 1 - I - 0x00ED97 03:AD87: 20        .byte $20   ; 
 - D 1 - I - 0x00ED98 03:AD88: 90        .byte $90   ; 
+; 01
 - D 1 - I - 0x00ED99 03:AD89: 22        .byte $22   ; 
 - D 1 - I - 0x00ED9A 03:AD8A: 91        .byte $91   ; 
+; 02
 - D 1 - I - 0x00ED9B 03:AD8B: 24        .byte $24   ; 
 - D 1 - I - 0x00ED9C 03:AD8C: 92        .byte $92   ; 
+; 03
 - D 1 - I - 0x00ED9D 03:AD8D: 26        .byte $26   ; 
 - D 1 - I - 0x00ED9E 03:AD8E: 93        .byte $93   ; 
+; 04
 - D 1 - I - 0x00ED9F 03:AD8F: 28        .byte $28   ; 
 - D 1 - I - 0x00EDA0 03:AD90: 94        .byte $94   ; 
+; 05
 - - - - - - 0x00EDA1 03:AD91: 2A        .byte $2A   ; 
 - - - - - - 0x00EDA2 03:AD92: 95        .byte $95   ; 
 
 
 
-off_AD93_03:
+off_AD93_03_таиланд:
+; 00
 - D 1 - I - 0x00EDA3 03:AD93: 30        .byte $30   ; 
 - D 1 - I - 0x00EDA4 03:AD94: 90        .byte $90   ; 
+; 01
 - D 1 - I - 0x00EDA5 03:AD95: 32        .byte $32   ; 
 - D 1 - I - 0x00EDA6 03:AD96: 91        .byte $91   ; 
+; 02
 - D 1 - I - 0x00EDA7 03:AD97: 34        .byte $34   ; 
 - D 1 - I - 0x00EDA8 03:AD98: 92        .byte $92   ; 
+; 03
 - D 1 - I - 0x00EDA9 03:AD99: 36        .byte $36   ; 
 - D 1 - I - 0x00EDAA 03:AD9A: 93        .byte $93   ; 
+; 04
 - D 1 - I - 0x00EDAB 03:AD9B: 38        .byte $38   ; 
 - D 1 - I - 0x00EDAC 03:AD9C: 94        .byte $94   ; 
+; 05
 - D 1 - I - 0x00EDAD 03:AD9D: 3A        .byte $3A   ; 
 - D 1 - I - 0x00EDAE 03:AD9E: 95        .byte $95   ; 
 
 
 
-off_AD9F_02:
+off_AD9F_02_монголия:
+; 00
 - - - - - - 0x00EDAF 03:AD9F: 70        .byte $70   ; 
 - - - - - - 0x00EDB0 03:ADA0: 90        .byte $90   ; 
+; 01
 - - - - - - 0x00EDB1 03:ADA1: 72        .byte $72   ; 
 - - - - - - 0x00EDB2 03:ADA2: 91        .byte $91   ; 
+; 02
 - - - - - - 0x00EDB3 03:ADA3: 74        .byte $74   ; 
 - - - - - - 0x00EDB4 03:ADA4: 92        .byte $92   ; 
+; 03
 - - - - - - 0x00EDB5 03:ADA5: 76        .byte $76   ; 
 - - - - - - 0x00EDB6 03:ADA6: 93        .byte $93   ; 
+; 04
 - - - - - - 0x00EDB7 03:ADA7: 78        .byte $78   ; 
 - - - - - - 0x00EDB8 03:ADA8: 94        .byte $94   ; 
+; 05
 - - - - - - 0x00EDB9 03:ADA9: 7A        .byte $7A   ; 
 - - - - - - 0x00EDBA 03:ADAA: 95        .byte $95   ; 
 
 
 
-off_ADAB_05:
+off_ADAB_05_гвинея:
+; 00
 - D 1 - I - 0x00EDBB 03:ADAB: 40        .byte $40   ; 
 - D 1 - I - 0x00EDBC 03:ADAC: 90        .byte $90   ; 
+; 01
 - D 1 - I - 0x00EDBD 03:ADAD: 42        .byte $42   ; 
 - D 1 - I - 0x00EDBE 03:ADAE: 91        .byte $91   ; 
+; 02
 - D 1 - I - 0x00EDBF 03:ADAF: 44        .byte $44   ; 
 - D 1 - I - 0x00EDC0 03:ADB0: 92        .byte $92   ; 
+; 03
 - D 1 - I - 0x00EDC1 03:ADB1: 46        .byte $46   ; 
 - D 1 - I - 0x00EDC2 03:ADB2: 93        .byte $93   ; 
+; 04
 - D 1 - I - 0x00EDC3 03:ADB3: 48        .byte $48   ; 
 - D 1 - I - 0x00EDC4 03:ADB4: 94        .byte $94   ; 
+; 05
 - D 1 - I - 0x00EDC5 03:ADB5: 4A        .byte $4A   ; 
 - D 1 - I - 0x00EDC6 03:ADB6: 95        .byte $95   ; 
 
 
 
-off_ADB7_06:
+off_ADB7_06_сенегал:
+; 00
 - - - - - - 0x00EDC7 03:ADB7: 50        .byte $50   ; 
 - - - - - - 0x00EDC8 03:ADB8: 90        .byte $90   ; 
+; 01
 - - - - - - 0x00EDC9 03:ADB9: 52        .byte $52   ; 
 - - - - - - 0x00EDCA 03:ADBA: 91        .byte $91   ; 
+; 02
 - - - - - - 0x00EDCB 03:ADBB: 54        .byte $54   ; 
 - - - - - - 0x00EDCC 03:ADBC: 92        .byte $92   ; 
+; 03
 - - - - - - 0x00EDCD 03:ADBD: 56        .byte $56   ; 
 - - - - - - 0x00EDCE 03:ADBE: 93        .byte $93   ; 
+; 04
 - - - - - - 0x00EDCF 03:ADBF: 58        .byte $58   ; 
 - - - - - - 0x00EDD0 03:ADC0: 94        .byte $94   ; 
+; 05
 - - - - - - 0x00EDD1 03:ADC1: 5A        .byte $5A   ; 
 - - - - - - 0x00EDD2 03:ADC2: 95        .byte $95   ; 
 
 
 
-off_ADC3_07:
+off_ADC3_07_камерун:
+; 00
 - D 1 - I - 0x00EDD3 03:ADC3: 20        .byte $20   ; 
 - D 1 - I - 0x00EDD4 03:ADC4: 90        .byte $90   ; 
+; 01
 - D 1 - I - 0x00EDD5 03:ADC5: 22        .byte $22   ; 
 - D 1 - I - 0x00EDD6 03:ADC6: 91        .byte $91   ; 
+; 02
 - D 1 - I - 0x00EDD7 03:ADC7: 24        .byte $24   ; 
 - D 1 - I - 0x00EDD8 03:ADC8: 92        .byte $92   ; 
+; 03
 - D 1 - I - 0x00EDD9 03:ADC9: 26        .byte $26   ; 
 - D 1 - I - 0x00EDDA 03:ADCA: 93        .byte $93   ; 
+; 04
 - D 1 - I - 0x00EDDB 03:ADCB: 28        .byte $28   ; 
 - D 1 - I - 0x00EDDC 03:ADCC: 94        .byte $94   ; 
+; 05
 - - - - - - 0x00EDDD 03:ADCD: 2A        .byte $2A   ; 
 - - - - - - 0x00EDDE 03:ADCE: 95        .byte $95   ; 
 
 
 
-off_ADCF_09:
+off_ADCF_09_германия:
+; 00
 - D 1 - I - 0x00EDDF 03:ADCF: 50        .byte $50   ; 
 - D 1 - I - 0x00EDE0 03:ADD0: 90        .byte $90   ; 
+; 01
 - D 1 - I - 0x00EDE1 03:ADD1: 52        .byte $52   ; 
 - D 1 - I - 0x00EDE2 03:ADD2: 91        .byte $91   ; 
+; 02
 - D 1 - I - 0x00EDE3 03:ADD3: 54        .byte $54   ; 
 - D 1 - I - 0x00EDE4 03:ADD4: 92        .byte $92   ; 
+; 03
 - D 1 - I - 0x00EDE5 03:ADD5: 56        .byte $56   ; 
 - D 1 - I - 0x00EDE6 03:ADD6: 93        .byte $93   ; 
+; 04
 - D 1 - I - 0x00EDE7 03:ADD7: 58        .byte $58   ; 
 - D 1 - I - 0x00EDE8 03:ADD8: 94        .byte $94   ; 
+; 05
 - D 1 - I - 0x00EDE9 03:ADD9: 5A        .byte $5A   ; 
 - D 1 - I - 0x00EDEA 03:ADDA: 95        .byte $95   ; 
 
 
 
-off_ADDB_0A:
+off_ADDB_0A_англия:
+; 00
 - - - - - - 0x00EDEB 03:ADDB: 70        .byte $70   ; 
 - - - - - - 0x00EDEC 03:ADDC: 90        .byte $90   ; 
+; 01
 - - - - - - 0x00EDED 03:ADDD: 72        .byte $72   ; 
 - - - - - - 0x00EDEE 03:ADDE: 91        .byte $91   ; 
+; 02
 - - - - - - 0x00EDEF 03:ADDF: 74        .byte $74   ; 
 - - - - - - 0x00EDF0 03:ADE0: 92        .byte $92   ; 
+; 03
 - - - - - - 0x00EDF1 03:ADE1: 76        .byte $76   ; 
 - - - - - - 0x00EDF2 03:ADE2: 93        .byte $93   ; 
+; 04
 - - - - - - 0x00EDF3 03:ADE3: 78        .byte $78   ; 
 - - - - - - 0x00EDF4 03:ADE4: 94        .byte $94   ; 
+; 05
 - - - - - - 0x00EDF5 03:ADE5: 7A        .byte $7A   ; 
 - - - - - - 0x00EDF6 03:ADE6: 95        .byte $95   ; 
 
 
 
-off_ADE7_0B:
+off_ADE7_0B_италия:
+; 00
 - D 1 - I - 0x00EDF7 03:ADE7: 60        .byte $60   ; 
 - D 1 - I - 0x00EDF8 03:ADE8: 90        .byte $90   ; 
+; 01
 - D 1 - I - 0x00EDF9 03:ADE9: 62        .byte $62   ; 
 - D 1 - I - 0x00EDFA 03:ADEA: 91        .byte $91   ; 
+; 02
 - D 1 - I - 0x00EDFB 03:ADEB: 64        .byte $64   ; 
 - D 1 - I - 0x00EDFC 03:ADEC: 92        .byte $92   ; 
+; 03
 - D 1 - I - 0x00EDFD 03:ADED: 66        .byte $66   ; 
 - D 1 - I - 0x00EDFE 03:ADEE: 93        .byte $93   ; 
+; 04
 - D 1 - I - 0x00EDFF 03:ADEF: 68        .byte $68   ; 
 - D 1 - I - 0x00EE00 03:ADF0: 94        .byte $94   ; 
+; 05
 - - - - - - 0x00EE01 03:ADF1: 6A        .byte $6A   ; 
 - - - - - - 0x00EE02 03:ADF2: 95        .byte $95   ; 
 
 
 
-off_ADF3_0D:
+off_ADF3_0D_бразилия:
+; 00
 - D 1 - I - 0x00EE03 03:ADF3: 30        .byte $30   ; 
 - D 1 - I - 0x00EE04 03:ADF4: 90        .byte $90   ; 
+; 01
 - D 1 - I - 0x00EE05 03:ADF5: 32        .byte $32   ; 
 - D 1 - I - 0x00EE06 03:ADF6: 91        .byte $91   ; 
+; 02
 - D 1 - I - 0x00EE07 03:ADF7: 34        .byte $34   ; 
 - D 1 - I - 0x00EE08 03:ADF8: 92        .byte $92   ; 
+; 03
 - D 1 - I - 0x00EE09 03:ADF9: 36        .byte $36   ; 
 - D 1 - I - 0x00EE0A 03:ADFA: 93        .byte $93   ; 
+; 04
 - D 1 - I - 0x00EE0B 03:ADFB: 38        .byte $38   ; 
 - D 1 - I - 0x00EE0C 03:ADFC: 94        .byte $94   ; 
+; 05
 - - - - - - 0x00EE0D 03:ADFD: 3A        .byte $3A   ; 
 - - - - - - 0x00EE0E 03:ADFE: 95        .byte $95   ; 
 
 
 
-off_ADFF_0E:
+off_ADFF_0E_аргентина:
+; 00
 - D 1 - I - 0x00EE0F 03:ADFF: 40        .byte $40   ; 
 - D 1 - I - 0x00EE10 03:AE00: 90        .byte $90   ; 
+; 01
 - D 1 - I - 0x00EE11 03:AE01: 42        .byte $42   ; 
 - D 1 - I - 0x00EE12 03:AE02: 91        .byte $91   ; 
+; 02
 - D 1 - I - 0x00EE13 03:AE03: 44        .byte $44   ; 
 - D 1 - I - 0x00EE14 03:AE04: 92        .byte $92   ; 
+; 03
 - D 1 - I - 0x00EE15 03:AE05: 46        .byte $46   ; 
 - D 1 - I - 0x00EE16 03:AE06: 93        .byte $93   ; 
+; 04
 - D 1 - I - 0x00EE17 03:AE07: 48        .byte $48   ; 
 - D 1 - I - 0x00EE18 03:AE08: 94        .byte $94   ; 
+; 05
 - D 1 - I - 0x00EE19 03:AE09: 4A        .byte $4A   ; 
 - D 1 - I - 0x00EE1A 03:AE0A: 95        .byte $95   ; 
 
 
 
-off_AE0B_0F:
+off_AE0B_0F_мексика:
+; 00
 - D 1 - I - 0x00EE1B 03:AE0B: 60        .byte $60   ; 
 - D 1 - I - 0x00EE1C 03:AE0C: 90        .byte $90   ; 
+; 01
 - D 1 - I - 0x00EE1D 03:AE0D: 62        .byte $62   ; 
 - D 1 - I - 0x00EE1E 03:AE0E: 91        .byte $91   ; 
+; 02
 - D 1 - I - 0x00EE1F 03:AE0F: 64        .byte $64   ; 
 - D 1 - I - 0x00EE20 03:AE10: 92        .byte $92   ; 
+; 03
 - D 1 - I - 0x00EE21 03:AE11: 66        .byte $66   ; 
 - D 1 - I - 0x00EE22 03:AE12: 93        .byte $93   ; 
+; 04
 - D 1 - I - 0x00EE23 03:AE13: 68        .byte $68   ; 
 - D 1 - I - 0x00EE24 03:AE14: 94        .byte $94   ; 
+; 05
 - - - - - - 0x00EE25 03:AE15: 6A        .byte $6A   ; 
 - - - - - - 0x00EE26 03:AE16: 95        .byte $95   ; 
 

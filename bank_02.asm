@@ -11104,7 +11104,7 @@ C - - - - - 0x00AD91 02:AD81: A9 02     LDA #$02
 C - - - - - 0x00AD93 02:AD83: 8D 3A 04  STA ram_spd_Z_hi_мяча
 C - - - - - 0x00AD96 02:AD86: A9 80     LDA #$80
 C - - - - - 0x00AD98 02:AD88: 8D 48 04  STA ram_gravity_lo_мяча
-C - - - - - 0x00AD9B 02:AD8B: A9 06     LDA #con_act_ball_06
+C - - - - - 0x00AD9B 02:AD8B: A9 06     LDA #con_act_ball_приземление
 C - - - - - 0x00AD9D 02:AD8D: 8D 65 04  STA ram_действие_мяча
 bra_AD90_RTS:
 C - - - - - 0x00ADA0 02:AD90: 60        RTS
