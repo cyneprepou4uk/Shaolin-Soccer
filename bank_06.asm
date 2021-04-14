@@ -4339,7 +4339,7 @@ loc_9DF8:
 C D 0 - - - 0x019E08 06:9DF8: E0 0A     CPX #con_id_кипера
 C - - - - - 0x019E0A 06:9DFA: B0 4E     BCS bra_9E4A    ; если это кипер
 C - - - - - 0x019E0C 06:9DFC: A5 1D     LDA tmp_кого_пиздят
-C - - - - - 0x019E0E 06:9DFE: 29 01     AND #$01
+C - - - - - 0x019E0E 06:9DFE: 29 01     AND #$01    ; выяснить команда слева или справа?
 C - - - - - 0x019E10 06:9E00: 85 1E     STA ram_001E
 C - - - - - 0x019E12 06:9E02: A8        TAY
 C - - - - - 0x019E13 06:9E03: B9 6B 9E  LDA tbl_9E6B,Y
@@ -4362,10 +4362,10 @@ C - - - - - 0x019E31 06:9E21: D0 07     BNE bra_9E2A
 - - - - - - 0x019E39 06:9E29: C8        INY
 bra_9E2A:
 C - - - - - 0x019E3A 06:9E2A: B9 6D 9E  LDA tbl_9E6D,Y
-C - - - - - 0x019E3D 06:9E2D: 30 1B     BMI bra_9E4A
+C - - - - - 0x019E3D 06:9E2D: 30 1B     BMI bra_9E4A    ; bzk опт, в таблице нету байтов 80+
 C - - - - - 0x019E3F 06:9E2F: 8D 5B 05  STA ram_field_formation
 C - - - - - 0x019E42 06:9E32: A5 1E     LDA ram_001E
-C - - - - - 0x019E44 06:9E34: 49 01     EOR #$01
+C - - - - - 0x019E44 06:9E34: 49 01     EOR #$01    ; индекс противоположной команды
 C - - - - - 0x019E46 06:9E36: A8        TAY
 C - - - - - 0x019E47 06:9E37: B9 2A 05  LDA ram_флаг_владения_мячом_ком,Y
 C - - - - - 0x019E4A 06:9E3A: 09 01     ORA #$01
@@ -4384,7 +4384,7 @@ bra_9E54:
 C - - - - - 0x019E64 06:9E54: A4 1C     LDY tmp_кто_пиздит
 C - - - - - 0x019E66 06:9E56: 20 71 9E  JSR sub_9E71
 C - - - - - 0x019E69 06:9E59: A4 1D     LDY tmp_кого_пиздят
-C - - - - - 0x019E6B 06:9E5B: C0 0A     CPY #$0A
+C - - - - - 0x019E6B 06:9E5B: C0 0A     CPY #con_id_кипера
 C - - - - - 0x019E6D 06:9E5D: B0 0B     BCS bra_9E6A_RTS    ; если это кипер
 C - - - - - 0x019E6F 06:9E5F: 20 71 9E  JSR sub_9E71
 loc_9E62:
@@ -4398,16 +4398,17 @@ C D 0 - - - 0x019E7A 06:9E6A: 60        RTS
 
 
 tbl_9E6B:
-- D 0 - - - 0x019E7B 06:9E6B: 03        .byte $03   ; 
-- D 0 - - - 0x019E7C 06:9E6C: 00        .byte $00   ; 
+- D 0 - - - 0x019E7B 06:9E6B: 03        .byte $03   ; 00 команда слева
+- D 0 - - - 0x019E7C 06:9E6C: 00        .byte $00   ; 01 команда справа
 
 
 
 tbl_9E6D:
-- D 0 - - - 0x019E7D 06:9E6D: 01        .byte $01   ; 
-- - - - - - 0x019E7E 06:9E6E: 03        .byte $03   ; 
-- - - - - - 0x019E7F 06:9E6F: 02        .byte $02   ; 
-- - - - - - 0x019E80 06:9E70: 03        .byte $03   ; 
+- D 0 - - - 0x019E7D 06:9E6D: 01        .byte $01   ; 00
+- - - - - - 0x019E7E 06:9E6E: 03        .byte $03   ; 01
+- - - - - - 0x019E7F 06:9E6F: 02        .byte $02   ; 02
+; bzk мусор
+- - - - - - 0x019E80 06:9E70: 03        .byte $03   ; 03
 
 
 
@@ -4456,6 +4457,7 @@ tbl_9E9D:
 
 
 sub_9EA5_отнять_силу_игроку:
+; A = сколько отнять, Y = кому отнять
 C - - - - - 0x019EB5 06:9EA5: 85 21     STA ram_0021
 C - - - - - 0x019EB7 06:9EA7: 38        SEC
 C - - - - - 0x019EB8 06:9EA8: B9 E4 04  LDA ram_сила_игрока,Y
@@ -4469,6 +4471,7 @@ C - - - - - 0x019EC4 06:9EB4: 60        RTS
 
 
 sub_9EB5_добавить_силу_игроку:
+; A = сколько добавить, Y = кому добавить
 C - - - - - 0x019EC5 06:9EB5: 18        CLC
 C - - - - - 0x019EC6 06:9EB6: 79 E4 04  ADC ram_сила_игрока,Y
 C - - - - - 0x019EC9 06:9EB9: 90 F6     BCC bra_9EB1_запись_силы
@@ -7517,7 +7520,7 @@ C - - - - - 0x01AE2E 06:AE1E: 10 1A     BPL bra_AE3A
 C - - - - - 0x01AE30 06:AE20: A9 43     LDA #con_sfx_прыгнуть_на_мяч
 C - - - - - 0x01AE32 06:AE22: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x01AE35 06:AE25: A9 02     LDA #con_action_02
-C - - - - - 0x01AE37 06:AE27: 20 7B B0  JSR sub_B07B
+C - - - - - 0x01AE37 06:AE27: 20 7B B0  JSR sub_B07B_запись_действия_если_оно_новое
 C - - - - - 0x01AE3A 06:AE2A: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01AE3C 06:AE2C: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x01AE3E 06:AE2E: F0 05     BEQ bra_AE35
@@ -7566,7 +7569,7 @@ C - - - - - 0x01AE8C 06:AE7C: 4C 8B AD  JMP loc_AD8B_запись_действи
 bra_AE7F:
 C - - - - - 0x01AE8F 06:AE7F: 20 5D B0  JSR sub_B05D_толкнуть_игрока_мокрым_мячом
 C - - - - - 0x01AE92 06:AE82: A9 0B     LDA #con_action_0B
-C - - - - - 0x01AE94 06:AE84: 20 7B B0  JSR sub_B07B
+C - - - - - 0x01AE94 06:AE84: 20 7B B0  JSR sub_B07B_запись_действия_если_оно_новое
 loc_AE87:
 C D 1 - - - 0x01AE97 06:AE87: A9 23     LDA #con_sfx_принять_мяч
 C - - - - - 0x01AE99 06:AE89: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
@@ -7580,7 +7583,7 @@ C - - - - - 0x01AEA8 06:AE98: 20 5D B0  JSR sub_B05D_толкнуть_игрок
 C - - - - - 0x01AEAB 06:AE9B: A9 23     LDA #con_sfx_принять_мяч
 C - - - - - 0x01AEAD 06:AE9D: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x01AEB0 06:AEA0: A9 26     LDA #con_action_26
-C - - - - - 0x01AEB2 06:AEA2: 20 7B B0  JSR sub_B07B
+C - - - - - 0x01AEB2 06:AEA2: 20 7B B0  JSR sub_B07B_запись_действия_если_оно_новое
 C - - - - - 0x01AEB5 06:AEA5: A9 15     LDA #con_act_ball_устаканивание
 C - - - - - 0x01AEB7 06:AEA7: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
 
@@ -7636,7 +7639,7 @@ C - - - - - 0x01AF1B 06:AF0B: C9 29     CMP #con_action_29
 C - - - - - 0x01AF1D 06:AF0D: F0 05     BEQ bra_AF14
 C - - - - - 0x01AF1F 06:AF0F: A9 0C     LDA #con_action_0C
 bra_AF11:
-C - - - - - 0x01AF21 06:AF11: 20 7B B0  JSR sub_B07B
+C - - - - - 0x01AF21 06:AF11: 20 7B B0  JSR sub_B07B_запись_действия_если_оно_новое
 bra_AF14:
 C - - - - - 0x01AF24 06:AF14: A9 40     LDA #$40
 C - - - - - 0x01AF26 06:AF16: 8D 92 04  STA ram_состояние_мяча
@@ -7650,7 +7653,7 @@ C - - - - - 0x01AF35 06:AF25: A4 1D     LDY ram_001D
 C - - - - - 0x01AF37 06:AF27: B9 86 04  LDA ram_состояние_игрока,Y
 C - - - - - 0x01AF3A 06:AF2A: 30 05     BMI bra_AF31_игрок_в_воздухе
 C - - - - - 0x01AF3C 06:AF2C: A9 11     LDA #con_action_базарит
-C - - - - - 0x01AF3E 06:AF2E: 20 7B B0  JSR sub_B07B
+C - - - - - 0x01AF3E 06:AF2E: 20 7B B0  JSR sub_B07B_запись_действия_если_оно_новое
 bra_AF31_игрок_в_воздухе:
 C - - - - - 0x01AF41 06:AF31: A9 17     LDA #con_act_ball_синдром
 C - - - - - 0x01AF43 06:AF33: 4C 8B AD  JMP loc_AD8B_запись_действия_мяча
@@ -7723,27 +7726,28 @@ C - - - - - 0x01AFAF 06:AF9F: 0A        ASL
 C - - - - - 0x01AFB0 06:AFA0: 65 1E     ADC ram_001E
 C - - - - - 0x01AFB2 06:AFA2: 85 1E     STA ram_001E
 C - - - - - 0x01AFB4 06:AFA4: A8        TAY
-C - - - - - 0x01AFB5 06:AFA5: B9 30 B0  LDA tbl_B030,Y
+C - - - - - 0x01AFB5 06:AFA5: B9 30 B0  LDA tbl_B030_сколько_силы_отнять,Y
 C - - - - - 0x01AFB8 06:AFA8: 2C 0D 05  BIT ram_таймер_мокрого_мяча
 C - - - - - 0x01AFBB 06:AFAB: 10 03     BPL bra_AFB0_мяч_не_максимально_мокрый
 C - - - - - 0x01AFBD 06:AFAD: 18        CLC
-C - - - - - 0x01AFBE 06:AFAE: 69 01     ADC #$01
+C - - - - - 0x01AFBE 06:AFAE: 69 01     ADC #$01    ; накинуть еще -1 хп если мяч мокрый
 bra_AFB0_мяч_не_максимально_мокрый:
 C - - - - - 0x01AFC0 06:AFB0: 84 1E     STY ram_001E
 C - - - - - 0x01AFC2 06:AFB2: AC 25 05  LDY ram_таймер_электр_мяча
 C - - - - - 0x01AFC5 06:AFB5: F0 06     BEQ bra_AFBD_мяч_не_наэлектризован
 C - - - - - 0x01AFC7 06:AFB7: A0 09     LDY #$09
 C - - - - - 0x01AFC9 06:AFB9: 84 1E     STY ram_001E
-C - - - - - 0x01AFCB 06:AFBB: 69 01     ADC #$01
+; bzk баг, возможно C будет = 01, тогда накинется -2 вместо -1
+C - - - - - 0x01AFCB 06:AFBB: 69 01     ADC #$01    ; накинуть еще -1 хп если мяч электрический
 bra_AFBD_мяч_не_наэлектризован:
 C - - - - - 0x01AFCD 06:AFBD: A4 1D     LDY ram_001D
 C - - - - - 0x01AFCF 06:AFBF: 20 A5 9E  JSR sub_9EA5_отнять_силу_игроку
 C - - - - - 0x01AFD2 06:AFC2: A9 08     LDA #$08
-C - - - - - 0x01AFD4 06:AFC4: A0 0C     LDY #$0C
+C - - - - - 0x01AFD4 06:AFC4: A0 0C     LDY #con_id_мяча
 C - - - - - 0x01AFD6 06:AFC6: 20 A5 9E  JSR sub_9EA5_отнять_силу_игроку
 C - - - - - 0x01AFD9 06:AFC9: A4 1D     LDY ram_001D
 C - - - - - 0x01AFDB 06:AFCB: B9 E4 04  LDA ram_сила_игрока,Y
-C - - - - - 0x01AFDE 06:AFCE: C0 0A     CPY #$0A
+C - - - - - 0x01AFDE 06:AFCE: C0 0A     CPY #con_id_кипера
 C - - - - - 0x01AFE0 06:AFD0: 90 22     BCC bra_AFF4    ; если это не кипер
 C - - - - - 0x01AFE2 06:AFD2: B9 7C 06  LDA ram_флаг_кипера_в_штрафной - con_id_кипера,Y
 C - - - - - 0x01AFE5 06:AFD5: 30 1D     BMI bra_AFF4    ; если кипер не в штрафной
@@ -7770,11 +7774,11 @@ C - - - - - 0x01B00E 06:AFFE: 8D 65 04  STA ram_действие_мяча
 C - - - - - 0x01B011 06:B001: 8C D6 04  STY ram_игрок_с_мячом
 bra_B004:
 C - - - - - 0x01B014 06:B004: A4 1E     LDY ram_001E
-C - - - - - 0x01B016 06:B006: B9 32 B0  LDA tbl_B030 + 2,Y
+C - - - - - 0x01B016 06:B006: B9 32 B0  LDA tbl_B030_номер_звука + 2,Y
 C - - - - - 0x01B019 06:B009: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x01B01C 06:B00C: B9 31 B0  LDA tbl_B030 + 1,Y
+C - - - - - 0x01B01C 06:B00C: B9 31 B0  LDA tbl_B030_номер_действия + 1,Y
 C - - - - - 0x01B01F 06:B00F: A4 1D     LDY ram_001D
-C - - - - - 0x01B021 06:B011: 20 7B B0  JSR sub_B07B
+C - - - - - 0x01B021 06:B011: 20 7B B0  JSR sub_B07B_запись_действия_если_оно_новое
 C - - - - - 0x01B024 06:B014: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x01B027 06:B017: C9 06     CMP #con_action_06
 C - - - - - 0x01B029 06:B019: D0 0C     BNE bra_B027
@@ -7794,7 +7798,9 @@ C - - - - - 0x01B03C 06:B02C: 4C 72 AD  RTS
 
 
 
-tbl_B030:
+tbl_B030_сколько_силы_отнять:
+tbl_B030_номер_действия:
+tbl_B030_номер_звука:
 - D 1 - - - 0x01B040 06:B030: 05        .byte $05   ; 
 - D 1 - - - 0x01B041 06:B031: 3C        .byte con_action_3C   ; 
 - D 1 - - - 0x01B042 06:B032: 36        .byte con_sfx_убийство
@@ -7862,12 +7868,12 @@ C - - - - - 0x01B08A 06:B07A: 60        RTS
 
 
 
-sub_B07B:
+sub_B07B_запись_действия_если_оно_новое:
 C - - - - - 0x01B08B 06:B07B: 85 1E     STA ram_001E
 C - - - - - 0x01B08D 06:B07D: B9 59 04  LDA ram_действие_игрока,Y
 C - - - - - 0x01B090 06:B080: 29 7F     AND #$7F
 C - - - - - 0x01B092 06:B082: C5 1E     CMP ram_001E
-C - - - - - 0x01B094 06:B084: F0 10     BEQ bra_B096_RTS
+C - - - - - 0x01B094 06:B084: F0 10     BEQ bra_B096_RTS    ; если сейчас выполняется такое же действие
 C - - - - - 0x01B096 06:B086: A5 1E     LDA ram_001E
 C - - - - - 0x01B098 06:B088: 99 59 04  STA ram_действие_игрока,Y
 C - - - - - 0x01B09B 06:B08B: A9 00     LDA #$00
