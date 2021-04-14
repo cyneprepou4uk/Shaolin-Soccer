@@ -11608,7 +11608,7 @@ C - - - - - 0x012FB7 04:AFA7: 85 2C     STA ram_002C
 C - - - - - 0x012FB9 04:AFA9: B9 D9 B0  LDA tbl_B0D8_второй_индекс + 1,Y
 C - - - - - 0x012FBC 04:AFAC: 85 2D     STA ram_002D
 C - - - - - 0x012FBE 04:AFAE: AC D6 04  LDY ram_игрок_с_мячом
-C - - - - - 0x012FC1 04:AFB1: B9 6C 04  LDA ram_подтип_анимации_игрока,Y
+C - - - - - 0x012FC1 04:AFB1: B9 6C 04  LDA ram_подтип_анимации,Y
 C - - - - - 0x012FC4 04:AFB4: A8        TAY
 C - - - - - 0x012FC5 04:AFB5: B1 2C     LDA (ram_002C),Y
 bra_AFB7:
@@ -11800,16 +11800,16 @@ tbl_B07C_индекс:
 
 
 tbl_B0D8_второй_индекс:
-- D 1 - - - 0x0130E8 04:B0D8: E0 B0     .word off_B0E0_00
-- D 1 - - - 0x0130EA 04:B0DA: E2 B0     .word off_B0E2_01
-- D 1 - - - 0x0130EC 04:B0DC: EA B0     .word off_B0EA_02
-- D 1 - - - 0x0130EE 04:B0DE: ED B0     .word off_B0ED_03
+- D 1 - - - 0x0130E8 04:B0D8: E0 B0     .word off_B0E0_00_полевой
+- D 1 - - - 0x0130EA 04:B0DA: E2 B0     .word off_B0E2_01_кипер
+- D 1 - - - 0x0130EC 04:B0DC: EA B0     .word off_B0EA_02_держатель_этажерки
+- D 1 - - - 0x0130EE 04:B0DE: ED B0     .word off_B0ED_03_хз
 
-off_B0E0_00:
+off_B0E0_00_полевой:
 - D 1 - I - 0x0130F0 04:B0E0: 07        .byte $07   ; 00
 - D 1 - I - 0x0130F1 04:B0E1: 08        .byte $08   ; 01
 
-off_B0E2_01:
+off_B0E2_01_кипер:
 - D 1 - I - 0x0130F2 04:B0E2: 05        .byte $05   ; 00
 - - - - - - 0x0130F3 04:B0E3: 05        .byte $05   ; 01
 - - - - - - 0x0130F4 04:B0E4: 05        .byte $05   ; 02
@@ -11819,12 +11819,12 @@ off_B0E2_01:
 - - - - - - 0x0130F8 04:B0E8: 05        .byte $05   ; 06
 - - - - - - 0x0130F9 04:B0E9: 05        .byte $05   ; 07
 
-off_B0EA_02:
+off_B0EA_02_держатель_этажерки:
 - D 1 - I - 0x0130FA 04:B0EA: 04        .byte $04   ; 00
 - D 1 - I - 0x0130FB 04:B0EB: 03        .byte $03   ; 01
 - D 1 - I - 0x0130FC 04:B0EC: 03        .byte $03   ; 02
 
-off_B0ED_03:
+off_B0ED_03_хз:
 - - - - - - 0x0130FD 04:B0ED: 0D        .byte $0D   ; 00
 - D 1 - I - 0x0130FE 04:B0EE: 0E        .byte $0E   ; 01
 

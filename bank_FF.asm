@@ -2518,7 +2518,7 @@ C - - - - - 0x01CEDC 07:CECC: A0 00     LDY #$00
 C - - - - - 0x01CEDE 07:CECE: B1 2E     LDA (ram_002E),Y
 C - - - - - 0x01CEE0 07:CED0: C9 FD     CMP #$FD
 C - - - - - 0x01CEE2 07:CED2: D0 11     BNE bra_CEE5_нету_подтипа_анимации
-C - - - - - 0x01CEE4 07:CED4: BD 6C 04  LDA ram_подтип_анимации_игрока,X
+C - - - - - 0x01CEE4 07:CED4: BD 6C 04  LDA ram_подтип_анимации,X
 C - - - - - 0x01CEE7 07:CED7: 0A        ASL
 C - - - - - 0x01CEE8 07:CED8: A8        TAY
 C - - - - - 0x01CEE9 07:CED9: C8        INY
