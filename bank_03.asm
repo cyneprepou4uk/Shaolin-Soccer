@@ -6623,22 +6623,20 @@ C - - - - - 0x00E96A 03:A95A: B9 88 AB  LDA tbl_AB88_текст_приказов
 C - - - - - 0x00E96D 03:A95D: 85 2E     STA ram_002E
 C - - - - - 0x00E96F 03:A95F: B9 89 AB  LDA tbl_AB88_текст_приказов_и_ответов + 1,Y
 C - - - - - 0x00E972 03:A962: 85 2F     STA ram_002F
+                                        LDA ram_002C
+                                        CLC
+                                        ADC #$1A
+                                        STA ram_002C
+                                        BCC bra_A964_not_overflow
+                                        INC ram_002D
+bra_A964_not_overflow:
 C - - - - - 0x00E974 03:A964: A0 00     LDY #$00
 bra_A966_loop:
 C - - - - - 0x00E976 03:A966: B1 2E     LDA (ram_002E),Y
-C - - - - - 0x00E978 03:A968: 99 1C 00  STA ram_001C,Y
+                                        STA (ram_002C),Y
 C - - - - - 0x00E97B 03:A96B: C8        INY
 C - - - - - 0x00E97C 03:A96C: C0 05     CPY #$05
 C - - - - - 0x00E97E 03:A96E: 90 F6     BCC bra_A966_loop
-C - - - - - 0x00E980 03:A970: A2 00     LDX #$00
-C - - - - - 0x00E982 03:A972: A0 1A     LDY #$1A
-bra_A974_loop:
-C - - - - - 0x00E984 03:A974: B5 1C     LDA ram_001C,X
-C - - - - - 0x00E986 03:A976: 91 2C     STA (ram_002C),Y
-C - - - - - 0x00E988 03:A978: E8        INX
-C - - - - - 0x00E989 03:A979: C8        INY
-C - - - - - 0x00E98A 03:A97A: E0 05     CPX #$05
-C - - - - - 0x00E98C 03:A97C: 90 F6     BCC bra_A974_loop
 C - - - - - 0x00E98E 03:A97E: A6 43     LDX ram_0043
 C - - - - - 0x00E990 03:A980: 60        RTS
 
