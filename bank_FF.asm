@@ -7153,10 +7153,7 @@ C D 3 - - - 0x01E838 07:E828: 85 2C     PHA
                                         PHA
                                         LDA tbl_0001_prg_банк + 1,X
                                         JSR sub_EED3_prg_bankswitch
-                                        
                                         JSR sub_0001_скопировать_экран_в_ppu
-                                        
-                                        
                                         PLA
                                         JSR sub_EED3_prg_bankswitch
                                         JSR sub_ECCB_отобразить_фон_и_спрайты
