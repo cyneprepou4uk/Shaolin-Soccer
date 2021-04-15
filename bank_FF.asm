@@ -7128,6 +7128,76 @@ C - - - - - 0x01E805 07:E7F5: 60        RTS
 
 sub_0x01E838_отрисовать_статичный_экран:
 ; логотип, опции и тд
+; свободные адреса 001C 001D 001E 001F 0020 0026 0027 0028 0029 002B 002C 002D 002E 002F 0032 0033
+; todo: поработать над номером экрана составов игроков в 0x015849
+C D 3 - - - 0x01E838 07:E828: 85 2C     PHA
+                                        LDA #con_music_выкл
+                                        JSR sub_C2E4_воспроизвести_звук
+                                        JSR sub_ECA9_выключить_NMI_при_следующем_вызове
+                                        JSR sub_EE71_выключить_NMI
+                                        JSR sub_ECC1_скрыть_фон_и_спрайты_за_полоской_слева
+                                        PLA
+                                        ASL
+                                        TAX
+                                        LDA tbl_0001_банк_фона,X
+                                        STA ram_банк_фона
+                                        LDA tbl_0001_банк_фона + 1,X
+                                        STA ram_банк_фона + 1
+                                        LDA tbl_0001_палитра_фона,X
+                                        STA ram_номер_палитры_фона
+                                        LDA tbl_0001_палитра_фона + 1,X
+                                        STA ram_номер_палитры_фона + 1
+                                        LDA tbl_0001_mirroring,X
+                                        STA $A000
+                                        LDA $BFFF
+                                        PHA
+                                        LDA tbl_0001_prg_банк + 1,X
+                                        JSR sub_EED3_prg_bankswitch
+                                        
+                                        JSR sub_0001_скопировать_экран_в_ppu
+                                        
+                                        
+                                        PLA
+                                        JSR sub_EED3_prg_bankswitch
+                                        JSR sub_ECCB_отобразить_фон_и_спрайты
+                                        JSR sub_EE65_включить_NMI
+                                        RTS
+                                        
+sub_0001_скопировать_экран_в_ppu:
+                                        BIT $2002
+                                        LDA tbl_0001_начальный_адрес_байтов_экрана,X
+                                        STA ram_002C
+                                        LDA tbl_0001_начальный_адрес_байтов_экрана + 1,X
+                                        STA ram_002D
+                                        LDA tbl_0001_размер_копируемых_байтов,X
+                                        STA ram_002E
+                                        LDA tbl_0001_размер_копируемых_байтов + 1,X
+                                        STA ram_002F
+                                        LDA tbl_0001_начальный_адрес_ppu,X
+                                        STA $2006
+                                        LDA tbl_0001_начальный_адрес_ppu + 1,X
+                                        STA $2006
+                                        LDY #$00
+@bra_цикл_копирования_в_ppu:
+                                        LDA (ram_002C),Y
+                                        STA $2007
+                                        INC ram_002C
+                                        BNE @bra_not_overflow
+                                        INC ram_002D
+@bra_not_overflow:
+                                        DEC ram_002E
+                                        BNE @bra_not_underflow
+                                        DEC ram_002F
+@bra_not_underflow:
+                                        LDA ram_002E
+                                        ORA ram_002F
+                                        BNE @bra_цикл_копирования_в_ppu
+                                        RTS
+                                        
+                                        
+                                        
+                                        
+                                        
 C D 3 - - - 0x01E838 07:E828: 85 2C     STA ram_002C
 C - - - - - 0x01E83A 07:E82A: A9 00     LDA #$00
 C - - - - - 0x01E83C 07:E82C: 85 2D     STA ram_002D
@@ -7197,6 +7267,280 @@ C - - - - - 0x01E8C0 07:E8B0: 8D AD 05  STA ram_номер_палитры_фон
 C - - - - - 0x01E8C3 07:E8B3: 20 CB EC  JSR sub_ECCB_отобразить_фон_и_спрайты
 C - - - - - 0x01E8C6 07:E8B6: 20 65 EE  JSR sub_EE65_включить_NMI
 C - - - - - 0x01E8C9 07:E8B9: 60        RTS
+
+; 00 = логотип с кунио
+; 01 = экран "жми старт" после логотипа
+; 02 = главное меню
+; 03 = экран с прохождением 12 команд
+; 04 = экран раздевалки с полем на доске (прохождение, со всеми опциями), альтернатива 13
+; 05 = экран с расстановкой
+; 06 = экран с выбором команд
+; 07 = экран с выбором погоды
+; 08 = экран с информацией о погоде
+; 09 = экран с выбором музыки
+; 0A = экран со всеми 12 игроками японии, можно с ними побазарить
+; 0B = экран VS
+; 0C = экран с хатарактеристиками выбранного японца
+; 0D = экран со статистикой против 12 команд, вход через раздевалку
+; 0E = текст с мисако после логотипа
+; 0F = unused? предположительно экран раздевалки
+; 10 = экран со зрителями, улыбаются
+; 11 = экран со зрителями, открытые рты
+; 12 = экран со зрителями, злые рожи
+; 13 = экран раздевалки с полем на доске (матч, без некоторых опций), альтернатива 04
+; 14 = 
+; 15 = турнирная сетка
+; 16 = состав италии
+; 17 = состав германии
+; 18 = состав аргентины
+; 19 = состав бразилии
+; 1A = состав камеруна
+; 1B = состав японии
+; 1C = фотка в титрах
+; 1D = фотка в титрах
+; 1E = фотка в титрах
+; 1F = фотка в титрах
+; 20 = фотка в титрах
+; 21 = фотка в титрах
+; 22 = фотка в титрах
+; 23 = фотка в титрах
+; 24 = фотка в титрах
+
+tbl_0001_банк_фона:
+    .byte con_chr_bank + $6E, con_chr_bank + $02    ; 00
+    .byte con_chr_bank + $6C, con_chr_bank + $02    ; 01
+    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 02
+    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 03
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 04
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 05
+    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 06
+    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 07
+    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 08
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 09
+    .byte con_chr_bank + $60, con_chr_bank + $02    ; 0A
+    .byte con_chr_bank + $62, con_chr_bank + $02    ; 0B
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 0C
+    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 0D
+    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 0E
+    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 0F
+    .byte con_chr_bank + $64, con_chr_bank + $66    ; 10
+    .byte con_chr_bank + $64, con_chr_bank + $66    ; 11
+    .byte con_chr_bank + $64, con_chr_bank + $66    ; 12
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 13
+    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 14
+    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 15
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 16
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 17
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 18
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 19
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 1A
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 1B
+    .byte con_chr_bank + $12, con_chr_bank + $02    ; 1C
+    .byte con_chr_bank + $12, con_chr_bank + $02    ; 1D
+    .byte con_chr_bank + $12, con_chr_bank + $02    ; 1E
+    .byte con_chr_bank + $12, con_chr_bank + $02    ; 1F
+    .byte con_chr_bank + $12, con_chr_bank + $02    ; 20
+    .byte con_chr_bank + $12, con_chr_bank + $02    ; 21
+    .byte con_chr_bank + $12, con_chr_bank + $02    ; 22
+    .byte con_chr_bank + $12, con_chr_bank + $02    ; 23
+    .byte con_chr_bank + $12, con_chr_bank + $02    ; 24
+    
+tbl_0001_палитра_фона:
+    .byte con_bg_pal + $44, con_bg_pal + $43  ; 00
+    .byte con_bg_pal + $3A, con_bg_pal + $3B  ; 01
+    .byte con_bg_pal + $15, con_bg_pal + $16  ; 02
+    .byte con_bg_pal + $15, con_bg_pal + $16  ; 03
+    .byte con_bg_pal + $15, con_bg_pal + $16  ; 04
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 05
+    .byte con_bg_pal + $15, con_bg_pal + $16  ; 06
+    .byte con_bg_pal + $15, con_bg_pal + $16  ; 07
+    .byte con_bg_pal + $17, con_bg_pal + $18  ; 08
+    .byte con_bg_pal + $15, con_bg_pal + $16  ; 09
+    .byte con_bg_pal + $19, con_bg_pal + $1A  ; 0A
+    .byte con_bg_pal + $1C, con_bg_pal + $1C  ; 0B
+    .byte con_bg_pal + $19, con_bg_pal + $1A  ; 0C
+    .byte con_bg_pal + $1B, con_bg_pal + $1B  ; 0D
+    .byte con_bg_pal + $15, con_bg_pal + $16  ; 0E
+    .byte con_bg_pal + $15, con_bg_pal + $16  ; 0F
+    .byte con_bg_pal + $10, con_bg_pal + $0A  ; 10
+    .byte con_bg_pal + $10, con_bg_pal + $0A  ; 11
+    .byte con_bg_pal + $10, con_bg_pal + $0A  ; 12
+    .byte con_bg_pal + $15, con_bg_pal + $16  ; 13
+    .byte con_bg_pal + $15, con_bg_pal + $16  ; 14
+    .byte con_bg_pal + $15, con_bg_pal + $16  ; 15
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 16
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 17
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 18
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 19
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 1A
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 1B
+    .byte con_bg_pal + $49, con_bg_pal + $49  ; 1C
+    .byte con_bg_pal + $49, con_bg_pal + $49  ; 1D
+    .byte con_bg_pal + $49, con_bg_pal + $49  ; 1E
+    .byte con_bg_pal + $49, con_bg_pal + $49  ; 1F
+    .byte con_bg_pal + $49, con_bg_pal + $49  ; 20
+    .byte con_bg_pal + $49, con_bg_pal + $49  ; 21
+    .byte con_bg_pal + $49, con_bg_pal + $49  ; 22
+    .byte con_bg_pal + $49, con_bg_pal + $49  ; 23
+    .byte con_bg_pal + $49, con_bg_pal + $49  ; 24
+
+tbl_0001_mirroring:
+tbl_0001_prg_банк:
+; 00 = vertical, 01 = horisontal
+    .byte $00, con_prg_bank + $09   ; 00
+    .byte $00, con_prg_bank + $09   ; 01
+    .byte $00, con_prg_bank + $09   ; 02
+    .byte $00, con_prg_bank + $09   ; 03
+    .byte $00, con_prg_bank + $09   ; 04
+    .byte $01, con_prg_bank + $08   ; 05
+    .byte $00, con_prg_bank + $09   ; 06
+    .byte $01, con_prg_bank + $08   ; 07
+    .byte $00, con_prg_bank + $09   ; 08
+    .byte $00, con_prg_bank + $09   ; 09
+    .byte $00, con_prg_bank + $09   ; 0A
+    .byte $00, con_prg_bank + $09   ; 0B
+    .byte $00, con_prg_bank + $09   ; 0C
+    .byte $00, con_prg_bank + $09   ; 0D
+    .byte $00, con_prg_bank + $09   ; 0E
+    .byte $00, con_prg_bank + $09   ; 0F
+    .byte $00, con_prg_bank + $09   ; 10
+    .byte $00, con_prg_bank + $09   ; 11
+    .byte $00, con_prg_bank + $0A   ; 12
+    .byte $00, con_prg_bank + $0A   ; 13
+    .byte $00, con_prg_bank + $0A   ; 14
+    .byte $00, con_prg_bank + $0A   ; 15
+    .byte $01, con_prg_bank + $08   ; 16
+    .byte $01, con_prg_bank + $08   ; 17
+    .byte $01, con_prg_bank + $08   ; 18
+    .byte $01, con_prg_bank + $08   ; 19
+    .byte $01, con_prg_bank + $08   ; 1A
+    .byte $01, con_prg_bank + $08   ; 1B
+    .byte $00, con_prg_bank + $0A   ; 1C
+    .byte $00, con_prg_bank + $0A   ; 1D
+    .byte $00, con_prg_bank + $0A   ; 1E
+    .byte $00, con_prg_bank + $0A   ; 1F
+    .byte $00, con_prg_bank + $0A   ; 20
+    .byte $00, con_prg_bank + $0A   ; 21
+    .byte $00, con_prg_bank + $0A   ; 22
+    .byte $00, con_prg_bank + $0A   ; 23
+    .byte $00, con_prg_bank + $0A   ; 24
+
+tbl_0001_начальный_адрес_байтов_экрана:
+    .word _off000_screen_00     ; 00
+    .word _off000_screen_01     ; 01
+    .word _off000_screen_02     ; 02
+    .word _off000_screen_03     ; 03
+    .word _off000_screen_04     ; 04
+    .word _off000_screen_05     ; 05
+    .word _off000_screen_06     ; 06
+    .word _off000_screen_07     ; 07
+    .word _off000_screen_08     ; 08
+    .word _off000_screen_09     ; 09
+    .word _off000_screen_0A     ; 0A
+    .word _off000_screen_0B     ; 0B
+    .word _off000_screen_0C     ; 0C
+    .word _off000_screen_0D     ; 0D
+    .word _off000_screen_0E     ; 0E
+    .word _off000_screen_0F     ; 0F
+    .word _off000_screen_10     ; 10
+    .word _off000_screen_11     ; 11
+    .word _off000_screen_12     ; 12
+    .word _off000_screen_13     ; 13
+    .word _off000_screen_14     ; 14
+    .word _off000_screen_15     ; 15
+    .word _off000_screen_16     ; 16
+    .word _off000_screen_17     ; 17
+    .word _off000_screen_18     ; 18
+    .word _off000_screen_19     ; 19
+    .word _off000_screen_1A     ; 1A
+    .word _off000_screen_1B     ; 1B
+    .word _off000_screen_1C     ; 1C
+    .word _off000_screen_1D     ; 1D
+    .word _off000_screen_1E     ; 1E
+    .word _off000_screen_1F     ; 1F
+    .word _off000_screen_20     ; 20
+    .word _off000_screen_21     ; 21
+    .word _off000_screen_22     ; 22
+    .word _off000_screen_23     ; 23
+    .word _off000_screen_24     ; 24
+
+tbl_0001_размер_копируемых_байтов:
+    .word $0400     ; 00
+    .word $0400     ; 01
+    .word $0400     ; 02
+    .word $0400     ; 03
+    .word $0400     ; 04
+    .word $0800     ; 05
+    .word $0400     ; 06
+    .word $0800     ; 07
+    .word $0400     ; 08
+    .word $0400     ; 09
+    .word $0400     ; 0A
+    .word $0400     ; 0B
+    .word $0400     ; 0C
+    .word $0400     ; 0D
+    .word $0400     ; 0E
+    .word $0400     ; 0F
+    .word $0400     ; 10
+    .word $0400     ; 11
+    .word $0400     ; 12
+    .word $0400     ; 13
+    .word $0400     ; 14
+    .word $0400     ; 15
+    .word $0800     ; 16
+    .word $0800     ; 17
+    .word $0800     ; 18
+    .word $0800     ; 19
+    .word $0800     ; 1A
+    .word $0800     ; 1B
+    .word $0400     ; 1C
+    .word $0400     ; 1D
+    .word $0400     ; 1E
+    .word $0400     ; 1F
+    .word $0400     ; 20
+    .word $0400     ; 21
+    .word $0400     ; 22
+    .word $0400     ; 23
+    .word $0400     ; 24
+
+tbl_0001_начальный_адрес_ppu:
+    .dbyt $2000     ; 00
+    .dbyt $2000     ; 01
+    .dbyt $2000     ; 02
+    .dbyt $2000     ; 03
+    .dbyt $2000     ; 04
+    .dbyt $2000     ; 05
+    .dbyt $2000     ; 06
+    .dbyt $2000     ; 07
+    .dbyt $2000     ; 08
+    .dbyt $2000     ; 09
+    .dbyt $2000     ; 0A
+    .dbyt $2000     ; 0B
+    .dbyt $2000     ; 0C
+    .dbyt $2000     ; 0D
+    .dbyt $2000     ; 0E
+    .dbyt $2000     ; 0F
+    .dbyt $2000     ; 10
+    .dbyt $2000     ; 11
+    .dbyt $2000     ; 12
+    .dbyt $2000     ; 13
+    .dbyt $2000     ; 14
+    .dbyt $2000     ; 15
+    .dbyt $2000     ; 16
+    .dbyt $2000     ; 17
+    .dbyt $2000     ; 18
+    .dbyt $2000     ; 19
+    .dbyt $2000     ; 1A
+    .dbyt $2000     ; 1B
+    .dbyt $2000     ; 1C
+    .dbyt $2000     ; 1D
+    .dbyt $2000     ; 1E
+    .dbyt $2000     ; 1F
+    .dbyt $2000     ; 20
+    .dbyt $2000     ; 21
+    .dbyt $2000     ; 22
+    .dbyt $2000     ; 23
+    .dbyt $2000     ; 24
 
 
 
@@ -7397,329 +7741,329 @@ tbl_EA1A_параметры_экрана:
 - D 3 - I - 0x01EA30 07:EA20: 43        .byte $43   ; палитра фона 2
 - D 3 - I - 0x01EA31 07:EA21: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 01 экран "жми старт" после логотипа
-- D 3 - I - 0x01EA32 07:EA22: 76        .byte $76   ; 
+- D 3 - I - 0x01EA32 07:EA22: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA33 07:EA23: 01        .byte $01   ; 
 - D 3 - I - 0x01EA34 07:EA24: 00        .byte $00   ; 
-- D 3 - I - 0x01EA35 07:EA25: 6C        .byte $6C   ; 
-- D 3 - I - 0x01EA36 07:EA26: 02        .byte $02   ; 
-- D 3 - I - 0x01EA37 07:EA27: 3A        .byte $3A   ; 
-- D 3 - I - 0x01EA38 07:EA28: 3B        .byte $3B   ; 
-- D 3 - I - 0x01EA39 07:EA29: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA35 07:EA25: 6C        .byte $6C   ; банк фона 1
+- D 3 - I - 0x01EA36 07:EA26: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA37 07:EA27: 3A        .byte $3A   ; палитра фона 1
+- D 3 - I - 0x01EA38 07:EA28: 3B        .byte $3B   ; палитра фона 2
+- D 3 - I - 0x01EA39 07:EA29: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 02 главное меню
-- D 3 - I - 0x01EA3A 07:EA2A: 76        .byte $76   ; 
+- D 3 - I - 0x01EA3A 07:EA2A: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA3B 07:EA2B: 02        .byte $02   ; 
 - D 3 - I - 0x01EA3C 07:EA2C: 00        .byte $00   ; 
-- D 3 - I - 0x01EA3D 07:EA2D: 5E        .byte $5E   ; 
-- D 3 - I - 0x01EA3E 07:EA2E: 02        .byte $02   ; 
-- D 3 - I - 0x01EA3F 07:EA2F: 15        .byte $15   ; 
-- D 3 - I - 0x01EA40 07:EA30: 16        .byte $16   ; 
-- D 3 - I - 0x01EA41 07:EA31: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA3D 07:EA2D: 5E        .byte $5E   ; банк фона 1
+- D 3 - I - 0x01EA3E 07:EA2E: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA3F 07:EA2F: 15        .byte $15   ; палитра фона 1
+- D 3 - I - 0x01EA40 07:EA30: 16        .byte $16   ; палитра фона 2
+- D 3 - I - 0x01EA41 07:EA31: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 03 экран с прохождением 12 команд
-- D 3 - I - 0x01EA42 07:EA32: 76        .byte $76   ; 
+- D 3 - I - 0x01EA42 07:EA32: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA43 07:EA33: 03        .byte $03   ; 
 - D 3 - I - 0x01EA44 07:EA34: 00        .byte $00   ; 
-- D 3 - I - 0x01EA45 07:EA35: 5E        .byte $5E   ; 
-- D 3 - I - 0x01EA46 07:EA36: 02        .byte $02   ; 
-- D 3 - I - 0x01EA47 07:EA37: 15        .byte $15   ; 
-- D 3 - I - 0x01EA48 07:EA38: 16        .byte $16   ; 
-- D 3 - I - 0x01EA49 07:EA39: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA45 07:EA35: 5E        .byte $5E   ; банк фона 1
+- D 3 - I - 0x01EA46 07:EA36: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA47 07:EA37: 15        .byte $15   ; палитра фона 1
+- D 3 - I - 0x01EA48 07:EA38: 16        .byte $16   ; палитра фона 2
+- D 3 - I - 0x01EA49 07:EA39: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 04 экран раздевалки с полем на доске (прохождение, со всеми опциями), альтернатива 13
-- D 3 - I - 0x01EA4A 07:EA3A: 76        .byte $76   ; 
+- D 3 - I - 0x01EA4A 07:EA3A: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA4B 07:EA3B: 04        .byte $04   ; 
 - D 3 - I - 0x01EA4C 07:EA3C: 00        .byte $00   ; 
-- D 3 - I - 0x01EA4D 07:EA3D: 30        .byte $30   ; 
-- D 3 - I - 0x01EA4E 07:EA3E: 02        .byte $02   ; 
-- D 3 - I - 0x01EA4F 07:EA3F: 15        .byte $15   ; 
-- D 3 - I - 0x01EA50 07:EA40: 16        .byte $16   ; 
-- D 3 - I - 0x01EA51 07:EA41: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA4D 07:EA3D: 30        .byte $30   ; банк фона 1
+- D 3 - I - 0x01EA4E 07:EA3E: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA4F 07:EA3F: 15        .byte $15   ; палитра фона 1
+- D 3 - I - 0x01EA50 07:EA40: 16        .byte $16   ; палитра фона 2
+- D 3 - I - 0x01EA51 07:EA41: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 05 экран с расстановкой
-- D 3 - I - 0x01EA52 07:EA42: 76        .byte $76   ; 
+- D 3 - I - 0x01EA52 07:EA42: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA53 07:EA43: 05        .byte $05   ; 
 - D 3 - I - 0x01EA54 07:EA44: 00        .byte $00   ; 
-- D 3 - I - 0x01EA55 07:EA45: 30        .byte $30   ; 
-- D 3 - I - 0x01EA56 07:EA46: 02        .byte $02   ; 
-- D 3 - I - 0x01EA57 07:EA47: 19        .byte $19   ; 
-- D 3 - I - 0x01EA58 07:EA48: 39        .byte $39   ; 
-- D 3 - I - 0x01EA59 07:EA49: 01        .byte $01   ; 
+- D 3 - I - 0x01EA55 07:EA45: 30        .byte $30   ; банк фона 1
+- D 3 - I - 0x01EA56 07:EA46: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA57 07:EA47: 19        .byte $19   ; палитра фона 1
+- D 3 - I - 0x01EA58 07:EA48: 39        .byte $39   ; палитра фона 2
+- D 3 - I - 0x01EA59 07:EA49: 01        .byte $01   ; mirroring, FF = vertical, 01 = horisontal
 ; 06 экран с выбором команд
-- D 3 - I - 0x01EA5A 07:EA4A: 76        .byte $76   ; 
+- D 3 - I - 0x01EA5A 07:EA4A: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA5B 07:EA4B: 06        .byte $06   ; 
 - D 3 - I - 0x01EA5C 07:EA4C: 00        .byte $00   ; 
-- D 3 - I - 0x01EA5D 07:EA4D: 5E        .byte $5E   ; 
-- D 3 - I - 0x01EA5E 07:EA4E: 02        .byte $02   ; 
-- D 3 - I - 0x01EA5F 07:EA4F: 15        .byte $15   ; 
-- D 3 - I - 0x01EA60 07:EA50: 16        .byte $16   ; 
-- D 3 - I - 0x01EA61 07:EA51: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA5D 07:EA4D: 5E        .byte $5E   ; банк фона 1
+- D 3 - I - 0x01EA5E 07:EA4E: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA5F 07:EA4F: 15        .byte $15   ; палитра фона 1
+- D 3 - I - 0x01EA60 07:EA50: 16        .byte $16   ; палитра фона 2
+- D 3 - I - 0x01EA61 07:EA51: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 07 экран с выбором погоды
-- D 3 - I - 0x01EA62 07:EA52: 76        .byte $76   ; 
+- D 3 - I - 0x01EA62 07:EA52: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA63 07:EA53: 07        .byte $07   ; 
 - D 3 - I - 0x01EA64 07:EA54: 00        .byte $00   ; 
-- D 3 - I - 0x01EA65 07:EA55: 5E        .byte $5E   ; 
-- D 3 - I - 0x01EA66 07:EA56: 02        .byte $02   ; 
-- D 3 - I - 0x01EA67 07:EA57: 15        .byte $15   ; 
-- D 3 - I - 0x01EA68 07:EA58: 16        .byte $16   ; 
-- D 3 - I - 0x01EA69 07:EA59: 01        .byte $01   ; 
+- D 3 - I - 0x01EA65 07:EA55: 5E        .byte $5E   ; банк фона 1
+- D 3 - I - 0x01EA66 07:EA56: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA67 07:EA57: 15        .byte $15   ; палитра фона 1
+- D 3 - I - 0x01EA68 07:EA58: 16        .byte $16   ; палитра фона 2
+- D 3 - I - 0x01EA69 07:EA59: 01        .byte $01   ; mirroring, FF = vertical, 01 = horisontal
 ; 08 экран с информацией о погоде
-- D 3 - I - 0x01EA6A 07:EA5A: 76        .byte $76   ; 
+- D 3 - I - 0x01EA6A 07:EA5A: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA6B 07:EA5B: 08        .byte $08   ; 
 - D 3 - I - 0x01EA6C 07:EA5C: 00        .byte $00   ; 
-- D 3 - I - 0x01EA6D 07:EA5D: 5E        .byte $5E   ; 
-- D 3 - I - 0x01EA6E 07:EA5E: 02        .byte $02   ; 
-- D 3 - I - 0x01EA6F 07:EA5F: 17        .byte $17   ; 
-- D 3 - I - 0x01EA70 07:EA60: 18        .byte $18   ; 
-- D 3 - I - 0x01EA71 07:EA61: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA6D 07:EA5D: 5E        .byte $5E   ; банк фона 1
+- D 3 - I - 0x01EA6E 07:EA5E: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA6F 07:EA5F: 17        .byte $17   ; палитра фона 1
+- D 3 - I - 0x01EA70 07:EA60: 18        .byte $18   ; палитра фона 2
+- D 3 - I - 0x01EA71 07:EA61: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 09 экран с выбором музыки
-- D 3 - I - 0x01EA72 07:EA62: 76        .byte $76   ; 
+- D 3 - I - 0x01EA72 07:EA62: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA73 07:EA63: 09        .byte $09   ; 
 - D 3 - I - 0x01EA74 07:EA64: 00        .byte $00   ; 
-- D 3 - I - 0x01EA75 07:EA65: 30        .byte $30   ; 
-- D 3 - I - 0x01EA76 07:EA66: 02        .byte $02   ; 
-- D 3 - I - 0x01EA77 07:EA67: 15        .byte $15   ; 
-- D 3 - I - 0x01EA78 07:EA68: 16        .byte $16   ; 
-- D 3 - I - 0x01EA79 07:EA69: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA75 07:EA65: 30        .byte $30   ; банк фона 1
+- D 3 - I - 0x01EA76 07:EA66: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA77 07:EA67: 15        .byte $15   ; палитра фона 1
+- D 3 - I - 0x01EA78 07:EA68: 16        .byte $16   ; палитра фона 2
+- D 3 - I - 0x01EA79 07:EA69: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 0A экран со всеми 12 игроками японии, можно с ними побазарить
-- D 3 - I - 0x01EA7A 07:EA6A: 76        .byte $76   ; 
+- D 3 - I - 0x01EA7A 07:EA6A: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA7B 07:EA6B: 0A        .byte $0A   ; 
 - D 3 - I - 0x01EA7C 07:EA6C: 00        .byte $00   ; 
-- D 3 - I - 0x01EA7D 07:EA6D: 60        .byte $60   ; 
-- D 3 - I - 0x01EA7E 07:EA6E: 02        .byte $02   ; 
-- D 3 - I - 0x01EA7F 07:EA6F: 19        .byte $19   ; 
-- D 3 - I - 0x01EA80 07:EA70: 1A        .byte $1A   ; 
-- D 3 - I - 0x01EA81 07:EA71: 00        .byte $00   ; 
+- D 3 - I - 0x01EA7D 07:EA6D: 60        .byte $60   ; банк фона 1
+- D 3 - I - 0x01EA7E 07:EA6E: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA7F 07:EA6F: 19        .byte $19   ; палитра фона 1
+- D 3 - I - 0x01EA80 07:EA70: 1A        .byte $1A   ; палитра фона 2
+- D 3 - I - 0x01EA81 07:EA71: 00        .byte $00   ; mirroring, FF = vertical, 01 = horisontal
 ; 0B экран VS
-- D 3 - I - 0x01EA82 07:EA72: 76        .byte $76   ; 
+- D 3 - I - 0x01EA82 07:EA72: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA83 07:EA73: 0B        .byte $0B   ; 
 - D 3 - I - 0x01EA84 07:EA74: 00        .byte $00   ; 
-- D 3 - I - 0x01EA85 07:EA75: 62        .byte $62   ; 
-- D 3 - I - 0x01EA86 07:EA76: 02        .byte $02   ; 
-- D 3 - I - 0x01EA87 07:EA77: 1C        .byte $1C   ; 
-- D 3 - I - 0x01EA88 07:EA78: 1C        .byte $1C   ; 
-- D 3 - I - 0x01EA89 07:EA79: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA85 07:EA75: 62        .byte $62   ; банк фона 1
+- D 3 - I - 0x01EA86 07:EA76: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA87 07:EA77: 1C        .byte $1C   ; палитра фона 1
+- D 3 - I - 0x01EA88 07:EA78: 1C        .byte $1C   ; палитра фона 2
+- D 3 - I - 0x01EA89 07:EA79: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 0C экран с хатарактеристиками выбранного японца
-- D 3 - I - 0x01EA8A 07:EA7A: 76        .byte $76   ; 
+- D 3 - I - 0x01EA8A 07:EA7A: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA8B 07:EA7B: 0C        .byte $0C   ; 
 - D 3 - I - 0x01EA8C 07:EA7C: 00        .byte $00   ; 
-- D 3 - I - 0x01EA8D 07:EA7D: 30        .byte $30   ; 
-- D 3 - I - 0x01EA8E 07:EA7E: 02        .byte $02   ; 
-- D 3 - I - 0x01EA8F 07:EA7F: 19        .byte $19   ; 
-- D 3 - I - 0x01EA90 07:EA80: 1A        .byte $1A   ; 
-- D 3 - I - 0x01EA91 07:EA81: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA8D 07:EA7D: 30        .byte $30   ; банк фона 1
+- D 3 - I - 0x01EA8E 07:EA7E: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA8F 07:EA7F: 19        .byte $19   ; палитра фона 1
+- D 3 - I - 0x01EA90 07:EA80: 1A        .byte $1A   ; палитра фона 2
+- D 3 - I - 0x01EA91 07:EA81: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 0D экран со статистикой против 12 команд, вход через раздевалку
-- D 3 - I - 0x01EA92 07:EA82: 7A        .byte $7A   ; 
+- D 3 - I - 0x01EA92 07:EA82: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA93 07:EA83: 10        .byte $10   ; 
 - D 3 - I - 0x01EA94 07:EA84: 00        .byte $00   ; 
-- D 3 - I - 0x01EA95 07:EA85: 5E        .byte $5E   ; 
-- D 3 - I - 0x01EA96 07:EA86: 02        .byte $02   ; 
-- D 3 - I - 0x01EA97 07:EA87: 1B        .byte $1B   ; 
-- D 3 - I - 0x01EA98 07:EA88: 1B        .byte $1B   ; 
-- D 3 - I - 0x01EA99 07:EA89: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA95 07:EA85: 5E        .byte $5E   ; банк фона 1
+- D 3 - I - 0x01EA96 07:EA86: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA97 07:EA87: 1B        .byte $1B   ; палитра фона 1
+- D 3 - I - 0x01EA98 07:EA88: 1B        .byte $1B   ; палитра фона 2
+- D 3 - I - 0x01EA99 07:EA89: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 0E текст с мисако после логотипа
-- D 3 - I - 0x01EA9A 07:EA8A: 76        .byte $76   ; 
+- D 3 - I - 0x01EA9A 07:EA8A: 76        .byte $76   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EA9B 07:EA8B: 0D        .byte $0D   ; 
 - D 3 - I - 0x01EA9C 07:EA8C: 00        .byte $00   ; 
-- D 3 - I - 0x01EA9D 07:EA8D: 5E        .byte $5E   ; 
-- D 3 - I - 0x01EA9E 07:EA8E: 02        .byte $02   ; 
-- D 3 - I - 0x01EA9F 07:EA8F: 15        .byte $15   ; 
-- D 3 - I - 0x01EAA0 07:EA90: 16        .byte $16   ; 
-- D 3 - I - 0x01EAA1 07:EA91: FF        .byte $FF   ; 
+- D 3 - I - 0x01EA9D 07:EA8D: 5E        .byte $5E   ; банк фона 1
+- D 3 - I - 0x01EA9E 07:EA8E: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EA9F 07:EA8F: 15        .byte $15   ; палитра фона 1
+- D 3 - I - 0x01EAA0 07:EA90: 16        .byte $16   ; палитра фона 2
+- D 3 - I - 0x01EAA1 07:EA91: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 0F unused? предположительно экран раздевалки
-- - - - - - 0x01EAA2 07:EA92: 7A        .byte $7A   ; 
+- - - - - - 0x01EAA2 07:EA92: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EAA3 07:EA93: 0E        .byte $0E   ; 
 - - - - - - 0x01EAA4 07:EA94: 00        .byte $00   ; 
-- - - - - - 0x01EAA5 07:EA95: 5E        .byte $5E   ; 
-- - - - - - 0x01EAA6 07:EA96: 02        .byte $02   ; 
-- - - - - - 0x01EAA7 07:EA97: 15        .byte $15   ; 
-- - - - - - 0x01EAA8 07:EA98: 16        .byte $16   ; 
-- - - - - - 0x01EAA9 07:EA99: FF        .byte $FF   ; 
+- - - - - - 0x01EAA5 07:EA95: 5E        .byte $5E   ; банк фона 1
+- - - - - - 0x01EAA6 07:EA96: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EAA7 07:EA97: 15        .byte $15   ; палитра фона 1
+- - - - - - 0x01EAA8 07:EA98: 16        .byte $16   ; палитра фона 2
+- - - - - - 0x01EAA9 07:EA99: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 10 экран со зрителями, улыбаются
-- D 3 - I - 0x01EAAA 07:EA9A: 7A        .byte $7A   ; 
+- D 3 - I - 0x01EAAA 07:EA9A: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EAAB 07:EA9B: 13        .byte $13   ; 
 - D 3 - I - 0x01EAAC 07:EA9C: 00        .byte $00   ; 
-- D 3 - I - 0x01EAAD 07:EA9D: 64        .byte $64   ; 
-- D 3 - I - 0x01EAAE 07:EA9E: 66        .byte $66   ; 
-- D 3 - I - 0x01EAAF 07:EA9F: 10        .byte $10   ; 
-- D 3 - I - 0x01EAB0 07:EAA0: 0A        .byte $0A   ; 
-- D 3 - I - 0x01EAB1 07:EAA1: FF        .byte $FF   ; 
+- D 3 - I - 0x01EAAD 07:EA9D: 64        .byte $64   ; банк фона 1
+- D 3 - I - 0x01EAAE 07:EA9E: 66        .byte $66   ; банк фона 2
+- D 3 - I - 0x01EAAF 07:EA9F: 10        .byte $10   ; палитра фона 1
+- D 3 - I - 0x01EAB0 07:EAA0: 0A        .byte $0A   ; палитра фона 2
+- D 3 - I - 0x01EAB1 07:EAA1: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 11 экран со зрителями, открытые рты
-- D 3 - I - 0x01EAB2 07:EAA2: 7A        .byte $7A   ; 
+- D 3 - I - 0x01EAB2 07:EAA2: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EAB3 07:EAA3: 11        .byte $11   ; 
 - D 3 - I - 0x01EAB4 07:EAA4: 00        .byte $00   ; 
-- D 3 - I - 0x01EAB5 07:EAA5: 64        .byte $64   ; 
-- D 3 - I - 0x01EAB6 07:EAA6: 66        .byte $66   ; 
-- D 3 - I - 0x01EAB7 07:EAA7: 10        .byte $10   ; 
-- D 3 - I - 0x01EAB8 07:EAA8: 0A        .byte $0A   ; 
-- D 3 - I - 0x01EAB9 07:EAA9: FF        .byte $FF   ; 
+- D 3 - I - 0x01EAB5 07:EAA5: 64        .byte $64   ; банк фона 1
+- D 3 - I - 0x01EAB6 07:EAA6: 66        .byte $66   ; банк фона 2
+- D 3 - I - 0x01EAB7 07:EAA7: 10        .byte $10   ; палитра фона 1
+- D 3 - I - 0x01EAB8 07:EAA8: 0A        .byte $0A   ; палитра фона 2
+- D 3 - I - 0x01EAB9 07:EAA9: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 12 экран со зрителями, злые рожи
-- - - - - - 0x01EABA 07:EAAA: 7A        .byte $7A   ; 
+- - - - - - 0x01EABA 07:EAAA: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EABB 07:EAAB: 12        .byte $12   ; 
 - - - - - - 0x01EABC 07:EAAC: 00        .byte $00   ; 
-- - - - - - 0x01EABD 07:EAAD: 64        .byte $64   ; 
-- - - - - - 0x01EABE 07:EAAE: 66        .byte $66   ; 
-- - - - - - 0x01EABF 07:EAAF: 10        .byte $10   ; 
-- - - - - - 0x01EAC0 07:EAB0: 0A        .byte $0A   ; 
-- - - - - - 0x01EAC1 07:EAB1: FF        .byte $FF   ; 
+- - - - - - 0x01EABD 07:EAAD: 64        .byte $64   ; банк фона 1
+- - - - - - 0x01EABE 07:EAAE: 66        .byte $66   ; банк фона 2
+- - - - - - 0x01EABF 07:EAAF: 10        .byte $10   ; палитра фона 1
+- - - - - - 0x01EAC0 07:EAB0: 0A        .byte $0A   ; палитра фона 2
+- - - - - - 0x01EAC1 07:EAB1: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 13 экран раздевалки с полем на доске (матч, без некоторых опций), альтернатива 04
-- D 3 - I - 0x01EAC2 07:EAB2: 7A        .byte $7A   ; 
+- D 3 - I - 0x01EAC2 07:EAB2: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EAC3 07:EAB3: 0F        .byte $0F   ; 
 - D 3 - I - 0x01EAC4 07:EAB4: 00        .byte $00   ; 
-- D 3 - I - 0x01EAC5 07:EAB5: 30        .byte $30   ; 
-- D 3 - I - 0x01EAC6 07:EAB6: 02        .byte $02   ; 
-- D 3 - I - 0x01EAC7 07:EAB7: 15        .byte $15   ; 
-- D 3 - I - 0x01EAC8 07:EAB8: 16        .byte $16   ; 
-- D 3 - I - 0x01EAC9 07:EAB9: FF        .byte $FF   ; 
+- D 3 - I - 0x01EAC5 07:EAB5: 30        .byte $30   ; банк фона 1
+- D 3 - I - 0x01EAC6 07:EAB6: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EAC7 07:EAB7: 15        .byte $15   ; палитра фона 1
+- D 3 - I - 0x01EAC8 07:EAB8: 16        .byte $16   ; палитра фона 2
+- D 3 - I - 0x01EAC9 07:EAB9: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 14
-- - - - - - 0x01EACA 07:EABA: 7A        .byte $7A   ; 
+- - - - - - 0x01EACA 07:EABA: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EACB 07:EABB: 14        .byte $14   ; 
 - - - - - - 0x01EACC 07:EABC: 00        .byte $00   ; 
-- - - - - - 0x01EACD 07:EABD: 5E        .byte $5E   ; 
-- - - - - - 0x01EACE 07:EABE: 02        .byte $02   ; 
-- - - - - - 0x01EACF 07:EABF: 15        .byte $15   ; 
-- - - - - - 0x01EAD0 07:EAC0: 16        .byte $16   ; 
-- - - - - - 0x01EAD1 07:EAC1: FF        .byte $FF   ; 
+- - - - - - 0x01EACD 07:EABD: 5E        .byte $5E   ; банк фона 1
+- - - - - - 0x01EACE 07:EABE: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EACF 07:EABF: 15        .byte $15   ; палитра фона 1
+- - - - - - 0x01EAD0 07:EAC0: 16        .byte $16   ; палитра фона 2
+- - - - - - 0x01EAD1 07:EAC1: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 15 турнирная сетка
-- - - - - - 0x01EAD2 07:EAC2: 7A        .byte $7A   ; 
+- - - - - - 0x01EAD2 07:EAC2: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EAD3 07:EAC3: 15        .byte $15   ; 
 - - - - - - 0x01EAD4 07:EAC4: 00        .byte $00   ; 
-- - - - - - 0x01EAD5 07:EAC5: 5E        .byte $5E   ; 
-- - - - - - 0x01EAD6 07:EAC6: 02        .byte $02   ; 
-- - - - - - 0x01EAD7 07:EAC7: 15        .byte $15   ; 
-- - - - - - 0x01EAD8 07:EAC8: 16        .byte $16   ; 
-- - - - - - 0x01EAD9 07:EAC9: FF        .byte $FF   ; 
+- - - - - - 0x01EAD5 07:EAC5: 5E        .byte $5E   ; банк фона 1
+- - - - - - 0x01EAD6 07:EAC6: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EAD7 07:EAC7: 15        .byte $15   ; палитра фона 1
+- - - - - - 0x01EAD8 07:EAC8: 16        .byte $16   ; палитра фона 2
+- - - - - - 0x01EAD9 07:EAC9: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 16
-- D 3 - I - 0x01EADA 07:EACA: 7A        .byte $7A   ; 
+- D 3 - I - 0x01EADA 07:EACA: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EADB 07:EACB: 16        .byte $16   ; 
 - D 3 - I - 0x01EADC 07:EACC: 01        .byte $01   ; 
-- D 3 - I - 0x01EADD 07:EACD: 30        .byte $30   ; 
-- D 3 - I - 0x01EADE 07:EACE: 02        .byte $02   ; 
-- D 3 - I - 0x01EADF 07:EACF: 19        .byte $19   ; 
-- D 3 - I - 0x01EAE0 07:EAD0: 39        .byte $39   ; 
-- D 3 - I - 0x01EAE1 07:EAD1: 01        .byte $01   ; 
+- D 3 - I - 0x01EADD 07:EACD: 30        .byte $30   ; банк фона 1
+- D 3 - I - 0x01EADE 07:EACE: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EADF 07:EACF: 19        .byte $19   ; палитра фона 1
+- D 3 - I - 0x01EAE0 07:EAD0: 39        .byte $39   ; палитра фона 2
+- D 3 - I - 0x01EAE1 07:EAD1: 01        .byte $01   ; mirroring, FF = vertical, 01 = horisontal
 ; 17
-- - - - - - 0x01EAE2 07:EAD2: 7A        .byte $7A   ; 
+- - - - - - 0x01EAE2 07:EAD2: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EAE3 07:EAD3: 17        .byte $17   ; 
 - - - - - - 0x01EAE4 07:EAD4: 01        .byte $01   ; 
-- - - - - - 0x01EAE5 07:EAD5: 30        .byte $30   ; 
-- - - - - - 0x01EAE6 07:EAD6: 02        .byte $02   ; 
-- - - - - - 0x01EAE7 07:EAD7: 19        .byte $19   ; 
-- - - - - - 0x01EAE8 07:EAD8: 39        .byte $39   ; 
-- - - - - - 0x01EAE9 07:EAD9: 01        .byte $01   ; 
+- - - - - - 0x01EAE5 07:EAD5: 30        .byte $30   ; банк фона 1
+- - - - - - 0x01EAE6 07:EAD6: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EAE7 07:EAD7: 19        .byte $19   ; палитра фона 1
+- - - - - - 0x01EAE8 07:EAD8: 39        .byte $39   ; палитра фона 2
+- - - - - - 0x01EAE9 07:EAD9: 01        .byte $01   ; mirroring, FF = vertical, 01 = horisontal
 ; 18
-- D 3 - I - 0x01EAEA 07:EADA: 7A        .byte $7A   ; 
+- D 3 - I - 0x01EAEA 07:EADA: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EAEB 07:EADB: 18        .byte $18   ; 
 - D 3 - I - 0x01EAEC 07:EADC: 01        .byte $01   ; 
-- D 3 - I - 0x01EAED 07:EADD: 30        .byte $30   ; 
-- D 3 - I - 0x01EAEE 07:EADE: 02        .byte $02   ; 
-- D 3 - I - 0x01EAEF 07:EADF: 19        .byte $19   ; 
-- D 3 - I - 0x01EAF0 07:EAE0: 39        .byte $39   ; 
-- D 3 - I - 0x01EAF1 07:EAE1: 01        .byte $01   ; 
+- D 3 - I - 0x01EAED 07:EADD: 30        .byte $30   ; банк фона 1
+- D 3 - I - 0x01EAEE 07:EADE: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EAEF 07:EADF: 19        .byte $19   ; палитра фона 1
+- D 3 - I - 0x01EAF0 07:EAE0: 39        .byte $39   ; палитра фона 2
+- D 3 - I - 0x01EAF1 07:EAE1: 01        .byte $01   ; mirroring, FF = vertical, 01 = horisontal
 ; 19
-- D 3 - I - 0x01EAF2 07:EAE2: 7A        .byte $7A   ; 
+- D 3 - I - 0x01EAF2 07:EAE2: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EAF3 07:EAE3: 19        .byte $19   ; 
 - D 3 - I - 0x01EAF4 07:EAE4: 01        .byte $01   ; 
-- D 3 - I - 0x01EAF5 07:EAE5: 30        .byte $30   ; 
-- D 3 - I - 0x01EAF6 07:EAE6: 02        .byte $02   ; 
-- D 3 - I - 0x01EAF7 07:EAE7: 19        .byte $19   ; 
-- D 3 - I - 0x01EAF8 07:EAE8: 39        .byte $39   ; 
-- D 3 - I - 0x01EAF9 07:EAE9: 01        .byte $01   ; 
+- D 3 - I - 0x01EAF5 07:EAE5: 30        .byte $30   ; банк фона 1
+- D 3 - I - 0x01EAF6 07:EAE6: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EAF7 07:EAE7: 19        .byte $19   ; палитра фона 1
+- D 3 - I - 0x01EAF8 07:EAE8: 39        .byte $39   ; палитра фона 2
+- D 3 - I - 0x01EAF9 07:EAE9: 01        .byte $01   ; mirroring, FF = vertical, 01 = horisontal
 ; 1A
-- D 3 - I - 0x01EAFA 07:EAEA: 7A        .byte $7A   ; 
+- D 3 - I - 0x01EAFA 07:EAEA: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EAFB 07:EAEB: 1A        .byte $1A   ; 
 - D 3 - I - 0x01EAFC 07:EAEC: 01        .byte $01   ; 
-- D 3 - I - 0x01EAFD 07:EAED: 30        .byte $30   ; 
-- D 3 - I - 0x01EAFE 07:EAEE: 02        .byte $02   ; 
-- D 3 - I - 0x01EAFF 07:EAEF: 19        .byte $19   ; 
-- D 3 - I - 0x01EB00 07:EAF0: 39        .byte $39   ; 
-- D 3 - I - 0x01EB01 07:EAF1: 01        .byte $01   ; 
+- D 3 - I - 0x01EAFD 07:EAED: 30        .byte $30   ; банк фона 1
+- D 3 - I - 0x01EAFE 07:EAEE: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EAFF 07:EAEF: 19        .byte $19   ; палитра фона 1
+- D 3 - I - 0x01EB00 07:EAF0: 39        .byte $39   ; палитра фона 2
+- D 3 - I - 0x01EB01 07:EAF1: 01        .byte $01   ; mirroring, FF = vertical, 01 = horisontal
 ; 1B
-- D 3 - I - 0x01EB02 07:EAF2: 7A        .byte $7A   ; 
+- D 3 - I - 0x01EB02 07:EAF2: 7A        .byte $7A   ; банк chr для чтения сжатого экрана
 - D 3 - I - 0x01EB03 07:EAF3: 1B        .byte $1B   ; 
 - D 3 - I - 0x01EB04 07:EAF4: 01        .byte $01   ; 
-- D 3 - I - 0x01EB05 07:EAF5: 30        .byte $30   ; 
-- D 3 - I - 0x01EB06 07:EAF6: 02        .byte $02   ; 
-- D 3 - I - 0x01EB07 07:EAF7: 19        .byte $19   ; 
-- D 3 - I - 0x01EB08 07:EAF8: 39        .byte $39   ; 
-- D 3 - I - 0x01EB09 07:EAF9: 01        .byte $01   ; 
+- D 3 - I - 0x01EB05 07:EAF5: 30        .byte $30   ; банк фона 1
+- D 3 - I - 0x01EB06 07:EAF6: 02        .byte $02   ; банк фона 2
+- D 3 - I - 0x01EB07 07:EAF7: 19        .byte $19   ; палитра фона 1
+- D 3 - I - 0x01EB08 07:EAF8: 39        .byte $39   ; палитра фона 2
+- D 3 - I - 0x01EB09 07:EAF9: 01        .byte $01   ; mirroring, FF = vertical, 01 = horisontal
 ; 1C фотка в титрах
-- - - - - - 0x01EB0A 07:EAFA: 7E        .byte $7E   ; 
+- - - - - - 0x01EB0A 07:EAFA: 7E        .byte $7E   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EB0B 07:EAFB: 1C        .byte $1C   ; 
 - - - - - - 0x01EB0C 07:EAFC: 00        .byte $00   ; 
-- - - - - - 0x01EB0D 07:EAFD: 12        .byte $12   ; 
-- - - - - - 0x01EB0E 07:EAFE: 02        .byte $02   ; 
-- - - - - - 0x01EB0F 07:EAFF: 49        .byte $49   ; 
-- - - - - - 0x01EB10 07:EB00: 49        .byte $49   ; 
-- - - - - - 0x01EB11 07:EB01: FF        .byte $FF   ; 
+- - - - - - 0x01EB0D 07:EAFD: 12        .byte $12   ; банк фона 1
+- - - - - - 0x01EB0E 07:EAFE: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EB0F 07:EAFF: 49        .byte $49   ; палитра фона 1
+- - - - - - 0x01EB10 07:EB00: 49        .byte $49   ; палитра фона 2
+- - - - - - 0x01EB11 07:EB01: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 1D фотка в титрах
-- - - - - - 0x01EB12 07:EB02: 7E        .byte $7E   ; 
+- - - - - - 0x01EB12 07:EB02: 7E        .byte $7E   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EB13 07:EB03: 1D        .byte $1D   ; 
 - - - - - - 0x01EB14 07:EB04: 02        .byte $02   ; 
-- - - - - - 0x01EB15 07:EB05: 12        .byte $12   ; 
-- - - - - - 0x01EB16 07:EB06: 02        .byte $02   ; 
-- - - - - - 0x01EB17 07:EB07: 49        .byte $49   ; 
-- - - - - - 0x01EB18 07:EB08: 49        .byte $49   ; 
-- - - - - - 0x01EB19 07:EB09: FF        .byte $FF   ; 
+- - - - - - 0x01EB15 07:EB05: 12        .byte $12   ; банк фона 1
+- - - - - - 0x01EB16 07:EB06: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EB17 07:EB07: 49        .byte $49   ; палитра фона 1
+- - - - - - 0x01EB18 07:EB08: 49        .byte $49   ; палитра фона 2
+- - - - - - 0x01EB19 07:EB09: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 1E фотка в титрах
-- - - - - - 0x01EB1A 07:EB0A: 7E        .byte $7E   ; 
+- - - - - - 0x01EB1A 07:EB0A: 7E        .byte $7E   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EB1B 07:EB0B: 1E        .byte $1E   ; 
 - - - - - - 0x01EB1C 07:EB0C: 02        .byte $02   ; 
-- - - - - - 0x01EB1D 07:EB0D: 12        .byte $12   ; 
-- - - - - - 0x01EB1E 07:EB0E: 02        .byte $02   ; 
-- - - - - - 0x01EB1F 07:EB0F: 49        .byte $49   ; 
-- - - - - - 0x01EB20 07:EB10: 49        .byte $49   ; 
-- - - - - - 0x01EB21 07:EB11: FF        .byte $FF   ; 
+- - - - - - 0x01EB1D 07:EB0D: 12        .byte $12   ; банк фона 1
+- - - - - - 0x01EB1E 07:EB0E: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EB1F 07:EB0F: 49        .byte $49   ; палитра фона 1
+- - - - - - 0x01EB20 07:EB10: 49        .byte $49   ; палитра фона 2
+- - - - - - 0x01EB21 07:EB11: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 1F фотка в титрах
-- - - - - - 0x01EB22 07:EB12: 7E        .byte $7E   ; 
+- - - - - - 0x01EB22 07:EB12: 7E        .byte $7E   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EB23 07:EB13: 1F        .byte $1F   ; 
 - - - - - - 0x01EB24 07:EB14: 02        .byte $02   ; 
-- - - - - - 0x01EB25 07:EB15: 12        .byte $12   ; 
-- - - - - - 0x01EB26 07:EB16: 02        .byte $02   ; 
-- - - - - - 0x01EB27 07:EB17: 49        .byte $49   ; 
-- - - - - - 0x01EB28 07:EB18: 49        .byte $49   ; 
-- - - - - - 0x01EB29 07:EB19: FF        .byte $FF   ; 
+- - - - - - 0x01EB25 07:EB15: 12        .byte $12   ; банк фона 1
+- - - - - - 0x01EB26 07:EB16: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EB27 07:EB17: 49        .byte $49   ; палитра фона 1
+- - - - - - 0x01EB28 07:EB18: 49        .byte $49   ; палитра фона 2
+- - - - - - 0x01EB29 07:EB19: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 20 фотка в титрах
-- - - - - - 0x01EB2A 07:EB1A: 7E        .byte $7E   ; 
+- - - - - - 0x01EB2A 07:EB1A: 7E        .byte $7E   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EB2B 07:EB1B: 20        .byte $20   ; 
 - - - - - - 0x01EB2C 07:EB1C: 02        .byte $02   ; 
-- - - - - - 0x01EB2D 07:EB1D: 12        .byte $12   ; 
-- - - - - - 0x01EB2E 07:EB1E: 02        .byte $02   ; 
-- - - - - - 0x01EB2F 07:EB1F: 49        .byte $49   ; 
-- - - - - - 0x01EB30 07:EB20: 49        .byte $49   ; 
-- - - - - - 0x01EB31 07:EB21: FF        .byte $FF   ; 
+- - - - - - 0x01EB2D 07:EB1D: 12        .byte $12   ; банк фона 1
+- - - - - - 0x01EB2E 07:EB1E: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EB2F 07:EB1F: 49        .byte $49   ; палитра фона 1
+- - - - - - 0x01EB30 07:EB20: 49        .byte $49   ; палитра фона 2
+- - - - - - 0x01EB31 07:EB21: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 21 фотка в титрах
-- - - - - - 0x01EB32 07:EB22: 7E        .byte $7E   ; 
+- - - - - - 0x01EB32 07:EB22: 7E        .byte $7E   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EB33 07:EB23: 21        .byte $21   ; 
 - - - - - - 0x01EB34 07:EB24: 02        .byte $02   ; 
-- - - - - - 0x01EB35 07:EB25: 12        .byte $12   ; 
-- - - - - - 0x01EB36 07:EB26: 02        .byte $02   ; 
-- - - - - - 0x01EB37 07:EB27: 49        .byte $49   ; 
-- - - - - - 0x01EB38 07:EB28: 49        .byte $49   ; 
-- - - - - - 0x01EB39 07:EB29: FF        .byte $FF   ; 
+- - - - - - 0x01EB35 07:EB25: 12        .byte $12   ; банк фона 1
+- - - - - - 0x01EB36 07:EB26: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EB37 07:EB27: 49        .byte $49   ; палитра фона 1
+- - - - - - 0x01EB38 07:EB28: 49        .byte $49   ; палитра фона 2
+- - - - - - 0x01EB39 07:EB29: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 22 фотка в титрах
-- - - - - - 0x01EB3A 07:EB2A: 7E        .byte $7E   ; 
+- - - - - - 0x01EB3A 07:EB2A: 7E        .byte $7E   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EB3B 07:EB2B: 22        .byte $22   ; 
 - - - - - - 0x01EB3C 07:EB2C: 02        .byte $02   ; 
-- - - - - - 0x01EB3D 07:EB2D: 12        .byte $12   ; 
-- - - - - - 0x01EB3E 07:EB2E: 02        .byte $02   ; 
-- - - - - - 0x01EB3F 07:EB2F: 49        .byte $49   ; 
-- - - - - - 0x01EB40 07:EB30: 49        .byte $49   ; 
-- - - - - - 0x01EB41 07:EB31: FF        .byte $FF   ; 
+- - - - - - 0x01EB3D 07:EB2D: 12        .byte $12   ; банк фона 1
+- - - - - - 0x01EB3E 07:EB2E: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EB3F 07:EB2F: 49        .byte $49   ; палитра фона 1
+- - - - - - 0x01EB40 07:EB30: 49        .byte $49   ; палитра фона 2
+- - - - - - 0x01EB41 07:EB31: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 23 фотка в титрах
-- - - - - - 0x01EB42 07:EB32: 7E        .byte $7E   ; 
+- - - - - - 0x01EB42 07:EB32: 7E        .byte $7E   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EB43 07:EB33: 23        .byte $23   ; 
 - - - - - - 0x01EB44 07:EB34: 02        .byte $02   ; 
-- - - - - - 0x01EB45 07:EB35: 12        .byte $12   ; 
-- - - - - - 0x01EB46 07:EB36: 02        .byte $02   ; 
-- - - - - - 0x01EB47 07:EB37: 49        .byte $49   ; 
-- - - - - - 0x01EB48 07:EB38: 49        .byte $49   ; 
-- - - - - - 0x01EB49 07:EB39: FF        .byte $FF   ; 
+- - - - - - 0x01EB45 07:EB35: 12        .byte $12   ; банк фона 1
+- - - - - - 0x01EB46 07:EB36: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EB47 07:EB37: 49        .byte $49   ; палитра фона 1
+- - - - - - 0x01EB48 07:EB38: 49        .byte $49   ; палитра фона 2
+- - - - - - 0x01EB49 07:EB39: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 ; 24 фотка в титрах
-- - - - - - 0x01EB4A 07:EB3A: 7E        .byte $7E   ; 
+- - - - - - 0x01EB4A 07:EB3A: 7E        .byte $7E   ; банк chr для чтения сжатого экрана
 - - - - - - 0x01EB4B 07:EB3B: 24        .byte $24   ; 
 - - - - - - 0x01EB4C 07:EB3C: 02        .byte $02   ; 
-- - - - - - 0x01EB4D 07:EB3D: 12        .byte $12   ; 
-- - - - - - 0x01EB4E 07:EB3E: 02        .byte $02   ; 
-- - - - - - 0x01EB4F 07:EB3F: 49        .byte $49   ; 
-- - - - - - 0x01EB50 07:EB40: 49        .byte $49   ; 
-- - - - - - 0x01EB51 07:EB41: FF        .byte $FF   ; 
+- - - - - - 0x01EB4D 07:EB3D: 12        .byte $12   ; банк фона 1
+- - - - - - 0x01EB4E 07:EB3E: 02        .byte $02   ; банк фона 2
+- - - - - - 0x01EB4F 07:EB3F: 49        .byte $49   ; палитра фона 1
+- - - - - - 0x01EB50 07:EB40: 49        .byte $49   ; палитра фона 2
+- - - - - - 0x01EB51 07:EB41: FF        .byte $FF   ; mirroring, FF = vertical, 01 = horisontal
 
 
 
