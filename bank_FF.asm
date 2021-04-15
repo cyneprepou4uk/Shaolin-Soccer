@@ -9048,10 +9048,6 @@ C - - - - - 0x01F548 07:F538: 60        RTS
 
 
 sub_0x01F574:
-C D 3 - - - 0x01F574 07:F564: 8A        TXA
-C - - - - - 0x01F575 07:F565: 48        PHA
-C - - - - - 0x01F576 07:F566: 98        TYA
-C - - - - - 0x01F577 07:F567: 48        PHA
 C - - - - - 0x01F578 07:F568: A9 00     LDA #$00
 C - - - - - 0x01F57A 07:F56A: 85 30     STA ram_0030
 C - - - - - 0x01F57C 07:F56C: 85 31     STA ram_0031
@@ -9075,27 +9071,15 @@ C - - - - - 0x01F599 07:F589: 06 2E     ASL ram_002E
 C - - - - - 0x01F59B 07:F58B: 26 2F     ROL ram_002F
 C - - - - - 0x01F59D 07:F58D: 90 DF     BCC bra_F56E_loop
 bra_F58F:
-C - - - - - 0x01F59F 07:F58F: 68        PLA
-C - - - - - 0x01F5A0 07:F590: A8        TAY
-C - - - - - 0x01F5A1 07:F591: 68        PLA
-C - - - - - 0x01F5A2 07:F592: AA        TAX
 C - - - - - 0x01F5A3 07:F593: 38        SEC
 C - - - - - 0x01F5A4 07:F594: 60        RTS
 bra_F595:
-C - - - - - 0x01F5A5 07:F595: 68        PLA
-C - - - - - 0x01F5A6 07:F596: A8        TAY
-C - - - - - 0x01F5A7 07:F597: 68        PLA
-C - - - - - 0x01F5A8 07:F598: AA        TAX
 C - - - - - 0x01F5A9 07:F599: 18        CLC
 C - - - - - 0x01F5AA 07:F59A: 60        RTS
 
 
 
 sub_0x01F5AB:
-C D 3 - - - 0x01F5AB 07:F59B: 8A        TXA
-C - - - - - 0x01F5AC 07:F59C: 48        PHA
-C - - - - - 0x01F5AD 07:F59D: 98        TYA
-C - - - - - 0x01F5AE 07:F59E: 48        PHA
 C - - - - - 0x01F5AF 07:F59F: A5 1C     LDA ram_001C
 C - - - - - 0x01F5B1 07:F5A1: 85 23     STA ram_0023
 C - - - - - 0x01F5B3 07:F5A3: A5 1D     LDA ram_001D
@@ -9128,27 +9112,15 @@ C - - - - - 0x01F5E2 07:F5D2: 26 24     ROL ram_0024
 C - - - - - 0x01F5E4 07:F5D4: 26 25     ROL ram_0025
 C - - - - - 0x01F5E6 07:F5D6: 90 DB     BCC bra_F5B3_loop
 bra_F5D8:
-C - - - - - 0x01F5E8 07:F5D8: 68        PLA
-C - - - - - 0x01F5E9 07:F5D9: A8        TAY
-C - - - - - 0x01F5EA 07:F5DA: 68        PLA
-C - - - - - 0x01F5EB 07:F5DB: AA        TAX
 C - - - - - 0x01F5EC 07:F5DC: 38        SEC
 C - - - - - 0x01F5ED 07:F5DD: 60        RTS
 bra_F5DE:
-C - - - - - 0x01F5EE 07:F5DE: 68        PLA
-C - - - - - 0x01F5EF 07:F5DF: A8        TAY
-C - - - - - 0x01F5F0 07:F5E0: 68        PLA
-C - - - - - 0x01F5F1 07:F5E1: AA        TAX
 C - - - - - 0x01F5F2 07:F5E2: 18        CLC
 C - - - - - 0x01F5F3 07:F5E3: 60        RTS
 
 
 
 sub_F5E4:
-C - - - - - 0x01F5F4 07:F5E4: 8A        TXA
-C - - - - - 0x01F5F5 07:F5E5: 48        PHA
-C - - - - - 0x01F5F6 07:F5E6: 98        TYA
-C - - - - - 0x01F5F7 07:F5E7: 48        PHA
 C - - - - - 0x01F5F8 07:F5E8: A5 1C     LDA ram_001C
 C - - - - - 0x01F5FA 07:F5EA: 85 23     STA ram_0023
 C - - - - - 0x01F5FC 07:F5EC: A5 1D     LDA ram_001D
@@ -9183,17 +9155,9 @@ C - - - - - 0x01F62F 07:F61F: 26 24     ROL ram_0024
 C - - - - - 0x01F631 07:F621: 26 25     ROL ram_0025
 C - - - - - 0x01F633 07:F623: 90 D7     BCC bra_F5FC_loop
 bra_F625:
-- - - - - - 0x01F635 07:F625: 68        PLA
-- - - - - - 0x01F636 07:F626: A8        TAY
-- - - - - - 0x01F637 07:F627: 68        PLA
-- - - - - - 0x01F638 07:F628: AA        TAX
 - - - - - - 0x01F639 07:F629: 38        SEC
 - - - - - - 0x01F63A 07:F62A: 60        RTS
 bra_F62B:
-C - - - - - 0x01F63B 07:F62B: 68        PLA
-C - - - - - 0x01F63C 07:F62C: A8        TAY
-C - - - - - 0x01F63D 07:F62D: 68        PLA
-C - - - - - 0x01F63E 07:F62E: AA        TAX
 C - - - - - 0x01F63F 07:F62F: 18        CLC
 C - - - - - 0x01F640 07:F630: 60        RTS
 
