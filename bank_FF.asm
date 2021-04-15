@@ -10123,11 +10123,6 @@ C - - - - - 0x01FD12 07:FD02: 0D 5B 05  ORA ram_field_formation
 C - - - - - 0x01FD15 07:FD05: D0 08     BNE bra_FD0F_отобразить_надпись_в_hud
 C - - - - - 0x01FD17 07:FD07: 4C 4C FD  JMP loc_FD4C_отобразить_миникарту_в_hud
 bra_FD0F_отобразить_надпись_в_hud:
-C - - - - - 0x01FD1F 07:FD0F: 8D 00 E0  STA $E000
-C - - - - - 0x01FD22 07:FD12: A2 00     LDX #$00
-bra_FD14_garbage_loop:
-C - - - - - 0x01FD24 07:FD14: CA        DEX
-C - - - - - 0x01FD25 07:FD15: 10 FD     BPL bra_FD14_garbage_loop
 C - - - - - 0x01FD27 07:FD17: AD 02 20  LDA $2002
 C - - - - - 0x01FD2A 07:FD1A: A2 00     LDX #$00
 C - - - - - 0x01FD2C 07:FD1C: 8E 05 20  STX $2005
@@ -10137,7 +10132,6 @@ C - - - - - 0x01FD34 07:FD24: 29 FC     AND #$FC
 C - - - - - 0x01FD36 07:FD26: 09 02     ORA #$02
 C - - - - - 0x01FD38 07:FD28: 85 4C     STA ram_для_2000
 C - - - - - 0x01FD3A 07:FD2A: 8D 00 20  STA $2000
-C - - - - - 0x01FD3D 07:FD2D: AD 02 20  LDA $2002
 C - - - - - 0x01FD40 07:FD30: A9 2A     LDA #> $2AE0
 C - - - - - 0x01FD42 07:FD32: 8D 06 20  STA $2006
 C - - - - - 0x01FD45 07:FD35: A9 E0     LDA #< $2AE0
@@ -10151,11 +10145,6 @@ C - - - - - 0x01FD56 07:FD46: 8D 01 80  STA $8001
 C - - - - - 0x01FD59 07:FD49: 4C 0A FD  JMP loc_FCC3_выход_из_NMI_и_IRQ
 bra_FD4C_отобразить_миникарту_в_hud:
 loc_FD4C_отобразить_миникарту_в_hud:
-C D 3 - - - 0x01FD5C 07:FD4C: 8D 00 E0  STA $E000
-C - - - - - 0x01FD5F 07:FD4F: A2 00     LDX #$00
-bra_FD51_garbage_loop:
-C - - - - - 0x01FD61 07:FD51: CA        DEX
-C - - - - - 0x01FD62 07:FD52: 10 FD     BPL bra_FD51_garbage_loop
 C - - - - - 0x01FD64 07:FD54: AD 02 20  LDA $2002
 C - - - - - 0x01FD67 07:FD57: A2 00     LDX #$00
 C - - - - - 0x01FD69 07:FD59: 8E 05 20  STX $2005
@@ -10164,7 +10153,6 @@ C - - - - - 0x01FD6F 07:FD5F: A5 4C     LDA ram_для_2000
 C - - - - - 0x01FD71 07:FD61: 29 FC     AND #$FC
 C - - - - - 0x01FD73 07:FD63: 85 4C     STA ram_для_2000
 C - - - - - 0x01FD75 07:FD65: 8D 00 20  STA $2000
-C - - - - - 0x01FD78 07:FD68: AD 02 20  LDA $2002
 C - - - - - 0x01FD7B 07:FD6B: A9 2A     LDA #> $2A00
 C - - - - - 0x01FD7D 07:FD6D: 8D 06 20  STA $2006
 C - - - - - 0x01FD80 07:FD70: A9 00     LDA #< $2A00
