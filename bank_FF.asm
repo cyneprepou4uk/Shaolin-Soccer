@@ -10101,6 +10101,10 @@ C - - - - - 0x01FCEC 07:FCDC: 98        TYA
 C - - - - - 0x01FCED 07:FCDD: 48        PHA
 C - - - - - 0x01FCEE 07:FCDE: 8D 00 E0  STA $E000
 C - - - - - 0x01FCF1 07:FCE1: 8D 01 E0  STA $E001
+                                        LDX #$10
+@bra_мусорный_цикл:     ; для корректировки дергания статусбара
+                                        DEX
+                                        BPL @bra_мусорный_цикл
                                         LDA #$01
                                         STA $401C
 C - - - - - 0x01FCF4 07:FCE4: A5 4E     LDA ram_для_8000
