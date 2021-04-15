@@ -9106,7 +9106,7 @@ C - - - - - 0x01F5BB 07:F5AB: A9 00     LDA #$00
 C - - - - - 0x01F5BD 07:F5AD: 85 20     STA ram_0020
 C - - - - - 0x01F5BF 07:F5AF: 85 21     STA ram_0021
 C - - - - - 0x01F5C1 07:F5B1: 85 22     STA ram_0022
-bra_F5B3:
+bra_F5B3_loop:
 C - - - - - 0x01F5C3 07:F5B3: A5 1F     LDA ram_001F
 C - - - - - 0x01F5C5 07:F5B5: F0 27     BEQ bra_F5DE
 C - - - - - 0x01F5C7 07:F5B7: 46 1F     LSR ram_001F
@@ -9126,7 +9126,7 @@ bra_F5D0:
 C - - - - - 0x01F5E0 07:F5D0: 06 23     ASL ram_0023
 C - - - - - 0x01F5E2 07:F5D2: 26 24     ROL ram_0024
 C - - - - - 0x01F5E4 07:F5D4: 26 25     ROL ram_0025
-C - - - - - 0x01F5E6 07:F5D6: 90 DB     BCC bra_F5B3
+C - - - - - 0x01F5E6 07:F5D6: 90 DB     BCC bra_F5B3_loop
 bra_F5D8:
 C - - - - - 0x01F5E8 07:F5D8: 68        PLA
 C - - - - - 0x01F5E9 07:F5D9: A8        TAY
@@ -9159,7 +9159,7 @@ C - - - - - 0x01F604 07:F5F4: A9 00     LDA #$00
 C - - - - - 0x01F606 07:F5F6: 85 20     STA ram_0020
 C - - - - - 0x01F608 07:F5F8: 85 21     STA ram_0021
 C - - - - - 0x01F60A 07:F5FA: 85 22     STA ram_0022
-bra_F5FC:
+bra_F5FC_loop:
 C - - - - - 0x01F60C 07:F5FC: A5 26     LDA ram_0026
 C - - - - - 0x01F60E 07:F5FE: 05 27     ORA ram_0027
 C - - - - - 0x01F610 07:F600: F0 29     BEQ bra_F62B
@@ -9181,7 +9181,7 @@ bra_F61D:
 C - - - - - 0x01F62D 07:F61D: 06 23     ASL ram_0023
 C - - - - - 0x01F62F 07:F61F: 26 24     ROL ram_0024
 C - - - - - 0x01F631 07:F621: 26 25     ROL ram_0025
-C - - - - - 0x01F633 07:F623: 90 D7     BCC bra_F5FC
+C - - - - - 0x01F633 07:F623: 90 D7     BCC bra_F5FC_loop
 bra_F625:
 - - - - - - 0x01F635 07:F625: 68        PLA
 - - - - - - 0x01F636 07:F626: A8        TAY
@@ -9233,7 +9233,7 @@ C - - - - - 0x01F6C8 07:F6B8: 48        PHA
 C - - - - - 0x01F6C9 07:F6B9: 98        TYA
 C - - - - - 0x01F6CA 07:F6BA: 48        PHA
 C - - - - - 0x01F6CB 07:F6BB: A0 02     LDY #$02
-bra_F6BD:
+bra_F6BD_loop:
 C - - - - - 0x01F6CD 07:F6BD: B9 35 00  LDA ram_0035,Y
 C - - - - - 0x01F6D0 07:F6C0: 10 1B     BPL bra_F6DD
 C - - - - - 0x01F6D2 07:F6C2: 49 FF     EOR #$FF
@@ -9254,7 +9254,7 @@ C - - - - - 0x01F6F3 07:F6E3: 99 38 00  STA ram_0038,Y
 loc_F6E6:
 C D 3 - - - 0x01F6F6 07:F6E6: 88        DEY
 C - - - - - 0x01F6F7 07:F6E7: 88        DEY
-C - - - - - 0x01F6F8 07:F6E8: 10 D3     BPL bra_F6BD
+C - - - - - 0x01F6F8 07:F6E8: 10 D3     BPL bra_F6BD_loop
 C - - - - - 0x01F6FA 07:F6EA: 68        PLA
 C - - - - - 0x01F6FB 07:F6EB: A8        TAY
 C - - - - - 0x01F6FC 07:F6EC: A5 35     LDA ram_0035
@@ -9299,7 +9299,7 @@ C - - - - - 0x01F747 07:F737: A9 4D     LDA #$4D
 C - - - - - 0x01F749 07:F739: 85 30     STA ram_0030
 C - - - - - 0x01F74B 07:F73B: A9 FF     LDA #$FF
 C - - - - - 0x01F74D 07:F73D: 85 31     STA ram_0031
-C - - - - - 0x01F74F 07:F73F: A5 69     LDA ram_тип_анимации_игрока + 8
+C - - - - - 0x01F74F 07:F73F: A5 69     LDA ram_тип_анимации_игрока + 8     ; bzk wtf
 C - - - - - 0x01F751 07:F741: 85 32     STA ram_0032
 C - - - - - 0x01F753 07:F743: A9 01     LDA #$01
 C - - - - - 0x01F755 07:F745: 85 33     STA ram_0033
