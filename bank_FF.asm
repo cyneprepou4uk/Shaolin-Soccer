@@ -10113,16 +10113,16 @@ C - - - - - 0x01FCFE 07:FCEE: A5 0D     LDA ram_000D
 C - - - - - 0x01FD00 07:FCF0: 48        PHA
 C - - - - - 0x01FD01 07:FCF1: A5 59     LDA ram_subscript
 C - - - - - 0x01FD03 07:FCF3: C9 01     CMP #con_subscr_gp_разводка
-C - - - - - 0x01FD05 07:FCF5: F0 18     BEQ bra_FD0F
+C - - - - - 0x01FD05 07:FCF5: F0 18     BEQ bra_FD0F_отобразить_надпись_в_hud    ; если сейчас разводка
 C - - - - - 0x01FD07 07:FCF7: C9 03     CMP #con_subscr_gp_футбольная_пауза
-C - - - - - 0x01FD09 07:FCF9: D0 51     BNE bra_FD4C
+C - - - - - 0x01FD09 07:FCF9: D0 51     BNE bra_FD4C_отобразить_миникарту_в_hud
 C - - - - - 0x01FD0B 07:FCFB: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01FD0D 07:FCFD: 29 03     AND #con_gp_разводка + con_gp_гол
 C - - - - - 0x01FD0F 07:FCFF: 0D 59 05  ORA ram_номер_тайма
 C - - - - - 0x01FD12 07:FD02: 0D 5B 05  ORA ram_field_formation
-C - - - - - 0x01FD15 07:FD05: D0 08     BNE bra_FD0F
-C - - - - - 0x01FD17 07:FD07: 4C 4C FD  JMP loc_FD4C
-bra_FD0F:
+C - - - - - 0x01FD15 07:FD05: D0 08     BNE bra_FD0F_отобразить_надпись_в_hud
+C - - - - - 0x01FD17 07:FD07: 4C 4C FD  JMP loc_FD4C_отобразить_миникарту_в_hud
+bra_FD0F_отобразить_надпись_в_hud:
 C - - - - - 0x01FD1F 07:FD0F: 8D 00 E0  STA $E000
 C - - - - - 0x01FD22 07:FD12: A2 00     LDX #$00
 bra_FD14_garbage_loop:
@@ -10143,14 +10143,14 @@ C - - - - - 0x01FD42 07:FD32: 8D 06 20  STA $2006
 C - - - - - 0x01FD45 07:FD35: A9 E0     LDA #< $2AE0
 C - - - - - 0x01FD47 07:FD37: 8D 06 20  STA $2006
 C - - - - - 0x01FD4A 07:FD3A: 8E 00 80  STX $8000
-C - - - - - 0x01FD4D 07:FD3D: 8E 01 80  STX $8001
+C - - - - - 0x01FD4D 07:FD3D: 8E 01 80  STX $8001   ; con_chr_bank + $00
 C - - - - - 0x01FD50 07:FD40: E8        INX
 C - - - - - 0x01FD51 07:FD41: 8E 00 80  STX $8000
-C - - - - - 0x01FD54 07:FD44: A9 10     LDA #$10
+C - - - - - 0x01FD54 07:FD44: A9 10     LDA #con_chr_bank + $10
 C - - - - - 0x01FD56 07:FD46: 8D 01 80  STA $8001
 C - - - - - 0x01FD59 07:FD49: 4C 0A FD  JMP loc_FCC3_выход_из_NMI_и_IRQ
-bra_FD4C:
-loc_FD4C:
+bra_FD4C_отобразить_миникарту_в_hud:
+loc_FD4C_отобразить_миникарту_в_hud:
 C D 3 - - - 0x01FD5C 07:FD4C: 8D 00 E0  STA $E000
 C - - - - - 0x01FD5F 07:FD4F: A2 00     LDX #$00
 bra_FD51_garbage_loop:
@@ -10176,9 +10176,9 @@ C - - - - - 0x01FD8C 07:FD7C: A9 06     LDA #con_chr_bank + $06
 bra_FD7E:
 C - - - - - 0x01FD8E 07:FD7E: 8E 00 80  STX $8000
 C - - - - - 0x01FD91 07:FD81: 8D 01 80  STA $8001
-C - - - - - 0x01FD94 07:FD84: E8        INX
+C - - - - - 0x01FD94 07:FD84: E8        INX ; X = 01
 C - - - - - 0x01FD95 07:FD85: 8E 00 80  STX $8000
-C - - - - - 0x01FD98 07:FD88: E8        INX
+C - - - - - 0x01FD98 07:FD88: E8        INX ; con_chr_bank + $02
 C - - - - - 0x01FD99 07:FD89: 8E 01 80  STX $8001
 C - - - - - 0x01FD9C 07:FD8C: 4C 0A FD  JMP loc_FCC3_выход_из_NMI_и_IRQ
 
