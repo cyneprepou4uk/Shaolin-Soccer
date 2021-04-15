@@ -7160,8 +7160,8 @@ C D 3 - - - 0x01E838 07:E828: 85 2C     PHA
                                         PLA
                                         JSR sub_EED3_prg_bankswitch
                                         JSR sub_ECCB_отобразить_фон_и_спрайты
-;                                       JSR sub_EE7D_запись_банков_фона
-;                                       JSR sub_EE9A_запись_банков_спрайтов
+                                        JSR sub_EE7D_запись_банков_фона
+                                        JSR sub_EE9A_запись_банков_спрайтов
                                         JSR sub_EE65_включить_NMI
                                         RTS
                                         
