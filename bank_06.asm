@@ -1496,7 +1496,6 @@ ofs_8A40_5B_гвинейская_крутилка:
 C - - J - - 0x018A50 06:8A40: BD 59 04  LDA ram_действие_игрока,X
 C - - - - - 0x018A53 06:8A43: 30 10     BMI bra_8A55
 C - - - - - 0x018A55 06:8A45: 20 27 99  JSR sub_9927_запись_действия_и_очистка_адресов_анимации
-C - - - - - 0x018A58 06:8A48: 20 0C A0  JSR sub_A00C_вычислить_направление_движения
 C - - - - - 0x018A5B 06:8A4B: A9 38     LDA #con_sfx_крутилка_гвинейская
 C - - - - - 0x018A5D 06:8A4D: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x018A60 06:8A50: A9 04     LDA #$04
@@ -7434,6 +7433,14 @@ C - - - - - 0x01AD92 06:AD82: F0 EE     BEQ bra_AD95_RTS
 bra_AD84:
 C - - - - - 0x01AD94 06:AD84: A4 1D     LDY ram_001D
 C - - - - - 0x01AD96 06:AD86: 8C D6 04  STY ram_игрок_с_мячом
+; вкл индикатор гвинейской крутилки
+                                        LDA ram_действие_игрока,Y
+                                        AND #$7F
+                                        CMP #$5B
+                                        BNE bra_AD89
+                                        LDA #$01
+                                        STA ram_индикатор_гвинейской_крутилки
+bra_AD89:
 C - - - - - 0x01AD99 06:AD89: A9 05     LDA #con_act_ball_удар
 loc_AD8B_запись_действия_мяча:
 C D 1 - - - 0x01AD9B 06:AD8B: 8D 65 04  STA ram_действие_мяча
@@ -8102,7 +8109,7 @@ C - - - - - 0x01B18E 06:B17E: C8        INY
 C - - - - - 0x01B18F 06:B17F: 20 37 B3  JSR sub_B337
 C - - - - - 0x01B192 06:B182: 10 08     BPL bra_B18C_проверить_следующего_соперника
 C - - - - - 0x01B194 06:B184: 20 96 B3  JSR sub_B396
-C - - - - - 0x01B197 06:B187: 20 A0 B3  JSR sub_B3A0
+C - - - - - 0x01B197 06:B187: 20 A0 B3  JSR sub_B3A0_хитбоксы
 C - - - - - 0x01B19A 06:B18A: B0 0B     BCS bra_B197_драка_была
 bra_B18C_проверить_следующего_соперника:
 C - - - - - 0x01B19C 06:B18C: E6 44     INC tmp_кого_пиздят
@@ -8139,7 +8146,7 @@ C - - - - - 0x01B1C7 06:B1B7: C8        INY
 C - - - - - 0x01B1C8 06:B1B8: 20 37 B3  JSR sub_B337
 C - - - - - 0x01B1CB 06:B1BB: 10 08     BPL bra_B1C5
 C - - - - - 0x01B1CD 06:B1BD: 20 96 B3  JSR sub_B396
-C - - - - - 0x01B1D0 06:B1C0: 20 A0 B3  JSR sub_B3A0
+C - - - - - 0x01B1D0 06:B1C0: 20 A0 B3  JSR sub_B3A0_хитбоксы
 C - - - - - 0x01B1D3 06:B1C3: B0 0B     BCS bra_B1D0
 bra_B1C5:
 C - - - - - 0x01B1D5 06:B1C5: E6 44     INC ram_0044
@@ -8174,7 +8181,7 @@ C - - - - - 0x01B1FF 06:B1EF: 20 01 B3  JSR sub_B301_подготовка_таб
 C - - - - - 0x01B202 06:B1F2: 20 37 B3  JSR sub_B337
 C - - - - - 0x01B205 06:B1F5: 10 0E     BPL bra_B205
 C - - - - - 0x01B207 06:B1F7: 20 96 B3  JSR sub_B396
-C - - - - - 0x01B20A 06:B1FA: 20 A0 B3  JSR sub_B3A0
+C - - - - - 0x01B20A 06:B1FA: 20 A0 B3  JSR sub_B3A0_хитбоксы
 C - - - - - 0x01B20D 06:B1FD: 90 06     BCC bra_B205
 C - - - - - 0x01B20F 06:B1FF: 20 41 AD  JSR sub_AD41
 C - - - - - 0x01B212 06:B202: 38        SEC
@@ -8216,7 +8223,7 @@ C - - - - - 0x01B248 06:B238: 20 01 B3  JSR sub_B301_подготовка_таб
 C - - - - - 0x01B24B 06:B23B: 20 37 B3  JSR sub_B337
 C - - - - - 0x01B24E 06:B23E: 10 2A     BPL bra_B26A
 C - - - - - 0x01B250 06:B240: 20 96 B3  JSR sub_B396
-C - - - - - 0x01B253 06:B243: 20 A0 B3  JSR sub_B3A0
+C - - - - - 0x01B253 06:B243: 20 A0 B3  JSR sub_B3A0_хитбоксы
 C - - - - - 0x01B256 06:B246: B0 0D     BCS bra_B255
 C - - - - - 0x01B258 06:B248: A4 44     LDY ram_0044
 C - - - - - 0x01B25A 06:B24A: CC D6 04  CPY ram_игрок_с_мячом
@@ -8258,7 +8265,7 @@ C - - - - - 0x01B285 06:B275: 60        RTS
 - - - - - - 0x01B29D 06:B28D: 20 37 B3  JSR sub_B337
 - - - - - - 0x01B2A0 06:B290: 10 0E     BPL bra_B2A0
 - - - - - - 0x01B2A2 06:B292: 20 96 B3  JSR sub_B396
-- - - - - - 0x01B2A5 06:B295: 20 A0 B3  JSR sub_B3A0
+- - - - - - 0x01B2A5 06:B295: 20 A0 B3  JSR sub_B3A0_хитбоксы
 - - - - - - 0x01B2A8 06:B298: 90 06     BCC bra_B2A0
 - - - - - - 0x01B2AA 06:B29A: 20 41 AD  JSR sub_AD41
 - - - - - - 0x01B2AD 06:B29D: 38        SEC
@@ -8291,7 +8298,7 @@ C - - - - - 0x01B2D4 06:B2C4: C8        INY
 C - - - - - 0x01B2D5 06:B2C5: 20 37 B3  JSR sub_B337
 C - - - - - 0x01B2D8 06:B2C8: 10 2B     BPL bra_B2F5
 C - - - - - 0x01B2DA 06:B2CA: 20 96 B3  JSR sub_B396
-C - - - - - 0x01B2DD 06:B2CD: 20 A0 B3  JSR sub_B3A0
+C - - - - - 0x01B2DD 06:B2CD: 20 A0 B3  JSR sub_B3A0_хитбоксы
 C - - - - - 0x01B2E0 06:B2D0: 90 23     BCC bra_B2F5
 C - - - - - 0x01B2E2 06:B2D2: A6 43     LDX ram_0043
 C - - - - - 0x01B2E4 06:B2D4: AD 66 04  LDA ram_погодный_эффект
@@ -8448,7 +8455,7 @@ C - - - - - 0x01B3AF 06:B39F: 60        RTS
 
 
 
-sub_B3A0:
+sub_B3A0_хитбоксы:
 C - - - - - 0x01B3B0 06:B3A0: A6 43     LDX ram_0043
 C - - - - - 0x01B3B2 06:B3A2: A4 44     LDY ram_0044
 C - - - - - 0x01B3B4 06:B3A4: A5 5C     LDA ram_flag_gameplay
