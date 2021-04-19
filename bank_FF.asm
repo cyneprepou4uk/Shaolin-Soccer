@@ -7178,20 +7178,22 @@ sub_0001_скопировать_экран_в_ppu:
                                         STA $2006
                                         LDY #$00
 @bra_цикл_копирования_в_ppu:
+                                        DEC ram_002E
+                                        LDA ram_002E
+                                        CMP #$FF
+                                        BNE @bra_скопировать_в_ppu
+                                        DEC ram_002F
+                                        LDA ram_002F
+                                        CMP #$FF
+                                        BNE @bra_скопировать_в_ppu
+                                        RTS
+@bra_скопировать_в_ppu:
                                         LDA (ram_002C),Y
                                         STA $2007
                                         INC ram_002C
-                                        BNE @bra_not_overflow
-                                        INC ram_002D
-@bra_not_overflow:
-                                        DEC ram_002E
-                                        BNE @bra_not_underflow
-                                        DEC ram_002F
-@bra_not_underflow:
-                                        LDA ram_002E
-                                        ORA ram_002F
                                         BNE @bra_цикл_копирования_в_ppu
-                                        RTS
+                                        INC ram_002D
+                                        BMI @bra_цикл_копирования_в_ppu     ; старший байт всегда 80+
 
 ; 00 = логотип с кунио
 ; 01 = экран "жми старт" после логотипа
@@ -7230,6 +7232,33 @@ sub_0001_скопировать_экран_в_ppu:
 ; 22 = фотка в титрах
 ; 23 = фотка в титрах
 ; 24 = фотка в титрах
+; 25 = 
+; 26 = 
+; 27 = 
+; 28 = 
+; 29 = 
+; 2A = 
+; 2B = 
+; 2C = 
+; 2D = 
+; 2E = 
+; 2F = 
+; 30 = состав японии
+; 31 = 
+; 32 = 
+; 33 = 
+; 34 = 
+; 35 = 
+; 36 = 
+; 37 = состав камеруна
+; 38 = 
+; 39 = состав германии
+; 3A = 
+; 3B = состав италии
+; 3C = 
+; 3D = состав бразилии
+; 3E = состав аргентины
+; 3F = 
 
 tbl_0001_банк_фона:
     .byte con_chr_bank + $6E, con_chr_bank + $02    ; 00
@@ -7254,12 +7283,12 @@ tbl_0001_банк_фона:
     .byte con_chr_bank + $30, con_chr_bank + $02    ; 13
     .byte con_chr_bank + $5E, con_chr_bank + $02    ; 14
     .byte con_chr_bank + $5E, con_chr_bank + $02    ; 15
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 16
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 17
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 18
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 19
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 1A
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 1B
+    .word $FFFF                                     ; 16
+    .word $FFFF                                     ; 17
+    .word $FFFF                                     ; 18
+    .word $FFFF                                     ; 19
+    .word $FFFF                                     ; 1A
+    .word $FFFF                                     ; 1B
     .byte con_chr_bank + $12, con_chr_bank + $02    ; 1C
     .byte con_chr_bank + $12, con_chr_bank + $02    ; 1D
     .byte con_chr_bank + $12, con_chr_bank + $02    ; 1E
@@ -7269,6 +7298,33 @@ tbl_0001_банк_фона:
     .byte con_chr_bank + $12, con_chr_bank + $02    ; 22
     .byte con_chr_bank + $12, con_chr_bank + $02    ; 23
     .byte con_chr_bank + $12, con_chr_bank + $02    ; 24
+    .word $FFFF                                     ; 25
+    .word $FFFF                                     ; 26
+    .word $FFFF                                     ; 27
+    .word $FFFF                                     ; 28
+    .word $FFFF                                     ; 29
+    .word $FFFF                                     ; 2A
+    .word $FFFF                                     ; 2B
+    .word $FFFF                                     ; 2C
+    .word $FFFF                                     ; 2D
+    .word $FFFF                                     ; 2E
+    .word $FFFF                                     ; 2F
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 30
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 31
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 32
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 33
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 34
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 35
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 36
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 37
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 38
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 39
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3A
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3B
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3C
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3D
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3E
+    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3F
     
 tbl_0001_палитра_фона:
     .byte con_bg_pal + $44, con_bg_pal + $43  ; 00
@@ -7293,12 +7349,12 @@ tbl_0001_палитра_фона:
     .byte con_bg_pal + $15, con_bg_pal + $16  ; 13
     .byte con_bg_pal + $15, con_bg_pal + $16  ; 14
     .byte con_bg_pal + $15, con_bg_pal + $16  ; 15
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 16
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 17
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 18
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 19
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 1A
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 1B
+    .word $FFFF                               ; 16
+    .word $FFFF                               ; 17
+    .word $FFFF                               ; 18
+    .word $FFFF                               ; 19
+    .word $FFFF                               ; 1A
+    .word $FFFF                               ; 1B
     .byte con_bg_pal + $49, con_bg_pal + $49  ; 1C
     .byte con_bg_pal + $49, con_bg_pal + $49  ; 1D
     .byte con_bg_pal + $49, con_bg_pal + $49  ; 1E
@@ -7308,6 +7364,33 @@ tbl_0001_палитра_фона:
     .byte con_bg_pal + $49, con_bg_pal + $49  ; 22
     .byte con_bg_pal + $49, con_bg_pal + $49  ; 23
     .byte con_bg_pal + $49, con_bg_pal + $49  ; 24
+    .word $FFFF                               ; 25
+    .word $FFFF                               ; 26
+    .word $FFFF                               ; 27
+    .word $FFFF                               ; 28
+    .word $FFFF                               ; 29
+    .word $FFFF                               ; 2A
+    .word $FFFF                               ; 2B
+    .word $FFFF                               ; 2C
+    .word $FFFF                               ; 2D
+    .word $FFFF                               ; 2E
+    .word $FFFF                               ; 2F
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 30
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 31
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 32
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 33
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 34
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 35
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 36
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 37
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 38
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 39
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3A
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3B
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3C
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3D
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3E
+    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3F
 
 tbl_0001_mirroring:
 tbl_0001_prg_банк:
@@ -7328,18 +7411,18 @@ tbl_0001_prg_банк:
     .byte $00, con_prg_bank + $09   ; 0D
     .byte $00, con_prg_bank + $09   ; 0E
     .byte $00, con_prg_bank + $09   ; 0F
-    .byte $00, con_prg_bank + $09   ; 10
-    .byte $00, con_prg_bank + $09   ; 11
-    .byte $00, con_prg_bank + $0A   ; 12
+    .byte $00, con_prg_bank + $08   ; 10
+    .byte $00, con_prg_bank + $08   ; 11
+    .byte $00, con_prg_bank + $08   ; 12
     .byte $00, con_prg_bank + $0A   ; 13
     .byte $00, con_prg_bank + $0A   ; 14
     .byte $00, con_prg_bank + $0A   ; 15
-    .byte $01, con_prg_bank + $08   ; 16
-    .byte $01, con_prg_bank + $08   ; 17
-    .byte $01, con_prg_bank + $08   ; 18
-    .byte $01, con_prg_bank + $08   ; 19
-    .byte $01, con_prg_bank + $08   ; 1A
-    .byte $01, con_prg_bank + $08   ; 1B
+    .word $FFFF                     ; 16
+    .word $FFFF                     ; 17
+    .word $FFFF                     ; 18
+    .word $FFFF                     ; 19
+    .word $FFFF                     ; 1A
+    .word $FFFF                     ; 1B
     .byte $00, con_prg_bank + $0A   ; 1C
     .byte $00, con_prg_bank + $0A   ; 1D
     .byte $00, con_prg_bank + $0A   ; 1E
@@ -7349,6 +7432,33 @@ tbl_0001_prg_банк:
     .byte $00, con_prg_bank + $0A   ; 22
     .byte $00, con_prg_bank + $0A   ; 23
     .byte $00, con_prg_bank + $0A   ; 24
+    .word $FFFF                     ; 25
+    .word $FFFF                     ; 26
+    .word $FFFF                     ; 27
+    .word $FFFF                     ; 28
+    .word $FFFF                     ; 29
+    .word $FFFF                     ; 2A
+    .word $FFFF                     ; 2B
+    .word $FFFF                     ; 2C
+    .word $FFFF                     ; 2D
+    .word $FFFF                     ; 2E
+    .word $FFFF                     ; 2F
+    .byte $01, con_prg_bank + $0B   ; 30
+    .byte $01, con_prg_bank + $0B   ; 31
+    .byte $01, con_prg_bank + $0B   ; 32
+    .byte $01, con_prg_bank + $0B   ; 33
+    .byte $01, con_prg_bank + $0B   ; 34
+    .byte $01, con_prg_bank + $0B   ; 35
+    .byte $01, con_prg_bank + $0B   ; 36
+    .byte $01, con_prg_bank + $0B   ; 37
+    .byte $01, con_prg_bank + $0B   ; 38
+    .byte $01, con_prg_bank + $0B   ; 39
+    .byte $01, con_prg_bank + $0B   ; 3A
+    .byte $01, con_prg_bank + $0B   ; 3B
+    .byte $01, con_prg_bank + $0B   ; 3C
+    .byte $01, con_prg_bank + $0B   ; 3D
+    .byte $01, con_prg_bank + $0B   ; 3E
+    .byte $01, con_prg_bank + $0B   ; 3F
 
 tbl_0001_начальный_адрес_байтов_экрана:
     .word _off000_screen_00     ; 00
@@ -7373,12 +7483,12 @@ tbl_0001_начальный_адрес_байтов_экрана:
     .word _off000_screen_13     ; 13
     .word _off000_screen_14     ; 14
     .word _off000_screen_15     ; 15
-    .word _off000_screen_16     ; 16
-    .word _off000_screen_17     ; 17
-    .word _off000_screen_18     ; 18
-    .word _off000_screen_19     ; 19
-    .word _off000_screen_1A     ; 1A
-    .word _off000_screen_1B     ; 1B
+    .word $FFFF                 ; 16
+    .word $FFFF                 ; 17
+    .word $FFFF                 ; 18
+    .word $FFFF                 ; 19
+    .word $FFFF                 ; 1A
+    .word $FFFF                 ; 1B
     .word _off000_screen_1C     ; 1C
     .word _off000_screen_1D     ; 1D
     .word _off000_screen_1E     ; 1E
@@ -7388,6 +7498,33 @@ tbl_0001_начальный_адрес_байтов_экрана:
     .word _off000_screen_22     ; 22
     .word _off000_screen_23     ; 23
     .word _off000_screen_24     ; 24
+    .word $FFFF                 ; 25
+    .word $FFFF                 ; 26
+    .word $FFFF                 ; 27
+    .word $FFFF                 ; 28
+    .word $FFFF                 ; 29
+    .word $FFFF                 ; 2A
+    .word $FFFF                 ; 2B
+    .word $FFFF                 ; 2C
+    .word $FFFF                 ; 2D
+    .word $FFFF                 ; 2E
+    .word $FFFF                 ; 2F
+    .word _off000_screen_30     ; 30
+    .word $FFFF                 ; 31
+    .word $FFFF                 ; 32
+    .word $FFFF                 ; 33
+    .word $FFFF                 ; 34
+    .word $FFFF                 ; 35
+    .word $FFFF                 ; 36
+    .word _off000_screen_37     ; 37
+    .word $FFFF                 ; 38
+    .word _off000_screen_39     ; 39
+    .word $FFFF                 ; 3A
+    .word _off000_screen_3B     ; 3B
+    .word $FFFF                 ; 3C
+    .word _off000_screen_3D     ; 3D
+    .word _off000_screen_3E     ; 3E
+    .word $FFFF                 ; 3F
 
 tbl_0001_размер_копируемых_байтов:
     .word $0400     ; 00
@@ -7406,9 +7543,9 @@ tbl_0001_размер_копируемых_байтов:
     .word $0400     ; 0D
     .word $0400     ; 0E
     .word $0400     ; 0F
-    .word $0400     ; 10
-    .word $0400     ; 11
-    .word $0400     ; 12
+    .word $0800     ; 10
+    .word $0800     ; 11
+    .word $0800     ; 12
     .word $0400     ; 13
     .word $0400     ; 14
     .word $0400     ; 15
@@ -7427,6 +7564,33 @@ tbl_0001_размер_копируемых_байтов:
     .word $0400     ; 22
     .word $0400     ; 23
     .word $0400     ; 24
+    .word $FFFF     ; 25
+    .word $FFFF     ; 26
+    .word $FFFF     ; 27
+    .word $FFFF     ; 28
+    .word $FFFF     ; 29
+    .word $FFFF     ; 2A
+    .word $FFFF     ; 2B
+    .word $FFFF     ; 2C
+    .word $FFFF     ; 2D
+    .word $FFFF     ; 2E
+    .word $FFFF     ; 2F
+    .word $0120     ; 30
+    .word $0120     ; 31
+    .word $0120     ; 32
+    .word $0120     ; 33
+    .word $0120     ; 34
+    .word $0120     ; 35
+    .word $0120     ; 36
+    .word $0120     ; 37
+    .word $0120     ; 38
+    .word $0120     ; 39
+    .word $0120     ; 3A
+    .word $0120     ; 3B
+    .word $0120     ; 3C
+    .word $0120     ; 3D
+    .word $0120     ; 3E
+    .word $0120     ; 3F
 
 tbl_0001_начальный_адрес_ppu:
     .dbyt $2000     ; 00
@@ -7434,9 +7598,9 @@ tbl_0001_начальный_адрес_ppu:
     .dbyt $2000     ; 02
     .dbyt $2000     ; 03
     .dbyt $2000     ; 04
-    .dbyt $2000     ; 05
+    .dbyt $2400     ; 05
     .dbyt $2000     ; 06
-    .dbyt $2000     ; 07
+    .dbyt $2400     ; 07
     .dbyt $2000     ; 08
     .dbyt $2000     ; 09
     .dbyt $2000     ; 0A
@@ -7466,6 +7630,33 @@ tbl_0001_начальный_адрес_ppu:
     .dbyt $2000     ; 22
     .dbyt $2000     ; 23
     .dbyt $2000     ; 24
+    .dbyt $FFFF     ; 25
+    .dbyt $FFFF     ; 26
+    .dbyt $FFFF     ; 27
+    .dbyt $FFFF     ; 28
+    .dbyt $FFFF     ; 29
+    .dbyt $FFFF     ; 2A
+    .dbyt $FFFF     ; 2B
+    .dbyt $FFFF     ; 2C
+    .dbyt $FFFF     ; 2D
+    .dbyt $FFFF     ; 2E
+    .dbyt $FFFF     ; 2F
+    .dbyt $2660     ; 30
+    .dbyt $2660     ; 31
+    .dbyt $2660     ; 32
+    .dbyt $2660     ; 33
+    .dbyt $2660     ; 34
+    .dbyt $2660     ; 35
+    .dbyt $2660     ; 36
+    .dbyt $2660     ; 37
+    .dbyt $2660     ; 38
+    .dbyt $2660     ; 39
+    .dbyt $2660     ; 3A
+    .dbyt $2660     ; 3B
+    .dbyt $2660     ; 3C
+    .dbyt $2660     ; 3D
+    .dbyt $2660     ; 3E
+    .dbyt $2660     ; 3F
 
 
 

@@ -4,7 +4,6 @@
 
 
 
-.export _off000_screen_12
 .export _off000_screen_13
 .export _off000_screen_14
 .export _off000_screen_15
@@ -19,9 +18,6 @@
 .export _off000_screen_24
 
 
-
-_off000_screen_12:
-    .incbin "incbin/screens/screen_12.bin" ; 
 
 _off000_screen_13:
     .incbin "incbin/screens/screen_13.bin" ; 

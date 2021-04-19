@@ -6,12 +6,9 @@
 
 .export _off000_screen_05
 .export _off000_screen_07
-.export _off000_screen_16
-.export _off000_screen_17
-.export _off000_screen_18
-.export _off000_screen_19
-.export _off000_screen_1A
-.export _off000_screen_1B
+.export _off000_screen_10
+.export _off000_screen_11
+.export _off000_screen_12
 
 
 
@@ -21,20 +18,11 @@ _off000_screen_05:
 _off000_screen_07:
     .incbin "incbin/screens/screen_07.bin" ; 
 
-_off000_screen_16:
-    .incbin "incbin/screens/screen_16.bin" ; 
+_off000_screen_10:
+    .incbin "incbin/screens/screen_10.bin" ; 
 
-_off000_screen_17:
-    .incbin "incbin/screens/screen_17.bin" ; 
+_off000_screen_11:
+    .incbin "incbin/screens/screen_11.bin" ; 
 
-_off000_screen_18:
-    .incbin "incbin/screens/screen_18.bin" ; 
-
-_off000_screen_19:
-    .incbin "incbin/screens/screen_19.bin" ; 
-
-_off000_screen_1A:
-    .incbin "incbin/screens/screen_1A.bin" ; 
-
-_off000_screen_1B:
-    .incbin "incbin/screens/screen_1B.bin" ; 
+_off000_screen_12:
+    .incbin "incbin/screens/screen_12.bin" ; 

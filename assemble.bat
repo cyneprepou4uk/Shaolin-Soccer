@@ -21,6 +21,7 @@ ca65 -U -l -g copy_bank_07.asm
 ca65 -U -l -g copy_bank_08.asm
 ca65 -U -l -g copy_bank_09.asm
 ca65 -U -l -g copy_bank_0A.asm
+ca65 -U -l -g copy_bank_0B.asm
 ca65 -U -l -g copy_bank_FF.asm
 
 :: компиляция кода в бинарники
@@ -36,6 +37,7 @@ ld65 -C ld65.cfg --dbgfile _debug.txt ^
     copy_bank_08.o ^
     copy_bank_09.o ^
     copy_bank_0A.o ^
+    copy_bank_0B.o ^
     copy_bank_FF.o
 
 :: сбор бинарников, хедера и chr в общий ром
@@ -51,6 +53,7 @@ copy /B header.bin + ^
     copy_bank_08.bin + ^
     copy_bank_09.bin + ^
     copy_bank_0A.bin + ^
+    copy_bank_0B.bin + ^
     empty.bin + copy_bank_FF.bin + CHR_ROM.chr !goal5.nes
 
 :: удалить остаточный хлам и копии
