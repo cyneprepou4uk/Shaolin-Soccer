@@ -68,7 +68,7 @@ del copy_*.lst
 :: проверить размер файла и вывести нужное сообщение
 setlocal enableextensions
 FOR %%A IN ("!goal5.nes") DO set "size=%%~zA"
-if %size% EQU 393232 (
+if %size% EQU 8650768 (
     echo.
     echo ----------------------------------------------
     echo Done! Look for !goal5.nes file in your folder.
