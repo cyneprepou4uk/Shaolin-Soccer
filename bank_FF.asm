@@ -8122,7 +8122,7 @@ C D 3 - - - 0x01EFBD 07:EFAD: A5 58     LDA ram_script
 C - - - - - 0x01EFBF 07:EFAF: D0 34     BNE bra_EFE5_write_3_buffers_to_ppu ; если не игра на поле
 C - - - - - 0x01EFC1 07:EFB1: A5 59     LDA ram_subscript
 C - - - - - 0x01EFC3 07:EFB3: F0 30     BEQ bra_EFE5_write_3_buffers_to_ppu
-C - - - - - 0x01EFC5 07:EFB5: C9 05     CMP #$05    ;  bzk лучше переделать под конкретные значения чтоб лучше видно было
+C - - - - - 0x01EFC5 07:EFB5: C9 05     CMP #$05        ; bzk лучше переделать под конкретные значения чтоб лучше видно было
 C - - - - - 0x01EFC7 07:EFB7: 90 1B     BCC bra_EFD4    ; если на экране сейчас не поле
 C - - - - - 0x01EFC9 07:EFB9: C9 05     CMP #con_subscr_gp_счет_после_гола
 C - - - - - 0x01EFCB 07:EFBB: F0 0F     BEQ bra_EFCC
@@ -8139,7 +8139,7 @@ C - - - - - 0x01EFDF 07:EFCF: F0 14     BEQ bra_EFE5_write_3_buffers_to_ppu
 C - - - - - 0x01EFE1 07:EFD1: 4C 44 C2  JMP loc_C244
 bra_EFD4:
 C - - - - - 0x01EFE4 07:EFD4: A5 51     LDA ram_задержка_кадра
-                                        BNE @выход
+                                        BNE @bra_выход
                                         JSR sub_EFE5_запись_3х_буферов_в_ppu
 C - - - - - 0x01EFE8 07:EFD8: 4C B4 F0  JSR sub_F0B4_отрисовка_поля_во_время_скроллинга
                                         JSR sub_F166_отрисовать_сетку_после_гола
@@ -8147,8 +8147,11 @@ C - - - - - 0x01EFE8 07:EFD8: 4C B4 F0  JSR sub_F0B4_отрисовка_поля
 C - - - - - 0x01EFEF 07:EFDF: 4C 1A D6  JSR sub_E170_отрисовать_инфу_hud
 C - - - - - 0x01EFF2 07:EFE2: 4C 40 F3  JSR sub_E170_отрисовать_время_hud
                                         JSR sub_F382_отрисовать_следы_на_поле
-@выход:
+@bra_выход:
                                         RTS
+
+
+
 bra_EFE5_write_3_buffers_to_ppu:
 loc_EFE5_write_3_buffers_to_ppu:
 sub_EFE5_запись_3х_буферов_в_ppu:
