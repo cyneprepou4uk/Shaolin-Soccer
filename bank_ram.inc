@@ -15,7 +15,9 @@ ram_btn_press                           = $0008 ; 35
 
 ram_000C                                = $000C ; 72   ($indirect) <1>   ($indirect),Y <16>   
 ram_000D                                = $000D ; 39   
-ram_000E                                = $000E ; 2     unused, использовался для хранения X = 00 в коде очистки ppu
+
+ram_000E                                = $000E ; 2     личный временный счетчик внутри обработчика NMI (в оригинале unused, использовался для хранения X = 00 в коде очистки ppu)
+
 ram_000F                                = $000F ; N/A
 ram_0010                                = $0010 ; N/A
 ram_0011                                = $0011 ; N/A
@@ -206,8 +208,9 @@ ram_00F5                                = $00F5 ; 2
 ram_indirect_jmp_lo                     = $00F6 ; 4   ($indirect) <1>   
 ram_indirect_jmp_hi                     = $00F7 ; 3   байты для непрямого прыжка
 
-ram_00F8                                = $00F8 ; N/A unused
-ram_00F9                                = $00F9 ; N/A unused
+ram_00F8                                = $00F8 ; N/A личный для indirect внутри обработчика NMI (в оригинале unused)
+ram_00F9                                = $00F9 ; N/A личный для indirect внутри обработчика NMI (в оригинале unused)
+
 ram_00FA                                = $00FA ; N/A unused
 ram_00FB                                = $00FB ; N/A unused
 ram_00FC                                = $00FC ; N/A unused
