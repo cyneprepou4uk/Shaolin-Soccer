@@ -84,8 +84,6 @@ sub_0x000000_RESET_init:
                                         LDA #con_subscr_logo_подг_экр_лого
                                         STA ram_subscript
                                         STA $E000
-                                        LDA #$00
-                                        STA ram_btn_press + 2   ; bzk оно надо?
                                         LDA #$F0
                                         STA ram_ограничитель_Y_спрайтов
                                         LDA #$F2    ; DMA
