@@ -5807,7 +5807,7 @@ sub_0001_скопировать_экран_в_ppu:
 ; 3F = 
 
 tbl_0001_банк_фона:
-    .byte con_chr_bank + $6E, con_chr_bank + $02    ; 00
+    .byte con_chr_bank + $10, con_chr_bank + $12    ; 00
     .byte con_chr_bank + $6C, con_chr_bank + $02    ; 01
     .byte con_chr_bank + $5E, con_chr_bank + $02    ; 02
     .byte con_chr_bank + $5E, con_chr_bank + $02    ; 03
@@ -5873,7 +5873,7 @@ tbl_0001_банк_фона:
     .byte con_chr_bank + $30, con_chr_bank + $02    ; 3F
     
 tbl_0001_палитра_фона:
-    .byte con_bg_pal + $44, con_bg_pal + $43  ; 00
+    .byte con_bg_pal + $02, con_bg_pal + $01  ; 00
     .byte con_bg_pal + $3A, con_bg_pal + $3B  ; 01
     .byte con_bg_pal + $15, con_bg_pal + $16  ; 02
     .byte con_bg_pal + $15, con_bg_pal + $16  ; 03

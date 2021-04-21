@@ -10689,7 +10689,7 @@ C - - - - - 0x00AAD7 02:AAC7: E8        INX ; con_chr_bank + $71
 C - - - - - 0x00AAD8 02:AAC8: 8E B9 05  STX ram_банк_спрайтов + 1
 C - - - - - 0x00AADB 02:AACB: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 C - - - - - 0x00AADE 02:AACE: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
-C - - - - - 0x00AAE1 02:AAD1: A9 04     LDA #$04
+C - - - - - 0x00AAE1 02:AAD1: A9 04     LDA #$01
 C - - - - - 0x00AAE3 02:AAD3: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AAE6 02:AAD6: E6 59     INC ram_subscript   ; con_subscr_logo_экран_лого
 C - - - - - 0x00AAE8 02:AAD8: 60        RTS
@@ -10722,13 +10722,13 @@ C - - - - - 0x00AB19 02:AB09: 29 FE     AND #$FE
 C - - - - - 0x00AB1B 02:AB0B: 0A        ASL
 C - - - - - 0x00AB1C 02:AB0C: A8        TAY
 C - - - - - 0x00AB1D 02:AB0D: A2 00     LDX #$00
-bra_AB0F:
-C - - - - - 0x00AB1F 02:AB0F: B9 48 AB  LDA tbl_AB48,Y
+bra_AB0F_loop:
+C - - - - - 0x00AB1F 02:AB0F: B9 48 AB  LDA tbl_AB48_атрибуты_переливания_надписи,Y
 C - - - - - 0x00AB22 02:AB12: 9D 96 06  STA ram_буфер_атрибутов,X
 C - - - - - 0x00AB25 02:AB15: C8        INY
 C - - - - - 0x00AB26 02:AB16: E8        INX
 C - - - - - 0x00AB27 02:AB17: E0 04     CPX #$04
-C - - - - - 0x00AB29 02:AB19: 90 F4     BCC bra_AB0F
+C - - - - - 0x00AB29 02:AB19: 90 F4     BCC bra_AB0F_loop
 C - - - - - 0x00AB2B 02:AB1B: 8E 95 06  STX ram_счетчик_буфера_атрибутов
 C - - - - - 0x00AB2E 02:AB1E: A9 DB     LDA #< $23DB
 C - - - - - 0x00AB30 02:AB20: 8D 94 06  STA ram_байт_2006_lo_атрибуты
@@ -10738,7 +10738,7 @@ bra_AB28:
 C - - - - - 0x00AB38 02:AB28: A5 A0     LDA ram_кадр_анимации_мяча
 C - - - - - 0x00AB3A 02:AB2A: C9 07     CMP #$07
 C - - - - - 0x00AB3C 02:AB2C: D0 11     BNE bra_AB3F_RTS
-C - - - - - 0x00AB3E 02:AB2E: A9 3C     LDA #con_bg_pal + $3C
+C - - - - - 0x00AB3E 02:AB2E: A9 3C     LDA #con_bg_pal + $07
 C - - - - - 0x00AB40 02:AB30: 8D AC 05  STA ram_номер_палитры_фона
 C - - - - - 0x00AB43 02:AB33: EE AE 05  INC ram_номер_палитры_спрайтов
 C - - - - - 0x00AB46 02:AB36: EE AF 05  INC ram_номер_палитры_спрайтов + 1
@@ -10751,66 +10751,30 @@ C - - - - - 0x00AB4F 02:AB3F: 60        RTS
 
 
 tbl_AB40:
-- D 1 - - - 0x00AB50 02:AB40: 45        .byte con_bg_pal + $45   ; 00
-- D 1 - - - 0x00AB51 02:AB41: 46        .byte con_bg_pal + $46   ; 01
-- D 1 - - - 0x00AB52 02:AB42: 47        .byte con_bg_pal + $47   ; 02
-- D 1 - - - 0x00AB53 02:AB43: 48        .byte con_bg_pal + $48   ; 03
-- D 1 - - - 0x00AB54 02:AB44: 47        .byte con_bg_pal + $47   ; 04
-- D 1 - - - 0x00AB55 02:AB45: 46        .byte con_bg_pal + $46   ; 05
-- D 1 - - - 0x00AB56 02:AB46: 45        .byte con_bg_pal + $45   ; 06
-- D 1 - - - 0x00AB57 02:AB47: 44        .byte con_bg_pal + $44   ; 07
+- D 1 - - - 0x00AB50 02:AB40: 45        .byte con_bg_pal + $03   ; 00
+- D 1 - - - 0x00AB51 02:AB41: 46        .byte con_bg_pal + $04   ; 01
+- D 1 - - - 0x00AB52 02:AB42: 47        .byte con_bg_pal + $05   ; 02
+- D 1 - - - 0x00AB53 02:AB43: 48        .byte con_bg_pal + $06   ; 03
+- D 1 - - - 0x00AB54 02:AB44: 47        .byte con_bg_pal + $05   ; 04
+- D 1 - - - 0x00AB55 02:AB45: 46        .byte con_bg_pal + $04   ; 05
+- D 1 - - - 0x00AB56 02:AB46: 45        .byte con_bg_pal + $03   ; 06
+- D 1 - - - 0x00AB57 02:AB47: 44        .byte con_bg_pal + $02   ; 07
 
 
 
-tbl_AB48:
-- D 1 - - - 0x00AB58 02:AB48: 02        .byte $02   ; 
-- D 1 - - - 0x00AB59 02:AB49: 00        .byte $00   ; 
-- D 1 - - - 0x00AB5A 02:AB4A: 00        .byte $00   ; 
-- D 1 - - - 0x00AB5B 02:AB4B: 00        .byte $00   ; 
-- D 1 - - - 0x00AB5C 02:AB4C: 0B        .byte $0B   ; 
-- D 1 - - - 0x00AB5D 02:AB4D: 00        .byte $00   ; 
-- D 1 - - - 0x00AB5E 02:AB4E: 00        .byte $00   ; 
-- D 1 - - - 0x00AB5F 02:AB4F: 00        .byte $00   ; 
-- D 1 - - - 0x00AB60 02:AB50: 0F        .byte $0F   ; 
-- D 1 - - - 0x00AB61 02:AB51: 02        .byte $02   ; 
-- D 1 - - - 0x00AB62 02:AB52: 00        .byte $00   ; 
-- D 1 - - - 0x00AB63 02:AB53: 00        .byte $00   ; 
-- D 1 - - - 0x00AB64 02:AB54: 0E        .byte $0E   ; 
-- D 1 - - - 0x00AB65 02:AB55: 0B        .byte $0B   ; 
-- D 1 - - - 0x00AB66 02:AB56: 00        .byte $00   ; 
-- D 1 - - - 0x00AB67 02:AB57: 00        .byte $00   ; 
-- D 1 - - - 0x00AB68 02:AB58: 08        .byte $08   ; 
-- D 1 - - - 0x00AB69 02:AB59: 0F        .byte $0F   ; 
-- D 1 - - - 0x00AB6A 02:AB5A: 02        .byte $02   ; 
-- D 1 - - - 0x00AB6B 02:AB5B: 00        .byte $00   ; 
-- D 1 - - - 0x00AB6C 02:AB5C: 00        .byte $00   ; 
-- D 1 - - - 0x00AB6D 02:AB5D: 0E        .byte $0E   ; 
-- D 1 - - - 0x00AB6E 02:AB5E: 0B        .byte $0B   ; 
-- D 1 - - - 0x00AB6F 02:AB5F: 00        .byte $00   ; 
-- D 1 - - - 0x00AB70 02:AB60: 00        .byte $00   ; 
-- D 1 - - - 0x00AB71 02:AB61: 08        .byte $08   ; 
-- D 1 - - - 0x00AB72 02:AB62: 0F        .byte $0F   ; 
-- D 1 - - - 0x00AB73 02:AB63: 02        .byte $02   ; 
-- D 1 - - - 0x00AB74 02:AB64: 00        .byte $00   ; 
-- D 1 - - - 0x00AB75 02:AB65: 00        .byte $00   ; 
-- D 1 - - - 0x00AB76 02:AB66: 0E        .byte $0E   ; 
-- D 1 - - - 0x00AB77 02:AB67: 0B        .byte $0B   ; 
-- D 1 - - - 0x00AB78 02:AB68: 00        .byte $00   ; 
-- D 1 - - - 0x00AB79 02:AB69: 00        .byte $00   ; 
-- D 1 - - - 0x00AB7A 02:AB6A: 08        .byte $08   ; 
-- D 1 - - - 0x00AB7B 02:AB6B: 0F        .byte $0F   ; 
-- D 1 - - - 0x00AB7C 02:AB6C: 00        .byte $00   ; 
-- D 1 - - - 0x00AB7D 02:AB6D: 00        .byte $00   ; 
-- D 1 - - - 0x00AB7E 02:AB6E: 00        .byte $00   ; 
-- D 1 - - - 0x00AB7F 02:AB6F: 0E        .byte $0E   ; 
-- D 1 - - - 0x00AB80 02:AB70: 00        .byte $00   ; 
-- D 1 - - - 0x00AB81 02:AB71: 00        .byte $00   ; 
-- D 1 - - - 0x00AB82 02:AB72: 00        .byte $00   ; 
-- D 1 - - - 0x00AB83 02:AB73: 08        .byte $08   ; 
-- D 1 - - - 0x00AB84 02:AB74: 00        .byte $00   ; 
-- D 1 - - - 0x00AB85 02:AB75: 00        .byte $00   ; 
-- D 1 - - - 0x00AB86 02:AB76: 00        .byte $00   ; 
-- D 1 - - - 0x00AB87 02:AB77: 00        .byte $00   ; 
+tbl_AB48_атрибуты_переливания_надписи:
+- D 1 - - - 0x00AB58 02:AB48: 02        .byte $06, $05, $05, $05 ; 00
+- D 1 - - - 0x00AB5C 02:AB4C: 0B        .byte $0B, $05, $05, $05 ; 01
+- D 1 - - - 0x00AB60 02:AB50: 0F        .byte $0E, $06, $05, $05 ; 02
+- D 1 - - - 0x00AB64 02:AB54: 0E        .byte $09, $0B, $05, $05 ; 03
+- D 1 - - - 0x00AB68 02:AB58: 08        .byte $05, $0E, $06, $05 ; 04
+- D 1 - - - 0x00AB6C 02:AB5C: 00        .byte $05, $09, $0B, $05 ; 05
+- D 1 - - - 0x00AB70 02:AB60: 00        .byte $05, $05, $0E, $06 ; 06
+- D 1 - - - 0x00AB74 02:AB64: 00        .byte $05, $05, $09, $0B ; 07
+- D 1 - - - 0x00AB78 02:AB68: 00        .byte $05, $05, $05, $0E ; 08
+- D 1 - - - 0x00AB7C 02:AB6C: 00        .byte $05, $05, $05, $09 ; 09
+- D 1 - - - 0x00AB80 02:AB70: 00        .byte $05, $05, $05, $05 ; 0A
+- D 1 - - - 0x00AB84 02:AB74: 00        .byte $05, $05, $05, $05 ; 0B
 
 
 
