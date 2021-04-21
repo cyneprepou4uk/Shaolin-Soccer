@@ -10952,7 +10952,7 @@ C - - - - - 0x00ACCC 02:ACBC: 60        RTS
 
 ofs_ACBD_07_демо_сценка_кунио:
 ofs_ACBD_0A_кунио_бежит_к_мячу_без_сценки:
-C - - J - - 0x00ACCD 02:ACBD: 20 9B AE  JSR sub_AE9B
+C - - J - - 0x00ACCD 02:ACBD: 20 9B AE  JSR sub_AE9B_текст_жми_старт
 C - - - - - 0x00ACD0 02:ACC0: 20 F8 AC  JSR sub_ACF8
 C - - - - - 0x00ACD3 02:ACC3: 20 20 AA  JSR sub_0x01C2BD
 C - - - - - 0x00ACD6 02:ACC6: 20 2F AA  JSR sub_0x01C296
@@ -11267,7 +11267,7 @@ C - - - - - 0x00AEAA 02:AE9A: 60        RTS
 
 
 
-sub_AE9B:
+sub_AE9B_текст_жми_старт:
 C - - - - - 0x00AEAB 02:AE9B: A9 DA     LDA #$DA
 C - - - - - 0x00AEAD 02:AE9D: 85 1C     STA ram_001C
 C - - - - - 0x00AEAF 02:AE9F: AD 00 03  LDA ram_счетчик_кадров
@@ -11285,7 +11285,7 @@ C - - - - - 0x00AEC3 02:AEB3: F0 04     BEQ bra_AEB9
 C - - - - - 0x00AEC5 02:AEB5: A9 00     LDA #$00
 C - - - - - 0x00AEC7 02:AEB7: F0 03     BEQ bra_AEBC
 bra_AEB9:
-C - - - - - 0x00AEC9 02:AEB9: B9 E5 AE  LDA tbl_AEE5,Y
+C - - - - - 0x00AEC9 02:AEB9: B9 E5 AE  LDA tbl_AEE5_текст_жми_старт,Y
 bra_AEBC:
 C - - - - - 0x00AECC 02:AEBC: 9D 96 06  STA ram_буфер_атрибутов,X
 C - - - - - 0x00AECF 02:AEBF: C8        INY
@@ -11308,7 +11308,7 @@ C - - - - - 0x00AEF4 02:AEE4: 60        RTS
 
 
 
-tbl_AEE5:
+tbl_AEE5_текст_жми_старт:
 - D 1 - - - 0x00AEF5 02:AEE5: E3        .byte $E3   ; 
 - D 1 - - - 0x00AEF6 02:AEE6: 00        .byte $00   ; 
 - D 1 - - - 0x00AEF7 02:AEE7: AE        .byte $AE   ; 
