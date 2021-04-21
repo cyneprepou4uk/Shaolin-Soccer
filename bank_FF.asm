@@ -2072,7 +2072,7 @@ C - - - - - 0x01CC0A 07:CBFA: 09 80     ORA #$80
 C - - - - - 0x01CC0C 07:CBFC: 9D 59 04  STA ram_номер_цифры - $0E,X
 bra_CBFF:
 C - - - - - 0x01CC0F 07:CBFF: A9 84     LDA #$84
-C - - - - - 0x01CC11 07:CC01: 9D 74 00  STA ram_номер_анимации_игрока,X
+C - - - - - 0x01CC11 07:CC01: 9D 74 00  STA ram_номер_анимации_цифры - $0E,X
 C - - - - - 0x01CC14 07:CC04: A0 0C     LDY #con_id_мяча
 C - - - - - 0x01CC16 07:CC06: 84 44     STY ram_0044
 C - - - - - 0x01CC18 07:CC08: 4C 9C CC  JMP loc_CC9C_только_для_мяча
@@ -2092,7 +2092,7 @@ C - - - - - 0x01CC25 07:CC15: BD 59 04  LDA ram_номер_цифры - $0E,X
 C - - - - - 0x01CC28 07:CC18: 29 7F     AND #$7F
 C - - - - - 0x01CC2A 07:CC1A: A8        TAY
 C - - - - - 0x01CC2B 07:CC1B: B9 23 CD  LDA tbl_CD23,Y
-C - - - - - 0x01CC2E 07:CC1E: 9D 74 00  STA ram_номер_анимации_игрока,X
+C - - - - - 0x01CC2E 07:CC1E: 9D 74 00  STA ram_номер_анимации_цифры - $0E,X
 C - - - - - 0x01CC31 07:CC21: B9 29 CD  LDA tbl_CD29,Y
 C - - - - - 0x01CC34 07:CC24: 10 22     BPL bra_CC48
 C - - - - - 0x01CC36 07:CC26: 29 7F     AND #$7F
@@ -2110,7 +2110,7 @@ C - - - - - 0x01CC4C 07:CC3C: B9 D9 00  LDA ram_флаг_видимости_иг
 C - - - - - 0x01CC4F 07:CC3F: D0 09     BNE bra_CC4A    ; если на экране
 bra_CC41:
 C - - - - - 0x01CC51 07:CC41: A9 7F     LDA #$7F
-C - - - - - 0x01CC53 07:CC43: 9D 74 00  STA ram_номер_анимации_игрока,X
+C - - - - - 0x01CC53 07:CC43: 9D 74 00  STA ram_номер_анимации_цифры - $0E,X
 C - - - - - 0x01CC56 07:CC46: A9 00     LDA #$00
 bra_CC48:
 C - - - - - 0x01CC58 07:CC48: 85 44     STA ram_0044
@@ -2154,7 +2154,7 @@ C D 2 - - - 0x01CCAC 07:CC9C: AD 59 00  LDA ram_subscript
 C - - - - - 0x01CCAF 07:CC9F: C9 01     CMP #con_subscr_gp_разводка
 C - - - - - 0x01CCB1 07:CCA1: D0 08     BNE bra_CCAB
 C - - - - - 0x01CCB3 07:CCA3: A9 7F     LDA #$7F
-C - - - - - 0x01CCB5 07:CCA5: 9D 74 00  STA ram_номер_анимации_игрока,X
+C - - - - - 0x01CCB5 07:CCA5: 9D 74 00  STA ram_номер_анимации_цифры - $0E,X
 C - - - - - 0x01CCB8 07:CCA8: 4C 1E CD  RTS
 bra_CCAB:
 C - - - - - 0x01CCBB 07:CCAB: B9 14 03  LDA ram_pos_X_lo_игрока,Y
