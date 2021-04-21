@@ -452,7 +452,7 @@ C - - - - - 0x014384 05:8374: A9 05     LDA #con_anim_type_стрелочка_р
 C - - - - - 0x014386 05:8376: 8D 63 00  STA ram_тип_анимации_игрока + 2
 C - - - - - 0x014389 05:8379: A9 01     LDA #con_anim_type_мяч
 C - - - - - 0x01438B 05:837B: 8D 6D 00  STA ram_тип_анимации_мяча
-                                        LDA #$01
+                                        LDA #con_spr_pal + $01
 C - - - - - 0x01438E 05:837E: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x014391 05:8381: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
                                         LDA #con_action_стоит_на_месте
@@ -1137,7 +1137,7 @@ C - - - - - 0x014746 05:8736: A9 05     LDA #con_anim_type_стрелочка_р
 C - - - - - 0x014748 05:8738: 8D 61 00  STA ram_тип_анимации_игрока
 C - - - - - 0x01474B 05:873B: A9 00     LDA #con_id_японии
 C - - - - - 0x01474D 05:873D: 8D 2C 05  STA ram_номер_команды
-C - - - - - 0x014750 05:8740: A9 01     LDA #$01
+C - - - - - 0x014750 05:8740: A9 01     LDA #con_spr_pal + $01
 C - - - - - 0x014752 05:8742: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x014755 05:8745: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 C - - - - - 0x014758 05:8748: A2 26     LDX #con_chr_bank + $26
@@ -1802,7 +1802,7 @@ C - - - - - 0x014AF4 05:8AE4: 8D 63 00  STA ram_тип_анимации_игро
 C - - - - - 0x014AF7 05:8AE7: 8D 64 00  STA ram_тип_анимации_игрока + 3
 C - - - - - 0x014AFA 05:8AEA: A9 01     LDA #con_anim_type_мяч
 C - - - - - 0x014AFC 05:8AEC: 8D 6D 00  STA ram_тип_анимации_мяча
-                                        LDA #$01
+                                        LDA #con_spr_pal + $01
 C - - - - - 0x014AFF 05:8AEF: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x014B02 05:8AF2: A2 08     LDX #con_chr_bank + $08
 C - - - - - 0x014B04 05:8AF4: 8E B8 05  STX ram_банк_спрайтов
@@ -2438,24 +2438,24 @@ C - - - - - 0x014EB3 05:8EA3: 60        RTS
 tbl_8EA4:
 ; 00
 - D 0 - - - 0x014EB4 05:8EA4: 04        .byte con_action_лежит_на_спине   ; 
-- D 0 - - - 0x014EB5 05:8EA5: 24        .byte $24   ; 
-- D 0 - - - 0x014EB6 05:8EA6: 24        .byte $24   ; 
+- D 0 - - - 0x014EB5 05:8EA5: 24        .byte con_spr_pal + $24   ; 
+- D 0 - - - 0x014EB6 05:8EA6: 24        .byte con_spr_pal + $24   ; 
 ; 01
 - D 0 - - - 0x014EB7 05:8EA7: 03        .byte con_action_03   ; 
-- D 0 - - - 0x014EB8 05:8EA8: 23        .byte $23   ; 
-- D 0 - - - 0x014EB9 05:8EA9: 23        .byte $23   ; 
+- D 0 - - - 0x014EB8 05:8EA8: 23        .byte con_spr_pal + $23   ; 
+- D 0 - - - 0x014EB9 05:8EA9: 23        .byte con_spr_pal + $23   ; 
 ; 02
 - D 0 - - - 0x014EBA 05:8EAA: 04        .byte con_action_лежит_на_спине   ; 
-- D 0 - - - 0x014EBB 05:8EAB: 25        .byte $25   ; 
-- D 0 - - - 0x014EBC 05:8EAC: 25        .byte $25   ; 
+- D 0 - - - 0x014EBB 05:8EAB: 25        .byte con_spr_pal + $25   ; 
+- D 0 - - - 0x014EBC 05:8EAC: 25        .byte con_spr_pal + $25   ; 
 ; 03
 - D 0 - - - 0x014EBD 05:8EAD: 02        .byte con_action_02   ; 
-- D 0 - - - 0x014EBE 05:8EAE: 1A        .byte $1A   ; 
-- D 0 - - - 0x014EBF 05:8EAF: 1B        .byte $1B   ; 
+- D 0 - - - 0x014EBE 05:8EAE: 1A        .byte con_spr_pal + $1A   ; 
+- D 0 - - - 0x014EBF 05:8EAF: 1B        .byte con_spr_pal + $1B   ; 
 ; 04 bzk мусор? лишний материк
 - - - - - - 0x014EC0 05:8EB0: 03        .byte con_action_03   ; 
-- - - - - - 0x014EC1 05:8EB1: 23        .byte $23   ; 
-- - - - - - 0x014EC2 05:8EB2: 23        .byte $23   ; 
+- - - - - - 0x014EC1 05:8EB1: 23        .byte con_spr_pal + $23   ; 
+- - - - - - 0x014EC2 05:8EB2: 23        .byte con_spr_pal + $23   ; 
 
 
 
@@ -2480,22 +2480,22 @@ tbl_8EB3:
 
 
 tbl_8EC3:
-- D 0 - - - 0x014ED3 05:8EC3: 15        .byte $15   ; 00 = япония
-- D 0 - - - 0x014ED4 05:8EC4: 15        .byte $15   ; 01 = корея
-- D 0 - - - 0x014ED5 05:8EC5: 15        .byte $15   ; 02 = монголия
-- D 0 - - - 0x014ED6 05:8EC6: 15        .byte $15   ; 03 = таиланд
-- - - - - - 0x014ED7 05:8EC7: 15        .byte $15   ; 04 = 
-- D 0 - - - 0x014ED8 05:8EC8: 17        .byte $17   ; 05 = гвинея
-- D 0 - - - 0x014ED9 05:8EC9: 17        .byte $17   ; 06 = сенегал
-- D 0 - - - 0x014EDA 05:8ECA: 17        .byte $17   ; 07 = камерун
-- - - - - - 0x014EDB 05:8ECB: 15        .byte $15   ; 08 = 
-- D 0 - - - 0x014EDC 05:8ECC: 17        .byte $17   ; 09 = германия
-- D 0 - - - 0x014EDD 05:8ECD: 15        .byte $15   ; 0A = англия
-- D 0 - - - 0x014EDE 05:8ECE: 16        .byte $16   ; 0B = италия
-- - - - - - 0x014EDF 05:8ECF: 15        .byte $15   ; 0C = 
-- D 0 - - - 0x014EE0 05:8ED0: 19        .byte $19   ; 0D = бразилия
-- D 0 - - - 0x014EE1 05:8ED1: 18        .byte $18   ; 0E = аргентина
-- D 0 - - - 0x014EE2 05:8ED2: 16        .byte $16   ; 0F = мексика
+- D 0 - - - 0x014ED3 05:8EC3: 15        .byte con_spr_pal + $15   ; 00 = япония
+- D 0 - - - 0x014ED4 05:8EC4: 15        .byte con_spr_pal + $15   ; 01 = корея
+- D 0 - - - 0x014ED5 05:8EC5: 15        .byte con_spr_pal + $15   ; 02 = монголия
+- D 0 - - - 0x014ED6 05:8EC6: 15        .byte con_spr_pal + $15   ; 03 = таиланд
+- - - - - - 0x014ED7 05:8EC7: 15        .byte con_spr_pal + $15   ; 04 = 
+- D 0 - - - 0x014ED8 05:8EC8: 17        .byte con_spr_pal + $17   ; 05 = гвинея
+- D 0 - - - 0x014ED9 05:8EC9: 17        .byte con_spr_pal + $17   ; 06 = сенегал
+- D 0 - - - 0x014EDA 05:8ECA: 17        .byte con_spr_pal + $17   ; 07 = камерун
+- - - - - - 0x014EDB 05:8ECB: 15        .byte con_spr_pal + $15   ; 08 = 
+- D 0 - - - 0x014EDC 05:8ECC: 17        .byte con_spr_pal + $17   ; 09 = германия
+- D 0 - - - 0x014EDD 05:8ECD: 15        .byte con_spr_pal + $15   ; 0A = англия
+- D 0 - - - 0x014EDE 05:8ECE: 16        .byte con_spr_pal + $16   ; 0B = италия
+- - - - - - 0x014EDF 05:8ECF: 15        .byte con_spr_pal + $15   ; 0C = 
+- D 0 - - - 0x014EE0 05:8ED0: 19        .byte con_spr_pal + $19   ; 0D = бразилия
+- D 0 - - - 0x014EE1 05:8ED1: 18        .byte con_spr_pal + $18   ; 0E = аргентина
+- D 0 - - - 0x014EE2 05:8ED2: 16        .byte con_spr_pal + $16   ; 0F = мексика
 
 
 ; bzk мусор
@@ -2640,52 +2640,52 @@ C - - - - - 0x014FBA 05:8FAA: 60        RTS
 
 tbl_8FAF:
 ; 00
-- D 0 - - - 0x014FBF 05:8FAF: 1C        .byte $1C   ; 
+- D 0 - - - 0x014FBF 05:8FAF: 1C        .byte con_bg_pal + $1C   ; 
 - D 0 - - - 0x014FC0 05:8FB0: 68        .byte con_chr_bank + $68   ; 
 ; 01
-- D 0 - - - 0x014FC1 05:8FB1: 23        .byte $23   ; 
+- D 0 - - - 0x014FC1 05:8FB1: 23        .byte con_bg_pal + $23   ; 
 - D 0 - - - 0x014FC2 05:8FB2: 68        .byte con_chr_bank + $68   ; 
 ; 02
-- D 0 - - - 0x014FC3 05:8FB3: 22        .byte $22   ; 
+- D 0 - - - 0x014FC3 05:8FB3: 22        .byte con_bg_pal + $22   ; 
 - D 0 - - - 0x014FC4 05:8FB4: 68        .byte con_chr_bank + $68   ; 
 ; 03
-- D 0 - - - 0x014FC5 05:8FB5: 24        .byte $24   ; 
+- D 0 - - - 0x014FC5 05:8FB5: 24        .byte con_bg_pal + $24   ; 
 - D 0 - - - 0x014FC6 05:8FB6: 6A        .byte con_chr_bank + $6A   ; 
 ; 04
-- - - - - - 0x014FC7 05:8FB7: 1C        .byte $1C   ; 
+- - - - - - 0x014FC7 05:8FB7: 1C        .byte con_bg_pal + $1C   ; 
 - - - - - - 0x014FC8 05:8FB8: 68        .byte con_chr_bank + $68   ; 
 ; 05
-- D 0 - - - 0x014FC9 05:8FB9: 26        .byte $26   ; 
+- D 0 - - - 0x014FC9 05:8FB9: 26        .byte con_bg_pal + $26   ; 
 - D 0 - - - 0x014FCA 05:8FBA: 6A        .byte con_chr_bank + $6A   ; 
 ; 06
-- D 0 - - - 0x014FCB 05:8FBB: 25        .byte $25   ; 
+- D 0 - - - 0x014FCB 05:8FBB: 25        .byte con_bg_pal + $25   ; 
 - D 0 - - - 0x014FCC 05:8FBC: 6A        .byte con_chr_bank + $6A   ; 
 ; 07
-- D 0 - - - 0x014FCD 05:8FBD: 1D        .byte $1D   ; 
+- D 0 - - - 0x014FCD 05:8FBD: 1D        .byte con_bg_pal + $1D   ; 
 - D 0 - - - 0x014FCE 05:8FBE: 68        .byte con_chr_bank + $68   ; 
 ; 08
-- - - - - - 0x014FCF 05:8FBF: 1C        .byte $1C   ; 
+- - - - - - 0x014FCF 05:8FBF: 1C        .byte con_bg_pal + $1C   ; 
 - - - - - - 0x014FD0 05:8FC0: 68        .byte con_chr_bank + $68   ; 
 ; 09
-- D 0 - - - 0x014FD1 05:8FC1: 20        .byte $20   ; 
+- D 0 - - - 0x014FD1 05:8FC1: 20        .byte con_bg_pal + $20   ; 
 - D 0 - - - 0x014FD2 05:8FC2: 68        .byte con_chr_bank + $68   ; 
 ; 0A
-- D 0 - - - 0x014FD3 05:8FC3: 28        .byte $28   ; 
+- D 0 - - - 0x014FD3 05:8FC3: 28        .byte con_bg_pal + $28   ; 
 - D 0 - - - 0x014FD4 05:8FC4: 6A        .byte con_chr_bank + $6A   ; 
 ; 0B
-- D 0 - - - 0x014FD5 05:8FC5: 21        .byte $21   ; 
+- D 0 - - - 0x014FD5 05:8FC5: 21        .byte con_bg_pal + $21   ; 
 - D 0 - - - 0x014FD6 05:8FC6: 68        .byte con_chr_bank + $68   ; 
 ; 0C
-- - - - - - 0x014FD7 05:8FC7: 1C        .byte $1C   ; 
+- - - - - - 0x014FD7 05:8FC7: 1C        .byte con_bg_pal + $1C   ; 
 - - - - - - 0x014FD8 05:8FC8: 68        .byte con_chr_bank + $68   ; 
 ; 0D
-- D 0 - - - 0x014FD9 05:8FC9: 1F        .byte $1F   ; 
+- D 0 - - - 0x014FD9 05:8FC9: 1F        .byte con_bg_pal + $1F   ; 
 - D 0 - - - 0x014FDA 05:8FCA: 68        .byte con_chr_bank + $68   ; 
 ; 0E
-- D 0 - - - 0x014FDB 05:8FCB: 1E        .byte $1E   ; 
+- D 0 - - - 0x014FDB 05:8FCB: 1E        .byte con_bg_pal + $1E   ; 
 - D 0 - - - 0x014FDC 05:8FCC: 68        .byte con_chr_bank + $68   ; 
 ; 0F
-- D 0 - - - 0x014FDD 05:8FCD: 27        .byte $27   ; 
+- D 0 - - - 0x014FDD 05:8FCD: 27        .byte con_bg_pal + $27   ; 
 - D 0 - - - 0x014FDE 05:8FCE: 6A        .byte con_chr_bank + $6A   ; 
 
 
@@ -2948,7 +2948,7 @@ bra_9133:
 C - - - - - 0x015143 05:9133: B9 D7 BD  LDA tbl_BDD7,Y
 loc_9136:
 C D 0 - - - 0x015146 05:9136: 8D B1 05  STA ram_номер_палитры_спрайтов + 3
-C - - - - - 0x015149 05:9139: A9 01     LDA #$01
+C - - - - - 0x015149 05:9139: A9 01     LDA #con_spr_pal + $01
 C - - - - - 0x01514B 05:913B: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x01514E 05:913E: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 C - - - - - 0x015151 05:9141: A0 00     LDY #$00
@@ -3442,7 +3442,7 @@ C - - - - - 0x0153B6 05:93A6: 8D 77 00  STA ram_номер_анимации_иг
 C - - - - - 0x0153B9 05:93A9: A9 05     LDA #con_anim_type_стрелочка_рожи
 C - - - - - 0x0153BB 05:93AB: 8D 61 00  STA ram_тип_анимации_игрока
 C - - - - - 0x0153BE 05:93AE: 8D 62 00  STA ram_тип_анимации_игрока + 1
-C - - - - - 0x0153C1 05:93B1: A9 01     LDA #$01
+C - - - - - 0x0153C1 05:93B1: A9 01     LDA #con_spr_pal + $01
 C - - - - - 0x0153C3 05:93B3: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x0153C6 05:93B6: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 C - - - - - 0x0153C9 05:93B9: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
@@ -5977,7 +5977,7 @@ C - - - - - 0x016104 05:A0F4: A9 05     LDA #con_anim_type_стрелочка_р
 C - - - - - 0x016106 05:A0F6: 8D 61 00  STA ram_тип_анимации_игрока
 C - - - - - 0x016109 05:A0F9: A9 08     LDA #con_action_08
 C - - - - - 0x01610B 05:A0FB: 8D 59 04  STA ram_действие_игрока
-C - - - - - 0x01610E 05:A0FE: A9 01     LDA #$01
+C - - - - - 0x01610E 05:A0FE: A9 01     LDA #con_spr_pal + $01
 C - - - - - 0x016110 05:A100: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x016113 05:A103: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 C - - - - - 0x016116 05:A106: A2 26     LDX #con_chr_bank + $26
@@ -6806,7 +6806,7 @@ C - - - - - 0x0165AA 05:A59A: A9 05     LDA #con_anim_type_стрелочка_р
 C - - - - - 0x0165AC 05:A59C: 8D 63 00  STA ram_тип_анимации_игрока + 2
 C - - - - - 0x0165AF 05:A59F: A9 00     LDA #$00
 C - - - - - 0x0165B1 05:A5A1: 8D 5C 05  STA ram_лицо_игрока
-C - - - - - 0x0165B4 05:A5A4: A9 01     LDA #$01
+C - - - - - 0x0165B4 05:A5A4: A9 01     LDA #con_spr_pal + $01
 C - - - - - 0x0165B6 05:A5A6: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x0165B9 05:A5A9: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 C - - - - - 0x0165BC 05:A5AC: A2 34     LDX #con_chr_bank + $34
@@ -7166,7 +7166,7 @@ bra_A7B4_not_underflow:
 C - - - - - 0x0167C4 05:A7B4: 8D E1 05  STA ram_колво_недоступных_подарков_японии
 C - - - - - 0x0167C7 05:A7B7: A9 05     LDA #con_anim_type_стрелочка_рожи
 C - - - - - 0x0167C9 05:A7B9: 8D 61 00  STA ram_тип_анимации_игрока
-C - - - - - 0x0167CC 05:A7BC: A9 01     LDA #$01
+C - - - - - 0x0167CC 05:A7BC: A9 01     LDA #con_spr_pal + $01
 C - - - - - 0x0167CE 05:A7BE: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x0167D1 05:A7C1: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 C - - - - - 0x0167D4 05:A7C4: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
@@ -9233,7 +9233,7 @@ sub_B2F0:
 - - - - - - 0x01730B 05:B2FB: 8C 61 00  STA ram_тип_анимации_игрока
 - - - - - - 0x01730E 05:B2FE: A9 00     LDA #con_id_японии
 - - - - - - 0x017310 05:B300: 8D 2C 05  STA ram_номер_команды
-- - - - - - 0x017313 05:B303: A9 07     LDA #$07
+- - - - - - 0x017313 05:B303: A9 07     LDA #$07    ; bzk ком   con_spr_pal + $07
 - - - - - - 0x017315 05:B305: 8D AE 05  STA ram_номер_палитры_спрайтов
 - - - - - - 0x017318 05:B308: 8D 80 00  STA ram_номер_анимации_мяча
 - - - - - - 0x01731B 05:B30B: A2 26     LDX #con_chr_bank + $26
@@ -9538,7 +9538,7 @@ sub_B4D6:
 - - - - - - 0x0174EB 05:B4DB: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 - - - - - - 0x0174EE 05:B4DE: A9 04     LDA #con_anim_type_04
 - - - - - - 0x0174F0 05:B4E0: 8D 6D 00  STA ram_тип_анимации_мяча
-- - - - - - 0x0174F3 05:B4E3: A9 07     LDA #$07
+- - - - - - 0x0174F3 05:B4E3: A9 07     LDA #$07    ; bzk ком   con_spr_pal + $07
 - - - - - - 0x0174F5 05:B4E5: 8D 80 00  STA ram_номер_анимации_мяча
 - - - - - - 0x0174F8 05:B4E8: 8D AE 05  STA ram_номер_палитры_спрайтов
 - - - - - - 0x0174FB 05:B4EB: A9 C8     LDA #$C8
@@ -11261,7 +11261,7 @@ C - - - - - 0x017DBF 05:BDAF: 60        RTS
 
 loc_BDB0_выбор_палитры_командам:
 sub_BDB0_выбор_палитры_командам:
-C D 1 - - - 0x017DC0 05:BDB0: A9 01     LDA #$01
+C D 1 - - - 0x017DC0 05:BDB0: A9 01     LDA #con_spr_pal + $01
 C - - - - - 0x017DC2 05:BDB2: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x017DC5 05:BDB5: AD 2C 05  LDA ram_номер_команды
 C - - - - - 0x017DC8 05:BDB8: 29 0F     AND #$0F
@@ -11282,39 +11282,39 @@ C - - - - - 0x017DE5 05:BDD5: 60        RTS
 
 
 tbl_BDD6:
-- D 1 - - - 0x017DE6 05:BDD6: 04        .byte $04   ; 
+- D 1 - - - 0x017DE6 05:BDD6: 04        .byte con_spr_pal + $04   ; 
 tbl_BDD7:
-- D 1 - - - 0x017DE7 05:BDD7: 08        .byte $08   ; 
-- D 1 - - - 0x017DE8 05:BDD8: 04        .byte $04   ; 
-- D 1 - - - 0x017DE9 05:BDD9: 09        .byte $09   ; 
-- - - - - - 0x017DEA 05:BDDA: 04        .byte $04   ; 
-- - - - - - 0x017DEB 05:BDDB: 0A        .byte $0A   ; 
-- D 1 - - - 0x017DEC 05:BDDC: 04        .byte $04   ; 
-- D 1 - - - 0x017DED 05:BDDD: 0B        .byte $0B   ; 
-- - - - - - 0x017DEE 05:BDDE: 05        .byte $05   ; 
-- - - - - - 0x017DEF 05:BDDF: 0C        .byte $0C   ; 
-- D 1 - - - 0x017DF0 05:BDE0: 05        .byte $05   ; 
-- D 1 - - - 0x017DF1 05:BDE1: 0C        .byte $0C   ; 
-- - - - - - 0x017DF2 05:BDE2: 05        .byte $05   ; 
-- - - - - - 0x017DF3 05:BDE3: 0D        .byte $0D   ; 
-- D 1 - - - 0x017DF4 05:BDE4: 05        .byte $05   ; 
-- D 1 - - - 0x017DF5 05:BDE5: 0E        .byte $0E   ; 
-- - - - - - 0x017DF6 05:BDE6: 06        .byte $06   ; 
-- - - - - - 0x017DF7 05:BDE7: 0F        .byte $0F   ; 
-- D 1 - - - 0x017DF8 05:BDE8: 06        .byte $06   ; 
-- D 1 - - - 0x017DF9 05:BDE9: 0F        .byte $0F   ; 
-- - - - - - 0x017DFA 05:BDEA: 06        .byte $06   ; 
-- - - - - - 0x017DFB 05:BDEB: 10        .byte $10   ; 
-- D 1 - - - 0x017DFC 05:BDEC: 06        .byte $06   ; 
-- D 1 - - - 0x017DFD 05:BDED: 11        .byte $11   ; 
-- - - - - - 0x017DFE 05:BDEE: 07        .byte $07   ; 
-- - - - - - 0x017DFF 05:BDEF: 12        .byte $12   ; 
-- D 1 - - - 0x017E00 05:BDF0: 07        .byte $07   ; 
-- D 1 - - - 0x017E01 05:BDF1: 12        .byte $12   ; 
-- D 1 - - - 0x017E02 05:BDF2: 07        .byte $07   ; 
-- D 1 - - - 0x017E03 05:BDF3: 13        .byte $13   ; 
-- D 1 - - - 0x017E04 05:BDF4: 1C        .byte $1C   ; 
-- D 1 - - - 0x017E05 05:BDF5: 14        .byte $14   ; 
+- D 1 - - - 0x017DE7 05:BDD7: 08        .byte con_spr_pal + $08   ; 
+- D 1 - - - 0x017DE8 05:BDD8: 04        .byte con_spr_pal + $04   ; 
+- D 1 - - - 0x017DE9 05:BDD9: 09        .byte con_spr_pal + $09   ; 
+- - - - - - 0x017DEA 05:BDDA: 04        .byte con_spr_pal + $04   ; 
+- - - - - - 0x017DEB 05:BDDB: 0A        .byte con_spr_pal + $0A   ; 
+- D 1 - - - 0x017DEC 05:BDDC: 04        .byte con_spr_pal + $04   ; 
+- D 1 - - - 0x017DED 05:BDDD: 0B        .byte con_spr_pal + $0B   ; 
+- - - - - - 0x017DEE 05:BDDE: 05        .byte con_spr_pal + $05   ; 
+- - - - - - 0x017DEF 05:BDDF: 0C        .byte con_spr_pal + $0C   ; 
+- D 1 - - - 0x017DF0 05:BDE0: 05        .byte con_spr_pal + $05   ; 
+- D 1 - - - 0x017DF1 05:BDE1: 0C        .byte con_spr_pal + $0C   ; 
+- - - - - - 0x017DF2 05:BDE2: 05        .byte con_spr_pal + $05   ; 
+- - - - - - 0x017DF3 05:BDE3: 0D        .byte con_spr_pal + $0D   ; 
+- D 1 - - - 0x017DF4 05:BDE4: 05        .byte con_spr_pal + $05   ; 
+- D 1 - - - 0x017DF5 05:BDE5: 0E        .byte con_spr_pal + $0E   ; 
+- - - - - - 0x017DF6 05:BDE6: 06        .byte con_spr_pal + $06   ; 
+- - - - - - 0x017DF7 05:BDE7: 0F        .byte con_spr_pal + $0F   ; 
+- D 1 - - - 0x017DF8 05:BDE8: 06        .byte con_spr_pal + $06   ; 
+- D 1 - - - 0x017DF9 05:BDE9: 0F        .byte con_spr_pal + $0F   ; 
+- - - - - - 0x017DFA 05:BDEA: 06        .byte con_spr_pal + $06   ; 
+- - - - - - 0x017DFB 05:BDEB: 10        .byte con_spr_pal + $10   ; 
+- D 1 - - - 0x017DFC 05:BDEC: 06        .byte con_spr_pal + $06   ; 
+- D 1 - - - 0x017DFD 05:BDED: 11        .byte con_spr_pal + $11   ; 
+- - - - - - 0x017DFE 05:BDEE: 07        .byte con_spr_pal + $07   ; 
+- - - - - - 0x017DFF 05:BDEF: 12        .byte con_spr_pal + $12   ; 
+- D 1 - - - 0x017E00 05:BDF0: 07        .byte con_spr_pal + $07   ; 
+- D 1 - - - 0x017E01 05:BDF1: 12        .byte con_spr_pal + $12   ; 
+- D 1 - - - 0x017E02 05:BDF2: 07        .byte con_spr_pal + $07   ; 
+- D 1 - - - 0x017E03 05:BDF3: 13        .byte con_spr_pal + $13   ; 
+- D 1 - - - 0x017E04 05:BDF4: 1C        .byte con_spr_pal + $1C   ; 
+- D 1 - - - 0x017E05 05:BDF5: 14        .byte con_spr_pal + $14   ; 
 
 
 

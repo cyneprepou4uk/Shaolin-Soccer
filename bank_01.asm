@@ -14111,7 +14111,7 @@ C - - - - - 0x00792C 01:B91C: 0A        ASL
 C - - - - - 0x00792D 01:B91D: 18        CLC
 C - - - - - 0x00792E 01:B91E: 69 3D     ADC #$3D
 C - - - - - 0x007930 01:B920: 8D AC 05  STA ram_номер_палитры_фона
-C - - - - - 0x007933 01:B923: A9 0A     LDA #$0A
+C - - - - - 0x007933 01:B923: A9 0A     LDA #con_bg_pal + $0A
 C - - - - - 0x007935 01:B925: 8D AD 05  STA ram_номер_палитры_фона + 1
 C - - - - - 0x007938 01:B928: AD FB 05  LDA ram_опция_поверхность_влажность
 C - - - - - 0x00793B 01:B92B: 29 F0     AND #$F0
@@ -14458,14 +14458,14 @@ tbl_BB2D:
 
 
 tbl_BB35:
-- D 1 - - - 0x007B45 01:BB35: 05        .byte $05   ; 
-- D 1 - - - 0x007B46 01:BB36: 05        .byte $05   ; 
-- D 1 - - - 0x007B47 01:BB37: 06        .byte $06   ; 
-- D 1 - - - 0x007B48 01:BB38: 05        .byte $05   ; 
-- D 1 - - - 0x007B49 01:BB39: 06        .byte $06   ; 
-- D 1 - - - 0x007B4A 01:BB3A: 05        .byte $05   ; 
-- D 1 - - - 0x007B4B 01:BB3B: 06        .byte $06   ; 
-- D 1 - - - 0x007B4C 01:BB3C: 00        .byte $00   ; 
+- D 1 - - - 0x007B45 01:BB35: 05        .byte con_bg_pal + $05   ; 00
+- D 1 - - - 0x007B46 01:BB36: 05        .byte con_bg_pal + $05   ; 01
+- D 1 - - - 0x007B47 01:BB37: 06        .byte con_bg_pal + $06   ; 02
+- D 1 - - - 0x007B48 01:BB38: 05        .byte con_bg_pal + $05   ; 03
+- D 1 - - - 0x007B49 01:BB39: 06        .byte con_bg_pal + $06   ; 04
+- D 1 - - - 0x007B4A 01:BB3A: 05        .byte con_bg_pal + $05   ; 05
+- D 1 - - - 0x007B4B 01:BB3B: 06        .byte con_bg_pal + $06   ; 06
+- D 1 - - - 0x007B4C 01:BB3C: 00        .byte $00   ; 07
 
 
 

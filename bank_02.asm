@@ -10677,11 +10677,11 @@ C - - - - - 0x00AAB9 02:AAA9: A9 90     LDA #$90
 C - - - - - 0x00AABB 02:AAAB: 8D 20 03  STA ram_pos_X_lo_мяча
 C - - - - - 0x00AABE 02:AAAE: A9 56     LDA #$56
 C - - - - - 0x00AAC0 02:AAB0: 8D 59 03  STA ram_pos_Y_lo_мяча
-C - - - - - 0x00AAC3 02:AAB3: A9 1D     LDA #$1D
+C - - - - - 0x00AAC3 02:AAB3: A9 1D     LDA #con_spr_pal + $1D
 C - - - - - 0x00AAC5 02:AAB5: 8D AE 05  STA ram_номер_палитры_спрайтов
-C - - - - - 0x00AAC8 02:AAB8: A9 1F     LDA #$1F
+C - - - - - 0x00AAC8 02:AAB8: A9 1F     LDA #con_spr_pal + $1F
 C - - - - - 0x00AACA 02:AABA: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
-C - - - - - 0x00AACD 02:AABD: A9 21     LDA #$21
+C - - - - - 0x00AACD 02:AABD: A9 21     LDA #con_spr_pal + $21
 C - - - - - 0x00AACF 02:AABF: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
 C - - - - - 0x00AAD2 02:AAC2: A2 70     LDX #con_chr_bank + $70
 C - - - - - 0x00AAD4 02:AAC4: 8E B8 05  STX ram_банк_спрайтов
@@ -10739,7 +10739,7 @@ bra_AB28:
 C - - - - - 0x00AB38 02:AB28: A5 A0     LDA ram_кадр_анимации_мяча
 C - - - - - 0x00AB3A 02:AB2A: C9 07     CMP #$07
 C - - - - - 0x00AB3C 02:AB2C: D0 11     BNE bra_AB3F_RTS
-C - - - - - 0x00AB3E 02:AB2E: A9 3C     LDA #$3C
+C - - - - - 0x00AB3E 02:AB2E: A9 3C     LDA #con_bg_pal + $3C
 C - - - - - 0x00AB40 02:AB30: 8D AC 05  STA ram_номер_палитры_фона
 C - - - - - 0x00AB43 02:AB33: EE AE 05  INC ram_номер_палитры_спрайтов
 C - - - - - 0x00AB46 02:AB36: EE AF 05  INC ram_номер_палитры_спрайтов + 1
@@ -10751,14 +10751,14 @@ C - - - - - 0x00AB4F 02:AB3F: 60        RTS
 
 
 tbl_AB40:
-- D 1 - - - 0x00AB50 02:AB40: 45        .byte $45   ; 
-- D 1 - - - 0x00AB51 02:AB41: 46        .byte $46   ; 
-- D 1 - - - 0x00AB52 02:AB42: 47        .byte $47   ; 
-- D 1 - - - 0x00AB53 02:AB43: 48        .byte $48   ; 
-- D 1 - - - 0x00AB54 02:AB44: 47        .byte $47   ; 
-- D 1 - - - 0x00AB55 02:AB45: 46        .byte $46   ; 
-- D 1 - - - 0x00AB56 02:AB46: 45        .byte $45   ; 
-- D 1 - - - 0x00AB57 02:AB47: 44        .byte $44   ; 
+- D 1 - - - 0x00AB50 02:AB40: 45        .byte con_bg_pal + $45   ; 00
+- D 1 - - - 0x00AB51 02:AB41: 46        .byte con_bg_pal + $46   ; 01
+- D 1 - - - 0x00AB52 02:AB42: 47        .byte con_bg_pal + $47   ; 02
+- D 1 - - - 0x00AB53 02:AB43: 48        .byte con_bg_pal + $48   ; 03
+- D 1 - - - 0x00AB54 02:AB44: 47        .byte con_bg_pal + $47   ; 04
+- D 1 - - - 0x00AB55 02:AB45: 46        .byte con_bg_pal + $46   ; 05
+- D 1 - - - 0x00AB56 02:AB46: 45        .byte con_bg_pal + $45   ; 06
+- D 1 - - - 0x00AB57 02:AB47: 44        .byte con_bg_pal + $44   ; 07
 
 
 
@@ -10830,13 +10830,13 @@ C - - - - - 0x00ABA4 02:AB94: A9 C0     LDA #$C0
 C - - - - - 0x00ABA6 02:AB96: 8D 20 03  STA ram_pos_X_lo_мяча
 C - - - - - 0x00ABA9 02:AB99: A9 CE     LDA #$CE
 C - - - - - 0x00ABAB 02:AB9B: 8D 59 03  STA ram_pos_Y_lo_мяча
-C - - - - - 0x00ABAE 02:AB9E: A2 27     LDX #$27
+C - - - - - 0x00ABAE 02:AB9E: A2 27     LDX #con_spr_pal + $27
 C - - - - - 0x00ABB0 02:ABA0: 8E AE 05  STX ram_номер_палитры_спрайтов
-C - - - - - 0x00ABB3 02:ABA3: E8        INX
+C - - - - - 0x00ABB3 02:ABA3: E8        INX ; con_spr_pal + $28
 C - - - - - 0x00ABB4 02:ABA4: 8E AF 05  STX ram_номер_палитры_спрайтов + 1
-C - - - - - 0x00ABB7 02:ABA7: E8        INX
+C - - - - - 0x00ABB7 02:ABA7: E8        INX ; con_spr_pal + $29
 C - - - - - 0x00ABB8 02:ABA8: 8E B0 05  STX ram_номер_палитры_спрайтов + 2
-C - - - - - 0x00ABBB 02:ABAB: E8        INX
+C - - - - - 0x00ABBB 02:ABAB: E8        INX ; con_spr_pal + $2A
 C - - - - - 0x00ABBC 02:ABAC: 8E B1 05  STX ram_номер_палитры_спрайтов + 3
 C - - - - - 0x00ABBF 02:ABAF: 20 33 B0  JSR sub_B033_анимация_мяча
 C - - - - - 0x00ABC2 02:ABB2: A9 01     LDA #con_music_логотип
@@ -10951,7 +10951,7 @@ C - - - - - 0x00AC80 02:AC70: 8E B9 05  STX ram_банк_спрайтов + 1
 C - - - - - 0x00AC83 02:AC73: E8        INX ; con_chr_bank + $20
 C - - - - - 0x00AC84 02:AC74: 8E BA 05  STX ram_банк_спрайтов + 2
 C - - - - - 0x00AC87 02:AC77: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
-C - - - - - 0x00AC8A 02:AC7A: A9 01     LDA #$01
+C - - - - - 0x00AC8A 02:AC7A: A9 01     LDA #con_spr_pal + $01
 C - - - - - 0x00AC8C 02:AC7C: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x00AC8F 02:AC7F: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 C - - - - - 0x00AC92 02:AC82: A9 03     LDA #$03
@@ -12793,7 +12793,7 @@ tbl_B63F:
 
 ; 06
 - - - - - - 0x00B691 02:B681: 3C        .byte con_chr_bank + $3C   ; 
-- - - - - - 0x00B692 02:B682: 07        .byte $07   ; 
+- - - - - - 0x00B692 02:B682: 07        .byte con_spr_pal + $07   ; 
 - - - - - - 0x00B693 02:B683: FF        .byte $FF   ; 
 
 - - - - - - 0x00B694 02:B684: 00        .byte $00   ; 
@@ -12857,8 +12857,8 @@ tbl_B63F:
 
 ; 0A
 - D 1 - - - 0x00B6BD 02:B6AD: 3C        .byte con_chr_bank + $3C   ; 
-- D 1 - - - 0x00B6BE 02:B6AE: 07        .byte $07   ; 
-- D 1 - - - 0x00B6BF 02:B6AF: 26        .byte $26   ; 
+- D 1 - - - 0x00B6BE 02:B6AE: 07        .byte con_spr_pal + $07   ; 
+- D 1 - - - 0x00B6BF 02:B6AF: 26        .byte con_spr_pal + $26   ; 
 
 - D 1 - - - 0x00B6C0 02:B6B0: 00        .byte $00   ; 
 - D 1 - - - 0x00B6C1 02:B6B1: 17        .byte con_action_17 + con_направо   ; 
@@ -12889,8 +12889,8 @@ tbl_B63F:
 
 ; 0C
 - - - - - - 0x00B6D3 02:B6C3: 3C        .byte con_chr_bank + $3C   ; 
-- - - - - - 0x00B6D4 02:B6C4: 07        .byte $07   ; 
-- - - - - - 0x00B6D5 02:B6C5: 26        .byte $26   ; 
+- - - - - - 0x00B6D4 02:B6C4: 07        .byte con_spr_pal + $07   ; 
+- - - - - - 0x00B6D5 02:B6C5: 26        .byte con_spr_pal + $26   ; 
 
 - - - - - - 0x00B6D6 02:B6C6: 00        .byte $00   ; 
 - - - - - - 0x00B6D7 02:B6C7: 95        .byte con_action_15 + con_налево   ; 
@@ -13732,9 +13732,9 @@ off_BA61_29:
 
 
 sub_BA66:
-- - - - - - 0x00BA76 02:BA66: A9 07     LDA #$07
+- - - - - - 0x00BA76 02:BA66: A9 07     LDA #con_spr_pal + $07
 - - - - - - 0x00BA78 02:BA68: 8D AE 05  STA ram_номер_палитры_спрайтов
-- - - - - - 0x00BA7B 02:BA6B: A9 04     LDA #$04
+- - - - - - 0x00BA7B 02:BA6B: A9 04     LDA #con_spr_pal + $04
 - - - - - - 0x00BA7D 02:BA6D: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 - - - - - - 0x00BA80 02:BA70: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
 - - - - - - 0x00BA83 02:BA73: 8D B1 05  STA ram_номер_палитры_спрайтов + 3
@@ -13998,9 +13998,9 @@ bra_BC27_первое_место:
 - - - - - - 0x00BC5F 02:BC4F: 8D 33 03  STA ram_pos_X_hi_мяча
 - - - - - - 0x00BC62 02:BC52: 8D F1 00  STA ram_pos_X_hi_камера
 - - - - - - 0x00BC65 02:BC55: 8D ED 00  STA ram_pos_X_hi_скролл
-- - - - - - 0x00BC68 02:BC58: A9 1D     LDA #$1D
+- - - - - - 0x00BC68 02:BC58: A9 1D     LDA #con_spr_pal + $1D
 - - - - - - 0x00BC6A 02:BC5A: 8D AE 05  STA ram_номер_палитры_спрайтов
-- - - - - - 0x00BC6D 02:BC5D: A9 2B     LDA #$2B
+- - - - - - 0x00BC6D 02:BC5D: A9 2B     LDA #con_spr_pal + $2B
 - - - - - - 0x00BC6F 02:BC5F: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 - - - - - - 0x00BC72 02:BC62: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
 - - - - - - 0x00BC75 02:BC65: 8D B1 05  STA ram_номер_палитры_спрайтов + 3
@@ -14234,9 +14234,9 @@ ofs_BDC0_04_подготовка_последней_фотки:
 - - - - - - 0x00BE20 02:BE10: 8D 28 03  STA ram_pos_X_hi_игрока + 1
 - - - - - - 0x00BE23 02:BE13: 8D 33 03  STA ram_pos_X_hi_мяча
 - - - - - - 0x00BE26 02:BE16: 8D A5 03  STA ram_pos_Z_hi_мяча
-- - - - - - 0x00BE29 02:BE19: A9 1D     LDA #$1D
+- - - - - - 0x00BE29 02:BE19: A9 1D     LDA #con_spr_pal + $1D
 - - - - - - 0x00BE2B 02:BE1B: 8D AE 05  STA ram_номер_палитры_спрайтов
-- - - - - - 0x00BE2E 02:BE1E: A9 2B     LDA #$2B
+- - - - - - 0x00BE2E 02:BE1E: A9 2B     LDA #con_spr_pal + $2B
 - - - - - - 0x00BE30 02:BE20: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 - - - - - - 0x00BE33 02:BE23: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
 - - - - - - 0x00BE36 02:BE26: 8D B1 05  STA ram_номер_палитры_спрайтов + 3
@@ -14379,8 +14379,8 @@ off_BEFA_00:
 - - - - - - 0x00BF0A 02:BEFA: C8        .byte $C8   ; 
 - - - - - - 0x00BF0B 02:BEFB: 14        .byte con_chr_bank + $14   ; 
 - - - - - - 0x00BF0C 02:BEFC: 09        .byte con_chr_bank + $09   ; 
-- - - - - - 0x00BF0D 02:BEFD: 2C        .byte $2C   ; 
-- - - - - - 0x00BF0E 02:BEFE: 2C        .byte $2C   ; 
+- - - - - - 0x00BF0D 02:BEFD: 2C        .byte con_spr_pal + $2C   ; 
+- - - - - - 0x00BF0E 02:BEFE: 2C        .byte con_spr_pal + $2C   ; 
 - - - - - - 0x00BF0F 02:BEFF: 9B        .byte $9B   ; 
 - - - - - - 0x00BF10 02:BF00: 50        .byte $50   ; 
 - - - - - - 0x00BF11 02:BF01: 80        .byte $80   ; 
@@ -14404,8 +14404,8 @@ off_BF0F_01:
 - - - - - - 0x00BF1F 02:BF0F: C6        .byte $C6   ; 
 - - - - - - 0x00BF20 02:BF10: 19        .byte con_chr_bank + $19   ; 
 - - - - - - 0x00BF21 02:BF11: 09        .byte con_chr_bank + $09   ; 
-- - - - - - 0x00BF22 02:BF12: 2E        .byte $2E   ; 
-- - - - - - 0x00BF23 02:BF13: 2F        .byte $2F   ; 
+- - - - - - 0x00BF22 02:BF12: 2E        .byte con_spr_pal + $2E   ; 
+- - - - - - 0x00BF23 02:BF13: 2F        .byte con_spr_pal + $2F   ; 
 - - - - - - 0x00BF24 02:BF14: 15        .byte $15   ; 
 - - - - - - 0x00BF25 02:BF15: 60        .byte $60   ; 
 - - - - - - 0x00BF26 02:BF16: 9C        .byte $9C   ; 
@@ -14433,8 +14433,8 @@ off_BF28_02:
 - - - - - - 0x00BF38 02:BF28: F8        .byte $F8   ; 
 - - - - - - 0x00BF39 02:BF29: 16        .byte con_chr_bank + $16   ; 
 - - - - - - 0x00BF3A 02:BF2A: 09        .byte con_chr_bank + $09   ; 
-- - - - - - 0x00BF3B 02:BF2B: 34        .byte $34   ; 
-- - - - - - 0x00BF3C 02:BF2C: 2D        .byte $2D   ; 
+- - - - - - 0x00BF3B 02:BF2B: 34        .byte con_spr_pal + $34   ; 
+- - - - - - 0x00BF3C 02:BF2C: 2D        .byte con_spr_pal + $2D   ; 
 - - - - - - 0x00BF3D 02:BF2D: 0F        .byte $0F   ; 
 - - - - - - 0x00BF3E 02:BF2E: 60        .byte $60   ; 
 - - - - - - 0x00BF3F 02:BF2F: 98        .byte $98   ; 
@@ -14462,8 +14462,8 @@ off_BF41_03:
 - - - - - - 0x00BF51 02:BF41: C8        .byte $C8   ; 
 - - - - - - 0x00BF52 02:BF42: 1D        .byte con_chr_bank + $1D   ; 
 - - - - - - 0x00BF53 02:BF43: 0C        .byte con_chr_bank + $0C   ; 
-- - - - - - 0x00BF54 02:BF44: 30        .byte $30   ; 
-- - - - - - 0x00BF55 02:BF45: 31        .byte $31   ; 
+- - - - - - 0x00BF54 02:BF44: 30        .byte con_spr_pal + $30   ; 
+- - - - - - 0x00BF55 02:BF45: 31        .byte con_spr_pal + $31   ; 
 - - - - - - 0x00BF56 02:BF46: 12        .byte $12   ; 
 - - - - - - 0x00BF57 02:BF47: 54        .byte $54   ; 
 - - - - - - 0x00BF58 02:BF48: 94        .byte $94   ; 
@@ -14491,8 +14491,8 @@ off_BF5A_04:
 - - - - - - 0x00BF6A 02:BF5A: 2C        .byte $2C   ; 
 - - - - - - 0x00BF6B 02:BF5B: 1F        .byte con_chr_bank + $1F   ; 
 - - - - - - 0x00BF6C 02:BF5C: 0A        .byte con_chr_bank + $0A   ; 
-- - - - - - 0x00BF6D 02:BF5D: 2E        .byte $2E   ; 
-- - - - - - 0x00BF6E 02:BF5E: 35        .byte $35   ; 
+- - - - - - 0x00BF6D 02:BF5D: 2E        .byte con_spr_pal + $2E   ; 
+- - - - - - 0x00BF6E 02:BF5E: 35        .byte con_spr_pal + $35   ; 
 - - - - - - 0x00BF6F 02:BF5F: 88        .byte $88   ; 
 - - - - - - 0x00BF70 02:BF60: A8        .byte $A8   ; 
 - - - - - - 0x00BF71 02:BF61: 98        .byte $98   ; 
@@ -14524,8 +14524,8 @@ off_BF77_05:
 - - - - - - 0x00BF87 02:BF77: C8        .byte $C8   ; 
 - - - - - - 0x00BF88 02:BF78: 1A        .byte con_chr_bank + $1A   ; 
 - - - - - - 0x00BF89 02:BF79: 09        .byte con_chr_bank + $09   ; 
-- - - - - - 0x00BF8A 02:BF7A: 32        .byte $32   ; 
-- - - - - - 0x00BF8B 02:BF7B: 33        .byte $33   ; 
+- - - - - - 0x00BF8A 02:BF7A: 32        .byte con_spr_pal + $32   ; 
+- - - - - - 0x00BF8B 02:BF7B: 33        .byte con_spr_pal + $33   ; 
 - - - - - - 0x00BF8C 02:BF7C: 22        .byte $22   ; 
 - - - - - - 0x00BF8D 02:BF7D: 58        .byte $58   ; 
 - - - - - - 0x00BF8E 02:BF7E: 90        .byte $90   ; 
@@ -14553,8 +14553,8 @@ off_BF90_06:
 - - - - - - 0x00BFA0 02:BF90: C8        .byte $C8   ; 
 - - - - - - 0x00BFA1 02:BF91: 1C        .byte con_chr_bank + $1C   ; 
 - - - - - - 0x00BFA2 02:BF92: 11        .byte con_chr_bank + $11   ; 
-- - - - - - 0x00BFA3 02:BF93: 32        .byte $32   ; 
-- - - - - - 0x00BFA4 02:BF94: 33        .byte $33   ; 
+- - - - - - 0x00BFA3 02:BF93: 32        .byte con_spr_pal + $32   ; 
+- - - - - - 0x00BFA4 02:BF94: 33        .byte con_spr_pal + $33   ; 
 - - - - - - 0x00BFA5 02:BF95: C2        .byte $C2   ; 
 - - - - - - 0x00BFA6 02:BF96: 8C        .byte $8C   ; 
 - - - - - - 0x00BFA7 02:BF97: 6C        .byte $6C   ; 

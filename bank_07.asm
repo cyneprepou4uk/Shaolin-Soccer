@@ -66,10 +66,10 @@ sub_0x000000_RESET_init:
                                         STA ram_байт_2006_hi_палитра
                                         STA ram_флаг_гола
                                         STA ram_раунд_плей_офф
-                                        LDA #$42
+                                        LDA #con_bg_pal + $42
                                         STA ram_номер_палитры_фона
                                         STA ram_номер_палитры_фона + 1
-                                        LDA #$00
+                                        LDA #con_spr_pal + $00
                                         STA ram_номер_палитры_спрайтов
                                         STA ram_номер_палитры_спрайтов + 1
                                         STA ram_номер_палитры_спрайтов + 2

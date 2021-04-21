@@ -1640,7 +1640,7 @@ bra_C8FB:
 C - - - - - 0x01C90B 07:C8FB: 8D F8 05  STA ram_содержимое_hud
 C - - - - - 0x01C90E 07:C8FE: A9 00     LDA #$00
 C - - - - - 0x01C910 07:C900: 8D F9 05  STA ram_flag_hud_ready
-C - - - - - 0x01C913 07:C903: A9 0F     LDA #$0F
+C - - - - - 0x01C913 07:C903: A9 0F     LDA #con_bg_pal + $0F
 C - - - - - 0x01C915 07:C905: 8D AD 05  STA ram_номер_палитры_фона + 1
 C - - - - - 0x01C918 07:C908: 20 D5 D0  JSR sub_D0D5_запись_палитры_в_буфер_с_учетом_яркости
 bra_C910_первый_тайм:
@@ -2630,7 +2630,7 @@ C - - - - - 0x01CFBF 07:CFAF: 20 26 C3  JSR sub_C326
 C - - - - - 0x01CFC2 07:CFB2: 20 9A EE  JSR sub_EE9A_запись_банков_спрайтов
 C - - - - - 0x01CFC5 07:CFB5: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x01CFC8 07:CFB8: 8D AC 05  STA ram_номер_палитры_фона
-C - - - - - 0x01CFCB 07:CFBB: A9 0F     LDA #$0F
+C - - - - - 0x01CFCB 07:CFBB: A9 0F     LDA #con_bg_pal + $0F
 C - - - - - 0x01CFCD 07:CFBD: 8D AD 05  STA ram_номер_палитры_фона + 1
 C - - - - - 0x01CFD0 07:CFC0: A9 01     LDA #$01    ; horisontal mirroring
 C - - - - - 0x01CFD2 07:CFC2: 8D 00 A0  STA $A000
@@ -4229,9 +4229,9 @@ bra_D616_RTS:
 C - - - - - 0x01D626 07:D616: 60        RTS
 
 tbl_D617_номер_палитры:
-- D 2 - - - 0x01D627 07:D617: 03        .byte $03   ; мокрый
-- D 2 - - - 0x01D628 07:D618: 02        .byte $02   ; влажный
-- D 2 - - - 0x01D629 07:D619: 01        .byte $01   ; сухой
+- D 2 - - - 0x01D627 07:D617: 03        .byte con_spr_pal + $03   ; мокрый
+- D 2 - - - 0x01D628 07:D618: 02        .byte con_spr_pal + $02   ; влажный
+- D 2 - - - 0x01D629 07:D619: 01        .byte con_spr_pal + $01   ; сухой
 
 
 
