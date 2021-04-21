@@ -10696,7 +10696,7 @@ C - - - - - 0x00AAE8 02:AAD8: 60        RTS
 
 
 
-ofs_AAD9_09:
+ofs_AAD9_09_экран_с_лого_после_титров:
 ofs_AAD9_01_экран_с_лого:
 C - - J - - 0x00AAE9 02:AAD9: 20 01 AE  JSR sub_AE01
 C - - - - - 0x00AAEC 02:AADC: 2C B2 05  BIT ram_флаг_яркости
@@ -13885,8 +13885,8 @@ loc_BB5D_скрипт_титров:
 - - - - - - 0x00BB7E 02:BB6E: 59 BE     .word ofs_BE59_06_звонок_по_мобиле
 - - - - - - 0x00BB80 02:BB70: 76 BE     .word ofs_BE76_07
 - - - - - - 0x00BB82 02:BB72: 95 AA     .word ofs_AA95_08
-- - - - - - 0x00BB84 02:BB74: D9 AA     .word ofs_AAD9_09
-- - - - - - 0x00BB86 02:BB76: 95 BE     .word ofs_BE95_0A
+- - - - - - 0x00BB84 02:BB74: D9 AA     .word ofs_AAD9_09_экран_с_лого_после_титров
+- - - - - - 0x00BB86 02:BB76: 95 BE     .word ofs_BE95_0A_конец_титров
 
 
 
@@ -14302,7 +14302,7 @@ bra_BE94_RTS:
 
 
 
-ofs_BE95_0A:
+ofs_BE95_0A_конец_титров:
 - - - - - - 0x00BEA5 02:BE95: A2 0C     LDX #con_id_мяча
 - - - - - - 0x00BEA7 02:BE97: 20 65 C0  JSR sub_0x01EB9C
 - - - - - - 0x00BEAA 02:BE9A: 60        RTS
