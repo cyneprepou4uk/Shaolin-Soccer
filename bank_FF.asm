@@ -2736,6 +2736,8 @@ bra_D08E_идет_отсветление:
 C D 2 - - - 0x01D09E 07:D08E: 8D B4 05  STA ram_степень_яркости
 C - - - - - 0x01D0A1 07:D091: AD B5 05  LDA ram_таймер_яркости
 C - - - - - 0x01D0A4 07:D094: D0 0D     BNE bra_D0A3
+                                        LDA #$FF
+                                        STA ram_pal_buffer
 C - - - - - 0x01D0A9 07:D099: A9 00     LDA #$00
 C - - - - - 0x01D0AB 07:D09B: 8D 90 06  STA ram_бит_для_2000_атрибуты
 bra_D0A3:
