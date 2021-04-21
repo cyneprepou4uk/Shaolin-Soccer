@@ -29,7 +29,7 @@ sub_0x000000_RESET_init:
                                         JSR sub_скопировать_на_батарейку
                                         JSR sub_0x01EE81_выключить_NMI
                                         JSR sub_0x01EF74_очистка_фона_и_спрайтов
-;                                        JSR sub_подготовка_палитры_vt03
+                                        JSR sub_подготовка_палитры_vt03
                                         LDA #$00
                                         STA ram_pos_X_lo_скролл
                                         STA ram_pos_X_hi_скролл
@@ -141,16 +141,15 @@ sub_подготовка_палитры_vt03:
                                         STA ram_000D
                                         LDX #$00
 @bra_цикл_записи_rgb:
-                                        STX $401B
                                         LDY #$00
                                         LDA (ram_000C),Y
-                                        STA $401B
+                                        STA ram_color_R,X
                                         INY
                                         LDA (ram_000C),Y
-                                        STA $401B
+                                        STA ram_color_G,X
                                         INY
                                         LDA (ram_000C),Y
-                                        STA $401B
+                                        STA ram_color_B,X
                                         LDA ram_000C
                                         CLC
                                         ADC #$03
