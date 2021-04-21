@@ -2760,7 +2760,7 @@ C - - - - - 0x01D0BE 07:D0AE: A9 00     LDA #$00
 C - - - - - 0x01D0C0 07:D0B0: 8D B5 05  STA ram_таймер_яркости
 C - - - - - 0x01D0C3 07:D0B3: EE B6 05  INC ram_счетчик_яркости
 C - - - - - 0x01D0C6 07:D0B6: AD B6 05  LDA ram_счетчик_яркости
-C - - - - - 0x01D0C9 07:D0B9: C9 05     CMP #$05
+C - - - - - 0x01D0C9 07:D0B9: C9 05     CMP #$11
 C - - - - - 0x01D0CB 07:D0BB: 90 0D     BCC bra_D0CA_RTS
 C - - - - - 0x01D0CD 07:D0BD: A9 00     LDA #$00
 C - - - - - 0x01D0CF 07:D0BF: 8D B6 05  STA ram_счетчик_яркости
