@@ -10711,7 +10711,7 @@ C - - - - - 0x00AAFC 02:AAEC: C9 08     CMP #$08
 C - - - - - 0x00AAFE 02:AAEE: B0 11     BCS bra_AB01
 C - - - - - 0x00AB00 02:AAF0: E6 96     INC ram_кадр_анимации_игрока + 2
 C - - - - - 0x00AB02 02:AAF2: A8        TAY
-C - - - - - 0x00AB03 02:AAF3: B9 40 AB  LDA tbl_AB40,Y
+C - - - - - 0x00AB03 02:AAF3: B9 40 AB  LDA tbl_AB40_палитра_фона,Y
 C - - - - - 0x00AB06 02:AAF6: 8D AC 05  STA ram_номер_палитры_фона
 bra_AB01:
 C - - - - - 0x00AB11 02:AB01: A5 95     LDA ram_кадр_анимации_игрока + 1
@@ -10750,7 +10750,7 @@ C - - - - - 0x00AB4F 02:AB3F: 60        RTS
 
 
 
-tbl_AB40:
+tbl_AB40_палитра_фона:
 - D 1 - - - 0x00AB50 02:AB40: 45        .byte con_bg_pal + $03   ; 00
 - D 1 - - - 0x00AB51 02:AB41: 46        .byte con_bg_pal + $04   ; 01
 - D 1 - - - 0x00AB52 02:AB42: 47        .byte con_bg_pal + $05   ; 02
