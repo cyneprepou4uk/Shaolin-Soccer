@@ -69,7 +69,7 @@ sub_0x000000_RESET_init:
                                         LDA #con_bg_pal + $42
                                         STA ram_номер_палитры_фона
                                         STA ram_номер_палитры_фона + 1
-                                        JSR sub_0x01D046
+                                        JSR sub_0x01D046_ожидание_записи_палитры_в_буфер
                                         LDA #> $22E3
                                         STA ram_0607__2006_hi
                                         STA ram_0610__2006_hi
