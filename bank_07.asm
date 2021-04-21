@@ -141,15 +141,19 @@ sub_подготовка_палитры_vt03:
                                         STA ram_000D
                                         LDX #$00
 @bra_цикл_записи_rgb:
+                                        ;STX $401B
                                         LDY #$00
                                         LDA (ram_000C),Y
                                         STA ram_color_R,X
+                                        ;STA $401B
                                         INY
                                         LDA (ram_000C),Y
                                         STA ram_color_G,X
+                                        ;STA $401B
                                         INY
                                         LDA (ram_000C),Y
                                         STA ram_color_B,X
+                                        ;STA $401B
                                         LDA ram_000C
                                         CLC
                                         ADC #$03
