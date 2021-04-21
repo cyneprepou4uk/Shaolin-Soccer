@@ -3461,14 +3461,14 @@ C - - - - - 0x0153E2 05:93D2: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x0153E5 05:93D5: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x0153E8 05:93D8: A9 02     LDA #$02
 C - - - - - 0x0153EA 05:93DA: 8D C9 05  STA ram_счетчик_опций
-bra_93DD:
+bra_93DD_loop:
 C - - - - - 0x0153ED 05:93DD: 20 5D 95  JSR sub_955D_опции_погоды
 C - - - - - 0x0153F0 05:93E0: 20 AA 96  JSR sub_96AA
 C - - - - - 0x0153F3 05:93E3: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
 C - - - - - 0x0153F6 05:93E6: EE C9 05  INC ram_счетчик_опций
 C - - - - - 0x0153F9 05:93E9: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x0153FC 05:93EC: C9 0A     CMP #$0A
-C - - - - - 0x0153FE 05:93EE: 90 ED     BCC bra_93DD
+C - - - - - 0x0153FE 05:93EE: 90 ED     BCC bra_93DD_loop
 C - - - - - 0x015400 05:93F0: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
 C - - - - - 0x015403 05:93F3: 20 14 C0  JSR sub_0x01EE75_включить_NMI
 C - - - - - 0x015406 05:93F6: 68        PLA
@@ -5825,7 +5825,7 @@ C - - - - - 0x016005 05:9FF5: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_
 C - - - - - 0x016008 05:9FF8: 20 A0 A0  JSR sub_A0A0
 C - - - - - 0x01600B 05:9FFB: A9 03     LDA #$03
 C - - - - - 0x01600D 05:9FFD: 8D C9 05  STA ram_счетчик_опций
-bra_A000:
+bra_A000_loop:
 C D 1 - - - 0x016010 05:A000: 20 1D 9B  JSR sub_9B1D
 C - - - - - 0x016013 05:A003: A9 01     LDA #$01
 C - - - - - 0x016015 05:A005: 8D CA 05  STA ram_номер_опции
@@ -5840,10 +5840,10 @@ C - - - - - 0x016027 05:A017: A9 00     LDA #$00
 C - - - - - 0x016029 05:A019: 20 B0 82  JSR sub_82B0
 C - - - - - 0x01602C 05:A01C: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
 C - - - - - 0x01602F 05:A01F: CE C9 05  DEC ram_счетчик_опций
-C - - - - - 0x016032 05:A022: D0 DC     BNE bra_A000
+C - - - - - 0x016032 05:A022: D0 DC     BNE bra_A000_loop
 C - - - - - 0x016034 05:A024: A9 00     LDA #$00
 C - - - - - 0x016036 05:A026: 8D C9 05  STA ram_счетчик_опций
-bra_A029:
+bra_A029_loop:
 C - - - - - 0x016039 05:A029: AC C9 05  LDY ram_счетчик_опций
 C - - - - - 0x01603C 05:A02C: B9 50 A0  LDA tbl_A050,Y
 C - - - - - 0x01603F 05:A02F: 8D CA 05  STA ram_номер_опции
@@ -5853,7 +5853,7 @@ C - - - - - 0x016048 05:A038: 20 6B C0  JSR sub_0x01EFBD_запись_буфер
 C - - - - - 0x01604B 05:A03B: EE C9 05  INC ram_счетчик_опций
 C - - - - - 0x01604E 05:A03E: AD C9 05  LDA ram_счетчик_опций
 C - - - - - 0x016051 05:A041: C9 04     CMP #$04
-C - - - - - 0x016053 05:A043: 90 E4     BCC bra_A029
+C - - - - - 0x016053 05:A043: 90 E4     BCC bra_A029_loop
 C - - - - - 0x016055 05:A045: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
 C - - - - - 0x016058 05:A048: 20 14 C0  JSR sub_0x01EE75_включить_NMI
 C - - - - - 0x01605B 05:A04B: 68        PLA
@@ -6079,7 +6079,7 @@ C - - - - - 0x0161CB 05:A1BB: 29 70     AND #$70
 C - - - - - 0x0161CD 05:A1BD: 4A        LSR
 C - - - - - 0x0161CE 05:A1BE: A8        TAY
 C - - - - - 0x0161CF 05:A1BF: A2 00     LDX #$00
-bra_A1C1:
+bra_A1C1_loop:
 C - - - - - 0x0161D1 05:A1C1: B9 51 A2  LDA tbl_A251,Y
 C - - - - - 0x0161D4 05:A1C4: 9D 96 06  STA ram_буфер_атрибутов,X
 C - - - - - 0x0161D7 05:A1C7: B9 55 A2  LDA tbl_A255,Y
@@ -6087,7 +6087,7 @@ C - - - - - 0x0161DA 05:A1CA: 9D B9 06  STA ram_буфер_графики,X
 C - - - - - 0x0161DD 05:A1CD: C8        INY
 C - - - - - 0x0161DE 05:A1CE: E8        INX
 C - - - - - 0x0161DF 05:A1CF: E0 04     CPX #$04
-C - - - - - 0x0161E1 05:A1D1: 90 EE     BCC bra_A1C1
+C - - - - - 0x0161E1 05:A1D1: 90 EE     BCC bra_A1C1_loop
 C - - - - - 0x0161E3 05:A1D3: A9 04     LDA #$04
 C - - - - - 0x0161E5 05:A1D5: 8D 95 06  STA ram_счетчик_буфера_атрибутов
 C - - - - - 0x0161E8 05:A1D8: 8D B8 06  STA ram_счетчик_буфера_графики
@@ -6127,13 +6127,13 @@ C - - - - - 0x01622B 05:A21B: 60        RTS
 
 sub_A21C:
 C - - - - - 0x01622C 05:A21C: A2 00     LDX #$00
-bra_A21E:
+bra_A21E_loop:
 C - - - - - 0x01622E 05:A21E: B9 79 A2  LDA tbl_A279,Y
 C - - - - - 0x016231 05:A221: 9D 96 06  STA ram_буфер_атрибутов,X
 C - - - - - 0x016234 05:A224: C8        INY
 C - - - - - 0x016235 05:A225: E8        INX
 C - - - - - 0x016236 05:A226: E0 04     CPX #$04
-C - - - - - 0x016238 05:A228: 90 F4     BCC bra_A21E
+C - - - - - 0x016238 05:A228: 90 F4     BCC bra_A21E_loop
 C - - - - - 0x01623A 05:A22A: 8E 95 06  STX ram_счетчик_буфера_атрибутов
 C - - - - - 0x01623D 05:A22D: A5 2C     LDA ram_002C
 C - - - - - 0x01623F 05:A22F: 8D 94 06  STA ram_байт_2006_lo_атрибуты
@@ -7202,14 +7202,14 @@ C - - - - - 0x016810 05:A800: 20 11 C0  JSR sub_0x01ECB9
 C - - - - - 0x016813 05:A803: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x016816 05:A806: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 C - - - - - 0x016819 05:A809: A0 00     LDY #$00
-bra_A80B:
+bra_A80B_loop:
 C - - - - - 0x01681B 05:A80B: 8C D1 05  STY ram_номер_игрока_в_меню_инфы_японии
 C - - - - - 0x01681E 05:A80E: 20 A8 B0  JSR sub_B0A8
 C - - - - - 0x016821 05:A811: 20 6B C0  JSR sub_0x01EFBD_запись_буферов_в_ppu
 C - - - - - 0x016824 05:A814: AC D1 05  LDY ram_номер_игрока_в_меню_инфы_японии
 C - - - - - 0x016827 05:A817: C8        INY
 C - - - - - 0x016828 05:A818: C0 0C     CPY #$0C
-C - - - - - 0x01682A 05:A81A: 90 EF     BCC bra_A80B
+C - - - - - 0x01682A 05:A81A: 90 EF     BCC bra_A80B_loop
 C - - - - - 0x01682C 05:A81C: AD 32 05  LDA ram_номер_игрока
 C - - - - - 0x01682F 05:A81F: 8D CA 05  STA ram_номер_опции
 C - - - - - 0x016832 05:A822: 20 19 AD  JSR sub_AD19
@@ -8102,7 +8102,7 @@ C - - - - - 0x016DA0 05:AD90: 60        RTS
 
 sub_AD91:
 C - - - - - 0x016DA1 05:AD91: A0 00     LDY #$00
-bra_AD93:
+bra_AD93_loop:
 C - - - - - 0x016DA3 05:AD93: B1 30     LDA (ram_0030),Y
 C - - - - - 0x016DA5 05:AD95: 30 1B     BMI bra_ADB2
 C - - - - - 0x016DA7 05:AD97: C9 10     CMP #$10
@@ -8126,7 +8126,7 @@ bra_ADB7:
 C - - - - - 0x016DC7 05:ADB7: 99 96 06  STA ram_буфер_атрибутов,Y
 C - - - - - 0x016DCA 05:ADBA: C8        INY
 C - - - - - 0x016DCB 05:ADBB: C4 1F     CPY ram_001F
-C - - - - - 0x016DCD 05:ADBD: 90 D4     BCC bra_AD93
+C - - - - - 0x016DCD 05:ADBD: 90 D4     BCC bra_AD93_loop
 C - - - - - 0x016DCF 05:ADBF: 60        RTS
 
 
