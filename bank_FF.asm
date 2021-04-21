@@ -8232,6 +8232,60 @@ C - - - - - 0x01F0C3 07:F0B3: 60        RTS
 
 
 
+sub_0002_запись_цветов_в_регистр_с_учетом_яркости:
+                                        LDA ram_pal_buffer
+                                        BEQ @bra_выход
+                                        LDA #$00
+                                        STA ram_000C
+@bra_цикл:
+                                        LDX ram_000C
+                                        LDA ram_pal_buffer
+                                        CMP #$FF
+                                        BNE @bra_обновить_выборочные_цвета
+                                        TXA
+                                        TAY
+                                        JMP @loc_запись_номера_цвета
+@bra_обновить_выборочные_цвета:
+                                        LDY ram_pal_buffer + 1,X
+@loc_запись_номера_цвета:
+                                        STY $401B
+                                        LDA ram_color_R,Y
+                                        JSR sub_0002_скорректировать_яркость_цвета
+                                        STA $401B
+                                        LDA ram_color_G,Y
+                                        JSR sub_0002_скорректировать_яркость_цвета
+                                        STA $401B
+                                        LDA ram_color_B,Y
+                                        JSR sub_0002_скорректировать_яркость_цвета
+                                        STA $401B
+                                        INC ram_000C
+                                        LDA ram_000C
+                                        CMP ram_pal_buffer
+                                        BNE @bra_цикл
+                                        LDA #$00    ; закрыть буфер
+                                        STA ram_pal_buffer
+@bra_выход:
+                                        RTS
+
+sub_0002_скорректировать_яркость_цвета:
+                                        STA ram_000D
+                                        LDA ram_текущая_яркость
+                                        BEQ @bra_минимальная_яркость
+                                        CMP #$10
+                                        BEQ @bra_максимальная_яркость
+                                        STA ram_DMA_xx_RTS + 1
+                                        INC ram_DMA_xx_RTS + 1
+                                        LDA ram_000D
+                                        SEC
+                                        .byte $F3, $10  ; DVA #$10, разделить на 10
+                                        JMP ram_DMA_xx_RTS
+@bra_максимальная_яркость:  ; не изменять яркость
+                                        LDA ram_000D
+@bra_минимальная_яркость:   ; A = 00
+                                        RTS
+
+
+
 sub_F0B4_отрисовка_поля_во_время_скроллинга:
 C D 3 - - - 0x01F0C4 07:F0B4: AD AB 05  LDA ram_флаг_обновл_тайлов_экр
 C - - - - - 0x01F0C7 07:F0B7: 29 80     AND #$80
@@ -9911,6 +9965,7 @@ C - - - - - 0x01FCC8 07:FCB8: 20 81 DA  JSR sub_DA81_ветер
 C - - - - - 0x01FCCB 07:FCBB: 20 B1 DC  JSR sub_DCB1_рваная_сетка
 bra_FC37_IRQ_отключен:
 C - - - - - 0x01FC47 07:FC37: 20 08 C3  JSR sub_C308_обновить_звуковой_движок
+                                        JSR sub_0002_запись_цветов_в_регистр_с_учетом_яркости
 C D 3 - - - 0x01FCD1 07:FCC1: E6 51     INC ram_задержка_кадра
 loc_FCC3_выход_из_NMI_и_IRQ:
                                         LDA #$00

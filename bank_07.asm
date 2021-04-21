@@ -93,6 +93,10 @@ sub_0x000000_RESET_init:
                                         STA ram_btn_press + 2   ; bzk оно надо?
                                         LDA #$F0
                                         STA ram_ограничитель_Y_спрайтов
+                                        LDA #$F2    ; DMA
+                                        STA ram_DMA_xx_RTS
+                                        LDA #$60    ; RTS
+                                        STA ram_DMA_xx_RTS + 2
                                         LDA #$01
                                         STA ram_скорость_игры
                                         RTS
