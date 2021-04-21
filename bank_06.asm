@@ -10246,11 +10246,10 @@ C - - - - - 0x01BDB5 06:BDA5: C9 09     CMP #con_act_ball_принять_мяч
 C - - - - - 0x01BDB7 06:BDA7: F0 07     BEQ bra_BDB0
 C - - - - - 0x01BDB9 06:BDA9: C9 14     CMP #con_act_ball_замах_по_мячу_в_воздухе
 C - - - - - 0x01BDBB 06:BDAB: F0 03     BEQ bra_BDB0
-C - - - - - 0x01BDBD 06:BDAD: 4C B3 BD  JMP loc_BDB3
+C - - - - - 0x01BDBD 06:BDAD: 4C B3 BD  BNE bra_BDB3
 bra_BDB0:
 C - - - - - 0x01BDC0 06:BDB0: 20 17 B2  JSR sub_B217
 bra_BDB3:
-loc_BDB3:
 C D 1 - - - 0x01BDC3 06:BDB3: 20 52 AB  JSR sub_AB52
 C - - - - - 0x01BDC6 06:BDB6: 20 8C EB  JSR sub_0x01EB9C
 C - - - - - 0x01BDC9 06:BDB9: 20 EF D5  JSR sub_0x01D5FF_палитра_мокрого_мяча
