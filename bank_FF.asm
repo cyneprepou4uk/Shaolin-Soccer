@@ -5808,27 +5808,27 @@ sub_0001_скопировать_экран_в_ppu:
 
 tbl_0001_банк_фона:
     .byte con_chr_bank + $10, con_chr_bank + $12    ; 00
-    .byte con_chr_bank + $6C, con_chr_bank + $02    ; 01
-    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 02
-    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 03
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 04
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 05
-    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 06
-    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 07
-    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 08
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 09
-    .byte con_chr_bank + $60, con_chr_bank + $02    ; 0A
-    .byte con_chr_bank + $62, con_chr_bank + $02    ; 0B
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 0C
-    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 0D
-    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 0E
-    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 0F
-    .byte con_chr_bank + $64, con_chr_bank + $66    ; 10
-    .byte con_chr_bank + $64, con_chr_bank + $66    ; 11
-    .byte con_chr_bank + $64, con_chr_bank + $66    ; 12
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 13
-    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 14
-    .byte con_chr_bank + $5E, con_chr_bank + $02    ; 15
+    .byte con_chr_bank + $04, con_chr_bank + $06    ; 01
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 02
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 03
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 04
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 05
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 06
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 07
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 08
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 09
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 0A
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 0B
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 0C
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 0D
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 0E
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 0F
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 10
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 11
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 12
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 13
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 14
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 15
     .word $FFFF                                     ; 16
     .word $FFFF                                     ; 17
     .word $FFFF                                     ; 18
@@ -5855,46 +5855,46 @@ tbl_0001_банк_фона:
     .word $FFFF                                     ; 2D
     .word $FFFF                                     ; 2E
     .word $FFFF                                     ; 2F
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 30
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 31
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 32
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 33
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 34
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 35
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 36
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 37
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 38
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 39
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3A
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3B
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3C
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3D
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3E
-    .byte con_chr_bank + $30, con_chr_bank + $02    ; 3F
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 30
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 31
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 32
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 33
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 34
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 35
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 36
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 37
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 38
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 39
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 3A
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 3B
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 3C
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 3D
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 3E
+    .byte con_chr_bank + $08, con_chr_bank + $0A    ; 3F
     
 tbl_0001_палитра_фона:
     .byte con_bg_pal + $02, con_bg_pal + $01  ; 00
-    .byte con_bg_pal + $3A, con_bg_pal + $3B  ; 01
-    .byte con_bg_pal + $15, con_bg_pal + $16  ; 02
-    .byte con_bg_pal + $15, con_bg_pal + $16  ; 03
-    .byte con_bg_pal + $15, con_bg_pal + $16  ; 04
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 05
-    .byte con_bg_pal + $15, con_bg_pal + $16  ; 06
-    .byte con_bg_pal + $15, con_bg_pal + $16  ; 07
-    .byte con_bg_pal + $17, con_bg_pal + $18  ; 08
-    .byte con_bg_pal + $15, con_bg_pal + $16  ; 09
-    .byte con_bg_pal + $19, con_bg_pal + $1A  ; 0A
-    .byte con_bg_pal + $1C, con_bg_pal + $1C  ; 0B
-    .byte con_bg_pal + $19, con_bg_pal + $1A  ; 0C
-    .byte con_bg_pal + $1B, con_bg_pal + $1B  ; 0D
-    .byte con_bg_pal + $15, con_bg_pal + $16  ; 0E
-    .byte con_bg_pal + $15, con_bg_pal + $16  ; 0F
-    .byte con_bg_pal + $10, con_bg_pal + $0A  ; 10
-    .byte con_bg_pal + $10, con_bg_pal + $0A  ; 11
-    .byte con_bg_pal + $10, con_bg_pal + $0A  ; 12
-    .byte con_bg_pal + $15, con_bg_pal + $16  ; 13
-    .byte con_bg_pal + $15, con_bg_pal + $16  ; 14
-    .byte con_bg_pal + $15, con_bg_pal + $16  ; 15
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 01
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 02
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 03
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 04
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 05
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 06
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 07
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 08
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 09
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 0A
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 0B
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 0C
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 0D
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 0E
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 0F
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 10
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 11
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 12
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 13
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 14
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 15
     .word $FFFF                               ; 16
     .word $FFFF                               ; 17
     .word $FFFF                               ; 18
@@ -5921,22 +5921,22 @@ tbl_0001_палитра_фона:
     .word $FFFF                               ; 2D
     .word $FFFF                               ; 2E
     .word $FFFF                               ; 2F
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 30
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 31
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 32
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 33
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 34
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 35
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 36
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 37
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 38
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 39
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3A
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3B
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3C
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3D
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3E
-    .byte con_bg_pal + $19, con_bg_pal + $39  ; 3F
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 30
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 31
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 32
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 33
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 34
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 35
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 36
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 37
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 38
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 39
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 3A
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 3B
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 3C
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 3D
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 3E
+    .byte con_bg_pal + $08, con_bg_pal + $09  ; 3F
 
 tbl_0001_mirroring:
 tbl_0001_prg_банк:
