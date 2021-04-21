@@ -8236,16 +8236,6 @@ C - - - - - 0x01F0A0 07:F090: 8D 07 20  STA $2007
 C - - - - - 0x01F0A3 07:F093: E8        INX
 C - - - - - 0x01F0A4 07:F094: 88        DEY
 C - - - - - 0x01F0A5 07:F095: D0 F6     BNE bra_F08D_loop
-C - - - - - 0x01F0A7 07:F097: AD D9 06  LDA ram_байт_2006_hi_палитра
-C - - - - - 0x01F0AA 07:F09A: C9 3F     CMP #$3F
-C - - - - - 0x01F0AC 07:F09C: D0 10     BNE bra_F0AE
-C - - - - - 0x01F0AE 07:F09E: A9 3F     LDA #> $3F00    ; bzk опт, A = 3F уже
-C - - - - - 0x01F0B0 07:F0A0: 8D 06 20  STA $2006
-C - - - - - 0x01F0B3 07:F0A3: A9 00     LDA #< $3F00
-C - - - - - 0x01F0B5 07:F0A5: 8D 06 20  STA $2006
-C - - - - - 0x01F0B8 07:F0A8: 8D 06 20  STA $2006
-C - - - - - 0x01F0BB 07:F0AB: 8D 06 20  STA $2006
-bra_F0AE:
 C - - - - - 0x01F0BE 07:F0AE: A9 FF     LDA #$FF
 C - - - - - 0x01F0C0 07:F0B0: 8D D9 06  STA ram_байт_2006_hi_палитра
 bra_F0B3_RTS:
