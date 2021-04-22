@@ -12533,7 +12533,8 @@ C - - - - - 0x00B565 02:B555: 9D 12 04  STA ram_spd_Y_hi_игрока,X
 C - - - - - 0x00B568 02:B558: 9D 20 04  STA ram_spd_Z_lo_игрока,X
 C - - - - - 0x00B56B 02:B55B: 9D 2E 04  STA ram_spd_Z_hi_игрока,X
 C - - - - - 0x00B56E 02:B55E: 9D 20 04  STA ram_spd_Z_lo_игрока,X
-C - - - - - 0x00B571 02:B561: 9D 59 04  STA ram_напр_движ_игрока,X    ; con_направо
+                                        LDA #con_направо
+C - - - - - 0x00B571 02:B561: 9D 59 04  STA ram_напр_движ_игрока,X
                                         LDA #con_action_00
 C - - - - - 0x00B574 02:B564: 9D A3 04  STA ram_действие_игрока,X
 C - - - - - 0x00B577 02:B567: A9 01     LDA #$01
