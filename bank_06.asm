@@ -9901,25 +9901,25 @@ C - - - - - 0x01BBA9 06:BB99: A5 1C     LDA ram_001C
 C - - - - - 0x01BBAB 06:BB9B: 29 01     AND #$01
 C - - - - - 0x01BBAD 06:BB9D: F0 0A     BEQ bra_BBA9
 C - - - - - 0x01BBAF 06:BB9F: A5 2E     LDA ram_002E
-C - - - - - 0x01BBB1 06:BBA1: 9D 14 03  STA ram_pos_X_lo_игрока,X
+C - - - - - 0x01BBB1 06:BBA1: 9D 14 03  STA ram_pos_X_lo_мяча
 C - - - - - 0x01BBB4 06:BBA4: A5 2F     LDA ram_002F
-C - - - - - 0x01BBB6 06:BBA6: 9D 27 03  STA ram_pos_X_hi_игрока,X
+C - - - - - 0x01BBB6 06:BBA6: 9D 27 03  STA ram_pos_X_hi_мяча
 bra_BBA9:
 C - - - - - 0x01BBB9 06:BBA9: A5 1C     LDA ram_001C
 C - - - - - 0x01BBBB 06:BBAB: 29 02     AND #$02
 C - - - - - 0x01BBBD 06:BBAD: F0 0A     BEQ bra_BBB9
 C - - - - - 0x01BBBF 06:BBAF: A5 30     LDA ram_0030
-C - - - - - 0x01BBC1 06:BBB1: 9D 4D 03  STA ram_pos_Y_lo_игрока,X
+C - - - - - 0x01BBC1 06:BBB1: 9D 4D 03  STA ram_pos_Y_lo_мяча
 C - - - - - 0x01BBC4 06:BBB4: A5 31     LDA ram_0031
-C - - - - - 0x01BBC6 06:BBB6: 9D 60 03  STA ram_pos_Y_hi_игрока,X
+C - - - - - 0x01BBC6 06:BBB6: 9D 60 03  STA ram_pos_Y_hi_мяча
 bra_BBB9:
 C - - - - - 0x01BBC9 06:BBB9: A5 1C     LDA ram_001C
 C - - - - - 0x01BBCB 06:BBBB: 29 04     AND #$04
 C - - - - - 0x01BBCD 06:BBBD: F0 0A     BEQ bra_BBC9_RTS
 C - - - - - 0x01BBCF 06:BBBF: A5 32     LDA ram_0032
-C - - - - - 0x01BBD1 06:BBC1: 9D 86 03  STA ram_pos_Z_lo_игрока,X
+C - - - - - 0x01BBD1 06:BBC1: 9D 86 03  STA ram_pos_Z_lo_мяча
 C - - - - - 0x01BBD4 06:BBC4: A5 33     LDA ram_0033
-C - - - - - 0x01BBD6 06:BBC6: 9D 99 03  STA ram_pos_Z_hi_игрока,X
+C - - - - - 0x01BBD6 06:BBC6: 9D 99 03  STA ram_pos_Z_hi_мяча
 bra_BBC9_RTS:
 C - - - - - 0x01BBD9 06:BBC9: 60        RTS
 
