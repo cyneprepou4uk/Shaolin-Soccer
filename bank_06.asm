@@ -9520,7 +9520,7 @@ C - - - - - 0x01B8DC 06:B8CC: 4C 2B BA  JMP loc_BA2B
 bra_B8CF:
 C - - - - - 0x01B8DF 06:B8CF: C9 01     CMP #$01
 C - - - - - 0x01B8E1 06:B8D1: D0 03     BNE bra_B8D6
-C - - - - - 0x01B8E3 06:B8D3: 4C F5 B9  JMP loc_B9F5
+C - - - - - 0x01B8E3 06:B8D3: 4C F5 B9  JMP loc_B9F5_засчитать_аут
 bra_B8D6:
 C - - - - - 0x01B8E6 06:B8D6: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01B8E8 06:B8D8: 29 0C     AND #con_gp_аут + con_gp_угловой_от_ворот
@@ -9536,7 +9536,7 @@ C - - - - - 0x01B8FA 06:B8EA: F0 5E     BEQ bra_B94A
 C - - - - - 0x01B8FC 06:B8EC: 30 77     BMI bra_B965
 C - - - - - 0x01B8FE 06:B8EE: AD 0E 05  LDA ram_флаг_прозрачного_мяча
 C - - - - - 0x01B901 06:B8F1: F0 03     BEQ bra_B8F6
-C - - - - - 0x01B903 06:B8F3: 4C BB B9  JMP loc_B9BB
+C - - - - - 0x01B903 06:B8F3: 4C BB B9  JMP loc_B9BB_засчитать_угловой__от_ворот
 bra_B8F6:
 C - - - - - 0x01B906 06:B8F6: 20 99 BB  JSR sub_BB99
 C - - - - - 0x01B909 06:B8F9: 20 31 BA  JSR sub_BA31_засчитать_гол
@@ -9589,7 +9589,7 @@ bra_B965:
 C - - - - - 0x01B975 06:B965: AD 0E 05  LDA ram_флаг_прозрачного_мяча
 C - - - - - 0x01B978 06:B968: F0 8C     BEQ bra_B8F6
 C - - - - - 0x01B97A 06:B96A: 30 03     BMI bra_B96F
-C - - - - - 0x01B97C 06:B96C: 4C BB B9  JMP loc_B9BB
+C - - - - - 0x01B97C 06:B96C: 4C BB B9  JMP loc_B9BB_засчитать_угловой__от_ворот
 bra_B96F:
 C - - - - - 0x01B97F 06:B96F: BD F6 03  LDA ram_spd_X_hi_мяча
 C - - - - - 0x01B982 06:B972: 1D E8 03  ORA ram_spd_X_lo_мяча
@@ -9628,7 +9628,7 @@ C - - - - - 0x01B9C8 06:B9B8: 4C 30 BA  RTS
 
 
 
-loc_B9BB:
+loc_B9BB_засчитать_угловой__от_ворот:
 C D 1 - - - 0x01B9CB 06:B9BB: AD 5C 00  LDA ram_flag_gameplay
 C - - - - - 0x01B9CE 06:B9BE: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x01B9D0 06:B9C0: D0 29     BNE bra_B9EB
@@ -9636,7 +9636,7 @@ C - - - - - 0x01B9D2 06:B9C2: AD 0E 05  LDA ram_флаг_прозрачного_
 C - - - - - 0x01B9D5 06:B9C5: C9 FF     CMP #$FF
 C - - - - - 0x01B9D7 06:B9C7: D0 22     BNE bra_B9EB
 C - - - - - 0x01B9D9 06:B9C9: A9 00     LDA #$00
-C - - - - - 0x01B9DB 06:B9CB: 20 55 BD  JSR sub_BD55
+C - - - - - 0x01B9DB 06:B9CB: 20 55 BD  JSR sub_BD55_выставить_флаг_паузы
 C - - - - - 0x01B9DE 06:B9CE: A9 2D     LDA #con_sfx_нарушение
 C - - - - - 0x01B9E0 06:B9D0: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x01B9E3 06:B9D3: BD 14 03  LDA ram_pos_X_lo_мяча
@@ -9655,14 +9655,14 @@ C - - - - - 0x01BA02 06:B9F2: 4C 30 BA  RTS
 
 
 
-loc_B9F5:
+loc_B9F5_засчитать_аут:
 C D 1 - - - 0x01BA05 06:B9F5: AD 5C 00  LDA ram_flag_gameplay
 C - - - - - 0x01BA08 06:B9F8: 29 40     AND #con_gp_футбольная_пауза
 C - - - - - 0x01BA0A 06:B9FA: D0 27     BNE bra_BA23
 C - - - - - 0x01BA0C 06:B9FC: AD 0E 05  LDA ram_флаг_прозрачного_мяча
 C - - - - - 0x01BA0F 06:B9FF: 10 22     BPL bra_BA23
 C - - - - - 0x01BA11 06:BA01: A9 01     LDA #$01
-C - - - - - 0x01BA13 06:BA03: 20 55 BD  JSR sub_BD55
+C - - - - - 0x01BA13 06:BA03: 20 55 BD  JSR sub_BD55_выставить_флаг_паузы
 C - - - - - 0x01BA16 06:BA06: A9 2D     LDA #con_sfx_нарушение
 C - - - - - 0x01BA18 06:BA08: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x01BA1B 06:BA0B: BD 14 03  LDA ram_pos_X_lo_мяча
@@ -9710,7 +9710,7 @@ bra_BA59_не_выключать_погоду:
 C - - - - - 0x01BA69 06:BA59: 24 5C     BIT ram_flag_gameplay
 C - - - - - 0x01BA6B 06:BA5B: 70 58     BVS bra_BAB5_RTS    ; если сейчас con_gp_футбольная_пауза
 C - - - - - 0x01BA6D 06:BA5D: A9 02     LDA #$02
-C - - - - - 0x01BA6F 06:BA5F: 20 55 BD  JSR sub_BD55
+C - - - - - 0x01BA6F 06:BA5F: 20 55 BD  JSR sub_BD55_выставить_флаг_паузы
 C - - - - - 0x01BA72 06:BA62: AD CC 05  LDA ram_счетчик_смен
 C - - - - - 0x01BA75 06:BA65: 29 01     AND #$01
 C - - - - - 0x01BA77 06:BA67: A8        TAY
@@ -10194,7 +10194,7 @@ tbl_BD53_погода:
 
 
 
-sub_BD55:
+sub_BD55_выставить_флаг_паузы:
 C - - - - - 0x01BD65 06:BD55: A8        TAY
 C - - - - - 0x01BD66 06:BD56: 2C 5C 00  BIT ram_flag_gameplay
 C - - - - - 0x01BD69 06:BD59: 70 0B     BVS bra_BD66_RTS    ; если сейчас con_gp_футбольная_пауза
@@ -10206,9 +10206,9 @@ bra_BD66_RTS:
 C - - - - - 0x01BD76 06:BD66: 60        RTS
 
 tbl_BD67:
-- D 1 - - - 0x01BD77 06:BD67: 48        .byte con_gp_футбольная_пауза + con_gp_угловой_от_ворот
-- D 1 - - - 0x01BD78 06:BD68: 44        .byte con_gp_футбольная_пауза + con_gp_аут
-- D 1 - - - 0x01BD79 06:BD69: 42        .byte con_gp_футбольная_пауза + con_gp_гол
+- D 1 - - - 0x01BD77 06:BD67: 48        .byte con_gp_футбольная_пауза + con_gp_угловой_от_ворот ; 00
+- D 1 - - - 0x01BD78 06:BD68: 44        .byte con_gp_футбольная_пауза + con_gp_аут              ; 01
+- D 1 - - - 0x01BD79 06:BD69: 42        .byte con_gp_футбольная_пауза + con_gp_гол              ; 02
 
 
 
