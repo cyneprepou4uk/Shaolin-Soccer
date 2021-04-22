@@ -6979,7 +6979,7 @@ C - - - - - 0x01AB22 06:AB12: D0 16     BNE bra_AB2A
 C - - - - - 0x01AB24 06:AB14: 20 56 98  JSR sub_9856_очистка_силы_мяча_и_др
 C - - - - - 0x01AB27 06:AB17: AD 92 04  LDA ram_состояние_мяча
 C - - - - - 0x01AB2A 06:AB1A: 30 0E     BMI bra_AB2A
-C - - - - - 0x01AB2C 06:AB1C: BD 30 01  LDA ram_на_чем_стоит_игрок,X
+C - - - - - 0x01AB2C 06:AB1C: BD 30 01  LDA ram_на_чем_стоит_мяч
 C - - - - - 0x01AB2F 06:AB1F: F0 09     BEQ bra_AB2A    ; если на траве
 C - - - - - 0x01AB31 06:AB21: C9 03     CMP #$03
 C - - - - - 0x01AB33 06:AB23: B0 05     BCS bra_AB2A    ; если на песке; bzk опт, BCS -> BEQ?
@@ -7001,7 +7001,7 @@ C - - - - - 0x01AB52 06:AB42: F0 02     BEQ bra_AB46
 - - - - - - 0x01AB54 06:AB44: B0 06     BCS bra_AB4C
 bra_AB46:
 C - - - - - 0x01AB56 06:AB46: AD 85 04  LDA ram_next_действие_мяча
-C - - - - - 0x01AB59 06:AB49: 9D 59 04  STA ram_действие_игрока,X
+C - - - - - 0x01AB59 06:AB49: 9D 59 04  STA ram_действие_мяча
 bra_AB4C:
 C - - - - - 0x01AB5C 06:AB4C: A9 FF     LDA #$FF
 C - - - - - 0x01AB5E 06:AB4E: 8D 85 04  STA ram_next_действие_мяча
