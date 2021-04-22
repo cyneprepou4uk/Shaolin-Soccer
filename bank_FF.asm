@@ -1215,7 +1215,6 @@ C - - - - - 0x01C5DD 07:C5CD: 85 5C     STA ram_flag_gameplay
                                         LDA #$00
 C - - - - - 0x01C5DF 07:C5CF: 8D 2A 05  STA ram_флаг_владения_мячом_ком
 C - - - - - 0x01C5E2 07:C5D2: 8D 2B 05  STA ram_флаг_владения_мячом_ком + 1
-C - - - - - 0x01C5E5 07:C5D5: 20 1F D0  JSR sub_D01F_палитра_фона_в_зависимости_от_обеих_комад
 C - - - - - 0x01C5EB 07:C5DB: A9 00     LDA #$00
 C - - - - - 0x01C5ED 07:C5DD: 8D 92 06  STA ram_бит_для_2000_палитра
 C - - - - - 0x01C5F5 07:C5E5: A9 FF     LDA #$FF
@@ -2625,8 +2624,10 @@ C - - - - - 0x01CFBC 07:CFAC: 20 D9 E7  JSR sub_E7D9
 C - - - - - 0x01CFBF 07:CFAF: 20 26 C3  JSR sub_C326_расставить_игроков_по_полю
 C - - - - - 0x01CFC2 07:CFB2: 20 9A EE  JSR sub_EE9A_запись_банков_спрайтов
 C - - - - - 0x01CFC5 07:CFB5: AD F4 05  LDA ram_цвет_поля
+                                        CLC
+                                        ADC #con_bg_pal + $11
 C - - - - - 0x01CFC8 07:CFB8: 8D AC 05  STA ram_номер_палитры_фона
-C - - - - - 0x01CFCB 07:CFBB: A9 0F     LDA #con_bg_pal + $0F
+C - - - - - 0x01CFCB 07:CFBB: A9 0F     LDA #con_bg_pal + $10
 C - - - - - 0x01CFCD 07:CFBD: 8D AD 05  STA ram_номер_палитры_фона + 1
 C - - - - - 0x01CFD0 07:CFC0: A9 01     LDA #$01    ; horisontal mirroring
 C - - - - - 0x01CFD2 07:CFC2: 8D 00 A0  STA $A000
@@ -2670,22 +2671,6 @@ C - - - - - 0x01D027 07:D017: 20 65 EE  JSR sub_EE65_включить_NMI
 C - - - - - 0x01D02A 07:D01A: 20 CB EC  JSR sub_ECCB_отобразить_фон_и_спрайты
 C - - - - - 0x01D02D 07:D01D: 58        CLI
 C - - - - - 0x01D02E 07:D01E: 60        RTS
-
-
-
-sub_D01F_палитра_фона_в_зависимости_от_обеих_комад:
-C - - - - - 0x01D02F 07:D01F: AD 2C 05  LDA ram_номер_команды
-C - - - - - 0x01D032 07:D022: 29 0C     AND #$0C
-C - - - - - 0x01D034 07:D024: 85 1C     STA ram_001C
-C - - - - - 0x01D036 07:D026: AD 2D 05  LDA ram_номер_команды + 1
-C - - - - - 0x01D039 07:D029: 29 0C     AND #$0C
-C - - - - - 0x01D03B 07:D02B: 4A        LSR
-C - - - - - 0x01D03C 07:D02C: 4A        LSR
-C - - - - - 0x01D03D 07:D02D: 05 1C     ORA ram_001C
-C - - - - - 0x01D03F 07:D02F: 18        CLC
-C - - - - - 0x01D040 07:D030: 69 29     ADC #$29
-C - - - - - 0x01D042 07:D032: 8D AD 05  STA ram_номер_палитры_фона + 1
-C - - - - - 0x01D045 07:D035: 60        RTS
 
 
 
