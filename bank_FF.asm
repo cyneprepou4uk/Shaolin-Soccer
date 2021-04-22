@@ -907,12 +907,12 @@ C - - - - - 0x01C333 07:C323: 4C 68 C3  JMP loc_C368_восстановить_pr
 
 
 
-sub_C326:
+sub_C326_расставить_игроков_по_полю:
 C - - - - - 0x01C336 07:C326: AD FF BF  LDA $BFFF
 C - - - - - 0x01C339 07:C329: 48        PHA
 C - - - - - 0x01C33A 07:C32A: A9 00     LDA #con_prg_bank + $00
 C - - - - - 0x01C33C 07:C32C: 20 D3 EE  JSR sub_EED3_prg_bankswitch
-C - - - - - 0x01C33F 07:C32F: 20 80 AE  JSR sub_0x003B23
+C - - - - - 0x01C33F 07:C32F: 20 80 AE  JSR sub_0x003B23_расставить_игроков_по_полю
 C - - - - - 0x01C342 07:C332: 4C 68 C3  JMP loc_C368_восстановить_prg_банк
 
 
@@ -2622,7 +2622,7 @@ C - - - - - 0x01CFB3 07:CFA3: 8D 7C 06  STA ram_067C
 C - - - - - 0x01CFB6 07:CFA6: 8D 7D 06  STA ram_067C + 1
 C - - - - - 0x01CFB9 07:CFA9: 8D F5 05  STA ram_флаг_гола
 C - - - - - 0x01CFBC 07:CFAC: 20 D9 E7  JSR sub_E7D9
-C - - - - - 0x01CFBF 07:CFAF: 20 26 C3  JSR sub_C326
+C - - - - - 0x01CFBF 07:CFAF: 20 26 C3  JSR sub_C326_расставить_игроков_по_полю
 C - - - - - 0x01CFC2 07:CFB2: 20 9A EE  JSR sub_EE9A_запись_банков_спрайтов
 C - - - - - 0x01CFC5 07:CFB5: AD F4 05  LDA ram_цвет_поля
 C - - - - - 0x01CFC8 07:CFB8: 8D AC 05  STA ram_номер_палитры_фона
