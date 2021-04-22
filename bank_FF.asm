@@ -8648,12 +8648,12 @@ C - - - - - 0x01FD87 07:FD77: 2C 2D 05  BIT ram_номер_команды + 1
 C - - - - - 0x01FD8A 07:FD7A: 50 02     BVC bra_FD7E
 C - - - - - 0x01FD8C 07:FD7C: A9 06     LDA #con_chr_bank + $06
 bra_FD7E:
-C - - - - - 0x01FD8E 07:FD7E: 8E 00 80  STX $8000
+C - - - - - 0x01FD8E 07:FD7E: 8E 00 80  STX $8000   ; X = 00
 C - - - - - 0x01FD91 07:FD81: 8D 01 80  STA $8001
-C - - - - - 0x01FD94 07:FD84: E8        INX ; X = 01
-C - - - - - 0x01FD95 07:FD85: 8E 00 80  STX $8000
-C - - - - - 0x01FD98 07:FD88: E8        INX ; con_chr_bank + $02
-C - - - - - 0x01FD99 07:FD89: 8E 01 80  STX $8001
+C - - - - - 0x01FD94 07:FD84: E8        INX
+C - - - - - 0x01FD95 07:FD85: 8E 00 80  STX $8000   ; X = 01
+C - - - - - 0x01FD98 07:FD88: E8        LDA #con_chr_bank + $02
+C - - - - - 0x01FD99 07:FD89: 8E 01 80  STA $8001
 C - - - - - 0x01FD9C 07:FD8C: 4C 0A FD  JMP loc_FCC3_выход_из_NMI_и_IRQ
 
 
