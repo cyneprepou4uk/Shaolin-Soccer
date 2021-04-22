@@ -9937,16 +9937,16 @@ C - - - - - 0x01BBEA 06:BBDA: 8D 10 05  STA ram_подтип_супера
 C - - - - - 0x01BBED 06:BBDD: A5 1C     LDA ram_001C
 C - - - - - 0x01BBEF 06:BBDF: 29 02     AND #$02
 C - - - - - 0x01BBF1 06:BBE1: D0 1C     BNE bra_BBFF
-C - - - - - 0x01BBF3 06:BBE3: BD 86 03  LDA ram_pos_Z_lo_игрока,X
+C - - - - - 0x01BBF3 06:BBE3: BD 86 03  LDA ram_pos_Z_lo_мяча
 C - - - - - 0x01BBF6 06:BBE6: 29 0E     AND #$0E
 C - - - - - 0x01BBF8 06:BBE8: A8        TAY
 C - - - - - 0x01BBF9 06:BBE9: 18        CLC
 C - - - - - 0x01BBFA 06:BBEA: B9 3C BC  LDA tbl_BC3C,Y
-C - - - - - 0x01BBFD 06:BBED: 7D 20 04  ADC ram_spd_Z_lo_игрока,X
-C - - - - - 0x01BC00 06:BBF0: 9D 20 04  STA ram_spd_Z_lo_игрока,X
+C - - - - - 0x01BBFD 06:BBED: 7D 20 04  ADC ram_spd_Z_lo_мяча
+C - - - - - 0x01BC00 06:BBF0: 9D 20 04  STA ram_spd_Z_lo_мяча
 C - - - - - 0x01BC03 06:BBF3: B9 3D BC  LDA tbl_BC3D,Y
-C - - - - - 0x01BC06 06:BBF6: 7D 2E 04  ADC ram_spd_Z_hi_игрока,X
-C - - - - - 0x01BC09 06:BBF9: 9D 2E 04  STA ram_spd_Z_hi_игрока,X
+C - - - - - 0x01BC06 06:BBF6: 7D 2E 04  ADC ram_spd_Z_hi_мяча
+C - - - - - 0x01BC09 06:BBF9: 9D 2E 04  STA ram_spd_Z_hi_мяча
 C - - - - - 0x01BC0C 06:BBFC: 4C 1A BC  JMP loc_BC1A
 bra_BBFF:
 C - - - - - 0x01BC0F 06:BBFF: 18        CLC
@@ -9956,11 +9956,11 @@ C - - - - - 0x01BC14 06:BC04: 29 0E     AND #$0E
 C - - - - - 0x01BC16 06:BC06: A8        TAY
 C - - - - - 0x01BC17 06:BC07: 18        CLC
 C - - - - - 0x01BC18 06:BC08: B9 4C BC  LDA tbl_BC4C,Y
-C - - - - - 0x01BC1B 06:BC0B: 7D 04 04  ADC ram_spd_Y_lo_игрока,X
-C - - - - - 0x01BC1E 06:BC0E: 9D 04 04  STA ram_spd_Y_lo_игрока,X
+C - - - - - 0x01BC1B 06:BC0B: 7D 04 04  ADC ram_spd_Y_lo_мяча
+C - - - - - 0x01BC1E 06:BC0E: 9D 04 04  STA ram_spd_Y_lo_мяча
 C - - - - - 0x01BC21 06:BC11: B9 4D BC  LDA tbl_BC4D,Y
-C - - - - - 0x01BC24 06:BC14: 7D 12 04  ADC ram_spd_Y_hi_игрока,X
-C - - - - - 0x01BC27 06:BC17: 9D 12 04  STA ram_spd_Y_hi_игрока,X
+C - - - - - 0x01BC24 06:BC14: 7D 12 04  ADC ram_spd_Y_hi_мяча
+C - - - - - 0x01BC27 06:BC17: 9D 12 04  STA ram_spd_Y_hi_мяча
 loc_BC1A:
 C D 1 - - - 0x01BC2A 06:BC1A: 98        TYA
 C - - - - - 0x01BC2B 06:BC1B: 4A        LSR
@@ -9975,10 +9975,10 @@ C - - - - - 0x01BC3A 06:BC2A: A8        TAY
 loc_BC2B:
 C - - - - - 0x01BC3B 06:BC2B: 88        DEY
 C - - - - - 0x01BC3C 06:BC2C: 30 0D     BMI bra_BC3B_RTS
-- - - - - - 0x01BC3E 06:BC2E: BD F6 03  LDA ram_spd_X_hi_игрока,X
+- - - - - - 0x01BC3E 06:BC2E: BD F6 03  LDA ram_spd_X_hi_мяча
 - - - - - - 0x01BC41 06:BC31: 0A        ASL
-- - - - - - 0x01BC42 06:BC32: 7E F6 03  ROR ram_spd_X_hi_игрока,X
-- - - - - - 0x01BC45 06:BC35: 7E E8 03  ROR ram_spd_X_lo_игрока,X
+- - - - - - 0x01BC42 06:BC32: 7E F6 03  ROR ram_spd_X_hi_мяча
+- - - - - - 0x01BC45 06:BC35: 7E E8 03  ROR ram_spd_X_lo_мяча
 - - - - - - 0x01BC48 06:BC38: 4C 2B BC  JMP loc_BC2B
 bra_BC3B_RTS:
 C D 1 - - - 0x01BC4B 06:BC3B: 60        RTS
