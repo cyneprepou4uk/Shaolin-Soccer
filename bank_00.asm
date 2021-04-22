@@ -14717,9 +14717,9 @@ C - - - - - 0x003C8F 00:BC7F: CA        DEX
 C - - - - - 0x003C90 00:BC80: 10 E8     BPL bra_BC6A_loop
 C - - - - - 0x003C97 00:BC87: 20 05 C0  JSR sub_0x01EE45_вращение_рандома
 C - - - - - 0x003C9A 00:BC8A: 8D 8F 06  STA ram_rng_байт_pos_удара_бота_пк
-C - - - - - 0x003C9D 00:BC8D: AD F8 BD  LDA tbl_BDF8
+C - - - - - 0x003C9D 00:BC8D: AD F8 BD  LDA #< tbl_BDFA
 C - - - - - 0x003CA0 00:BC90: 85 2E     STA ram_002E
-C - - - - - 0x003CA2 00:BC92: AD F9 BD  LDA tbl_BDF8 + 1
+C - - - - - 0x003CA2 00:BC92: AD F9 BD  LDA #> tbl_BDFA
 C - - - - - 0x003CA5 00:BC95: 85 2F     STA ram_002F
 C - - - - - 0x003CA7 00:BC97: A9 00     LDA #$00
 C - - - - - 0x003CA9 00:BC99: 8D 59 05  STA ram_номер_тайма
@@ -14940,10 +14940,7 @@ tbl_BDE8:
 
 
 
-tbl_BDF8:
-- D 1 - - - 0x003E08 00:BDF8: FA BD     .word off_BDFA
-
-off_BDFA:
+tbl_BDFA:
 - D 1 - I - 0x003E0A 00:BDFA: E8        .byte $E8   ; 
 - D 1 - I - 0x003E0B 00:BDFB: 00        .byte $00   ; 
 - D 1 - I - 0x003E0C 00:BDFC: C0        .byte $C0   ; 
