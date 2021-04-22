@@ -8621,8 +8621,9 @@ C - - - - - 0x01FD40 07:FD30: A9 2A     LDA #> $2AE0
 C - - - - - 0x01FD42 07:FD32: 8D 06 20  STA $2006
 C - - - - - 0x01FD45 07:FD35: A9 E0     LDA #< $2AE0
 C - - - - - 0x01FD47 07:FD37: 8D 06 20  STA $2006
-C - - - - - 0x01FD4A 07:FD3A: 8E 00 80  STX $8000
-C - - - - - 0x01FD4D 07:FD3D: 8E 01 80  STX $8001   ; con_chr_bank + $00
+C - - - - - 0x01FD4A 07:FD3A: 8E 00 80  STX $8000   ; X = 00
+                                        LDA #con_chr_bank + $00
+C - - - - - 0x01FD4D 07:FD3D: 8E 01 80  STA $8001
 C - - - - - 0x01FD50 07:FD40: E8        INX
 C - - - - - 0x01FD51 07:FD41: 8E 00 80  STX $8000
 C - - - - - 0x01FD54 07:FD44: A9 10     LDA #con_chr_bank + $10
