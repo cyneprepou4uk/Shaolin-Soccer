@@ -7172,12 +7172,12 @@ C - - - - - 0x0167D4 05:A7C4: 8D B0 05  STA ram_номер_палитры_спр
 C - - - - - 0x0167D7 05:A7C7: 8D B1 05  STA ram_номер_палитры_спрайтов + 3
 C - - - - - 0x0167DA 05:A7CA: AD 32 05  LDA ram_номер_игрока
 C - - - - - 0x0167DD 05:A7CD: 8D 5D 05  STA ram_лицо_игрока + 1
-C - - - - - 0x0167E0 05:A7D0: A2 26     LDX #con_chr_bank + $26
-C - - - - - 0x0167E2 05:A7D2: 8E B8 05  STX ram_банк_спрайтов
-C - - - - - 0x0167E5 05:A7D5: E8        INX ; con_chr_bank + $27
-C - - - - - 0x0167E6 05:A7D6: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x0167E9 05:A7D9: A2 11     LDX #con_chr_bank + $11
-C - - - - - 0x0167EB 05:A7DB: 8E BB 05  STX ram_банк_спрайтов + 3
+C - - - - - 0x0167E0 05:A7D0: A2 26     LDA #con_chr_bank + $26
+C - - - - - 0x0167E2 05:A7D2: 8E B8 05  STA ram_банк_спрайтов
+C - - - - - 0x0167E5 05:A7D5: E8        LDA #con_chr_bank + $27
+C - - - - - 0x0167E6 05:A7D6: 8E B9 05  STA ram_банк_спрайтов + 1
+C - - - - - 0x0167E9 05:A7D9: A2 11     LDA #con_chr_bank + $11
+C - - - - - 0x0167EB 05:A7DB: 8E BB 05  STA ram_банк_спрайтов + 3
 C - - - - - 0x0167EE 05:A7DE: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 C - - - - - 0x0167F1 05:A7E1: A2 00     LDX #$00
 bra_A7E3_loop:
