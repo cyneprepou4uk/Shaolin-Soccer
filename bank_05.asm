@@ -10945,7 +10945,7 @@ C - - - - - 0x017C06 05:BBF6: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x017C08 05:BBF8: 8D F2 05  STA ram_номер_банка_фона_поля
 C - - - - - 0x017C0B 05:BBFB: C8        INY
 C - - - - - 0x017C0C 05:BBFC: B1 2C     LDA (ram_002C),Y
-C - - - - - 0x017C0E 05:BBFE: 8D F3 05  STA ram_номер_prg_банка
+C - - - - - 0x017C0E 05:BBFE: 8D F3 05  STA ram_номер_prg_банка ; bzk wtf
 C - - - - - 0x017C11 05:BC01: C8        INY
 C - - - - - 0x017C12 05:BC02: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x017C14 05:BC04: 8D F4 05  STA ram_цвет_поля
@@ -10992,7 +10992,7 @@ C - - - - - 0x017C66 05:BC56: 85 2C     STA ram_002C
 C - - - - - 0x017C68 05:BC58: B9 03 BD  LDA tbl_BD02 + 1,Y
 C - - - - - 0x017C6B 05:BC5B: 85 2D     STA ram_002D
 C - - - - - 0x017C6D 05:BC5D: A0 00     LDY #$00
-bra_BC5F:
+bra_BC5F_loop:
 C - - - - - 0x017C6F 05:BC5F: B1 2C     LDA (ram_002C),Y
 C - - - - - 0x017C71 05:BC61: AA        TAX
 C - - - - - 0x017C72 05:BC62: BD 50 06  LDA ram_позиция_управление,X
@@ -11000,7 +11000,7 @@ C - - - - - 0x017C75 05:BC65: 29 7F     AND #con_флаг_бота ^ $FF
 C - - - - - 0x017C77 05:BC67: 9D 50 06  STA ram_позиция_управление,X
 C - - - - - 0x017C7A 05:BC6A: C8        INY
 C - - - - - 0x017C7B 05:BC6B: C4 5D     CPY ram_колво_игроков
-C - - - - - 0x017C7D 05:BC6D: 90 F0     BCC bra_BC5F
+C - - - - - 0x017C7D 05:BC6D: 90 F0     BCC bra_BC5F_loop
 bra_BC6F_demo:
 C - - - - - 0x017C7F 05:BC6F: AD 5A 06  LDA ram_позиция_управление + 10
 C - - - - - 0x017C82 05:BC72: 29 80     AND #con_флаг_бота
@@ -11044,68 +11044,80 @@ C - - - - - 0x017CD7 05:BCC7: 60        RTS
 
 
 tbl_BCC8:
-- D 1 - - - 0x017CD8 05:BCC8: CE BC     .word off_BCCE_00
-- - - - - - 0x017CDA 05:BCCA: E6 BC     .word off_BCE6_01
-- D 1 - - - 0x017CDC 05:BCCC: FE BC     .word off_BCFE_02
+- D 1 - - - 0x017CD8 05:BCC8: CE BC     .word off_BCCE_00_трава
+- - - - - - 0x017CDA 05:BCCA: E6 BC     .word off_BCE6_01_земля
+- D 1 - - - 0x017CDC 05:BCCC: FE BC     .word off_BCFE_02_песок
 
-off_BCCE_00:
-- D 1 - I - 0x017CDE 05:BCCE: 40        .byte $40   ; 
+off_BCCE_00_трава:
+; 00 0%
+- D 1 - I - 0x017CDE 05:BCCE: 40        .byte con_chr_bank + $40   ; 
 - D 1 - I - 0x017CDF 05:BCCF: 01        .byte $01   ; 
 - D 1 - I - 0x017CE0 05:BCD0: 00        .byte $00   ; 
 - D 1 - I - 0x017CE1 05:BCD1: 00        .byte $00   ; 
-- D 1 - I - 0x017CE2 05:BCD2: 40        .byte $40   ; 
+; 01 20%
+- D 1 - I - 0x017CE2 05:BCD2: 40        .byte con_chr_bank + $40   ; 
 - D 1 - I - 0x017CE3 05:BCD3: 01        .byte $01   ; 
 - D 1 - I - 0x017CE4 05:BCD4: 00        .byte $00   ; 
 - D 1 - I - 0x017CE5 05:BCD5: 01        .byte $01   ; 
-- D 1 - I - 0x017CE6 05:BCD6: 40        .byte $40   ; 
+; 02 40%
+- D 1 - I - 0x017CE6 05:BCD6: 40        .byte con_chr_bank + $40   ; 
 - D 1 - I - 0x017CE7 05:BCD7: 02        .byte $02   ; 
 - D 1 - I - 0x017CE8 05:BCD8: 00        .byte $00   ; 
 - D 1 - I - 0x017CE9 05:BCD9: 00        .byte $00   ; 
-- - - - - - 0x017CEA 05:BCDA: 46        .byte $46   ; 
+; 03 60%
+- - - - - - 0x017CEA 05:BCDA: 46        .byte con_chr_bank + $46   ; 
 - - - - - - 0x017CEB 05:BCDB: 02        .byte $02   ; 
 - - - - - - 0x017CEC 05:BCDC: 01        .byte $01   ; 
 - - - - - - 0x017CED 05:BCDD: 00        .byte $00   ; 
-- - - - - - 0x017CEE 05:BCDE: 46        .byte $46   ; 
+; 04 80%
+- - - - - - 0x017CEE 05:BCDE: 46        .byte con_chr_bank + $46   ; 
 - - - - - - 0x017CEF 05:BCDF: 01        .byte $01   ; 
 - - - - - - 0x017CF0 05:BCE0: 01        .byte $01   ; 
 - - - - - - 0x017CF1 05:BCE1: 01        .byte $01   ; 
-- - - - - - 0x017CF2 05:BCE2: 46        .byte $46   ; 
+; 05 100%
+- - - - - - 0x017CF2 05:BCE2: 46        .byte con_chr_bank + $46   ; 
 - - - - - - 0x017CF3 05:BCE3: 01        .byte $01   ; 
 - - - - - - 0x017CF4 05:BCE4: 01        .byte $01   ; 
 - - - - - - 0x017CF5 05:BCE5: 00        .byte $00   ; 
 
 
 
-off_BCE6_01:
-- - - - - - 0x017CF6 05:BCE6: 4C        .byte $4C   ; 
+off_BCE6_01_земля:
+; 00 0%
+- - - - - - 0x017CF6 05:BCE6: 4C        .byte con_chr_bank + $4C   ; 
 - - - - - - 0x017CF7 05:BCE7: 01        .byte $01   ; 
 - - - - - - 0x017CF8 05:BCE8: 02        .byte $02   ; 
 - - - - - - 0x017CF9 05:BCE9: 00        .byte $00   ; 
-- - - - - - 0x017CFA 05:BCEA: 4C        .byte $4C   ; 
+; 01 20%
+- - - - - - 0x017CFA 05:BCEA: 4C        .byte con_chr_bank + $4C   ; 
 - - - - - - 0x017CFB 05:BCEB: 01        .byte $01   ; 
 - - - - - - 0x017CFC 05:BCEC: 02        .byte $02   ; 
 - - - - - - 0x017CFD 05:BCED: 01        .byte $01   ; 
-- - - - - - 0x017CFE 05:BCEE: 4C        .byte $4C   ; 
+; 02 40%
+- - - - - - 0x017CFE 05:BCEE: 4C        .byte con_chr_bank + $4C   ; 
 - - - - - - 0x017CFF 05:BCEF: 02        .byte $02   ; 
 - - - - - - 0x017D00 05:BCF0: 02        .byte $02   ; 
 - - - - - - 0x017D01 05:BCF1: 00        .byte $00   ; 
-- - - - - - 0x017D02 05:BCF2: 52        .byte $52   ; 
+; 03 60%
+- - - - - - 0x017D02 05:BCF2: 52        .byte con_chr_bank + $52   ; 
 - - - - - - 0x017D03 05:BCF3: 02        .byte $02   ; 
 - - - - - - 0x017D04 05:BCF4: 03        .byte $03   ; 
 - - - - - - 0x017D05 05:BCF5: 00        .byte $00   ; 
-- - - - - - 0x017D06 05:BCF6: 52        .byte $52   ; 
+; 04 80%
+- - - - - - 0x017D06 05:BCF6: 52        .byte con_chr_bank + $52   ; 
 - - - - - - 0x017D07 05:BCF7: 01        .byte $01   ; 
 - - - - - - 0x017D08 05:BCF8: 03        .byte $03   ; 
 - - - - - - 0x017D09 05:BCF9: 01        .byte $01   ; 
-- - - - - - 0x017D0A 05:BCFA: 52        .byte $52   ; 
+; 05 100%
+- - - - - - 0x017D0A 05:BCFA: 52        .byte con_chr_bank + $52   ; 
 - - - - - - 0x017D0B 05:BCFB: 01        .byte $01   ; 
 - - - - - - 0x017D0C 05:BCFC: 03        .byte $03   ; 
 - - - - - - 0x017D0D 05:BCFD: 00        .byte $00   ; 
 
 
 
-off_BCFE_02:
-- D 1 - I - 0x017D0E 05:BCFE: 58        .byte $58   ; 
+off_BCFE_02_песок:
+- D 1 - I - 0x017D0E 05:BCFE: 58        .byte con_chr_bank + $58   ; 
 - D 1 - I - 0x017D0F 05:BCFF: 01        .byte $01   ; 
 - D 1 - I - 0x017D10 05:BD00: 04        .byte $04   ; 
 - D 1 - I - 0x017D11 05:BD01: 00        .byte $00   ; 
