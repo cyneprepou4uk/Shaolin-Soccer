@@ -10806,7 +10806,7 @@ C - - - - - 0x00ABBF 02:ABAF: 20 33 B0  JSR sub_B033_анимация_мяча
 C - - - - - 0x00ABC2 02:ABB2: A9 01     LDA #con_music_логотип
 C - - - - - 0x00ABC4 02:ABB4: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
 C - - - - - 0x00ABC7 02:ABB7: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
-C - - - - - 0x00ABCA 02:ABBA: A9 04     LDA #$04
+C - - - - - 0x00ABCA 02:ABBA: A9 04     LDA #$01
 C - - - - - 0x00ABCC 02:ABBC: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00ABCF 02:ABBF: A9 90     LDA #$90
 C - - - - - 0x00ABD1 02:ABC1: 8D 89 05  STA ram_таймер_демо_lo
@@ -10836,7 +10836,7 @@ C - - - - - 0x00ABF1 02:ABE1: 20 7C AE  JSR sub_AE7C_уменьшение_тай
 C - - - - - 0x00ABF4 02:ABE4: 30 10     BMI bra_ABF6_пропуск_по_кнопке
 C - - - - - 0x00ABF6 02:ABE6: 50 15     BVC bra_ABFD_RTS    ; если таймер еще не закончился
 C - - - - - 0x00ABF8 02:ABE8: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
-C - - - - - 0x00ABFB 02:ABEB: A9 04     LDA #$04
+C - - - - - 0x00ABFB 02:ABEB: A9 04     LDA #$01
 C - - - - - 0x00ABFD 02:ABED: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AC00 02:ABF0: 20 4A C0  JSR sub_0x01D072_обработка_яркости_с_ожиданием_завершения_обработки
 C - - - - - 0x00AC03 02:ABF3: E6 59     INC ram_subscript   ; con_subscr_logo_подг_демо_матча
@@ -10973,7 +10973,7 @@ C - - - - - 0x00ACF5 02:ACE5: A9 00     LDA #con_subscr_menu_00
 bra_ACE7_запись_subscript:
 C - - - - - 0x00ACF7 02:ACE7: 85 59     STA ram_subscript
 C - - - - - 0x00ACF9 02:ACE9: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
-C - - - - - 0x00ACFC 02:ACEC: A9 04     LDA #$04
+C - - - - - 0x00ACFC 02:ACEC: A9 04     LDA #$01
 C - - - - - 0x00ACFE 02:ACEE: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AD01 02:ACF1: 20 4A C0  JSR sub_0x01D072_обработка_яркости_с_ожиданием_завершения_обработки
 C - - - - - 0x00AD04 02:ACF4: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
@@ -11235,7 +11235,7 @@ C - - - - - 0x00AE75 02:AE65: A5 58     LDA ram_script
 C - - - - - 0x00AE77 02:AE67: C9 03     CMP #con_script_титры
 C - - - - - 0x00AE79 02:AE69: F0 0E     BEQ bra_AE79_это_титры
 C - - - - - 0x00AE7B 02:AE6B: 20 44 C0  JSR sub_0x01D057_включить_затемнение_яркости
-C - - - - - 0x00AE7E 02:AE6E: A9 04     LDA #$04
+C - - - - - 0x00AE7E 02:AE6E: A9 04     LDA #$01
 C - - - - - 0x00AE80 02:AE70: 8D B3 05  STA ram_скорость_яркости
 C - - - - - 0x00AE83 02:AE73: 20 4A C0  JSR sub_0x01D072_обработка_яркости_с_ожиданием_завершения_обработки
 C - - - - - 0x00AE86 02:AE76: 20 3D AE  JSR sub_AE3D_задержка_8_игровых_кадров
