@@ -9516,7 +9516,9 @@ sub_B8C5:
 C - - - - - 0x01B8D5 06:B8C5: 20 BA B7  JSR sub_B7BA
 C - - - - - 0x01B8D8 06:B8C8: A5 1C     LDA ram_001C
 C - - - - - 0x01B8DA 06:B8CA: D0 03     BNE bra_B8CF
-C - - - - - 0x01B8DC 06:B8CC: 4C 2B BA  JMP loc_BA2B
+C - - - - - 0x01B8DC 06:B8CC: 4C 2B BA  LDA #$FF
+                                        STA ram_флаг_прозрачного_мяча
+                                        RTS
 bra_B8CF:
 C - - - - - 0x01B8DF 06:B8CF: C9 01     CMP #$01
 C - - - - - 0x01B8E1 06:B8D1: D0 03     BNE bra_B8D6
@@ -9677,13 +9679,6 @@ bra_BA23:
 C - - - - - 0x01BA33 06:BA23: A5 1C     LDA ram_001C
 C - - - - - 0x01BA35 06:BA25: 8D 0E 05  STA ram_флаг_прозрачного_мяча
 C - - - - - 0x01BA38 06:BA28: 4C 30 BA  RTS
-
-
-
-loc_BA2B:
-C D 1 - - - 0x01BA3B 06:BA2B: A9 FF     LDA #$FF
-C - - - - - 0x01BA3D 06:BA2D: 8D 0E 05  STA ram_флаг_прозрачного_мяча
-C D 1 - - - 0x01BA40 06:BA30: 60        RTS
 
 
 
