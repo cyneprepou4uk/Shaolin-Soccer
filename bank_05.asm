@@ -1804,10 +1804,10 @@ C - - - - - 0x014AFA 05:8AEA: A9 01     LDA #con_anim_type_мяч
 C - - - - - 0x014AFC 05:8AEC: 8D 6D 00  STA ram_тип_анимации_мяча
                                         LDA #con_spr_pal + $01
 C - - - - - 0x014AFF 05:8AEF: 8D AE 05  STA ram_номер_палитры_спрайтов
-C - - - - - 0x014B02 05:8AF2: A2 08     LDX #con_chr_bank + $08
-C - - - - - 0x014B04 05:8AF4: 8E B8 05  STX ram_банк_спрайтов
-C - - - - - 0x014B07 05:8AF7: E8        INX ; con_chr_bank + $09
-C - - - - - 0x014B08 05:8AF8: 8E BB 05  STX ram_банк_спрайтов + 3
+C - - - - - 0x014B02 05:8AF2: A2 08     LDA #con_chr_bank + $08
+C - - - - - 0x014B04 05:8AF4: 8E B8 05  STA ram_банк_спрайтов
+C - - - - - 0x014B07 05:8AF7: E8        LDA #con_chr_bank + $09
+C - - - - - 0x014B08 05:8AF8: 8E BB 05  STA ram_банк_спрайтов + 3
 C - - - - - 0x014B0B 05:8AFB: 20 38 BD  JSR sub_BD38_рожи
 C - - - - - 0x014B0E 05:8AFE: 20 B0 BD  JSR sub_BDB0_выбор_палитры_командам
 C - - - - - 0x014B11 05:8B01: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
