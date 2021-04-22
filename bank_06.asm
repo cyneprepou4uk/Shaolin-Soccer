@@ -9639,13 +9639,13 @@ C - - - - - 0x01B9D9 06:B9C9: A9 00     LDA #$00
 C - - - - - 0x01B9DB 06:B9CB: 20 55 BD  JSR sub_BD55
 C - - - - - 0x01B9DE 06:B9CE: A9 2D     LDA #con_sfx_нарушение
 C - - - - - 0x01B9E0 06:B9D0: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
-C - - - - - 0x01B9E3 06:B9D3: BD 14 03  LDA ram_pos_X_lo_игрока,X
+C - - - - - 0x01B9E3 06:B9D3: BD 14 03  LDA ram_pos_X_lo_мяча
 C - - - - - 0x01B9E6 06:B9D6: 8D 17 05  STA ram_pos_X_lo_подающий
-C - - - - - 0x01B9E9 06:B9D9: BD 27 03  LDA ram_pos_X_hi_игрока,X
+C - - - - - 0x01B9E9 06:B9D9: BD 27 03  LDA ram_pos_X_hi_мяча
 C - - - - - 0x01B9EC 06:B9DC: 8D 18 05  STA ram_pos_X_hi_подающий
-C - - - - - 0x01B9EF 06:B9DF: BD 4D 03  LDA ram_pos_Y_lo_игрока,X
+C - - - - - 0x01B9EF 06:B9DF: BD 4D 03  LDA ram_pos_Y_lo_мяча
 C - - - - - 0x01B9F2 06:B9E2: 8D 19 05  STA ram_pos_Y_lo_подающий
-C - - - - - 0x01B9F5 06:B9E5: BD 60 03  LDA ram_pos_Y_hi_игрока,X
+C - - - - - 0x01B9F5 06:B9E5: BD 60 03  LDA ram_pos_Y_hi_мяча
 C - - - - - 0x01B9F8 06:B9E8: 8D 1A 05  STA ram_pos_Y_hi_подающий
 bra_B9EB:
 C - - - - - 0x01B9FB 06:B9EB: A5 1C     LDA ram_001C
