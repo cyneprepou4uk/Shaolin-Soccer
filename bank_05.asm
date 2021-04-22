@@ -2322,14 +2322,14 @@ C - - - - - 0x014DD9 05:8DC9: 20 53 C0  JSR sub_0x01EC9F_прыжок_на_по�
 
 
 sub_8DD0_экран_vs:
-C - - - - - 0x014DE0 05:8DD0: A2 28     LDX #con_chr_bank + $28
-C - - - - - 0x014DE2 05:8DD2: 8E B8 05  STX ram_банк_спрайтов
-C - - - - - 0x014DE5 05:8DD5: E8        INX ; con_chr_bank + $29
-C - - - - - 0x014DE6 05:8DD6: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x014DE9 05:8DD9: E8        INX ; con_chr_bank + $2A
-C - - - - - 0x014DEA 05:8DDA: 8E BA 05  STX ram_банк_спрайтов + 2
-C - - - - - 0x014DED 05:8DDD: E8        INX ; con_chr_bank + $2B
-C - - - - - 0x014DEE 05:8DDE: 8E BB 05  STX ram_банк_спрайтов + 3
+C - - - - - 0x014DE0 05:8DD0: A2 28     LDA #con_chr_bank + $28
+C - - - - - 0x014DE2 05:8DD2: 8E B8 05  STA ram_банк_спрайтов
+C - - - - - 0x014DE5 05:8DD5: E8        LDA #con_chr_bank + $29
+C - - - - - 0x014DE6 05:8DD6: 8E B9 05  STA ram_банк_спрайтов + 1
+C - - - - - 0x014DE9 05:8DD9: E8        LDA #con_chr_bank + $2A
+C - - - - - 0x014DEA 05:8DDA: 8E BA 05  STA ram_банк_спрайтов + 2
+C - - - - - 0x014DED 05:8DDD: E8        LDA #con_chr_bank + $2B
+C - - - - - 0x014DEE 05:8DDE: 8E BB 05  STA ram_банк_спрайтов + 3
 C - - - - - 0x014DF1 05:8DE1: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 C - - - - - 0x014DF4 05:8DE4: A9 00     LDA #$00
 C - - - - - 0x014DF6 05:8DE6: 8D 5D 05  STA ram_лицо_игрока + 1
