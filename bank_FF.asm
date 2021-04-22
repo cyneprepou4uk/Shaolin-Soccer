@@ -56,7 +56,7 @@
 .export sub_0x01E838_отрисовать_статичный_экран
 .export sub_0x01EB9C
 .export sub_0x01EC9F_прыжок_на_поинтеры_после_JSR
-.export sub_0x01ECB9
+.export sub_0x01ECB9_выключить_NMI_при_следующем_вызове
 .export sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
 .export sub_0x01ECDB_отобразить_фон_и_спрайты
 .export sub_0x01EE45_вращение_рандома
@@ -6376,7 +6376,7 @@ C - - - - - 0x01ECB6 07:ECA6: 6C 0C 00  JMP (ram_000C)
 
 
 
-sub_0x01ECB9:
+sub_0x01ECB9_выключить_NMI_при_следующем_вызове:
 sub_ECA9_выключить_NMI_при_следующем_вызове:
 C D 3 - - - 0x01ECB9 07:ECA9: 48        PHA
 C - - - - - 0x01ECBA 07:ECAA: A5 4F     LDA ram_флаг_nmi
