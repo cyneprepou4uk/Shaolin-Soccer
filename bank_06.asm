@@ -9555,7 +9555,7 @@ C - - - - - 0x01B927 06:B917: 8D 10 05  STA ram_подтип_супера
 bra_B91A:
 C - - - - - 0x01B92A 06:B91A: AD C9 04  LDA ram_таймер_действия_мяча
 C - - - - - 0x01B92D 06:B91D: F0 0B     BEQ bra_B92A
-C - - - - - 0x01B92F 06:B91F: BD 2E 04  LDA ram_spd_Z_hi_игрока,X
+C - - - - - 0x01B92F 06:B91F: BD 2E 04  LDA ram_spd_Z_hi_мяча
 C - - - - - 0x01B932 06:B922: F0 06     BEQ bra_B92A
 C - - - - - 0x01B934 06:B924: 20 2B BD  JSR sub_BD2B
 C - - - - - 0x01B937 06:B927: 4C 30 BA  RTS
@@ -9567,10 +9567,10 @@ C - - - - - 0x01B942 06:B932: 20 64 BC  JSR sub_BC64
 C - - - - - 0x01B945 06:B935: 20 87 A1  JSR sub_A187_ограничение_максимальной_скорости
 C - - - - - 0x01B948 06:B938: 20 56 98  JSR sub_9856_очистка_силы_мяча_и_др
 bra_B93B_loop:
-C - - - - - 0x01B94B 06:B93B: BD F6 03  LDA ram_spd_X_hi_игрока,X
+C - - - - - 0x01B94B 06:B93B: BD F6 03  LDA ram_spd_X_hi_мяча
 C - - - - - 0x01B94E 06:B93E: 0A        ASL
-C - - - - - 0x01B94F 06:B93F: 7E F6 03  ROR ram_spd_X_hi_игрока,X
-C - - - - - 0x01B952 06:B942: 7E E8 03  ROR ram_spd_X_lo_игрока,X
+C - - - - - 0x01B94F 06:B93F: 7E F6 03  ROR ram_spd_X_hi_мяча
+C - - - - - 0x01B952 06:B942: 7E E8 03  ROR ram_spd_X_lo_мяча
 C - - - - - 0x01B955 06:B945: C8        INY
 C - - - - - 0x01B956 06:B946: C0 01     CPY #$01
 C - - - - - 0x01B958 06:B948: 90 F1     BCC bra_B93B_loop
@@ -9591,8 +9591,8 @@ C - - - - - 0x01B978 06:B968: F0 8C     BEQ bra_B8F6
 C - - - - - 0x01B97A 06:B96A: 30 03     BMI bra_B96F
 C - - - - - 0x01B97C 06:B96C: 4C BB B9  JMP loc_B9BB
 bra_B96F:
-C - - - - - 0x01B97F 06:B96F: BD F6 03  LDA ram_spd_X_hi_игрока,X
-C - - - - - 0x01B982 06:B972: 1D E8 03  ORA ram_spd_X_lo_игрока,X
+C - - - - - 0x01B97F 06:B96F: BD F6 03  LDA ram_spd_X_hi_мяча
+C - - - - - 0x01B982 06:B972: 1D E8 03  ORA ram_spd_X_lo_мяча
 C - - - - - 0x01B985 06:B975: F0 1E     BEQ bra_B995_RTS
 C - - - - - 0x01B987 06:B977: A9 27     LDA #con_sfx_штанга
 C - - - - - 0x01B989 06:B979: 20 E4 C2  JSR sub_0x01C2F4_воспроизвести_звук
