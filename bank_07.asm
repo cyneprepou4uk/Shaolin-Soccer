@@ -172,12 +172,12 @@ tbl_0000_начальная_палитра:
 
 
 sub_очистка_страниц_оперативки:
-                                        LDA #$07
+                                        LDA #$1F
                                         STA ram_000D
                                         LDA #$00
                                         STA ram_000C
                                         TAY
-                                        LDX #$FA
+                                        LDX #$E2
 @bra_очистка_0200_07FF:
                                         STA (ram_000C),Y
                                         INY
