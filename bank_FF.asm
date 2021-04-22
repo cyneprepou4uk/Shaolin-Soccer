@@ -6266,15 +6266,15 @@ C - - - - - 0x01EBFD 07:EBED: AD 0E 05  LDA ram_флаг_прозрачного_
 C - - - - - 0x01EC00 07:EBF0: D0 21     BNE bra_EC13
 C - - - - - 0x01EC02 07:EBF2: 38        SEC
 C - - - - - 0x01EC03 07:EBF3: BD 14 03  LDA ram_pos_X_lo_игрока,X
-C - - - - - 0x01EC06 07:EBF6: ED 85 EC  SBC tbl_EC85
+C - - - - - 0x01EC06 07:EBF6: ED 85 EC  SBC tbl_EC85_pos_X
 C - - - - - 0x01EC09 07:EBF9: BD 27 03  LDA ram_pos_X_hi_игрока,X
-C - - - - - 0x01EC0C 07:EBFC: ED 86 EC  SBC tbl_EC85 + 1
+C - - - - - 0x01EC0C 07:EBFC: ED 86 EC  SBC tbl_EC85_pos_X + 1
 C - - - - - 0x01EC0F 07:EBFF: 30 7D     BMI bra_EC7E
 C - - - - - 0x01EC11 07:EC01: 38        SEC
 C - - - - - 0x01EC12 07:EC02: BD 14 03  LDA ram_pos_X_lo_игрока,X
-C - - - - - 0x01EC15 07:EC05: ED 87 EC  SBC tbl_EC87
+C - - - - - 0x01EC15 07:EC05: ED 87 EC  SBC tbl_EC87_pos_X
 C - - - - - 0x01EC18 07:EC08: BD 27 03  LDA ram_pos_X_hi_игрока,X
-C - - - - - 0x01EC1B 07:EC0B: ED 88 EC  SBC tbl_EC87 + 1
+C - - - - - 0x01EC1B 07:EC0B: ED 88 EC  SBC tbl_EC87_pos_X + 1
 C - - - - - 0x01EC1E 07:EC0E: 10 6E     BPL bra_EC7E
 C - - - - - 0x01EC20 07:EC10: 4C 84 EC  RTS
 bra_EC13:
@@ -6286,9 +6286,9 @@ C - - - - - 0x01EC2C 07:EC1C: 29 02     AND #$02
 C - - - - - 0x01EC2E 07:EC1E: F0 62     BEQ bra_EC82
 C - - - - - 0x01EC30 07:EC20: 38        SEC
 C - - - - - 0x01EC31 07:EC21: BD 4D 03  LDA ram_pos_Y_lo_игрока,X
-C - - - - - 0x01EC34 07:EC24: ED 8D EC  SBC tbl_EC8D
+C - - - - - 0x01EC34 07:EC24: ED 8D EC  SBC tbl_EC8D_pos_Y
 C - - - - - 0x01EC37 07:EC27: BD 60 03  LDA ram_pos_Y_hi_игрока,X
-C - - - - - 0x01EC3A 07:EC2A: ED 8E EC  SBC tbl_EC8D + 1
+C - - - - - 0x01EC3A 07:EC2A: ED 8E EC  SBC tbl_EC8D_pos_Y + 1
 C - - - - - 0x01EC3D 07:EC2D: B0 55     BCS bra_EC84_RTS
 C - - - - - 0x01EC3F 07:EC2F: 38        SEC
 C - - - - - 0x01EC40 07:EC30: BD 4D 03  LDA ram_pos_Y_lo_игрока,X
@@ -6319,9 +6319,9 @@ C - - - - - 0x01EC77 07:EC67: ED 8A EC  SBC tbl_EC89 + 1
 C - - - - - 0x01EC7A 07:EC6A: 30 18     BMI bra_EC84_RTS
 C - - - - - 0x01EC7C 07:EC6C: 38        SEC
 C - - - - - 0x01EC7D 07:EC6D: BD 4D 03  LDA ram_pos_Y_lo_игрока,X
-C - - - - - 0x01EC80 07:EC70: ED 8D EC  SBC tbl_EC8D
+C - - - - - 0x01EC80 07:EC70: ED 8D EC  SBC tbl_EC8D_pos_Y
 C - - - - - 0x01EC83 07:EC73: BD 60 03  LDA ram_pos_Y_hi_игрока,X
-C - - - - - 0x01EC86 07:EC76: ED 8E EC  SBC tbl_EC8D + 1
+C - - - - - 0x01EC86 07:EC76: ED 8E EC  SBC tbl_EC8D_pos_Y + 1
 C - - - - - 0x01EC89 07:EC79: 10 09     BPL bra_EC84_RTS
 C - - - - - 0x01EC8B 07:EC7B: 4C 82 EC  JMP loc_EC82
 bra_EC7E:
@@ -6336,10 +6336,10 @@ C D 3 - - - 0x01EC94 07:EC84: 60        RTS
 
 
 
-tbl_EC85:
+tbl_EC85_pos_X:
 - D 3 - - - 0x01EC95 07:EC85: 88 00     .word $0088
 
-tbl_EC87:
+tbl_EC87_pos_X:
 - D 3 - - - 0x01EC97 07:EC87: 78 03     .word $0378
 
 tbl_EC89:
@@ -6348,7 +6348,7 @@ tbl_EC89:
 tbl_EC8B:
 - D 3 - - - 0x01EC9B 07:EC8B: A5 00     .word $00A5
 
-tbl_EC8D:
+tbl_EC8D_pos_Y:
 - D 3 - - - 0x01EC9D 07:EC8D: E4 00     .word $00E4
 
 

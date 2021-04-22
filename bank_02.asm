@@ -12427,13 +12427,13 @@ C - - - - - 0x00B4E6 02:B4D6: 8A        TXA
 C - - - - - 0x00B4E7 02:B4D7: 0A        ASL
 C - - - - - 0x00B4E8 02:B4D8: 0A        ASL
 C - - - - - 0x00B4E9 02:B4D9: A8        TAY
-C - - - - - 0x00B4EA 02:B4DA: B9 2D B5  LDA tbl_B52D,Y
+C - - - - - 0x00B4EA 02:B4DA: B9 2D B5  LDA tbl_B52D_координаты,Y
 C - - - - - 0x00B4ED 02:B4DD: 9D 14 03  STA ram_pos_X_lo_игрока,X
-C - - - - - 0x00B4F0 02:B4E0: B9 2E B5  LDA tbl_B52E,Y
+C - - - - - 0x00B4F0 02:B4E0: B9 2E B5  LDA tbl_B52D_координаты + 1,Y
 C - - - - - 0x00B4F3 02:B4E3: 9D 27 03  STA ram_pos_X_hi_игрока,X
-C - - - - - 0x00B4F6 02:B4E6: B9 2F B5  LDA tbl_B52F,Y
+C - - - - - 0x00B4F6 02:B4E6: B9 2F B5  LDA tbl_B52D_координаты + 2,Y
 C - - - - - 0x00B4F9 02:B4E9: 9D 4D 03  STA ram_pos_Y_lo_игрока,X
-C - - - - - 0x00B4FC 02:B4EC: B9 30 B5  LDA tbl_B530,Y
+C - - - - - 0x00B4FC 02:B4EC: B9 30 B5  LDA tbl_B52D_координаты + 3,Y
 C - - - - - 0x00B4FF 02:B4EF: 9D 60 03  STA ram_pos_Y_hi_игрока,X
 C - - - - - 0x00B502 02:B4F2: E8        INX
 C - - - - - 0x00B503 02:B4F3: E8        INX
@@ -12496,26 +12496,19 @@ tbl_B511:
 
 
 
-tbl_B52D:
-- D 1 - - - 0x00B53D 02:B52D: A8        .byte $A8   ; 
-tbl_B52E:
-- D 1 - - - 0x00B53E 02:B52E: 01        .byte $01   ; 
-tbl_B52F:
-- D 1 - - - 0x00B53F 02:B52F: D8        .byte $D8   ; 
-tbl_B530:
-- D 1 - - - 0x00B540 02:B530: 00        .byte $00   ; 
-- D 1 - - - 0x00B541 02:B531: 50        .byte $50   ; 
-- D 1 - - - 0x00B542 02:B532: 01        .byte $01   ; 
-- D 1 - - - 0x00B543 02:B533: D8        .byte $D8   ; 
-- D 1 - - - 0x00B544 02:B534: 00        .byte $00   ; 
-- D 1 - - - 0x00B545 02:B535: 88        .byte $88   ; 
-- D 1 - - - 0x00B546 02:B536: 01        .byte $01   ; 
-- D 1 - - - 0x00B547 02:B537: D8        .byte $D8   ; 
-- D 1 - - - 0x00B548 02:B538: 00        .byte $00   ; 
-- D 1 - - - 0x00B549 02:B539: 70        .byte $70   ; 
-- D 1 - - - 0x00B54A 02:B53A: 01        .byte $01   ; 
-- D 1 - - - 0x00B54B 02:B53B: D8        .byte $D8   ; 
-- D 1 - - - 0x00B54C 02:B53C: 00        .byte $00   ; 
+tbl_B52D_координаты:
+; 00
+- D 1 - - - 0x00B53D 02:B52D: A8 01     .word $01A8 ; X
+- D 1 - - - 0x00B53F 02:B52F: D8 00     .word $00D8 ; Y
+; 01
+- D 1 - - - 0x00B541 02:B531: 50 01     .word $0150 ; X
+- D 1 - - - 0x00B543 02:B533: D8 00     .word $00D8 ; Y
+; 02
+- D 1 - - - 0x00B545 02:B535: 88 01     .word $0188 ; X
+- D 1 - - - 0x00B547 02:B537: D8 00     .word $00D8 ; Y
+; 03
+- D 1 - - - 0x00B549 02:B539: 70 01     .word $0170 ; X
+- D 1 - - - 0x00B54B 02:B53B: D8 00     .word $00D8 ; Y
 
 
 
