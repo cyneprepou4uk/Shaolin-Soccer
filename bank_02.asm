@@ -10906,14 +10906,14 @@ bra_AC5D:
 C - - - - - 0x00AC6D 02:AC5D: 8C 8B 05  STY ram_флаг_демо
 C - - - - - 0x00AC70 02:AC60: A9 01     LDA #$01    ; экран "жми старт"
 C - - - - - 0x00AC72 02:AC62: 20 68 C0  JSR sub_0x01E838_отрисовать_статичный_экран
-C - - - - - 0x00AC75 02:AC65: A2 08     LDX #con_chr_bank + $08
-C - - - - - 0x00AC77 02:AC67: 8E B8 05  STX ram_банк_спрайтов
-C - - - - - 0x00AC7A 02:AC6A: E8        INX ; con_chr_bank + $09
-C - - - - - 0x00AC7B 02:AC6B: 8E BB 05  STX ram_банк_спрайтов + 3
-C - - - - - 0x00AC7E 02:AC6E: A2 1F     LDX #con_chr_bank + $1F
-C - - - - - 0x00AC80 02:AC70: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x00AC83 02:AC73: E8        INX ; con_chr_bank + $20
-C - - - - - 0x00AC84 02:AC74: 8E BA 05  STX ram_банк_спрайтов + 2
+C - - - - - 0x00AC75 02:AC65: A2 08     LDA #con_chr_bank + $08
+C - - - - - 0x00AC77 02:AC67: 8E B8 05  STA ram_банк_спрайтов
+C - - - - - 0x00AC7A 02:AC6A: E8        LDA #con_chr_bank + $09
+C - - - - - 0x00AC7B 02:AC6B: 8E BB 05  STA ram_банк_спрайтов + 3
+C - - - - - 0x00AC7E 02:AC6E: A2 1F     LDA #con_chr_bank + $1F
+C - - - - - 0x00AC80 02:AC70: 8E B9 05  STA ram_банк_спрайтов + 1
+C - - - - - 0x00AC83 02:AC73: E8        LDA #con_chr_bank + $20
+C - - - - - 0x00AC84 02:AC74: 8E BA 05  STA ram_банк_спрайтов + 2
 C - - - - - 0x00AC87 02:AC77: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 C - - - - - 0x00AC8A 02:AC7A: A9 01     LDA #con_spr_pal + $01
 C - - - - - 0x00AC8C 02:AC7C: 8D AE 05  STA ram_номер_палитры_спрайтов
