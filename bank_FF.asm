@@ -14,10 +14,10 @@
 .export sub_0x01C260_задать_направление_движения
 .export sub_0x01C261_угол_движения_во_время_спринта
 .export sub_0x01C29F_положение_мяча_относительно_игрока
-.export sub_0x01C2A4
+.export sub_0x01C2A4_фиксированное_положение_мяча_относительно_игрока
 .export sub_0x01C2E0
 .export sub_0x01C2C2
-.export sub_0x01C2AE
+.export sub_0x01C2AE_флаг_видимости_и_приоритет_анимаций
 .export sub_0x01C2BD
 .export sub_0x01C270_рожи
 .export sub_0x01C2EF_выбор_палитры_командам
@@ -713,7 +713,7 @@ sub_0x01C29F_положение_мяча_относительно_игрока:
 C - - - - - 0x01C29F 07:C28F: A9 0C     LDA #$0C
 C - - - - - 0x01C2A1 07:C291: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
-sub_0x01C2A4:
+sub_0x01C2A4_фиксированное_положение_мяча_относительно_игрока:
 C - - - - - 0x01C2A4 07:C294: A9 0D     LDA #$0D
 C - - - - - 0x01C2A6 07:C296: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
@@ -741,8 +741,8 @@ sub_C280_выбрать_погоду:
 C - - - - - 0x01C290 07:C280: A9 13     LDA #$13
 C - - - - - 0x01C292 07:C282: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
-sub_C29E:
-sub_0x01C2AE:
+sub_C29E_флаг_видимости_и_приоритет_анимаций:
+sub_0x01C2AE_флаг_видимости_и_приоритет_анимаций:
 C - - - - - 0x01C2AE 07:C29E: A9 14     LDA #$14
 C - - - - - 0x01C2B0 07:C2A0: 4C 44 C3  JMP loc_C344_prg_bankswitch_80xx
 
@@ -970,14 +970,14 @@ tbl_C370_low_byte_addr_для_indirect_jump:
 - D 2 - - - 0x01C394 07:C384: 06        .byte con_prg_bank + $06, < loc_0x01801C_задать_направление_движения       ; 0A
 - D 2 - - - 0x01C396 07:C386: 06        .byte con_prg_bank + $06, < loc_0x01801F_угол_движения_во_время_спринта       ; 0B
 - D 2 - - - 0x01C398 07:C388: 04        .byte con_prg_bank + $04, < loc_0x010013_положение_мяча_относительно_игрока       ; 0C
-- D 2 - - - 0x01C39A 07:C38A: 04        .byte con_prg_bank + $04, < loc_0x010016       ; 0D
+- D 2 - - - 0x01C39A 07:C38A: 04        .byte con_prg_bank + $04, < loc_0x010016_фиксированное_положение_мяча_относительно_игрока       ; 0D
 - D 2 - - - 0x01C39C 07:C38C: 02        .byte con_prg_bank + $02, < loc_0x008013       ; 0E
 - D 2 - - - 0x01C39E 07:C38E: 04        .byte con_prg_bank + $04, < loc_0x010028       ; 0F
 - D 2 - - - 0x01C3A0 07:C390: 02        .byte con_prg_bank + $02, < loc_0x008016       ; 10
 - D 2 - - - 0x01C3A2 07:C392: 03        .byte con_prg_bank + $03, < loc_0x00C022_мерцание_спрайтов       ; 11
 - D 2 - - - 0x01C3A4 07:C394: 05        .byte con_prg_bank + $05, < loc_0x014010_скрипт_меню       ; 12
 - D 2 - - - 0x01C3A6 07:C396: 03        .byte con_prg_bank + $03, < loc_0x00C019_выбрать_погоду       ; 13
-- D 2 - - - 0x01C3A8 07:C398: 04        .byte con_prg_bank + $04, < loc_0x01001C       ; 14
+- D 2 - - - 0x01C3A8 07:C398: 04        .byte con_prg_bank + $04, < loc_0x01001C_флаг_видимости_и_приоритет_анимаций       ; 14
 - D 2 - - - 0x01C3AA 07:C39A: 04        .byte con_prg_bank + $04, < loc_0x01001F       ; 15
 - D 2 - - - 0x01C3AC 07:C39C: 03        .byte con_prg_bank + $03, < loc_0x00C01F       ; 16
 - D 2 - - - 0x01C3AE 07:C39E: 04        .byte con_prg_bank + $04, < loc_0x010025       ; 17
@@ -1167,7 +1167,7 @@ C - - - - - 0x01C57B 07:C56B: 8D 84 06  STA ram_таймер_текста_при
 C - - - - - 0x01C57E 07:C56E: 8D 85 06  STA ram_таймер_текста_приказа + 1
 C - - - - - 0x01C581 07:C571: 20 6A BD  JSR sub_0x01BD7A
 C - - - - - 0x01C584 07:C574: 20 CC BE  JSR sub_0x01BEDC
-C - - - - - 0x01C587 07:C577: 20 9E C2  JSR sub_C29E
+C - - - - - 0x01C587 07:C577: 20 9E C2  JSR sub_C29E_флаг_видимости_и_приоритет_анимаций
 C - - - - - 0x01C58A 07:C57A: 4C 98 C6  RTS
 
 
@@ -1177,7 +1177,7 @@ C - - J - - 0x01C58D 07:C57D: 20 71 C2  JSR sub_C271
 C - - - - - 0x01C590 07:C580: 20 6A BD  JSR sub_0x01BD7A
 C - - - - - 0x01C593 07:C583: 20 CC BE  JSR sub_0x01BEDC
 C - - - - - 0x01C596 07:C586: 20 A5 F3  JSR sub_F3A5_переливание_надписи_hud
-C - - - - - 0x01C599 07:C589: 20 9E C2  JSR sub_C29E
+C - - - - - 0x01C599 07:C589: 20 9E C2  JSR sub_C29E_флаг_видимости_и_приоритет_анимаций
 C - - - - - 0x01C59C 07:C58C: 20 73 D0  JSR sub_D073_обработка_текущей_яркости
 C - - - - - 0x01C59F 07:C58F: AD B2 05  LDA ram_флаг_яркости
 C - - - - - 0x01C5A2 07:C592: 10 E6     BMI bra_C594_яркость_готова
@@ -1282,7 +1282,7 @@ C - - - - - 0x01C693 07:C683: 20 A3 C2  JSR sub_C2A3
 C - - - - - 0x01C696 07:C686: 20 85 C2  JSR sub_C285
 C - - - - - 0x01C699 07:C689: 20 9C C8  JSR sub_C89C_обработка_нарушения
 C - - - - - 0x01C69C 07:C68C: 20 CC BE  JSR sub_0x01BEDC
-C - - - - - 0x01C69F 07:C68F: 20 9E C2  JSR sub_C29E
+C - - - - - 0x01C69F 07:C68F: 20 9E C2  JSR sub_C29E_флаг_видимости_и_приоритет_анимаций
 C - - - - - 0x01C6A2 07:C692: 20 99 C2  JSR sub_C299_мерцание_спрайтов
 C - - - - - 0x01C6A5 07:C695: 20 73 D0  JSR sub_D073_обработка_текущей_яркости
 C D 2 - - - 0x01C6A8 07:C698: 60        RTS
@@ -1321,7 +1321,7 @@ C - - - - - 0x01C6C3 07:C6B3: 20 6A BD  JSR sub_0x01BD7A
 C - - - - - 0x01C6C6 07:C6B6: 20 A3 C2  JSR sub_C2A3
 C - - - - - 0x01C6C9 07:C6B9: 20 85 C2  JSR sub_C285
 C - - - - - 0x01C6CC 07:C6BC: 20 A5 F3  JSR sub_F3A5_переливание_надписи_hud
-C - - - - - 0x01C6CF 07:C6BF: 20 9E C2  JSR sub_C29E
+C - - - - - 0x01C6CF 07:C6BF: 20 9E C2  JSR sub_C29E_флаг_видимости_и_приоритет_анимаций
 C - - - - - 0x01C6D2 07:C6C2: 20 99 C2  JSR sub_C299_мерцание_спрайтов
 C - - - - - 0x01C6D5 07:C6C5: AD E2 05  LDA ram_таймер_катсцены
 C - - - - - 0x01C6D8 07:C6C8: C9 20     CMP #$20
@@ -1428,7 +1428,7 @@ C - - J - - 0x01C78D 07:C77D: 20 EE CA  JSR sub_CAEE_скопировать_pos_
 C - - - - - 0x01C790 07:C780: 20 42 BE  JSR sub_0x01BE52
 C - - - - - 0x01C793 07:C783: 20 85 C2  JSR sub_C285
 loc_C786:
-C D 2 - - - 0x01C796 07:C786: 20 9E C2  JSR sub_C29E
+C D 2 - - - 0x01C796 07:C786: 20 9E C2  JSR sub_C29E_флаг_видимости_и_приоритет_анимаций
 C - - - - - 0x01C799 07:C789: 20 73 D0  JSR sub_D073_обработка_текущей_яркости
 C - - - - - 0x01C79C 07:C78C: AD B2 05  LDA ram_флаг_яркости
 C - - - - - 0x01C79F 07:C78F: 10 3C     BPL bra_C7CD_RTS    ; если яркость не готова
@@ -1480,7 +1480,7 @@ C - - - - - 0x01C7F8 07:C7E8: 20 A3 C2  JSR sub_C2A3
 C - - - - - 0x01C7FB 07:C7EB: 20 0B C8  JSR sub_C80B_позиция_камеры_при_мяче_вне_игры
 C - - - - - 0x01C7FE 07:C7EE: 20 85 C2  JSR sub_C285
 C - - - - - 0x01C801 07:C7F1: 20 CC BE  JSR sub_0x01BEDC
-C - - - - - 0x01C804 07:C7F4: 20 9E C2  JSR sub_C29E
+C - - - - - 0x01C804 07:C7F4: 20 9E C2  JSR sub_C29E_флаг_видимости_и_приоритет_анимаций
 C - - - - - 0x01C807 07:C7F7: A5 5C     LDA ram_flag_gameplay
 C - - - - - 0x01C809 07:C7F9: D0 0D     BNE bra_C808_RTS
 C - - - - - 0x01C80B 07:C7FB: A9 02     LDA #con_subscr_gp_игра_в_разгаре
