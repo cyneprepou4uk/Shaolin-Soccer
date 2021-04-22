@@ -1813,7 +1813,7 @@ C - - - - - 0x014B0B 05:8AFB: 20 38 BD  JSR sub_BD38_рожи
 C - - - - - 0x014B0E 05:8AFE: 20 B0 BD  JSR sub_BDB0_выбор_палитры_командам
 C - - - - - 0x014B11 05:8B01: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 C - - - - - 0x014B14 05:8B04: A2 00     LDX #$00
-bra_8B06:
+bra_8B06_loop:
 C - - - - - 0x014B16 05:8B06: A9 00     LDA #con_anim_type_полевой
 C - - - - - 0x014B18 05:8B08: 9D 61 00  STA ram_тип_анимации_игрока,X
                                         LDA #$00
@@ -1834,13 +1834,13 @@ C - - - - - 0x014B40 05:8B30: 9D 59 04  STA ram_действие_игрока,X
 C - - - - - 0x014B43 05:8B33: 8A        TXA
 C - - - - - 0x014B44 05:8B34: 0A        ASL
 C - - - - - 0x014B45 05:8B35: A8        TAY
-C - - - - - 0x014B46 05:8B36: B9 7C 8B  LDA tbl_8B7C,Y
+C - - - - - 0x014B46 05:8B36: B9 7C 8B  LDA tbl_8B7C_координаты,Y
 C - - - - - 0x014B49 05:8B39: 9D 14 03  STA ram_pos_X_lo_игрока,X
-C - - - - - 0x014B4C 05:8B3C: B9 7D 8B  LDA tbl_8B7D,Y
+C - - - - - 0x014B4C 05:8B3C: B9 7D 8B  LDA tbl_8B7C_координаты + 1,Y
 C - - - - - 0x014B4F 05:8B3F: 9D 4D 03  STA ram_pos_Y_lo_игрока,X
 C - - - - - 0x014B52 05:8B42: E8        INX
 C - - - - - 0x014B53 05:8B43: E0 02     CPX #$02
-C - - - - - 0x014B55 05:8B45: 90 BF     BCC bra_8B06
+C - - - - - 0x014B55 05:8B45: 90 BF     BCC bra_8B06_loop
 C - - - - - 0x014B57 05:8B47: A9 00     LDA #con_направо
 C - - - - - 0x014B59 05:8B49: 8D D6 04  STA ram_игрок_с_мячом
 C - - - - - 0x014B5C 05:8B4C: 8D A3 04  STA ram_напр_движ_игрока
@@ -1869,12 +1869,13 @@ C - - - - - 0x014B89 05:8B79: 4C 2D 8C  JMP loc_8C2D
 
 
 
-tbl_8B7C:
-- D 0 - - - 0x014B8C 05:8B7C: 40        .byte $40   ; 
-tbl_8B7D:
-- D 0 - - - 0x014B8D 05:8B7D: D0        .byte $D0   ; 
-- D 0 - - - 0x014B8E 05:8B7E: C0        .byte $C0   ; 
-- D 0 - - - 0x014B8F 05:8B7F: D0        .byte $D0   ; 
+tbl_8B7C_координаты:
+; 00
+- D 0 - - - 0x014B8C 05:8B7C: 40        .byte $40   ; X
+- D 0 - - - 0x014B8D 05:8B7D: D0        .byte $D0   ; Y
+; 01
+- D 0 - - - 0x014B8E 05:8B7E: C0        .byte $C0   ; X
+- D 0 - - - 0x014B8F 05:8B7F: D0        .byte $D0   ; Y
 
 
 
