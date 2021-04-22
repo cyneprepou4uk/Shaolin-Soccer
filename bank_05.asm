@@ -11050,32 +11050,32 @@ tbl_BCC8:
 
 off_BCCE_00_трава:
 ; 00 0%
-- D 1 - I - 0x017CDE 05:BCCE: 40        .byte con_chr_bank + $40   ; 
+- D 1 - I - 0x017CDE 05:BCCE: 40        .byte con_chr_bank + $18   ; 
 - D 1 - I - 0x017CDF 05:BCCF: 01        .byte $01   ; 
 - D 1 - I - 0x017CE0 05:BCD0: 00        .byte $00   ; 
 - D 1 - I - 0x017CE1 05:BCD1: 00        .byte $00   ; 
 ; 01 20%
-- D 1 - I - 0x017CE2 05:BCD2: 40        .byte con_chr_bank + $40   ; 
+- D 1 - I - 0x017CE2 05:BCD2: 40        .byte con_chr_bank + $18   ; 
 - D 1 - I - 0x017CE3 05:BCD3: 01        .byte $01   ; 
 - D 1 - I - 0x017CE4 05:BCD4: 00        .byte $00   ; 
 - D 1 - I - 0x017CE5 05:BCD5: 01        .byte $01   ; 
 ; 02 40%
-- D 1 - I - 0x017CE6 05:BCD6: 40        .byte con_chr_bank + $40   ; 
+- D 1 - I - 0x017CE6 05:BCD6: 40        .byte con_chr_bank + $18   ; 
 - D 1 - I - 0x017CE7 05:BCD7: 02        .byte $02   ; 
 - D 1 - I - 0x017CE8 05:BCD8: 00        .byte $00   ; 
 - D 1 - I - 0x017CE9 05:BCD9: 00        .byte $00   ; 
 ; 03 60%
-- - - - - - 0x017CEA 05:BCDA: 46        .byte con_chr_bank + $46   ; 
+- - - - - - 0x017CEA 05:BCDA: 46        .byte con_chr_bank + $1E   ; 
 - - - - - - 0x017CEB 05:BCDB: 02        .byte $02   ; 
 - - - - - - 0x017CEC 05:BCDC: 01        .byte $01   ; 
 - - - - - - 0x017CED 05:BCDD: 00        .byte $00   ; 
 ; 04 80%
-- - - - - - 0x017CEE 05:BCDE: 46        .byte con_chr_bank + $46   ; 
+- - - - - - 0x017CEE 05:BCDE: 46        .byte con_chr_bank + $1E   ; 
 - - - - - - 0x017CEF 05:BCDF: 01        .byte $01   ; 
 - - - - - - 0x017CF0 05:BCE0: 01        .byte $01   ; 
 - - - - - - 0x017CF1 05:BCE1: 01        .byte $01   ; 
 ; 05 100%
-- - - - - - 0x017CF2 05:BCE2: 46        .byte con_chr_bank + $46   ; 
+- - - - - - 0x017CF2 05:BCE2: 46        .byte con_chr_bank + $1E   ; 
 - - - - - - 0x017CF3 05:BCE3: 01        .byte $01   ; 
 - - - - - - 0x017CF4 05:BCE4: 01        .byte $01   ; 
 - - - - - - 0x017CF5 05:BCE5: 00        .byte $00   ; 
@@ -11084,32 +11084,32 @@ off_BCCE_00_трава:
 
 off_BCE6_01_земля:
 ; 00 0%
-- - - - - - 0x017CF6 05:BCE6: 4C        .byte con_chr_bank + $4C   ; 
+- - - - - - 0x017CF6 05:BCE6: 4C        .byte con_chr_bank + $24   ; 
 - - - - - - 0x017CF7 05:BCE7: 01        .byte $01   ; 
 - - - - - - 0x017CF8 05:BCE8: 02        .byte $02   ; 
 - - - - - - 0x017CF9 05:BCE9: 00        .byte $00   ; 
 ; 01 20%
-- - - - - - 0x017CFA 05:BCEA: 4C        .byte con_chr_bank + $4C   ; 
+- - - - - - 0x017CFA 05:BCEA: 4C        .byte con_chr_bank + $24   ; 
 - - - - - - 0x017CFB 05:BCEB: 01        .byte $01   ; 
 - - - - - - 0x017CFC 05:BCEC: 02        .byte $02   ; 
 - - - - - - 0x017CFD 05:BCED: 01        .byte $01   ; 
 ; 02 40%
-- - - - - - 0x017CFE 05:BCEE: 4C        .byte con_chr_bank + $4C   ; 
+- - - - - - 0x017CFE 05:BCEE: 4C        .byte con_chr_bank + $24   ; 
 - - - - - - 0x017CFF 05:BCEF: 02        .byte $02   ; 
 - - - - - - 0x017D00 05:BCF0: 02        .byte $02   ; 
 - - - - - - 0x017D01 05:BCF1: 00        .byte $00   ; 
 ; 03 60%
-- - - - - - 0x017D02 05:BCF2: 52        .byte con_chr_bank + $52   ; 
+- - - - - - 0x017D02 05:BCF2: 52        .byte con_chr_bank + $2A   ; 
 - - - - - - 0x017D03 05:BCF3: 02        .byte $02   ; 
 - - - - - - 0x017D04 05:BCF4: 03        .byte $03   ; 
 - - - - - - 0x017D05 05:BCF5: 00        .byte $00   ; 
 ; 04 80%
-- - - - - - 0x017D06 05:BCF6: 52        .byte con_chr_bank + $52   ; 
+- - - - - - 0x017D06 05:BCF6: 52        .byte con_chr_bank + $2A   ; 
 - - - - - - 0x017D07 05:BCF7: 01        .byte $01   ; 
 - - - - - - 0x017D08 05:BCF8: 03        .byte $03   ; 
 - - - - - - 0x017D09 05:BCF9: 01        .byte $01   ; 
 ; 05 100%
-- - - - - - 0x017D0A 05:BCFA: 52        .byte con_chr_bank + $52   ; 
+- - - - - - 0x017D0A 05:BCFA: 52        .byte con_chr_bank + $2A   ; 
 - - - - - - 0x017D0B 05:BCFB: 01        .byte $01   ; 
 - - - - - - 0x017D0C 05:BCFC: 03        .byte $03   ; 
 - - - - - - 0x017D0D 05:BCFD: 00        .byte $00   ; 
@@ -11117,7 +11117,7 @@ off_BCE6_01_земля:
 
 
 off_BCFE_02_песок:
-- D 1 - I - 0x017D0E 05:BCFE: 58        .byte con_chr_bank + $58   ; 
+- D 1 - I - 0x017D0E 05:BCFE: 58        .byte con_chr_bank + $30   ; 
 - D 1 - I - 0x017D0F 05:BCFF: 01        .byte $01   ; 
 - D 1 - I - 0x017D10 05:BD00: 04        .byte $04   ; 
 - D 1 - I - 0x017D11 05:BD01: 00        .byte $00   ; 
