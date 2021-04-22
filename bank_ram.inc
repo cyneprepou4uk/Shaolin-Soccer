@@ -1,7 +1,8 @@
-; RAM
-; ($indirect) <?>
-; ($indirect,X) <?>
-; ($indirect),Y <?>
+; todo
+; 0x017E44 - переделать чтение коротких текстовых строк из ppu в чтение из prg
+
+
+
 ram_0000                                = $0000 ; 63   ($indirect),Y <42>   
 ram_0001                                = $0001 ; 18   
 ram_0002                                = $0002 ; 41   ($indirect) <1>   ($indirect),Y <6>   
