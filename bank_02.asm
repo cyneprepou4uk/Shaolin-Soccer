@@ -13694,14 +13694,14 @@ sub_BA66:
 - - - - - - 0x00BA86 02:BA76: 8D 61 00  STA ram_тип_анимации_игрока
 - - - - - - 0x00BA89 02:BA79: 8D 62 00  STA ram_тип_анимации_игрока + 1
 - - - - - - 0x00BA8C 02:BA7C: 8D 6D 00  STA ram_тип_анимации_мяча
-- - - - - - 0x00BA8F 02:BA7F: A2 2C     LDX #con_chr_bank + $2C
-- - - - - - 0x00BA91 02:BA81: 8E B8 05  STX ram_банк_спрайтов
-- - - - - - 0x00BA94 02:BA84: E8        INX ; con_chr_bank + $2D
-- - - - - - 0x00BA95 02:BA85: 8E B9 05  STX ram_банк_спрайтов + 1
-- - - - - - 0x00BA98 02:BA88: E8        INX ; con_chr_bank + $2E
-- - - - - - 0x00BA99 02:BA89: 8E BA 05  STX ram_банк_спрайтов + 2
-- - - - - - 0x00BA9C 02:BA8C: E8        INX ; con_chr_bank + $2F
-- - - - - - 0x00BA9D 02:BA8D: 8E BB 05  STX ram_банк_спрайтов + 3
+- - - - - - 0x00BA8F 02:BA7F: A2 2C     LDA #con_chr_bank + $2C
+- - - - - - 0x00BA91 02:BA81: 8E B8 05  STA ram_банк_спрайтов
+- - - - - - 0x00BA94 02:BA84: E8        LDA #con_chr_bank + $2D
+- - - - - - 0x00BA95 02:BA85: 8E B9 05  STA ram_банк_спрайтов + 1
+- - - - - - 0x00BA98 02:BA88: E8        LDA #con_chr_bank + $2E
+- - - - - - 0x00BA99 02:BA89: 8E BA 05  STA ram_банк_спрайтов + 2
+- - - - - - 0x00BA9C 02:BA8C: E8        LDA #con_chr_bank + $2F
+- - - - - - 0x00BA9D 02:BA8D: 8E BB 05  STA ram_банк_спрайтов + 3
 - - - - - - 0x00BAA0 02:BA90: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 - - - - - - 0x00BAA3 02:BA93: A2 00     LDX #$00
 - - - - - - 0x00BAA5 02:BA95: 8E 68 05  STX ram_номер_управляемого
