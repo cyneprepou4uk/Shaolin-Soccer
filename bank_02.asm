@@ -10794,14 +10794,14 @@ C - - - - - 0x00ABA4 02:AB94: A9 C0     LDA #$C0
 C - - - - - 0x00ABA6 02:AB96: 8D 20 03  STA ram_pos_X_lo_мяча
 C - - - - - 0x00ABA9 02:AB99: A9 CE     LDA #$CE
 C - - - - - 0x00ABAB 02:AB9B: 8D 59 03  STA ram_pos_Y_lo_мяча
-C - - - - - 0x00ABAE 02:AB9E: A2 27     LDX #con_spr_pal + $27
-C - - - - - 0x00ABB0 02:ABA0: 8E AE 05  STX ram_номер_палитры_спрайтов
-C - - - - - 0x00ABB3 02:ABA3: E8        INX ; con_spr_pal + $28
-C - - - - - 0x00ABB4 02:ABA4: 8E AF 05  STX ram_номер_палитры_спрайтов + 1
-C - - - - - 0x00ABB7 02:ABA7: E8        INX ; con_spr_pal + $29
-C - - - - - 0x00ABB8 02:ABA8: 8E B0 05  STX ram_номер_палитры_спрайтов + 2
-C - - - - - 0x00ABBB 02:ABAB: E8        INX ; con_spr_pal + $2A
-C - - - - - 0x00ABBC 02:ABAC: 8E B1 05  STX ram_номер_палитры_спрайтов + 3
+C - - - - - 0x00ABAE 02:AB9E: A2 27     LDA #con_spr_pal + $27
+C - - - - - 0x00ABB0 02:ABA0: 8E AE 05  STA ram_номер_палитры_спрайтов
+C - - - - - 0x00ABB3 02:ABA3: E8        LDA #con_spr_pal + $28
+C - - - - - 0x00ABB4 02:ABA4: 8E AF 05  STA ram_номер_палитры_спрайтов + 1
+C - - - - - 0x00ABB7 02:ABA7: E8        LDA #con_spr_pal + $29
+C - - - - - 0x00ABB8 02:ABA8: 8E B0 05  STA ram_номер_палитры_спрайтов + 2
+C - - - - - 0x00ABBB 02:ABAB: E8        LDA #con_spr_pal + $2A
+C - - - - - 0x00ABBC 02:ABAC: 8E B1 05  STA ram_номер_палитры_спрайтов + 3
 C - - - - - 0x00ABBF 02:ABAF: 20 33 B0  JSR sub_B033_анимация_мяча
 C - - - - - 0x00ABC2 02:ABB2: A9 01     LDA #con_music_логотип
 C - - - - - 0x00ABC4 02:ABB4: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
