@@ -29,7 +29,6 @@ sub_0x000000_RESET_init:
                                         JSR sub_скопировать_на_батарейку
                                         JSR sub_0x01EE81_выключить_NMI
                                         JSR sub_0x01EF74_очистка_фона_и_спрайтов
-                                        JSR sub_подготовка_палитры_vt03
                                         LDA #$00
                                         STA ram_pos_X_lo_скролл
                                         STA ram_pos_X_hi_скролл
@@ -54,6 +53,7 @@ sub_0x000000_RESET_init:
                                         JSR sub_0x01EF64_убрать_полоску_слева_на_экране
                                         JSR sub_0x01EF1A_очистить_0057_00F8
                                         JSR sub_очистка_страниц_оперативки
+                                        JSR sub_подготовка_палитры_vt03
                                         LDA #$88
                                         STA ram_для_2000
                                         STA $2000
