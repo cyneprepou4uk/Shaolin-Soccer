@@ -14613,7 +14613,7 @@ C - - - - - 0x003BC6 00:BBB6: 85 59     STA ram_subscript
 C - - - - - 0x003BC8 00:BBB8: 85 5C     STA ram_flag_gameplay
 bra_BBBA:
 C - - - - - 0x003BCA 00:BBBA: A0 00     LDY #$00
-C - - - - - 0x003BCC 00:BBBC: A2 0E     LDX #$0E
+C - - - - - 0x003BCC 00:BBBC: A2 0E     LDX #con_id_цифры
 bra_BBBE_loop:
 C - - - - - 0x003BCE 00:BBBE: B9 E3 BD  LDA tbl_BDE3,Y
 C - - - - - 0x003BD1 00:BBC1: 9D 59 04  STA ram_действие_игрока,X
@@ -14624,7 +14624,7 @@ C - - - - - 0x003BDA 00:BBCA: C8        INY
 C - - - - - 0x003BDB 00:BBCB: C4 5D     CPY ram_колво_игроков
 C - - - - - 0x003BDD 00:BBCD: 90 EF     BCC bra_BBBE_loop
 C - - - - - 0x003BDF 00:BBCF: F0 ED     BEQ bra_BBBE_loop
-loc_BBD1_loop:
+loc_BBD1_loop:  ; bzk опт   bzk мусор, X тут всегда больше 04
 C - - - - - 0x003BE1 00:BBD1: E0 04     CPX #$04
 C - - - - - 0x003BE3 00:BBD3: B0 09     BCS bra_BBDE
 - - - - - - 0x003BE5 00:BBD5: A9 00     LDA #con_action_00
