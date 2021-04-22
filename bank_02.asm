@@ -11103,7 +11103,8 @@ C - - - - - 0x00ADC6 02:ADB6: A9 00     LDA #con_state_стоит_идет
 C - - - - - 0x00ADC8 02:ADB8: 9D 86 04  STA ram_состояние_игрока,X
                                         LDA #$00
 C - - - - - 0x00ADCB 02:ADBB: 8D D6 04  STA ram_игрок_с_мячом
-C - - - - - 0x00ADCE 02:ADBE: 9D A3 04  STA ram_напр_движ_игрока,X  ; con_направо
+                                        LDA #con_направо
+C - - - - - 0x00ADCE 02:ADBE: 9D A3 04  STA ram_напр_движ_игрока,X
                                         LDA #con_anim_type_полевой
 C - - - - - 0x00ADD1 02:ADC1: 9D 61 00  STA ram_тип_анимации_игрока,X
 C - - - - - 0x00ADD4 02:ADC4: A9 A4     LDA #$A4
