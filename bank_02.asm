@@ -12340,14 +12340,14 @@ off_B424_0E:
 
 
 loc_B429:
-C D 1 - - - 0x00B439 02:B429: A2 2C     LDX #con_chr_bank + $2C
-C - - - - - 0x00B43B 02:B42B: 8E B8 05  STX ram_банк_спрайтов
-C - - - - - 0x00B43E 02:B42E: E8        INX ; con_chr_bank + $2D
-C - - - - - 0x00B43F 02:B42F: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x00B442 02:B432: E8        INX ; con_chr_bank + $2E
-C - - - - - 0x00B443 02:B433: 8E BA 05  STX ram_банк_спрайтов + 2
-C - - - - - 0x00B446 02:B436: E8        INX ; con_chr_bank + $2F
-C - - - - - 0x00B447 02:B437: 8E BB 05  STX ram_банк_спрайтов + 3
+C D 1 - - - 0x00B439 02:B429: A2 2C     LDA #con_chr_bank + $2C
+C - - - - - 0x00B43B 02:B42B: 8E B8 05  STA ram_банк_спрайтов
+C - - - - - 0x00B43E 02:B42E: E8        LDA #con_chr_bank + $2D
+C - - - - - 0x00B43F 02:B42F: 8E B9 05  STA ram_банк_спрайтов + 1
+C - - - - - 0x00B442 02:B432: E8        LDA #con_chr_bank + $2E
+C - - - - - 0x00B443 02:B433: 8E BA 05  STA ram_банк_спрайтов + 2
+C - - - - - 0x00B446 02:B436: E8        LDA #con_chr_bank + $2F
+C - - - - - 0x00B447 02:B437: 8E BB 05  STA ram_банк_спрайтов + 3
 C - - - - - 0x00B44A 02:B43A: A2 12     LDX #$12
 bra_B43C:
 C - - - - - 0x00B44C 02:B43C: A9 7F     LDA #$7F
