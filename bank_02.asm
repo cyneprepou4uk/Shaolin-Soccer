@@ -10683,10 +10683,10 @@ C - - - - - 0x00AAC8 02:AAB8: A9 1F     LDA #con_spr_pal + $1F
 C - - - - - 0x00AACA 02:AABA: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
 C - - - - - 0x00AACD 02:AABD: A9 21     LDA #con_spr_pal + $21
 C - - - - - 0x00AACF 02:AABF: 8D B0 05  STA ram_номер_палитры_спрайтов + 2
-C - - - - - 0x00AAD2 02:AAC2: A2 70     LDX #con_chr_bank + $70
-C - - - - - 0x00AAD4 02:AAC4: 8E B8 05  STX ram_банк_спрайтов
-C - - - - - 0x00AAD7 02:AAC7: E8        INX ; con_chr_bank + $71
-C - - - - - 0x00AAD8 02:AAC8: 8E B9 05  STX ram_банк_спрайтов + 1
+C - - - - - 0x00AAD2 02:AAC2: A2 70     LDA #con_chr_bank + $70
+C - - - - - 0x00AAD4 02:AAC4: 8E B8 05  STA ram_банк_спрайтов
+C - - - - - 0x00AAD7 02:AAC7: E8        LDA #con_chr_bank + $71
+C - - - - - 0x00AAD8 02:AAC8: 8E B9 05  STA ram_банк_спрайтов + 1
 C - - - - - 0x00AADB 02:AACB: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 C - - - - - 0x00AADE 02:AACE: 20 59 C0  JSR sub_0x01D05F_включить_осветление_яркости
 C - - - - - 0x00AAE1 02:AAD1: A9 04     LDA #$01
