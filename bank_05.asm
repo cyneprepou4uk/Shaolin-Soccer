@@ -2619,20 +2619,20 @@ sub_8F79_выбор_палитры_и_банка_фона:
 C - - - - - 0x014F89 05:8F79: 20 11 C0  JSR sub_0x01ECB9_выключить_NMI_при_следующем_вызове
 C - - - - - 0x014F8C 05:8F7C: 20 17 C0  JSR sub_0x01EE81_выключить_NMI
 C - - - - - 0x014F8F 05:8F7F: 20 1D C0  JSR sub_0x01ECD1_скрыть_фон_и_спрайты_за_полоской_слева
-C - - - - - 0x014F92 05:8F82: A2 00     LDX #$00
-C - - - - - 0x014F94 05:8F84: 86 1C     STX ram_001C
-bra_8F86_loop:
-C - - - - - 0x014F96 05:8F86: BD 2C 05  LDA ram_номер_команды,X
-C - - - - - 0x014F99 05:8F89: 29 0F     AND #$0F
-C - - - - - 0x014F9B 05:8F8B: 0A        ASL
-C - - - - - 0x014F9C 05:8F8C: A8        TAY
-C - - - - - 0x014F9D 05:8F8D: B9 AF 8F  LDA tbl_8FAF,Y
-C - - - - - 0x014FA0 05:8F90: 9D AC 05  STA ram_номер_палитры_фона,X
-C - - - - - 0x014FA3 05:8F93: B9 B0 8F  LDA tbl_8FAF + 1,Y
-C - - - - - 0x014FA6 05:8F96: 8D BD 05  STA ram_банк_фона + 1
-C - - - - - 0x014FA9 05:8F99: E8        INX
-C - - - - - 0x014FAA 05:8F9A: E0 02     CPX #$02
-C - - - - - 0x014FAC 05:8F9C: 90 E8     BCC bra_8F86_loop
+; C - - - - - 0x014F92 05:8F82: A2 00     LDX #$00
+; C - - - - - 0x014F94 05:8F84: 86 1C     STX ram_001C
+; bra_8F86_loop:
+; C - - - - - 0x014F96 05:8F86: BD 2C 05  LDA ram_номер_команды,X
+; C - - - - - 0x014F99 05:8F89: 29 0F     AND #$0F
+; C - - - - - 0x014F9B 05:8F8B: 0A        ASL
+; C - - - - - 0x014F9C 05:8F8C: A8        TAY
+; C - - - - - 0x014F9D 05:8F8D: B9 AF 8F  LDA tbl_8FAF,Y
+; C - - - - - 0x014FA0 05:8F90: 9D AC 05  STA ram_номер_палитры_фона,X
+; C - - - - - 0x014FA3 05:8F93: B9 B0 8F  LDA tbl_8FAF + 1,Y
+; C - - - - - 0x014FA6 05:8F96: 8D BD 05  STA ram_банк_фона + 1
+; C - - - - - 0x014FA9 05:8F99: E8        INX
+; C - - - - - 0x014FAA 05:8F9A: E0 02     CPX #$02
+; C - - - - - 0x014FAC 05:8F9C: 90 E8     BCC bra_8F86_loop
 C - - - - - 0x014FAE 05:8F9E: 20 9F BE  JSR sub_BE9F
 C - - - - - 0x014FB1 05:8FA1: 20 FA BE  JSR sub_BEFA
 C - - - - - 0x014FB4 05:8FA4: 20 1A C0  JSR sub_0x01ECDB_отобразить_фон_и_спрайты
