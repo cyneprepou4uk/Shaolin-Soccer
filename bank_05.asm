@@ -6808,14 +6808,14 @@ C - - - - - 0x0165B1 05:A5A1: 8D 5C 05  STA ram_лицо_игрока
 C - - - - - 0x0165B4 05:A5A4: A9 01     LDA #con_spr_pal + $01
 C - - - - - 0x0165B6 05:A5A6: 8D AE 05  STA ram_номер_палитры_спрайтов
 C - - - - - 0x0165B9 05:A5A9: 8D AF 05  STA ram_номер_палитры_спрайтов + 1
-C - - - - - 0x0165BC 05:A5AC: A2 34     LDX #con_chr_bank + $34
-C - - - - - 0x0165BE 05:A5AE: 8E B8 05  STX ram_банк_спрайтов
-C - - - - - 0x0165C1 05:A5B1: E8        INX ; con_chr_bank + $35
-C - - - - - 0x0165C2 05:A5B2: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x0165C5 05:A5B5: E8        INX ; con_chr_bank + $36
-C - - - - - 0x0165C6 05:A5B6: 8E BA 05  STX ram_банк_спрайтов + 2
-C - - - - - 0x0165C9 05:A5B9: E8        INX ; con_chr_bank + $37
-C - - - - - 0x0165CA 05:A5BA: 8E BB 05  STX ram_банк_спрайтов + 3
+C - - - - - 0x0165BC 05:A5AC: A2 34     LDA #con_chr_bank + $34
+C - - - - - 0x0165BE 05:A5AE: 8E B8 05  STA ram_банк_спрайтов
+C - - - - - 0x0165C1 05:A5B1: E8        LDA #con_chr_bank + $35
+C - - - - - 0x0165C2 05:A5B2: 8E B9 05  STA ram_банк_спрайтов + 1
+C - - - - - 0x0165C5 05:A5B5: E8        LDA #con_chr_bank + $36
+C - - - - - 0x0165C6 05:A5B6: 8E BA 05  STA ram_банк_спрайтов + 2
+C - - - - - 0x0165C9 05:A5B9: E8        LDA #con_chr_bank + $37
+C - - - - - 0x0165CA 05:A5BA: 8E BB 05  STA ram_банк_спрайтов + 3
 C - - - - - 0x0165CD 05:A5BD: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 C - - - - - 0x0165D0 05:A5C0: A9 28     LDA #$28
 C - - - - - 0x0165D2 05:A5C2: 8D 14 03  STA ram_pos_X_lo_игрока
