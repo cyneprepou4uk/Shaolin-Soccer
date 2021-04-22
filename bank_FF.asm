@@ -6701,6 +6701,34 @@ C - - - - - 0x01EFF2 07:EFE2: 4C 40 F3  JSR sub_E170_отрисовать_вре
 bra_EFE5_write_3_buffers_to_ppu:
 loc_EFE5_write_3_buffers_to_ppu:
 sub_EFE5_запись_3х_буферов_в_ppu:
+                                        BIT $2002
+                                        LDA ram_счетчик_нового_буфера
+                                        BEQ @bra_пропуск_нового_буфера
+                                        LDA ram_для_2000
+                                        AND #$FB
+                                        STA ram_для_2000
+                                        STA $2000
+                                        LDX #$00
+@bra_продолжить_чтение_буфера:
+                                        LDA ram_новый_буфер,X
+                                        STA $2006
+                                        INX
+                                        LDA ram_новый_буфер,X
+                                        STA $2006
+                                        INX
+                                        LDY ram_новый_буфер,X
+                                        INX
+@bra_цикл_копирования:
+                                        LDA ram_новый_буфер,X
+                                        STA $2007
+                                        INX
+                                        DEY
+                                        BNE @bra_цикл_копирования
+                                        CPX ram_счетчик_нового_буфера
+                                        BNE @bra_продолжить_чтение_буфера
+                                        LDA #$00
+                                        STA ram_счетчик_нового_буфера
+@bra_пропуск_нового_буфера:
 C D 3 - - - 0x01EFF5 07:EFE5: AD 93 06  LDA ram_байт_2006_hi_атрибуты
 C - - - - - 0x01EFF8 07:EFE8: 30 38     BMI bra_F022_skip_attr_buffer
 C - - - - - 0x01EFFA 07:EFEA: A5 4C     LDA ram_для_2000

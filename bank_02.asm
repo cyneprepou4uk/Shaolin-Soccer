@@ -11268,15 +11268,16 @@ C - - - - - 0x00AEAA 02:AE9A: 60        RTS
 
 
 sub_AE9B_текст_жми_старт:
-C - - - - - 0x00AEAB 02:AE9B: A9 DA     LDA #$DA
-C - - - - - 0x00AEAD 02:AE9D: 85 1C     STA ram_001C
-C - - - - - 0x00AEAF 02:AE9F: AD 00 03  LDA ram_счетчик_кадров
-C - - - - - 0x00AEB2 02:AEA2: 29 04     AND #$04
-C - - - - - 0x00AEB4 02:AEA4: F0 04     BEQ bra_AEAA
-C - - - - - 0x00AEB6 02:AEA6: A9 00     LDA #$00
-C - - - - - 0x00AEB8 02:AEA8: 85 1C     STA ram_001C
-bra_AEAA:
-C - - - - - 0x00AEBA 02:AEAA: A2 00     LDX #$00
+C - - - - - 0x00AEBA 02:AEAA: A2 00     LDX ram_счетчик_нового_буфера
+                                        LDA #> $22C8
+                                        STA ram_новый_буфер,X
+                                        INX
+                                        LDA #< $22C8
+                                        STA ram_новый_буфер,X
+                                        INX
+                                        LDA #$0E
+                                        STA ram_новый_буфер,X
+                                        INX
 C - - - - - 0x00AEBC 02:AEAC: A0 00     LDY #$00
 bra_AEAE_loop:
 C - - - - - 0x00AEBE 02:AEAE: AD 00 03  LDA ram_счетчик_кадров
@@ -11287,46 +11288,34 @@ C - - - - - 0x00AEC7 02:AEB7: F0 03     BEQ bra_AEBC
 bra_AEB9:
 C - - - - - 0x00AEC9 02:AEB9: B9 E5 AE  LDA tbl_AEE5_текст_жми_старт,Y
 bra_AEBC:
-C - - - - - 0x00AECC 02:AEBC: 9D 96 06  STA ram_буфер_атрибутов,X
-C - - - - - 0x00AECF 02:AEBF: C8        INY
-C - - - - - 0x00AED0 02:AEC0: E8        INX
-C - - - - - 0x00AED1 02:AEC1: E0 12     CPX #$12
+C - - - - - 0x00AECC 02:AEBC: 9D 96 06  STA ram_новый_буфер,X
+C - - - - - 0x00AECF 02:AEBF: C8        INX
+C - - - - - 0x00AED0 02:AEC0: E8        INY
+C - - - - - 0x00AED1 02:AEC1: E0 12     CPY #$0E
 C - - - - - 0x00AED3 02:AEC3: 90 E9     BCC bra_AEAE_loop
-C - - - - - 0x00AED5 02:AEC5: A5 1C     LDA ram_001C
-C - - - - - 0x00AED7 02:AEC7: 8D B9 06  STA ram_буфер_графики
-C - - - - - 0x00AEDA 02:AECA: 8E 95 06  STX ram_счетчик_буфера_атрибутов
-C - - - - - 0x00AEDD 02:AECD: A9 01     LDA #$01
-C - - - - - 0x00AEDF 02:AECF: 8D B8 06  STA ram_счетчик_буфера_графики
-C - - - - - 0x00AEE2 02:AED2: A9 C6     LDA #$C6
-C - - - - - 0x00AEE4 02:AED4: 8D 94 06  STA ram_байт_2006_lo_атрибуты
-C - - - - - 0x00AEE7 02:AED7: A9 AD     LDA #$AD
-C - - - - - 0x00AEE9 02:AED9: 8D B7 06  STA ram_байт_2006_lo_графика
-C - - - - - 0x00AEEC 02:AEDC: A9 22     LDA #$22
-C - - - - - 0x00AEEE 02:AEDE: 8D B6 06  STA ram_байт_2006_hi_графика
-C - - - - - 0x00AEF1 02:AEE1: 8D 93 06  STA ram_байт_2006_hi_атрибуты
+                                        LDA ram_счетчик_нового_буфера
+                                        CLC
+                                        ADC #$0E + $03
+                                        STA ram_счетчик_нового_буфера
 C - - - - - 0x00AEF4 02:AEE4: 60        RTS
 
 
 
 tbl_AEE5_текст_жми_старт:
-- D 1 - - - 0x00AEF5 02:AEE5: E3        .byte $E3   ; 
-- D 1 - - - 0x00AEF6 02:AEE6: 00        .byte $00   ; 
-- D 1 - - - 0x00AEF7 02:AEE7: AE        .byte $AE   ; 
-- D 1 - - - 0x00AEF8 02:AEE8: B1        .byte $B1   ; 
-- D 1 - - - 0x00AEF9 02:AEE9: D9        .byte $D9   ; 
-- D 1 - - - 0x00AEFA 02:AEEA: B5        .byte $B5   ; 
-- D 1 - - - 0x00AEFB 02:AEEB: 00        .byte $00   ; 
-- D 1 - - - 0x00AEFC 02:AEEC: BF        .byte $BF   ; 
-- D 1 - - - 0x00AEFD 02:AEED: B1        .byte $B1   ; 
-- D 1 - - - 0x00AEFE 02:AEEE: CF        .byte $CF   ; 
-- D 1 - - - 0x00AEFF 02:AEEF: CE        .byte $CE   ; 
-- D 1 - - - 0x00AF00 02:AEF0: 00        .byte $00   ; 
-- D 1 - - - 0x00AF01 02:AEF1: A6        .byte $A6   ; 
-- D 1 - - - 0x00AF02 02:AEF2: AD        .byte $AD   ; 
-- D 1 - - - 0x00AF03 02:AEF3: B4        .byte $B4   ; 
-- D 1 - - - 0x00AF04 02:AEF4: B9        .byte $B9   ; 
-- D 1 - - - 0x00AF05 02:AEF5: 00        .byte $00   ; 
-- D 1 - - - 0x00AF06 02:AEF6: E3        .byte $E3   ; 
+- D 1 - - - 0x00AEF5 02:AEE5: E3        .byte $E1   ; 
+- D 1 - - - 0x00AEF6 02:AEE6: 00        .byte $E2   ; 
+- D 1 - - - 0x00AEF7 02:AEE7: AE        .byte $E3   ; 
+- D 1 - - - 0x00AEF8 02:AEE8: B1        .byte $E4   ; 
+- D 1 - - - 0x00AEF9 02:AEE9: D9        .byte $E5   ; 
+- D 1 - - - 0x00AEFA 02:AEEA: B5        .byte $E6   ; 
+- D 1 - - - 0x00AEFB 02:AEEB: 00        .byte $E7   ; 
+- D 1 - - - 0x00AEFC 02:AEEC: BF        .byte $E0   ; 
+- D 1 - - - 0x00AEFD 02:AEED: B1        .byte $E8   ; 
+- D 1 - - - 0x00AEFE 02:AEEE: CF        .byte $E9   ; 
+- D 1 - - - 0x00AEFF 02:AEEF: CE        .byte $EA   ; 
+- D 1 - - - 0x00AF00 02:AEF0: 00        .byte $EB   ; 
+- D 1 - - - 0x00AF01 02:AEF1: A6        .byte $EC   ; 
+- D 1 - - - 0x00AF02 02:AEF2: AD        .byte $ED   ; 
 
 
 
