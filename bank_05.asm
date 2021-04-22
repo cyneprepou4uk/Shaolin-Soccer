@@ -469,14 +469,14 @@ C - - - - - 0x0143A9 05:8399: A9 A5     LDA #$A5
 C - - - - - 0x0143AB 05:839B: 8D 59 03  STA ram_pos_Y_lo_мяча
 C - - - - - 0x0143AE 05:839E: 20 41 80  JSR sub_0x01C297
 C - - - - - 0x0143B1 05:83A1: 20 14 80  JSR sub_0x01C2AE
-C - - - - - 0x0143B4 05:83A4: A2 26     LDX #con_chr_bank + $26
-C - - - - - 0x0143B6 05:83A6: 8E B8 05  STX ram_банк_спрайтов
-C - - - - - 0x0143B9 05:83A9: E8        INX ; con_chr_bank + $27
-C - - - - - 0x0143BA 05:83AA: 8E B9 05  STX ram_банк_спрайтов + 1
-C - - - - - 0x0143BD 05:83AD: A2 20     LDX #con_chr_bank + $20
-C - - - - - 0x0143BF 05:83AF: 8E BA 05  STX ram_банк_спрайтов + 2
-C - - - - - 0x0143C2 05:83B2: A2 09     LDX #con_chr_bank + $09
-C - - - - - 0x0143C4 05:83B4: 8E BB 05  STX ram_банк_спрайтов + 3
+C - - - - - 0x0143B4 05:83A4: A2 26     LDA #con_chr_bank + $26
+C - - - - - 0x0143B6 05:83A6: 8E B8 05  STA ram_банк_спрайтов
+C - - - - - 0x0143B9 05:83A9: E8        LDA #con_chr_bank + $27
+C - - - - - 0x0143BA 05:83AA: 8E B9 05  STA ram_банк_спрайтов + 1
+C - - - - - 0x0143BD 05:83AD: A2 20     LDA #con_chr_bank + $20
+C - - - - - 0x0143BF 05:83AF: 8E BA 05  STA ram_банк_спрайтов + 2
+C - - - - - 0x0143C2 05:83B2: A2 09     LDA #con_chr_bank + $09
+C - - - - - 0x0143C4 05:83B4: 8E BB 05  STA ram_банк_спрайтов + 3
 C - - - - - 0x0143C7 05:83B7: 20 0B C0  JSR sub_0x01EEAA_запись_банков_спрайтов
 C - - - - - 0x0143CA 05:83BA: A9 02     LDA #con_music_меню
 C - - - - - 0x0143CC 05:83BC: 20 02 C0  JSR sub_0x01C2F4_воспроизвести_звук
