@@ -376,14 +376,14 @@ C - - - - - 0x00C270 03:8260: 60        RTS
 sub_826B_интеллект_в_зависимости_от_позиции:
 bra_826B_loop:
 C - - - - - 0x00C27B 03:826B: B9 50 06  LDA ram_позиция_управление,Y
-C - - - - - 0x00C27E 03:826E: 29 30     AND #con_pos_GK
-C - - - - - 0x00C280 03:8270: F0 0B     BEQ bra_827D_GK
+C - - - - - 0x00C27E 03:826E: 29 30     AND #con_pos_MF + con_pos_DF
+C - - - - - 0x00C280 03:8270: F0 0B     BEQ bra_827D_FW
 C - - - - - 0x00C282 03:8272: C9 10     CMP #con_pos_MF
 C - - - - - 0x00C284 03:8274: F0 0C     BEQ bra_827D_MF
 C - - - - - 0x00C286 03:8276: C9 20     CMP #con_pos_DF
 C - - - - - 0x00C288 03:8278: F0 0D     BEQ bra_8287_DF
-C - - - - - 0x00C28A 03:827A: 4C 8C 82  BNE bra_828C_FW
-bra_827D_GK:
+C - - - - - 0x00C28A 03:827A: 4C 8C 82  BNE bra_828C_GK
+bra_827D_FW:
 C - - - - - 0x00C28D 03:827D: A5 1C     LDA ram_001C
 C - - - - - 0x00C28F 03:827F: 4C 8E 82  JMP loc_828E_запись_интеллекта
 bra_827D_MF:
@@ -392,7 +392,7 @@ C - - - - - 0x00C294 03:8284: 4C 8E 82  JMP loc_828E_запись_интелле
 bra_8287_DF:
 C - - - - - 0x00C297 03:8287: A5 1E     LDA ram_001E
 C - - - - - 0x00C299 03:8289: 4C 8E 82  JMP loc_828E_запись_интеллекта
-bra_828C_FW:
+bra_828C_GK:
 C D 0 - - - 0x00C29C 03:828C: A5 1F     LDA ram_001F
 loc_828E_запись_интеллекта:
 C D 0 - - - 0x00C29E 03:828E: 99 5C 06  STA ram_интеллект_бота,Y
@@ -5488,11 +5488,11 @@ C - - - - - 0x00E193 03:A183: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x00E196 03:A186: 29 01     AND #$01
 C - - - - - 0x00E198 03:A188: A8        TAY
 C - - - - - 0x00E199 03:A189: A9 0C     LDA #con_ai_0C
-C - - - - - 0x00E19B 03:A18B: 85 1C     STA ram_001C    ; GK
+C - - - - - 0x00E19B 03:A18B: 85 1C     STA ram_001C    ; FW
 C - - - - - 0x00E19D 03:A18D: 85 1D     STA ram_001D    ; MF
 C - - - - - 0x00E19F 03:A18F: A9 0A     LDA #con_ai_0A
 C - - - - - 0x00E1A1 03:A191: 85 1E     STA ram_001E    ; DF
-C - - - - - 0x00E1A3 03:A193: 85 1F     STA ram_001F    ; FW
+C - - - - - 0x00E1A3 03:A193: 85 1F     STA ram_001F    ; GK
 C - - - - - 0x00E1A5 03:A195: 20 6B 82  JSR sub_826B_интеллект_в_зависимости_от_позиции
 C - - - - - 0x00E1A8 03:A198: 4C 0A A2  JMP loc_A20A
 bra_A19B:
@@ -5543,11 +5543,11 @@ C - - - - - 0x00E1FE 03:A1EE: 29 03     AND #$03
 C - - - - - 0x00E200 03:A1F0: 05 1D     ORA ram_001D
 C - - - - - 0x00E202 03:A1F2: 99 30 05  STA ram_расстановка_команды,Y
 C - - - - - 0x00E205 03:A1F5: A9 0B     LDA #con_ai_0B
-C - - - - - 0x00E207 03:A1F7: 85 1C     STA ram_001C    ; GK
+C - - - - - 0x00E207 03:A1F7: 85 1C     STA ram_001C    ; FW
 C - - - - - 0x00E209 03:A1F9: 85 1D     STA ram_001D    ; MF
 C - - - - - 0x00E20B 03:A1FB: A9 0A     LDA #con_ai_0A
 C - - - - - 0x00E20D 03:A1FD: 85 1E     STA ram_001E    ; DF
-C - - - - - 0x00E20F 03:A1FF: 85 1F     STA ram_001F    ; FW
+C - - - - - 0x00E20F 03:A1FF: 85 1F     STA ram_001F    ; GK
 C - - - - - 0x00E211 03:A201: AD D6 04  LDA ram_игрок_с_мячом
 C - - - - - 0x00E214 03:A204: 29 01     AND #$01
 C - - - - - 0x00E216 03:A206: A8        TAY
@@ -5807,10 +5807,10 @@ C - - - - - 0x00E3B6 03:A3A6: 30 03     BMI bra_A3AB    ; если кипер н
 C - - - - - 0x00E3B8 03:A3A8: 4C 89 A5  JMP loc_A589
 bra_A3AB:
 C - - - - - 0x00E3BB 03:A3AB: A9 00     LDA #con_ai_00
-C - - - - - 0x00E3BD 03:A3AD: 85 1C     STA ram_001C    ; GK
+C - - - - - 0x00E3BD 03:A3AD: 85 1C     STA ram_001C    ; FW
 C - - - - - 0x00E3BF 03:A3AF: 85 1D     STA ram_001D    ; MF
 C - - - - - 0x00E3C1 03:A3B1: A9 0D     LDA #con_ai_0D
-C - - - - - 0x00E3C3 03:A3B3: 85 1F     STA ram_001F    ; FW
+C - - - - - 0x00E3C3 03:A3B3: 85 1F     STA ram_001F    ; GK
 C - - - - - 0x00E3C5 03:A3B5: A9 22     LDA #con_ai_22
 C - - - - - 0x00E3C7 03:A3B7: 85 1E     STA ram_001E    ; DF
 C - - - - - 0x00E3C9 03:A3B9: 8A        TXA
